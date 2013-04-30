@@ -17,10 +17,8 @@
     <div id="impress">
 
       <div id="error" class="step">
-	<center>That page does not exist.</center>
-	<br />
-	<div id="quiet"><center>(but <a href="http://chriscummins.cc">this one</a> does)</center>
-	</div>
+	<center>That page does not exist.<br /><br />
+	<center style="font-size: 20px;">(but <a href="http://chriscummins.cc">this one</a> does)</center>
       </div>
 
     </div>
