@@ -22,7 +22,7 @@ setcookie("visit", "1", time()+3600);
 
       <div id="hello" class="step" data-x="0" data-y="500">
 	<center>
-	  <img id="my-face" src="assets/img/my-face.png" width="220" height="220" style="border-radius: 10px;" alt="My name is Chris.">
+	  <img id="my-face" src="assets/img/my-face.png" style="border-radius: 10px;" alt="My name is Chris.">
 	  <br/>
 <?php
    if (isset($_COOKIE["visit"]))
