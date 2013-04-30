@@ -93,7 +93,7 @@ setcookie("visit", "1", time()+3600);
     <a id="arrowLeft" class="arrow">&lt;</a>
     <a id="arrowRight" class="arrow">&gt;</a>
 
-    <script src="assets/js/jquery-1.9.1.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="assets/js/impress.js"></script>
     <script src="assets/js/site.js"></script>
   </body>

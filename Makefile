@@ -39,8 +39,6 @@ js += 						\
 	assets/js/site.js			\
 	$(NULL)
 
-extra_js += assets/js/jquery-1.9.1.min.js
-
 extra_site +=					\
 	assets/img/arrows.png			\
 	assets/img/facebook.png			\
