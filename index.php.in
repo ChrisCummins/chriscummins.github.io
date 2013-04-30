@@ -55,8 +55,8 @@ setcookie("visit", "1", time()+3600);
       </div>
 
       <div id="blog" class="step" data-x="0" data-y="-1000" data-rotate="0" data-scale="0.7">
-	Occasionally I <a href="blog/">write</a>,
-	if the mood takes me.
+	Occasionally I <a href="blog/" target="_blank">write</a>,
+	when the mood takes me.
       </div>
 
       <div id="contactme" class="step" data-x="-1000" data-y="-350" data-rotate="270">
