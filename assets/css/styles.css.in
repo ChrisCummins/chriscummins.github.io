@@ -66,7 +66,6 @@ table {
  *		Top level styles
  */
 body {
-    font-family:        'PT Sans', sans-serif;
     min-height:         740px;
     line-height:        1;
 

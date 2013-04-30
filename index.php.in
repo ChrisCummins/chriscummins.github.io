@@ -9,7 +9,7 @@ setcookie("visit", "1", time()+3600);
     <meta charset="utf-8" />
     <meta name="viewport" content="width=1024" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+    <link href="http://fonts.googleapis.com/css?family=PT+Serif:400,700" rel="stylesheet" />
     <link href="assets/css/styles.css" rel="stylesheet" />
     <title>chriscummins.cc</title>
 
