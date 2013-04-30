@@ -3,6 +3,8 @@ QUIET_  = @
 QUIET   = $(QUIET_$(V))
 
 # Initialise our content variables
+php :=
+extra_php :=
 html :=
 extra_html :=
 css :=
@@ -56,6 +58,7 @@ extra_site +=					\
 
 # site content
 local_files = 					\
+	$(php)  $(extra_php)			\
 	$(html) $(extra_html)			\
 	$(css)  $(extra_css)			\
 	$(js)	$(extra_js)			\
@@ -110,5 +113,9 @@ HTMLCOMPRESSOR_JAR = ~/src/htmlcompressor/target/htmlcompressor-1.5.3-SNAPSHOT.j
 %.html: %.html.in
 	@echo '  HTML     $@'
 	$(QUIET)chmod 644 $<
-	$(QUIET)java -jar $(HTMLCOMPRESSOR_JAR)	\
-						$< >$@
+	$(QUIET)java -jar $(HTMLCOMPRESSOR_JAR) $< >$@
+
+%.php: %.php.in
+	@echo '  PHP      $@'
+	$(QUIET)chmod 644 $<
+	$(QUIET)java -jar $(HTMLCOMPRESSOR_JAR) $< >$@
