@@ -104,6 +104,9 @@ CLOSURE_COMPILER_JAR = ~/src/closure-compiler/build/compiler.jar
 # See: http://yui.github.io/yuicompressor/
 YUICOMPRESSOR_JAR = ~/src/yuicompressor/build/yuicompressor-2.4.8pre.jar
 
+# See: https://code.google.com/p/htmlcompressor/
+HTMLCOMPRESSOR_JAR = ~/src/htmlcompressor/target/htmlcompressor-1.5.3-SNAPSHOT.jar
+
 #
 # Generate site content
 #
@@ -121,4 +124,5 @@ YUICOMPRESSOR_JAR = ~/src/yuicompressor/build/yuicompressor-2.4.8pre.jar
 %.html: %.html.in
 	@echo '  HTML     $@'
 	$(QUIET)chmod 644 $<
-	$(QUIET) cp $< $@
+	$(QUIET)java -jar $(HTMLCOMPRESSOR_JAR)	\
+						$< >$@
