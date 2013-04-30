@@ -100,25 +100,33 @@ a:focus {
     text-align: center;
 }
 
-/* Arrow styles */
+/*
+ *		Step Navigation Arrows
+ *
+ * This is the pair of navigation arrows which reside on either side of the
+ * page.
+ */
 .arrow {
+    width:              29px;
+    height:             54px;
+    background:         url('../img/arrows.png') no-repeat;
+    position:           fixed;
+    top:                50%;
+    margin-top:         -27px;
+    cursor:             pointer;
+    text-indent:        -9999px;
+    overflow:           hidden;
+    border:             none !important;
+    opacity:            0.5;
 
-    width:29px;
-    height:54px;
-    background:url('../img/arrows.png') no-repeat;
-    position:fixed;
-    top:50%;
-    margin-top:-27px;
-    cursor:pointer;
-    text-indent:-9999px;
-    overflow:hidden;
-    opacity:0.5;
-    border:none !important;
+    -moz-transition:    0.2s opacity;
+    -webkit-transition: 0.2s opacity;
+    -o-transition:      0.2s opacity;
+    transition:         0.2s opacity;
 
-    -moz-transition:0.2s opacity;
-    -webkit-transition:0.2s opacity;
-    transition:0.2s opacity;
-
+    /*
+     * Keyframe animation to fade the arrows in on page load.
+     */
     animation:          fadein 3s;
     -moz-animation:     fadein 3s;
     -webkit-animation:  fadein 3s;
@@ -138,19 +146,21 @@ a:focus {
 }
 
 .arrow:hover {
-    opacity:1;
-    background:url('../img/arrows.png') no-repeat;
+    opacity: 1;
 }
 
 #arrowLeft {
-    left:40px;
+    left: 40px;
 }
-
 #arrowRight {
     right: 40px;
     background-position: top right;
 }
 
+/*
+ * Don't show the arrows if impress is a static HTML form of the page is being
+ * served.
+ */
 #impress.impress-not-supported + .arrow,
 #impress.impress-not-supported + .arrow + .arrow{
     display:none;
