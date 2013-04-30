@@ -2,6 +2,15 @@
 QUIET_  = @
 QUIET   = $(QUIET_$(V))
 
+# Initialise our content variables
+html :=
+extra_html :=
+css :=
+extra_css :=
+js :=
+extra_js :=
+extra_site :=
+
 include Makefile.private
 
 #
@@ -15,22 +24,21 @@ include Makefile.private
 #	extra_js = assets/js/jquery.min.js
 #
 # Miscellaneous other assets should be added to $(extra_site).
-html =						\
+html +=						\
 	404.html				\
 	index.html				\
 	$(NULL)
 
-css =	assets/css/styles.css
+css +=	assets/css/styles.css
 
-js = 						\
+js += 						\
 	assets/js/impress.js			\
 	assets/js/site.js			\
 	$(NULL)
 
-extra_js = assets/js/jquery-1.9.1.min.js
+extra_js += assets/js/jquery-1.9.1.min.js
 
-extra_site =					\
-	.htaccess				\
+extra_site +=					\
 	assets/img/arrows.png			\
 	assets/img/facebook.png			\
 	assets/img/favicon.ico			\
@@ -63,23 +71,18 @@ clean_files = $(html) $(css) $(js)
 #
 # Create and package generated files
 #
-all: $(local_files) pack
+all: $(local_files)
 
 #
-# Pack modified files into a tar for publishing
+# Pack modified files into a tar and publish
 #
-TAR := chriscummins.tar.gz
+TAR = chriscummins.tar.gz
 
-pack: $(TAR)
+publish: $(TAR)
+
 $(TAR): $(local_files)
 	@echo '  TAR     $?'
 	$(QUIET)tar -pczf $@ $?
-
-#
-# Publish tar-ball to site
-#
-.PHONY: publish
-publish:
 	@echo '  SCP      $(SITE_PREFIX)/$(TAR)'
 	$(QUIET)scp $(TAR) $(ADMIN)@$(ADDRESS):$(SITE_PREFIX)/ >/dev/null
 	$(QUIET)ssh $(ADMIN)@$(ADDRESS) 'cd $(SITE_PREFIX)/ && \
@@ -87,6 +90,7 @@ publish:
 				rm -f $(TAR) && \
 				chown $(USER) $(server_files) && \
 				chgrp $(USER) $(server_files)'
+
 #
 # Remove generated files
 #
