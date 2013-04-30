@@ -118,6 +118,23 @@ a:focus {
     -moz-transition:0.2s opacity;
     -webkit-transition:0.2s opacity;
     transition:0.2s opacity;
+
+    animation:          fadein 3s;
+    -moz-animation:     fadein 3s;
+    -webkit-animation:  fadein 3s;
+    -o-animation:       fadein 3s;
+}
+@keyframes fadein {
+    from { opacity: 0; } to { opacity: 0.5; }
+}
+@-moz-keyframes fadein {
+    from { opacity: 0; } to { opacity: 0.5; }
+}
+@-webkit-keyframes fadein {
+    from { opacity: 0; } to { opacity: 0.5; }
+}
+@-o-keyframes fadein {
+    from { opacity: 0; } to { opacity: 0.5; }
 }
 
 .arrow:hover {
