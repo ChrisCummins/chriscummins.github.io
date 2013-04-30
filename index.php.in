@@ -1,3 +1,7 @@
+<?php
+setcookie("visit", "1", time()+3600);
+?>
+
 <!doctype html>
 
 <html lang="en">
@@ -17,8 +21,16 @@
     <div id="impress">
 
       <div id="hello" class="step" data-x="0" data-y="500">
-	<center><img id="my-face" src="assets/img/my-face.png" width="220" height="220" style="border-radius: 10px;" alt="My name is Chris."></center>
-	<center>Hi.</center>
+	<center>
+	  <img id="my-face" src="assets/img/my-face.png" width="220" height="220" style="border-radius: 10px;" alt="My name is Chris.">
+	  <br/>
+<?php
+   if (isset($_COOKIE["visit"]))
+     echo "Hello again.";
+   else
+     echo "Hi.";
+?>
+	</center>
       </div>
 
       <div id="thingsido" class="step" data-x="1200" data-y="-100" data-rotate="90" data-scale="2">

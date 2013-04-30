@@ -24,9 +24,12 @@ extra_site :=
 #	extra_js = assets/js/jquery.min.js
 #
 # Miscellaneous other assets should be added to $(extra_site).
+php +=						\
+	index.php				\
+	$(NULL)
+
 html +=						\
 	404.html				\
-	index.html				\
 	$(NULL)
 
 css +=	assets/css/styles.css
