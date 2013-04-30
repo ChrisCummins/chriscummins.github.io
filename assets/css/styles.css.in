@@ -102,21 +102,22 @@ a:focus {
 
 /* Arrow styles */
 .arrow {
-	width:29px;
-	height:54px;
-	background:url('../img/arrows.png') no-repeat;
-	position:fixed;
-	top:50%;
-	margin-top:-27px;
-	cursor:pointer;
-	text-indent:-9999px;
-	overflow:hidden;
-	opacity:0.5;
-	border:none !important;
 
-	-moz-transition:0.2s opacity;
-	-webkit-transition:0.2s opacity;
-	transition:0.2s opacity;
+    width:29px;
+    height:54px;
+    background:url('../img/arrows.png') no-repeat;
+    position:fixed;
+    top:50%;
+    margin-top:-27px;
+    cursor:pointer;
+    text-indent:-9999px;
+    overflow:hidden;
+    opacity:0.5;
+    border:none !important;
+
+    -moz-transition:0.2s opacity;
+    -webkit-transition:0.2s opacity;
+    transition:0.2s opacity;
 }
 
 .arrow:hover {
@@ -125,17 +126,17 @@ a:focus {
 }
 
 #arrowLeft {
-	left:40px;
+    left:40px;
 }
 
 #arrowRight {
-	right: 40px;
-	background-position: top right;
+    right: 40px;
+    background-position: top right;
 }
 
 #impress.impress-not-supported + .arrow,
 #impress.impress-not-supported + .arrow + .arrow{
-	display:none;
+    display:none;
 }
 
 /* Step styles */
