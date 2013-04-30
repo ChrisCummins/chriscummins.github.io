@@ -108,15 +108,16 @@ CLOSURE_COMPILER_JAR = ~/src/closure-compiler/build/compiler.jar
 #
 %.js: %.js.in
 	@echo '  JS       $@'
+	$(QUIET)chmod 644 $<
 	$(QUIET)java -jar $(CLOSURE_COMPILER_JAR) --js=$< --js_output_file=$@
-	$(QUIET)chmod 644 $@
 
 %.css: %.css.in
 	@echo '  CSS      $@'
+	$(QUIET)chmod 644 $<
 	$(QUIET) cp $< $@
-	$(QUIET)chmod 644 $@
+
 
 %.html: %.html.in
 	@echo '  HTML     $@'
+	$(QUIET)chmod 644 $<
 	$(QUIET) cp $< $@
-	$(QUIET)chmod 644 $@
