@@ -163,7 +163,7 @@ a:focus {
  */
 #impress.impress-not-supported + .arrow,
 #impress.impress-not-supported + .arrow + .arrow{
-    display:none;
+    display: none;
 }
 
 /* Step styles */
@@ -195,7 +195,7 @@ a:focus {
 
 .step:hover,
 .step.active {
-    opacity:1;
+    opacity: 1;
 }
 
 /* Passive overview.
