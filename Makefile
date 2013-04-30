@@ -76,7 +76,7 @@ all: $(local_files)
 #
 # Pack modified files into a tar and publish
 #
-TAR = chriscummins.tar.gz
+TAR = .chriscummins.tar.gz
 
 publish: $(TAR)
 
