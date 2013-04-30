@@ -52,6 +52,8 @@ extra_site +=					\
 	assets/img/screenshot-soundcloud.png	\
 	assets/img/screenshot-youtube.png	\
 	assets/img/youtube.png			\
+	uni/dissertation.pdf			\
+	uni/sustainability.pdf			\
 	$(NULL)
 
 # site content
