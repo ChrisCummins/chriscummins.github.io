@@ -81,7 +81,7 @@ TAR = .chriscummins.tar.gz
 publish: $(TAR)
 
 $(TAR): $(local_files)
-	@echo '  TAR     $?'
+	@for f in $?; do echo "  TAR      $$f"; done
 	$(QUIET)tar -pczf $@ $?
 	@echo '  SCP      $(SITE_PREFIX)/$(TAR)'
 	$(QUIET)scp $(TAR) $(ADMIN)@$(ADDRESS):$(SITE_PREFIX)/ >/dev/null
