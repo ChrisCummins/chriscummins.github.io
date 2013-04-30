@@ -98,10 +98,11 @@ $(TAR): $(local_files)
 clean:
 	$(QUIET)rm -fv $(clean_files)
 
-#
 # See: https://developers.google.com/closure/compiler/
-#
 CLOSURE_COMPILER_JAR = ~/src/closure-compiler/build/compiler.jar
+
+# See: http://yui.github.io/yuicompressor/
+YUICOMPRESSOR_JAR = ~/src/yuicompressor/build/yuicompressor-2.4.8pre.jar
 
 #
 # Generate site content
@@ -114,8 +115,8 @@ CLOSURE_COMPILER_JAR = ~/src/closure-compiler/build/compiler.jar
 %.css: %.css.in
 	@echo '  CSS      $@'
 	$(QUIET)chmod 644 $<
-	$(QUIET) cp $< $@
-
+	$(QUIET)java -jar $(YUICOMPRESSOR_JAR)	--charset utf-8 -v \
+						--type css $< >$@
 
 %.html: %.html.in
 	@echo '  HTML     $@'
