@@ -11,8 +11,6 @@ js :=
 extra_js :=
 extra_site :=
 
-include Makefile.private
-
 #
 # Site contents
 #
@@ -64,9 +62,6 @@ local_files = 					\
 	$(extra_site)				\
 	$(NULL)
 
-# absolute paths to server-side site content
-server_files = $(patsubst %,$(SITE_PREFIX)/%,$(local_files))
-
 # generated files
 clean_files = $(html) $(css) $(js)
 
@@ -76,22 +71,11 @@ clean_files = $(html) $(css) $(js)
 all: $(local_files)
 
 #
-# Pack modified files into a tar and publish
+# Private publishing routines
 #
-TAR = .chriscummins.tar.gz
+include Makefile.publish
 
-publish: $(TAR)
-
-$(TAR): $(local_files)
-	@for f in $?; do echo "  TAR      $$f"; done
-	$(QUIET)tar -pczf $@ $?
-	@echo '  SCP      $(SITE_PREFIX)/$(TAR)'
-	$(QUIET)scp $(TAR) $(ADMIN)@$(ADDRESS):$(SITE_PREFIX)/ >/dev/null
-	$(QUIET)ssh $(ADMIN)@$(ADDRESS) 'cd $(SITE_PREFIX)/ && \
-				tar -zxf $(TAR) && \
-				rm -f $(TAR) && \
-				chown $(USER) $(server_files) && \
-				chgrp $(USER) $(server_files)'
+publish: private_publish
 
 #
 # Remove generated files
