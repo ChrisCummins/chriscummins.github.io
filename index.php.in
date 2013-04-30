@@ -62,25 +62,25 @@ setcookie("visit", "1", time()+3600);
 
 	  <div class="linkstrip">
 	    <a id="linkedin" href="http://www.linkedin.com/profile/view?id=195091553" target="_blank">
-	      <img src="assets/img/linkedin.png" alt="Linked In" width="64" height="64"></a>
+	      <img src="assets/img/linkedin.png" alt="Linked In"></a>
 	    <div id="tooltip-linkedin" class="tooltip"> <!-- tooltip -->
 	      <a href="http://www.linkedin.com/profile/view?id=195091553" target="_blank">
 		<img src="assets/img/screenshot-linkedin.png" style="border-radius: 10px;"></a></div>
 
 	    <a id="facebook" href="https://www.facebook.com/cecummins" target="_blank">
-	      <img src="assets/img/facebook.png" alt="Facebook" width="64" height="64"></a>
+	      <img src="assets/img/facebook.png" alt="Facebook"></a>
 	    <div id="tooltip-facebook" class="tooltip"> <!-- tooltip -->
 	      <a href="https://www.facebook.com/cecummins" target="_blank">
 	      <img src="assets/img/screenshot-facebook.png" style="border-radius: 10px;"></a></div>
 
 	    <a id="youtube" href="http://www.youtube.com/user/ChrisCummins" target="_blank">
-	      <img src="assets/img/youtube.png" alt="YouTube" width="64" height="64"></a>
+	      <img src="assets/img/youtube.png" alt="YouTube"></a>
  	    <div id="tooltip-youtube"  class="tooltip"> <!-- tooltip -->
 	      <a href="http://www.youtube.com/user/ChrisCummins" target="_blank">
 		<img src="assets/img/screenshot-youtube.png"  style="border-radius: 10px;"></a></div>
 
 	    <a id="github" href="https://github.com/ChrisCummins" target="_blank">
-	      <img src="assets/img/github.png" alt="GitHub" width="64" height="64"></a>
+	      <img src="assets/img/github.png" alt="GitHub"></a>
 	    <div id="tooltip-github"  class="tooltip">  <!-- tooltip -->
 	      <a href="https://github.com/ChrisCummins" target="_blank">
 		<img src="assets/img/screenshot-github.png"  style="border-radius: 10px;"></a></div>
