@@ -93,11 +93,7 @@ a {
 
 a:hover,
 a:focus {
-    opacity: 0.6;
-}
-
-.linkstrip {
-    text-align: center;
+    opacity:            0.6;
 }
 
 /*

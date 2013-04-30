@@ -58,9 +58,8 @@ setcookie("visit", "1", time()+3600);
       </div>
 
       <div id="contactme" class="step" data-x="-1000" data-y="-350" data-rotate="270">
-	  <center><div id="findme">You can find me elsewhere</div></center>
+	  <center><div id="findme">You can find me elsewhere</div>
 
-	  <div class="linkstrip">
 	    <a id="linkedin" href="http://www.linkedin.com/profile/view?id=195091553" target="_blank">
 	      <img src="assets/img/linkedin.png" alt="Linked In"></a>
 	    <div id="tooltip-linkedin" class="tooltip"> <!-- tooltip -->
@@ -84,7 +83,7 @@ setcookie("visit", "1", time()+3600);
 	    <div id="tooltip-github"  class="tooltip">  <!-- tooltip -->
 	      <a href="https://github.com/ChrisCummins" target="_blank">
 		<img src="assets/img/screenshot-github.png"  style="border-radius: 10px;"></a></div>
-	  </div>
+	  </center>
       </div>
 
       <div id="overview" class="step" data-x="200" data-y="-300" data-scale="3" data-rotate="25"></div>
