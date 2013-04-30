@@ -190,7 +190,7 @@ a:focus {
 
 /* FIXME: Only apply these styles when impress is supported */
 .step {
-    opacity:0.4;
+    opacity: 0.25;
 }
 
 .step:hover,
