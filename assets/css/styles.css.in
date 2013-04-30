@@ -1,0 +1,210 @@
+/*
+ * http://meyerweb.com/eric/tools/css/reset/
+ * v2.0 | 20110126
+ * License: none (public domain)
+ */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+body {
+    font-family: 'PT Sans', sans-serif;
+    min-height: 740px;
+
+    /* Set up our radial background */
+    background: rgb(215, 215, 215);
+    background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(rgb(240, 240, 240)), to(rgb(190, 190, 190)));
+    background: -webkit-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+    background:    -moz-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+    background:     -ms-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+    background:      -o-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+    background:         radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+}
+
+/* Text styles */
+b, strong {
+    font-weight: bold;
+}
+
+i, em {
+    font-style: italic;
+}
+
+/* Link styles */
+a {
+    color: inherit;
+    text-decoration: none;
+    font-weight: bolder;
+    padding: 0 0.1em;
+    border-radius: 0.2em;
+
+    -webkit-transition: 0.5s;
+    -moz-transition:    0.5s;
+    -ms-transition:     0.5s;
+    -o-transition:      0.5s;
+    transition:         0.5s;
+}
+
+a:hover,
+a:focus {
+    opacity: 0.6;
+}
+
+.linkstrip {
+    text-align: center;
+}
+
+/* Arrow styles */
+.arrow {
+	width:29px;
+	height:54px;
+	background:url('../img/arrows.png') no-repeat;
+	position:fixed;
+	top:50%;
+	margin-top:-27px;
+	cursor:pointer;
+	text-indent:-9999px;
+	overflow:hidden;
+	opacity:0.5;
+	border:none !important;
+
+	-moz-transition:0.2s opacity;
+	-webkit-transition:0.2s opacity;
+	transition:0.2s opacity;
+}
+
+.arrow:hover {
+    opacity:1;
+    background:url('../img/arrows.png') no-repeat;
+}
+
+#arrowLeft {
+	left:40px;
+}
+
+#arrowRight {
+	right: 40px;
+	background-position: top right;
+}
+
+#impress.impress-not-supported + .arrow,
+#impress.impress-not-supported + .arrow + .arrow{
+	display:none;
+}
+
+/* Step styles */
+.step {
+    position: relative;
+    width: 900px;
+    padding: 40px;
+    margin: 20px auto;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing:    border-box;
+    -ms-box-sizing:     border-box;
+    -o-box-sizing:      border-box;
+    box-sizing:         border-box;
+
+    -moz-transition:    1s opacity;
+    -webkit-transition: 1s opacity;
+    transition:         1s opacity;
+
+    font-family: 'PT Serif', georgia, serif;
+    font-size: 48px;
+    line-height: 1.5;
+}
+
+/* FIXME: Only apply these styles when impress is supported */
+.step {
+    opacity:0.4;
+}
+
+.step:hover,
+.step.active {
+    opacity:1;
+}
+
+/* Passive overview.
+ * FIXME: cursor doesn't work.
+ */
+#overview {
+    display: none;
+    height: 1px;
+    cursor: pointer;
+}
+
+#error #quiet {
+    font-size: 20px;
+}
+
+/* FIXME: This is broken */
+.impress-on-overview .step {
+    opacity: 1;
+    cursor: pointer;
+}
+
+#my-face {
+    border-radius: 15px;
+    padding: 5px;
+    background-color: #fff;
+}
+
+/* Tooltips */
+.tooltip {
+    display: none;
+    font-size: 20px;
+    background-color: #fff;
+    background: solid;
+    border-radius: 15px;
+    width: 200px;
+    height: 200px;
+    padding: 3px;
+    position: fixed;
+    right: 0px;
+}

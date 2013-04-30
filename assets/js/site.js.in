@@ -1,0 +1,59 @@
+/* Arrows */
+$(function() {
+    $('#arrowLeft').click(function(e) {
+	impress().prev();
+	e.preventDefault();
+    });
+
+    $('#arrowRight').click(function(e) {
+	impress().next();
+	e.preventDefault();
+    });
+});
+
+/* Tooltips */
+(function($) {
+    $.fn.tooltip = function(tooltipEl, name) {
+        var $tooltipEl = $(tooltipEl);
+	var $name = $(name);
+        return this.each(function() {
+            var $this = $(this);
+            var hide = function () {
+                var timeout = setTimeout(function () {
+                    $tooltipEl.fadeOut('slow');
+                }, 600);
+
+                $this.data("tooltip.timeout", timeout);
+            };
+
+            /* Bind an event handler to 'hover' (mouseover/mouseout): */
+            $this.hover(function () {
+                clearTimeout($this.data("tooltip.timeout"));
+                $tooltipEl.fadeIn('slow');
+		var string = "You can find me on " + name + ".";
+		if (string != "You can find me on undefined.")
+		    $("#findme").text(string);
+            }, hide);
+
+            /* If the user is hovering over the tooltip div, cancel the timeout: */
+            $tooltipEl.hover(function () {
+                clearTimeout($this.data("tooltip.timeout"));
+            }, hide);
+        });
+    };
+})(jQuery);
+
+$(document).ready(function() {
+    /* Connect the tooltips */
+    $("#music").tooltip("#tooltip-soundcloud");
+    $("#software").tooltip("#tooltip-software");
+    $("#pictures").tooltip("#tooltip-pictures");
+
+    $("#linkedin").tooltip("#tooltip-linkedin", "Linked In");
+    $("#facebook").tooltip("#tooltip-facebook", "Facebook");
+    $("#youtube").tooltip("#tooltip-youtube", "YouTube");
+    $("#github").tooltip("#tooltip-github", "GitHub");
+
+    /* Bootstrap impress */
+    impress().init();
+});

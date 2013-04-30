@@ -1,0 +1,88 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+    <link href="assets/css/styles.css" rel="stylesheet" />
+    <title>chriscummins.cc</title>
+
+    <link rel="shortcut icon" href="assets/img/favicon.ico" />
+  </head>
+
+  <body class="impress-not-supported">
+
+    <div id="impress">
+
+      <div id="hello" class="step" data-x="0" data-y="500">
+	<center><img id="my-face" src="assets/img/my-face.png" width="220" height="220" style="border-radius: 10px;" alt="My name is Chris."></center>
+	<center>Hi.</center>
+      </div>
+
+      <div id="thingsido" class="step" data-x="1200" data-y="-100" data-rotate="90" data-scale="2">
+	I love making things. Especially
+	<a id="music" href="https://soundcloud.com/peakstudio" target="_blank">music</a>,
+	<a id="software" href="https://github.com/ChrisCummins" target="_blank">software</a>, and
+	<a id="pictures" href="https://www.facebook.com/media/set/?set=a.10150205319085002.427430.896185001&type=1&l=5b9f01d984" target="_blank">
+	  pictures</a>.
+
+	<!-- Tooltips -->
+	<div id="tooltip-soundcloud" class="tooltip">
+	  <a href="http://www.linkedin.com/profile/view?id=195091553" target="_blank">
+	    <img src="assets/img/screenshot-soundcloud.png" style="border-radius: 10px;"></a></div>
+	<div id="tooltip-software" class="tooltip">
+	  <a href="http://www.linkedin.com/profile/view?id=195091553" target="_blank">
+	    <img src="assets/img/screenshot-github.png" style="border-radius: 10px;"></a></div>
+	<div id="tooltip-pictures" class="tooltip">
+	  <a href="http://www.linkedin.com/profile/view?id=195091553" target="_blank">
+	    <img src="assets/img/screenshot-pictures.png" style="border-radius: 10px;"></a></div>
+      </div>
+
+      <div id="blog" class="step" data-x="0" data-y="-1000" data-rotate="0" data-scale="0.7">
+	Occasionally I <a href="blog/">write</a>,
+	if the mood takes me.
+      </div>
+
+      <div id="contactme" class="step" data-x="-1000" data-y="-350" data-rotate="270">
+	  <center><div id="findme">You can find me elsewhere</div></center>
+
+	  <div class="linkstrip">
+	    <a id="linkedin" href="http://www.linkedin.com/profile/view?id=195091553" target="_blank">
+	      <img src="assets/img/linkedin.png" alt="Linked In" width="64" height="64"></a>
+	    <div id="tooltip-linkedin" class="tooltip"> <!-- tooltip -->
+	      <a href="http://www.linkedin.com/profile/view?id=195091553" target="_blank">
+		<img src="assets/img/screenshot-linkedin.png" style="border-radius: 10px;"></a></div>
+
+	    <a id="facebook" href="https://www.facebook.com/cecummins" target="_blank">
+	      <img src="assets/img/facebook.png" alt="Facebook" width="64" height="64"></a>
+	    <div id="tooltip-facebook" class="tooltip"> <!-- tooltip -->
+	      <a href="https://www.facebook.com/cecummins" target="_blank">
+	      <img src="assets/img/screenshot-facebook.png" style="border-radius: 10px;"></a></div>
+
+	    <a id="youtube" href="http://www.youtube.com/user/ChrisCummins" target="_blank">
+	      <img src="assets/img/youtube.png" alt="YouTube" width="64" height="64"></a>
+ 	    <div id="tooltip-youtube"  class="tooltip"> <!-- tooltip -->
+	      <a href="http://www.youtube.com/user/ChrisCummins" target="_blank">
+		<img src="assets/img/screenshot-youtube.png"  style="border-radius: 10px;"></a></div>
+
+	    <a id="github" href="https://github.com/ChrisCummins" target="_blank">
+	      <img src="assets/img/github.png" alt="GitHub" width="64" height="64"></a>
+	    <div id="tooltip-github"  class="tooltip">  <!-- tooltip -->
+	      <a href="https://github.com/ChrisCummins" target="_blank">
+		<img src="assets/img/screenshot-github.png"  style="border-radius: 10px;"></a></div>
+	  </div>
+      </div>
+
+      <div id="overview" class="step" data-x="200" data-y="-300" data-scale="3" data-rotate="25"></div>
+    </div>
+
+    <a id="arrowLeft" class="arrow">&lt;</a>
+    <a id="arrowRight" class="arrow">&gt;</a>
+
+    <script src="assets/js/jquery-1.9.1.min.js"></script>
+    <script src="assets/js/impress.js"></script>
+    <script src="assets/js/site.js"></script>
+  </body>
+</html>
