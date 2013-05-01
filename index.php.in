@@ -43,7 +43,7 @@ setcookie("visit", "1", time()+3600);
 	  pictures</a>.
       </div>
 
-      <div id="blog" class="step" data-x="0" data-y="-1000" data-scale="0.7">
+      <div id="writings" class="step" data-x="0" data-y="-1000" data-scale="0.7">
 	Occasionally I <a href="blog/" target="_blank">write</a>,
 	when the mood takes me.
       </div>
