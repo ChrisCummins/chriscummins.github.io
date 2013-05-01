@@ -31,8 +31,8 @@
 
     </div>
 
-    <!-- Link back to the main page -->
-    <a id="arrowRight" class="arrow" href="http://chriscummins.cc">&gt;</a>
+    <!-- Go back to the main page overview -->
+    <a id="arrowRight" class="arrow" href="/#/overview">&gt;</a>
 
     <script src="assets/js/impress.js"></script>
     <script>impress().init();</script>
