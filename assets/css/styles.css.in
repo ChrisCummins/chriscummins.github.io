@@ -171,6 +171,11 @@ a:focus {
     background-position: top right;
 }
 
+/* Don't have arrows on overview */
+.impress-on-overview .arrow {
+    display:            none;
+}
+
 /*
  * Tooltip styles
  */
