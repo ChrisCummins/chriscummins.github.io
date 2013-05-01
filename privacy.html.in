@@ -1,0 +1,32 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link href="http://fonts.googleapis.com/css?family=PT+Serif:400,700" rel="stylesheet" />
+    <link href="assets/css/styles.css" rel="stylesheet" />
+    <title>Chris Cummins | Privacy</title>
+
+    <link rel="shortcut icon" href="assets/img/favicon.ico" />
+  </head>
+
+  <body class="impress-not-supported">
+
+    <div id="impress">
+
+      <div id="privacy" class="step smallprint">
+	This site uses a cookie. If you don't like it, disable it. I won't
+	mind. I'm not going to cry. I'm not interested in tracking who you
+	are. I won't sell your details.
+      </div>
+
+    </div>
+
+    <a id="arrowRight" class="arrow" href="http://chriscummins.cc">&gt;</a>
+
+    <script src="assets/js/impress.js"></script>
+    <script>impress().init();</script>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link href="http://fonts.googleapis.com/css?family=PT+Serif:400,700" rel="stylesheet" />
+    <link href="assets/css/styles.css" rel="stylesheet" />
+    <title>Chris Cummins | Privacy</title>
+
+    <link rel="shortcut icon" href="assets/img/favicon.ico" />
+  </head>
+
+  <body class="impress-not-supported">
+
+    <div id="impress">
+
+      <div id="MIT" class="step smallprint">
+	Copyright &copy; 2013 Chris Cummins.<br />
+
+	Permission is hereby granted, free of charge, to any person obtaining a
+	copy of this software and associated documentation files to deal in the
+	Software without restriction, including without limitation the rights to
+	use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+	copies of the Software, and to permit persons to whom the Software is
+	furnished to do so, subject to the following conditions: the above
+	copyright notice and this permission notice shall be included in all
+	copies or substantial portions of the Software.<br />
+      </div>
+
+    </div>
+
+    <!-- Link back to the main page -->
+    <a id="arrowRight" class="arrow" href="http://chriscummins.cc">&gt;</a>
+
+    <script src="assets/js/impress.js"></script>
+    <script>impress().init();</script>
+  </body>
+</html>
