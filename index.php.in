@@ -41,17 +41,6 @@ setcookie("visit", "1", time()+3600);
 	<a id="software" href="https://github.com/ChrisCummins" target="_blank">software</a>, and
 	<a id="pictures" href="https://www.facebook.com/media/set/?set=a.10150205319085002.427430.896185001&type=1&l=5b9f01d984" target="_blank">
 	  pictures</a>.
-
-	<!-- Tooltips -->
-	<div id="tooltip-soundcloud" class="tooltip">
-	  <a href="http://www.linkedin.com/profile/view?id=195091553" target="_blank">
-	    <img src="assets/img/screenshot-soundcloud.png" style="border-radius: 10px;"></a></div>
-	<div id="tooltip-software" class="tooltip">
-	  <a href="http://www.linkedin.com/profile/view?id=195091553" target="_blank">
-	    <img src="assets/img/screenshot-github.png" style="border-radius: 10px;"></a></div>
-	<div id="tooltip-pictures" class="tooltip">
-	  <a href="http://www.linkedin.com/profile/view?id=195091553" target="_blank">
-	    <img src="assets/img/screenshot-pictures.png" style="border-radius: 10px;"></a></div>
       </div>
 
       <div id="blog" class="step" data-x="0" data-y="-1000" data-scale="0.7">

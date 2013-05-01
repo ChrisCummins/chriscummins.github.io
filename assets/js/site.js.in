@@ -45,10 +45,6 @@ $(function() {
 
 $(document).ready(function() {
     /* Connect the tooltips */
-    $("#music").tooltip("#tooltip-soundcloud");
-    $("#software").tooltip("#tooltip-software");
-    $("#pictures").tooltip("#tooltip-pictures");
-
     $("#linkedin").tooltip("#tooltip-linkedin", "Linked In");
     $("#facebook").tooltip("#tooltip-facebook", "Facebook");
     $("#youtube").tooltip("#tooltip-youtube", "YouTube");
