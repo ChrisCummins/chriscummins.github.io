@@ -53,6 +53,7 @@ extra_site +=					\
 	assets/img/youtube.png			\
 	uni/dissertation.pdf			\
 	uni/sustainability.pdf			\
+	uni/voluntary-cooperation.pdf		\
 	$(NULL)
 
 # site content
