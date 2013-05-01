@@ -28,11 +28,19 @@ $(function() {
 
             /* Bind an event handler to 'hover' (mouseover/mouseout): */
             $this.hover(function () {
-                clearTimeout($this.data("tooltip.timeout"));
-                $tooltipEl.fadeIn('slow');
-		var string = "You can find me on " + name + ".";
-		if (string != "You can find me on undefined.")
-		    $("#findme").text(string);
+
+		/* Don't do anything if on overview step: */
+		if (!$("body").hasClass("impress-on-overview")) {
+
+		    /* Show tooltip: */
+		    clearTimeout($this.data("tooltip.timeout"));
+                    $tooltipEl.fadeIn('slow');
+
+		    /* Set step text: */
+		    var string = "You can find me on " + name + ".";
+		    if (string != "You can find me on undefined.")
+			$("#findme").text(string);
+		}
             }, hide);
 
             /* If the user is hovering over the tooltip div, cancel the timeout: */
@@ -44,7 +52,7 @@ $(function() {
 })(jQuery);
 
 $(document).ready(function() {
-    /* Connect the tooltips */
+    /* Connect the tooltips: */
     $("#linkedin").tooltip("#tooltip-linkedin", "Linked In");
     $("#facebook").tooltip("#tooltip-facebook", "Facebook");
     $("#youtube").tooltip("#tooltip-youtube", "YouTube");
