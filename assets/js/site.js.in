@@ -51,13 +51,17 @@ $(function() {
     };
 })(jQuery);
 
+/*
+ * Document ready functions
+ */
 $(document).ready(function() {
+    /* Bootstrap impress first */
+    imp.init();
+
     /* Connect the tooltips: */
     $("#linkedin").tooltip("#tooltip-linkedin", "Linked In");
     $("#facebook").tooltip("#tooltip-facebook", "Facebook");
     $("#youtube").tooltip("#tooltip-youtube", "YouTube");
     $("#github").tooltip("#tooltip-github", "GitHub");
 
-    /* Bootstrap impress */
-    impress().init();
 });
