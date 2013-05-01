@@ -171,6 +171,10 @@ a:focus {
     background-position: top right;
 }
 
+.impress-on-hello #arrowLeft {
+    display:            none;
+}
+
 /* Don't have arrows on overview */
 .impress-on-overview .arrow {
     display:            none;
