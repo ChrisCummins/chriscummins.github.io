@@ -243,6 +243,11 @@ a:focus {
     cursor:             pointer;
 }
 
+/* Disable link hover effects on overview */
+.impress-on-overview a {
+    opacity:            1;
+}
+
 /*
  *		Fallback static HTML styles
  *
