@@ -247,9 +247,15 @@ a:focus {
     height:             1px;
 }
 
+/* Translucent steps on overview */
 .impress-on-overview .step {
-    opacity:            1;
+    opacity:            0.3;
     cursor:             pointer;
+}
+
+/* Highlight steps on mousover */
+.impress-on-overview .step:hover {
+    opacity:            1;
 }
 
 /* Disable link hover effects on overview */
