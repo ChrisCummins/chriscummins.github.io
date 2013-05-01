@@ -268,3 +268,10 @@ a:focus {
 .impress-not-supported .step {
     opacity:            1;
 }
+
+/*
+ * Special smallprint for block-text
+ */
+.smallprint {
+    font-size:          28px;
+}
