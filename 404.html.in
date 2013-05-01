@@ -18,7 +18,7 @@
 
       <div id="error" class="step">
 	<center>That page does not exist.<br /><br />
-	<center style="font-size: 20px;">(but <a href="http://chriscummins.cc">this one</a> does)</center>
+	<center class="smallprint">(but <a href="http://chriscummins.cc">this one</a> does)</center>
       </div>
 
     </div>
