@@ -363,6 +363,7 @@ form #send {
     -moz-border-radius: 15px;
     border-radius:      15px;
     border:             1p solid #999;
+    cursor:             pointer;
 
     -webkit-transition: 0.5s;
     -moz-transition:    0.5s;
