@@ -84,7 +84,7 @@ setcookie("visit", "1", time()+3600);
     <a id="arrowRight" class="arrow">&gt;</a>
 
     <!-- The feedback overlay -->
-    <form class="overlay" action="" method="post">
+    <form class="overlay" action="" method="post" onsubmit="return validateForm()">
       Send me a message
       <textarea id="message" name="comments" rows="14"></textarea>
       Email
