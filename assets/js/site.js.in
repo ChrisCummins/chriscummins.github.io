@@ -1,102 +1,127 @@
-var imp = impress();
+/*
+ *		Site level client-side scripting
+ *
+ * This contains JavaScript functionality and interactivity for the main site.
+ */
+
+/* A global reference to the impress API */
+var api = impress();
+
+/* We keep track of the currently visible step here */
 var current_step = 'hello';
 
-/* Arrows */
-$(function() {
-    $('#arrowLeft').click(function(e) {
-	imp.prev();
-	e.preventDefault();
-    });
 
-    $('#arrowRight').click(function(e) {
-	imp.next();
-	e.preventDefault();
-    });
+/*
+ * Navigation arrows behaviour.
+ */
+$(function() {
+  $('#arrowLeft').click(function(e) {
+    api.prev();
+    e.preventDefault();
+  });
+
+  $('#arrowRight').click(function(e) {
+    api.next();
+    e.preventDefault();
+  });
 });
 
-/* Tooltips */
+/*
+ * Image tooltip reponsivitiy
+ */
 (function($) {
-    $.fn.tooltip = function(tooltipEl, name) {
-        var $tooltipEl = $(tooltipEl);
-	var $name = $(name);
-        return this.each(function() {
-            var $this = $(this);
-            var hide = function () {
-                var timeout = setTimeout(function () {
-                    $tooltipEl.fadeOut('slow');
-                }, 600);
+  $.fn.tooltip = function(tooltipEl, name) {
+    var $tooltipEl = $(tooltipEl);
+    var $name = $(name);
+    return this.each(function() {
+      var $this = $(this);
+      var hide = function () {
+        var timeout = setTimeout(function () {
+          $tooltipEl.fadeOut('slow');
+        }, 600);
 
-                $this.data("tooltip.timeout", timeout);
-            };
+        $this.data('tooltip.timeout', timeout);
+      };
 
-            /* Bind an event handler to 'hover' (mouseover/mouseout): */
-            $this.hover(function () {
+      /* Bind an event handler to 'hover' (mouseover/mouseout): */
+      $this.hover(function () {
 
-		/* Don't do anything if on overview step: */
-		if (!$("body").hasClass("impress-on-overview")) {
+	/* Don't do anything if on overview step: */
+	if (!$('body').hasClass('impress-on-overview')) {
 
-		    /* Show tooltip: */
-		    clearTimeout($this.data("tooltip.timeout"));
-                    $tooltipEl.fadeIn('slow');
+	  /* Show tooltip: */
+	  clearTimeout($this.data('tooltip.timeout'));
+          $tooltipEl.fadeIn('slow');
 
-		    /* Set step text: */
-		    var string = "You can find me on " + name + ".";
-		    if (string != "You can find me on undefined.")
-			$("#findme").text(string);
-		}
-            }, hide);
+	  /* Set step text: */
+	  var string = 'You can find me on ' + name + '.';
+	  if (string != 'You can find me on undefined.')
+	    $('#findme').text(string);
+	}
+      }, hide);
 
-            /* If the user is hovering over the tooltip div, cancel the timeout: */
-            $tooltipEl.hover(function () {
-                clearTimeout($this.data("tooltip.timeout"));
-            }, hide);
-        });
-    };
+      /* If the user is hovering over the tooltip div, cancel the timeout: */
+      $tooltipEl.hover(function () {
+        clearTimeout($this.data('tooltip.timeout'));
+      }, hide);
+    });
+  };
 })(jQuery);
 
 /*
- * Document ready functions
+ * Document ready functions. The page `main method'.
  */
 $(document).ready(function() {
-    /* Bootstrap impress first */
-    imp.init();
+  /* Bootstrap impress first */
+  api.init();
 
-    /* Connect the tooltips: */
-    $("#linkedin").tooltip("#tooltip-linkedin", "Linked In");
-    $("#facebook").tooltip("#tooltip-facebook", "Facebook");
-    $("#youtube").tooltip("#tooltip-youtube", "YouTube");
-    $("#github").tooltip("#tooltip-github", "GitHub");
+  /* Connect the tooltips to their parent elements */
+  $('#linkedin').tooltip('#tooltip-linkedin', 'Linked In');
+  $('#facebook').tooltip('#tooltip-facebook', 'Facebook');
+  $('#youtube').tooltip('#tooltip-youtube', 'YouTube');
+  $('#github').tooltip('#tooltip-github', 'GitHub');
 });
 
+/*
+ * impress.js step callbacks. These handle step-specific event.
+ */
 $(document).on('impress:stepenter', function(e) {
-    current_step = $(e.target).attr('id');
 
-    if (current_step == 'overview'){
-	$(".overlay").fadeIn('slow');
-    }
+  /* Set the global current step */
+  current_step = $(e.target).attr('id');
+
+  /* Show the overlay on overview step */
+  if (current_step == 'overview'){
+    $('.overlay').fadeIn('slow');
+  }
 });
 
 $(document).on('impress:stepleave', function(e){
-    $(".overlay").fadeOut('slow');
+
+  /* Hide the overlay */
+  $('.overlay').fadeOut('slow');
 });
 
 /*
  * Global keybindings.
  */
 document.addEventListener('keyup', function (event) {
-    var key = event.keyCode;
+  var key = event.keyCode;
 
-    if (key == 27) {
-	switch (key) {
+  /* Override the default key behaviour here */
+  if (key == 27) {
+    switch (key) {
 
-	case 27: /* escape */
-	    if (current_step == 'overview')
-		imp.impress_goto('hello');
-	    else
-		imp.impress_goto('overview');
-	    break;
-	}
-
-	event.preventDefault();
+    case 27: /* escape */
+      if (current_step == 'overview')
+	api.impress_goto('hello');
+      else
+	api.impress_goto('overview');
+      break;
     }
+
+    event.preventDefault();
+  }
 }, false);
+
+    }
