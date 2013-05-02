@@ -20,7 +20,7 @@ setcookie("visit", "1", time()+3600);
 
     <div id="impress">
 
-      <div id="hello" class="step" data-x="0" data-y="500">
+      <div id="hello" class="step" data-y="500">
 	<center>
 	  <img src="assets/img/my-face.png"
 	       style="border-radius: 15px; padding: 5px; background-color: #fff;"
@@ -43,12 +43,12 @@ setcookie("visit", "1", time()+3600);
 	  pictures</a>.
       </div>
 
-      <div id="writings" class="step" data-x="0" data-y="-1000" data-scale="0.7">
+      <div id="writings" class="step" data-y="-1300" data-scale="0.7">
 	Occasionally I <a href="blog/" target="_blank">write</a>,
 	when the mood takes me.
       </div>
 
-      <div id="contactme" class="step" data-x="-1000" data-y="-350" data-rotate="270">
+      <div id="contactme" class="step" data-x="-900" data-y="-350" data-rotate="270">
 	  <center><div id="findme">You can find me elsewhere</div>
 
 	    <a id="linkedin" href="http://www.linkedin.com/profile/view?id=195091553" target="_blank">
