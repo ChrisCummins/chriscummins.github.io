@@ -290,3 +290,102 @@ a:focus {
 .smallprint {
     font-size:          28px;
 }
+
+/*
+ *
+ */
+form {
+    display:            none;
+
+    font-family:        'Noto', sans-serif;
+    font-size:          20px;
+    color:              #333;
+
+    /* center and bring to front */
+    position:           fixed;
+    top:                50%;
+    left:               50%;
+    z-index:            10;
+
+    width:              400px;
+    height:             390px;
+    margin-left:        -200px;
+    margin-top:         -210px;
+
+    padding:            10px;
+    border-radius:      10px;
+    border: 1px solid #999;
+    border: inset 1px solid #333;
+    -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+
+    background: -webkit-gradient(linear, 50% 50%, 0, 50% 50%, 500, from(rgb(240, 240, 240)), to(rgb(190, 190, 190)));
+    background: -webkit-linear-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+    background:    -moz-linear-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+    background:     -ms-linear-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+    background:      -o-linear-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+    background:         linear-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+}
+
+input,
+textarea {
+    font-family:        inherit;
+    font-size:          16px;
+    width:              390px;
+    border:             1px solid #999;
+    border-radius:      5px;
+    -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow:    0px 0px 8px rgba(0, 0, 0, 0.3);
+    box-shadow:         0px 0px 8px rgba(0, 0, 0, 0.3);
+}
+
+form #email {
+    height: 30px;
+}
+
+form #message {
+    display:            block;
+    resize:             none;
+}
+
+/* The Send button */
+form #send {
+    width:              100px;
+    position:           absolute;
+    right:              15px;
+    bottom:             10px;
+    font-weight:        bold;
+    background:         #09C;
+    color:              #fff;
+    height:             30px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius:      15px;
+    border:             1p solid #999;
+
+    -webkit-transition: 0.5s;
+    -moz-transition:    0.5s;
+    -ms-transition:     0.5s;
+    -o-transition:      0.5s;
+    transition:         0.5s;
+}
+
+form #send:hover {
+    background:         #fff;
+    color:              #09C;
+}
+
+/* Tiny text */
+form .footer {
+    width:              60%;
+    font-size:          11px;
+    position:           absolute;
+    left:               10px;
+    bottom:             5px;
+    line-height:        150%;
+}
+
+form .footer a:hover {
+    color:              #09C;
+}

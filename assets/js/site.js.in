@@ -1,12 +1,14 @@
+var imp = impress();
+
 /* Arrows */
 $(function() {
     $('#arrowLeft').click(function(e) {
-	impress().prev();
+	imp.prev();
 	e.preventDefault();
     });
 
     $('#arrowRight').click(function(e) {
-	impress().next();
+	imp.next();
 	e.preventDefault();
     });
 });
@@ -63,5 +65,16 @@ $(document).ready(function() {
     $("#facebook").tooltip("#tooltip-facebook", "Facebook");
     $("#youtube").tooltip("#tooltip-youtube", "YouTube");
     $("#github").tooltip("#tooltip-github", "GitHub");
+});
 
+$(document).on('impress:stepenter', function(e) {
+    var current = $(e.target).attr('id');
+
+    if (current == 'overview'){
+	$(".overlay").fadeIn('slow');
+    }
+});
+
+$(document).on('impress:stepleave', function(e){
+    $(".overlay").fadeOut('slow');
 });
