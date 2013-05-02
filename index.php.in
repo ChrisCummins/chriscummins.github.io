@@ -87,7 +87,7 @@ setcookie("visit", "1", time()+3600);
     <form class="overlay" action="" method="post">
       Send me a message
       <textarea id="message" name="comments" rows="14"></textarea>
-      Email (optional)
+      Email
       <input id="email" name="email" type="text" autocomplete="off" /><br />
       <input id="send" type="submit" value="Send" />
 
