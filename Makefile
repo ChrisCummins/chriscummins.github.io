@@ -121,3 +121,19 @@ HTMLCOMPRESSOR_JAR = ~/src/htmlcompressor/target/htmlcompressor-1.5.3-SNAPSHOT.j
 	@echo '  PHP      $@'
 	$(QUIET)chmod 644 $<
 	$(QUIET)java -jar $(HTMLCOMPRESSOR_JAR) $< >$@
+
+.PHONY: check
+check:
+	@for f in $(js); do						\
+		echo -e "\t\t**** JS: $$f ****";			\
+		gjslint --strict --additional_extensions in "$$f";	\
+	done;								\
+	for f in $(html); do						\
+		echo -e "\n\t\t**** HTML: $$f ****";			\
+		tidy "$$f" 2>&1 >/dev/null | head -n-7;			\
+	done;								\
+	for f in $(css); do						\
+		echo -e "\n\t\t**** CSS: $$f ****";			\
+		csstidy "$$f" /dev/null | tail -n+6 | head -n-3 	\
+			| grep -v 'Optimised' | grep -v Invalid;	\
+	done
