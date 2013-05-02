@@ -20,7 +20,7 @@ setcookie("visit", "1", time()+3600);
 
     <div id="impress">
 
-      <div id="hello" class="step" data-x="0" data-y="650">
+      <div id="hello" class="step" data-x="0" data-y="500">
 	<center>
 	  <img src="assets/img/my-face.png"
 	       style="border-radius: 15px; padding: 5px; background-color: #fff;"
@@ -35,7 +35,7 @@ setcookie("visit", "1", time()+3600);
 	</center>
       </div>
 
-      <div id="thingsido" class="step" data-x="1400" data-y="-220" data-rotate="90" data-scale="2">
+      <div id="thingsido" class="step" data-x="1200" data-y="-100" data-rotate="90" data-scale="2">
 	I love making things. Especially
 	<a id="music" href="https://soundcloud.com/peakstudio" target="_blank">music</a>,
 	<a id="software" href="https://github.com/ChrisCummins" target="_blank">software</a>, and
@@ -43,12 +43,12 @@ setcookie("visit", "1", time()+3600);
 	  pictures</a>.
       </div>
 
-      <div id="writings" class="step" data-y="-1300" data-scale="0.7">
+      <div id="writings" class="step" data-x="0" data-y="-1000" data-scale="0.7">
 	Occasionally I <a href="blog/" target="_blank">write</a>,
 	when the mood takes me.
       </div>
 
-      <div id="contactme" class="step" data-x="-1150" data-y="-350" data-rotate="270">
+      <div id="contactme" class="step" data-x="-1000" data-y="-350" data-rotate="270">
 	  <center><div id="findme">You can find me elsewhere</div>
 
 	    <a id="linkedin" href="http://www.linkedin.com/profile/view?id=195091553" target="_blank">
@@ -77,7 +77,7 @@ setcookie("visit", "1", time()+3600);
 	  </center>
       </div>
 
-      <div id="overview" class="step" data-x="100" data-y="-300" data-scale="3"></div>
+      <div id="overview" class="step" data-x="200" data-y="-300" data-scale="3" data-rotate="25"></div>
     </div>
 
     <a id="arrowLeft" class="arrow">&lt;</a>
