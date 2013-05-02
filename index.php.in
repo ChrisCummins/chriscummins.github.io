@@ -84,12 +84,14 @@ setcookie("visit", "1", time()+3600);
     <a id="arrowRight" class="arrow">&gt;</a>
 
     <!-- The feedback overlay -->
-    <form class="overlay" action="" method="post" onsubmit="return validateForm()">
-      Send me a message
-      <textarea id="message" name="comments" rows="14"></textarea>
-      Email
-      <input id="email" name="email" type="text" autocomplete="off" /><br />
-      <input id="send" type="submit" value="Send" />
+    <div class="overlay">
+      <form action="" method="post" onsubmit="return validateForm()">
+      	Send me a message
+      	<textarea id="message" name="message" rows="14"></textarea>
+      	Email
+      	<input id="email" name="email" type="text" autocomplete="off" /><br />
+      	<input id="send" type="submit" value="Send" />
+      </form>
 
       <p class="footer">
 	Copyright &copy; 2013 Chris Cummins<br />
@@ -97,7 +99,7 @@ setcookie("visit", "1", time()+3600);
 	<a href="license.html">License</a> |
 	<a href="https://github.com/ChrisCummins/chriscummins.cc" target="_blank">Source code</a>
       </p>
-    </form>
+    </div>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="assets/js/impress.js"></script>

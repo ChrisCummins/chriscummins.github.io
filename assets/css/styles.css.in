@@ -294,7 +294,7 @@ a:focus {
 /*
  *
  */
-form {
+.overlay {
     display:            none;
 
     font-family:        'Noto', sans-serif;
@@ -378,7 +378,7 @@ form #send:hover {
 }
 
 /* Tiny text */
-form .footer {
+.overlay .footer {
     width:              60%;
     font-size:          11px;
     position:           absolute;
@@ -387,6 +387,6 @@ form .footer {
     line-height:        150%;
 }
 
-form .footer a:hover {
+.overlay .footer a:hover {
     color:              #09C;
 }
