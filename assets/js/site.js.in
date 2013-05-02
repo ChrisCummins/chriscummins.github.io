@@ -79,3 +79,24 @@ $(document).on('impress:stepenter', function(e) {
 $(document).on('impress:stepleave', function(e){
     $(".overlay").fadeOut('slow');
 });
+
+/*
+ * Global keybindings.
+ */
+document.addEventListener('keyup', function (event) {
+    var key = event.keyCode;
+
+    if (key == 27) {
+	switch (key) {
+
+	case 27: /* escape */
+	    if (current_step == 'overview')
+		imp.impress_goto('hello');
+	    else
+		imp.impress_goto('overview');
+	    break;
+	}
+
+	event.preventDefault();
+    }
+}, false);
