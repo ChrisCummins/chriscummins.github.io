@@ -390,3 +390,7 @@ form #send:hover {
 .overlay .footer a:hover {
     color:              #09C;
 }
+
+.overlay #messagesuccess {
+    display:            none;
+}

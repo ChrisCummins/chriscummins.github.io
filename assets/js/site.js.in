@@ -101,6 +101,12 @@ $(document).on('impress:stepenter', function(e) {
 
   /* Show the overlay on overview step */
   if (current_step == 'overview'){
+
+    /* (Re)set the overlay state to show the 'send message' form */
+    $('#messagesuccess').hide();
+    $('#messageform').show();
+
+    /* Show the overlay */
     $('.overlay').fadeIn('slow');
   }
 });
@@ -185,3 +191,50 @@ function validateForm() {
 
   return (m && e);
 }
+
+/*
+ * Form response behaviour. Show a thank you message, tidy up form state and
+ * reset view to start.
+ */
+function onSubmitReceipt() {
+  $('#messageform').fadeOut('fast');
+
+  var successTimeout = setInterval(function() {
+    $('#messagesuccess').fadeIn('fast');
+    clearInterval(successTimeout);
+  }, 500);
+
+  var helloTimeout = setInterval(function() {
+    /* Go to start */
+    api.impress_goto('hello');
+    $('#hellomessage').text('Hello, friend.');
+
+    /* Clear the form contents */
+    $('#message')[0].value = '';
+    $('#email')[0].value = '';
+
+    clearInterval(helloTimeout);
+  }, 2500);
+}
+
+/*
+ * Form submission behaviour.
+ */
+$(function() {
+  $('#send').click(function() {
+    if (validateForm()) {
+
+      $.ajax({
+        type: "POST",
+        url: "message.php",
+        data: 'email=' + $('#email')[0].value
+              + '&message=' + $('#message')[0].value,
+        success: function() {
+          onSubmitReceipt();
+        }
+      });
+    }
+
+    return false;
+  });
+});

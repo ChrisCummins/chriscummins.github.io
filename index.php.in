@@ -26,12 +26,14 @@ setcookie("visit", "1", time()+3600);
 	       style="border-radius: 15px; padding: 5px; background-color: #fff;"
 	       alt="My name is Chris.">
 	  <br/>
+	  <p id="hellomessage">
 <?php
    if (isset($_COOKIE["visit"]))
      echo "Hello again.";
    else
      echo "Hi.";
 ?>
+	  </p>
 	</center>
       </div>
 
@@ -85,13 +87,18 @@ setcookie("visit", "1", time()+3600);
 
     <!-- The feedback overlay -->
     <div class="overlay">
-      <form action="" method="post" onsubmit="return validateForm()">
+      <form id="messageform" name="contactme" action="">
       	Send me a message
       	<textarea id="message" name="message" rows="14"></textarea>
       	Email
       	<input id="email" name="email" type="text" autocomplete="off" /><br />
       	<input id="send" type="submit" value="Send" />
       </form>
+
+      <div id="messagesuccess">
+	<center><img src="assets/img/check.png">
+	  Thanks for getting in touch!</center>
+      </div>
 
       <p class="footer">
 	Copyright &copy; 2013 Chris Cummins<br />

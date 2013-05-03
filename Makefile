@@ -26,6 +26,7 @@ extra_site :=
 # Miscellaneous other assets should be added to $(extra_site).
 php +=						\
 	index.php				\
+	message.php				\
 	$(NULL)
 
 html +=						\
@@ -43,6 +44,7 @@ js += 						\
 
 extra_site +=					\
 	assets/img/arrows.png			\
+	assets/img/check.png			\
 	assets/img/facebook.png			\
 	assets/img/favicon.ico			\
 	assets/img/github.png			\
