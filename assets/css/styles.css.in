@@ -1,8 +1,8 @@
 /*
  *		Top level style sheet
  *
- * This defines global styles for use accross the website. It is based off of
- * the impress.js demo, available here:
+ * This defines global styles for use accross the website. It is based on the
+ * stylesheet for the impress.js demo, available here:
  *
  * 	https://github.com/bartaz/impress.js/
  */
