@@ -31,7 +31,6 @@ php +=						\
 
 html +=						\
 	404.html				\
-	license.html				\
 	privacy.html				\
 	$(NULL)
 

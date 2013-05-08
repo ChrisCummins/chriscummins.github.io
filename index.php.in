@@ -81,6 +81,21 @@ setcookie("visit", "1", time()+3600);
       </div>
 
       <div id="overview" class="step" data-x="200" data-y="-300" data-scale="3" data-rotate="25"></div>
+
+      <div id="license" class="step nonstep" data-x="-5000" data-y="-300" data-scale="1" data-rotate="175">
+	<p class="smallprint">
+	  Copyright &copy; 2013 Chris Cummins.<br />
+
+	  Permission is hereby granted, free of charge, to any person obtaining
+	  a copy of this software and associated documentation files to deal in
+	  the Software without restriction, including without limitation the
+	  rights to use, copy, modify, merge, publish, distribute, sublicense,
+	  and/or sell copies of the Software, and to permit persons to whom the
+	  Software is furnished to do so, subject to the following conditions:
+	  the above copyright notice and this permission notice shall be
+	  included in all copies or substantial portions of the Software.
+	</p>
+      </div>
     </div>
 
     <a id="arrowLeft" class="arrow">&lt;</a>
@@ -104,7 +119,7 @@ setcookie("visit", "1", time()+3600);
       <p class="footer">
 	Copyright &copy; 2013 Chris Cummins<br />
 	<a href="privacy.html">Privacy Policy</a> |
-	<a href="license.html">License</a> |
+	<a href="#/license">License</a> |
 	<a href="https://github.com/ChrisCummins/chriscummins.cc" target="_blank">Source code</a>
       </p>
     </div>
