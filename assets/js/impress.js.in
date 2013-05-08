@@ -492,6 +492,12 @@
 
       body.classList.add('impress-on-' + el.id);
 
+      if (el.className.match(/\bnonstep\b/)) {
+        body.classList.add('impress-on-nonstep');
+      } else {
+        body.classList.remove('impress-on-nonstep');
+      }
+
       /* compute target state of the canvas based on given step */
       var target = {
         rotate: {
