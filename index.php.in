@@ -113,8 +113,12 @@ setcookie("visit", "1", time()+3600);
       </form>
 
       <div id="messagesuccess">
-	<center><img src="assets/img/check.png">
-	  Thanks for getting in touch!</center>
+	<center>
+	  <br /><br /><br /><br /><br /><br />
+	  <img src="assets/img/check.png">
+	  <br /><br />
+	  Thanks for getting in touch!
+	</center>
       </div>
 
       <p class="footer">
