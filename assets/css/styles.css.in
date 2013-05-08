@@ -175,6 +175,10 @@ a:focus {
     display:            none;
 }
 
+.impress-on-nonstep #arrowLeft {
+    display:            none;
+}
+
 /* Don't have arrows on overview */
 .impress-on-overview .arrow {
     display:            none;
