@@ -102,20 +102,45 @@ $(document).ready(function() {
  * impress.js step callbacks. These handle step-specific event.
  */
 $(document).on('impress:stepenter', function(e) {
+  var titleSuffix;
 
   /* Set the global current step */
   current_step = $(e.target).attr('id');
 
-  /* Show the overlay on overview step */
-  if (current_step == 'overview'){
+  switch (current_step) {
+    case 'hello':
+      titleSuffix = 'Hi';
+      break;
+    case 'thingsido':
+      titleSuffix = 'Activities';
+      break;
+    case 'writings':
+      titleSuffix = 'Writings';
+      break;
+    case 'contactme':
+      titleSuffix = 'Contact';
+      break;
+    case 'overview':
+      /* (Re)set the overlay state to show the 'send message' form */
+      $('#messagesuccess').hide();
+      $('#messageform').show();
 
-    /* (Re)set the overlay state to show the 'send message' form */
-    $('#messagesuccess').hide();
-    $('#messageform').show();
-
-    /* Show the overlay */
-    $('.overlay').fadeIn('slow');
+      /* Show the overlay */
+      $('.overlay').fadeIn('slow');
+      break;
+    case 'privacy':
+      titleSuffix = 'Privacy';
+      break;
+    case 'source':
+      titleSuffix = 'Source'
+      break;
   }
+
+  if (titleSuffix)
+    window.document.title = 'Chris Cummins | ' + titleSuffix;
+  else
+    window.document.title = 'Chris Cummins'
+
 });
 
 $(document).on('impress:stepleave', function(e){
