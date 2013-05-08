@@ -31,7 +31,6 @@ php +=						\
 
 html +=						\
 	404.html				\
-	privacy.html				\
 	$(NULL)
 
 css +=	assets/css/styles.css
