@@ -9,11 +9,12 @@ setcookie("visit", "1", time()+3600);
     <meta charset="utf-8" />
     <meta name="viewport" content="width=1024" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
+
     <link href="http://fonts.googleapis.com/css?family=PT+Serif:400,700|Noto+Sans:400,700" rel="stylesheet" />
     <link href="assets/css/styles.css" rel="stylesheet" />
-    <title>Chris Cummins</title>
+    <link href="/assets/img/favicon.ico" rel="shortcut icon" />
 
-    <link rel="shortcut icon" href="assets/img/favicon.ico" />
+    <title>Chris Cummins</title>
   </head>
 
   <body class="impress-not-supported">
