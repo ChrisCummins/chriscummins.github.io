@@ -30,7 +30,14 @@ $(function() {
   });
 
   $('#arrowRight').click(function(e) {
-    api.next();
+
+    /* If on a nonstep, return to the overview. */
+    if (document.body.className.match(/\bimpress-on-nonstep\b/)) {
+      api.impress_goto('overview');
+    } else {
+      api.next();
+    }
+
     e.preventDefault();
   });
 });

@@ -1,8 +1,8 @@
 /*
  *		Top level style sheet
  *
- * This defines global styles for use accross the website. It is based off of
- * the impress.js demo, available here:
+ * This defines global styles for use accross the website. It is based on the
+ * stylesheet for the impress.js demo, available here:
  *
  * 	https://github.com/bartaz/impress.js/
  */
@@ -172,6 +172,10 @@ a:focus {
 }
 
 .impress-on-hello #arrowLeft {
+    display:            none;
+}
+
+.impress-on-nonstep #arrowLeft {
     display:            none;
 }
 
@@ -379,11 +383,11 @@ form #send:hover {
 
 /* Tiny text */
 .overlay .footer {
-    width:              60%;
+    width:              280px;
     font-size:          11px;
     position:           absolute;
     left:               10px;
-    bottom:             5px;
+    bottom:             17px;
     line-height:        150%;
 }
 
