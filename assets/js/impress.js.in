@@ -184,6 +184,15 @@
     return scale;
   };
 
+  /* The JavaScript `%' modulus operator does not do what we want, so let's add
+   * a version which does. Taken from:
+   *
+   *     http://javascript.about.com/od/problemsolving/a/modulobug.htm
+   */
+  Number.prototype.mod = function(n) {
+    return ((this % n) + n) % n;
+  };
+
   /* CHECK SUPPORT ************************************************************/
   var body = document.body;
 
