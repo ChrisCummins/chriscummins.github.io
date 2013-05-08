@@ -1,26 +1,27 @@
-/**
- * impress.js
+/*
+ *		impress.js
  *
- * impress.js is a presentation tool based on the power of CSS3 transforms and transitions
- * in modern browsers and inspired by the idea behind prezi.com.
+ * This file contains my modified version of impress.js, a presentation tool
+ * based on the power of CSS3 transforms and transitions in modern browsers and
+ * inspired by the idea behind prezi.com.
  *
+ * impress.js credits:
  *
- * Copyright 2011-2012 Bartek Szopka (@bartaz)
+ * 	Copyright 2011-2012 Bartek Szopka (@bartaz)
  *
- * Released under the MIT and GPL Licenses.
+ * 	Released under the MIT and GPL Licenses.
  *
- * ------------------------------------------------
- *  author:  Bartek Szopka
- *  version: 0.5.3
- *  url:     http://bartaz.github.com/impress.js/
- *  source:  http://github.com/bartaz/impress.js/
+ *	 ------------------------------------------------
+ *	  author:  Bartek Szopka
+ *	  version: 0.5.3
+ *	  url:     http://bartaz.github.com/impress.js/
+ *	  source:  http://github.com/bartaz/impress.js/
  */
 
-/*jshint bitwise:true, curly:true, eqeqeq:true, forin:true, latedef:true, newcap:true,
-         noarg:true, noempty:true, undef:true, strict:true, browser:true */
+/* jshint bitwise:true, curly:true, eqeqeq:true, forin:true, latedef:true,
+ * newcap:true, noarg:true, noempty:true, undef:true, strict:true,
+ * browser:true */
 
-// You are one of those who like to know how thing work inside?
-// Let me show you the cogs that make impress.js run...
 (function ( document, window ) {
     'use strict';
 
