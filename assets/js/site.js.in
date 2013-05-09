@@ -32,28 +32,6 @@
   var formColorBad = '#f2dede';
 
   /*
-   * Navigation arrows behaviour.
-   */
-  $(function() {
-    $('#arrowLeft').click(function(e) {
-      api.prev();
-      e.preventDefault();
-    });
-
-    $('#arrowRight').click(function(e) {
-
-      /* If on a nonstep, return to the overview. */
-      if (body.className.match(/\bimpress-on-nonstep\b/)) {
-        api.impress_goto('overview');
-      } else {
-        api.next();
-      }
-
-      e.preventDefault();
-    });
-  });
-
-  /*
    * Image tooltip reponsivitiy
    */
   (function($) {
@@ -109,6 +87,25 @@
     $('#facebook').tooltip('#tooltip-facebook', 'Facebook');
     $('#youtube').tooltip('#tooltip-youtube', 'YouTube');
     $('#github').tooltip('#tooltip-github', 'GitHub');
+
+    /* ARROW BUTTON BEHAVIOUR *************************************************/
+
+    /* Clicking the left arrow always takes you back to the previous step */
+    byId('arrowLeft').onclick = function() {
+      api.prev();
+    };
+
+    /* Clicking the right arrow takes you to the next step, unless on a nonstep,
+     * in which case it returns to the overview step.
+     */
+    byId('arrowRight').onclick = function() {
+      /* If on a nonstep, return to the overview. */
+      if (body.className.match(/\bimpress-on-nonstep\b/)) {
+        api.impress_goto('overview');
+      } else {
+        api.next();
+      }
+    };
   });
 
   /*
