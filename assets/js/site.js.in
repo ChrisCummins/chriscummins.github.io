@@ -15,6 +15,9 @@
   /* A global reference to the impress API */
   var api = impress();
 
+  /* A global reference to the document body */
+  var body = document.body;
+
   /* We keep track of the currently visible step here */
   var currentStep = 'hello';
 
@@ -40,7 +43,7 @@
     $('#arrowRight').click(function(e) {
 
       /* If on a nonstep, return to the overview. */
-      if (document.body.className.match(/\bimpress-on-nonstep\b/)) {
+      if (body.className.match(/\bimpress-on-nonstep\b/)) {
         api.impress_goto('overview');
       } else {
         api.next();
