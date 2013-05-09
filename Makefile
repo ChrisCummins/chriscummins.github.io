@@ -25,44 +25,57 @@ extra_site :=
 #
 # Miscellaneous other assets should be added to $(extra_site).
 php +=						\
+	assets/ga.php				\
 	index.php				\
 	message.php				\
-	assets/ga.php				\
+	webcam.php				\
 	$(NULL)
 
 html +=						\
 	404.html				\
 	gen-regions.html			\
+	genetics.html				\
 	$(NULL)
 
 css +=						\
 	assets/css/buttons.css			\
+	assets/css/genetics.css			\
 	assets/css/styles.css			\
 	$(NULL)
 
 js += 						\
+	assets/js/gen-regions.js		\
+	assets/js/genetics.js			\
 	assets/js/impress.js			\
 	assets/js/site.js			\
-	assets/js/gen-regions.js		\
 	assets/js/webcam.js			\
 	$(NULL)
 
 extra_site +=					\
 	assets/img/arrows.png			\
 	assets/img/check.png			\
+	assets/img/eiffel-tower.png		\
 	assets/img/facebook.png			\
 	assets/img/favicon.ico			\
 	assets/img/github.png			\
+	assets/img/kyle-broflovski.png		\
 	assets/img/linkedin.png			\
+	assets/img/marilyn-monroe.png		\
+	assets/img/mona-lisa.png		\
 	assets/img/my-face.png			\
+	assets/img/piet-mondrian.png		\
 	assets/img/screenshot-facebook.png	\
 	assets/img/screenshot-github.png	\
 	assets/img/screenshot-linkedin.png	\
 	assets/img/screenshot-youtube.png	\
+	assets/img/sunflowers.png		\
+	assets/img/tom-waits.png		\
 	assets/img/youtube.png			\
+	shutter.mp3				\
 	uni/dissertation.pdf			\
 	uni/sustainability.pdf			\
 	uni/voluntary-cooperation.pdf		\
+	webcam.swf				\
 	$(NULL)
 
 # site content
