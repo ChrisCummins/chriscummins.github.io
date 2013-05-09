@@ -199,18 +199,13 @@
 
     /* Override the default key behaviour here */
     if (key == 27) {
-      switch (key) {
-
-        case 27: /* escape */
-          if (currentStep == 'overview')
-            api.impress_goto('hello');
-          else
-            api.impress_goto('overview');
-          break;
-      }
-
-      event.preventDefault();
+      if (currentStep == 'overview')
+        api.impress_goto('hello');
+      else
+        api.impress_goto('overview');
     }
+
+    event.preventDefault();
   }, false);
 
   /* THE FORM *****************************************************************/
