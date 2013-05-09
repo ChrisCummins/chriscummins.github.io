@@ -104,23 +104,39 @@ HTMLCOMPRESSOR_JAR = ~/src/htmlcompressor/target/htmlcompressor-1.5.3-SNAPSHOT.j
 %.js: %.js.in
 	@echo '  JS       $@'
 	$(QUIET)chmod 644 $<
+ifndef DEBUG
 	$(QUIET)java -jar $(CLOSURE_COMPILER_JAR) --js=$< --js_output_file=$@
+else
+	$(QUIET)cp $< $@
+endif
 
 %.css: %.css.in
 	@echo '  CSS      $@'
 	$(QUIET)chmod 644 $<
+ifndef DEBUG
 	$(QUIET)java -jar $(YUICOMPRESSOR_JAR)	--charset utf-8 -v \
 						--type css $< >$@
+else
+	$(QUIET)cp $< $@
+endif
 
 %.html: %.html.in
 	@echo '  HTML     $@'
 	$(QUIET)chmod 644 $<
+ifndef DEBUG
 	$(QUIET)java -jar $(HTMLCOMPRESSOR_JAR) $< >$@
+else
+	$(QUIET)cp $< $@
+endif
 
 %.php: %.php.in
 	@echo '  PHP      $@'
 	$(QUIET)chmod 644 $<
+ifndef DEBUG
 	$(QUIET)java -jar $(HTMLCOMPRESSOR_JAR) $< >$@
+else
+	$(QUIET)cp $< $@
+endif
 
 .PHONY: check
 check:
