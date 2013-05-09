@@ -1,274 +1,296 @@
 /*
- *		Site level client-side scripting
+ *                  Site level client-side scripting
  *
  * This contains JavaScript functionality and interactivity for the main site.
  */
 
-/* A global reference to the impress API */
-var api = impress();
+(function(document, window) {
+  'use strict';
 
-/* We keep track of the currently visible step here */
-var current_step = 'hello';
+  /* HELPER FUNCTIONS *********************************************************/
 
-/* The Regular expression used to validate email addresses. Note that this only
- * checks that syntax, and doesn't validate against a list of known top level
- * domains.
- */
-var email_re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  /* `byId` returns element with given `id' */
+  var byId = function(id) {
+    return document.getElementById(id);
+  };
 
-var form_color_time = 500;
-var form_color_good = '#81f781';
-var form_color_bad = '#f2dede';
+  /* A global reference to the impress API */
+  var api = impress();
 
-/*
- * Navigation arrows behaviour.
- */
-$(function() {
-  $('#arrowLeft').click(function(e) {
-    api.prev();
-    e.preventDefault();
+  /* A global reference to the document body */
+  var body = document.body;
+
+  /* We keep track of the currently visible step here */
+  var currentStep = 'hello';
+
+  /* The Regular expression used to validate email addresses. Note that this
+   * only checks that syntax, and doesn't validate against a list of known top
+   * level domains.
+   */
+  var emailRe = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+  /* Form feedback settings */
+  var formColorTime = 500;
+  var formColorGood = '#81f781';
+  var formColorBad = '#f2dede';
+
+  /* TOOLTIPS *****************************************************************/
+
+  (function($) {
+
+    $.fn.tooltip = function(tooltipEl, name) {
+      var $tooltipEl = $(tooltipEl);
+      var $name = $(name);
+      return this.each(function() {
+        var $this = $(this);
+        var hide = function() {
+          var timeout = setTimeout(function() {
+            $tooltipEl.fadeOut('slow');
+          }, 600);
+
+          $this.data('tooltip.timeout', timeout);
+        };
+
+        /* Bind an event handler to 'hover' (mouseover/mouseout): */
+        $this.hover(function() {
+
+          /* Don't do anything if on overview step: */
+          if (!$('body').hasClass('impress-on-overview')) {
+
+            /* Show tooltip: */
+            clearTimeout($this.data('tooltip.timeout'));
+            $tooltipEl.fadeIn('slow');
+
+            /* Set step text: */
+            if ($('body').hasClass('impress-supported')) {
+              var string = 'You can find me on ' + name + '.';
+              if (string != 'You can find me on undefined.')
+                $('#findme').text(string);
+            }
+          }
+        }, hide);
+
+        /* If the user is hovering over the tooltip div, cancel the timeout: */
+        $tooltipEl.hover(function() {
+          clearTimeout($this.data('tooltip.timeout'));
+        }, hide);
+      });
+    };
+
+  })(jQuery);
+
+  /* DOCUMENT READY FUNCTIONS *************************************************/
+
+  $(document).ready(function() {
+
+    /* Bootstrap impress first */
+    api.init();
+
+    /* Connect the tooltips to their parent elements */
+    $('#linkedin').tooltip('#tooltip-linkedin', 'Linked In');
+    $('#facebook').tooltip('#tooltip-facebook', 'Facebook');
+    $('#youtube').tooltip('#tooltip-youtube', 'YouTube');
+    $('#github').tooltip('#tooltip-github', 'GitHub');
+
+    /* BUTTON PRESS BEHAVIOUR *************************************************/
+
+    /* Clicking the left arrow always takes you back to the previous step */
+    byId('arrowLeft').onclick = function() {
+      api.prev();
+    };
+
+    /* Clicking the right arrow takes you to the next step, unless on a nonstep,
+     * in which case it returns to the overview step.
+     */
+    byId('arrowRight').onclick = function() {
+      /* If on a nonstep, return to the overview. */
+      if (body.className.match(/\bimpress-on-nonstep\b/)) {
+        api.impress_goto('overview');
+      } else {
+        api.next();
+      }
+    };
+
+    /* Clicking on the form send button ensures that form contents are valid. If
+     * so, an AJAX request is made and the form is submitted.
+     */
+    $(function() {
+
+      $('#send').click(function() {
+        if (formIsValid()) {
+
+          $.ajax({
+            type: 'POST',
+            url: 'message.php',
+            data: 'email=' + $('#email')[0].value +
+              '&message=' + $('#message')[0].value,
+            success: function() {
+              onSubmitReceipt();
+            }
+          });
+        }
+
+        return false;
+      });
+    });
+
   });
 
-  $('#arrowRight').click(function(e) {
+  /* STEP BEHAVIOUR ***********************************************************/
 
-    /* If on a nonstep, return to the overview. */
-    if (document.body.className.match(/\bimpress-on-nonstep\b/)) {
-      api.impress_goto('overview');
-    } else {
-      api.next();
+  /* This is called every time that a new step is focused on, including the
+   * first step on page load.
+   */
+  $(document).on('impress:stepenter', function(e) {
+
+    var titleSuffix;
+
+    /* Set the global current step */
+    currentStep = $(e.target).attr('id');
+
+    switch (currentStep) {
+      case 'hello':
+        titleSuffix = 'Hi';
+        break;
+      case 'thingsido':
+        titleSuffix = 'Activities';
+        break;
+      case 'writings':
+        titleSuffix = 'Writings';
+        break;
+      case 'contactme':
+        titleSuffix = 'Contact';
+        break;
+      case 'overview':
+        /* (Re)set the overlay state to show the 'send message' form */
+        $('#messagesuccess').hide();
+        $('#messageform').show();
+
+        /* Show the overlay */
+        $('.overlay').fadeIn('slow');
+        break;
+      case 'privacy':
+        titleSuffix = 'Privacy';
+        break;
+      case 'source':
+        titleSuffix = 'Source';
+        break;
     }
 
-    e.preventDefault();
+    if (titleSuffix)
+      window.document.title = 'Chris Cummins | ' + titleSuffix;
+    else
+      window.document.title = 'Chris Cummins';
+
   });
-});
 
-/*
- * Image tooltip reponsivitiy
- */
-(function($) {
-  $.fn.tooltip = function(tooltipEl, name) {
-    var $tooltipEl = $(tooltipEl);
-    var $name = $(name);
-    return this.each(function() {
-      var $this = $(this);
-      var hide = function () {
-        var timeout = setTimeout(function () {
-          $tooltipEl.fadeOut('slow');
-        }, 600);
+  /* This is called immediately after every time that a step is left.
+   */
+  $(document).on('impress:stepleave', function(e) {
 
-        $this.data('tooltip.timeout', timeout);
-      };
+    /* Hide the overlay */
+    $('.overlay').fadeOut('slow');
+  });
 
-      /* Bind an event handler to 'hover' (mouseover/mouseout): */
-      $this.hover(function () {
+  /* KEY BINDINGS *************************************************************/
 
-        /* Don't do anything if on overview step: */
-        if (!$('body').hasClass('impress-on-overview')) {
+  document.addEventListener('keyup', function(event) {
+    var key = event.keyCode;
 
-          /* Show tooltip: */
-          clearTimeout($this.data('tooltip.timeout'));
-          $tooltipEl.fadeIn('slow');
-
-          /* Set step text: */
-          if ($('body').hasClass('impress-supported')) {
-            var string = 'You can find me on ' + name + '.';
-            if (string != 'You can find me on undefined.')
-              $('#findme').text(string);
-          }
-        }
-      }, hide);
-
-      /* If the user is hovering over the tooltip div, cancel the timeout: */
-      $tooltipEl.hover(function () {
-        clearTimeout($this.data('tooltip.timeout'));
-      }, hide);
-    });
-  };
-})(jQuery);
-
-/*
- * Document ready functions. The page `main method'.
- */
-$(document).ready(function() {
-  /* Bootstrap impress first */
-  api.init();
-
-  /* Connect the tooltips to their parent elements */
-  $('#linkedin').tooltip('#tooltip-linkedin', 'Linked In');
-  $('#facebook').tooltip('#tooltip-facebook', 'Facebook');
-  $('#youtube').tooltip('#tooltip-youtube', 'YouTube');
-  $('#github').tooltip('#tooltip-github', 'GitHub');
-});
-
-/*
- * impress.js step callbacks. These handle step-specific event.
- */
-$(document).on('impress:stepenter', function(e) {
-  var titleSuffix;
-
-  /* Set the global current step */
-  current_step = $(e.target).attr('id');
-
-  switch (current_step) {
-    case 'hello':
-      titleSuffix = 'Hi';
-      break;
-    case 'thingsido':
-      titleSuffix = 'Activities';
-      break;
-    case 'writings':
-      titleSuffix = 'Writings';
-      break;
-    case 'contactme':
-      titleSuffix = 'Contact';
-      break;
-    case 'overview':
-      /* (Re)set the overlay state to show the 'send message' form */
-      $('#messagesuccess').hide();
-      $('#messageform').show();
-
-      /* Show the overlay */
-      $('.overlay').fadeIn('slow');
-      break;
-    case 'privacy':
-      titleSuffix = 'Privacy';
-      break;
-    case 'source':
-      titleSuffix = 'Source'
-      break;
-  }
-
-  if (titleSuffix)
-    window.document.title = 'Chris Cummins | ' + titleSuffix;
-  else
-    window.document.title = 'Chris Cummins'
-
-});
-
-$(document).on('impress:stepleave', function(e){
-
-  /* Hide the overlay */
-  $('.overlay').fadeOut('slow');
-});
-
-/*
- * Global keybindings.
- */
-document.addEventListener('keyup', function (event) {
-  var key = event.keyCode;
-
-  /* Override the default key behaviour here */
-  if (key == 27) {
-    switch (key) {
-
-    case 27: /* escape */
-      if (current_step == 'overview')
+    /* Override the default key behaviour here */
+    if (key == 27) {
+      if (currentStep == 'overview')
         api.impress_goto('hello');
       else
         api.impress_goto('overview');
-      break;
     }
 
     event.preventDefault();
+  }, false);
+
+  /* THE FORM *****************************************************************/
+
+  /* Flash a background color */
+  function flashBgColor(element, color) {
+
+    element.style.background = color;
+
+    /* Queue the email form color reset */
+    var timeout = setInterval(function() {
+      element.style.background = '#FFF';
+      clearInterval(timeout);
+    }, formColorTime);
   }
-}, false);
 
-/* Flash a background color */
-function flashBgColor(element, color) {
+  /* Validate the contents of the email form automatically */
+  $('#email').focusout(function(e) {
+    if ($('#email')[0].value != '' && validateEmail())
+      flashBgColor($('#email')[0], formColorGood);
+  });
 
-  element.style.background = color;
+  /* Validate the email address */
+  function validateEmail() {
 
-  /* Queue the email form color reset */
-  var timeout = setInterval(function() {
-    element.style.background = '#FFF';
-    clearInterval(timeout);
-  }, form_color_time);
-}
+    var ebox = $('#email')[0];
 
-/* Validate the contents of the email form automatically */
-$('#email').focusout(function(e) {
-  if ($('#email')[0].value != '' && validateEmail())
-    flashBgColor($('#email')[0], form_color_good);
-});
-
-/* Validate the email address */
-function validateEmail() {
-  var ebox = $('#email')[0];
-
-  /* Validate the email and provide visual feedback */
-  if (email_re.test(ebox.value))
-    return true;
-  else {
-    flashBgColor(ebox, form_color_bad);
-    return false;
-  }
-}
-
-/* Validate the message form */
-function validateMessage() {
-  var mbox = $('#message')[0];
-
-  if (mbox.value.replace(/\s*/, '') != '')
-    return true;
-  else {
-    flashBgColor(mbox, form_color_bad);
-    return false;
-  }
-}
-
-/* Validate the form contents */
-function validateForm() {
-  /* We must be sure to run all validation checks regardless of the success of
-   * the others. This ensures that proper visual feedback is given */
-  var m = validateMessage();
-  var e = validateEmail();
-
-  return (m && e);
-}
-
-/*
- * Form response behaviour. Show a thank you message, tidy up form state and
- * reset view to start.
- */
-function onSubmitReceipt() {
-  $('#messageform').fadeOut('fast');
-
-  var successTimeout = setInterval(function() {
-    $('#messagesuccess').fadeIn('fast');
-    clearInterval(successTimeout);
-  }, 500);
-
-  var helloTimeout = setInterval(function() {
-    /* Go to start */
-    api.impress_goto('hello');
-    $('#hellomessage').text('Hello, friend.');
-
-    /* Clear the form contents */
-    $('#message')[0].value = '';
-    $('#email')[0].value = '';
-
-    clearInterval(helloTimeout);
-  }, 2500);
-}
-
-/*
- * Form submission behaviour.
- */
-$(function() {
-  $('#send').click(function() {
-    if (validateForm()) {
-
-      $.ajax({
-        type: "POST",
-        url: "message.php",
-        data: 'email=' + $('#email')[0].value
-              + '&message=' + $('#message')[0].value,
-        success: function() {
-          onSubmitReceipt();
-        }
-      });
+    /* Validate the email and provide visual feedback */
+    if (emailRe.test(ebox.value))
+      return true;
+    else {
+      flashBgColor(ebox, formColorBad);
+      return false;
     }
 
-    return false;
-  });
-});
+  }
+
+  /* Validate the message form */
+  function validateMessage() {
+
+    var mbox = $('#message')[0];
+
+    if (mbox.value.replace(/\s*/, '') != '')
+      return true;
+    else {
+      flashBgColor(mbox, formColorBad);
+      return false;
+    }
+
+  }
+
+  /* Validate the form contents */
+  function formIsValid() {
+
+    /* We must be sure to run all validation checks regardless of the success of
+     * the others. This ensures that proper visual feedback is given */
+    var m = validateMessage();
+    var e = validateEmail();
+
+    return (m && e);
+
+  }
+
+  /* Form response behaviour. Show a thank you message, tidy up form state and
+   * reset view to start.
+   */
+  function onSubmitReceipt() {
+    $('#messageform').fadeOut('fast');
+
+    var successTimeout = setInterval(function() {
+      $('#messagesuccess').fadeIn('fast');
+      clearInterval(successTimeout);
+    }, 500);
+
+    var helloTimeout = setInterval(function() {
+      /* Go to start */
+      api.impress_goto('hello');
+      $('#hellomessage').text('Hello, friend.');
+
+      /* Clear the form contents */
+      $('#message')[0].value = '';
+      $('#email')[0].value = '';
+
+      clearInterval(helloTimeout);
+    }, 2500);
+  }
+
+})(document, window);
