@@ -7,6 +7,11 @@
 (function(document, window) {
   'use strict';
 
+  /* `byId` returns element with given `id' */
+  var byId = function(id) {
+    return document.getElementById(id);
+  };
+
   /* A global reference to the impress API */
   var api = impress();
 
