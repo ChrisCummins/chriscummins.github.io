@@ -70,9 +70,11 @@ $(function() {
           $tooltipEl.fadeIn('slow');
 
           /* Set step text: */
-          var string = 'You can find me on ' + name + '.';
-          if (string != 'You can find me on undefined.')
-            $('#findme').text(string);
+          if ($('body').hasClass('impress-supported')) {
+            var string = 'You can find me on ' + name + '.';
+            if (string != 'You can find me on undefined.')
+              $('#findme').text(string);
+          }
         }
       }, hide);
 
