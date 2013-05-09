@@ -88,13 +88,11 @@ setcookie("visit", "1", time()+3600);
 	and is released under the terms of the MIT License.
       </div>
 
-      <div id="privacy" class="step nonstep" data-x="-5000" data-y="-3000" data-rotate="335">
-	<p class="smallprint">
-	  This site uses a cookie. If you don't like it, then
-	  <a href="http://www.wikihow.com/Disable-Cookies" target="_blank">disable it</a>.
-	  I won't mind. I'm not going to cry. I'm not interested in tracking who
-	  you are. I won't sell your details.
-	</p>
+      <div id="privacy" class="step nonstep smallprint" data-x="-5000" data-y="-3000" data-rotate="335">
+	This site uses a cookie. If you don't like it, then
+	<a href="http://www.wikihow.com/Disable-Cookies" target="_blank">disable it</a>.
+	I won't mind. I'm not going to cry. I'm not interested in tracking who
+	you are. I won't sell your details.
       </div>
 
     </div>
