@@ -82,7 +82,7 @@ setcookie("visit", "1", time()+3600);
 
       <div id="overview" class="step" data-x="200" data-y="-300" data-scale="3" data-rotate="25"></div>
 
-      <div id="source" class="step nonstep" data-x="-5000" data-y="-300" data-rotate="175">
+      <div id="source" class="step nonstep smallprint" data-x="-5000" data-y="-300" data-rotate="175">
 	The source code for this website is available
 	<a href="https://github.com/ChrisCummins/chriscummins.cc" target="_blank">here</a>,
 	and is released under the terms of the MIT License.
