@@ -291,7 +291,7 @@ a:focus {
 /*
  * Special smallprint for block-text
  */
-.smallprint {
+.impress-supported .smallprint {
     font-size:          28px;
 }
 
