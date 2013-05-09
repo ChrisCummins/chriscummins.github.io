@@ -92,7 +92,7 @@
     $('#youtube').tooltip('#tooltip-youtube', 'YouTube');
     $('#github').tooltip('#tooltip-github', 'GitHub');
 
-    /* ARROW BUTTON BEHAVIOUR *************************************************/
+    /* BUTTON PRESS BEHAVIOUR *************************************************/
 
     /* Clicking the left arrow always takes you back to the previous step */
     byId('arrowLeft').onclick = function() {
@@ -110,6 +110,29 @@
         api.next();
       }
     };
+
+    /* Clicking on the form send button ensures that form contents are valid. If
+     * so, an AJAX request is made and the form is submitted.
+     */
+    $(function() {
+
+      $('#send').click(function() {
+        if (formIsValid()) {
+
+          $.ajax({
+            type: 'POST',
+            url: 'message.php',
+            data: 'email=' + $('#email')[0].value +
+              '&message=' + $('#message')[0].value,
+            success: function() {
+              onSubmitReceipt();
+            }
+          });
+        }
+
+        return false;
+      });
+    });
 
   });
 
@@ -234,7 +257,7 @@
   }
 
   /* Validate the form contents */
-  function validateForm() {
+  function formIsValid() {
 
     /* We must be sure to run all validation checks regardless of the success of
      * the others. This ensures that proper visual feedback is given */
@@ -268,25 +291,5 @@
       clearInterval(helloTimeout);
     }, 2500);
   }
-
-  $(function() {
-
-    $('#send').click(function() {
-      if (validateForm()) {
-
-        $.ajax({
-          type: 'POST',
-          url: 'message.php',
-          data: 'email=' + $('#email')[0].value +
-              '&message=' + $('#message')[0].value,
-          success: function() {
-            onSubmitReceipt();
-          }
-        });
-      }
-
-      return false;
-    });
-  });
 
 })(document, window);
