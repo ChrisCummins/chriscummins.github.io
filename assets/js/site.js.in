@@ -1,5 +1,5 @@
 /*
- *		Site level client-side scripting
+ *                  Site level client-side scripting
  *
  * This contains JavaScript functionality and interactivity for the main site.
  */
@@ -51,8 +51,8 @@ $(function() {
     var $name = $(name);
     return this.each(function() {
       var $this = $(this);
-      var hide = function () {
-        var timeout = setTimeout(function () {
+      var hide = function() {
+        var timeout = setTimeout(function() {
           $tooltipEl.fadeOut('slow');
         }, 600);
 
@@ -60,7 +60,7 @@ $(function() {
       };
 
       /* Bind an event handler to 'hover' (mouseover/mouseout): */
-      $this.hover(function () {
+      $this.hover(function() {
 
         /* Don't do anything if on overview step: */
         if (!$('body').hasClass('impress-on-overview')) {
@@ -79,7 +79,7 @@ $(function() {
       }, hide);
 
       /* If the user is hovering over the tooltip div, cancel the timeout: */
-      $tooltipEl.hover(function () {
+      $tooltipEl.hover(function() {
         clearTimeout($this.data('tooltip.timeout'));
       }, hide);
     });
@@ -134,18 +134,18 @@ $(document).on('impress:stepenter', function(e) {
       titleSuffix = 'Privacy';
       break;
     case 'source':
-      titleSuffix = 'Source'
+      titleSuffix = 'Source';
       break;
   }
 
   if (titleSuffix)
     window.document.title = 'Chris Cummins | ' + titleSuffix;
   else
-    window.document.title = 'Chris Cummins'
+    window.document.title = 'Chris Cummins';
 
 });
 
-$(document).on('impress:stepleave', function(e){
+$(document).on('impress:stepleave', function(e) {
 
   /* Hide the overlay */
   $('.overlay').fadeOut('slow');
@@ -154,19 +154,19 @@ $(document).on('impress:stepleave', function(e){
 /*
  * Global keybindings.
  */
-document.addEventListener('keyup', function (event) {
+document.addEventListener('keyup', function(event) {
   var key = event.keyCode;
 
   /* Override the default key behaviour here */
   if (key == 27) {
     switch (key) {
 
-    case 27: /* escape */
-      if (current_step == 'overview')
-        api.impress_goto('hello');
-      else
-        api.impress_goto('overview');
-      break;
+      case 27: /* escape */
+        if (current_step == 'overview')
+          api.impress_goto('hello');
+        else
+          api.impress_goto('overview');
+        break;
     }
 
     event.preventDefault();
@@ -259,10 +259,10 @@ $(function() {
     if (validateForm()) {
 
       $.ajax({
-        type: "POST",
-        url: "message.php",
-        data: 'email=' + $('#email')[0].value
-              + '&message=' + $('#message')[0].value,
+        type: 'POST',
+        url: 'message.php',
+        data: 'email=' + $('#email')[0].value +
+            '&message=' + $('#message')[0].value,
         success: function() {
           onSubmitReceipt();
         }
