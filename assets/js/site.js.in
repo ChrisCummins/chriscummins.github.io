@@ -8,17 +8,17 @@
 var api = impress();
 
 /* We keep track of the currently visible step here */
-var current_step = 'hello';
+var currentStep = 'hello';
 
 /* The Regular expression used to validate email addresses. Note that this only
  * checks that syntax, and doesn't validate against a list of known top level
  * domains.
  */
-var email_re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+var emailRe = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-var form_color_time = 500;
-var form_color_good = '#81f781';
-var form_color_bad = '#f2dede';
+var formColorTime = 500;
+var formColorGood = '#81f781';
+var formColorBad = '#f2dede';
 
 /*
  * Navigation arrows behaviour.
@@ -107,9 +107,9 @@ $(document).on('impress:stepenter', function(e) {
   var titleSuffix;
 
   /* Set the global current step */
-  current_step = $(e.target).attr('id');
+  currentStep = $(e.target).attr('id');
 
-  switch (current_step) {
+  switch (currentStep) {
     case 'hello':
       titleSuffix = 'Hi';
       break;
@@ -162,7 +162,7 @@ document.addEventListener('keyup', function(event) {
     switch (key) {
 
       case 27: /* escape */
-        if (current_step == 'overview')
+        if (currentStep == 'overview')
           api.impress_goto('hello');
         else
           api.impress_goto('overview');
@@ -182,13 +182,13 @@ function flashBgColor(element, color) {
   var timeout = setInterval(function() {
     element.style.background = '#FFF';
     clearInterval(timeout);
-  }, form_color_time);
+  }, formColorTime);
 }
 
 /* Validate the contents of the email form automatically */
 $('#email').focusout(function(e) {
   if ($('#email')[0].value != '' && validateEmail())
-    flashBgColor($('#email')[0], form_color_good);
+    flashBgColor($('#email')[0], formColorGood);
 });
 
 /* Validate the email address */
@@ -196,10 +196,10 @@ function validateEmail() {
   var ebox = $('#email')[0];
 
   /* Validate the email and provide visual feedback */
-  if (email_re.test(ebox.value))
+  if (emailRe.test(ebox.value))
     return true;
   else {
-    flashBgColor(ebox, form_color_bad);
+    flashBgColor(ebox, formColorBad);
     return false;
   }
 }
@@ -211,7 +211,7 @@ function validateMessage() {
   if (mbox.value.replace(/\s*/, '') != '')
     return true;
   else {
-    flashBgColor(mbox, form_color_bad);
+    flashBgColor(mbox, formColorBad);
     return false;
   }
 }
