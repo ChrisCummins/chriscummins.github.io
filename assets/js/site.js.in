@@ -138,6 +138,9 @@
 
   /* STEP BEHAVIOUR ***********************************************************/
 
+  /* This is called every time that a new step is focused on, including the
+   * first step on page load.
+   */
   $(document).on('impress:stepenter', function(e) {
 
     var titleSuffix;
@@ -181,6 +184,8 @@
 
   });
 
+  /* This is called immediately after every time that a step is left.
+   */
   $(document).on('impress:stepleave', function(e) {
 
     /* Hide the overlay */
@@ -188,6 +193,7 @@
   });
 
   /* KEY BINDINGS *************************************************************/
+
   document.addEventListener('keyup', function(event) {
     var key = event.keyCode;
 
