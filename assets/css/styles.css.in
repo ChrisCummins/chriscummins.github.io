@@ -398,3 +398,14 @@ form #send:hover {
 .overlay #messagesuccess {
     display:            none;
 }
+
+/*
+ * If impress isn't supported, then nonsteps are considered to be small
+ * footprint blocks.
+ */
+.impress-not-supported .nonstep {
+    font-size:          14px;
+    padding:            0px;
+    width:              50%;
+    color:              #242424;
+}
