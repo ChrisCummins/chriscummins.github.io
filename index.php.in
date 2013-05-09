@@ -89,10 +89,11 @@ setcookie("visit", "1", time()+3600);
       </div>
 
       <div id="privacy" class="step nonstep smallprint" data-x="-5000" data-y="-3000" data-rotate="335">
-	This site uses a cookie. If you don't like it, then
-	<a href="http://www.wikihow.com/Disable-Cookies" target="_blank">disable it</a>.
-	I won't mind. I'm not going to cry. I'm not interested in tracking who
-	you are. I won't sell your details.
+	Privacy is dead, but honestly isn't. This site uses cookies, see
+	<a href="http://www.wikihow.com/Disable-Cookies" target="_blank">here</a>
+	for instructions on how to disable them. I won't sell or use your
+	personal details in any profiteering manner. I would call that a
+	promise, but you wouldn't believe me.
       </div>
 
     </div>
