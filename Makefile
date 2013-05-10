@@ -27,6 +27,7 @@ extra_site :=
 php +=						\
 	index.php				\
 	message.php				\
+	assets/ga.php				\
 	$(NULL)
 
 html +=						\

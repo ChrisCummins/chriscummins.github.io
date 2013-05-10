@@ -19,6 +19,8 @@ setcookie("visit", "1", time()+3600);
 
   <body class="impress-not-supported">
 
+    <?php include_once("assets/ga.php") ?>
+
     <div id="impress">
 
       <div id="hello" class="step" data-y="500">
