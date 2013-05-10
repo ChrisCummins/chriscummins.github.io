@@ -27,10 +27,12 @@ extra_site :=
 php +=						\
 	index.php				\
 	message.php				\
+	assets/ga.php				\
 	$(NULL)
 
 html +=						\
 	404.html				\
+	gen-regions.html			\
 	$(NULL)
 
 css +=	assets/css/styles.css
@@ -38,6 +40,7 @@ css +=	assets/css/styles.css
 js += 						\
 	assets/js/impress.js			\
 	assets/js/site.js			\
+	assets/js/gen-regions.js		\
 	$(NULL)
 
 extra_site +=					\
@@ -89,15 +92,6 @@ publish: private_publish
 clean:
 	$(QUIET)rm -fv $(clean_files)
 
-# See: https://developers.google.com/closure/compiler/
-CLOSURE_COMPILER_JAR = ~/src/closure-compiler/build/compiler.jar
-
-# See: http://yui.github.io/yuicompressor/
-YUICOMPRESSOR_JAR = ~/src/yuicompressor/build/yuicompressor-2.4.8pre.jar
-
-# See: https://code.google.com/p/htmlcompressor/
-HTMLCOMPRESSOR_JAR = ~/src/htmlcompressor/target/htmlcompressor-1.5.3-SNAPSHOT.jar
-
 #
 # Generate site content
 #
@@ -105,7 +99,7 @@ HTMLCOMPRESSOR_JAR = ~/src/htmlcompressor/target/htmlcompressor-1.5.3-SNAPSHOT.j
 	@echo '  JS       $@'
 	$(QUIET)chmod 644 $<
 ifndef DEBUG
-	$(QUIET)java -jar $(CLOSURE_COMPILER_JAR) --js=$< --js_output_file=$@
+	$(QUIET)java -jar libs/closure-compiler.jar --js=$< --js_output_file=$@
 else
 	$(QUIET)cp $< $@
 endif
@@ -114,8 +108,8 @@ endif
 	@echo '  CSS      $@'
 	$(QUIET)chmod 644 $<
 ifndef DEBUG
-	$(QUIET)java -jar $(YUICOMPRESSOR_JAR)	--charset utf-8 -v \
-						--type css $< >$@
+	$(QUIET)java -jar libs/yuicompressor.jar --charset utf-8 -v \
+						 --type css $< >$@
 else
 	$(QUIET)cp $< $@
 endif
@@ -124,7 +118,10 @@ endif
 	@echo '  HTML     $@'
 	$(QUIET)chmod 644 $<
 ifndef DEBUG
-	$(QUIET)java -jar $(HTMLCOMPRESSOR_JAR) $< >$@
+	$(QUIET)java -jar libs/htmlcompressor.jar 		\
+					--compress-js 		\
+					--compress-css 		\
+					$< >$@
 else
 	$(QUIET)cp $< $@
 endif
@@ -133,7 +130,7 @@ endif
 	@echo '  PHP      $@'
 	$(QUIET)chmod 644 $<
 ifndef DEBUG
-	$(QUIET)java -jar $(HTMLCOMPRESSOR_JAR) $< >$@
+	$(QUIET)java -jar libs/htmlcompressor.jar $< >$@
 else
 	$(QUIET)cp $< $@
 endif

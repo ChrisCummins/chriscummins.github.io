@@ -19,6 +19,8 @@ setcookie("visit", "1", time()+3600);
 
   <body class="impress-not-supported">
 
+    <?php include_once("assets/ga.php") ?>
+
     <div id="impress">
 
       <div id="hello" class="step" data-y="500">
@@ -28,12 +30,12 @@ setcookie("visit", "1", time()+3600);
 	       alt="My name is Chris.">
 	  <br/>
 	  <p id="hellomessage">
-<?php
-   if (isset($_COOKIE["visit"]))
-     echo "Hello again.";
-   else
-     echo "Hi.";
-?>
+	    <?php
+	      if (isset($_COOKIE["visit"]))
+	        echo "Hello again.";
+	      else
+	        echo "Hi.";
+	    ?>
 	  </p>
 	</center>
       </div>
