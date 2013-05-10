@@ -1,0 +1,207 @@
+<!--
+   Copyright © 2013 Intel Corporation
+
+   Permission is hereby granted, free of charge, to any person obtaining a
+   copy of this software and associated documentation files (the "Software"),
+   to deal in the Software without restriction, including without limitation
+   the rights to use, copy, modify, merge, publish, distribute, sublicense,
+   and/or sell copies of the Software, and to permit persons to whom the
+   Software is furnished to do so, subject to the following conditions:
+
+   The above copyright notice and this permission notice (including the next
+   paragraph) shall be included in all copies or substantial portions of the
+   Software.
+
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
+   THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+   FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+   IN THE SOFTWARE.
+
+   Authors:
+     Chris Cummins <christopher.e.cummins@intel.com>
+-->
+
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GEN Register visualisation tool">
+    <meta name="author" content="Chris Cummins">
+
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+    <link href="/assets/img/favicon.ico" rel="shortcut icon" />
+
+    <title>GEN Regions</title>
+  </head>
+
+  <style>
+    /* Execsize menu items */
+    #exec-size-ul > li {
+      text-align: center;
+    }
+
+    /* Sticky footer */
+  </style>
+
+  <body>
+
+    <div class="navbar">
+      <div class="navbar-inner">
+
+	<!-- Title -->
+        <a class="brand" href="">GEN Regions</a>
+
+	<!-- ExecSize button -->
+        <div class="btn-group">
+          <a id="exec-size-btn" class="btn dropdown-toggle"
+	     data-toggle="dropdown" href="#"
+	     style="width: 64px; margin-right: 10px;">ExecSiz
+	    <span class="caret"></span></a>
+
+          <ul id="exec-size-ul" class="dropdown-menu" role="menu"
+	      style="min-width: 100px;">
+            <li><center>ExecSize</center></li>
+            <li class="divider"></li>
+            <li><a>1</a></li>
+            <li><a>2</a></li>
+            <li><a>4</a></li>
+            <li id="default-exec-size-li"><a>8</a></li>
+            <li><a>16</a></li>
+            <li><a>32</a></li>
+          </ul>
+        </div>
+
+	<!-- The region input text box: -->
+        <input id="region-form" class="search-query" type="text"
+	       placeholder="Region"
+	       style="position: relative; top: 3px; margin-right: 10px;">
+
+	<!-- The `advanced' mode checkbox: -->
+        <label class="checkbox inline" style="position: relative; top: 2px;">
+          <input id="advanced" class="checkbox inline" type="checkbox" value=""
+                 style="position: relative; top: -2px; width: 15px;">
+	  --advanced</label>
+
+	<!-- The `Share' button: -->
+        <button id="share-btn" class="btn pull-right" onclick="shareBtnCb();">
+          <strong>Share</strong></button>
+
+      </div>
+    </div> <!-- /navbar -->
+
+
+    <!-- Alerts and normally hidden messages: -->
+    <div class="row" style="margin-left: 40px;"><div class="span11">
+	<!-- share -->
+        <div id="share" class="alert alert-success"><strong>URL Hash</strong>
+          <textarea id="share-hash" class="text"
+                    style="width: 400px; height: 20px; resize: none; margin-bottom: 0px;"
+                    readonly></textarea>
+          <button type="button" class="close">&times;</button></div>
+
+	<!-- error -->
+        <div id="alert-error" class="alert alert-error">
+          <button type="button" class="close">&times;</button>
+	  <div id="alert-error-placeholder"></div></div>
+
+	<!-- warning -->
+        <div id="alert" class="alert">
+	  <button type="button" class="close">&times;</button>
+	  <div id="alert-placeholder"></div></div>
+    </div></div> <!-- /row -->
+
+    <!-- The main body: -->
+    <div class="container"><div class="span11">
+
+      <!-- canvas -->
+	<div class="row"><center>
+	    <canvas id="canvas" width="930" height="412">
+              Unsupported browser!</canvas></center></div>
+
+	<!-- caption -->
+	<div class="row"><p id="canvas-caption"></p></div>
+
+	<!-- documentation -->
+        <div class="row">
+
+          <h2>Usage</h2>
+          <ol>
+            <li>Select an execution size from the dropdown box.</li>
+            <li>Enter a register region description into the text area.</li>
+            <li>Select '--advanced' to change SubRegNum from being in bytes to
+              the unit of data type.</li>
+          </ol>
+
+          <h3>Sharing</h3>
+
+          The page URL contains a description of the currently visible region
+          which can be shared, saved or bookmarked for later reference. For
+          example,
+	  <code>file:///path/to/gen-regions.html#execsize=8&amp;region=1.0<1>:F&amp;advanced=0</code>.
+          Since this is a path to a local file, you may want to use the Share
+          button to copy just the relevant part since other people's local paths
+          may not match (these URL hashes can be copied onto the end of the file
+          path or alternatively pasted directly into the region text box and
+          submitted like a normal region description).
+
+          <h3>Key Bindings</h3>
+          The following page-wide keybindings are defined for convenience:
+	  <br/><br/>
+
+          <table style="position: relative; left: 30px;">
+            <tr><td style="text-align: right; padding-right: 10px;">
+                <code><strong>[return]</strong></code></td>
+              <td>Submit region</td></tr>
+
+            <tr><td style="text-align: right; padding-right: 10px;">
+                <code><strong>[escape]</strong></code></td>
+              <td>Dismiss warnings</td></tr>
+
+            <tr><td style="text-align: right; padding-right: 10px;">
+                <code><strong>e</strong></code></td>
+              <td>Toggle through execution sizes</td></tr>
+
+            <tr><td style="text-align: right; padding-right: 10px;">
+                <code><strong>a</strong></code></td>
+              <td>Toggle --advanced</td></tr>
+
+            <tr><td style="text-align: right; padding-right: 10px;">
+                <code><strong>r</strong></code></td>
+              <td>Focus on region text box</td></tr>
+
+            <tr><td style="text-align: right; padding-right: 10px;">
+                <code><strong>c</strong></code></td>
+              <td>Clear region text box</td></tr>
+
+            <tr><td style="text-align: right; padding-right: 10px;">
+                <code><strong>s</strong></code></td>
+              <td>Share</td></tr>
+
+          </table>
+
+	  <br/><br/>
+        </div> <!-- /row -->
+      </div> <!-- /span11 -->
+    </div> <!-- /container -->
+
+  <!-- jQuery -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.1.0.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-hashchange/v1.3/jquery.ba-hashchange.min.js"></script>
+  <script src="http://cdn.jsdelivr.net/jquery.hotkeys/0.1.0/jquery.hotkeys.js"></script>
+
+  <!-- Bootstrap -->
+  <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+
+  <!-- GEN Regions -->
+  <script src="assets/js/gen-regions.js"></script>
+  <script>init();</script> <!-- Bootstrap our script. -->
+
+  </body>
+
+</html>

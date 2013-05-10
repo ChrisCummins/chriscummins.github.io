@@ -31,6 +31,7 @@ php +=						\
 
 html +=						\
 	404.html				\
+	gen-regions.html			\
 	$(NULL)
 
 css +=	assets/css/styles.css
@@ -38,6 +39,7 @@ css +=	assets/css/styles.css
 js += 						\
 	assets/js/impress.js			\
 	assets/js/site.js			\
+	assets/js/gen-regions.js		\
 	$(NULL)
 
 extra_site +=					\
