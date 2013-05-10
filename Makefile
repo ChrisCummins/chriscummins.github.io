@@ -108,7 +108,8 @@ endif
 	@echo '  CSS      $@'
 	$(QUIET)chmod 644 $<
 ifndef DEBUG
-	$(QUIET)java -jar libs/yuicompressor.jar $< >$@
+	$(QUIET)java -jar libs/yuicompressor.jar --charset utf-8 -v \
+						 --type css $< >$@
 else
 	$(QUIET)cp $< $@
 endif
