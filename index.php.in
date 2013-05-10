@@ -30,12 +30,12 @@ setcookie("visit", "1", time()+3600);
 	       alt="My name is Chris.">
 	  <br/>
 	  <p id="hellomessage">
-<?php
-   if (isset($_COOKIE["visit"]))
-     echo "Hello again.";
-   else
-     echo "Hi.";
-?>
+	    <?php
+	      if (isset($_COOKIE["visit"]))
+	        echo "Hello again.";
+	      else
+	        echo "Hi.";
+	    ?>
 	  </p>
 	</center>
       </div>
