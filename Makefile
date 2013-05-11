@@ -35,7 +35,10 @@ html +=						\
 	gen-regions.html			\
 	$(NULL)
 
-css +=	assets/css/styles.css
+css +=						\
+	assets/css/buttons.css			\
+	assets/css/styles.css			\
+	$(NULL)
 
 js += 						\
 	assets/js/impress.js			\
