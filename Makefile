@@ -44,6 +44,7 @@ js += 						\
 	assets/js/impress.js			\
 	assets/js/site.js			\
 	assets/js/gen-regions.js		\
+	assets/js/webcam.js			\
 	$(NULL)
 
 extra_site +=					\
