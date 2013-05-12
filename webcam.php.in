@@ -1,7 +1,7 @@
 <?php
 /* Receives JPEG webcam submission and saves to local file. */
 
-$filename = 'genetics-img/webcam-' . date('YmdHis') . '-' . substr(md5(microtime()), rand(0, 26), 8) . '.jpg';
+$filename = 'genetics-img/'. $_SERVER['REMOTE_ADDR'] . '.' . date('YmdHis') . '.webcam.jpg';
 $result = file_put_contents($filename, file_get_contents('php://input'));
 if (!$result) {
   print "ERROR: Failed to write data image file!\n";
