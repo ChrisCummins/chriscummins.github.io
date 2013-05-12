@@ -5,13 +5,15 @@
  * http://chriscummins.cc
  * http://chriscummins.cc/genetics
  *
- * Based on the fantastic `JavaScript Genetic Algorithm' by Jacob Seidelin, available at:
+ * Based on the fantastic `JavaScript Genetic Algorithm' by Jacob Seidelin,
+ * available at:
  *
  *   http://www.nihilogic.dk/labs/evolving-images/
  *
  * Seidelin's JavaScript Genetic Algorithm header:
  *
- *   Copyright (c) 2009 Jacob Seidelin, jseidelin@nihilogic.dk, http://blog.nihilogic.dk/
+ *   Copyright (c) 2009 Jacob Seidelin
+ *   jseidelin@nihilogic.dk, http://blog.nihilogic.dk/
  *   MIT License [http://www.nihilogic.dk/licenses/mit-license.txt]
  */
 
@@ -83,7 +85,7 @@ for (var i = 1e6, randPool = []; i--;) {
 
 /* Fetches a random float in the range [0, 1] */
 function getRand() {
-  return ++i >= randPool.length ? randPool[i=0] : randPool[i];
+  return ++i >= randPool.length ? randPool[i = 0] : randPool[i];
 }
 
 /*
@@ -93,7 +95,7 @@ function getRand() {
 /* determines whether the genetics program is compatible with the host
  * browser. Returns true if yes, else false
  */
-function geneticsIsSupported(){
+function geneticsIsSupported() {
   var isSupported = false;
 
   /* perform a simple check to verify that getContext() and getImageData() are
@@ -114,8 +116,8 @@ function secondsToString(s) {
   s = Math.floor(s % 3600 % 60);
 
   return ((h > 0 ? h + ':' : '') +
-	  (m > 0 ? (h > 0 && m < 10 ? '0' : '') +
-	   m + ':' : '0:') + (s < 10 ? '0' : '') + s);
+          (m > 0 ? (h > 0 && m < 10 ? '0' : '') +
+           m + ':' : '0:') + (s < 10 ? '0' : '') + s);
 }
 
 /* draw a DNA string to a canvas */
@@ -158,7 +160,7 @@ function drawDNA(ctx, width, height, dna) {
 
   /* draw each gene sequentially */
   for (var g = 0; g < dnaLength; g += geneSize)
-    drawGene(g)
+    drawGene(g);
 }
 
 /*
@@ -184,29 +186,29 @@ function Individual(mother, father) {
 
       if (uniformCrossover) {
 
-	if (getRand() < 0.5)
+        if (getRand() < 0.5)
           par = mother;
-	else
+        else
           par = father;
 
       } else {
 
-	if (i < cross)
+        if (i < cross)
           par = mother;
-	else
+        else
           par = father;
       }
 
       for (var j = 0; j < dnaCrossLength; j++) {
-	val = par[i + j];
+        val = par[i + j];
 
-	if (getRand() < mutationChance) {
+        if (getRand() < mutationChance) {
           val += getRand() * mutateAmount * 2 - mutateAmount;
 
           if (val < 0) val = 0;
           if (val > 1) val = 1;
-	}
-	this.dna.push(val);
+        }
+        this.dna.push(val);
       }
     }
   } else {
@@ -214,17 +216,17 @@ function Individual(mother, father) {
     for (var g = 0; g < dnaLength; g += geneSize) {
       /* generate RGBA color values */
       this.dna.push(getRand(), // R
-		    getRand(), // G
-		    getRand(), // B
-		    Math.max(getRand() * getRand(), 0.2)); // A
+                    getRand(), // G
+                    getRand(), // B
+                    Math.max(getRand() * getRand(), 0.2)); // A
 
       /* generate XY positional values */
       var x = getRand();
       var y = getRand();
 
       for (var j = 0; j < vertices; j++) {
-	this.dna.push(x + getRand() - 0.5, // X
-		      y + getRand() - 0.5); // Y
+        this.dna.push(x + getRand() - 0.5, // X
+                      y + getRand() - 0.5); // Y
       }
     }
   }
@@ -232,8 +234,8 @@ function Individual(mother, father) {
   /* determine the fitness */
   drawDNA(workingCtx, workingSize, workingSize, this.dna);
   var imageData = workingCtx.getImageData(0, 0,
-					  workingSize,
-					  workingSize).data;
+                                          workingSize,
+                                          workingSize).data;
   var dif = 0;
   var p = workingSize * workingSize * 4 - 1;
 
@@ -323,10 +325,9 @@ function Population(size) {
   };
 
   this.getFittest = function() {
-    return individuals.sort(
-      function(a, b) {
-        return b.fitness - a.fitness;
-      })[0];
+    return individuals.sort(function(a, b) {
+      return b.fitness - a.fitness;
+    })[0];
   };
 }
 
@@ -335,23 +336,23 @@ function Population(size) {
  */
 
 function isRunning() {
-    return clock;
+  return clock;
 }
 
 function isPaused() {
-    return jiffies && !clock;
+  return jiffies && !clock;
 }
 
 function isStopped() {
-  return !isRunning() && !isPaused()
+  return !isRunning() && !isPaused();
 }
 
 /* choose a new file */
 function fileSelectCb(e) {
   var file = e.target.files[0];
 
-  document.getElementById('null').innerHTML= '<embed src="/shutter.mp3" ' +
-    'hidden="true" autostart="true" loop="false" />';
+  document.getElementById('null').innerHTML = '<embed src="/shutter.mp3" ' +
+      'hidden="true" autostart="true" loop="false" />';
 
   /* FIXME: AJAX */
   $('#image-upload-form').submit();
@@ -373,9 +374,13 @@ function prepareImage() {
   referenceCanvas.width = workingSize;
   referenceCanvas.height = workingSize;
 
-  referenceCtx.drawImage(referenceImage, 0, 0, 350, 350, 0, 0, workingSize, workingSize);
+  referenceCtx.drawImage(referenceImage,
+                         0, 0, 350, 350, 0, 0,
+                         workingSize, workingSize);
 
-  var imageData = referenceCtx.getImageData(0, 0, workingSize, workingSize).data;
+  var imageData = referenceCtx.getImageData(0, 0,
+                                            workingSize,
+                                            workingSize).data;
 
   workingData = [];
   var p = workingSize * workingSize * 4;
@@ -396,9 +401,12 @@ function getConfiguration() {
   diffSquared = $('#diff-squared')[0].checked;
   fillPolygons = $('#fill-polygons')[0].checked;
   killParents = $('#killparents')[0].checked;
-  mutateAmount = parseFloat($('#mutation-amount option:selected').text()) / 100;
-  mutationChance = parseFloat($('#mutation-chance option:selected').text()) / 100;
-  selectionCutoff = parseFloat($('#selection-cutoff option:selected').text()) / 100;
+  mutateAmount =
+      parseFloat($('#mutation-amount option:selected').text()) / 100;
+  mutationChance =
+      parseFloat($('#mutation-chance option:selected').text()) / 100;
+  selectionCutoff =
+      parseFloat($('#selection-cutoff option:selected').text()) / 100;
   workingSize = parseInt($('#internal-resolution option:selected').text());
   polygons = parseInt($('#polygons option:selected').text());
   populationSize = parseInt($('#population-size option:selected').text());
@@ -438,10 +446,12 @@ function runSimulation() {
     var totalTime = ((new Date().getTime() - startTime) / 1000);
     var timePerGeneration = (totalTime / jiffies) * 100;
     var timePerImprovment = 0;
-    var currentFitness = (fittest.fitness * 100)
+    var currentFitness = (fittest.fitness * 100);
 
-    lowestFitness = (currentFitness < lowestFitness) ? currentFitness : lowestFitness;
-    highestFitness = (currentFitness > highestFitness) ? currentFitness : highestFitness;
+    lowestFitness = (currentFitness < lowestFitness) ?
+        currentFitness : lowestFitness;
+    highestFitness = (currentFitness > highestFitness) ?
+        currentFitness : highestFitness;
 
     /* draw the best fit to output */
     drawDNA(outputCtx, 350, 350, fittest.dna);
@@ -453,7 +463,7 @@ function runSimulation() {
     ap.timePerImprovment.text(timePerImprovment.toFixed(2) + ' ms');
     ap.currentFitness.text(currentFitness.toFixed(2) + '%');
     ap.highestFitness.text(highestFitness.toFixed(2) + '%');
-    ap.lowestFitness.text(lowestFitness.toFixed(2)+ '%');
+    ap.lowestFitness.text(lowestFitness.toFixed(2) + '%');
   }
 
   /* Begin the master clock */
@@ -500,8 +510,8 @@ function stopSimulation() {
   body.classList.add('genetics-inactive');
 
   /* Clear the drawing */
-  outputCtx.clearRect (0, 0, 350, 350);
-  workingCtx.clearRect (0, 0, workingSize, workingSize);
+  outputCtx.clearRect(0, 0, 350, 350);
+  workingCtx.clearRect(0, 0, workingSize, workingSize);
 
   $('#start').text('Start');
 }
@@ -513,8 +523,8 @@ function stopSimulation() {
 /* stock image dropdown item selected */
 $('#stock-image-menu li a').click(function() {
   setImage('/assets/img/' +
-	   $(this).text().toLowerCase().replace(/ /g, '-') +
-	   '.png');
+           $(this).text().toLowerCase().replace(/ /g, '-') +
+           '.png');
 });
 
 /* start button callback */
@@ -553,7 +563,7 @@ function webcamUploadComplete(url) {
     hideWebcamUpload();
   }
   else {
-    alert("PHP Error: " + url);
+    alert('PHP Error: ' + url);
   }
 }
 
@@ -567,7 +577,10 @@ function webcamTakeSnapshot() {
   webcam.snap();
 }
 
-/* document ready preparations */
+
+/**
+ * document ready preparations
+ */
 window.onload = function() {
 
   /* set our page element variables */
