@@ -100,10 +100,11 @@
           <div class="tab-content">
             <div id="pane-about" class="tab-pane active well">
 
-	      Welcome! Click Start to see a randomly generated collection of
-	      shapes evolve into the picture on the left. You can select the
-	      image to use from a collection of pre-chosen images, or supply
-	      your own by taking a picture with the webcam on your device.
+	      Welcome! Click start to see genetics in action, as a randomly
+	      generated collection of shapes evolve to resemble a given
+	      picture. You can select the image to use from a collection of
+	      pre-chosen images, or supply your own by taking a picture with the
+	      webcam on your device.
 
               <h4>Evolving the Mona Lisa</h4>
 
@@ -127,9 +128,10 @@
               and science. The full source code for this site is available on
               <a href="https://github.com/ChrisCummins/chriscummins.cc" target="_blank">GitHub</a>
               and is released under the terms of the MIT License. If you just
-              want to see the JavaScript implementation of this genetics
-              algorithm, see
-	      <a href="https://github.com/ChrisCummins/chriscummins.cc/blob/master/assets/js/genetics.js.in" target="_blank">this file</a>.
+              want to see how the genetics algorithm works, you can read the
+	      <a href="docs" target="_blank">generated documentation</a>
+	      or view the
+	      <a href="https://github.com/ChrisCummins/chriscummins.cc/blob/master/assets/js/genetics.js.in" target="_blank">JavaScript source</a>.
             </div>
 
             <div id="pane-configuration" class="tab-pane well">
