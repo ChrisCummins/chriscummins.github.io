@@ -25,7 +25,7 @@ setcookie("visit", "1", time()+3600);
 
       <div id="hello" class="step" data-y="500">
 	<center>
-	  <img src="assets/img/my-face.png"
+	  <img src="assets/img/my-face.jpg"
 	       style="border-radius: 15px; padding: 5px; background-color: #fff;"
 	       alt="My name is Chris.">
 	  <br/>

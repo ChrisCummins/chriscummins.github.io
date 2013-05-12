@@ -61,7 +61,7 @@ extra_site +=					\
 	assets/img/favicon.ico			\
 	assets/img/github.png			\
 	assets/img/linkedin.png			\
-	assets/img/my-face.png			\
+	assets/img/my-face.jpg			\
 	assets/img/screenshot-facebook.png	\
 	assets/img/screenshot-github.png	\
 	assets/img/screenshot-linkedin.png	\
