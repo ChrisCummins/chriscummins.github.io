@@ -10,6 +10,10 @@
  *
  *   http://www.nihilogic.dk/labs/evolving-images/
  *
+ * This file is documented with JSDoc comments. If you have a checkout of this
+ * webpage repository, use `make docs' to generate docuemntation under
+ * Documentation/genetics/.
+ *
  * Seidelin's JavaScript Genetic Algorithm header:
  *
  *   Copyright (c) 2009 Jacob Seidelin
@@ -17,30 +21,73 @@
  *   MIT License [http://www.nihilogic.dk/licenses/mit-license.txt]
  */
 
-'use strict';
-
-/*
- * Document objects.
+/**
+ * @file
+ *
+ * Genetics Algorithms to Grow Your Own Picture.
  */
 
+'use strict';
+
+
+/**
+ * We keep a reference to the document body for convenient typing.
+ */
 var body = document.body;
 
-/* The analytics pane elements */
+
+/**
+ * The analytics pane elements
+ */
 var ap;
 
-/* The invisible workspace, used as a testing ground for the fitness function
- * populations */
+
+/**
+ * The working canvas, used by the fitness function to determine an individuals
+ * fitness.
+ */
 var workingCanvas;
+
+
+/**
+ * The 2D drawing context of the working canvas, as returned by the getContext()
+ * method.
+ */
 var workingCtx;
+
 var workingData = [];
 
-/* The output workspace, where we display the fittest population */
+
+/**
+ * The output workspace, where we display the fittest population.
+ */
 var outputCanvas;
+
+
+/**
+ * The 2D drawing context of the output canvas, as returned by the getContext()
+ * method.
+ */
 var outputCtx;
 
-/* The reference image */
+
+/**
+ * The reference canvas, where we display the target image that we are selecting
+ * towards.
+ */
 var referenceCanvas;
+
+
+/**
+ * The 2D drawing context of the reference canvas, as returned by the
+ * getContext() method.
+ */
 var referenceCtx;
+
+
+/**
+ * The reference image.
+ */
 var referenceImage;
 
 /*
@@ -83,7 +130,13 @@ for (var i = 1e6, randPool = []; i--;) {
   randPool.push(Math.random());
 }
 
-/* Fetches a random float in the range [0, 1] */
+
+/**
+ * Fetches a random float in the range [0, 1], selected from a pool of 1 million
+ * values, generated at page load.
+ *
+ * @return {float} Pseudo-random number in the range [0, 1].
+ */
 function getRand() {
   return ++i >= randPool.length ? randPool[i = 0] : randPool[i];
 }
@@ -92,8 +145,12 @@ function getRand() {
  * Utility functions.
  */
 
-/* determines whether the genetics program is compatible with the host
- * browser. Returns true if yes, else false
+
+/**
+ * Determines whether the genetics program is compatible with the host
+ * browser. Returns true if yes, else false.
+ *
+ * @return {boolean} True if supported, else false.
  */
 function geneticsIsSupported() {
   var isSupported = false;
@@ -108,7 +165,13 @@ function geneticsIsSupported() {
   return isSupported;
 }
 
-/* convert seconds to human-redable form [hh:m]m:ss */
+
+/**
+ * Convert a seconds value to a human-redable string.
+ *
+ * @param {int} s The number of seconds.
+ * @return {string} A time value in the form [hh:m]m:ss.
+ */
 function secondsToString(s) {
   var h = Math.floor(s / 3600);
   var m = Math.floor(s % 3600 / 60);
@@ -120,10 +183,18 @@ function secondsToString(s) {
            m + ':' : '0:') + (s < 10 ? '0' : '') + s);
 }
 
-/* draw a DNA string to a canvas */
+
+/**
+ * Draw a representation of a DNA string to a canvas.
+ *
+ * @param {Canvas} ctx The 2D drawing context.
+ * @param {int} width The canvas width (pixels).
+ * @param {int} height The canvas height (pixels).
+ * @param {float[]} dna The DNA string.
+ */
 function drawDNA(ctx, width, height, dna) {
 
-  /* Draw the gene at index `g' */
+  /* draw the gene at index `g' */
   function drawGene(g) {
     /* starting vertex */
     ctx.beginPath();
@@ -163,15 +234,22 @@ function drawDNA(ctx, width, height, dna) {
     drawGene(g);
 }
 
-/*
- * Genetics simulation
- */
 
-/* representation of an individual. Each individual comprises of their string of
- * DNA, and the fitness. Both of these are generated in the constructor, there
- * is no other behaviour
+
+/**
+ * Creates a new individual. Each individual comprises of their string of DNA,
+ * and the fitness. Both of these are generated in the constructor, there is no
+ * other behaviour. If mother father are omitted, this generates a random
+ * individual.
+ *
+ * @param {Individual} mother The mother.
+ * @param {Individual} father The father.
+ * @property {float[]} dna The individuals DNA.
+ * @property {float} fitness The individuals fitness [0, 1].
+ * @constructor
  */
 function Individual(mother, father) {
+
 
   this.dna = [];
 
@@ -260,7 +338,13 @@ function Individual(mother, father) {
   }
 }
 
-/* representation of a full population */
+
+
+/**
+ * Representation of a full population
+ * @param {int} size The number of individuals in the population.
+ * @constructor
+ */
 function Population(size) {
   var individuals = [];
 
@@ -335,19 +419,40 @@ function Population(size) {
  * Simulation functions
  */
 
+
+/**
+ * Determines whether the genetics simulation is currently running.
+ *
+ * @return {boolean} True if running, else false.
+ */
 function isRunning() {
   return clock;
 }
 
+
+/**
+ * Determines whether the genetics simulation is currently paused.
+ * @return {boolean} True if paused, else false.
+ */
 function isPaused() {
   return jiffies && !clock;
 }
 
+
+/**
+ * Determines whether the genetics simulation is currently stopped.
+ * @return {boolean} True if stopped, else false.
+ */
 function isStopped() {
   return !isRunning() && !isPaused();
 }
 
-/* choose a new file */
+
+/**
+ * Upload a new file to use as a reference image.
+ *
+ * @param {File} e The target file.
+ */
 function fileSelectCb(e) {
   var file = e.target.files[0];
 
@@ -360,13 +465,21 @@ function fileSelectCb(e) {
   console.log(file.name);
 }
 
-/* set a new image to use */
+
+/**
+ * Set a new image to use as the reference image.
+ *
+ * @param {string} src The path to the new image.
+ */
 function setImage(src) {
   referenceImage.onload = prepareImage;
   referenceImage.src = src;
 }
 
-/* prepare an image for use */
+
+/**
+ * Prepare an image for use as the reference image.
+ */
 function prepareImage() {
   /* FIXME: add support for images of size other than 350x350. This requires
    * scaling the image and cropping as needed */
@@ -396,7 +509,10 @@ function prepareImage() {
   lowestFitness = 100;
 }
 
-/* retrieve the session from the configuration panel */
+
+/**
+ * Retrieve the session from the configuration panel
+ */
 function getConfiguration() {
   diffSquared = $('#diff-squared')[0].checked;
   fillPolygons = $('#fill-polygons')[0].checked;
@@ -425,7 +541,10 @@ function getConfiguration() {
   workingCanvas.style.height = workingSize;
 }
 
-/* run the simulation */
+
+/**
+ * Run the simulation.
+ */
 function runSimulation() {
   body.classList.remove('genetics-inactive');
   body.classList.add('genetics-active');
@@ -470,7 +589,10 @@ function runSimulation() {
   clock = setInterval(tick, 0);
 }
 
-/* start the simulation */
+
+/**
+ * Start the simulation.
+ */
 function startSimulation() {
   if (isStopped()) {
     getConfiguration();
@@ -484,7 +606,10 @@ function startSimulation() {
   runSimulation();
 }
 
-/* pause the simulation */
+
+/**
+ * Pause the simulation.
+ */
 function pauseSimulation() {
   clearInterval(clock);
   clock = null;
@@ -492,7 +617,10 @@ function pauseSimulation() {
   $('#strongest-dna').text(population.getFittest().dna);
 }
 
-/* end the simulation */
+
+/**
+ * End the simulation.
+ */
 function stopSimulation() {
   clearInterval(clock);
   clock = null;
@@ -549,13 +677,21 @@ $('#webcam-upload-btn').click(function() {
   $('.webcam-overlay').fadeIn('fast');
 });
 
-/* dispose of the webcam upload overlay */
+
+/**
+ * Dispose of the webcam upload overlay.
+ */
 function hideWebcamUpload() {
   $('.underlay').fadeOut('slow');
   $('.webcam-overlay').fadeOut('fast');
 }
 
-/* webcam image upload complete */
+
+/**
+ * Webcam image upload complete.
+ *
+ * @param {string} url The fully qualified URL to the uploaded webcam image.
+ */
 function webcamUploadComplete(url) {
   if (url.match(/^http:\/\//)) {
     setImage(url);
@@ -572,7 +708,10 @@ $('.underlay').click(function() {
   hideWebcamUpload();
 });
 
-/* take a webcam snapshot */
+
+/**
+ * Take a webcam snapshot.
+ */
 function webcamTakeSnapshot() {
   webcam.snap();
 }

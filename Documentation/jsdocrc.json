@@ -1,0 +1,6 @@
+{
+    "source": {
+        "includePattern": ".+\\.in$",
+    },
+    "jsVersion": 180
+}
