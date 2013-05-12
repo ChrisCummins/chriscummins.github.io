@@ -68,13 +68,13 @@ extra_site +=					\
 	assets/img/screenshot-linkedin.png	\
 	assets/img/screenshot-youtube.png	\
 	assets/img/youtube.png			\
-	genetics/eiffel-tower.png		\
-	genetics/kyle-broflovski.png		\
-	genetics/mona-lisa.png			\
-	genetics/piet-mondrian.png		\
+	genetics/eiffel-tower.jpg		\
+	genetics/kyle-broflovski.jpg		\
+	genetics/mona-lisa.jpg			\
+	genetics/piet-mondrian.jpg		\
 	genetics/shutter.mp3			\
-	genetics/sunflowers.png			\
-	genetics/tom-waits.png			\
+	genetics/sunflowers.jpg			\
+	genetics/tom-waits.jpg			\
 	genetics/webcam.swf			\
 	uni/dissertation.pdf			\
 	uni/sustainability.pdf			\

@@ -652,7 +652,7 @@ function stopSimulation() {
 $('#stock-image-menu li a').click(function() {
   setImage('/genetics/' +
            $(this).text().toLowerCase().replace(/ /g, '-') +
-           '.png');
+           '.jpg');
 });
 
 /* start button callback */
