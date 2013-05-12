@@ -128,8 +128,8 @@
               <a href="https://github.com/ChrisCummins/chriscummins.cc" target="_blank">GitHub</a>
               and is released under the terms of the MIT License. If you just
               want to see the JavaScript implementation of this genetics
-              algorithm, see <a href="#">this file</a>.
-              <!-- FIXME: add link to github page for genetics.js.in -->
+              algorithm, see
+	      <a href="https://github.com/ChrisCummins/chriscummins.cc/blob/master/assets/js/genetics.js.in" target="_blank">this file</a>.
             </div>
 
             <div id="pane-configuration" class="tab-pane well">
