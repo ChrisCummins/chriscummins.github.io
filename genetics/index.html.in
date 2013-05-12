@@ -336,7 +336,7 @@
 
     <!-- The hidden bits: -->
     <img id="referenceImage"
-	 src="/assets/img/mona-lisa.png"
+	 src="/genetics/mona-lisa.png"
 	 style="display: none;" />
 
     <canvas id="workingCanvas"

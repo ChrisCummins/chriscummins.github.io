@@ -650,7 +650,7 @@ function stopSimulation() {
 
 /* stock image dropdown item selected */
 $('#stock-image-menu li a').click(function() {
-  setImage('/assets/img/' +
+  setImage('/genetics/' +
            $(this).text().toLowerCase().replace(/ /g, '-') +
            '.png');
 });
