@@ -2,6 +2,9 @@
 QUIET_  = @
 QUIET   = $(QUIET_$(V))
 
+# See: https://github.com/jsdoc3/jsdoc
+JSDOC = ~/src/jsdoc/jsdoc
+
 # Initialise our content variables
 php :=
 extra_php :=
@@ -88,7 +91,10 @@ local_files = 					\
 	$(NULL)
 
 # generated files
-clean_files = $(html) $(css) $(js)
+clean_files = 					\
+	$(html) $(css) $(js) 			\
+	$(shell find Documentation/genetics)	\
+	$(NULL)
 
 #
 # Create and package generated files
@@ -107,7 +113,7 @@ publish: private_publish
 #
 .PHONY: clean
 clean:
-	$(QUIET)rm -fv $(clean_files)
+	$(QUIET)rm -rfv $(clean_files)
 
 #
 # Generate site content
@@ -151,6 +157,12 @@ ifndef DEBUG
 else
 	$(QUIET)cp $< $@
 endif
+
+.PHONY: docs
+docs:
+	@echo '  JSDOC    Documentation/genetics'
+	$(QUIET)$(JSDOC) -c Documentation/jsdocrc.json 			\
+		assets/js/genetics.js.in -d Documentation/genetics
 
 .PHONY: check
 check:
