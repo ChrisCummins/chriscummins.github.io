@@ -24,7 +24,8 @@
 /**
  * @file
  *
- * Genetics Algorithms to Grow Your Own Picture.
+ * Genetics Algorithms to Grow Your Own Picture. This documentation is a work in
+ * progress, and is largely incomplete at this time.
  */
 
 'use strict';
