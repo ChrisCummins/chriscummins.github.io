@@ -33,7 +33,6 @@ body {
 
 /* this houses the pictures */
 #pictureframe {
-  border-radius: 20px;
   background: #000;
   height: 366px;
   margin-top: 20px;
@@ -48,7 +47,6 @@ body {
   width: 350px;
   height: 350px;
   margin: 8px;
-  border-radius: 10px;
 
   /* inactive canvas appearance */
   background: solid;
