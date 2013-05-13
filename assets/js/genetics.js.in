@@ -676,6 +676,9 @@ $('#stop').click(function() {
 $('#webcam-upload-btn').click(function() {
   $('.underlay').fadeIn('slow');
   $('.webcam-overlay').fadeIn('fast');
+
+  if (isRunning())
+    pauseSimulation();
 });
 
 
@@ -698,6 +701,9 @@ function webcamUploadComplete(url) {
     setImage(url);
     webcam.reset();
     hideWebcamUpload();
+
+    if (isPaused())
+      startSimulation();
   }
   else {
     alert('PHP Error: ' + url);
