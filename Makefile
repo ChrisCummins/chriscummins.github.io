@@ -93,7 +93,6 @@ local_files = 					\
 # generated files
 clean_files = 					\
 	$(html) $(css) $(js) 			\
-	$(shell find Documentation/genetics)	\
 	$(NULL)
 
 #
