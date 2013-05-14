@@ -119,6 +119,18 @@ var lowestFitness;
 var population;
 var startTime;
 
+/**
+ * When the simulation is paused, this variable is set to the currently elapsed
+ * time (in milliseconds). Upon resume, this value is subtracted from the new
+ * start time so as to account for the time spent paused. This maintains the
+ * accuracy of the elapsed time feedback, as otherwise all time spent in a
+ * paused state would still count towards elpased time, which is instead
+ * used to measure the active time.
+ *
+ * @type {int}
+ */
+var resumedTime = 0;
+
 /*
  * Pseudo-random number set.
  *
@@ -550,6 +562,9 @@ function runSimulation() {
   body.classList.remove('genetics-inactive');
   body.classList.add('genetics-active');
 
+  if (isPaused())
+    startTime = new Date().getTime() - resumedTime;
+
   if (isStopped()) {
     jiffies = 0;
     startTime = new Date().getTime();
@@ -614,6 +629,7 @@ function startSimulation() {
 function pauseSimulation() {
   clearInterval(clock);
   clock = null;
+  resumedTime = new Date().getTime() - startTime;
   $('#start').text('Resume');
   $('#strongest-dna').text(population.getFittest().dna);
 }
@@ -630,6 +646,7 @@ function stopSimulation() {
   population = null;
   highestFitness = 0;
   lowestFitness = 100;
+  resumedTime = 0;
   $('#elapsed-time').text('0:00');
   $('select').attr('disabled', false);
   $('.ios-switch').attr('disabled', false);
