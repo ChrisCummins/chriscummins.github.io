@@ -131,6 +131,18 @@
               want to see how the genetics algorithm works, you can read the
 	      documentation for the JavaScript sources
 	      <a href="docs" target="_blank">here</a> .
+
+	      <h4>Bugs, comments and improvements</h4>
+
+	      I would love to hear your feedback. Don't be afraid
+	      of <a href="http://chriscummins.cc/#overview" target="_blank">sending me a message</a>
+	      with any thoughts and suggestions.
+	      If you would like to be a little more involved in the process,
+	      please open an issue on the
+	      <a href="https://github.com/ChrisCummins/chriscummins.cc/issues" target="_blank">website bug tracker</a>.
+	      To contribute to the code, you can fork the source code
+	      repository and submit a pull request when ready.
+
             </div>
 
             <div id="pane-configuration" class="tab-pane well">
