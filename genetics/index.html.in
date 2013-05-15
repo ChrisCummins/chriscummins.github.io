@@ -63,14 +63,9 @@
               <li><a href="#">Sunflowers</a></li>
             </ul>
 
-	    <!-- webcam button -->
+            <!-- webcam button -->
             <button id="webcam-upload-btn" class="btn btn-inverse">
-	      Webcam <i class="icon-camera"></i></button>
-
-	    <!-- TODO: upload button -->
-            <!-- <button class="btn btn-inverse disabled" -->
-	    <!-- 	    onclick="$('#file-chooser').click();"> -->
-	    <!--   Upload <i class="icon-folder-open"></i></button> -->
+              Webcam <i class="icon-camera"></i></button>
 
           </div>
 

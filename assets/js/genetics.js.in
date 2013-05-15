@@ -787,9 +787,6 @@ window.onload = function() {
     sw.style.height = div.style.height;
   }
 
-  /* FIXME: not yet implemented */
-  /* attach the file chooser callback */
-  /* $('#file-chooser')[0].addEventListener('change', fileSelectCb, false); */
 
   /* setup webcam upload */
   webcam.set_api_url('webcam.php');
