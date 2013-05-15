@@ -7,8 +7,8 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
 
     <link href="http://fonts.googleapis.com/css?family=PT+Serif:400,700" rel="stylesheet" />
-    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
-    <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.0/css/font-awesome.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.no-icons.min.css" rel="stylesheet" />
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.0/css/font-awesome.css" rel="stylesheet" />
     <link href="/assets/css/buttons.css" rel="stylesheet" />
     <link href="/assets/css/genetics.css" rel="stylesheet" />
     <link href="/assets/img/favicon.ico" rel="shortcut icon" />
