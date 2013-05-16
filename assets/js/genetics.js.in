@@ -132,29 +132,6 @@ var startTime;
 var resumedTime = 0;
 
 /*
- * Pseudo-random number set.
- *
- * We generate a pool of pseudo-random float values which can be accessed using
- * getRand(). This is a performance optimisation to reduce the number of calls
- * to Math.random() made by the heavily randomised algorithms used in the
- * genetics modelling.
- */
-for (var i = 1e6, randPool = []; i--;) {
-  randPool.push(Math.random());
-}
-
-
-/**
- * Fetches a random float in the range [0, 1], selected from a pool of 1 million
- * values, generated at page load.
- *
- * @return {float} Pseudo-random number in the range [0, 1].
- */
-function getRand() {
-  return ++i >= randPool.length ? randPool[i = 0] : randPool[i];
-}
-
-/*
  * Utility functions.
  */
 
@@ -269,7 +246,7 @@ function Individual(mother, father) {
   /* get the DNA */
   if (mother && father) {
     /* breed the individual from parents */
-    var cross = (getRand() * dnaLength) >> 0;
+    var cross = (Math.random() * dnaLength) >> 0;
 
     for (var i = 0; i < dnaLength; i += dnaCrossLength) {
       var val;
@@ -277,7 +254,7 @@ function Individual(mother, father) {
 
       if (uniformCrossover) {
 
-        if (getRand() < 0.5)
+        if (Math.random() < 0.5)
           par = mother;
         else
           par = father;
@@ -292,9 +269,9 @@ function Individual(mother, father) {
 
       for (var j = 0; j < dnaCrossLength; j++) {
         val = par[i + j];
+        if (Math.random() < mutationChance) {
+          val += Math.random() * mutateAmount * 2 - mutateAmount;
 
-        if (getRand() < mutationChance) {
-          val += getRand() * mutateAmount * 2 - mutateAmount;
 
           if (val < 0) val = 0;
           if (val > 1) val = 1;
@@ -306,18 +283,18 @@ function Individual(mother, father) {
     /* generate a random individual */
     for (var g = 0; g < dnaLength; g += geneSize) {
       /* generate RGBA color values */
-      this.dna.push(getRand(), // R
-                    getRand(), // G
-                    getRand(), // B
-                    Math.max(getRand() * getRand(), 0.2)); // A
+      this.dna.push(Math.random(), // R
+                    Math.random(), // G
+                    Math.random(), // B
+                    Math.max(Math.random() * Math.random(), 0.2)); // A
 
       /* generate XY positional values */
-      var x = getRand();
-      var y = getRand();
+      var x = Math.random();
+      var y = Math.random();
 
       for (var j = 0; j < vertices; j++) {
-        this.dna.push(x + getRand() - 0.5, // X
-                      y + getRand() - 0.5); // Y
+        this.dna.push(x + Math.random() - 0.5, // X
+                      y + Math.random() - 0.5); // Y
       }
     }
   }
@@ -392,7 +369,7 @@ function Population(size) {
           var randIndividual = i;
 
           while (randIndividual == i)
-            randIndividual = (getRand() * selectCount) >> 0;
+            randIndividual = (Math.random() * selectCount) >> 0;
 
           offspring.push(new Individual(dna, individuals[randIndividual].dna));
         }
