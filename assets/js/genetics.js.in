@@ -148,7 +148,7 @@ var Genetics = Genetics || {};
    *
    * @return {boolean} True if supported, else false.
    */
-  function geneticsIsSupported() {
+  function isSupported() {
     var isSupported = false;
 
     /* perform a simple check to verify that getContext() and getImageData() are
@@ -931,7 +931,7 @@ var Genetics = Genetics || {};
     };
 
     /* check that we can run the program */
-    if (!geneticsIsSupported())
+    if (!isSupported())
       alert('Unable to run genetics program!'); /* FIXME: better alert */
 
     initConfiguration();
