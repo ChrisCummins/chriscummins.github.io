@@ -119,6 +119,7 @@ var lowestFitness;
 var population;
 var startTime;
 
+
 /**
  * When the simulation is paused, this variable is set to the currently elapsed
  * time (in milliseconds). Upon resume, this value is subtracted from the new
@@ -240,7 +241,6 @@ function drawDNA(ctx, width, height, dna) {
  */
 function Individual(mother, father) {
 
-
   this.dna = [];
 
   /* get the DNA */
@@ -270,12 +270,16 @@ function Individual(mother, father) {
         var val = par[i + j];
 
         if (Math.random() < mutationChance) {
+          /* mutate the gene */
           val += Math.random() * mutateAmount * 2 - mutateAmount;
 
+          if (val < 0)
+            val = 0;
 
-          if (val < 0) val = 0;
-          if (val > 1) val = 1;
+          if (val > 1)
+            val = 1;
         }
+
         this.dna.push(val);
       }
     }
