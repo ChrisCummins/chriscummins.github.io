@@ -373,8 +373,8 @@
           <input class="btn btn-inverse" type=button value="Configure"
                  onClick="webcam.configure()">
           &nbsp;&nbsp;
-          <input class="btn btn-inverse" type=button value="Take Snapshot"
-                 onClick="webcamTakeSnapshot()">
+          <input id="webcam-snap-button" class="btn btn-inverse"
+                 type=button value="Take Snapshot">
         </form>
       </center>
 
