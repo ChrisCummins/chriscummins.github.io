@@ -524,23 +524,170 @@ function prepareImage() {
 
 
 /**
+ * Initialise the configuration panel.
+ */
+function initConfiguration() {
+  /* prepare the sliders */
+  $('#population-size-slider').slider({
+    min: 0, max: 100, step: 5,
+    slide: function(event, ui) {
+      $('#population-size').text(Math.max(1, ui.value));
+    }
+  });
+
+  $('#cutoff-slider').slider({
+    min: 0, max: 100, step: 5,
+    slide: function(event, ui) {
+      $('#cutoff').text(ui.value + '%');
+    }
+  });
+
+  $('#mutation-chance-slider').slider({
+    min: 0, max: 5, step: 0.2,
+    slide: function(event, ui) {
+      $('#mutation-chance').text(ui.value.toFixed(1) + '%');
+    }
+  });
+
+  $('#mutation-amount-slider').slider({
+    min: 0, max: 100, step: 5,
+    slide: function(event, ui) {
+      $('#mutation-amount').text(ui.value + '%');
+    }
+  });
+
+  $('#polygons-slider').slider({
+    min: 0, max: 500, step: 10,
+    slide: function(event, ui) {
+      $('#polygons').text(Math.max(1, ui.value));
+    }
+  });
+
+  $('#vertices-slider').slider({
+    min: 1, max: 30, step: 1,
+    slide: function(event, ui) {
+      $('#vertices').text(ui.value);
+    }
+  });
+
+  $('#resolution-slider').slider({
+    min: 0, max: 350, step: 10,
+    slide: function(event, ui) {
+      var resolution = Math.max(1, ui.value);
+
+      $('#resolution').text(resolution + 'x' + resolution);
+    }
+  });
+
+  /* prepare the ios switches */
+  var iosSwitches =
+      document.querySelectorAll('input[type="checkbox"].ios-switch');
+  for (var i = 0, sw; sw = iosSwitches[i++];) {
+    var div = document.createElement('div');
+    div.className = 'switch';
+    sw.parentNode.insertBefore(div, sw.nextSibling);
+    sw.style.width = div.style.width;
+    sw.style.height = div.style.height;
+  }
+}
+
+
+/**
+ * Set a new configuration. If any parameter is missing, default values are
+ * used.
+ *
+ * @param {int} _populationSize The population size.
+ * @param {int} _cutoffSlider The selection cutoff (as a percentage).
+ * @param {boolean} _killParents Kill parents.
+ * @param {int} _mutationChance The mutation chance (as a percentage).
+ * @param {int} _mutationAmount The mutation amount (as a percentage).
+ * @param {int} _polygons The number of polygons.
+ * @param {int} _vertices The number of vertices.
+ * @param {int} _resolution Internal resolution (in pixels).
+ * @param {boolean} _fillPolygons Fill polygons.
+ * @param {boolean} _uniCrossover Uniform crossover.
+ * @param {boolean} _diffSquared Square difference.
+ */
+function setConfiguration(_populationSize,
+                          _cutoffSlider,
+                          _killParents,
+                          _mutationChance,
+                          _mutationAmount,
+                          _polygons,
+                          _vertices,
+                          _resolution,
+                          _fillPolygons,
+                          _uniCrossover,
+                          _diffSquared) {
+
+  if (!_populationSize)
+    var _populationSize = 40;
+  $('#population-size-slider').slider('value', _populationSize);
+  $('#population-size').text(_populationSize);
+
+  if (!_cutoffSlider)
+    var _cutoffSlider = 25;
+  $('#cutoff-slider').slider('value', _cutoffSlider);
+  $('#cutoff').text(_cutoffSlider + '%');
+
+  if (!_killParents)
+    var _killParents = true;
+  $('#killparents').prop('checked', _killParents);
+
+  if (!_mutationChance)
+    var _mutationChance = 2.4;
+  $('#mutation-chance-slider').slider('value', _mutationChance);
+  $('#mutation-chance').text(_mutationChance.toFixed(1) + '%');
+
+  if (!_mutationAmount)
+    var _mutationAmount = 10;
+  $('#mutation-amount-slider').slider('value', _mutationAmount);
+  $('#mutation-amount').text(_mutationAmount + '%');
+
+  if (!_polygons)
+    var _polygons = 120;
+  $('#polygons-slider').slider('value', _polygons);
+  $('#polygons').text(_polygons);
+
+  if (!_vertices)
+    var _vertices = 6;
+  $('#vertices-slider').slider('value', _vertices);
+  $('#vertices').text(_vertices);
+
+  if (!_resolution)
+    var _resolution = 70;
+  $('#resolution-slider').slider('value', _resolution);
+  $('#resolution').text(_resolution + 'x' + _resolution);
+
+  if (!_fillPolygons)
+    var _fillPolygons = true;
+  $('#fill-polygons').prop('checked', _fillPolygons);
+
+  if (!_uniCrossover)
+    var _uniCrossover = true;
+  $('#uni-crossover').prop('checked', _uniCrossover);
+
+  if (!_diffSquared)
+    var _diffSquared = true;
+  $('#diff-squared').prop('checked', _diffSquared);
+}
+
+
+/**
  * Retrieve the session from the configuration panel
  */
 function getConfiguration() {
-  diffSquared = $('#diff-squared')[0].checked;
-  fillPolygons = $('#fill-polygons')[0].checked;
+  populationSize = parseInt($('#population-size').text());
+  selectionCutoff = parseFloat($('#cutoff').text()) / 100;
   killParents = $('#killparents')[0].checked;
-  mutateAmount =
-      parseFloat($('#mutation-amount option:selected').text()) / 100;
-  mutationChance =
-      parseFloat($('#mutation-chance option:selected').text()) / 100;
-  selectionCutoff =
-      parseFloat($('#selection-cutoff option:selected').text()) / 100;
-  workingSize = parseInt($('#internal-resolution option:selected').text());
-  polygons = parseInt($('#polygons option:selected').text());
-  populationSize = parseInt($('#population-size option:selected').text());
-  uniformCrossover = $('#uniformcross').checked;
-  vertices = parseInt($('#vertices option:selected').text());
+  mutationChance = parseFloat($('#mutation-chance').text()) / 100;
+  mutateAmount = parseFloat($('#mutation-amount').text()) / 100;
+  polygons = parseInt($('#polygons').text());
+  vertices = parseInt($('#vertices').text());
+  workingSize = parseInt($('#resolution').text());
+  fillPolygons = $('#fill-polygons')[0].checked;
+  uniformCrossover = $('#uni-crossover')[0].checked;
+  diffSquared = $('#diff-squared')[0].checked;
 
   /* derive certain state variables */
   dnaCrossLength = (4 + vertices * 2);
@@ -615,7 +762,7 @@ function startSimulation() {
     prepareImage();
   }
 
-  $('select').attr('disabled', true);
+  $('.conf-slider').slider('option', 'disabled', true);
   $('.ios-switch').attr('disabled', true);
   $('#start').text('Pause');
   $('#strongest-dna').text('');
@@ -648,7 +795,7 @@ function stopSimulation() {
   lowestFitness = 100;
   resumedTime = 0;
   $('#elapsed-time').text('0:00');
-  $('select').attr('disabled', false);
+  $('.conf-slider').slider('option', 'disabled', false);
   $('.ios-switch').attr('disabled', false);
   $('#strongest-dna').text('');
 
@@ -772,24 +919,13 @@ window.onload = function() {
   if (!geneticsIsSupported())
     alert('Unable to run genetics program!'); /* FIXME: better alert */
 
-  /* prepare the reference image default */
+  initConfiguration();
+
+  /* set default configuration */
+  setConfiguration();
+
   getConfiguration();
   prepareImage();
-
-  /* prepare the ios switches */
-  var iosSwitches =
-      document.querySelectorAll('input[type="checkbox"].ios-switch');
-  for (var i = 0, sw; sw = iosSwitches[i++];) {
-    var div = document.createElement('div');
-    div.className = 'switch';
-    sw.parentNode.insertBefore(div, sw.nextSibling);
-    sw.style.width = div.style.width;
-    sw.style.height = div.style.height;
-  }
-
-  /* FIXME: not yet implemented */
-  /* attach the file chooser callback */
-  /* $('#file-chooser')[0].addEventListener('change', fileSelectCb, false); */
 
   /* setup webcam upload */
   webcam.set_api_url('webcam.php');

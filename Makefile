@@ -55,6 +55,8 @@ js += 						\
 	$(NULL)
 
 extra_site +=					\
+	assets/img/slider-handle.png		\
+	assets/img/slider-track.png		\
 	assets/img/arrows.png			\
 	assets/img/check.png			\
 	assets/img/facebook.png			\

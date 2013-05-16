@@ -1,14 +1,14 @@
 /*
- *		Top level style sheet
+ *              Top level style sheet
  *
  * This defines global styles for use accross the website. It is based on the
  * stylesheet for the impress.js demo, available here:
  *
- * 	https://github.com/bartaz/impress.js/
+ *      https://github.com/bartaz/impress.js/
  */
 
 /*
- *		CSS Reset
+ *              CSS Reset
  *
  * http://meyerweb.com/eric/tools/css/reset/
  * v2.0 | 20110126
@@ -63,7 +63,7 @@ table {
 }
 
 /*
- *		Top level styles
+ *              Top level styles
  */
 body {
     min-height:         740px;
@@ -93,7 +93,7 @@ i, em {
 }
 
 /*
- *		Hyperlink formatting
+ *              Hyperlink formatting
  */
 a {
     text-decoration:    none;
@@ -115,7 +115,7 @@ a:focus {
 }
 
 /*
- *		Step Navigation Arrows
+ *              Step Navigation Arrows
  *
  * This is the pair of navigation arrows which reside on either side of the
  * page.
@@ -198,7 +198,7 @@ a:focus {
 }
 
 /*
- *		Styling for presentation slides
+ *              Styling for presentation slides
  *
  * This describes the main styling for the page's presentation `steps'.
  */
@@ -242,7 +242,7 @@ a:focus {
 }
 
 /*
- *		Per-Step Styles
+ *              Per-Step Styles
  *
  * Included here is specific styling information for individual steps.
  */
@@ -268,7 +268,7 @@ a:focus {
 }
 
 /*
- *		Fallback static HTML styles
+ *              Fallback static HTML styles
  *
  * This provides styling for users which do not have impress support (mobile
  * browsers, no JavaScript, etc).

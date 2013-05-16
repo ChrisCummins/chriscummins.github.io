@@ -135,13 +135,76 @@ i {
   min-height: 250px;
 }
 
-/* analytics table */
-#analytics-table {
+/* tables */
+.conf-table, #analytics-table {
   font-size: 16px;
   table-layout: fixed;
   margin-top: 15px;
 }
 
+.conf-table td {
+  border-top: none;
+}
+
+/* ios switches */
+label {
+  margin: 0px;
+  margin-top: -2px;
+}
+
+:root input[type="checkbox"].ios-switch+div {
+  margin: 0px;
+  font-size: 18px;
+}
+
+/* sliders */
+.conf-slider {
+  border-width: 1px;
+  border-style: solid;
+  border-color: #333 #333 #777 #333;
+  border-radius: 25px;
+  height: 13px;
+  background-color: #8e8d8d;
+  background: url('/assets/img/slider-track.png') repeat top left;
+  box-shadow: inset 0 1px 5px 0px rgba(0, 0, 0, .5),
+  0 1px 0 0px rgba(250, 250, 250, .5);
+  margin-right: 20px;
+}
+
+.ui-slider-range {
+  background: #ffffff;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#eaeaea));
+  background: -webkit-linear-gradient(top,  #ffffff 0%,#eaeaea 100%);
+  background:    -moz-linear-gradient(top,  #ffffff 0%, #eaeaea 100%);
+  background:      -o-linear-gradient(top,  #ffffff 0%,#eaeaea 100%);
+  background:     -ms-linear-gradient(top,  #ffffff 0%,#eaeaea 100%);
+  background:         linear-gradient(top,  #ffffff 0%,#eaeaea 100%);
+
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff',
+						     endColorstr='#eaeaea',
+						     GradientType = 0);
+  position: absolute;
+  border: 0;
+  top: 0;
+  height: 100%;
+  border-radius: 25px;
+}
+
+.ui-slider .ui-slider-handle {
+  background: url('/assets/img/handle.png') no-repeat 50% 50%;
+  position: absolute;
+  z-index: 2;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  top: -7px;
+  margin-left: -12px;
+  border: none;
+  outline: none;
+}
+
+/* results panel */
 #strongest-dna {
   width: 97%;
   height: 200px;
