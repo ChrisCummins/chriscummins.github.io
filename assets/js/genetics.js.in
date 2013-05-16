@@ -115,7 +115,6 @@ var Genetics = Genetics || {};
 
   /* Simulation session variables */
   var clock;
-  var dnaCrossLength;
   var dnaLength;
   var geneSize;
   var highestFitness;
@@ -179,59 +178,6 @@ var Genetics = Genetics || {};
              m + ':' : '0:') + (s < 10 ? '0' : '') + s);
   }
 
-
-  /**
-   * Draw a representation of a DNA string to a canvas.
-   *
-   * @param {Canvas} ctx The 2D drawing context.
-   * @param {int} width The canvas width (pixels).
-   * @param {int} height The canvas height (pixels).
-   * @param {float[]} dna The DNA string.
-   */
-  function drawDNA(ctx, width, height, dna) {
-
-    /* draw the gene at index `g' */
-    function drawGene(g) {
-      /* starting vertex */
-      ctx.beginPath();
-      ctx.moveTo((dna[g + 4]) * width, (dna[g + 5]) * height);
-
-      /* create each vertex */
-      for (var i = 0; i < vertices - 1; i++) {
-        ctx.lineTo((dna[g + i * 2 + 6]) * width, (dna[g + i * 2 + 7]) * height);
-      }
-
-      ctx.closePath();
-
-      var styleString = 'rgba(' +
-          ((dna[g] * 255) >> 0) + ',' + // R - int [0,255]
-          ((dna[g + 1] * 255) >> 0) + ',' + // G - int [0,255]
-          ((dna[g + 2] * 255) >> 0) + ',' + // B - int [0,255]
-          dna[g + 3] + ')'; // A - float [0,1]
-
-      if (fillPolygons) {
-        /* create a polygon */
-        ctx.fillStyle = styleString;
-        ctx.fill();
-      } else {
-        /* trace an outline */
-        ctx.lineWidth = 1;
-        ctx.strokeStyle = styleString;
-        ctx.stroke();
-      }
-    }
-
-    /* set the background */
-    ctx.fillStyle = '#000';
-    ctx.fillRect(0, 0, width, height);
-
-    /* draw each gene sequentially */
-    for (var g = 0; g < dnaLength; g += geneSize)
-      drawGene(g);
-  }
-
-
-
   /**
    * Creates a new individual. Each individual comprises of their string of DNA,
    * and the fitness. Both of these are generated in the constructor, there is
@@ -246,54 +192,61 @@ var Genetics = Genetics || {};
    */
   function Individual(mother, father) {
 
+    /* The individual's genetic composition */
     this.dna = [];
 
-    /*
-     * Create the genes.
-     */
     if (mother && father) {
+
+      /*
+       * Breed from mother and father:
+       */
 
       /* Used in random inheritance */
       var inheritSplit = (Math.random() * dnaLength) >> 0;
 
-      for (var i = 0; i < dnaLength; i += dnaCrossLength) {
+      for (var i = 0; i < dnaLength; i += geneSize) {
 
-        /* The parent which this chromosome will be inherited from */
-        var parent;
+        /* The parent's gene which will be inherited */
+        var inheritedGene;
 
         if (randomInheritance) {
-          /* Randomly inherit chromosomes from parents in an uneven manner */
-          parent = (i < inheritSplit) ? mother : father;
+          /* Randomly inherit genes from parents in an uneven manner */
+          inheritedGene = (i < inheritSplit) ? mother : father;
         } else {
-          /* Inherit chromosomes evenly from both parents */
-          parent = (Math.random() < 0.5) ? mother : father;
+          /* Inherit genes evenly from both parents */
+          inheritedGene = (Math.random() < 0.5) ? mother : father;
         }
 
         /*
-         * Create the genes.
+         * Create the genes:
          */
-        for (var j = 0; j < dnaCrossLength; j++) {
-          var val = parent[i + j];
+        for (var j = 0; j < geneSize; j++) {
 
+          /* The DNA strand */
+          var dna = inheritedGene[i + j];
+
+          /* Mutate the gene */
           if (Math.random() < mutationChance) {
-            /* mutate the gene */
-            val += Math.random() * mutateAmount * 2 - mutateAmount;
 
-            if (val < 0)
-              val = 0;
+            /* Apply the random mutation */
+            dna += Math.random() * mutateAmount * 2 - mutateAmount;
 
-            if (val > 1)
-              val = 1;
+            /* Keep the value in range */
+            if (dna < 0)
+              dna = 0;
+
+            if (dna > 1)
+              dna = 1;
           }
 
-          this.dna.push(val);
+          this.dna.push(dna);
         }
       }
 
     } else {
 
       /*
-       * Generate a random individual
+       * Generate a random individual:
        */
 
       for (var g = 0; g < dnaLength; g += geneSize) {
@@ -315,8 +268,10 @@ var Genetics = Genetics || {};
       }
     }
 
-    /* determine the fitness */
-    drawDNA(workingCtx, workingSize, workingSize, this.dna);
+    /*
+     * Determine the individual's fitness:
+     */
+    this.draw(workingCtx, workingSize, workingSize);
     var imageData = workingCtx.getImageData(0, 0,
                                             workingSize,
                                             workingSize).data;
@@ -344,7 +299,63 @@ var Genetics = Genetics || {};
     }
   }
 
+  /**
+   * Draw a representation of a DNA string to a canvas.
+   *
+   * @param {Canvas} ctx The 2D drawing context.
+   * @param {int} width The canvas width (pixels).
+   * @param {int} height The canvas height (pixels).
+   * @param {float[]} dna The DNA string.
+   */
+  Individual.prototype.draw = function(ctx, width, height) {
 
+    /* Set the background */
+    ctx.fillStyle = '#000';
+    ctx.fillRect(0, 0, width, height);
+
+    /*
+     * Draw each gene sequentially:
+     */
+    for (var g = 0; g < dnaLength; g += geneSize) {
+
+      /* Draw the starting vertex */
+      ctx.beginPath();
+      ctx.moveTo(this.dna[g + 4] * width, this.dna[g + 5] * height);
+
+      /* Create each vertices sequentially */
+      for (var i = 0; i < vertices - 1; i++) {
+        ctx.lineTo(this.dna[g + i * 2 + 6] * width,
+                   this.dna[g + i * 2 + 7] * height);
+      }
+
+      ctx.closePath();
+
+      var styleString = 'rgba(' +
+          ((this.dna[g] * 255) >> 0) + ',' + // R - int [0,255]
+          ((this.dna[g + 1] * 255) >> 0) + ',' + // G - int [0,255]
+          ((this.dna[g + 2] * 255) >> 0) + ',' + // B - int [0,255]
+          this.dna[g + 3] + ')'; // A - float [0,1]
+
+      if (fillPolygons) {
+
+        /*
+         * Create a polygon:
+         */
+        ctx.fillStyle = styleString;
+        ctx.fill();
+
+      } else {
+
+        /*
+         * Trace an outline:
+         */
+        ctx.lineWidth = 1;
+        ctx.strokeStyle = styleString;
+        ctx.stroke();
+
+      }
+    }
+  };
 
   /**
    * This object represents a entire population, composed of a number of
@@ -704,9 +715,8 @@ var Genetics = Genetics || {};
     diffSquared = $('#diff-squared')[0].checked;
 
     /* derive certain state variables */
-    dnaCrossLength = (4 + vertices * 2);
+    geneSize = (4 + vertices * 2);
     dnaLength = polygons * (4 + vertices * 2);
-    geneSize = 4 + vertices * 2;
 
     /* set the working canvas dimensions */
     workingCanvas.width = workingSize;
@@ -750,7 +760,7 @@ var Genetics = Genetics || {};
           currentFitness : highestFitness;
 
       /* draw the best fit to output */
-      drawDNA(outputCtx, 350, 350, fittest.dna);
+      fittest.draw(outputCtx, 350, 350);
 
       /* write out the internal state to analytics panel */
       ap.elapsedTime.text(secondsToString(Math.round(totalTime)));
