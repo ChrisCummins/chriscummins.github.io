@@ -377,7 +377,6 @@ function Population(size) {
         randCount--;
 
       for (var i = 0; i < selectCount; i++) {
-        var dna = individuals[i].dna;
 
         for (var j = 0; j < randCount; j++) {
           var randIndividual = i;
@@ -385,7 +384,7 @@ function Population(size) {
           while (randIndividual == i)
             randIndividual = (Math.random() * selectCount) >> 0;
 
-          offspring.push(new Individual(dna, individuals[randIndividual].dna));
+          offspring.push(new Individual(individuals[i].dna, individuals[randIndividual].dna));
         }
       }
 
