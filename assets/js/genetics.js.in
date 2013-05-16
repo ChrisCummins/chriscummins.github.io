@@ -424,10 +424,6 @@ function Population(size) {
     }
   };
 
-  this.getSize = function() {
-    return individuals.length;
-  };
-
   this.getFittest = function() {
     return individuals.sort(function(a, b) {
       return b.fitness - a.fitness;
