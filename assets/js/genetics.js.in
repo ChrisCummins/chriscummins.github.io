@@ -260,7 +260,7 @@ function Individual(mother, father) {
         /* Randomly inherit chromosomes from parents in an uneven manner */
         parent = (i < inheritSplit) ? mother : father;
       } else {
-         /* Inherit chromosomes evenly from both parents */
+        /* Inherit chromosomes evenly from both parents */
         parent = (Math.random() < 0.5) ? mother : father;
       }
 
@@ -346,73 +346,96 @@ function Individual(mother, father) {
  * individuals.
  *
  * @param {int} size The number of individuals in the population.
- * @property {float[]} dna The individuals DNA.
+ * @property {Individual[]} individuals The individuals in the population.
  * @constructor
  */
 function Population(size) {
-  var individuals = [];
+  this.individuals = [];
 
+  /* Generate our random starter culture */
   for (var i = 0; i < size; i++) {
-    individuals.push(new Individual());
+    this.individuals.push(new Individual());
   }
+}
 
-  /* breed a new generation */
-  this.nextGeneration = function(mutationChance, mutateAmount) {
 
-    if (individuals.length > 1) {
-      var offspring = [];
+/**
+ * Breed a new generation.
+ */
+Population.prototype.iterate = function() {
 
-      /* the number of individuals from the current generation to select for
-       * breeding */
-      var selectCount = Math.floor(individuals.length * selectionCutoff);
+  if (this.individuals.length > 1) {
 
-      /* the number of individuals to randomly generate */
-      var randCount = Math.ceil(1 / selectionCutoff);
+    /*
+     * Breed a new generation:
+     */
 
-      individuals = individuals.sort(function(a, b) {
-        return b.fitness - a.fitness;
-      });
+    var size = this.individuals.length;
+    var offspring = [];
 
-      if (!killParents)
-        randCount--;
+    /* the number of individuals from the current generation to select for
+     * breeding */
+    var selectCount = Math.floor(this.individuals.length * selectionCutoff);
 
-      for (var i = 0; i < selectCount; i++) {
+    /* the number of individuals to randomly generate */
+    var randCount = Math.ceil(1 / selectionCutoff);
 
-        for (var j = 0; j < randCount; j++) {
-          var randIndividual = i;
+    this.individuals = this.individuals.sort(function(a, b) {
+      return b.fitness - a.fitness;
+    });
 
-          while (randIndividual == i)
-            randIndividual = (Math.random() * selectCount) >> 0;
+    if (!killParents)
+      randCount--;
 
-          offspring.push(new Individual(individuals[i].dna, individuals[randIndividual].dna));
-        }
-      }
+    for (var i = 0; i < selectCount; i++) {
 
-      if (killParents) {
-        individuals = offspring;
-      } else {
-        individuals.length = selectCount;
-        individuals = individuals.concat(offspring);
-      }
+      for (var j = 0; j < randCount; j++) {
+        var randIndividual = i;
 
-      individuals.length = size;
-    } else {
-      /* asexual reproduction */
-      var parent = individuals[0];
-      var child = new Individual(parent.dna, parent.dna);
+        while (randIndividual == i)
+          randIndividual = (Math.random() * selectCount) >> 0;
 
-      if (child.fitness > parent.fitness) {
-        individuals = [child];
+        offspring.push(new Individual(this.individuals[i].dna,
+                                      this.individuals[randIndividual].dna));
       }
     }
-  };
 
-  this.getFittest = function() {
-    return individuals.sort(function(a, b) {
-      return b.fitness - a.fitness;
-    })[0];
-  };
-}
+    if (killParents) {
+      this.individuals = offspring;
+    } else {
+      this.individuals.length = selectCount;
+      this.individuals = this.individuals.concat(offspring);
+    }
+
+    this.individuals.length = size;
+
+  } else {
+
+    /*
+     * Asexual reproduction:
+     */
+
+    var parent = this.individuals[0];
+    var child = new Individual(parent.dna, parent.dna);
+
+    if (child.fitness > parent.fitness) {
+      this.individuals = [child];
+    }
+
+  }
+};
+
+
+/**
+ * Return the fittest individual from the population.
+ *
+ * @return {Individual} The fittest individual.
+ */
+Population.prototype.getFittest = function() {
+  return this.individuals.sort(function(a, b) {
+    return b.fitness - a.fitness;
+  })[0];
+};
 
 /*
  * Simulation functions
@@ -707,7 +730,7 @@ function runSimulation() {
   /* Each tick produces a new population and new fittest */
   function tick() {
     /* breed a new generation */
-    population.nextGeneration();
+    population.iterate();
     jiffies++;
 
     var fittest = population.getFittest();
