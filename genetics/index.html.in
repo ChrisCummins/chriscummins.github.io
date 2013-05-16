@@ -174,18 +174,6 @@
                 <tr/>
 
                 <tr data-toggle="tooltip"
-                    title="Whether the parents of each generation are killed or survive">
-                  <td>
-                    Kill Parents
-                  </td>
-                  <td></td>
-                  <td><label>
-                      <input id="killparents" class="ios-switch"
-                             type="checkbox" />
-                  </label></td>
-                <tr/>
-
-                <tr data-toggle="tooltip"
                     title="The chance that each DNA string will mutate per generation">
                   <td>
                     Mutation Chance
@@ -202,31 +190,44 @@
                   <td><div id="mutation-amount-slider" class="conf-slider"></div></td>
                   <td id="mutation-amount"></td>
                 <tr/>
+
+                <tr data-toggle="tooltip"
+                    title="Whether the parents of each generation are killed or survive">
+                  <td>
+                    Kill Parents
+                  </td>
+                  <td></td>
+                  <td><label>
+                      <input id="killparents" class="ios-switch"
+                             type="checkbox" />
+                  </label></td>
+                <tr/>
+
+                <tr data-toggle="tooltip"
+                    title="Inherit genes equally from mother and father">
+                  <td>
+                    Uniform crossover
+                  </td>
+                  <td></td>
+                  <td><label>
+                      <input id="uni-crossover" class="ios-switch"
+                             type="checkbox" />
+                  </label></td>
+                <tr/>
+
+                <tr data-toggle="tooltip"
+                    title="Linear or exponential fitness algorithm">
+                  <td>
+                    Difference squared
+                  </td>
+                  <td></td>
+                  <td><label>
+                      <input id="diff-squared" class="ios-switch"
+                             type="checkbox" />
+                  </label></td>
+                <tr/>
+
               </table>
-
-              <tr data-toggle="tooltip"
-                  title="Inherit genes equally from mother and father">
-                <td>
-                  Uniform crossover
-                </td>
-                <td></td>
-                <td><label>
-                    <input id="uni-crossover" class="ios-switch"
-                           type="checkbox" />
-                </label></td>
-              <tr/>
-
-              <tr data-toggle="tooltip"
-                  title="Linear or exponential fitness algorithm">
-                <td>
-                  Difference squared
-                </td>
-                <td></td>
-                <td><label>
-                    <input id="diff-squared" class="ios-switch"
-                           type="checkbox" />
-                </label></td>
-              <tr/>
 
               <!-- graphics settings -->
               <center><h4>Graphics</h4></center>
@@ -234,12 +235,21 @@
               <table class="table conf-table">
 
                 <tr data-toggle="tooltip"
-                    title="More polygons means more visual detail, but slower performance">
+                    title="A higher internal resolution improves accuracy, but slows performance">
                   <td style="width: 160px;">
+                    Internal Resolution
+                  </td>
+                  <td><div id="resolution-slider" class="conf-slider"></div></td>
+                  <td id="resolution" style="width: 80px;"></td>
+                <tr/>
+
+                <tr data-toggle="tooltip"
+                    title="More polygons means more visual detail, but slower performance">
+                  <td>
                     Number of polygons
                   </td>
                   <td><div id="polygons-slider" class="conf-slider"></div></td>
-                  <td id="polygons" style="width: 80px;"></td>
+                  <td id="polygons"></td>
                 <tr/>
 
                 <tr data-toggle="tooltip"
@@ -249,15 +259,6 @@
                   </td>
                   <td><div id="vertices-slider" class="conf-slider"></div></td>
                   <td id="vertices"></td>
-                <tr/>
-
-                <tr data-toggle="tooltip"
-                    title="A higher internal resolution improves accuracy, but slows performance">
-                  <td>
-                    Internal Resolution
-                  </td>
-                  <td><div id="resolution-slider" class="conf-slider"></div></td>
-                  <td id="resolution"></td>
                 <tr/>
 
                 <tr data-toggle="tooltip"
