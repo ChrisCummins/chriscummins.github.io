@@ -143,138 +143,134 @@
 
             <div id="pane-configuration" class="tab-pane well">
 
-	      <div class="alert alert-info">
-		<a href="#" class="close" data-dismiss="alert">&times;</a>
-		This tab enables you to configure the parameters to be used for
-		the genetics simulation.
-	      </div>
+              <!-- configuration synopsis -->
+              <div class="alert alert-info">
+                <a href="#" class="close" data-dismiss="alert">&times;</a>
+                This tab enables you to configure the parameters to be used for
+                the genetics simulation.
+              </div>
 
-              <table>
-                <tr>
-                  <td valign="top">
-                    <h4>Genetics</h4>
+              <center><h4>Genetics</h4></center>
 
-                    Population Size<br />
-                    <select id="population-size">
-                      <option>1 (asexual reproduction)</option>
-                      <option>20</option>
-                      <option selected="selected">40</option>
-                      <option>60</option>
-                      <option>80</option>
-                      <option>100</option>
-                      <option>150</option>
-                      <option>200</option>
-                    </select>
-                    <br />
+              <table class="table conf-table">
 
-                    Multation Chance<br />
-                    <select id="mutation-chance">
-                      <option>0.5%</option>
-                      <option>1.0%</option>
-                      <option selected="selected">1.5%</option>
-                      <option>2.0%</option>
-                      <option>2.5%</option>
-                      <option>3.0%</option>
-                      <option>5.0%</option>
-                    </select>
-                    <br />
-
-                    Multation Amount<br />
-                    <select id="mutation-amount">
-                      <option>0%</option>
-                      <option>5%</option>
-                      <option selected="selected">10%</option>
-                      <option>20%</option>
-                      <option>30%</option>
-                      <option>40%</option>
-                      <option>50%</option>
-                      <option>75%</option>
-                      <option>100%</option>
-                    </select>
-                    <br />
-
-                    Selection cutoff<br />
-                    <select id="selection-cutoff">
-                      <option>0%</option>
-                      <option>5%</option>
-                      <option>10%</option>
-                      <option selected="selected">25%</option>
-                      <option>35%</option>
-                      <option>50%</option>
-                      <option>75%</option>
-                      <option>100%</option>
-                    </select>
-                    <br />
-
-                    <label>
-                      Kill parents
-                      <input class="ios-switch" type="checkbox"
-                             id="killparents" checked />
-                    </label>
-
+                <tr data-toggle="tooltip"
+                    title="The number of individuals in a single generation">
+                  <td style="width: 160px;">
+                    Population Size
                   </td>
-                  <td valign="top">
-                    <h4>Graphics</h4>
+                  <td><div id="population-size-slider" class="conf-slider"></div></td>
+                  <td id="population-size" style="width: 80px;"></td>
+                <tr/>
 
-                    Number of polygons<br />
-                    <select id="polygons">
-                      <option>1</option>
-                      <option>5</option>
-                      <option>25</option>
-                      <option>50</option>
-                      <option>100</option>
-                      <option selected="selected">125</option>
-                      <option>150</option>
-                      <option>200</option>
-                      <option>300</option>
-                      <option>500</option>
-                    </select>
-                    <br />
-
-                    Vertices<br />
-                    <select id="vertices">
-                      <option>3</option>
-                      <option selected="selected">6</option>
-                      <option>9</option>
-                      <option>12</option>
-                      <option>24</option>
-                      <option>48</option>
-                      <option>96</option>
-                    </select>
-                    <br />
-
-                    Internal Resolution<br />
-                    <select id="internal-resolution">
-                      <option>25&times;25</option>
-                      <option>50&times;50</option>
-                      <option selected="selected">70&times;70</option>
-                      <option>100&times;100</option>
-                      <option>150&times;150</option>
-                      <option>200&times;200</option>
-                      <option>300&times;300</option>
-                    </select>
-                    <br />
-
-                    <label>
-                      Fill polygons
-                      <input class="ios-switch" type="checkbox" id="fill-polygons"
-                             checked />
-                    </label>
-
-                    <label>
-                      Uniform crossover
-                      <input class="ios-switch" type="checkbox" id="uniformcross"
-                             checked/>
-                    </label>
-
-                    <label>
-                      Difference squared
-                      <input class="ios-switch" type="checkbox" id="diff-squared"
-                             checked />
-                    </label>
-
+                <tr data-toggle="tooltip"
+                    title="The percentage of the population which is selected for breeding the next generation">
+                  <td>
+                    Selection Cutoff
                   </td>
-                </tr>
+                  <td><div id="cutoff-slider" class="conf-slider"></div></td>
+                  <td id="cutoff"></td>
+                <tr/>
+
+                <tr data-toggle="tooltip"
+                    title="Whether the parents of each generation are killed or survive">
+                  <td>
+                    Kill Parents
+                  </td>
+                  <td></td>
+                  <td><label>
+                      <input id="killparents" class="ios-switch"
+                             type="checkbox" />
+                  </label></td>
+                <tr/>
+
+                <tr data-toggle="tooltip"
+                    title="The chance that each DNA string will mutate per generation">
+                  <td>
+                    Mutation Chance
+                  </td>
+                  <td><div id="mutation-chance-slider" class="conf-slider"></div></td>
+                  <td id="mutation-chance"></td>
+                <tr/>
+
+                <tr data-toggle="tooltip"
+                    title="The amount of random data that is introduced in a mutation">
+                  <td>
+                    Mutation Amount
+                  </td>
+                  <td><div id="mutation-amount-slider" class="conf-slider"></div></td>
+                  <td id="mutation-amount"></td>
+                <tr/>
+              </table>
+
+              <tr data-toggle="tooltip"
+                  title="Inherit genes equally from mother and father">
+                <td>
+                  Uniform crossover
+                </td>
+                <td></td>
+                <td><label>
+                    <input id="uni-crossover" class="ios-switch"
+                           type="checkbox" />
+                </label></td>
+              <tr/>
+
+              <tr data-toggle="tooltip"
+                  title="Linear or exponential fitness algorithm">
+                <td>
+                  Difference squared
+                </td>
+                <td></td>
+                <td><label>
+                    <input id="diff-squared" class="ios-switch"
+                           type="checkbox" />
+                </label></td>
+              <tr/>
+
+              <!-- graphics settings -->
+              <center><h4>Graphics</h4></center>
+
+              <table class="table conf-table">
+
+                <tr data-toggle="tooltip"
+                    title="More polygons means more visual detail, but slower performance">
+                  <td style="width: 160px;">
+                    Number of polygons
+                  </td>
+                  <td><div id="polygons-slider" class="conf-slider"></div></td>
+                  <td id="polygons" style="width: 80px;"></td>
+                <tr/>
+
+                <tr data-toggle="tooltip"
+                    title="The number of sides that each polygon has">
+                  <td>
+                    Number of vertices
+                  </td>
+                  <td><div id="vertices-slider" class="conf-slider"></div></td>
+                  <td id="vertices"></td>
+                <tr/>
+
+                <tr data-toggle="tooltip"
+                    title="A higher internal resolution improves accuracy, but slows performance">
+                  <td>
+                    Internal Resolution
+                  </td>
+                  <td><div id="resolution-slider" class="conf-slider"></div></td>
+                  <td id="resolution"></td>
+                <tr/>
+
+                <tr data-toggle="tooltip"
+                    title="Draw solid shapes or traced lines">
+                  <td>
+                    Fill polygons
+                  </td>
+                  <td></td>
+                  <td><label>
+                      <input id="fill-polygons" class="ios-switch"
+                             type="checkbox" />
+                  </label></td>
+                <tr/>
+
               </table>
             </div>
 
