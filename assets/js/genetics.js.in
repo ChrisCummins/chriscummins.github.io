@@ -104,7 +104,7 @@ var mutationChance;
 var selectionCutoff;
 var polygons;
 var populationSize;
-var uniformCrossover;
+var randomInheritance;
 var vertices;
 var workingSize;
 
@@ -245,25 +245,34 @@ function Individual(mother, father) {
 
   /* get the DNA */
   if (mother && father) {
-    /* breed the individual from parents */
-    var cross = (Math.random() * dnaLength) >> 0;
+
+    var inheritSplit = (Math.random() * dnaLength) >> 0;
 
     for (var i = 0; i < dnaLength; i += dnaCrossLength) {
       var par;
 
-      if (uniformCrossover) {
+      if (randomInheritance) {
 
-        if (Math.random() < 0.5)
+        /*
+         * Randomly inherit chromosomes from parents in an uneven manner.
+         */
+
+        if (i < inheritSplit)
           par = mother;
         else
           par = father;
 
       } else {
 
-        if (i < cross)
+        /*
+         * Inherit chromosomes evenly from both parents.
+         */
+
+        if (Math.random() < 0.5)
           par = mother;
         else
           par = father;
+
       }
 
       for (var j = 0; j < dnaCrossLength; j++) {
@@ -586,7 +595,7 @@ function initConfiguration() {
  * @param {int} _vertices The number of vertices.
  * @param {int} _resolution Internal resolution (in pixels).
  * @param {boolean} _fillPolygons Fill polygons.
- * @param {boolean} _uniCrossover Uniform crossover.
+ * @param {boolean} _randomInheritance Whether to inherit chromosomes randomly.
  * @param {boolean} _diffSquared Square difference.
  */
 function setConfiguration(_populationSize,
@@ -598,7 +607,7 @@ function setConfiguration(_populationSize,
                           _vertices,
                           _resolution,
                           _fillPolygons,
-                          _uniCrossover,
+                          _randomInheritance,
                           _diffSquared) {
 
   if (!_populationSize)
@@ -644,9 +653,9 @@ function setConfiguration(_populationSize,
     var _fillPolygons = true;
   $('#fill-polygons').prop('checked', _fillPolygons);
 
-  if (!_uniCrossover)
-    var _uniCrossover = true;
-  $('#uni-crossover').prop('checked', _uniCrossover);
+  if (!_randomInheritance)
+    var _randomInheritance = false;
+  $('#random-inheritance').prop('checked', _randomInheritance);
 
   if (!_diffSquared)
     var _diffSquared = true;
@@ -667,7 +676,7 @@ function getConfiguration() {
   vertices = parseInt($('#vertices').text());
   workingSize = parseInt($('#resolution').text());
   fillPolygons = $('#fill-polygons')[0].checked;
-  uniformCrossover = $('#uni-crossover')[0].checked;
+  randomInheritance = $('#random-inheritance')[0].checked;
   diffSquared = $('#diff-squared')[0].checked;
 
   /* derive certain state variables */

@@ -204,13 +204,13 @@
                 <tr/>
 
                 <tr data-toggle="tooltip"
-                    title="Inherit genes equally from mother and father">
+                    title="Inherit genes randomly from mother and father or an even share of both">
                   <td>
-                    Uniform crossover
+                    Random Inheritance
                   </td>
                   <td></td>
                   <td><label>
-                      <input id="uni-crossover" class="ios-switch"
+                      <input id="random-inheritance" class="ios-switch"
                              type="checkbox" />
                   </label></td>
                 <tr/>
