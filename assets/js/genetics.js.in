@@ -5,153 +5,88 @@
  * http://chriscummins.cc
  * http://chriscummins.cc/genetics
  *
- * Based on the fantastic `JavaScript Genetic Algorithm' by Jacob Seidelin,
- * available at:
- *
- *   http://www.nihilogic.dk/labs/evolving-images/
- *
- * This file is documented with JSDoc comments. If you have a checkout of this
- * webpage repository, use `make docs' to generate docuemntation under
- * Documentation/genetics/.
- *
- * Seidelin's JavaScript Genetic Algorithm header:
- *
- *   Copyright (c) 2009 Jacob Seidelin
+ * Based on `JavaScript Genetic Algorithm' (Copyright (c) 2009 Jacob Seidelin).
  *   jseidelin@nihilogic.dk, http://blog.nihilogic.dk/
- *   MIT License [http://www.nihilogic.dk/licenses/mit-license.txt]
  */
 
-/**
- * @file
- *
- * Genetics Algorithms to Grow Your Own Picture. This documentation is a work in
- * progress, and is largely incomplete at this time.
- */
-
-/**
- * @namespace Genetics
+/*
+ * We lump the API in a `Genetics' namespace.
  */
 var Genetics = Genetics || {};
 
 (function() {
   'use strict';
 
-  /**
-   * We keep a reference to the document body for convenient typing.
-   */
-  var body = document.body;
-
-
-  /**
-   * The analytics pane elements
-   */
+  /* The analytics pane elements */
   var ap;
 
-
-  /**
-   * The working canvas, used by the fitness function to determine an
-   * individuals fitness.
+  /* The working area, used by the fitness function to determine an individuals
+   * fitness.
    */
   var workingCanvas;
-
-
-  /**
-   * The 2D drawing context of the working canvas, as returned by the
-   * getContext() method.
-   */
   var workingCtx;
-
   var workingData = [];
 
-
-  /**
-   * The output workspace, where we display the fittest population.
+  /* The output area, where we display the fittest population.
    */
   var outputCanvas;
-
-
-  /**
-   * The 2D drawing context of the output canvas, as returned by the
-   * getContext() method.
-   */
   var outputCtx;
 
-
-  /**
-   * The reference canvas, where we display the target image that we are
+  /* The reference area, where we display the target image that we are
    * selecting towards.
    */
   var referenceCanvas;
-
-
-  /**
-   * The 2D drawing context of the reference canvas, as returned by the
-   * getContext() method.
-   */
   var referenceCtx;
-
-
-  /**
-   * The reference image.
-   */
   var referenceImage;
 
-  /*
-   * Simulation session variables.
+  /* Genetics options.
    */
-
-  /* User set configuration */
-  var diffSquared;
-  var fillPolygons;
-  var killParents;
-  var mutateAmount;
-  var mutationChance;
-  var selectionCutoff;
-  var polygons;
   var populationSize;
+  var selectionCutoff;
+  var mutationChance;
+  var mutateAmount;
+  var killParents;
   var randomInheritance;
-  var vertices;
-  var workingSize;
+  var diffSquared;
 
-  /* Simulation session variables */
+  /* Graphics options.
+   */
+  var workingSize;
+  var polygons;
+  var vertices;
+  var fillPolygons;
+
+  /* Simulation session variables.
+   */
   var clock;
-  var dnaLength;
-  var geneSize;
-  var highestFitness;
   var jiffies;
+  var geneSize;
+  var dnaLength;
   var lowestFitness;
+  var highestFitness;
   var population;
   var startTime;
 
-
-  /**
+  /*
    * When the simulation is paused, this variable is set to the currently
    * elapsed time (in milliseconds). Upon resume, this value is subtracted from
    * the new start time so as to account for the time spent paused. This
    * maintains the accuracy of the elapsed time feedback, as otherwise all time
    * spent in a paused state would still count towards elpased time, which is
    * instead used to measure the active time.
-   *
-   * @type {int}
    */
   var resumedTime = 0;
 
   /*
-   * Utility functions.
-   */
-
-
-  /**
    * Determines whether the genetics program is compatible with the host
    * browser. Returns true if yes, else false.
-   *
-   * @return {boolean} True if supported, else false.
    */
   function isSupported() {
     var isSupported = false;
 
-    /* perform a simple check to verify that getContext() and getImageData() are
-     * supported */
+    /* Perform a simple check to verify that getContext() and getImageData() are
+     * supported:
+     */
     if (referenceCanvas.getContext &&
         referenceCanvas.getContext('2d').getImageData) {
       isSupported = true;
@@ -161,11 +96,8 @@ var Genetics = Genetics || {};
   }
 
 
-  /**
+  /*
    * Convert a seconds value to a human-redable string.
-   *
-   * @param {int} s The number of seconds.
-   * @return {string} A time value in the form [hh:m]m:ss.
    */
   function secondsToString(s) {
     var h = Math.floor(s / 3600);
@@ -178,17 +110,11 @@ var Genetics = Genetics || {};
              m + ':' : '0:') + (s < 10 ? '0' : '') + s);
   }
 
-  /**
+  /*
    * Creates a new individual. Each individual comprises of their string of DNA,
-   * and the fitness. Both of these are generated in the constructor, there is
-   * no other behaviour. If mother father are omitted, this generates a random
-   * individual.
-   *
-   * @param {Individual} mother The mother.
-   * @param {Individual} father The father.
-   * @property {float[]} dna The individuals DNA.
-   * @property {float} fitness The individuals fitness [0, 1].
-   * @constructor
+   * and their fitness. In addition, a draw() method is provided for visualising
+   * the individual. If mother and father are omitted, a random individual is
+   * generated.
    */
   function Individual(mother, father) {
 
@@ -271,41 +197,38 @@ var Genetics = Genetics || {};
     /*
      * Determine the individual's fitness:
      */
+
     this.draw(workingCtx, workingSize, workingSize);
+
     var imageData = workingCtx.getImageData(0, 0,
                                             workingSize,
                                             workingSize).data;
-    var dif = 0;
+    var diff = 0;
     var p = workingSize * workingSize * 4 - 1;
 
     do {
       if (p % 3) {
         var dp = imageData[p] - workingData[p];
         if (diffSquared) {
-          dif += dp * dp;
+          diff += dp * dp;
         } else {
           if (dp < 0)
-            dif -= dp;
+            diff -= dp;
           else
-            dif += dp;
+            diff += dp;
         }
       }
     } while (--p);
 
     if (diffSquared) {
-      this.fitness = (1 - dif / (workingSize * workingSize * 3 * 256 * 256));
+      this.fitness = (1 - diff / (workingSize * workingSize * 3 * 256 * 256));
     } else {
-      this.fitness = (1 - dif / (workingSize * workingSize * 3 * 256));
+      this.fitness = (1 - diff / (workingSize * workingSize * 3 * 256));
     }
   }
 
-  /**
+  /*
    * Draw a representation of a DNA string to a canvas.
-   *
-   * @param {Canvas} ctx The 2D drawing context.
-   * @param {int} width The canvas width (pixels).
-   * @param {int} height The canvas height (pixels).
-   * @param {float[]} dna The DNA string.
    */
   Individual.prototype.draw = function(ctx, width, height) {
 
@@ -357,25 +280,20 @@ var Genetics = Genetics || {};
     }
   };
 
-  /**
+  /*
    * This object represents a entire population, composed of a number of
-   * individuals.
-   *
-   * @param {int} size The number of individuals in the population.
-   * @property {Individual[]} individuals The individuals in the population.
-   * @constructor
+   * individuals. It provides a iterate() function to breed a new generation.
    */
   function Population(size) {
     this.individuals = [];
 
     /* Generate our random starter culture */
-    for (var i = 0; i < size; i++) {
+    for (var i = 0; i < size; i++)
       this.individuals.push(new Individual());
-    }
+
   }
 
-
-  /**
+  /*
    * Breed a new generation.
    */
   Population.prototype.iterate = function() {
@@ -389,11 +307,12 @@ var Genetics = Genetics || {};
       var size = this.individuals.length;
       var offspring = [];
 
-      /* the number of individuals from the current generation to select for
-       * breeding */
+      /* The number of individuals from the current generation to select for
+       * breeding
+       */
       var selectCount = Math.floor(this.individuals.length * selectionCutoff);
 
-      /* the number of individuals to randomly generate */
+      /* The number of individuals to randomly generate */
       var randCount = Math.ceil(1 / selectionCutoff);
 
       this.individuals = this.individuals.sort(function(a, b) {
@@ -434,62 +353,47 @@ var Genetics = Genetics || {};
       var parent = this.individuals[0];
       var child = new Individual(parent.dna, parent.dna);
 
-      if (child.fitness > parent.fitness) {
+      if (child.fitness > parent.fitness)
         this.individuals = [child];
-      }
 
     }
   };
 
 
-  /**
+  /*
    * Return the fittest individual from the population.
-   *
-   * @return {Individual} The fittest individual.
    */
   Population.prototype.getFittest = function() {
+
     return this.individuals.sort(function(a, b) {
       return b.fitness - a.fitness;
     })[0];
+
   };
 
   /*
-   * Simulation functions
-   */
-
-
-  /**
    * Determines whether the genetics simulation is currently running.
-   *
-   * @return {boolean} True if running, else false.
    */
   function isRunning() {
     return clock;
   }
 
-
-  /**
+  /*
    * Determines whether the genetics simulation is currently paused.
-   * @return {boolean} True if paused, else false.
    */
   function isPaused() {
     return jiffies && !clock;
   }
 
-
-  /**
+  /*
    * Determines whether the genetics simulation is currently stopped.
-   * @return {boolean} True if stopped, else false.
    */
   function isStopped() {
     return !isRunning() && !isPaused();
   }
 
-
-  /**
+  /*
    * Upload a new file to use as a reference image.
-   *
-   * @param {File} e The target file.
    */
   function fileSelectCb(e) {
     var file = e.target.files[0];
@@ -503,11 +407,8 @@ var Genetics = Genetics || {};
     console.log(file.name);
   }
 
-
-  /**
+  /*
    * Set a new image to use as the reference image.
-   *
-   * @param {string} src The path to the new image.
    */
   function setImage(src) {
     referenceImage.onload = prepareImage;
@@ -515,7 +416,7 @@ var Genetics = Genetics || {};
   }
 
 
-  /**
+  /*
    * Prepare an image for use as the reference image.
    */
   function prepareImage() {
@@ -548,11 +449,14 @@ var Genetics = Genetics || {};
   }
 
 
-  /**
+  /*
    * Initialise the configuration panel.
    */
   function initConfiguration() {
-    /* prepare the sliders */
+
+    /*
+     * Prepare the sliders:
+     */
     $('#population-size-slider').slider({
       min: 0, max: 100, step: 5,
       slide: function(event, ui) {
@@ -604,7 +508,9 @@ var Genetics = Genetics || {};
       }
     });
 
-    /* prepare the ios switches */
+    /*
+     * Prepare the ios switches
+     */
     var iosSwitches =
         document.querySelectorAll('input[type="checkbox"].ios-switch');
     for (var i = 0, sw; sw = iosSwitches[i++];) {
@@ -617,21 +523,9 @@ var Genetics = Genetics || {};
   }
 
 
-  /**
+  /*
    * Set a new configuration. If any parameter is missing, default values are
    * used.
-   *
-   * @param {int} _populationSize The population size.
-   * @param {int} _cutoffSlider The selection cutoff (as a percentage).
-   * @param {boolean} _killParents Kill parents.
-   * @param {int} _mutationChance The mutation chance (as a percentage).
-   * @param {int} _mutationAmount The mutation amount (as a percentage).
-   * @param {int} _polygons The number of polygons.
-   * @param {int} _vertices The number of vertices.
-   * @param {int} _resolution Internal resolution (in pixels).
-   * @param {boolean} _fillPolygons Fill polygons.
-   * @param {boolean} _randomInheritance Inherit chromosomes randomly.
-   * @param {boolean} _diffSquared Square difference.
    */
   function setConfiguration(_populationSize,
                             _cutoffSlider,
@@ -697,11 +591,11 @@ var Genetics = Genetics || {};
     $('#diff-squared').prop('checked', _diffSquared);
   }
 
-
-  /**
+  /*
    * Retrieve the session from the configuration panel
    */
   function getConfiguration() {
+
     populationSize = parseInt($('#population-size').text());
     selectionCutoff = parseFloat($('#cutoff').text()) / 100;
     killParents = $('#killparents')[0].checked;
@@ -714,11 +608,11 @@ var Genetics = Genetics || {};
     randomInheritance = $('#random-inheritance')[0].checked;
     diffSquared = $('#diff-squared')[0].checked;
 
-    /* derive certain state variables */
+    /* Derive certain state variables */
     geneSize = (4 + vertices * 2);
     dnaLength = polygons * (4 + vertices * 2);
 
-    /* set the working canvas dimensions */
+    /* Set the working canvas dimensions */
     workingCanvas.width = workingSize;
     workingCanvas.height = workingSize;
     workingCanvas.style.width = workingSize;
@@ -726,12 +620,12 @@ var Genetics = Genetics || {};
   }
 
 
-  /**
+  /*
    * Run the simulation.
    */
   function runSimulation() {
-    body.classList.remove('genetics-inactive');
-    body.classList.add('genetics-active');
+    document.body.classList.remove('genetics-inactive');
+    document.body.classList.add('genetics-active');
 
     if (isPaused())
       startTime = new Date().getTime() - resumedTime;
@@ -744,7 +638,8 @@ var Genetics = Genetics || {};
 
     /* Each tick produces a new population and new fittest */
     function tick() {
-      /* breed a new generation */
+
+      /* Breed a new generation */
       population.iterate();
       jiffies++;
 
@@ -759,10 +654,10 @@ var Genetics = Genetics || {};
       highestFitness = (currentFitness > highestFitness) ?
           currentFitness : highestFitness;
 
-      /* draw the best fit to output */
+      /* Draw the best fit to output */
       fittest.draw(outputCtx, 350, 350);
 
-      /* write out the internal state to analytics panel */
+      /* Write out the internal state to analytics panel */
       ap.elapsedTime.text(secondsToString(Math.round(totalTime)));
       ap.numberOfGenerations.text(jiffies);
       ap.timePerGeneration.text(timePerGeneration.toFixed(2) + ' ms');
@@ -776,8 +671,7 @@ var Genetics = Genetics || {};
     clock = setInterval(tick, 0);
   }
 
-
-  /**
+  /*
    * Start the simulation.
    */
   function startSimulation() {
@@ -793,8 +687,7 @@ var Genetics = Genetics || {};
     runSimulation();
   }
 
-
-  /**
+  /*
    * Pause the simulation.
    */
   function pauseSimulation() {
@@ -805,8 +698,7 @@ var Genetics = Genetics || {};
     $('#strongest-dna').text(population.getFittest().dna);
   }
 
-
-  /**
+  /*
    * End the simulation.
    */
   function stopSimulation() {
@@ -823,8 +715,8 @@ var Genetics = Genetics || {};
     $('.ios-switch').attr('disabled', false);
     $('#strongest-dna').text('');
 
-    body.classList.remove('genetics-active');
-    body.classList.add('genetics-inactive');
+    document.body.classList.remove('genetics-active');
+    document.body.classList.add('genetics-inactive');
 
     /* Clear the drawing */
     outputCtx.clearRect(0, 0, 350, 350);
@@ -834,17 +726,17 @@ var Genetics = Genetics || {};
   }
 
   /*
-   * Page interaction.
+   * Stock image dropdown item selected.
    */
-
-  /* stock image dropdown item selected */
   $('#stock-image-menu li a').click(function() {
     setImage('/genetics/' +
              $(this).text().toLowerCase().replace(/ /g, '-') +
              '.jpg');
   });
 
-  /* start button callback */
+  /*
+   * Start button callback.
+   */
   $('#start').click(function() {
     if (isRunning()) {
       pauseSimulation();
@@ -853,14 +745,18 @@ var Genetics = Genetics || {};
     }
   });
 
-  /* stop button callback */
+  /*
+   * Stop button callback.
+   */
   $('#stop').click(function() {
     if (isRunning() || isPaused()) {
       stopSimulation();
     }
   });
 
-  /* webcam button callback */
+  /*
+   *  Webcam button callback.
+   */
   $('#webcam-upload-btn').click(function() {
     $('.underlay').fadeIn('slow');
     $('.webcam-overlay').fadeIn('fast');
@@ -870,7 +766,7 @@ var Genetics = Genetics || {};
   });
 
 
-  /**
+  /*
    * Dispose of the webcam upload overlay.
    */
   function hideWebcamUpload() {
@@ -878,12 +774,9 @@ var Genetics = Genetics || {};
     $('.webcam-overlay').fadeOut('fast');
   }
 
-
-  /**
+  /*
    * Webcam image upload complete. Note that we must declare this in the global
    * namespace so that he can use it as a global hook.
-   *
-   * @param {string} url The fully qualified URL to the uploaded webcam image.
    */
   window.webcamUploadComplete = function(url) {
     if (url.match(/^http:\/\//)) {
@@ -895,17 +788,20 @@ var Genetics = Genetics || {};
         startSimulation();
     }
     else {
+      /* FIXME: better alert, please */
       alert('PHP Error: ' + url);
     }
   };
 
-  /* underlay grabs all input and hides */
+  /*
+   * Underlay grabs all input and hides.
+   */
   $('.underlay').click(function() {
     hideWebcamUpload();
   });
 
 
-  /**
+  /*
    * Take a webcam snapshot.
    */
   $('#webcam-snap-button').click(function() {
@@ -913,12 +809,12 @@ var Genetics = Genetics || {};
   });
 
 
-  /**
-   * document ready preparations
+  /*
+   * Document ready preparations.
    */
   this.init = function() {
 
-    /* set our page element variables */
+    /* Set our page element variables */
     outputCanvas = $('#outputCanvas')[0];
     outputCtx = outputCanvas.getContext('2d');
 
@@ -929,7 +825,7 @@ var Genetics = Genetics || {};
     referenceCanvas = $('#referenceCanvas')[0];
     referenceCtx = referenceCanvas.getContext('2d');
 
-    /* analytics panel */
+    /* Analytics panel */
     ap = {
       elapsedTime: $('#elapsed-time'),
       numberOfGenerations: $('#number-of-generations'),
@@ -940,19 +836,19 @@ var Genetics = Genetics || {};
       lowestFitness: $('#lowest-fitness')
     };
 
-    /* check that we can run the program */
+    /* Check that we can run the program */
     if (!isSupported())
       alert('Unable to run genetics program!'); /* FIXME: better alert */
 
     initConfiguration();
 
-    /* set default configuration */
+    /* Set default configuration */
     setConfiguration();
 
     getConfiguration();
     prepareImage();
 
-    /* setup webcam upload */
+    /* Setup webcam upload */
     webcam.set_api_url('webcam.php');
     webcam.set_quality(90);
     webcam.set_shutter_sound(true);
@@ -962,7 +858,7 @@ var Genetics = Genetics || {};
 }).call(Genetics);
 
 
-/**
+/*
  * Bootstrap the page with our initialisation code.
  */
 window.onload = Genetics.init;

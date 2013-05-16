@@ -122,11 +122,12 @@
 
               As with all good things in life, this was created for fun, free,
               and science. The full source code for this site is available on
-              <a href="https://github.com/ChrisCummins/chriscummins.cc" target="_blank">GitHub</a>
-              and is released under the terms of the MIT License. If you just
-              want to see how the genetics algorithm works, you can read the
-              documentation for the JavaScript sources
-              <a href="docs" target="_blank">here</a>.
+              <a href="https://github.com/ChrisCummins/chriscummins.cc"
+              target="_blank">GitHub</a> and is released under the terms of the
+              MIT License. If you just want to see how the genetics algorithm
+              works, you can see the JavaScript
+              implementation <a href="https://github.com/ChrisCummins/chriscummins.cc/blob/master/assets/js/genetics.js.in"
+              target="_blank">here</a>.
 
               <h4>Bugs, comments and improvements</h4>
 
