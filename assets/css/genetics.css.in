@@ -191,7 +191,7 @@ label {
 }
 
 .ui-slider .ui-slider-handle {
-  background: url('/assets/img/handle.png') no-repeat 50% 50%;
+  background: url('/assets/img/slider-handle.png') no-repeat 50% 50%;
   position: absolute;
   z-index: 2;
   width: 25px;
