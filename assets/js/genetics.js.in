@@ -243,13 +243,18 @@ function Individual(mother, father) {
 
   this.dna = [];
 
-  /* get the DNA */
+  /*
+   * Create the genes.
+   */
   if (mother && father) {
 
+    /* Used in random inheritance */
     var inheritSplit = (Math.random() * dnaLength) >> 0;
 
     for (var i = 0; i < dnaLength; i += dnaCrossLength) {
-      var par;
+
+      /* The parent which this chromosome will be inherited from */
+      var parent;
 
       if (randomInheritance) {
 
@@ -258,9 +263,9 @@ function Individual(mother, father) {
          */
 
         if (i < inheritSplit)
-          par = mother;
+          parent = mother;
         else
-          par = father;
+          parent = father;
 
       } else {
 
@@ -269,14 +274,17 @@ function Individual(mother, father) {
          */
 
         if (Math.random() < 0.5)
-          par = mother;
+          parent = mother;
         else
-          par = father;
+          parent = father;
 
       }
 
+      /*
+       * Create the genes.
+       */
       for (var j = 0; j < dnaCrossLength; j++) {
-        var val = par[i + j];
+        var val = parent[i + j];
 
         if (Math.random() < mutationChance) {
           /* mutate the gene */
@@ -292,16 +300,22 @@ function Individual(mother, father) {
         this.dna.push(val);
       }
     }
+
   } else {
-    /* generate a random individual */
+
+    /*
+     * Generate a random individual
+     */
+
     for (var g = 0; g < dnaLength; g += geneSize) {
-      /* generate RGBA color values */
+
+      /* Generate RGBA color values */
       this.dna.push(Math.random(), // R
                     Math.random(), // G
                     Math.random(), // B
                     Math.max(Math.random() * Math.random(), 0.2)); // A
 
-      /* generate XY positional values */
+      /* Generate XY positional values */
       var x = Math.random();
       var y = Math.random();
 
@@ -344,8 +358,11 @@ function Individual(mother, father) {
 
 
 /**
- * Representation of a full population
+ * This object represents a entire population, composed of a number of
+ * individuals.
+ *
  * @param {int} size The number of individuals in the population.
+ * @property {float[]} dna The individuals DNA.
  * @constructor
  */
 function Population(size) {
