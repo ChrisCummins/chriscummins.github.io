@@ -249,7 +249,6 @@ function Individual(mother, father) {
     var cross = (Math.random() * dnaLength) >> 0;
 
     for (var i = 0; i < dnaLength; i += dnaCrossLength) {
-      var val;
       var par;
 
       if (uniformCrossover) {
@@ -268,7 +267,8 @@ function Individual(mother, father) {
       }
 
       for (var j = 0; j < dnaCrossLength; j++) {
-        val = par[i + j];
+        var val = par[i + j];
+
         if (Math.random() < mutationChance) {
           val += Math.random() * mutateAmount * 2 - mutateAmount;
 
