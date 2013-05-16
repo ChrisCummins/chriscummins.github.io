@@ -122,11 +122,12 @@
 
               As with all good things in life, this was created for fun, free,
               and science. The full source code for this site is available on
-              <a href="https://github.com/ChrisCummins/chriscummins.cc" target="_blank">GitHub</a>
-              and is released under the terms of the MIT License. If you just
-              want to see how the genetics algorithm works, you can read the
-              documentation for the JavaScript sources
-              <a href="docs" target="_blank">here</a>.
+              <a href="https://github.com/ChrisCummins/chriscummins.cc"
+              target="_blank">GitHub</a> and is released under the terms of the
+              MIT License. If you just want to see how the genetics algorithm
+              works, you can see the JavaScript
+              implementation <a href="https://github.com/ChrisCummins/chriscummins.cc/blob/master/assets/js/genetics.js.in"
+              target="_blank">here</a>.
 
               <h4>Bugs, comments and improvements</h4>
 
@@ -204,13 +205,13 @@
                 <tr/>
 
                 <tr data-toggle="tooltip"
-                    title="Inherit genes equally from mother and father">
+                    title="Inherit genes randomly from mother and father or an even share of both">
                   <td>
-                    Uniform crossover
+                    Random Inheritance
                   </td>
                   <td></td>
                   <td><label>
-                      <input id="uni-crossover" class="ios-switch"
+                      <input id="random-inheritance" class="ios-switch"
                              type="checkbox" />
                   </label></td>
                 <tr/>
@@ -373,8 +374,8 @@
           <input class="btn btn-inverse" type=button value="Configure"
                  onClick="webcam.configure()">
           &nbsp;&nbsp;
-          <input class="btn btn-inverse" type=button value="Take Snapshot"
-                 onClick="webcamTakeSnapshot()">
+          <input id="webcam-snap-button" class="btn btn-inverse"
+                 type=button value="Take Snapshot">
         </form>
       </center>
 

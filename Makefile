@@ -80,7 +80,6 @@ extra_site +=					\
 	uni/dissertation.pdf			\
 	uni/sustainability.pdf			\
 	uni/voluntary-cooperation.pdf		\
-	$(shell find genetics/docs)		\
 	$(NULL)
 
 # site content
@@ -158,15 +157,6 @@ ifndef DEBUG
 else
 	$(QUIET)cp $< $@
 endif
-
-.PHONY: docs
-docs:
-	@echo '  JSDOC    Documentation/genetics'
-	$(QUIET)$(JSDOC) -c Documentation/jsdocrc.json 			\
-		assets/js/genetics.js.in -d Documentation/genetics
-	$(QUIET)rm -rf genetics/docs
-	$(QUIET)mkdir genetics/docs
-	$(QUIET)cp -r Documentation/genetics/* genetics/docs
 
 .PHONY: check
 check:

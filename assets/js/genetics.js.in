@@ -5,357 +5,317 @@
  * http://chriscummins.cc
  * http://chriscummins.cc/genetics
  *
- * Based on the fantastic `JavaScript Genetic Algorithm' by Jacob Seidelin,
- * available at:
- *
- *   http://www.nihilogic.dk/labs/evolving-images/
- *
- * This file is documented with JSDoc comments. If you have a checkout of this
- * webpage repository, use `make docs' to generate docuemntation under
- * Documentation/genetics/.
- *
- * Seidelin's JavaScript Genetic Algorithm header:
- *
- *   Copyright (c) 2009 Jacob Seidelin
+ * Based on `JavaScript Genetic Algorithm' (Copyright (c) 2009 Jacob Seidelin).
  *   jseidelin@nihilogic.dk, http://blog.nihilogic.dk/
- *   MIT License [http://www.nihilogic.dk/licenses/mit-license.txt]
  */
-
-/**
- * @file
- *
- * Genetics Algorithms to Grow Your Own Picture. This documentation is a work in
- * progress, and is largely incomplete at this time.
- */
-
-'use strict';
-
-
-/**
- * We keep a reference to the document body for convenient typing.
- */
-var body = document.body;
-
-
-/**
- * The analytics pane elements
- */
-var ap;
-
-
-/**
- * The working canvas, used by the fitness function to determine an individuals
- * fitness.
- */
-var workingCanvas;
-
-
-/**
- * The 2D drawing context of the working canvas, as returned by the getContext()
- * method.
- */
-var workingCtx;
-
-var workingData = [];
-
-
-/**
- * The output workspace, where we display the fittest population.
- */
-var outputCanvas;
-
-
-/**
- * The 2D drawing context of the output canvas, as returned by the getContext()
- * method.
- */
-var outputCtx;
-
-
-/**
- * The reference canvas, where we display the target image that we are selecting
- * towards.
- */
-var referenceCanvas;
-
-
-/**
- * The 2D drawing context of the reference canvas, as returned by the
- * getContext() method.
- */
-var referenceCtx;
-
-
-/**
- * The reference image.
- */
-var referenceImage;
 
 /*
- * Simulation session variables.
+ * We lump the API in a `Genetics' namespace.
  */
+var Genetics = Genetics || {};
 
-/* User set configuration */
-var diffSquared;
-var fillPolygons;
-var killParents;
-var mutateAmount;
-var mutationChance;
-var selectionCutoff;
-var polygons;
-var populationSize;
-var uniformCrossover;
-var vertices;
-var workingSize;
+(function() {
+  'use strict';
 
-/* Simulation session variables */
-var clock;
-var dnaCrossLength;
-var dnaLength;
-var geneSize;
-var highestFitness;
-var jiffies;
-var lowestFitness;
-var population;
-var startTime;
+  /* The analytics pane elements */
+  var ap;
 
-/**
- * When the simulation is paused, this variable is set to the currently elapsed
- * time (in milliseconds). Upon resume, this value is subtracted from the new
- * start time so as to account for the time spent paused. This maintains the
- * accuracy of the elapsed time feedback, as otherwise all time spent in a
- * paused state would still count towards elpased time, which is instead
- * used to measure the active time.
- *
- * @type {int}
- */
-var resumedTime = 0;
+  /* The working area, used by the fitness function to determine an individuals
+   * fitness.
+   */
+  var workingCanvas;
+  var workingCtx;
+  var workingData = [];
 
-/*
- * Utility functions.
- */
+  /* The output area, where we display the fittest population.
+   */
+  var outputCanvas;
+  var outputCtx;
 
+  /* The reference area, where we display the target image that we are
+   * selecting towards.
+   */
+  var referenceCanvas;
+  var referenceCtx;
+  var referenceImage;
 
-/**
- * Determines whether the genetics program is compatible with the host
- * browser. Returns true if yes, else false.
- *
- * @return {boolean} True if supported, else false.
- */
-function geneticsIsSupported() {
-  var isSupported = false;
+  /* Genetics options.
+   */
+  var populationSize;
+  var selectionCutoff;
+  var mutationChance;
+  var mutateAmount;
+  var killParents;
+  var randomInheritance;
+  var diffSquared;
 
-  /* perform a simple check to verify that getContext() and getImageData() are
-   * supported */
-  if (referenceCanvas.getContext &&
-      referenceCanvas.getContext('2d').getImageData) {
-    isSupported = true;
-  }
+  /* Graphics options.
+   */
+  var workingSize;
+  var polygons;
+  var vertices;
+  var fillPolygons;
 
-  return isSupported;
-}
+  /* Simulation session variables.
+   */
+  var clock;
+  var jiffies;
+  var geneSize;
+  var dnaLength;
+  var lowestFitness;
+  var highestFitness;
+  var population;
+  var startTime;
 
+  /*
+   * When the simulation is paused, this variable is set to the currently
+   * elapsed time (in milliseconds). Upon resume, this value is subtracted from
+   * the new start time so as to account for the time spent paused. This
+   * maintains the accuracy of the elapsed time feedback, as otherwise all time
+   * spent in a paused state would still count towards elpased time, which is
+   * instead used to measure the active time.
+   */
+  var resumedTime = 0;
 
-/**
- * Convert a seconds value to a human-redable string.
- *
- * @param {int} s The number of seconds.
- * @return {string} A time value in the form [hh:m]m:ss.
- */
-function secondsToString(s) {
-  var h = Math.floor(s / 3600);
-  var m = Math.floor(s % 3600 / 60);
+  /*
+   * Determines whether the genetics program is compatible with the host
+   * browser. Returns true if yes, else false.
+   */
+  function isSupported() {
+    var isSupported = false;
 
-  s = Math.floor(s % 3600 % 60);
-
-  return ((h > 0 ? h + ':' : '') +
-          (m > 0 ? (h > 0 && m < 10 ? '0' : '') +
-           m + ':' : '0:') + (s < 10 ? '0' : '') + s);
-}
-
-
-/**
- * Draw a representation of a DNA string to a canvas.
- *
- * @param {Canvas} ctx The 2D drawing context.
- * @param {int} width The canvas width (pixels).
- * @param {int} height The canvas height (pixels).
- * @param {float[]} dna The DNA string.
- */
-function drawDNA(ctx, width, height, dna) {
-
-  /* draw the gene at index `g' */
-  function drawGene(g) {
-    /* starting vertex */
-    ctx.beginPath();
-    ctx.moveTo((dna[g + 4]) * width, (dna[g + 5]) * height);
-
-    /* create each vertex */
-    for (var i = 0; i < vertices - 1; i++) {
-      ctx.lineTo((dna[g + i * 2 + 6]) * width, (dna[g + i * 2 + 7]) * height);
+    /* Perform a simple check to verify that getContext() and getImageData() are
+     * supported:
+     */
+    if (referenceCanvas.getContext &&
+        referenceCanvas.getContext('2d').getImageData) {
+      isSupported = true;
     }
 
-    ctx.closePath();
-
-    var styleString = 'rgba(' +
-        ((dna[g] * 255) >> 0) + ',' + // R - int [0,255]
-        ((dna[g + 1] * 255) >> 0) + ',' + // G - int [0,255]
-        ((dna[g + 2] * 255) >> 0) + ',' + // B - int [0,255]
-        dna[g + 3] + ')'; // A - float [0,1]
-
-    if (fillPolygons) {
-      /* create a polygon */
-      ctx.fillStyle = styleString;
-      ctx.fill();
-    } else {
-      /* trace an outline */
-      ctx.lineWidth = 1;
-      ctx.strokeStyle = styleString;
-      ctx.stroke();
-    }
+    return isSupported;
   }
 
-  /* set the background */
-  ctx.fillStyle = '#000';
-  ctx.fillRect(0, 0, width, height);
 
-  /* draw each gene sequentially */
-  for (var g = 0; g < dnaLength; g += geneSize)
-    drawGene(g);
-}
+  /*
+   * Convert a seconds value to a human-redable string.
+   */
+  function secondsToString(s) {
+    var h = Math.floor(s / 3600);
+    var m = Math.floor(s % 3600 / 60);
 
+    s = Math.floor(s % 3600 % 60);
 
+    return ((h > 0 ? h + ':' : '') +
+            (m > 0 ? (h > 0 && m < 10 ? '0' : '') +
+             m + ':' : '0:') + (s < 10 ? '0' : '') + s);
+  }
 
-/**
- * Creates a new individual. Each individual comprises of their string of DNA,
- * and the fitness. Both of these are generated in the constructor, there is no
- * other behaviour. If mother father are omitted, this generates a random
- * individual.
- *
- * @param {Individual} mother The mother.
- * @param {Individual} father The father.
- * @property {float[]} dna The individuals DNA.
- * @property {float} fitness The individuals fitness [0, 1].
- * @constructor
- */
-function Individual(mother, father) {
+  /*
+   * Creates a new individual. Each individual comprises of their string of DNA,
+   * and their fitness. In addition, a draw() method is provided for visualising
+   * the individual. If mother and father are omitted, a random individual is
+   * generated.
+   */
+  function Individual(mother, father) {
 
+    /* The individual's genetic composition */
+    this.dna = [];
 
-  this.dna = [];
+    if (mother && father) {
 
-  /* get the DNA */
-  if (mother && father) {
-    /* breed the individual from parents */
-    var cross = (Math.random() * dnaLength) >> 0;
+      /*
+       * Breed from mother and father:
+       */
 
-    for (var i = 0; i < dnaLength; i += dnaCrossLength) {
-      var val;
-      var par;
+      /* Used in random inheritance */
+      var inheritSplit = (Math.random() * dnaLength) >> 0;
 
-      if (uniformCrossover) {
+      for (var i = 0; i < dnaLength; i += geneSize) {
 
-        if (Math.random() < 0.5)
-          par = mother;
-        else
-          par = father;
+        /* The parent's gene which will be inherited */
+        var inheritedGene;
 
-      } else {
-
-        if (i < cross)
-          par = mother;
-        else
-          par = father;
-      }
-
-      for (var j = 0; j < dnaCrossLength; j++) {
-        val = par[i + j];
-        if (Math.random() < mutationChance) {
-          val += Math.random() * mutateAmount * 2 - mutateAmount;
-
-
-          if (val < 0) val = 0;
-          if (val > 1) val = 1;
+        if (randomInheritance) {
+          /* Randomly inherit genes from parents in an uneven manner */
+          inheritedGene = (i < inheritSplit) ? mother : father;
+        } else {
+          /* Inherit genes evenly from both parents */
+          inheritedGene = (Math.random() < 0.5) ? mother : father;
         }
-        this.dna.push(val);
+
+        /*
+         * Create the genes:
+         */
+        for (var j = 0; j < geneSize; j++) {
+
+          /* The DNA strand */
+          var dna = inheritedGene[i + j];
+
+          /* Mutate the gene */
+          if (Math.random() < mutationChance) {
+
+            /* Apply the random mutation */
+            dna += Math.random() * mutateAmount * 2 - mutateAmount;
+
+            /* Keep the value in range */
+            if (dna < 0)
+              dna = 0;
+
+            if (dna > 1)
+              dna = 1;
+          }
+
+          this.dna.push(dna);
+        }
+      }
+
+    } else {
+
+      /*
+       * Generate a random individual:
+       */
+
+      for (var g = 0; g < dnaLength; g += geneSize) {
+
+        /* Generate RGBA color values */
+        this.dna.push(Math.random(), // R
+                      Math.random(), // G
+                      Math.random(), // B
+                      Math.max(Math.random() * Math.random(), 0.2)); // A
+
+        /* Generate XY positional values */
+        var x = Math.random();
+        var y = Math.random();
+
+        for (var j = 0; j < vertices; j++) {
+          this.dna.push(x + Math.random() - 0.5, // X
+                        y + Math.random() - 0.5); // Y
+        }
       }
     }
-  } else {
-    /* generate a random individual */
+
+    /*
+     * Determine the individual's fitness:
+     */
+
+    this.draw(workingCtx, workingSize, workingSize);
+
+    var imageData = workingCtx.getImageData(0, 0,
+                                            workingSize,
+                                            workingSize).data;
+    var diff = 0;
+    var p = workingSize * workingSize * 4 - 1;
+
+    do {
+      if (p % 3) {
+        var dp = imageData[p] - workingData[p];
+        if (diffSquared) {
+          diff += dp * dp;
+        } else {
+          if (dp < 0)
+            diff -= dp;
+          else
+            diff += dp;
+        }
+      }
+    } while (--p);
+
+    if (diffSquared) {
+      this.fitness = (1 - diff / (workingSize * workingSize * 3 * 256 * 256));
+    } else {
+      this.fitness = (1 - diff / (workingSize * workingSize * 3 * 256));
+    }
+  }
+
+  /*
+   * Draw a representation of a DNA string to a canvas.
+   */
+  Individual.prototype.draw = function(ctx, width, height) {
+
+    /* Set the background */
+    ctx.fillStyle = '#000';
+    ctx.fillRect(0, 0, width, height);
+
+    /*
+     * Draw each gene sequentially:
+     */
     for (var g = 0; g < dnaLength; g += geneSize) {
-      /* generate RGBA color values */
-      this.dna.push(Math.random(), // R
-                    Math.random(), // G
-                    Math.random(), // B
-                    Math.max(Math.random() * Math.random(), 0.2)); // A
 
-      /* generate XY positional values */
-      var x = Math.random();
-      var y = Math.random();
+      /* Draw the starting vertex */
+      ctx.beginPath();
+      ctx.moveTo(this.dna[g + 4] * width, this.dna[g + 5] * height);
 
-      for (var j = 0; j < vertices; j++) {
-        this.dna.push(x + Math.random() - 0.5, // X
-                      y + Math.random() - 0.5); // Y
+      /* Create each vertices sequentially */
+      for (var i = 0; i < vertices - 1; i++) {
+        ctx.lineTo(this.dna[g + i * 2 + 6] * width,
+                   this.dna[g + i * 2 + 7] * height);
       }
-    }
-  }
 
-  /* determine the fitness */
-  drawDNA(workingCtx, workingSize, workingSize, this.dna);
-  var imageData = workingCtx.getImageData(0, 0,
-                                          workingSize,
-                                          workingSize).data;
-  var dif = 0;
-  var p = workingSize * workingSize * 4 - 1;
+      ctx.closePath();
 
-  do {
-    if (p % 3) {
-      var dp = imageData[p] - workingData[p];
-      if (diffSquared) {
-        dif += dp * dp;
+      var styleString = 'rgba(' +
+          ((this.dna[g] * 255) >> 0) + ',' + // R - int [0,255]
+          ((this.dna[g + 1] * 255) >> 0) + ',' + // G - int [0,255]
+          ((this.dna[g + 2] * 255) >> 0) + ',' + // B - int [0,255]
+          this.dna[g + 3] + ')'; // A - float [0,1]
+
+      if (fillPolygons) {
+
+        /*
+         * Create a polygon:
+         */
+        ctx.fillStyle = styleString;
+        ctx.fill();
+
       } else {
-        if (dp < 0)
-          dif -= dp;
-        else
-          dif += dp;
+
+        /*
+         * Trace an outline:
+         */
+        ctx.lineWidth = 1;
+        ctx.strokeStyle = styleString;
+        ctx.stroke();
+
       }
     }
-  } while (--p);
+  };
 
-  if (diffSquared) {
-    this.fitness = (1 - dif / (workingSize * workingSize * 3 * 256 * 256));
-  } else {
-    this.fitness = (1 - dif / (workingSize * workingSize * 3 * 256));
-  }
-}
+  /*
+   * This object represents a entire population, composed of a number of
+   * individuals. It provides a iterate() function to breed a new generation.
+   */
+  function Population(size) {
+    this.individuals = [];
 
+    /* Generate our random starter culture */
+    for (var i = 0; i < size; i++)
+      this.individuals.push(new Individual());
 
-
-/**
- * Representation of a full population
- * @param {int} size The number of individuals in the population.
- * @constructor
- */
-function Population(size) {
-  var individuals = [];
-
-  for (var i = 0; i < size; i++) {
-    individuals.push(new Individual());
   }
 
-  /* breed a new generation */
-  this.nextGeneration = function(mutationChance, mutateAmount) {
+  /*
+   * Breed a new generation.
+   */
+  Population.prototype.iterate = function() {
 
-    if (individuals.length > 1) {
+    if (this.individuals.length > 1) {
+
+      /*
+       * Breed a new generation:
+       */
+
+      var size = this.individuals.length;
       var offspring = [];
 
-      /* the number of individuals from the current generation to select for
-       * breeding */
-      var selectCount = Math.floor(individuals.length * selectionCutoff);
+      /* The number of individuals from the current generation to select for
+       * breeding
+       */
+      var selectCount = Math.floor(this.individuals.length * selectionCutoff);
 
-      /* the number of individuals to randomly generate */
+      /* The number of individuals to randomly generate */
       var randCount = Math.ceil(1 / selectionCutoff);
 
-      individuals = individuals.sort(function(a, b) {
+      this.individuals = this.individuals.sort(function(a, b) {
         return b.fitness - a.fitness;
       });
 
@@ -363,7 +323,6 @@ function Population(size) {
         randCount--;
 
       for (var i = 0; i < selectCount; i++) {
-        var dna = individuals[i].dna;
 
         for (var j = 0; j < randCount; j++) {
           var randIndividual = i;
@@ -371,543 +330,535 @@ function Population(size) {
           while (randIndividual == i)
             randIndividual = (Math.random() * selectCount) >> 0;
 
-          offspring.push(new Individual(dna, individuals[randIndividual].dna));
+          offspring.push(new Individual(this.individuals[i].dna,
+                                        this.individuals[randIndividual].dna));
         }
       }
 
       if (killParents) {
-        individuals = offspring;
+        this.individuals = offspring;
       } else {
-        individuals.length = selectCount;
-        individuals = individuals.concat(offspring);
+        this.individuals.length = selectCount;
+        this.individuals = this.individuals.concat(offspring);
       }
 
-      individuals.length = size;
+      this.individuals.length = size;
+
     } else {
-      /* asexual reproduction */
-      var parent = individuals[0];
+
+      /*
+       * Asexual reproduction:
+       */
+
+      var parent = this.individuals[0];
       var child = new Individual(parent.dna, parent.dna);
 
-      if (child.fitness > parent.fitness) {
-        individuals = [child];
-      }
+      if (child.fitness > parent.fitness)
+        this.individuals = [child];
+
     }
   };
 
-  this.getSize = function() {
-    return individuals.length;
-  };
 
-  this.getFittest = function() {
-    return individuals.sort(function(a, b) {
+  /*
+   * Return the fittest individual from the population.
+   */
+  Population.prototype.getFittest = function() {
+
+    return this.individuals.sort(function(a, b) {
       return b.fitness - a.fitness;
     })[0];
+
   };
-}
 
-/*
- * Simulation functions
- */
-
-
-/**
- * Determines whether the genetics simulation is currently running.
- *
- * @return {boolean} True if running, else false.
- */
-function isRunning() {
-  return clock;
-}
-
-
-/**
- * Determines whether the genetics simulation is currently paused.
- * @return {boolean} True if paused, else false.
- */
-function isPaused() {
-  return jiffies && !clock;
-}
-
-
-/**
- * Determines whether the genetics simulation is currently stopped.
- * @return {boolean} True if stopped, else false.
- */
-function isStopped() {
-  return !isRunning() && !isPaused();
-}
-
-
-/**
- * Upload a new file to use as a reference image.
- *
- * @param {File} e The target file.
- */
-function fileSelectCb(e) {
-  var file = e.target.files[0];
-
-  document.getElementById('null').innerHTML = '<embed src="/shutter.mp3" ' +
-      'hidden="true" autostart="true" loop="false" />';
-
-  /* FIXME: AJAX */
-  $('#image-upload-form').submit();
-
-  console.log(file.name);
-}
-
-
-/**
- * Set a new image to use as the reference image.
- *
- * @param {string} src The path to the new image.
- */
-function setImage(src) {
-  referenceImage.onload = prepareImage;
-  referenceImage.src = src;
-}
-
-
-/**
- * Prepare an image for use as the reference image.
- */
-function prepareImage() {
-  /* FIXME: add support for images of size other than 350x350. This requires
-   * scaling the image and cropping as needed */
-
-  referenceCanvas.width = workingSize;
-  referenceCanvas.height = workingSize;
-
-  referenceCtx.drawImage(referenceImage,
-                         0, 0, 350, 350, 0, 0,
-                         workingSize, workingSize);
-
-  var imageData = referenceCtx.getImageData(0, 0,
-                                            workingSize,
-                                            workingSize).data;
-
-  workingData = [];
-  var p = workingSize * workingSize * 4;
-
-  for (var i = 0; i < p; i++) {
-    workingData[i] = imageData[i];
+  /*
+   * Determines whether the genetics simulation is currently running.
+   */
+  function isRunning() {
+    return clock;
   }
 
-  referenceCanvas.width = 350;
-  referenceCanvas.height = 350;
-  referenceCtx.drawImage(referenceImage, 0, 0);
-  highestFitness = 0;
-  lowestFitness = 100;
-}
-
-
-/**
- * Initialise the configuration panel.
- */
-function initConfiguration() {
-  /* prepare the sliders */
-  $('#population-size-slider').slider({
-    min: 0, max: 100, step: 5,
-    slide: function(event, ui) {
-      $('#population-size').text(Math.max(1, ui.value));
-    }
-  });
-
-  $('#cutoff-slider').slider({
-    min: 0, max: 100, step: 5,
-    slide: function(event, ui) {
-      $('#cutoff').text(ui.value + '%');
-    }
-  });
-
-  $('#mutation-chance-slider').slider({
-    min: 0, max: 5, step: 0.2,
-    slide: function(event, ui) {
-      $('#mutation-chance').text(ui.value.toFixed(1) + '%');
-    }
-  });
-
-  $('#mutation-amount-slider').slider({
-    min: 0, max: 100, step: 5,
-    slide: function(event, ui) {
-      $('#mutation-amount').text(ui.value + '%');
-    }
-  });
-
-  $('#polygons-slider').slider({
-    min: 0, max: 500, step: 10,
-    slide: function(event, ui) {
-      $('#polygons').text(Math.max(1, ui.value));
-    }
-  });
-
-  $('#vertices-slider').slider({
-    min: 1, max: 30, step: 1,
-    slide: function(event, ui) {
-      $('#vertices').text(ui.value);
-    }
-  });
-
-  $('#resolution-slider').slider({
-    min: 0, max: 350, step: 10,
-    slide: function(event, ui) {
-      var resolution = Math.max(1, ui.value);
-
-      $('#resolution').text(resolution + 'x' + resolution);
-    }
-  });
-
-  /* prepare the ios switches */
-  var iosSwitches =
-      document.querySelectorAll('input[type="checkbox"].ios-switch');
-  for (var i = 0, sw; sw = iosSwitches[i++];) {
-    var div = document.createElement('div');
-    div.className = 'switch';
-    sw.parentNode.insertBefore(div, sw.nextSibling);
-    sw.style.width = div.style.width;
-    sw.style.height = div.style.height;
-  }
-}
-
-
-/**
- * Set a new configuration. If any parameter is missing, default values are
- * used.
- *
- * @param {int} _populationSize The population size.
- * @param {int} _cutoffSlider The selection cutoff (as a percentage).
- * @param {boolean} _killParents Kill parents.
- * @param {int} _mutationChance The mutation chance (as a percentage).
- * @param {int} _mutationAmount The mutation amount (as a percentage).
- * @param {int} _polygons The number of polygons.
- * @param {int} _vertices The number of vertices.
- * @param {int} _resolution Internal resolution (in pixels).
- * @param {boolean} _fillPolygons Fill polygons.
- * @param {boolean} _uniCrossover Uniform crossover.
- * @param {boolean} _diffSquared Square difference.
- */
-function setConfiguration(_populationSize,
-                          _cutoffSlider,
-                          _killParents,
-                          _mutationChance,
-                          _mutationAmount,
-                          _polygons,
-                          _vertices,
-                          _resolution,
-                          _fillPolygons,
-                          _uniCrossover,
-                          _diffSquared) {
-
-  if (!_populationSize)
-    var _populationSize = 40;
-  $('#population-size-slider').slider('value', _populationSize);
-  $('#population-size').text(_populationSize);
-
-  if (!_cutoffSlider)
-    var _cutoffSlider = 25;
-  $('#cutoff-slider').slider('value', _cutoffSlider);
-  $('#cutoff').text(_cutoffSlider + '%');
-
-  if (!_killParents)
-    var _killParents = true;
-  $('#killparents').prop('checked', _killParents);
-
-  if (!_mutationChance)
-    var _mutationChance = 2.4;
-  $('#mutation-chance-slider').slider('value', _mutationChance);
-  $('#mutation-chance').text(_mutationChance.toFixed(1) + '%');
-
-  if (!_mutationAmount)
-    var _mutationAmount = 10;
-  $('#mutation-amount-slider').slider('value', _mutationAmount);
-  $('#mutation-amount').text(_mutationAmount + '%');
-
-  if (!_polygons)
-    var _polygons = 120;
-  $('#polygons-slider').slider('value', _polygons);
-  $('#polygons').text(_polygons);
-
-  if (!_vertices)
-    var _vertices = 6;
-  $('#vertices-slider').slider('value', _vertices);
-  $('#vertices').text(_vertices);
-
-  if (!_resolution)
-    var _resolution = 70;
-  $('#resolution-slider').slider('value', _resolution);
-  $('#resolution').text(_resolution + 'x' + _resolution);
-
-  if (!_fillPolygons)
-    var _fillPolygons = true;
-  $('#fill-polygons').prop('checked', _fillPolygons);
-
-  if (!_uniCrossover)
-    var _uniCrossover = true;
-  $('#uni-crossover').prop('checked', _uniCrossover);
-
-  if (!_diffSquared)
-    var _diffSquared = true;
-  $('#diff-squared').prop('checked', _diffSquared);
-}
-
-
-/**
- * Retrieve the session from the configuration panel
- */
-function getConfiguration() {
-  populationSize = parseInt($('#population-size').text());
-  selectionCutoff = parseFloat($('#cutoff').text()) / 100;
-  killParents = $('#killparents')[0].checked;
-  mutationChance = parseFloat($('#mutation-chance').text()) / 100;
-  mutateAmount = parseFloat($('#mutation-amount').text()) / 100;
-  polygons = parseInt($('#polygons').text());
-  vertices = parseInt($('#vertices').text());
-  workingSize = parseInt($('#resolution').text());
-  fillPolygons = $('#fill-polygons')[0].checked;
-  uniformCrossover = $('#uni-crossover')[0].checked;
-  diffSquared = $('#diff-squared')[0].checked;
-
-  /* derive certain state variables */
-  dnaCrossLength = (4 + vertices * 2);
-  dnaLength = polygons * (4 + vertices * 2);
-  geneSize = 4 + vertices * 2;
-
-  /* set the working canvas dimensions */
-  workingCanvas.width = workingSize;
-  workingCanvas.height = workingSize;
-  workingCanvas.style.width = workingSize;
-  workingCanvas.style.height = workingSize;
-}
-
-
-/**
- * Run the simulation.
- */
-function runSimulation() {
-  body.classList.remove('genetics-inactive');
-  body.classList.add('genetics-active');
-
-  if (isPaused())
-    startTime = new Date().getTime() - resumedTime;
-
-  if (isStopped()) {
-    jiffies = 0;
-    startTime = new Date().getTime();
-    population = new Population(populationSize);
+  /*
+   * Determines whether the genetics simulation is currently paused.
+   */
+  function isPaused() {
+    return jiffies && !clock;
   }
 
-  /* Each tick produces a new population and new fittest */
-  function tick() {
-    /* breed a new generation */
-    population.nextGeneration();
-    jiffies++;
-
-    var fittest = population.getFittest();
-    var totalTime = ((new Date().getTime() - startTime) / 1000);
-    var timePerGeneration = (totalTime / jiffies) * 100;
-    var timePerImprovment = 0;
-    var currentFitness = (fittest.fitness * 100);
-
-    lowestFitness = (currentFitness < lowestFitness) ?
-        currentFitness : lowestFitness;
-    highestFitness = (currentFitness > highestFitness) ?
-        currentFitness : highestFitness;
-
-    /* draw the best fit to output */
-    drawDNA(outputCtx, 350, 350, fittest.dna);
-
-    /* write out the internal state to analytics panel */
-    ap.elapsedTime.text(secondsToString(Math.round(totalTime)));
-    ap.numberOfGenerations.text(jiffies);
-    ap.timePerGeneration.text(timePerGeneration.toFixed(2) + ' ms');
-    ap.timePerImprovment.text(timePerImprovment.toFixed(2) + ' ms');
-    ap.currentFitness.text(currentFitness.toFixed(2) + '%');
-    ap.highestFitness.text(highestFitness.toFixed(2) + '%');
-    ap.lowestFitness.text(lowestFitness.toFixed(2) + '%');
+  /*
+   * Determines whether the genetics simulation is currently stopped.
+   */
+  function isStopped() {
+    return !isRunning() && !isPaused();
   }
 
-  /* Begin the master clock */
-  clock = setInterval(tick, 0);
-}
+  /*
+   * Upload a new file to use as a reference image.
+   */
+  function fileSelectCb(e) {
+    var file = e.target.files[0];
 
+    document.getElementById('null').innerHTML = '<embed src="/shutter.mp3" ' +
+        'hidden="true" autostart="true" loop="false" />';
 
-/**
- * Start the simulation.
- */
-function startSimulation() {
-  if (isStopped()) {
-    getConfiguration();
-    prepareImage();
+    /* FIXME: AJAX */
+    $('#image-upload-form').submit();
+
+    console.log(file.name);
   }
 
-  $('.conf-slider').slider('option', 'disabled', true);
-  $('.ios-switch').attr('disabled', true);
-  $('#start').text('Pause');
-  $('#strongest-dna').text('');
-  runSimulation();
-}
-
-
-/**
- * Pause the simulation.
- */
-function pauseSimulation() {
-  clearInterval(clock);
-  clock = null;
-  resumedTime = new Date().getTime() - startTime;
-  $('#start').text('Resume');
-  $('#strongest-dna').text(population.getFittest().dna);
-}
-
-
-/**
- * End the simulation.
- */
-function stopSimulation() {
-  clearInterval(clock);
-  clock = null;
-  jiffies = null;
-  startTime = null;
-  population = null;
-  highestFitness = 0;
-  lowestFitness = 100;
-  resumedTime = 0;
-  $('#elapsed-time').text('0:00');
-  $('.conf-slider').slider('option', 'disabled', false);
-  $('.ios-switch').attr('disabled', false);
-  $('#strongest-dna').text('');
-
-  body.classList.remove('genetics-active');
-  body.classList.add('genetics-inactive');
-
-  /* Clear the drawing */
-  outputCtx.clearRect(0, 0, 350, 350);
-  workingCtx.clearRect(0, 0, workingSize, workingSize);
-
-  $('#start').text('Start');
-}
-
-/*
- * Page interaction.
- */
-
-/* stock image dropdown item selected */
-$('#stock-image-menu li a').click(function() {
-  setImage('/genetics/' +
-           $(this).text().toLowerCase().replace(/ /g, '-') +
-           '.jpg');
-});
-
-/* start button callback */
-$('#start').click(function() {
-  if (isRunning()) {
-    pauseSimulation();
-  } else {
-    startSimulation();
+  /*
+   * Set a new image to use as the reference image.
+   */
+  function setImage(src) {
+    referenceImage.onload = prepareImage;
+    referenceImage.src = src;
   }
-});
 
-/* stop button callback */
-$('#stop').click(function() {
-  if (isRunning() || isPaused()) {
-    stopSimulation();
+
+  /*
+   * Prepare an image for use as the reference image.
+   */
+  function prepareImage() {
+    /* FIXME: add support for images of size other than 350x350. This requires
+     * scaling the image and cropping as needed */
+
+    referenceCanvas.width = workingSize;
+    referenceCanvas.height = workingSize;
+
+    referenceCtx.drawImage(referenceImage,
+                           0, 0, 350, 350, 0, 0,
+                           workingSize, workingSize);
+
+    var imageData = referenceCtx.getImageData(0, 0,
+                                              workingSize,
+                                              workingSize).data;
+
+    workingData = [];
+    var p = workingSize * workingSize * 4;
+
+    for (var i = 0; i < p; i++) {
+      workingData[i] = imageData[i];
+    }
+
+    referenceCanvas.width = 350;
+    referenceCanvas.height = 350;
+    referenceCtx.drawImage(referenceImage, 0, 0);
+    highestFitness = 0;
+    lowestFitness = 100;
   }
-});
-
-/* webcam button callback */
-$('#webcam-upload-btn').click(function() {
-  $('.underlay').fadeIn('slow');
-  $('.webcam-overlay').fadeIn('fast');
-
-  if (isRunning())
-    pauseSimulation();
-});
 
 
-/**
- * Dispose of the webcam upload overlay.
- */
-function hideWebcamUpload() {
-  $('.underlay').fadeOut('slow');
-  $('.webcam-overlay').fadeOut('fast');
-}
+  /*
+   * Initialise the configuration panel.
+   */
+  function initConfiguration() {
+
+    /*
+     * Prepare the sliders:
+     */
+    $('#population-size-slider').slider({
+      min: 0, max: 100, step: 1,
+      slide: function(event, ui) {
+        $('#population-size').text(Math.max(1, ui.value));
+      }
+    });
+
+    $('#cutoff-slider').slider({
+      min: 0, max: 100, step: 1,
+      slide: function(event, ui) {
+        $('#cutoff').text(ui.value + '%');
+      }
+    });
+
+    $('#mutation-chance-slider').slider({
+      min: 0, max: 5, step: 0.1,
+      slide: function(event, ui) {
+        $('#mutation-chance').text(ui.value.toFixed(1) + '%');
+      }
+    });
+
+    $('#mutation-amount-slider').slider({
+      min: 0, max: 100, step: 1,
+      slide: function(event, ui) {
+        $('#mutation-amount').text(ui.value + '%');
+      }
+    });
+
+    $('#polygons-slider').slider({
+      min: 0, max: 500, step: 5,
+      slide: function(event, ui) {
+        $('#polygons').text(Math.max(1, ui.value));
+      }
+    });
+
+    $('#vertices-slider').slider({
+      min: 1, max: 30, step: 1,
+      slide: function(event, ui) {
+        $('#vertices').text(ui.value);
+      }
+    });
+
+    $('#resolution-slider').slider({
+      min: 0, max: 350, step: 5,
+      slide: function(event, ui) {
+        var resolution = Math.max(1, ui.value);
+
+        $('#resolution').text(resolution + 'x' + resolution);
+      }
+    });
+
+    /*
+     * Prepare the ios switches
+     */
+    var iosSwitches =
+        document.querySelectorAll('input[type="checkbox"].ios-switch');
+    for (var i = 0, sw; sw = iosSwitches[i++];) {
+      var div = document.createElement('div');
+      div.className = 'switch';
+      sw.parentNode.insertBefore(div, sw.nextSibling);
+      sw.style.width = div.style.width;
+      sw.style.height = div.style.height;
+    }
+  }
 
 
-/**
- * Webcam image upload complete.
- *
- * @param {string} url The fully qualified URL to the uploaded webcam image.
- */
-function webcamUploadComplete(url) {
-  if (url.match(/^http:\/\//)) {
-    setImage(url);
-    webcam.reset();
-    hideWebcamUpload();
+  /*
+   * Set a new configuration. If any parameter is missing, default values are
+   * used.
+   */
+  function setConfiguration(_populationSize,
+                            _cutoffSlider,
+                            _killParents,
+                            _mutationChance,
+                            _mutationAmount,
+                            _polygons,
+                            _vertices,
+                            _resolution,
+                            _fillPolygons,
+                            _randomInheritance,
+                            _diffSquared) {
+
+    if (!_populationSize)
+      var _populationSize = 40;
+    $('#population-size-slider').slider('value', _populationSize);
+    $('#population-size').text(_populationSize);
+
+    if (!_cutoffSlider)
+      var _cutoffSlider = 25;
+    $('#cutoff-slider').slider('value', _cutoffSlider);
+    $('#cutoff').text(_cutoffSlider + '%');
+
+    if (!_killParents)
+      var _killParents = true;
+    $('#killparents').prop('checked', _killParents);
+
+    if (!_mutationChance)
+      var _mutationChance = 2.4;
+    $('#mutation-chance-slider').slider('value', _mutationChance);
+    $('#mutation-chance').text(_mutationChance.toFixed(1) + '%');
+
+    if (!_mutationAmount)
+      var _mutationAmount = 10;
+    $('#mutation-amount-slider').slider('value', _mutationAmount);
+    $('#mutation-amount').text(_mutationAmount + '%');
+
+    if (!_polygons)
+      var _polygons = 120;
+    $('#polygons-slider').slider('value', _polygons);
+    $('#polygons').text(_polygons);
+
+    if (!_vertices)
+      var _vertices = 6;
+    $('#vertices-slider').slider('value', _vertices);
+    $('#vertices').text(_vertices);
+
+    if (!_resolution)
+      var _resolution = 70;
+    $('#resolution-slider').slider('value', _resolution);
+    $('#resolution').text(_resolution + 'x' + _resolution);
+
+    if (!_fillPolygons)
+      var _fillPolygons = true;
+    $('#fill-polygons').prop('checked', _fillPolygons);
+
+    if (!_randomInheritance)
+      var _randomInheritance = false;
+    $('#random-inheritance').prop('checked', _randomInheritance);
+
+    if (!_diffSquared)
+      var _diffSquared = true;
+    $('#diff-squared').prop('checked', _diffSquared);
+  }
+
+  /*
+   * Retrieve the session from the configuration panel
+   */
+  function getConfiguration() {
+
+    populationSize = parseInt($('#population-size').text());
+    selectionCutoff = parseFloat($('#cutoff').text()) / 100;
+    killParents = $('#killparents')[0].checked;
+    mutationChance = parseFloat($('#mutation-chance').text()) / 100;
+    mutateAmount = parseFloat($('#mutation-amount').text()) / 100;
+    polygons = parseInt($('#polygons').text());
+    vertices = parseInt($('#vertices').text());
+    workingSize = parseInt($('#resolution').text());
+    fillPolygons = $('#fill-polygons')[0].checked;
+    randomInheritance = $('#random-inheritance')[0].checked;
+    diffSquared = $('#diff-squared')[0].checked;
+
+    /* Derive certain state variables */
+    geneSize = (4 + vertices * 2);
+    dnaLength = polygons * (4 + vertices * 2);
+
+    /* Set the working canvas dimensions */
+    workingCanvas.width = workingSize;
+    workingCanvas.height = workingSize;
+    workingCanvas.style.width = workingSize;
+    workingCanvas.style.height = workingSize;
+  }
+
+
+  /*
+   * Run the simulation.
+   */
+  function runSimulation() {
+    document.body.classList.remove('genetics-inactive');
+    document.body.classList.add('genetics-active');
 
     if (isPaused())
+      startTime = new Date().getTime() - resumedTime;
+
+    if (isStopped()) {
+      jiffies = 0;
+      startTime = new Date().getTime();
+      population = new Population(populationSize);
+    }
+
+    /* Each tick produces a new population and new fittest */
+    function tick() {
+
+      /* Breed a new generation */
+      population.iterate();
+      jiffies++;
+
+      var fittest = population.getFittest();
+      var totalTime = ((new Date().getTime() - startTime) / 1000);
+      var timePerGeneration = (totalTime / jiffies) * 100;
+      var timePerImprovment = 0;
+      var currentFitness = (fittest.fitness * 100);
+
+      lowestFitness = (currentFitness < lowestFitness) ?
+          currentFitness : lowestFitness;
+      highestFitness = (currentFitness > highestFitness) ?
+          currentFitness : highestFitness;
+
+      /* Draw the best fit to output */
+      fittest.draw(outputCtx, 350, 350);
+
+      /* Write out the internal state to analytics panel */
+      ap.elapsedTime.text(secondsToString(Math.round(totalTime)));
+      ap.numberOfGenerations.text(jiffies);
+      ap.timePerGeneration.text(timePerGeneration.toFixed(2) + ' ms');
+      ap.timePerImprovment.text(timePerImprovment.toFixed(2) + ' ms');
+      ap.currentFitness.text(currentFitness.toFixed(2) + '%');
+      ap.highestFitness.text(highestFitness.toFixed(2) + '%');
+      ap.lowestFitness.text(lowestFitness.toFixed(2) + '%');
+    }
+
+    /* Begin the master clock */
+    clock = setInterval(tick, 0);
+  }
+
+  /*
+   * Start the simulation.
+   */
+  function startSimulation() {
+    if (isStopped()) {
+      getConfiguration();
+      prepareImage();
+    }
+
+    $('.conf-slider').slider('option', 'disabled', true);
+    $('.ios-switch').attr('disabled', true);
+    $('#start').text('Pause');
+    $('#strongest-dna').text('');
+    runSimulation();
+  }
+
+  /*
+   * Pause the simulation.
+   */
+  function pauseSimulation() {
+    clearInterval(clock);
+    clock = null;
+    resumedTime = new Date().getTime() - startTime;
+    $('#start').text('Resume');
+    $('#strongest-dna').text(population.getFittest().dna);
+  }
+
+  /*
+   * End the simulation.
+   */
+  function stopSimulation() {
+    clearInterval(clock);
+    clock = null;
+    jiffies = null;
+    startTime = null;
+    population = null;
+    highestFitness = 0;
+    lowestFitness = 100;
+    resumedTime = 0;
+    $('#elapsed-time').text('0:00');
+    $('.conf-slider').slider('option', 'disabled', false);
+    $('.ios-switch').attr('disabled', false);
+    $('#strongest-dna').text('');
+
+    document.body.classList.remove('genetics-active');
+    document.body.classList.add('genetics-inactive');
+
+    /* Clear the drawing */
+    outputCtx.clearRect(0, 0, 350, 350);
+    workingCtx.clearRect(0, 0, workingSize, workingSize);
+
+    $('#start').text('Start');
+  }
+
+  /*
+   * Stock image dropdown item selected.
+   */
+  $('#stock-image-menu li a').click(function() {
+    setImage('/genetics/' +
+             $(this).text().toLowerCase().replace(/ /g, '-') +
+             '.jpg');
+  });
+
+  /*
+   * Start button callback.
+   */
+  $('#start').click(function() {
+    if (isRunning()) {
+      pauseSimulation();
+    } else {
       startSimulation();
+    }
+  });
+
+  /*
+   * Stop button callback.
+   */
+  $('#stop').click(function() {
+    if (isRunning() || isPaused()) {
+      stopSimulation();
+    }
+  });
+
+  /*
+   *  Webcam button callback.
+   */
+  $('#webcam-upload-btn').click(function() {
+    $('.underlay').fadeIn('slow');
+    $('.webcam-overlay').fadeIn('fast');
+
+    if (isRunning())
+      pauseSimulation();
+  });
+
+
+  /*
+   * Dispose of the webcam upload overlay.
+   */
+  function hideWebcamUpload() {
+    $('.underlay').fadeOut('slow');
+    $('.webcam-overlay').fadeOut('fast');
   }
-  else {
-    alert('PHP Error: ' + url);
-  }
-}
 
-/* underlay grabs all input and hides */
-$('.underlay').click(function() {
-  hideWebcamUpload();
-});
+  /*
+   * Webcam image upload complete. Note that we must declare this in the global
+   * namespace so that he can use it as a global hook.
+   */
+  window.webcamUploadComplete = function(url) {
+    if (url.match(/^http:\/\//)) {
+      setImage(url);
+      webcam.reset();
+      hideWebcamUpload();
 
-
-/**
- * Take a webcam snapshot.
- */
-function webcamTakeSnapshot() {
-  webcam.snap();
-}
-
-
-/**
- * document ready preparations
- */
-window.onload = function() {
-
-  /* set our page element variables */
-  outputCanvas = $('#outputCanvas')[0];
-  outputCtx = outputCanvas.getContext('2d');
-
-  workingCanvas = $('#workingCanvas')[0];
-  workingCtx = workingCanvas.getContext('2d');
-
-  referenceImage = $('#referenceImage')[0];
-  referenceCanvas = $('#referenceCanvas')[0];
-  referenceCtx = referenceCanvas.getContext('2d');
-
-  /* analytics panel */
-  ap = {
-    elapsedTime: $('#elapsed-time'),
-    numberOfGenerations: $('#number-of-generations'),
-    timePerGeneration: $('#time-per-generation'),
-    timePerImprovment: $('#time-per-improvement'),
-    currentFitness: $('#current-fitness'),
-    highestFitness: $('#highest-fitness'),
-    lowestFitness: $('#lowest-fitness')
+      if (isPaused())
+        startSimulation();
+    }
+    else {
+      /* FIXME: better alert, please */
+      alert('PHP Error: ' + url);
+    }
   };
 
-  /* check that we can run the program */
-  if (!geneticsIsSupported())
-    alert('Unable to run genetics program!'); /* FIXME: better alert */
+  /*
+   * Underlay grabs all input and hides.
+   */
+  $('.underlay').click(function() {
+    hideWebcamUpload();
+  });
 
-  initConfiguration();
 
-  /* set default configuration */
-  setConfiguration();
+  /*
+   * Take a webcam snapshot.
+   */
+  $('#webcam-snap-button').click(function() {
+    webcam.snap();
+  });
 
-  getConfiguration();
-  prepareImage();
 
-  /* setup webcam upload */
-  webcam.set_api_url('webcam.php');
-  webcam.set_quality(90);
-  webcam.set_shutter_sound(true);
-  webcam.set_hook('onComplete', 'webcamUploadComplete');
-  $('#webcam-preview')[0].innerHTML = webcam.get_html(350, 350);
-};
+  /*
+   * Document ready preparations.
+   */
+  this.init = function() {
+
+    /* Set our page element variables */
+    outputCanvas = $('#outputCanvas')[0];
+    outputCtx = outputCanvas.getContext('2d');
+
+    workingCanvas = $('#workingCanvas')[0];
+    workingCtx = workingCanvas.getContext('2d');
+
+    referenceImage = $('#referenceImage')[0];
+    referenceCanvas = $('#referenceCanvas')[0];
+    referenceCtx = referenceCanvas.getContext('2d');
+
+    /* Analytics panel */
+    ap = {
+      elapsedTime: $('#elapsed-time'),
+      numberOfGenerations: $('#number-of-generations'),
+      timePerGeneration: $('#time-per-generation'),
+      timePerImprovment: $('#time-per-improvement'),
+      currentFitness: $('#current-fitness'),
+      highestFitness: $('#highest-fitness'),
+      lowestFitness: $('#lowest-fitness')
+    };
+
+    /* Check that we can run the program */
+    if (!isSupported())
+      alert('Unable to run genetics program!'); /* FIXME: better alert */
+
+    initConfiguration();
+
+    /* Set default configuration */
+    setConfiguration();
+
+    getConfiguration();
+    prepareImage();
+
+    /* Setup webcam upload */
+    webcam.set_api_url('webcam.php');
+    webcam.set_quality(90);
+    webcam.set_shutter_sound(true);
+    webcam.set_hook('onComplete', 'webcamUploadComplete');
+    $('#webcam-preview')[0].innerHTML = webcam.get_html(350, 350);
+  };
+}).call(Genetics);
+
+
+/*
+ * Bootstrap the page with our initialisation code.
+ */
+window.onload = Genetics.init;
