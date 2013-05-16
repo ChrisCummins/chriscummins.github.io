@@ -49,7 +49,7 @@
         <div class="btn-toolbar">
           <div class="btn-group">
 
-	    <!-- image dropdown -->
+            <!-- image dropdown -->
             <a class="btn dropdown-toggle btn-inverse" data-toggle="dropdown"
                href="#" style="border-top-right-radius: 0px; border-bottom-right-radius: 0px;">
               Select Image &nbsp;<span class="caret"></span>
@@ -96,27 +96,27 @@
           <div class="tab-content">
             <div id="pane-about" class="tab-pane active well">
 
-	      Welcome! Click start to see genetics in action, as a randomly
-	      generated collection of shapes evolve to resemble a given
-	      picture. You can select the image to use from a collection of
-	      pre-chosen images, or supply your own by taking a picture with the
-	      webcam on your device.
+              Welcome! Click start to see genetics in action, as a randomly
+              generated collection of shapes evolve to resemble a given
+              picture. You can select the image to use from a collection of
+              pre-chosen images, or supply your own by taking a picture with the
+              webcam on your device.
 
               <h4>Evolving the Mona Lisa</h4>
 
-	      This page uses a genetic algorithm to model a population of
-	      individuals, each containing a string of DNA which can be
-	      visualised in the form of an image. By starting with a population
-	      consisting of a randomly generated gene pool, each individual is
-	      compared against the reference image (the one on the left), and
-	      the individuals can then be ranked by their likeness to it, known
-	      as their "fitness", with the best fit being displayed on the
-	      output image (the one on the right). By breeding the fittest
-	      individuals from the population, the DNA which produces the most
-	      accurate representation of the reference image is selected over
-	      successive generations, effectively demonstrating the power of a
-	      natural selection process to produce the best candidate for any
-	      given environment.
+              This page uses a genetic algorithm to model a population of
+              individuals, each containing a string of DNA which can be
+              visualised in the form of an image. By starting with a population
+              consisting of a randomly generated gene pool, each individual is
+              compared against the reference image (the one on the left), and
+              the individuals can then be ranked by their likeness to it, known
+              as their "fitness", with the best fit being displayed on the
+              output image (the one on the right). By breeding the fittest
+              individuals from the population, the DNA which produces the most
+              accurate representation of the reference image is selected over
+              successive generations, effectively demonstrating the power of a
+              natural selection process to produce the best candidate for any
+              given environment.
 
               <h4>Source Code</h4>
 
@@ -125,19 +125,20 @@
               <a href="https://github.com/ChrisCummins/chriscummins.cc" target="_blank">GitHub</a>
               and is released under the terms of the MIT License. If you just
               want to see how the genetics algorithm works, you can read the
-	      documentation for the JavaScript sources
-	      <a href="docs" target="_blank">here</a> .
+              documentation for the JavaScript sources
+              <a href="docs" target="_blank">here</a>.
 
-	      <h4>Bugs, comments and improvements</h4>
+              <h4>Bugs, comments and improvements</h4>
 
-	      I would love to hear your feedback. Don't be afraid
-	      of <a href="http://chriscummins.cc/#overview" target="_blank">sending me a message</a>
-	      with any thoughts and suggestions.
-	      If you would like to be a little more involved in the process,
-	      please open an issue on the
-	      <a href="https://github.com/ChrisCummins/chriscummins.cc/issues" target="_blank">website bug tracker</a>.
-	      To contribute to the code, you can fork the source code
-	      repository and submit a pull request when ready.
+              I would love to hear your feedback. Don't be afraid of
+              <a href="http://chriscummins.cc/#overview" target="_blank">sending
+              me a message</a> with any thoughts and suggestions.  If you would
+              like to be a little more involved in the process, please open an
+              issue on
+              the <a href="https://github.com/ChrisCummins/chriscummins.cc/issues"
+              target="_blank">website bug tracker</a>.  To contribute to the
+              code, you can fork the source code repository and submit a pull
+              request when ready.
 
             </div>
 
@@ -276,22 +277,22 @@
 
             <div id="pane-analytics" class="tab-pane well">
 
-	      <div class="alert alert-info">
-		<a href="#" class="close" data-dismiss="alert">&times;</a>
-		This tab shows real time data from a running simulation.
-	      </div>
+              <div class="alert alert-info">
+                <a href="#" class="close" data-dismiss="alert">&times;</a>
+                This tab shows real time data from a running simulation.
+              </div>
 
-	      <h4>Real Time Analysis</h4>
+              <h4>Real Time Analysis</h4>
 
               <table id="analytics-table"
-		     class="table table-bordered table-striped">
+                     class="table table-bordered table-striped">
                 <tr>
                   <td>Elapsed time</td>
-		  <td id="elapsed-time"></td>
+                  <td id="elapsed-time"></td>
                 </tr>
                 <tr>
                   <td>Number of generations</td>
-		  <td id="number-of-generations"></td>
+                  <td id="number-of-generations"></td>
                 </tr>
                 <tr>
                   <td>Average time per generation</td>
@@ -319,12 +320,12 @@
 
             <div id="pane-results" class="tab-pane well">
 
-	      <div class="alert alert-info">
-		<a href="#" class="close" data-dismiss="alert">&times;</a>
-		This tab shows you the results of a simulation when paused.
-	      </div>
+              <div class="alert alert-info">
+                <a href="#" class="close" data-dismiss="alert">&times;</a>
+                This tab shows you the results of a simulation when paused.
+              </div>
 
-	      <h4>DNA string of strongest individual</h4>
+              <h4>DNA string of strongest individual</h4>
               <textarea id="strongest-dna" class="text" readonly></textarea>
 
             </div>
@@ -341,16 +342,16 @@
 
     <!-- The hidden bits: -->
     <img id="referenceImage"
-	 src="/genetics/mona-lisa.jpg"
-	 style="display: none;" />
+         src="/genetics/mona-lisa.jpg"
+         style="display: none;" />
 
     <canvas id="workingCanvas"
-	    width="1" height="1"
-	    style="display: none;"></canvas>
+            width="1" height="1"
+            style="display: none;"></canvas>
 
     <form id="image-upload-form"
-	  action="image-upload.php"
-	  method="post" enctype="multipart/form-data">
+          action="image-upload.php"
+          method="post" enctype="multipart/form-data">
       <input id="file-chooser" type="file" name="file" accept="image/*" />
     </form>
 
@@ -363,17 +364,17 @@
     <div class="webcam-overlay">
 
       <center>
-	<!-- webcam preview window -->
-	<div id="webcam-preview"></div>
+        <!-- webcam preview window -->
+        <div id="webcam-preview"></div>
 
-	<!-- webcam buttons -->
-	<form style="margin-top: 10px">
+        <!-- webcam buttons -->
+        <form style="margin-top: 10px">
           <input class="btn btn-inverse" type=button value="Configure"
-		 onClick="webcam.configure()">
+                 onClick="webcam.configure()">
           &nbsp;&nbsp;
           <input class="btn btn-inverse" type=button value="Take Snapshot"
-		 onClick="webcamTakeSnapshot()">
-	</form>
+                 onClick="webcamTakeSnapshot()">
+        </form>
       </center>
 
     </div>
