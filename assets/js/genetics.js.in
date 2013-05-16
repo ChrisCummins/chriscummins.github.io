@@ -257,27 +257,11 @@ function Individual(mother, father) {
       var parent;
 
       if (randomInheritance) {
-
-        /*
-         * Randomly inherit chromosomes from parents in an uneven manner.
-         */
-
-        if (i < inheritSplit)
-          parent = mother;
-        else
-          parent = father;
-
+        /* Randomly inherit chromosomes from parents in an uneven manner */
+        parent = (i < inheritSplit) ? mother : father;
       } else {
-
-        /*
-         * Inherit chromosomes evenly from both parents.
-         */
-
-        if (Math.random() < 0.5)
-          parent = mother;
-        else
-          parent = father;
-
+         /* Inherit chromosomes evenly from both parents */
+        parent = (Math.random() < 0.5) ? mother : father;
       }
 
       /*
