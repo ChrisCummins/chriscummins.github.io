@@ -9,6 +9,7 @@
     <link href="http://fonts.googleapis.com/css?family=PT+Serif:400,700" rel="stylesheet" />
     <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.no-icons.min.css" rel="stylesheet" />
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.0/css/font-awesome.css" rel="stylesheet" />
+    <link href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" rel="stylesheet" />
     <link href="/assets/css/buttons.css" rel="stylesheet" />
     <link href="/assets/css/genetics.css" rel="stylesheet" />
     <link href="/assets/img/favicon.ico" rel="shortcut icon" />
@@ -384,6 +385,7 @@
   </body>
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
   <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
   <script src="/assets/js/webcam.js"></script>
   <script src="/assets/js/genetics.js"></script>
