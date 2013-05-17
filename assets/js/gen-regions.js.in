@@ -364,6 +364,11 @@ var GenRegions = GenRegions || {};
    * Draw a cell at the given coordinates.
    */
   function drawCell(label, x, y, width, color) {
+
+    /* Don't draw anything outside of the grid */
+    if (y + ROW_H > canvas.height)
+      return;
+
     ctx.fillStyle = color;
     ctx.globalAlpha = 0.7;
     ctx.fillRect(x, y, width, ROW_H);
