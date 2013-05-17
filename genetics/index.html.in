@@ -151,7 +151,8 @@
               <div class="alert alert-info">
                 <a href="#" class="close" data-dismiss="alert">&times;</a>
                 This tab enables you to configure the parameters to be used for
-                the genetics simulation.
+                the genetics simulation. Hover over an option to see what it
+                does.
               </div>
 
               <center><h4>Genetics</h4></center>
@@ -159,7 +160,7 @@
               <table class="table conf-table">
 
                 <tr class="conf-option" data-toggle="tooltip"
-                    title="The number of individuals in a single generation">
+                    title="The number of individuals in a the population. This determines the size of the gene pool. If the population is 1, then reproduction occurs asexually">
                   <td style="width: 160px;">
                     Population Size
                   </td>
@@ -168,7 +169,7 @@
                 <tr/>
 
                 <tr class="conf-option" data-toggle="tooltip"
-                    title="The percentage of the population which is selected for breeding the next generation">
+                    title="This determines the number of individuals from a given generation that get selected to breed the next. A lower percentage indicates more selective breeding">
                   <td>
                     Selection Cutoff
                   </td>
@@ -177,7 +178,7 @@
                 <tr/>
 
                 <tr class="conf-option" data-toggle="tooltip"
-                    title="The chance that each DNA string will mutate per generation">
+                    title="The chance that a string of DNA will mutate during breeding. A higher chance represents less accurate DNA replication">
                   <td>
                     Mutation Chance
                   </td>
@@ -186,7 +187,7 @@
                 <tr/>
 
                 <tr class="conf-option" data-toggle="tooltip"
-                    title="The amount of random data that is introduced in a mutation">
+                    title="The amount of random data that will be introduced to a string of DNA during mutation">
                   <td>
                     Mutation Amount
                   </td>
@@ -195,9 +196,9 @@
                 <tr/>
 
                 <tr class="conf-option" data-toggle="tooltip"
-                    title="Whether the parents of each generation are killed or survive">
+                    title="If enabled, the lifespan of an individual is determined by its fitness, with the strongest individuals from each generation surviving">
                   <td>
-                    Kill Parents
+                    Fittest survive
                   </td>
                   <td></td>
                   <td><label>
@@ -207,7 +208,7 @@
                 <tr/>
 
                 <tr class="conf-option" data-toggle="tooltip"
-                    title="Inherit genes randomly from mother and father or an even share of both">
+                    title="If enabled, genes are inherited randomly from mother and father, as opposed to inheriting an even number from both">
                   <td>
                     Random Inheritance
                   </td>
@@ -219,7 +220,7 @@
                 <tr/>
 
                 <tr class="conf-option" data-toggle="tooltip"
-                    title="Linear or exponential fitness algorithm">
+                    title="This determines whether the fitness algorithm is linear or exponential">
                   <td>
                     Difference squared
                   </td>
@@ -238,7 +239,7 @@
               <table class="table conf-table">
 
                 <tr class="conf-option" data-toggle="tooltip"
-                    title="A higher internal resolution improves accuracy, but slows performance">
+                    title="A higher internal resolution improves the accuracy of the fitness algorithm, but decreases performance">
                   <td style="width: 160px;">
                     Internal Resolution
                   </td>
@@ -247,7 +248,7 @@
                 <tr/>
 
                 <tr class="conf-option" data-toggle="tooltip"
-                    title="More polygons means more visual detail, but slower performance">
+                    title="This determines the number of visible polygons which are used in the drawing. A higher number leads to more detailed drawings">
                   <td>
                     Number of polygons
                   </td>
@@ -256,7 +257,7 @@
                 <tr/>
 
                 <tr class="conf-option" data-toggle="tooltip"
-                    title="The number of sides that each polygon has">
+                    title="The number of sides that each polygon has. For example, setting this to 3 will create triangles">
                   <td>
                     Number of vertices
                   </td>
