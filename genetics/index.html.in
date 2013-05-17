@@ -73,9 +73,13 @@
           </div>
 
           <button id="start" class="btn control-btn btn-success"
-                  style="margin-left: 150px;">Start</button>
+                  style="margin-left: 150px;" disabled>
+            Start
+          </button>
 
-          <button id="stop" class="btn control-btn btn-danger">Stop</button>
+          <button id="stop" class="btn control-btn btn-danger" disabled>
+            Stop
+          </button>
         </div>
       </center>
 

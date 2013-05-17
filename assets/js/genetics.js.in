@@ -893,6 +893,10 @@ var Genetics = Genetics || {};
 
     /* prepare our tooltips */
     $('.conf-option').tooltip('hide');
+
+    /* enable our buttons */
+    $('#start').attr('disabled', false);
+    $('#stop').attr('disabled', false);
   };
 }).call(Genetics);
 
