@@ -101,7 +101,7 @@
       <div class="pull-right">
 
 	<!-- share button -->
-        <button id="share-btn" class="btn btn-inverse">
+        <button id="share-btn" class="btn btn-primary">
           <strong>Share</strong>
         </button>
 
