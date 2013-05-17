@@ -79,6 +79,7 @@ extra_site +=					\
 	genetics/sunflowers.jpg			\
 	genetics/tom-waits.jpg			\
 	genetics/webcam.swf			\
+	google14e46588787ed55b.html		\
 	uni/dissertation.pdf			\
 	uni/sustainability.pdf			\
 	uni/voluntary-cooperation.pdf		\
