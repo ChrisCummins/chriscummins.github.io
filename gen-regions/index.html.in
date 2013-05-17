@@ -32,12 +32,12 @@
     <meta name="viewport" content="width=1024" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
 
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,700" />
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" />
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.1.0/css/font-awesome.css" />
-    <link rel="stylesheet" href="../assets/css/buttons.css" />
-    <link rel="stylesheet" href="../assets/css/gen-regions.css" />
-    <link rel="shortcut icon" href="../assets/img/favicon.ico" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,700" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.1.0/css/font-awesome.css" />
+    <link rel="stylesheet" href="/assets/css/buttons.css" />
+    <link rel="stylesheet" href="/assets/css/gen-regions.css" />
+    <link rel="shortcut icon" href="/assets/img/favicon.ico" />
 
     <title>Chris Cummins | GEN</title>
   </head>
@@ -193,11 +193,11 @@
 
   </body>
 
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script src="http://code.jquery.com/jquery-migrate-1.1.0.js"></script>
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-hashchange/v1.3/jquery.ba-hashchange.min.js"></script>
-  <script src="http://cdn.jsdelivr.net/jquery.hotkeys/0.1.0/jquery.hotkeys.js"></script>
-  <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
-  <script src="../assets/js/gen-regions.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="//code.jquery.com/jquery-migrate-1.1.0.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-hashchange/v1.3/jquery.ba-hashchange.min.js"></script>
+  <script src="//cdn.jsdelivr.net/jquery.hotkeys/0.1.0/jquery.hotkeys.js"></script>
+  <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+  <script src="/assets/js/gen-regions.js"></script>
 
 </html>
