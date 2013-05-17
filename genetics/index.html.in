@@ -92,7 +92,7 @@
                 <i class="icon-beaker icon-large"></i> Analytics</a></li>
 
             <li><a href="#pane-results" data-toggle="tab">
-                <i class="icon-book icon-large"></i> Results</a></li>
+                <i class="icon-bar-chart icon-large"></i> Results</a></li>
           </ul>
 
           <div class="tab-content">
@@ -119,6 +119,24 @@
               successive generations, effectively demonstrating the power of a
               natural selection process to produce the best candidate for any
               given environment.
+
+              <h4>Examples</h4>
+
+              Here are some example sessions. Click on one of the images to load
+              the configuration and try it for yourself!
+
+              <center>
+                <a href="#" id="examples-crude">
+                  <img class="example conf-option" data-toggle="tooltip"
+                       title="Crude Squares"
+                       src="/assets/img/examples-crude.jpg" />
+                </a>
+                <a href="#" id="examples-line-art">
+                  <img class="example conf-option" data-toggle="tooltip"
+                       title="Line Art"
+                       src="/assets/img/examples-line-art.jpg" />
+                </a>
+              </center>
 
               <h4>Source Code</h4>
 

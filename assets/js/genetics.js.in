@@ -540,54 +540,54 @@ var Genetics = Genetics || {};
                             _randomInheritance,
                             _diffSquared) {
 
-    if (!_populationSize)
+    if (_populationSize === undefined)
       var _populationSize = 40;
     $('#population-size-slider').slider('value', _populationSize);
     $('#population-size').text(_populationSize);
 
-    if (!_cutoffSlider)
+    if (_cutoffSlider === undefined)
       var _cutoffSlider = 25;
     $('#cutoff-slider').slider('value', _cutoffSlider);
     $('#cutoff').text(_cutoffSlider + '%');
 
-    if (!_killParents)
+    if (_killParents === undefined)
       var _killParents = true;
     $('#killparents').prop('checked', _killParents);
 
-    if (!_mutationChance)
+    if (_mutationChance === undefined)
       var _mutationChance = 2.4;
     $('#mutation-chance-slider').slider('value', _mutationChance);
     $('#mutation-chance').text(_mutationChance.toFixed(1) + '%');
 
-    if (!_mutationAmount)
+    if (_mutationAmount === undefined)
       var _mutationAmount = 10;
     $('#mutation-amount-slider').slider('value', _mutationAmount);
     $('#mutation-amount').text(_mutationAmount + '%');
 
-    if (!_polygons)
+    if (_polygons === undefined)
       var _polygons = 120;
     $('#polygons-slider').slider('value', _polygons);
     $('#polygons').text(_polygons);
 
-    if (!_vertices)
+    if (_vertices === undefined)
       var _vertices = 6;
     $('#vertices-slider').slider('value', _vertices);
     $('#vertices').text(_vertices);
 
-    if (!_resolution)
+    if (_resolution === undefined)
       var _resolution = 70;
     $('#resolution-slider').slider('value', _resolution);
     $('#resolution').text(_resolution + 'x' + _resolution);
 
-    if (!_fillPolygons)
+    if (_fillPolygons === undefined)
       var _fillPolygons = true;
     $('#fill-polygons').prop('checked', _fillPolygons);
 
-    if (!_randomInheritance)
+    if (_randomInheritance === undefined)
       var _randomInheritance = false;
     $('#random-inheritance').prop('checked', _randomInheritance);
 
-    if (!_diffSquared)
+    if (_diffSquared === undefined)
       var _diffSquared = true;
     $('#diff-squared').prop('checked', _diffSquared);
   }
@@ -771,6 +771,23 @@ var Genetics = Genetics || {};
   $('#select-dna').click(function() {
     $('#strongest-dna').focus();
     $('#strongest-dna').select();
+  });
+
+  /*
+   * Examples
+   */
+  $('#examples-crude').click(function() {
+    window.scrollTo(0, 0);
+    stopSimulation();
+    setImage('/genetics/piet-mondrian');
+    setConfiguration(35, 20, true, 3.0, 10, 100, 4, 40, true, false, true);
+  });
+
+  $('#examples-line-art').click(function() {
+    window.scrollTo(0, 0);
+    stopSimulation();
+    setImage('/genetics/tom-waits.jpg');
+    setConfiguration(50, 15, true, 1.5, 30, 30, 30, 100, false, false, true);
   });
 
   /*
