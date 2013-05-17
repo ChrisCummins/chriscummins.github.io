@@ -139,7 +139,7 @@
       <ol>
         <li>Select an execution size from the dropdown box.</li>
         <li>Enter a register region description into the text area.</li>
-        <li>Select '--advanced' to change SubRegNum from being in bytes to
+        <li>Select 'Advanced' mode to change SubRegNum from being in bytes to
           the unit of data type.</li>
       </ol>
 
