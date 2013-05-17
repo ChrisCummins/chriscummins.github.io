@@ -92,7 +92,7 @@
                 <i class="icon-beaker icon-large"></i> Analytics</a></li>
 
             <li><a href="#pane-results" data-toggle="tab">
-                <i class="icon-book icon-large"></i> Results</a></li>
+                <i class="icon-bar-chart icon-large"></i> Results</a></li>
           </ul>
 
           <div class="tab-content">
