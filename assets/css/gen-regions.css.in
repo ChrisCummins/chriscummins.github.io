@@ -67,11 +67,6 @@ label {
   display: none;
 }
 
-/* Execsize menu items */
-#exec-size-ul > li {
-  text-align: center;
-}
-
 /* horizontal rule */
 hr {
   margin: 10px;
