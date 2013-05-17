@@ -33,7 +33,6 @@ var MAX_REG_SPAN = 2; /* The number of register a region can span. */
 
 /* Default values for regions. */
 var DEFAULT_REG_FILE = 'g';
-var DEFAULT_EXEC_SIZE = 8;
 var DEFAULT_DATA_SIZE = 4; /* Float (4 bytes) */
 
 /* Vertical grid size. */
@@ -44,8 +43,8 @@ var canvas = $('#canvas')[0];
 var ctx = canvas.getContext('2d');
 
 /* x,y offset to start drawing grid (leaves room for labels). */
-var START_Y = 30;
-var START_X = 10;
+var START_Y = 21;
+var START_X = 3;
 
 var COLOR_GOOD = '#dff0d8';
 var COLOR_BAD = '#f2dede';
@@ -99,18 +98,6 @@ $(window).hashchange(function() {
   }
 });
 
-$(function() {
-  $('#exec-size-ul li a').click(function() {
-    hideAlerts();
-    $('#exec-size-btn:first-child').html($(this).text() +
-                                         ' <span class="caret"></span>');
-    $('#exec-size-btn:first-child').val($(this).text());
-
-    if (isValidRegion())
-      encodeHash();
-  });
-});
-
 /* Region input. */
 $('#region-form').keyup(function(event) {
   var key = event.keyCode;
@@ -123,23 +110,35 @@ $('#region-form').keyup(function(event) {
 });
 
 /* --advanced. */
-$('#advanced').mouseup(function() {
-  toggleAdvanced();
+$('#advanced').click(function() {
+  if (isValidRegion())
+    encodeHash();
 });
 
-var advanced = false;
+function setAdvanced(advanced) {
+  $('#advanced').prop('checked', advanced);
+}
+
+function getAdvanced(advanced) {
+  return $('#advanced')[0].checked;
+}
 
 function toggleAdvanced() {
+  setAdvanced(!getAdvanced());
   hideAlerts();
-  advanced = !advanced;
 
   encodeHash();
 }
 
+/* Submit. */
+$('#submit').click(function() {
+  encodeHash();
+});
+
 /* Share. */
-function shareBtnCb(id) {
+$('#share-btn').click(function() {
   toggleShare();
-}
+});
 
 $('#share .close').click(function() {
   $('#share').hide();
@@ -171,7 +170,7 @@ function toggleShare() {
     /* Show the hash and highlight it for quick copying. */
     var hash = $('#share-hash')[0];
 
-    hash.value = location.hash;
+    hash.value = 'http://chriscummins.cc/gen-regions.html' + location.hash;
     $('#share').show();
     hash.focus();
     hash.select();
@@ -181,14 +180,6 @@ function toggleShare() {
 
 function hideAlerts() {
   $('.alert').hide();
-}
-
-function setDefaultExecSize() {
-  $('#exec-size-btn:first-child').text($('#default-exec-size-li').text());
-}
-
-function setCanvasCaption(msg) {
-  $('#canvas-caption').text(msg);
 }
 
 function flashRegionFormBackground(color) {
@@ -215,25 +206,18 @@ function clearRegionString(string) {
   return false;
 }
 
+/* exec size */
+$('#exec-size').change(function() {
+  if (isValidRegion())
+    encodeHash();
+});
+
 function getExecSize() {
-  return parseInt($('#exec-size-btn:first-child')[0].text);
+  return parseInt($('#exec-size option:selected').text());
 }
 
 function setExecSize(size) {
-  $('#exec-size-btn:first-child').html(size + ' <span class="caret"></span>');
-  $('#exec-size-btn:first-child').val(size);
-}
-
-function bumpExecSizeUp() {
-  if (getExecSize() <= 16)
-    setExecSize(getExecSize() * 2);
-  else
-    setExecSize(1);
-
-  if (getRegionString().match(REGION_REGEXP))
-    encodeHash();
-
-  return false;
+  $('#exec-size').val(size).attr('select', true);
 }
 
 /* Set a new hash based off of the regions. */
@@ -247,7 +231,7 @@ function encodeHash() {
   } else {
     hash = 'execsize=' + getExecSize() + '&region=' +
            regionString.replace(/</g, '&lt;').replace(/>/g, '&rt;') +
-           '&advanced=' + ((advanced) ? 1 : 0);
+           '&advanced=' + ((getAdvanced()) ? 1 : 0);
   }
 
   location.hash = hash;
@@ -283,9 +267,7 @@ function decodeHash() {
         argc++;
         break;
       case 'advanced':
-        var _advanced = (parseInt(pair[1]) ? true : false);
-        advanced = _advanced;
-        $('#advanced').prop('checked', _advanced);
+        setAdvanced(parseInt(pair[1]) ? true : false);
         argc++;
         break;
     }
@@ -308,8 +290,9 @@ function decodeHash() {
 
 /* Clear the canvas. */
 function clearCanvas() {
-  ctx.fillStyle = '#FFF';
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = '#f5f5f5';
+  ctx.fillRect(START_X, START_Y, (32 * COL_W), (ROWS * ROW_H));
 }
 
 /* Draw the vertical column lines. */
@@ -401,6 +384,19 @@ function drawCell(label, x, y, width, color) {
 
 /* Bootstrap. */
 function init() {
+  /*
+   * Prepare the ios switches
+   */
+  var iosSwitches =
+      document.querySelectorAll('input[type="checkbox"].ios-switch');
+  for (var i = 0, sw; sw = iosSwitches[i++];) {
+    var div = document.createElement('div');
+    div.className = 'switch';
+    sw.parentNode.insertBefore(div, sw.nextSibling);
+    sw.style.width = div.style.width;
+    sw.style.height = div.style.height;
+  }
+
   $('#share-btn').attr('disabled', 'disabled');
 
   if (decodeHash()) {
@@ -419,7 +415,6 @@ function pageBind(key, func) {
 }
 
 pageBind('a', toggleAdvanced);
-pageBind('e', bumpExecSizeUp);
 pageBind('s', toggleShare);
 pageBind('esc', hideAlerts);
 pageBind('c', clearRegionString);
@@ -435,9 +430,6 @@ $('#share-hash').bind('keydown', 'r', function() {
 });
 
 $(document).bind('keydown', 'return', function() {
-  if (isNaN(getExecSize()))
-    setExecSize(DEFAULT_EXEC_SIZE);
-
   encodeHash();
 });
 
@@ -551,13 +543,6 @@ function submitRegion() {
 
   /* Get or set the number of execution channels. */
   execSize = getExecSize();
-  if (isNaN(execSize)) {
-    /* ExecSize not set, show warning and set it to the default value. */
-    execSize = DEFAULT_EXEC_SIZE;
-    showAlert('Warning', 'Execution size not set, using default value ' +
-              'of \'8\'.');
-    setDefaultExecSize();
-  }
 
   /* Strip the the SubRegNum from the region string, or use default. Here, we
    * deliberately catch a wider set of values then are permissible, so that in
@@ -585,7 +570,7 @@ function submitRegion() {
   }
 
   /* Convert subRegNum to a byte offset if in --advanced mode. */
-  if (advanced)
+  if (getAdvanced())
     subRegNum *= dataSize;
 
   /* Validate the the region description syntax. */
@@ -716,19 +701,11 @@ function submitEmptyRegion() {
   width = 0;
   horzStride = 0;
   dataSize = 0;
-
   drawRegion();
-  setCanvasCaption('');
 }
 
 function drawRegion() {
   var startRegister; /* The lowermost register to draw. */
-
-  setCanvasCaption(execSize + ' channels executing on a region starting at ' +
-                   'register ' + regFile + register + '.' + subRegNum +
-                   ', with a width of ' + width +
-                   ', a horizontal stride of ' + horzStride +
-                   ' and a vertical stride of ' + vertStride + '.');
 
   if (execSize)
     flashRegionFormBackground(COLOR_GOOD);

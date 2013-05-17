@@ -42,6 +42,7 @@ html +=						\
 
 css +=						\
 	assets/css/buttons.css			\
+	assets/css/gen-regions.css		\
 	assets/css/genetics.css			\
 	assets/css/styles.css			\
 	$(NULL)
