@@ -855,6 +855,9 @@ var Genetics = Genetics || {};
     webcam.set_shutter_sound(true);
     webcam.set_hook('onComplete', 'webcamUploadComplete');
     $('#webcam-preview')[0].innerHTML = webcam.get_html(350, 350);
+
+    /* prepare our tooltips */
+    $('.conf-option').tooltip('hide');
   };
 }).call(Genetics);
 

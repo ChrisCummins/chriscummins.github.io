@@ -158,7 +158,7 @@
 
               <table class="table conf-table">
 
-                <tr data-toggle="tooltip"
+                <tr class="conf-option" data-toggle="tooltip"
                     title="The number of individuals in a single generation">
                   <td style="width: 160px;">
                     Population Size
@@ -167,7 +167,7 @@
                   <td id="population-size" style="width: 80px;"></td>
                 <tr/>
 
-                <tr data-toggle="tooltip"
+                <tr class="conf-option" data-toggle="tooltip"
                     title="The percentage of the population which is selected for breeding the next generation">
                   <td>
                     Selection Cutoff
@@ -176,7 +176,7 @@
                   <td id="cutoff"></td>
                 <tr/>
 
-                <tr data-toggle="tooltip"
+                <tr class="conf-option" data-toggle="tooltip"
                     title="The chance that each DNA string will mutate per generation">
                   <td>
                     Mutation Chance
@@ -185,7 +185,7 @@
                   <td id="mutation-chance"></td>
                 <tr/>
 
-                <tr data-toggle="tooltip"
+                <tr class="conf-option" data-toggle="tooltip"
                     title="The amount of random data that is introduced in a mutation">
                   <td>
                     Mutation Amount
@@ -194,7 +194,7 @@
                   <td id="mutation-amount"></td>
                 <tr/>
 
-                <tr data-toggle="tooltip"
+                <tr class="conf-option" data-toggle="tooltip"
                     title="Whether the parents of each generation are killed or survive">
                   <td>
                     Kill Parents
@@ -206,7 +206,7 @@
                   </label></td>
                 <tr/>
 
-                <tr data-toggle="tooltip"
+                <tr class="conf-option" data-toggle="tooltip"
                     title="Inherit genes randomly from mother and father or an even share of both">
                   <td>
                     Random Inheritance
@@ -218,7 +218,7 @@
                   </label></td>
                 <tr/>
 
-                <tr data-toggle="tooltip"
+                <tr class="conf-option" data-toggle="tooltip"
                     title="Linear or exponential fitness algorithm">
                   <td>
                     Difference squared
@@ -237,7 +237,7 @@
 
               <table class="table conf-table">
 
-                <tr data-toggle="tooltip"
+                <tr class="conf-option" data-toggle="tooltip"
                     title="A higher internal resolution improves accuracy, but slows performance">
                   <td style="width: 160px;">
                     Internal Resolution
@@ -246,7 +246,7 @@
                   <td id="resolution" style="width: 80px;"></td>
                 <tr/>
 
-                <tr data-toggle="tooltip"
+                <tr class="conf-option" data-toggle="tooltip"
                     title="More polygons means more visual detail, but slower performance">
                   <td>
                     Number of polygons
@@ -255,7 +255,7 @@
                   <td id="polygons"></td>
                 <tr/>
 
-                <tr data-toggle="tooltip"
+                <tr class="conf-option" data-toggle="tooltip"
                     title="The number of sides that each polygon has">
                   <td>
                     Number of vertices
@@ -264,7 +264,7 @@
                   <td id="vertices"></td>
                 <tr/>
 
-                <tr data-toggle="tooltip"
+                <tr class="conf-option" data-toggle="tooltip"
                     title="Draw solid shapes or traced lines">
                   <td>
                     Fill polygons

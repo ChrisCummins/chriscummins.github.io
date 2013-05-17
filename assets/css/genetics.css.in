@@ -177,3 +177,12 @@ label {
   height: 400px;
   resize: none;
 }
+
+/* tooltips */
+.tooltip {
+  font-size: 12px;
+}
+
+.tooltip-inner {
+  max-width: 350px;
+}
