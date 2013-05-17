@@ -178,8 +178,9 @@
 
       <h2>Sharing</h2>
 
-      The page URL contains a description of the currently visible region
-      which can be shared, saved or bookmarked for later reference.
+      The 'Share' button generates a URL that contains a description of the
+      current region. This can be saved, given to others and bookmarked for
+      future reference.
 
       <!-- footer -->
       <hr style="margin-top: 20px">
