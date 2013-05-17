@@ -85,15 +85,13 @@ var GenRegions = GenRegions || {};
 
   /* Dynamic Content **********************************************************/
 
-  /* This function is a callback for a change in the page's hash. */
-  $(window).hashchange(function() {
+  function refresh() {
     hideAlerts();
 
     /* Enable the 'Share' button. */
     $('#share-btn').removeAttr('disabled');
 
     try {
-      decodeHash();
       submitRegion();
       drawRegion();
     } catch (e) {
@@ -101,11 +99,12 @@ var GenRegions = GenRegions || {};
         showAlertError(e.title, e.msg);
         submitEmptyRegion();
         flashRegionFormBackground(COLOR_BAD);
-      } else
+      } else {
         showAlertError('Application Error',
                        'Uncaught JavaScript exception.');
+      }
     }
-  });
+  }
 
   /* Region input. */
   $('#region-form').keyup(function(event) {
@@ -113,14 +112,14 @@ var GenRegions = GenRegions || {};
 
     /* We want to update the region if we're typing something useful. */
     if (key == 13) {
-      encodeHash();
+      refresh();
     }
   });
 
   /* --advanced. */
   $('#advanced').click(function() {
     if (isValidRegion())
-      encodeHash();
+      refresh();
   });
 
   function setAdvanced(advanced) {
@@ -135,12 +134,12 @@ var GenRegions = GenRegions || {};
     setAdvanced(!getAdvanced());
     hideAlerts();
 
-    encodeHash();
+    refresh();
   }
 
   /* Submit. */
   $('#submit').click(function() {
-    encodeHash();
+    refresh();
   });
 
   /* Share. */
@@ -172,17 +171,30 @@ var GenRegions = GenRegions || {};
   }
 
   function toggleShare() {
-    if ($('#share').is(':visible')) {
-      $('#share').hide();
-    } else if (location.hash) {
-      /* Show the hash and highlight it for quick copying. */
-      var hash = $('#share-hash')[0];
+    var shareDiv = $('#share');
 
-      hash.value = 'http://chriscummins.cc/gen-regions/' + location.hash;
-      $('#share').show();
-      hash.focus();
-      hash.select();
-      hash.setSelectionRange(0, 120);
+    if (shareDiv.is(':visible')) {
+      shareDiv.hide();
+    } else {
+      /* Show the hash and highlight it for quick copying. */
+      var urlBox = $('#share-hash')[0];
+      var regionString = getRegionString();
+      var hash;
+
+      if (regionString.match(/^\s*#/)) {
+        /* If our region string is a hash, then use that. */
+        hash = regionString;
+      } else {
+        hash = '#execsize=' + getExecSize() + '&region=' +
+          regionString.replace(/</g, '&lt;').replace(/>/g, '&rt;') +
+          '&advanced=' + ((getAdvanced()) ? 1 : 0);
+      }
+
+      urlBox.value = 'http://chriscummins.cc/gen-regions/' + hash;
+      shareDiv.show();
+      urlBox.focus();
+      urlBox.select();
+      urlBox.setSelectionRange(0, 120);
     }
   }
 
@@ -216,6 +228,7 @@ var GenRegions = GenRegions || {};
 
   function setCanvasTooltip(message) {
     if (message) {
+
       $('#canvas').attr('data-original-title', message).tooltip('fixTitle');
     }
   }
@@ -223,7 +236,7 @@ var GenRegions = GenRegions || {};
   /* exec size */
   $('#exec-size').change(function() {
     if (isValidRegion())
-      encodeHash();
+      refresh();
   });
 
   function getExecSize() {
@@ -234,29 +247,11 @@ var GenRegions = GenRegions || {};
     $('#exec-size').val(size).attr('select', true);
   }
 
-  /* Set a new hash based off of the regions. */
-  function encodeHash() {
-    var regionString = getRegionString();
-    var hash;
-
-    if (regionString.match(/^\s*#/)) {
-      /* If our region string is a hash, then use that. */
-      hash = regionString;
-    } else {
-      hash = 'execsize=' + getExecSize() + '&region=' +
-          regionString.replace(/</g, '&lt;').replace(/>/g, '&rt;') +
-          '&advanced=' + ((getAdvanced()) ? 1 : 0);
-    }
-
-    location.hash = hash;
-    $(window).hashchange();
-  }
-
   /*
    * Decode a region from URL hash. If the hash contains a malformed region,
    * show an error. Returns 1 if hash contained region description, else 0.
    */
-  function decodeHash() {
+  function loadStateFromHash() {
     var hash = location.hash.replace(/&lt;/g, '<').replace(/&rt;/g, '>');
     var args = hash.split('&');
     var argc = 0;
@@ -366,28 +361,6 @@ var GenRegions = GenRegions || {};
     }
   }
 
-  /*
-   * Draw a cell at the given coordinates.
-   */
-  function drawCell(label, x, y, width, color) {
-
-    /* Don't draw anything outside of the grid */
-    if (y + ROW_H > canvas.height)
-      return;
-
-    ctx.fillStyle = color;
-    ctx.globalAlpha = 0.7;
-    ctx.fillRect(x, y, width, ROW_H);
-
-    ctx.strokeStyle = '#06266F';
-    ctx.lineWidth = 2;
-    ctx.strokeRect(x + .5, y + .5, width - .5, ROW_H - .5);
-
-    ctx.fillStyle = '#FFF';
-    ctx.globalAlpha = 1.0;
-    ctx.fillText(label, x + (width / 2), y + (ROW_H / 2) + 5);
-  }
-
   /* Key Bindings *************************************************************/
   function pageBind(key, func) {
     $(document).bind('keydown', key, func);
@@ -411,7 +384,7 @@ var GenRegions = GenRegions || {};
   });
 
   $(document).bind('keydown', 'return', function() {
-    encodeHash();
+    refresh();
   });
 
   /* Register Region parsing **************************************************/
@@ -686,6 +659,105 @@ var GenRegions = GenRegions || {};
   function drawRegion() {
     var startRegister; /* The lowermost register to draw. */
 
+    /*
+     * Draw the region cells.
+     */
+    function drawRegionCells(startRegister) {
+
+      /*
+       * Draw a cell at the given coordinates.
+       */
+      function drawCell(label, x, y, width, color) {
+
+        /* Don't draw anything outside of the grid */
+        if (y + ROW_H > canvas.height)
+          return;
+
+        ctx.fillStyle = color;
+        ctx.globalAlpha = 0.7;
+        ctx.fillRect(x, y, width, ROW_H);
+
+        ctx.strokeStyle = '#06266F';
+        ctx.lineWidth = 2;
+        ctx.strokeRect(x + .5, y + .5, width - .5, ROW_H - .5);
+
+        ctx.fillStyle = '#FFF';
+        ctx.globalAlpha = 1.0;
+        ctx.fillText(label, x + (width / 2), y + (ROW_H / 2) + 5);
+      }
+
+      var count = 0;
+      var rows = execSize / width;
+      var firstReg;
+
+      ctx.textAlign = 'center';
+      ctx.font = 'bold 14px arial';
+
+      for (var r = 0; r < rows; r++) {
+        for (var c = 0; c < width; c++) {
+          /* The absolute offset (in bytes) of the target element from the
+           * starting register. */
+          var regByte = subRegNum + (r * vertStride * dataSize) +
+              (c * horzStride * dataSize);
+
+          /* The register of the current element. */
+          var reg = register + Math.floor(regByte / REG_SIZE);
+          var regOffset = (regByte % REG_SIZE);
+
+          /* We cache the first reg so that we can detect when a region spans
+           * more than 2 registers. */
+          if (!r && !c)
+            firstReg = reg;
+
+          /* We only show a warning for out of range accesses. */
+          if (reg - firstReg >= MAX_REG_SPAN) {
+            flashRegionFormBackground(COLOR_BAD);
+            showAlert('Out of Bounds', 'A source cannot span more ' +
+                      'than 2 adjacent GRF registers ' +
+                      '(affected region is shown in red).');
+          }
+
+          /* We check now that everything is in bounds. If not, alert the user. */
+          if (reg >= REG_FILE_SIZE) {
+            showAlertError('Out of Bounds', 'Register access \'' + reg +
+                           '\' out of bounds!');
+            flashRegionFormBackground(COLOR_BAD);
+          }
+
+          /* Now lets get the canvas coordinates of the cell for drawing. */
+          var x = START_X + (REG_SIZE - regOffset - dataSize) * COL_W;
+          var y = START_Y + ((reg - startRegister) * ROW_H);
+
+          /* Finally, we can paint the cell, assuming of course that we are
+           * painting a cell within the execution size. Otherwise, we are
+           * done. This check is needed for cases where:
+           *          (execSize % width) != 0. */
+          if (count < execSize && reg < REG_FILE_SIZE) {
+            var color = (reg - firstReg < MAX_REG_SPAN) ?
+                COLOR_CELL_GOOD : COLOR_CELL_BAD;
+            var cw = dataSize * COL_W;
+
+            if (x < START_X) {
+              var overlap = START_X - x;
+
+              /* The element overlaps a register boundary. */
+              cw -= overlap;
+              color = COLOR_CELL_BAD;
+              drawCell(count, START_X + REG_SIZE * COL_W - overlap,
+                       y + ROW_H, overlap, COLOR_CELL_BAD);
+              x = START_X;
+              showAlert('Out of Bounds', 'An element cannot span a register ' +
+                        'boundary (affected element is shown in red).');
+              flashRegionFormBackground(COLOR_BAD);
+            }
+
+            drawCell(count++, x, y, cw, color);
+          } else
+            return;
+        }
+      }
+    }
+
     if (execSize) {
       setCanvasTooltip(execSize + ' channels executing on a region starting at ' +
                        'register ' + regFile + register + '.' + subRegNum +
@@ -711,82 +783,6 @@ var GenRegions = GenRegions || {};
   }
 
   /*
-   * Draw the region cells.
-   */
-  function drawRegionCells(startRegister) {
-    var count = 0;
-    var rows = execSize / width;
-    var firstReg;
-
-    ctx.textAlign = 'center';
-    ctx.font = 'bold 14px arial';
-
-    for (var r = 0; r < rows; r++) {
-      for (var c = 0; c < width; c++) {
-        /* The absolute offset (in bytes) of the target element from the
-         * starting register. */
-        var regByte = subRegNum + (r * vertStride * dataSize) +
-            (c * horzStride * dataSize);
-
-        /* The register of the current element. */
-        var reg = register + Math.floor(regByte / REG_SIZE);
-        var regOffset = (regByte % REG_SIZE);
-
-        /* We cache the first reg so that we can detect when a region spans
-         * more than 2 registers. */
-        if (!r && !c)
-          firstReg = reg;
-
-        /* We only show a warning for out of range accesses. */
-        if (reg - firstReg >= MAX_REG_SPAN) {
-          flashRegionFormBackground(COLOR_BAD);
-          showAlert('Out of Bounds', 'A source cannot span more ' +
-                    'than 2 adjacent GRF registers ' +
-                    '(affected region is shown in red).');
-        }
-
-        /* We check now that everything is in bounds. If not, alert the user. */
-        if (reg >= REG_FILE_SIZE) {
-          showAlertError('Out of Bounds', 'Register access \'' + reg +
-                         '\' out of bounds!');
-          flashRegionFormBackground(COLOR_BAD);
-        }
-
-        /* Now lets get the canvas coordinates of the cell for drawing. */
-        var x = START_X + (REG_SIZE - regOffset - dataSize) * COL_W;
-        var y = START_Y + ((reg - startRegister) * ROW_H);
-
-        /* Finally, we can paint the cell, assuming of course that we are
-         * painting a cell within the execution size. Otherwise, we are
-         * done. This check is needed for cases where:
-         *          (execSize % width) != 0. */
-        if (count < execSize && reg < REG_FILE_SIZE) {
-          var color = (reg - firstReg < MAX_REG_SPAN) ?
-              COLOR_CELL_GOOD : COLOR_CELL_BAD;
-          var cw = dataSize * COL_W;
-
-          if (x < START_X) {
-            var overlap = START_X - x;
-
-            /* The element overlaps a register boundary. */
-            cw -= overlap;
-            color = COLOR_CELL_BAD;
-            drawCell(count, START_X + REG_SIZE * COL_W - overlap,
-                     y + ROW_H, overlap, COLOR_CELL_BAD);
-            x = START_X;
-            showAlert('Out of Bounds', 'An element cannot span a register ' +
-                      'boundary (affected element is shown in red).');
-            flashRegionFormBackground(COLOR_BAD);
-          }
-
-          drawCell(count++, x, y, cw, color);
-        } else
-          return;
-      }
-    }
-  }
-
-  /*
    * Bootstrap our page.
    */
   this.init = function() {
@@ -806,8 +802,8 @@ var GenRegions = GenRegions || {};
 
     $('#share-btn').attr('disabled', 'disabled');
 
-    if (decodeHash()) {
-      $(window).hashchange();
+    if (loadStateFromHash()) {
+      refresh();
     } else {
       hideAlerts();
       submitEmptyRegion();
