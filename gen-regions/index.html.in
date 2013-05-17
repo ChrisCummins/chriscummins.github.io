@@ -28,9 +28,12 @@
 
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=1024" />
+    <title>Chris Cummins | GEN Regions Visualiser - Intel Graphics</title>
+    <meta name="description" content="This web tool visualizes instruction source operand regions for the Intel Graphics GEN architecture.">
+    <meta name="author" content="Chris Cummins">
     <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=1024" />
+    <meta charset="utf-8" />
 
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,700" />
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" />
@@ -39,8 +42,6 @@
     <link rel="stylesheet" href="/assets/css/static-700.css" />
     <link rel="stylesheet" href="/assets/css/gen-regions.css" />
     <link rel="shortcut icon" href="/assets/img/favicon.ico" />
-
-    <title>Chris Cummins | GEN</title>
   </head>
 
   <body>

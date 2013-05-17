@@ -2,9 +2,12 @@
 
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=1024" />
+    <title>Chris Cummins | Grow Your Own Picture - Evolution Simulator</title>
+    <meta name="description" content="Harnessing the powers of natural selection and genetics algorithms to produce unique generative art.">
+    <meta name="author" content="Chris Cummins">
     <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=1024" />
+    <meta charset="utf-8" />
 
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,700" />
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.no-icons.min.css" />
@@ -14,8 +17,6 @@
     <link rel="stylesheet" href="/assets/css/static-700.css" />
     <link rel="stylesheet" href="/assets/css/genetics.css" />
     <link rel="shortcut icon" href="/assets/img/favicon.ico" />
-
-    <title>Chris Cummins | Genetics</title>
   </head>
 
   <body class="genetics-inactive">

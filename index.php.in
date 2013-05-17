@@ -6,15 +6,16 @@ setcookie("visit", "1", time()+3600);
 
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=1024" />
+    <title>Chris Cummins</title>
+    <meta name="description" content="The internet homepage of full time geek and part time software developer Chris Cummins.">
+    <meta name="author" content="Chris Cummins">
     <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=1024" />
+    <meta charset="utf-8" />
 
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,700|Noto+Sans:400,700" />
     <link rel="stylesheet" href="/assets/css/styles.css" />
     <link rel="shortcut icon" href="/assets/img/favicon.ico" />
-
-    <title>Chris Cummins</title>
   </head>
 
   <body class="impress-not-supported">
