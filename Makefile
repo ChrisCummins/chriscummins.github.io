@@ -69,7 +69,9 @@ extra_site +=					\
 	assets/img/screenshot-facebook.png	\
 	assets/img/screenshot-github.png	\
 	assets/img/screenshot-linkedin.png	\
+	assets/img/screenshot-soundcloud.png	\
 	assets/img/screenshot-youtube.png	\
+	assets/img/soundcloud.png		\
 	assets/img/youtube.png			\
 	genetics/eiffel-tower.jpg		\
 	genetics/kyle-broflovski.jpg		\
