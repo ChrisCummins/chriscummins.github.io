@@ -214,6 +214,12 @@ var GenRegions = GenRegions || {};
     return false;
   }
 
+  function setCanvasTooltip(message) {
+    if (message) {
+      $('#canvas').attr('data-original-title', message).tooltip('fixTitle');
+    }
+  }
+
   /* exec size */
   $('#exec-size').change(function() {
     if (isValidRegion())
@@ -680,6 +686,16 @@ var GenRegions = GenRegions || {};
   function drawRegion() {
     var startRegister; /* The lowermost register to draw. */
 
+    if (execSize) {
+      setCanvasTooltip(execSize + ' channels executing on a region starting at ' +
+                       'register ' + regFile + register + '.' + subRegNum +
+                       ', with a width of ' + width +
+                       ', a horizontal stride of ' + horzStride +
+                       ' and a vertical stride of ' + vertStride + '.');
+    } else {
+      setCanvasTooltip();
+    }
+
     if (execSize)
       flashRegionFormBackground(COLOR_GOOD);
 
@@ -796,6 +812,8 @@ var GenRegions = GenRegions || {};
       hideAlerts();
       submitEmptyRegion();
     }
+
+    $('#canvas').tooltip('hide');
   };
 
 }).call(GenRegions);
