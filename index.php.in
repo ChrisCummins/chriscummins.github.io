@@ -62,7 +62,7 @@ setcookie("visit", "1", time()+3600);
 	      <a href="http://www.linkedin.com/profile/view?id=195091553" target="_blank">
 		<img src="/assets/img/screenshot-linkedin.png" style="border-radius: 10px;"></a></div>
 
-	    <a id="facebook" href="https://www.facebook.com/cecummins" target="_blank">
+	    <a id="facebook" href="http://www.facebook.com/cecummins" target="_blank">
 	      <img src="/assets/img/facebook.png" alt="Facebook"></a>
 	    <div id="tooltip-facebook" class="tooltip"> <!-- tooltip -->
 	      <a href="https://www.facebook.com/cecummins" target="_blank">
