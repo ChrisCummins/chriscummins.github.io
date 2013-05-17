@@ -370,7 +370,7 @@ var GenRegions = GenRegions || {};
 
     ctx.strokeStyle = '#06266F';
     ctx.lineWidth = 2;
-    ctx.strokeRect(x + .5, y + .5, width + .5, ROW_H + .5);
+    ctx.strokeRect(x + .5, y + .5, width - .5, ROW_H - .5);
 
     ctx.fillStyle = '#FFF';
     ctx.globalAlpha = 1.0;
