@@ -1,11 +1,12 @@
 /*
  *                Genetics Algorithm to Grow Your Own Picture
  *
+ * Written by Chris Cummins <chrisc.101@gmail.com>
  * Copyright (c) 2013 Chris Cummins
  * http://chriscummins.cc
  * http://chriscummins.cc/genetics
  *
- * Based on `JavaScript Genetic Algorithm' (Copyright (c) 2009 Jacob Seidelin).
+ * Based on `JavaScript Genetic Algorithm' - Copyright (c) 2009 Jacob Seidelin.
  *   jseidelin@nihilogic.dk, http://blog.nihilogic.dk/
  */
 
