@@ -207,7 +207,7 @@ label {
 /* results panel */
 #strongest-dna {
   width: 97%;
-  height: 200px;
+  height: 400px;
   resize: none;
 }
 
