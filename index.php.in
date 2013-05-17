@@ -11,7 +11,7 @@ setcookie("visit", "1", time()+3600);
     <meta name="apple-mobile-web-app-capable" content="yes" />
 
     <link href="http://fonts.googleapis.com/css?family=PT+Serif:400,700|Noto+Sans:400,700" rel="stylesheet" />
-    <link href="assets/css/styles.css" rel="stylesheet" />
+    <link href="/assets/css/styles.css" rel="stylesheet" />
     <link href="/assets/img/favicon.ico" rel="shortcut icon" />
 
     <title>Chris Cummins</title>
@@ -25,7 +25,7 @@ setcookie("visit", "1", time()+3600);
 
       <div id="hello" class="step" data-y="500">
 	<center>
-	  <img src="assets/img/my-face.jpg"
+	  <img src="/assets/img/my-face.jpg"
 	       style="border-radius: 15px; padding: 5px; background-color: #fff;"
 	       alt="My name is Chris.">
 	  <br/>
@@ -57,28 +57,28 @@ setcookie("visit", "1", time()+3600);
 	  <center><div id="findme">You can find me elsewhere:</div>
 
 	    <a id="linkedin" href="http://www.linkedin.com/profile/view?id=195091553" target="_blank">
-	      <img src="assets/img/linkedin.png" alt="Linked In"></a>
+	      <img src="/assets/img/linkedin.png" alt="Linked In"></a>
 	    <div id="tooltip-linkedin" class="tooltip"> <!-- tooltip -->
 	      <a href="http://www.linkedin.com/profile/view?id=195091553" target="_blank">
-		<img src="assets/img/screenshot-linkedin.png" style="border-radius: 10px;"></a></div>
+		<img src="/assets/img/screenshot-linkedin.png" style="border-radius: 10px;"></a></div>
 
 	    <a id="facebook" href="https://www.facebook.com/cecummins" target="_blank">
-	      <img src="assets/img/facebook.png" alt="Facebook"></a>
+	      <img src="/assets/img/facebook.png" alt="Facebook"></a>
 	    <div id="tooltip-facebook" class="tooltip"> <!-- tooltip -->
 	      <a href="https://www.facebook.com/cecummins" target="_blank">
-	      <img src="assets/img/screenshot-facebook.png" style="border-radius: 10px;"></a></div>
+	      <img src="/assets/img/screenshot-facebook.png" style="border-radius: 10px;"></a></div>
 
 	    <a id="youtube" href="http://www.youtube.com/user/ChrisCummins" target="_blank">
-	      <img src="assets/img/youtube.png" alt="YouTube"></a>
+	      <img src="/assets/img/youtube.png" alt="YouTube"></a>
  	    <div id="tooltip-youtube"  class="tooltip"> <!-- tooltip -->
 	      <a href="http://www.youtube.com/user/ChrisCummins" target="_blank">
-		<img src="assets/img/screenshot-youtube.png"  style="border-radius: 10px;"></a></div>
+		<img src="/assets/img/screenshot-youtube.png"  style="border-radius: 10px;"></a></div>
 
 	    <a id="github" href="https://github.com/ChrisCummins" target="_blank">
-	      <img src="assets/img/github.png" alt="GitHub"></a>
+	      <img src="/assets/img/github.png" alt="GitHub"></a>
 	    <div id="tooltip-github"  class="tooltip">  <!-- tooltip -->
 	      <a href="https://github.com/ChrisCummins" target="_blank">
-		<img src="assets/img/screenshot-github.png"  style="border-radius: 10px;"></a></div>
+		<img src="/assets/img/screenshot-github.png"  style="border-radius: 10px;"></a></div>
 	  </center>
       </div>
 
@@ -116,7 +116,7 @@ setcookie("visit", "1", time()+3600);
       <div id="messagesuccess">
 	<center>
 	  <br /><br /><br /><br /><br /><br />
-	  <img src="assets/img/check.png">
+	  <img src="/assets/img/check.png">
 	  <br /><br />
 	  Thanks for getting in touch!
 	</center>
@@ -130,7 +130,7 @@ setcookie("visit", "1", time()+3600);
     </div>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="assets/js/impress.js"></script>
-    <script src="assets/js/site.js"></script>
+    <script src="/assets/js/impress.js"></script>
+    <script src="/assets/js/site.js"></script>
   </body>
 </html>
