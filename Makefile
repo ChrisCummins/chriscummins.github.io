@@ -36,7 +36,7 @@ php +=						\
 
 html +=						\
 	404.html				\
-	gen-regions.html			\
+	gen-regions/index.html			\
 	genetics/index.html			\
 	$(NULL)
 
