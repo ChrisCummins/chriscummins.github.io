@@ -774,6 +774,23 @@ var Genetics = Genetics || {};
   });
 
   /*
+   * Examples
+   */
+  $('#examples-crude').click(function() {
+    window.scrollTo(0, 0);
+    stopSimulation();
+    setImage('/genetics/piet-mondrian');
+    setConfiguration(35, 20, true, 3.0, 10, 100, 4, 40, true, false, true);
+  });
+
+  $('#examples-line-art').click(function() {
+    window.scrollTo(0, 0);
+    stopSimulation();
+    setImage('/genetics/tom-waits.jpg');
+    setConfiguration(50, 15, true, 1.5, 30, 30, 30, 100, false, false, true);
+  });
+
+  /*
    *  Webcam button callback.
    */
   $('#webcam-upload-btn').click(function() {
