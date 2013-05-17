@@ -238,19 +238,17 @@ var GenRegions = GenRegions || {};
       hash = regionString;
     } else {
       hash = 'execsize=' + getExecSize() + '&region=' +
-        regionString.replace(/</g, '&lt;').replace(/>/g, '&rt;') +
-        '&advanced=' + ((getAdvanced()) ? 1 : 0);
+          regionString.replace(/</g, '&lt;').replace(/>/g, '&rt;') +
+          '&advanced=' + ((getAdvanced()) ? 1 : 0);
     }
 
     location.hash = hash;
     $(window).hashchange();
   }
 
-  /**
+  /*
    * Decode a region from URL hash. If the hash contains a malformed region,
-   * show an error.
-   *
-   * @return 1 if hash contained region description, else 0.
+   * show an error. Returns 1 if hash contained region description, else 0.
    */
   function decodeHash() {
     var hash = location.hash.replace(/&lt;/g, '<').replace(/&rt;/g, '>');
@@ -261,23 +259,22 @@ var GenRegions = GenRegions || {};
       var pair = args[i].split('=');
 
       switch (String(pair[0])) {
-      case '#execsize':
-        setExecSize(pair[1]);
-        argc++;
-        break;
-      case 'region':
-        /* We only set the region text if it does not match the current
-         * text. This prevents the caret from being moved to the end of the
-         * string while typing. */
-        if (getRegionString() != pair[1])
-          setRegionString(pair[1]);
-
-        argc++;
-        break;
-      case 'advanced':
-        setAdvanced(parseInt(pair[1]) ? true : false);
-        argc++;
-        break;
+        case '#execsize':
+          setExecSize(pair[1]);
+          argc++;
+          break;
+        case 'region':
+          /* We only set the region text if it does not match the current
+           * text. This prevents the caret from being moved to the end of the
+           * string while typing. */
+          if (getRegionString() != pair[1])
+            setRegionString(pair[1]);
+          argc++;
+          break;
+        case 'advanced':
+          setAdvanced(parseInt(pair[1]) ? true : false);
+          argc++;
+          break;
       }
     }
 
@@ -347,13 +344,8 @@ var GenRegions = GenRegions || {};
     }
   }
 
-  /**
+  /*
    * Draw the row labels (register numbers).
-   *
-   * @param regFile       The (optional) one or more character string that
-   *                      prefixes a register number, for example 'g' for GRF.
-   * @param startRegister The number to begin labeling registers from, for example
-   *                      110.
    */
   function drawRowLabels(regFile, startRegister) {
     var row_y = START_Y + ROW_H - (canvas.height / 30);
@@ -368,13 +360,8 @@ var GenRegions = GenRegions || {};
     }
   }
 
-  /**
+  /*
    * Draw a cell at the given coordinates.
-   *
-   * @param label Any text to place inside the cell.
-   * @param x Cell origin (leftmost edge, in px).
-   * @param y Cell origin (uppermost edge, in px).
-   * @param width The width of the cell (in px).
    */
   function drawCell(label, x, y, width, color) {
     ctx.fillStyle = color;
@@ -426,10 +413,8 @@ var GenRegions = GenRegions || {};
   var horzStride;
   var dataSize;
 
-  /**
+  /*
    * Perform a dry-run parse of the region description.
-   *
-   * @return 1 if all inputs are valid, else 0.
    */
   function isValidRegion() {
     if (getRegionString().match(REGION_REGEXP)) {
@@ -485,24 +470,24 @@ var GenRegions = GenRegions || {};
     dataSize = regionString.match(/[a-z]+$/i);
     if (dataSize) {
       switch (String(dataSize).toLowerCase()) {
-      case 'b':
-      case 'ub':
-        dataSize = 1;
-        break;
-      case 'uw':
-      case 'w':
-        dataSize = 2;
-        break;
-      case 'ud':
-      case 'd':
-      case 'f':
-      case 'v':
-        dataSize = 4;
-        break;
-      default:
-        throw new ParseError('Illegal Data Type \'' + dataSize + '\'',
-                             'Possible values: ' +
-                             '<code>ub|b|uw|w|ud|d|f|v</code>.');
+        case 'b':
+        case 'ub':
+          dataSize = 1;
+          break;
+        case 'uw':
+        case 'w':
+          dataSize = 2;
+          break;
+        case 'ud':
+        case 'd':
+        case 'f':
+        case 'v':
+          dataSize = 4;
+          break;
+        default:
+          throw new ParseError('Illegal Data Type \'' + dataSize + '\'',
+                               'Possible values: ' +
+                               '<code>ub|b|uw|w|ud|d|f|v</code>.');
       }
       /* Strip the data type from the region string. */
       regionString = regionString.replace(/[a-z]+$/i, '');
@@ -704,8 +689,8 @@ var GenRegions = GenRegions || {};
     drawRegionCells(startRegister);
   }
 
-  /**
-   * @param startRegister The first register drawn by drawRowLabels().
+  /*
+   * Draw the region cells.
    */
   function drawRegionCells(startRegister) {
     var count = 0;
@@ -784,6 +769,7 @@ var GenRegions = GenRegions || {};
    * Bootstrap our page.
    */
   this.init = function() {
+
     /*
      * Prepare the ios switches
      */
@@ -805,8 +791,12 @@ var GenRegions = GenRegions || {};
       hideAlerts();
       submitEmptyRegion();
     }
-  }
+  };
 
 }).call(GenRegions);
 
+
+/**
+ * Bootstrap the gen regions code
+ */
 window.onload = GenRegions.init;
