@@ -170,7 +170,7 @@ function toggleShare() {
     /* Show the hash and highlight it for quick copying. */
     var hash = $('#share-hash')[0];
 
-    hash.value = 'http://chriscummins.cc/gen-regions.html' + location.hash;
+    hash.value = 'http://chriscummins.cc/gen-regions/' + location.hash;
     $('#share').show();
     hash.focus();
     hash.select();
