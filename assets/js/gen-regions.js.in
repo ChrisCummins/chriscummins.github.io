@@ -316,7 +316,7 @@ function drawColLabels() {
 
   ctx.textAlign = 'center';
   ctx.fillStyle = '#000';
-  ctx.font = '14px arial';
+  ctx.font = '12px arial';
 
   for (var i = 0; i < REG_SIZE; i++) {
     ctx.fillText(REG_SIZE - 1 - i, col_x + COL_W / 2 - 5, START_Y - 5);
@@ -352,10 +352,10 @@ function drawRowLabels(regFile, startRegister) {
 
   ctx.textAlign = 'left';
   ctx.fillStyle = '#000';
-  ctx.font = 'bold 14px arial';
+  ctx.font = 'bold 12px arial';
 
   for (var i = 0; i < ROWS; i++) {
-    ctx.fillText(regFile + (startRegister + i), canvas.width - 48, row_y);
+    ctx.fillText(regFile + (startRegister + i), canvas.width - 45, row_y);
     row_y += ROW_H;
   }
 }
