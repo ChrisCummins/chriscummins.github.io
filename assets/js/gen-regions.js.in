@@ -170,6 +170,63 @@ var GenRegions = GenRegions || {};
     $('#alert').show();
   }
 
+  /*
+   * Decode a region from URL hash. If the hash contains a malformed region,
+   * show an error. Returns 1 if hash contained region description, else 0.
+   */
+  function loadStateFromHash() {
+    var hash = decodeURIComponent(location.hash);
+    var args = hash.split('&');
+    var argc = 0;
+
+    for (var i = 0; i < args.length; i++) {
+      var pair = args[i].split('=');
+
+      switch (String(pair[0])) {
+        case '#e':
+          setExecSize(pair[1]);
+          argc++;
+          break;
+        case 'r':
+          /* We only set the region text if it does not match the current
+           * text. This prevents the caret from being moved to the end of the
+           * string while typing. */
+          if (getRegionString() != pair[1])
+            setRegionString(pair[1]);
+          argc++;
+          break;
+        case 'a':
+          setAdvanced(parseInt(pair[1]) ? true : false);
+          argc++;
+          break;
+      }
+    }
+
+    if (argc === 3) {
+      /* We got all our arguments. */
+      return 1;
+    } else {
+      if (argc) {
+        /* We got some arguments, but not all. */
+        showAlertError('Malformed URL', 'URL hash contained invalid ' +
+                       'region description.');
+        submitEmptyRegion();
+      }
+
+      return 0;
+    }
+  }
+
+  /*
+   * Encodes the current state and returns it as a URL hash string.
+   */
+  function saveStateToHash() {
+    var reg = encodeURIComponent(getRegionString());
+
+    return '#e=' + getExecSize() + '&r=' + reg + '&a=' +
+        ((getAdvanced()) ? 1 : 0);
+  }
+
   function toggleShare() {
     var shareDiv = $('#share');
 
@@ -178,19 +235,8 @@ var GenRegions = GenRegions || {};
     } else {
       /* Show the hash and highlight it for quick copying. */
       var urlBox = $('#share-hash')[0];
-      var regionString = getRegionString();
-      var hash;
 
-      if (regionString.match(/^\s*#/)) {
-        /* If our region string is a hash, then use that. */
-        hash = regionString;
-      } else {
-        hash = '#execsize=' + getExecSize() + '&region=' +
-          regionString.replace(/</g, '&lt;').replace(/>/g, '&rt;') +
-          '&advanced=' + ((getAdvanced()) ? 1 : 0);
-      }
-
-      urlBox.value = 'http://chriscummins.cc/gen-regions/' + hash;
+      urlBox.value = 'http://chriscummins.cc/gen-regions/' + saveStateToHash();
       shareDiv.show();
       urlBox.focus();
       urlBox.select();
@@ -245,53 +291,6 @@ var GenRegions = GenRegions || {};
 
   function setExecSize(size) {
     $('#exec-size').val(size).attr('select', true);
-  }
-
-  /*
-   * Decode a region from URL hash. If the hash contains a malformed region,
-   * show an error. Returns 1 if hash contained region description, else 0.
-   */
-  function loadStateFromHash() {
-    var hash = location.hash.replace(/&lt;/g, '<').replace(/&rt;/g, '>');
-    var args = hash.split('&');
-    var argc = 0;
-
-    for (var i = 0; i < args.length; i++) {
-      var pair = args[i].split('=');
-
-      switch (String(pair[0])) {
-        case '#execsize':
-          setExecSize(pair[1]);
-          argc++;
-          break;
-        case 'region':
-          /* We only set the region text if it does not match the current
-           * text. This prevents the caret from being moved to the end of the
-           * string while typing. */
-          if (getRegionString() != pair[1])
-            setRegionString(pair[1]);
-          argc++;
-          break;
-        case 'advanced':
-          setAdvanced(parseInt(pair[1]) ? true : false);
-          argc++;
-          break;
-      }
-    }
-
-    if (argc === 3) {
-      /* We got all our arguments. */
-      return 1;
-    } else {
-      if (argc) {
-        /* We got some arguments, but not all. */
-        showAlertError('Malformed URL', 'URL hash contained invalid ' +
-                       'region description.');
-        submitEmptyRegion();
-      }
-
-      return 0;
-    }
   }
 
   /* Clear the canvas. */
