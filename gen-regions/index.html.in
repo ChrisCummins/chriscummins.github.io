@@ -36,6 +36,7 @@
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" />
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.1.0/css/font-awesome.css" />
     <link rel="stylesheet" href="/assets/css/buttons.css" />
+    <link rel="stylesheet" href="/assets/css/static-700.css" />
     <link rel="stylesheet" href="/assets/css/gen-regions.css" />
     <link rel="shortcut icon" href="/assets/img/favicon.ico" />
 
@@ -61,7 +62,7 @@
 
       <!-- title -->
       <div class="page-title">GEN Regions</div>
-      <hr style="margin-top: 30px; margin-bottom: 25px;">
+      <hr class="page-title-hr">
 
       <!-- canvas -->
       <canvas id="canvas" width="728" height="250"
@@ -183,7 +184,7 @@
       future reference.
 
       <!-- footer -->
-      <hr style="margin-top: 20px">
+      <hr class="footer-hr">
       <div class="footer">
         <a href="http://chriscummins.cc">chriscummins.cc</a> |
         &copy; 2013 Intel Corporation
