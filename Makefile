@@ -64,7 +64,6 @@ extra_site +=					\
 	assets/img/github.png			\
 	assets/img/linkedin.png			\
 	assets/img/my-face.jpg			\
-	assets/img/marilyn-monroe.png		\
 	assets/img/screenshot-facebook.png	\
 	assets/img/screenshot-github.png	\
 	assets/img/screenshot-linkedin.png	\
@@ -76,6 +75,7 @@ extra_site +=					\
 	assets/img/youtube.png			\
 	genetics/eiffel-tower.jpg		\
 	genetics/kyle-broflovski.jpg		\
+	genetics/marilyn-monroe.jpg		\
 	genetics/mona-lisa.jpg			\
 	genetics/piet-mondrian.jpg		\
 	genetics/shutter.mp3			\
