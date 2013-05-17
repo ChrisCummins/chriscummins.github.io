@@ -103,8 +103,7 @@ $('#region-form').keyup(function(event) {
   var key = event.keyCode;
 
   /* We want to update the region if we're typing something useful. */
-  if (!(key >= 37 && key <= 40) &&
-      (key == 13 || isValidRegion())) {
+  if (key == 13) {
     encodeHash();
   }
 });
