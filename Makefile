@@ -36,12 +36,13 @@ php +=						\
 
 html +=						\
 	404.html				\
-	gen-regions.html			\
+	gen-regions/index.html			\
 	genetics/index.html			\
 	$(NULL)
 
 css +=						\
 	assets/css/buttons.css			\
+	assets/css/gen-regions.css		\
 	assets/css/genetics.css			\
 	assets/css/styles.css			\
 	$(NULL)
