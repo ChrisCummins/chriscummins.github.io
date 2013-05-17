@@ -57,8 +57,6 @@ js += 						\
 	$(NULL)
 
 extra_site +=					\
-	assets/img/slider-handle.png		\
-	assets/img/slider-track.png		\
 	assets/img/arrows.png			\
 	assets/img/check.png			\
 	assets/img/facebook.png			\
@@ -70,6 +68,8 @@ extra_site +=					\
 	assets/img/screenshot-github.png	\
 	assets/img/screenshot-linkedin.png	\
 	assets/img/screenshot-youtube.png	\
+	assets/img/slider-handle.png		\
+	assets/img/slider-track.png		\
 	assets/img/youtube.png			\
 	genetics/eiffel-tower.jpg		\
 	genetics/kyle-broflovski.jpg		\
