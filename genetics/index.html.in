@@ -155,7 +155,7 @@
                 does.
               </div>
 
-              <center><h4>Genetics</h4></center>
+              <center><h4 style="margin-top: 0px;">Genetics</h4></center>
 
               <table class="table conf-table">
 
@@ -287,7 +287,7 @@
                 This tab shows real time data from a running simulation.
               </div>
 
-              <h4>Real Time Analysis</h4>
+              <h4 style="margin-top: 0px;">Real Time Analysis</h4>
 
               <table id="analytics-table"
                      class="table table-bordered table-striped">
@@ -330,7 +330,7 @@
                 This tab shows you the results of a simulation when paused.
               </div>
 
-              <h4>DNA string of strongest individual</h4>
+              <h4 style="margin-top: 0px;">DNA string of strongest individual</h4>
               <textarea id="strongest-dna" class="text" readonly></textarea>
 
             </div>
