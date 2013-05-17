@@ -44,6 +44,7 @@ css +=						\
 	assets/css/buttons.css			\
 	assets/css/gen-regions.css		\
 	assets/css/genetics.css			\
+	assets/css/static-700.css		\
 	assets/css/styles.css			\
 	$(NULL)
 

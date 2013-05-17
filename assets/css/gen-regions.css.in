@@ -24,39 +24,6 @@
  *    Chris Cummins <christopher.e.cummins@intel.com>
  */
 
-/* sweet radial bg */
-body {
-  background: rgb(215, 215, 215);
-  background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(rgb(240, 240, 240)), to(rgb(190, 190, 190)));
-  background: -webkit-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
-  background:    -moz-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
-  background:     -ms-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
-  background:      -o-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
-  background:         radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
-}
-
-/* bold and austere */
-.page-title {
-  font-family: 'PT Serif', georgia, serif;
-  font-size: 48px;
-  color: #000;
-  text-decoration: none;
-  font-weight: bolder;
-  padding: 0 0.1em;
-  border-radius: 0.2em;
-  text-shadow: 1px 3px 2px rgba(0,0,0,0.3);
-  text-align: center;
-  padding-top: 30px;
-}
-
-/* central column */
-.column {
-  position: relative;
-  left: 50%;
-  width: 728px;
-  margin-left: -367px;
-}
-
 label {
   margin-left: 25px;
   font-weight: bold;
@@ -65,33 +32,4 @@ label {
 
 .alert {
   display: none;
-}
-
-/* horizontal rule */
-hr {
-  margin: 10px;
-}
-
-/* tiny text */
-.footer {
-  font-family: 'PT Serif', georgia, serif;
-  margin: 25px;
-  text-align: center;
-  font-size: 13px;
-}
-
-.footer a {
-  color: #000;
-  font-weight: bold;
-
-  -webkit-transition: 0.5s;
-  -moz-transition:    0.5s;
-  -ms-transition:     0.5s;
-  -o-transition:      0.5s;
-  transition:         0.5s;
-}
-
-.footer a:hover {
-  text-decoration:    none;
-  color:              #09C;
 }
