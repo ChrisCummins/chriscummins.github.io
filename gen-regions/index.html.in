@@ -64,7 +64,7 @@
       <hr style="margin-top: 30px; margin-bottom: 25px;">
 
       <!-- canvas -->
-      <canvas id="canvas" width="728" height="360"
+      <canvas id="canvas" width="728" height="250"
               data-toggle="tooltip" title="No region set">
         Unsupported browser!</canvas>
 

@@ -45,7 +45,7 @@ var GenRegions = GenRegions || {};
   var DEFAULT_DATA_SIZE = 4; /* Float (4 bytes) */
 
   /* Vertical grid size. */
-  var ROWS = 10;
+  var ROWS = 6;
 
   /* Our drawing context. */
   var canvas = $('#canvas')[0];
