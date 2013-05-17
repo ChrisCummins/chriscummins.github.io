@@ -684,6 +684,7 @@ var Genetics = Genetics || {};
     $('.conf-slider').slider('option', 'disabled', true);
     $('.ios-switch').attr('disabled', true);
     $('#start').text('Pause');
+    $('.results-btn').attr('disabled', 'disabled');
     $('#strongest-dna').text('');
     runSimulation();
   }
@@ -696,6 +697,7 @@ var Genetics = Genetics || {};
     clock = null;
     resumedTime = new Date().getTime() - startTime;
     $('#start').text('Resume');
+    $('.results-btn').removeAttr('disabled');
     $('#strongest-dna').text(population.getFittest().dna);
   }
 
@@ -715,6 +717,7 @@ var Genetics = Genetics || {};
     $('.conf-slider').slider('option', 'disabled', false);
     $('.ios-switch').attr('disabled', false);
     $('#strongest-dna').text('');
+    $('.results-btn').attr('disabled', 'disabled');
 
     document.body.classList.remove('genetics-active');
     document.body.classList.add('genetics-inactive');
@@ -753,6 +756,21 @@ var Genetics = Genetics || {};
     if (isRunning() || isPaused()) {
       stopSimulation();
     }
+  });
+
+  /*
+   * 'Export to PNG' button on results pane
+   */
+  $('#save-png').click(function() {
+    window.open(outputCanvas.toDataURL());
+  });
+
+  /*
+   * 'Select Text' button on results pane
+   */
+  $('#select-dna').click(function() {
+    $('#strongest-dna').focus();
+    $('#strongest-dna').select();
   });
 
   /*
