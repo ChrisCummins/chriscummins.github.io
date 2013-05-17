@@ -382,31 +382,6 @@ function drawCell(label, x, y, width, color) {
   ctx.fillText(label, x + (width / 2), y + (ROW_H / 2) + 5);
 }
 
-/* Bootstrap. */
-function init() {
-  /*
-   * Prepare the ios switches
-   */
-  var iosSwitches =
-      document.querySelectorAll('input[type="checkbox"].ios-switch');
-  for (var i = 0, sw; sw = iosSwitches[i++];) {
-    var div = document.createElement('div');
-    div.className = 'switch';
-    sw.parentNode.insertBefore(div, sw.nextSibling);
-    sw.style.width = div.style.width;
-    sw.style.height = div.style.height;
-  }
-
-  $('#share-btn').attr('disabled', 'disabled');
-
-  if (decodeHash()) {
-    $(window).hashchange();
-  } else {
-    hideAlerts();
-    submitEmptyRegion();
-  }
-}
-
 /* Key Bindings *************************************************************/
 function pageBind(key, func) {
   $(document).bind('keydown', key, func);
@@ -794,5 +769,32 @@ function drawRegionCells(startRegister) {
       } else
         return;
     }
+  }
+}
+
+/*
+ * Bootstrap our page.
+ */
+window.onload = function() {
+  /*
+   * Prepare the ios switches
+   */
+  var iosSwitches =
+      document.querySelectorAll('input[type="checkbox"].ios-switch');
+  for (var i = 0, sw; sw = iosSwitches[i++];) {
+    var div = document.createElement('div');
+    div.className = 'switch';
+    sw.parentNode.insertBefore(div, sw.nextSibling);
+    sw.style.width = div.style.width;
+    sw.style.height = div.style.height;
+  }
+
+  $('#share-btn').attr('disabled', 'disabled');
+
+  if (decodeHash()) {
+    $(window).hashchange();
+  } else {
+    hideAlerts();
+    submitEmptyRegion();
   }
 }
