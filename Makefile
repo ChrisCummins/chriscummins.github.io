@@ -38,12 +38,17 @@ html +=						\
 	404.html				\
 	gen-regions/index.html			\
 	genetics/index.html			\
+	pictures/index.html			\
 	$(NULL)
 
 css +=						\
 	assets/css/buttons.css			\
 	assets/css/gen-regions.css		\
 	assets/css/genetics.css			\
+	assets/css/jquery.fancybox-buttons.css	\
+	assets/css/jquery.fancybox-thumbs.css	\
+	assets/css/jquery.fancybox.css		\
+	assets/css/pictures.css			\
 	assets/css/static-700.css		\
 	assets/css/styles.css			\
 	$(NULL)
@@ -52,20 +57,29 @@ js += 						\
 	assets/js/gen-regions.js		\
 	assets/js/genetics.js			\
 	assets/js/impress.js			\
+	assets/js/jquery.fancybox-buttons.js	\
+	assets/js/jquery.fancybox-media.js	\
+	assets/js/jquery.fancybox-thumbs.js	\
+	assets/js/pictures.js			\
 	assets/js/site.js			\
 	assets/js/webcam.js			\
 	$(NULL)
 
 extra_site +=					\
 	assets/img/arrows.png			\
+	assets/img/blank.gif			\
 	assets/img/check.png			\
+	assets/img/examples-crude.jpg		\
+	assets/img/examples-line-art.jpg	\
 	assets/img/facebook.png			\
+	assets/img/fancybox_buttons.png		\
+	assets/img/fancybox_loading.gif		\
+	assets/img/fancybox_overlay.png		\
+	assets/img/fancybox_sprite.png		\
 	assets/img/favicon.ico			\
 	assets/img/github.png			\
 	assets/img/linkedin.png			\
 	assets/img/my-face.jpg			\
-	assets/img/examples-crude.jpg		\
-	assets/img/examples-line-art.jpg	\
 	assets/img/screenshot-facebook.png	\
 	assets/img/screenshot-github.png	\
 	assets/img/screenshot-linkedin.png	\
@@ -88,6 +102,7 @@ extra_site +=					\
 	uni/dissertation.pdf			\
 	uni/sustainability.pdf			\
 	uni/voluntary-cooperation.pdf		\
+	$(shell find pictures/img)		\
 	$(NULL)
 
 # site content
