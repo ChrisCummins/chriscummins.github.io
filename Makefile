@@ -88,6 +88,7 @@ extra_site +=					\
 	uni/dissertation.pdf			\
 	uni/sustainability.pdf			\
 	uni/voluntary-cooperation.pdf		\
+	$(shell find pictures/img)		\
 	$(NULL)
 
 # site content
