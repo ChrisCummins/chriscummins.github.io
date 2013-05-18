@@ -66,6 +66,8 @@ extra_site +=					\
 	assets/img/arrows.png			\
 	assets/img/blank.gif			\
 	assets/img/check.png			\
+	assets/img/examples-crude.jpg		\
+	assets/img/examples-line-art.jpg	\
 	assets/img/facebook.png			\
 	assets/img/fancybox_buttons.png		\
 	assets/img/fancybox_loading.gif		\
@@ -75,8 +77,6 @@ extra_site +=					\
 	assets/img/github.png			\
 	assets/img/linkedin.png			\
 	assets/img/my-face.jpg			\
-	assets/img/examples-crude.jpg		\
-	assets/img/examples-line-art.jpg	\
 	assets/img/screenshot-facebook.png	\
 	assets/img/screenshot-github.png	\
 	assets/img/screenshot-linkedin.png	\
