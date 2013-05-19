@@ -40,6 +40,7 @@ html +=						\
 	genetics/index.html			\
 	music/index.html			\
 	pictures/index.html			\
+	software/index.html			\
 	$(NULL)
 
 css +=						\
@@ -51,6 +52,7 @@ css +=						\
 	assets/css/jquery.fancybox.css		\
 	assets/css/music.css			\
 	assets/css/pictures.css			\
+	assets/css/software.css			\
 	assets/css/static-700.css		\
 	assets/css/styles.css			\
 	$(NULL)
