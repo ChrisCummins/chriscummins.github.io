@@ -52,6 +52,7 @@ css +=						\
 	assets/css/jquery.fancybox.css		\
 	assets/css/music.css			\
 	assets/css/pictures.css			\
+	assets/css/site.css			\
 	assets/css/software.css			\
 	assets/css/static-700.css		\
 	assets/css/styles.css			\

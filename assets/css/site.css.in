@@ -1,0 +1,97 @@
+/* sweet radial bg */
+body {
+  padding-top: 20px;
+
+  background: rgb(215, 215, 215);
+  background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(rgb(240, 240, 240)), to(rgb(190, 190, 190)));
+  background: -webkit-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+  background:    -moz-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+  background:     -ms-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+  background:      -o-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+  background:         radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+}
+
+.serif-title {
+  font-family: 'PT Serif', georgia, serif;
+  text-shadow: 1px 2px 1.5px rgba(0, 0, 0, 0.3);
+  color: #000;
+}
+
+/* page title */
+.serif-title a {
+  color: #000;
+
+  -webkit-transition: 0.5s;
+  -moz-transition:    0.5s;
+  -ms-transition:     0.5s;
+  -o-transition:      0.5s;
+  transition:         0.5s;
+}
+
+.serif-title a:hover {
+  text-decoration: none;
+  text-shadow: none;
+  color: #09C;
+}
+
+/* nav pills */
+.nav-pills a {
+  -webkit-transition: 0.5s;
+  -moz-transition:    0.5s;
+  -ms-transition:     0.5s;
+  -o-transition:      0.5s;
+  transition:         0.5s;
+}
+
+.nav-pills > .semi-active > a {
+  color: #fff;
+  background-color: #0088cc;
+}
+
+.nav-pills > .semi-active > a:hover,
+.nav-pills > .semi-active > a:focus {
+  color: #005580;
+}
+
+/* narrow container */
+.container-narrow {
+  margin: 0 auto;
+  max-width: 730px;
+}
+
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* tooltips */
+.tooltip {
+  font-size: 12px;
+}
+
+.tooltip-inner {
+  max-width: 350px;
+}
+
+/* page footer */
+.footer {
+  font-family: 'PT Serif', georgia, serif;
+  margin: 25px;
+  text-align: center;
+  font-size: 13px;
+}
+
+.footer a {
+  color: #000;
+  font-weight: bold;
+
+  -webkit-transition: 0.5s;
+  -moz-transition:    0.5s;
+  -ms-transition:     0.5s;
+  -o-transition:      0.5s;
+  transition:         0.5s;
+}
+
+.footer a:hover {
+  text-decoration:    none;
+  color:              #09C;
+}
