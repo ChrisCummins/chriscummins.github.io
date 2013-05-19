@@ -45,7 +45,7 @@ setcookie("visit", "1", time()+3600);
 	I love making things. Especially
 	<a id="music" href="https://soundcloud.com/peakstudio" target="_blank">music</a>,
 	<a id="software" href="https://github.com/ChrisCummins" target="_blank">software</a>, and
-	<a id="pictures" href="/pictures/" target="_blank">pictures</a>.
+	<a id="pictures" href="/pictures/">pictures</a>.
       </div>
 
       <div id="writings" class="step" data-y="-1300" data-scale="0.7">
