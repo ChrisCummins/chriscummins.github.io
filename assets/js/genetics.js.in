@@ -466,7 +466,7 @@ var Genetics = Genetics || {};
     });
 
     $('#cutoff-slider').slider({
-      range: 'min', min: 0, max: 100, step: 1,
+      range: 'min', min: 1, max: 100, step: 1,
       slide: function(event, ui) {
         $('#cutoff').text(ui.value + '%');
       }
@@ -759,6 +759,24 @@ var Genetics = Genetics || {};
   });
 
   /*
+   * 'Get URL' button on results pane
+   */
+  $('#get-url').click(function() {
+    var urlBox = $('#share-url')[0];
+
+    urlBox.value = 'http://chriscummins.cc/genetics/#' +
+        configurationToString();
+    $('#share').show();
+    urlBox.focus();
+    urlBox.select();
+    urlBox.setSelectionRange(0, 250);
+  });
+
+  $('#close-url').click(function() {
+    $('#share').hide();
+  });
+
+  /*
    * 'Export to PNG' button on results pane
    */
   $('#save-png').click(function() {
@@ -844,6 +862,59 @@ var Genetics = Genetics || {};
     webcam.snap();
   });
 
+  /*
+   * Decode a configuration from a string.
+   */
+  function configurationFromString(str) {
+    var args = str.split('&');
+
+    try {
+      var _populationSize = parseInt(args[0]);
+      var _cutoffSlider = parseInt(args[1]);
+      var _fittestSurvive = (args[2]) ? true : false;
+      var _mutationChance = parseFloat(args[3]);
+      var _mutationAmount = parseInt(args[4]);
+      var _polygons = parseInt(args[5]);
+      var _vertices = parseInt(args[6]);
+      var _resolution = parseInt(args[7]);
+      var _fillPolygons = (args[8]) ? true : false;
+      var _randomInheritance = (args[9]) ? true : false;
+      var _diffSquared = (args[10]) ? true : false;
+
+      setConfiguration(_populationSize,
+                       _cutoffSlider,
+                       _fittestSurvive,
+                       _mutationChance,
+                       _mutationAmount,
+                       _polygons,
+                       _vertices,
+                       _resolution,
+                       _fillPolygons,
+                       _randomInheritance,
+                       _diffSquared);
+    } catch (e) {
+      /* Do nothing, we're not actually interested in recovering from bad
+       * states. It either works, or it doesn't.
+       */
+    }
+  }
+
+  /*
+   * Returns a string representing the current configuration.
+   */
+  function configurationToString() {
+    return populationSize + '&' +
+        selectionCutoff * 100 + '&' +
+        ((fittestSurvive) ? 1 : 0) + '&' +
+        mutationChance * 100 + '&' +
+        mutateAmount * 100 + '&' +
+        polygons + '&' +
+        vertices + '&' +
+        workingSize + '&' +
+        ((fillPolygons) ? 1 : 0) + '&' +
+        ((randomInheritance) ? 1 : 0) + '&' +
+        ((diffSquared) ? 1 : 0);
+  }
 
   /*
    * Document ready preparations.
@@ -897,11 +968,15 @@ var Genetics = Genetics || {};
     /* enable our buttons */
     $('#start').attr('disabled', false);
     $('#stop').attr('disabled', false);
+
+    /* Load configuration from hash, if any */
+    if (location.hash.split('&').length > 5)
+      configurationFromString(location.hash.replace(/#/, ''));
   };
 }).call(Genetics);
 
 
-/*
+/**
  * Bootstrap the page with our initialisation code.
  */
 window.onload = Genetics.init;

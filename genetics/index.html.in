@@ -372,6 +372,30 @@
             </div>
 
             <h4 style="margin-top: 0px; display: inline;">
+              Share
+            </h4>
+
+            <button id="get-url"
+                    class="btn btn-primary pull-right results-btn" disabled>
+              Get URL
+            </button>
+
+            <div id="share" class="alert alert-success"
+                 style="display: none; margin-top: 15px;">
+              <button id="close-url" type="button" class="close">&times;</button>
+              <strong>URL</strong><br />
+              <textarea id="share-url" class="text"
+                        style="width: 460px; min-height: 40px; resize: none;"
+                        readonly>
+              </textarea>
+            </div>
+
+            <p style="margin-top: 15px; margin-bottom: 20px;">
+              You can save your current settings to a URL for bookmarking,
+              sharing and future reference.
+            </p>
+
+            <h4 style="margin-top: 0px; display: inline;">
               Save image to file
             </h4>
 
@@ -380,7 +404,7 @@
               Export to PNG
             </button>
 
-            <p style="margin-top: 15px; margin-bottom: 20px;">
+            <p style="margin-top: 15px;">
               Press 'Export to PNG' to render the current strongest individual
               as an image. You can save this image file to your hard disk.
             </p>
