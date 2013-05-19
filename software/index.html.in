@@ -54,27 +54,46 @@
 
       <hr>
 
-      <center><h1>Web software</h1></center>
+      <center><h1 class="serif-title">Web software</h1></center>
 
-      <div class="row-fluid">
+      <div class="row-fluid" style="margin-top: 30px">
 
         <div class="span6">
-          <h4><a href="/genetics/">Grow Your Own Picture</a></h4>
+
+          <div class="thumbnail">
+            <a href="/genetics/">
+              <img src="/assets/img/screenshot-genetics.jpg">
+              <h4>Grow Your Own Picture</h4>
+            </a>
+          </div>
           <p>
             Harnessing the powers of natural selection and genetics algorithms
             to produce unique generative art.
           </p>
+
         </div>
 
         <div class="span6">
-          <h4><a href="/gen-regions/">Gen Regions</a></h4>
+
+          <div class="thumbnail">
+            <a href="/gen-regions/">
+              <img src="/assets/img/screenshot-gen-regions.jpg">
+              <h4>Gen Regions</h4>
+            </a>
+          </div>
           <p>
             This web tool visualizes instruction source operand regions for the
             Intel Graphics GEN architecture.
           </p>
+
         </div>
 
       </div> <!-- ./row-fluid -->
+
+      <blockquote style="margin: 50px;">
+        <p>Software is like sex: it's better when it's free.</p>
+        <small>Linus Torvalds</small>
+      </blockquote>
 
       <!-- footer: -->
       <hr>

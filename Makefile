@@ -53,7 +53,6 @@ css +=						\
 	assets/css/music.css			\
 	assets/css/pictures.css			\
 	assets/css/site.css			\
-	assets/css/software.css			\
 	assets/css/styles.css			\
 	$(NULL)
 
@@ -86,6 +85,8 @@ extra_site +=					\
 	assets/img/linkedin.png			\
 	assets/img/my-face.jpg			\
 	assets/img/screenshot-facebook.png	\
+	assets/img/screenshot-gen-regions.jpg	\
+	assets/img/screenshot-genetics.jpg	\
 	assets/img/screenshot-github.png	\
 	assets/img/screenshot-linkedin.png	\
 	assets/img/screenshot-soundcloud.png	\

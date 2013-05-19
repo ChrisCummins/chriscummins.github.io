@@ -95,3 +95,58 @@ body {
   text-decoration:    none;
   color:              #09C;
 }
+
+/* thumbnail images */
+.thumbnail {
+  text-align: center;
+
+  /* zero bootstrap outline */
+  border: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow:    none;
+  box-shadow:         none;
+}
+
+.thumbnail a {
+  color: #333333;
+
+  -webkit-transition: 0.5s;
+  -moz-transition:    0.5s;
+  -ms-transition:     0.5s;
+  -o-transition:      0.5s;
+  transition:         0.5s;
+}
+
+.thumbnail > a > img {
+  margin: 8px;
+  border: 2px solid #FFFFFF;
+
+  -webkit-border-radius: 18px;
+  -moz-border-radius:    18px;
+  border-radius:         18px;
+
+  -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow:    0px 0px 15px rgba(0, 0, 0, 0.7);
+  box-shadow:         0px 0px 15px rgba(0, 0, 0, 0.7);
+}
+
+.thumbnail > a:hover,
+.thumbnail > a:focus {
+  color: #09C;
+  text-decoration: none;
+}
+
+.thumbnail > a > img {
+  -webkit-transition: 0.5s;
+  -moz-transition:    0.5s;
+  -ms-transition:     0.5s;
+  -o-transition:      0.5s;
+  transition:         0.5s;
+}
+
+.thumbnail > a:hover > img,
+.thumbnail > a:focus > img {
+  -webkit-box-shadow: 0px 0px 20px rgba(0, 0, 0, 1.0);
+  -moz-box-shadow:    0px 0px 20px rgba(0, 0, 0, 1.0);
+  box-shadow:         0px 0px 20px rgba(0, 0, 0, 1.0);
+}
