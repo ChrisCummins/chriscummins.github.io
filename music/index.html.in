@@ -16,9 +16,25 @@
     <link rel="stylesheet" href="/assets/css/jquery.fancybox.css" />
     <link rel="stylesheet" href="/assets/css/jquery.fancybox-buttons.css" />
     <link rel="stylesheet" href="/assets/css/jquery.fancybox-thumbs.css" />
-    <link rel="stylesheet" href="/assets/css/static-700.css" />
+    <link rel="stylesheet" href="/assets/css/site.css" />
     <link rel="stylesheet" href="/assets/css/music.css" />
     <link rel="shortcut icon" href="/assets/img/favicon.ico" />
+
+    <style>
+      /* inline our thumbnails */
+      .thumbnail {
+        display: inline;
+      }
+
+      .thumbnail > a > img {
+        margin: 4px;
+      }
+
+      .thumbnail > a:hover > img,
+      .thumbnail > a:focus > img {
+        opacity: 0.5;
+      }
+    </style>
   </head>
 
   <body>
@@ -40,14 +56,13 @@
 
       <div class="masthead">
         <ul class="nav nav-pills pull-right">
+          <li><a href="/blog/" target="_blank">Blog</a></li>
           <li class="active"><a href="#">Music</a></li>
-          <li><a href="#">Software</a></li>
+          <li><a href="/software/">Software</a></li>
           <li><a href="/pictures/">Pictures</a></li>
         </ul>
-        <h3 class="left-title">
-          <a href="http://chriscummins.cc">
-            chriscummins.cc
-          </a>
+        <h3 class="serif-title">
+          <a href="http://chriscummins.cc">chriscummins.cc</a>
         </h3>
       </div>
 
@@ -64,39 +79,51 @@
 
 
           <!-- brianstorm -->
-          <iframe id="leading-video" width="640" height="360"
+          <iframe class="lead-content" width="640" height="360"
                   src="http://www.youtube.com/embed/Xgg4ChGK6VE?rel=0"
                   frameborder="0"
                   allowfullscreen>
           </iframe>
 
           <!-- fancybox gallery -->
-          <div class="video-frame" style="max-width: 495px;">
-            <a class="fancybox" rel="gallery"
-               href="img/4b6595943c2facb4eb9c36a929d195a0.jpg">
-              <img src="img/4b6595943c2facb4eb9c36a929d195a0-thumb.jpg" />
-            </a>
+          <div class="content-frame content-frame-inverse"
+               style="max-width: 495px;">
 
-            <a class="fancybox" rel="gallery"
-               href="img/0447dbc55c1e79cb21cf312d35562193.jpg">
-              <img src="img/0447dbc55c1e79cb21cf312d35562193-thumb.jpg" />
-            </a>
+            <div class="thumbnail">
+              <a class="fancybox" rel="gallery"
+                 href="img/4b6595943c2facb4eb9c36a929d195a0.jpg">
+                <img src="img/4b6595943c2facb4eb9c36a929d195a0-thumb.jpg" />
+              </a>
+            </div>
 
-            <a class="fancybox" rel="gallery"
-               href="img/b972899ff4a7700f96a47cd477f38323.jpg">
-              <img src="img/b972899ff4a7700f96a47cd477f38323-thumb.jpg" />
-            </a>
+            <div class="thumbnail">
+              <a class="fancybox" rel="gallery"
+                 href="img/0447dbc55c1e79cb21cf312d35562193.jpg">
+                <img src="img/0447dbc55c1e79cb21cf312d35562193-thumb.jpg" />
+              </a>
+            </div>
 
-            <a class="fancybox" rel="gallery"
-               href="img/b5cf02379d90774e4ba6da8e570cc63b.jpg">
-              <img src="img/b5cf02379d90774e4ba6da8e570cc63b-thumb.jpg" />
-            </a>
+            <div class="thumbnail">
+              <a class="fancybox" rel="gallery"
+                 href="img/b972899ff4a7700f96a47cd477f38323.jpg">
+                <img src="img/b972899ff4a7700f96a47cd477f38323-thumb.jpg" />
+              </a>
+            </div>
+
+            <div class="thumbnail">
+              <a class="fancybox" rel="gallery"
+                 href="img/b5cf02379d90774e4ba6da8e570cc63b.jpg">
+                <img src="img/b5cf02379d90774e4ba6da8e570cc63b-thumb.jpg" />
+              </a>
+            </div>
+
           </div>
 
           <hr>
 
           <!-- youtube box -->
-          <div class="video-frame" style="margin: 50px 0px;">
+          <div class="content-frame content-frame-inverse"
+               style="margin: 50px 0px;">
             <!-- plug in baby -->
             <iframe width="318" height="179"
                     src="http://www.youtube.com/embed/RgsS4lOblso?rel=0"
@@ -127,7 +154,7 @@
           </div>
 
           <!-- soundcloud box -->
-          <div class="soundcloud-frame" style="margin: 50px 0px;">
+          <div class="content-frame" style="margin: 50px 0px;">
             <!-- billbeans -->
             <iframe width="100%" height="166" scrolling="no" frameborder="no"
                     src="https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F72824274&amp;color=0099cc&amp;auto_play=false&amp;show_artwork=true">
@@ -142,7 +169,8 @@
           <hr>
 
           <!-- youtube box -->
-          <div class="video-frame" style="margin-top: 50px;">
+          <div class="content-frame content-frame-inverse"
+               style="margin-top: 50px;">
             <!-- donnie darko -->
             <iframe width="318" height="239"
                     src="http://www.youtube.com/embed/YtLjn3sriDA?rel=0"

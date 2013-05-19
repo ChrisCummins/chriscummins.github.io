@@ -44,7 +44,7 @@ setcookie("visit", "1", time()+3600);
       <div id="thingsido" class="step" data-x="1200" data-y="-100" data-rotate="90" data-scale="2">
 	I love making things. Especially
 	<a id="music" href="/music/">music</a>,
-	<a id="software" href="https://github.com/ChrisCummins" target="_blank">software</a>, and
+	<a id="software" href="/software/">software</a>, and
 	<a id="pictures" href="/pictures/">pictures</a>.
       </div>
 

@@ -39,7 +39,7 @@
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" />
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.1.0/css/font-awesome.css" />
     <link rel="stylesheet" href="/assets/css/buttons.css" />
-    <link rel="stylesheet" href="/assets/css/static-700.css" />
+    <link rel="stylesheet" href="/assets/css/site.css" />
     <link rel="stylesheet" href="/assets/css/gen-regions.css" />
     <link rel="shortcut icon" href="/assets/img/favicon.ico" />
   </head>
@@ -59,80 +59,102 @@
       })();
     </script>
 
-    <div class="column">
+    <div class="container-narrow">
 
-      <!-- title -->
-      <div class="page-title">GEN Regions</div>
-      <hr class="page-title-hr">
-
-      <!-- canvas -->
-      <canvas id="canvas" width="728" height="250"
-              data-toggle="tooltip" title="No region set">
-        Unsupported browser!</canvas>
-
-      <div style="padding: 5px; margin-bottom: 10px;">
-
-        <!-- exec size dropdown -->
-        <label style="margin-left: 0px;">
-          Execution size
-          <select id="exec-size" style="width: 55px; margin-bottom: 0px;">
-            <option>1</option>
-            <option>2</option>
-            <option>4</option>
-            <option selected="selected">8</option>
-            <option>16</option>
-            <option>32</option>
-          </select>
-        </label>
-
-	<!-- The region input text box: -->
-        <label>
-          Region
-          <input id="region-form" class="search-query" type="text"
-	         placeholder="Region" style="margin-left: 5px;">
-        </label>
-
-	<!-- The `advanced' mode checkbox: -->
-        <label style="display: inline;">
-          Advanced <input id="advanced" class="ios-switch" type="checkbox">
-        </label>
-
+      <!-- title section -->
+      <div class="masthead">
+        <ul class="nav nav-pills pull-right">
+          <li><a href="/blog/" target="_blank">Blog</a></li>
+          <li><a href="/music/">Music</a></li>
+          <li class="semi-active"><a href="/software/">Software</a></li>
+          <li><a href="/pictures/">Pictures</a></li>
+        </ul>
+        <h3 class="serif-title">
+          <a href="http://chriscummins.cc">chriscummins.cc</a>
+        </h3>
       </div>
 
-      <!-- buttons -->
-      <div class="pull-right">
+      <hr>
 
-	<!-- share button -->
-        <button id="share-btn" class="btn btn-primary">
-          <strong>Share</strong>
-        </button>
+      <div class="fixed-container-narrow">
 
-        <!-- submit button -->
-        <button id="submit" class="btn btn-success" style="margin-right: 50px;">
-          <strong>Submit</strong>
-        </button>
+        <center>
 
-      </div>
+          <h1 class="serif-title">GEN Regions</h1>
 
-      <!-- alerts area -->
-      <div style="margin-top: 50px">
+          <!-- canvas -->
+          <canvas id="canvas" width="728" height="250"
+                  data-toggle="tooltip" title="No region set">
+            Unsupported browser!</canvas>
 
-        <!-- share URL -->
-        <div id="share" class="alert alert-success"><strong>URL</strong>
-          <textarea id="share-hash" class="text"
-                    style="width: 600px; height: 20px; resize: none; margin-bottom: 0px; margin-left: 10px;"
-                    readonly></textarea>
-          <button type="button" class="close">&times;</button></div>
+        </center>
 
-        <!-- error -->
-        <div id="alert-error" class="alert alert-error">
-          <button type="button" class="close">&times;</button>
-	  <div id="alert-error-placeholder"></div></div>
+        <!-- input -->
+        <div style="padding: 5px; margin-bottom: 10px;">
 
-        <!-- warning -->
-        <div id="alert" class="alert">
-	  <button type="button" class="close">&times;</button>
-	  <div id="alert-placeholder"></div></div>
+          <!-- exec size dropdown -->
+          <label style="margin-left: 0px;">
+            Execution size
+            <select id="exec-size" style="width: 55px; margin-bottom: 0px;">
+              <option>1</option>
+              <option>2</option>
+              <option>4</option>
+              <option selected="selected">8</option>
+              <option>16</option>
+              <option>32</option>
+            </select>
+          </label>
+
+	  <!-- The region input text box: -->
+          <label>
+            Region
+            <input id="region-form" class="search-query" type="text"
+	           placeholder="Region" style="margin-left: 5px;">
+          </label>
+
+	  <!-- The `advanced' mode checkbox: -->
+          <label style="display: inline;">
+            Advanced <input id="advanced" class="ios-switch" type="checkbox">
+          </label>
+
+        </div>
+
+        <!-- buttons -->
+        <div class="pull-right">
+
+	  <!-- share button -->
+          <button id="share-btn" class="btn btn-primary">
+            <strong>Share</strong>
+          </button>
+
+          <!-- submit button -->
+          <button id="submit" class="btn btn-success" style="margin-right: 50px;">
+            <strong>Submit</strong>
+          </button>
+
+        </div>
+
+        <!-- alerts area -->
+        <div style="margin-top: 50px">
+
+          <!-- share URL -->
+          <div id="share" class="alert alert-success"><strong>URL</strong>
+            <textarea id="share-hash" class="text"
+                      style="width: 600px; height: 20px; resize: none; margin-bottom: 0px; margin-left: 10px;"
+                      readonly></textarea>
+            <button type="button" class="close">&times;</button></div>
+
+          <!-- error -->
+          <div id="alert-error" class="alert alert-error">
+            <button type="button" class="close">&times;</button>
+	    <div id="alert-error-placeholder"></div></div>
+
+          <!-- warning -->
+          <div id="alert" class="alert">
+	    <button type="button" class="close">&times;</button>
+	    <div id="alert-placeholder"></div></div>
+
+        </div>
 
       </div>
 
@@ -185,13 +207,13 @@
       future reference.
 
       <!-- footer -->
-      <hr class="footer-hr">
+      <hr>
       <div class="footer">
         <a href="http://chriscummins.cc">chriscummins.cc</a> |
         &copy; 2013 Intel Corporation
       </div>
 
-    </div> <!-- /.column -->
+    </div>
 
   </body>
 

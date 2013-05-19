@@ -1,0 +1,118 @@
+<!doctype html>
+
+<html lang="en">
+
+  <head>
+    <title>Chris Cummins | Software</title>
+    <meta name="description" content="">
+    <meta name="author" content="Chris Cummins">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=1024" />
+    <meta charset="utf-8" />
+
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,700" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.1.0/css/font-awesome.css" />
+    <link rel="stylesheet" href="/assets/css/jquery.fancybox.css" />
+    <link rel="stylesheet" href="/assets/css/jquery.fancybox-buttons.css" />
+    <link rel="stylesheet" href="/assets/css/jquery.fancybox-thumbs.css" />
+    <link rel="stylesheet" href="/assets/css/site.css" />
+    <link rel="stylesheet" href="/assets/css/software.css" />
+    <link rel="shortcut icon" href="/assets/img/favicon.ico" />
+  </head>
+
+  <body>
+
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-40829804-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+
+    <div class="container-narrow">
+
+      <div class="masthead">
+        <ul class="nav nav-pills pull-right">
+          <li><a href="/blog/" target="_blank">Blog</a></li>
+          <li><a href="/music/">Music</a></li>
+          <li class="active"><a href="/software/">Software</a></li>
+          <li><a href="/pictures/">Pictures</a></li>
+        </ul>
+        <h3 class="serif-title">
+          <a href="http://chriscummins.cc">
+            chriscummins.cc
+          </a>
+        </h3>
+      </div>
+
+      <hr>
+
+      <center><h1 class="serif-title">Web software</h1></center>
+
+      <div class="row-fluid" style="margin-top: 30px">
+
+        <div class="span6">
+
+          <div class="thumbnail">
+            <a href="/genetics/">
+              <img src="/assets/img/screenshot-genetics.jpg">
+              <h4>Grow Your Own Picture</h4>
+            </a>
+          </div>
+          <p>
+            Harnessing the powers of natural selection and genetics algorithms
+            to produce unique generative art.
+          </p>
+
+        </div>
+
+        <div class="span6">
+
+          <div class="thumbnail">
+            <a href="/gen-regions/">
+              <img src="/assets/img/screenshot-gen-regions.jpg">
+              <h4>Gen Regions</h4>
+            </a>
+          </div>
+          <p>
+            This web tool visualizes instruction source operand regions for the
+            Intel Graphics GEN architecture.
+          </p>
+
+        </div>
+
+      </div> <!-- ./row-fluid -->
+
+      <blockquote style="margin: 50px;">
+        <p>Software is like sex: it's better when it's free.</p>
+        <small>Linus Torvalds</small>
+      </blockquote>
+
+      <!-- footer: -->
+      <hr>
+
+      <div class="footer">
+        <a href="/">chriscummins.cc</a> |
+        &copy; 2013 Chris Cummins
+      </div>
+
+    </div> <!-- /container -->
+
+  </body>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.0.6/jquery.mousewheel.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.pack.js"></script>
+  <script src="/assets/js/jquery.fancybox-buttons.js"></script>
+  <script src="/assets/js/jquery.fancybox-media.js"></script>
+  <script src="/assets/js/jquery.fancybox-thumbs.js"></script>
+
+</html>
