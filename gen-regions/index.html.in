@@ -39,7 +39,7 @@
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" />
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.1.0/css/font-awesome.css" />
     <link rel="stylesheet" href="/assets/css/buttons.css" />
-    <link rel="stylesheet" href="/assets/css/static-700.css" />
+    <link rel="stylesheet" href="/assets/css/site.css" />
     <link rel="stylesheet" href="/assets/css/gen-regions.css" />
     <link rel="shortcut icon" href="/assets/img/favicon.ico" />
   </head>
@@ -59,17 +59,35 @@
       })();
     </script>
 
-    <div class="column">
+    <div class="container-narrow">
 
-      <!-- title -->
-      <div class="page-title">GEN Regions</div>
-      <hr class="page-title-hr">
+      <!-- title section -->
+      <div class="masthead">
+        <ul class="nav nav-pills pull-right">
+          <li><a href="/blog/" target="_blank">Blog</a></li>
+          <li><a href="/music/">Music</a></li>
+          <li class="semi-active"><a href="/software/">Software</a></li>
+          <li><a href="/pictures/">Pictures</a></li>
+        </ul>
+        <h3 class="serif-title">
+          <a href="http://chriscummins.cc">chriscummins.cc</a>
+        </h3>
+      </div>
 
-      <!-- canvas -->
-      <canvas id="canvas" width="728" height="250"
-              data-toggle="tooltip" title="No region set">
-        Unsupported browser!</canvas>
+      <center>
 
+        <hr>
+
+        <h1 class="serif-title">GEN Regions</h1>
+
+        <!-- canvas -->
+        <canvas id="canvas" width="728" height="250"
+                data-toggle="tooltip" title="No region set">
+          Unsupported browser!</canvas>
+
+      </center>
+
+      <!-- input -->
       <div style="padding: 5px; margin-bottom: 10px;">
 
         <!-- exec size dropdown -->
@@ -185,13 +203,13 @@
       future reference.
 
       <!-- footer -->
-      <hr class="footer-hr">
+      <hr>
       <div class="footer">
         <a href="http://chriscummins.cc">chriscummins.cc</a> |
         &copy; 2013 Intel Corporation
       </div>
 
-    </div> <!-- /.column -->
+    </div>
 
   </body>
 
