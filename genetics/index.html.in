@@ -218,18 +218,6 @@
                 <tr/>
 
                 <tr class="conf-option" data-toggle="tooltip"
-                    title="If enabled, the lifespan of an individual is determined by its fitness, with the strongest individuals from each generation surviving">
-                  <td>
-                    Fittest survive
-                  </td>
-                  <td></td>
-                  <td><label>
-                      <input id="killparents" class="ios-switch"
-                             type="checkbox" />
-                  </label></td>
-                <tr/>
-
-                <tr class="conf-option" data-toggle="tooltip"
                     title="If enabled, genes are inherited randomly from mother and father, as opposed to inheriting an even number from both">
                   <td>
                     Random Inheritance
@@ -249,6 +237,18 @@
                   <td></td>
                   <td><label>
                       <input id="diff-squared" class="ios-switch"
+                             type="checkbox" />
+                  </label></td>
+                <tr/>
+
+                <tr class="conf-option" data-toggle="tooltip"
+                    title="If enabled, the lifespan of an individual is determined by its fitness, with the strongest individuals from each generation surviving">
+                  <td>
+                    Fittest survive
+                  </td>
+                  <td></td>
+                  <td><label>
+                      <input id="fittest-survive" class="ios-switch"
                              type="checkbox" />
                   </label></td>
                 <tr/>

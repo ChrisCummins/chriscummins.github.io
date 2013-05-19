@@ -46,7 +46,7 @@ var Genetics = Genetics || {};
   var selectionCutoff;
   var mutationChance;
   var mutateAmount;
-  var killParents;
+  var fittestSurvive;
   var randomInheritance;
   var diffSquared;
 
@@ -320,7 +320,7 @@ var Genetics = Genetics || {};
         return b.fitness - a.fitness;
       });
 
-      if (!killParents)
+      if (fittestSurvive)
         randCount--;
 
       for (var i = 0; i < selectCount; i++) {
@@ -336,11 +336,11 @@ var Genetics = Genetics || {};
         }
       }
 
-      if (killParents) {
-        this.individuals = offspring;
-      } else {
+      if (fittestSurvive) {
         this.individuals.length = selectCount;
         this.individuals = this.individuals.concat(offspring);
+      } else {
+        this.individuals = offspring;
       }
 
       this.individuals.length = size;
@@ -530,7 +530,7 @@ var Genetics = Genetics || {};
    */
   function setConfiguration(_populationSize,
                             _cutoffSlider,
-                            _killParents,
+                            _fittestSurvive,
                             _mutationChance,
                             _mutationAmount,
                             _polygons,
@@ -550,9 +550,9 @@ var Genetics = Genetics || {};
     $('#cutoff-slider').slider('value', _cutoffSlider);
     $('#cutoff').text(_cutoffSlider + '%');
 
-    if (_killParents === undefined)
-      var _killParents = true;
-    $('#killparents').prop('checked', _killParents);
+    if (_fittestSurvive === undefined)
+      var _fittestSurvive = false;
+    $('#fittest-survive').prop('checked', _fittestSurvive);
 
     if (_mutationChance === undefined)
       var _mutationChance = 2.4;
@@ -599,7 +599,7 @@ var Genetics = Genetics || {};
 
     populationSize = parseInt($('#population-size').text());
     selectionCutoff = parseFloat($('#cutoff').text()) / 100;
-    killParents = $('#killparents')[0].checked;
+    fittestSurvive = $('#fittest-survive')[0].checked;
     mutationChance = parseFloat($('#mutation-chance').text()) / 100;
     mutateAmount = parseFloat($('#mutation-amount').text()) / 100;
     polygons = parseInt($('#polygons').text());
@@ -780,14 +780,14 @@ var Genetics = Genetics || {};
     window.scrollTo(0, 0);
     stopSimulation();
     setImage('/genetics/piet-mondrian');
-    setConfiguration(35, 20, true, 3.0, 10, 100, 4, 40, true, false, true);
+    setConfiguration(35, 20, false, 3.0, 10, 100, 4, 40, true, false, true);
   });
 
   $('#examples-line-art').click(function() {
     window.scrollTo(0, 0);
     stopSimulation();
     setImage('/genetics/tom-waits.jpg');
-    setConfiguration(50, 15, true, 1.5, 30, 30, 30, 100, false, false, true);
+    setConfiguration(50, 15, false, 1.5, 30, 30, 30, 100, false, false, true);
   });
 
   /*
