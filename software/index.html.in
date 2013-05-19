@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="/assets/css/jquery.fancybox.css" />
     <link rel="stylesheet" href="/assets/css/jquery.fancybox-buttons.css" />
     <link rel="stylesheet" href="/assets/css/jquery.fancybox-thumbs.css" />
-    <link rel="stylesheet" href="/assets/css/static-700.css" />
+    <link rel="stylesheet" href="/assets/css/site.css" />
     <link rel="stylesheet" href="/assets/css/software.css" />
     <link rel="shortcut icon" href="/assets/img/favicon.ico" />
   </head>
@@ -45,7 +45,7 @@
           <li class="active"><a href="/software/">Software</a></li>
           <li><a href="/pictures/">Pictures</a></li>
         </ul>
-        <h3 class="left-title">
+        <h3 class="serif-title">
           <a href="http://chriscummins.cc">
             chriscummins.cc
           </a>
