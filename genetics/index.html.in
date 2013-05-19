@@ -435,9 +435,6 @@
 
     <div class="underlay"></div>
 
-    <!-- TODO: not yet implemented -->
-    <!-- <div id="null" style="display: none;"></div> -->
-
     <!-- the webcam uploading section -->
     <div class="webcam-overlay">
 
