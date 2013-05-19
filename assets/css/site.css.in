@@ -63,6 +63,13 @@ body {
   margin: 30px 0;
 }
 
+/* fixed width narrow container */
+.fixed-container-narrow {
+  margin: 0 auto;
+  min-width: 730px;
+  max-width: 730px;
+}
+
 /* tooltips */
 .tooltip {
   font-size: 12px;
