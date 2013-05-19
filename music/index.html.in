@@ -1,0 +1,186 @@
+<!doctype html>
+
+<html lang="en">
+
+  <head>
+    <title>Chris Cummins | Music</title>
+    <meta name="description" content="">
+    <meta name="author" content="Chris Cummins">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=1024" />
+    <meta charset="utf-8" />
+
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,700" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.1.0/css/font-awesome.css" />
+    <link rel="stylesheet" href="/assets/css/jquery.fancybox.css" />
+    <link rel="stylesheet" href="/assets/css/jquery.fancybox-buttons.css" />
+    <link rel="stylesheet" href="/assets/css/jquery.fancybox-thumbs.css" />
+    <link rel="stylesheet" href="/assets/css/static-700.css" />
+    <link rel="stylesheet" href="/assets/css/music.css" />
+    <link rel="shortcut icon" href="/assets/img/favicon.ico" />
+  </head>
+
+  <body>
+
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-40829804-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+
+    <div class="container-narrow">
+
+      <div class="masthead">
+        <ul class="nav nav-pills pull-right">
+          <li class="active"><a href="#">Music</a></li>
+          <li><a href="#">Software</a></li>
+          <li><a href="/pictures/">Pictures</a></li>
+        </ul>
+        <h3 class="left-title">
+          <a href="http://chriscummins.cc">
+            chriscummins.cc
+          </a>
+        </h3>
+      </div>
+
+      <hr>
+
+      <div class="row-fluid">
+
+        <center>
+
+          <blockquote style="margin: 10px 30px 30px 30px;">
+            <p>Without music, life would be a mistake.</p>
+            <small>Friedrich Nietzsche</small>
+          </blockquote>
+
+
+          <!-- brianstorm -->
+          <iframe id="leading-video" width="640" height="360"
+                  src="http://www.youtube.com/embed/Xgg4ChGK6VE?rel=0"
+                  frameborder="0"
+                  allowfullscreen>
+          </iframe>
+
+          <!-- fancybox gallery -->
+          <div class="video-frame" style="max-width: 495px;">
+            <a class="fancybox" rel="gallery"
+               href="img/4b6595943c2facb4eb9c36a929d195a0.jpg">
+              <img src="img/4b6595943c2facb4eb9c36a929d195a0-thumb.jpg" />
+            </a>
+
+            <a class="fancybox" rel="gallery"
+               href="img/0447dbc55c1e79cb21cf312d35562193.jpg">
+              <img src="img/0447dbc55c1e79cb21cf312d35562193-thumb.jpg" />
+            </a>
+
+            <a class="fancybox" rel="gallery"
+               href="img/b972899ff4a7700f96a47cd477f38323.jpg">
+              <img src="img/b972899ff4a7700f96a47cd477f38323-thumb.jpg" />
+            </a>
+
+            <a class="fancybox" rel="gallery"
+               href="img/b5cf02379d90774e4ba6da8e570cc63b.jpg">
+              <img src="img/b5cf02379d90774e4ba6da8e570cc63b-thumb.jpg" />
+            </a>
+          </div>
+
+          <hr>
+
+          <!-- youtube box -->
+          <div class="video-frame" style="margin: 50px 0px;">
+            <!-- plug in baby -->
+            <iframe width="318" height="179"
+                    src="http://www.youtube.com/embed/RgsS4lOblso?rel=0"
+                    frameborder="0"
+                    allowfullscreen>
+            </iframe>
+
+            <!-- muse piano -->
+            <iframe width="318" height="179"
+                    src="http://www.youtube.com/embed/RiZgZKPGHUs?rel=0"
+                    frameborder="0"
+                    allowfullscreen>
+            </iframe>
+
+            <!-- little sister -->
+            <iframe width="318" height="179"
+                    src="http://www.youtube.com/embed/qpDQkHGoMWY?rel=0"
+                    frameborder="0"
+                    allowfullscreen>
+            </iframe>
+
+            <!-- march of the pigs -->
+            <iframe width="318" height="179"
+                    src="http://www.youtube.com/embed/DZztp8EmHfo?rel=0"
+                    frameborder="0"
+                    allowfullscreen>
+            </iframe>
+          </div>
+
+          <!-- soundcloud box -->
+          <div class="soundcloud-frame" style="margin: 50px 0px;">
+            <!-- billbeans -->
+            <iframe width="100%" height="166" scrolling="no" frameborder="no"
+                    src="https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F72824274&amp;color=0099cc&amp;auto_play=false&amp;show_artwork=true">
+            </iframe>
+
+            <!-- fleshpest -->
+            <iframe width="100%" height="166" scrolling="no" frameborder="no"
+                    src="https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F72824273&amp;color=0099cc&amp;auto_play=false&amp;show_artwork=true">
+            </iframe>
+          </div>
+
+          <hr>
+
+          <!-- youtube box -->
+          <div class="video-frame" style="margin-top: 50px;">
+            <!-- donnie darko -->
+            <iframe width="318" height="239"
+                    src="http://www.youtube.com/embed/YtLjn3sriDA?rel=0"
+                    frameborder="0"
+                    allowfullscreen>
+            </iframe>
+
+            <!-- madman and the nun -->
+            <iframe width="318" height="239"
+                    src="http://www.youtube.com/embed/M5-tDc6JsSs?rel=0"
+                    frameborder="0"
+                    allowfullscreen>
+            </iframe>
+          </div>
+
+        </center>
+
+      </div> <!-- ./row-fluid -->
+
+      <!-- footer: -->
+      <hr>
+
+      <div class="footer">
+        <a href="/">chriscummins.cc</a> |
+        &copy; 2013 Chris Cummins
+      </div>
+
+    </div> <!-- /container -->
+
+  </body>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.0.6/jquery.mousewheel.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.pack.js"></script>
+  <script src="/assets/js/jquery.fancybox-buttons.js"></script>
+  <script src="/assets/js/jquery.fancybox-media.js"></script>
+  <script src="/assets/js/jquery.fancybox-thumbs.js"></script>
+  <script src="/assets/js/music.js"></script>
+
+</html>

@@ -38,6 +38,7 @@ html +=						\
 	404.html				\
 	gen-regions/index.html			\
 	genetics/index.html			\
+	music/index.html			\
 	pictures/index.html			\
 	$(NULL)
 
@@ -48,6 +49,7 @@ css +=						\
 	assets/css/jquery.fancybox-buttons.css	\
 	assets/css/jquery.fancybox-thumbs.css	\
 	assets/css/jquery.fancybox.css		\
+	assets/css/music.css			\
 	assets/css/pictures.css			\
 	assets/css/static-700.css		\
 	assets/css/styles.css			\
@@ -60,6 +62,7 @@ js += 						\
 	assets/js/jquery.fancybox-buttons.js	\
 	assets/js/jquery.fancybox-media.js	\
 	assets/js/jquery.fancybox-thumbs.js	\
+	assets/js/music.js			\
 	assets/js/pictures.js			\
 	assets/js/site.js			\
 	assets/js/webcam.js			\
@@ -102,6 +105,7 @@ extra_site +=					\
 	uni/dissertation.pdf			\
 	uni/sustainability.pdf			\
 	uni/voluntary-cooperation.pdf		\
+	$(shell find music/img)			\
 	$(shell find pictures/img)		\
 	$(NULL)
 

@@ -40,7 +40,7 @@
 
       <div class="masthead">
         <ul class="nav nav-pills pull-right">
-          <li><a href="#">Music</a></li>
+          <li><a href="/music/">Music</a></li>
           <li><a href="#">Software</a></li>
           <li class="active"><a href="#">Pictures</a></li>
         </ul>
