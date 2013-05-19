@@ -74,83 +74,87 @@
         </h3>
       </div>
 
-      <center>
+      <hr>
 
-        <hr>
+      <div class="fixed-container-narrow">
 
-        <h1 class="serif-title">GEN Regions</h1>
+        <center>
 
-        <!-- canvas -->
-        <canvas id="canvas" width="728" height="250"
-                data-toggle="tooltip" title="No region set">
-          Unsupported browser!</canvas>
+          <h1 class="serif-title">GEN Regions</h1>
 
-      </center>
+          <!-- canvas -->
+          <canvas id="canvas" width="728" height="250"
+                  data-toggle="tooltip" title="No region set">
+            Unsupported browser!</canvas>
 
-      <!-- input -->
-      <div style="padding: 5px; margin-bottom: 10px;">
+        </center>
 
-        <!-- exec size dropdown -->
-        <label style="margin-left: 0px;">
-          Execution size
-          <select id="exec-size" style="width: 55px; margin-bottom: 0px;">
-            <option>1</option>
-            <option>2</option>
-            <option>4</option>
-            <option selected="selected">8</option>
-            <option>16</option>
-            <option>32</option>
-          </select>
-        </label>
+        <!-- input -->
+        <div style="padding: 5px; margin-bottom: 10px;">
 
-	<!-- The region input text box: -->
-        <label>
-          Region
-          <input id="region-form" class="search-query" type="text"
-	         placeholder="Region" style="margin-left: 5px;">
-        </label>
+          <!-- exec size dropdown -->
+          <label style="margin-left: 0px;">
+            Execution size
+            <select id="exec-size" style="width: 55px; margin-bottom: 0px;">
+              <option>1</option>
+              <option>2</option>
+              <option>4</option>
+              <option selected="selected">8</option>
+              <option>16</option>
+              <option>32</option>
+            </select>
+          </label>
 
-	<!-- The `advanced' mode checkbox: -->
-        <label style="display: inline;">
-          Advanced <input id="advanced" class="ios-switch" type="checkbox">
-        </label>
+	  <!-- The region input text box: -->
+          <label>
+            Region
+            <input id="region-form" class="search-query" type="text"
+	           placeholder="Region" style="margin-left: 5px;">
+          </label>
 
-      </div>
+	  <!-- The `advanced' mode checkbox: -->
+          <label style="display: inline;">
+            Advanced <input id="advanced" class="ios-switch" type="checkbox">
+          </label>
 
-      <!-- buttons -->
-      <div class="pull-right">
+        </div>
 
-	<!-- share button -->
-        <button id="share-btn" class="btn btn-primary">
-          <strong>Share</strong>
-        </button>
+        <!-- buttons -->
+        <div class="pull-right">
 
-        <!-- submit button -->
-        <button id="submit" class="btn btn-success" style="margin-right: 50px;">
-          <strong>Submit</strong>
-        </button>
+	  <!-- share button -->
+          <button id="share-btn" class="btn btn-primary">
+            <strong>Share</strong>
+          </button>
 
-      </div>
+          <!-- submit button -->
+          <button id="submit" class="btn btn-success" style="margin-right: 50px;">
+            <strong>Submit</strong>
+          </button>
 
-      <!-- alerts area -->
-      <div style="margin-top: 50px">
+        </div>
 
-        <!-- share URL -->
-        <div id="share" class="alert alert-success"><strong>URL</strong>
-          <textarea id="share-hash" class="text"
-                    style="width: 600px; height: 20px; resize: none; margin-bottom: 0px; margin-left: 10px;"
-                    readonly></textarea>
-          <button type="button" class="close">&times;</button></div>
+        <!-- alerts area -->
+        <div style="margin-top: 50px">
 
-        <!-- error -->
-        <div id="alert-error" class="alert alert-error">
-          <button type="button" class="close">&times;</button>
-	  <div id="alert-error-placeholder"></div></div>
+          <!-- share URL -->
+          <div id="share" class="alert alert-success"><strong>URL</strong>
+            <textarea id="share-hash" class="text"
+                      style="width: 600px; height: 20px; resize: none; margin-bottom: 0px; margin-left: 10px;"
+                      readonly></textarea>
+            <button type="button" class="close">&times;</button></div>
 
-        <!-- warning -->
-        <div id="alert" class="alert">
-	  <button type="button" class="close">&times;</button>
-	  <div id="alert-placeholder"></div></div>
+          <!-- error -->
+          <div id="alert-error" class="alert alert-error">
+            <button type="button" class="close">&times;</button>
+	    <div id="alert-error-placeholder"></div></div>
+
+          <!-- warning -->
+          <div id="alert" class="alert">
+	    <button type="button" class="close">&times;</button>
+	    <div id="alert-placeholder"></div></div>
+
+        </div>
 
       </div>
 
