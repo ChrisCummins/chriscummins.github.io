@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.1.0/css/font-awesome.css" />
     <link rel="stylesheet" href="//code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
     <link rel="stylesheet" href="/assets/css/buttons.css" />
-    <link rel="stylesheet" href="/assets/css/static-700.css" />
+    <link rel="stylesheet" href="/assets/css/site.css" />
     <link rel="stylesheet" href="/assets/css/genetics.css" />
     <link rel="shortcut icon" href="/assets/img/favicon.ico" />
   </head>
@@ -34,20 +34,34 @@
       })();
     </script>
 
-    <div class="column">
+    <div class="container-narrow">
 
-      <!-- title -->
-      <div class="page-title">Grow your own picture</div>
-      <hr class="page-title-hr">
-
-      <!-- pictures -->
-      <div id="pictureframe">
-        <canvas id="referenceCanvas" class="picture" width="350" height="350" style="margin-right: 4px;"></canvas>
-        <canvas id="outputCanvas" class="picture" width="350" height="350" style="margin-left: 4px;"></canvas>
+      <!-- title section -->
+      <div class="masthead">
+        <ul class="nav nav-pills pull-right">
+          <li><a href="/blog/" target="_blank">Blog</a></li>
+          <li><a href="/music/">Music</a></li>
+          <li class="semi-active"><a href="/software/">Software</a></li>
+          <li><a href="/pictures/">Pictures</a></li>
+        </ul>
+        <h3 class="serif-title">
+          <a href="http://chriscummins.cc">chriscummins.cc</a>
+        </h3>
       </div>
 
-      <!-- button bar -->
       <center>
+
+        <hr>
+
+        <h1 class="serif-title">Grow Your Own Picture</h1>
+
+        <!-- pictures -->
+        <div id="pictureframe">
+          <canvas id="referenceCanvas" class="picture" width="350" height="350" style="margin-right: 4px;"></canvas>
+          <canvas id="outputCanvas" class="picture" width="350" height="350" style="margin-left: 4px;"></canvas>
+        </div>
+
+      <!-- button bar -->
         <div class="btn-toolbar">
           <div class="btn-group">
 
