@@ -54,9 +54,25 @@
 
       <hr>
 
+      <center><h1>Web software</h1></center>
+
       <div class="row-fluid">
 
+        <div class="span6">
+          <h4><a href="/genetics/">Grow Your Own Picture</a></h4>
+          <p>
+            Harnessing the powers of natural selection and genetics algorithms
+            to produce unique generative art.
+          </p>
+        </div>
 
+        <div class="span6">
+          <h4><a href="/gen-regions/">Gen Regions</a></h4>
+          <p>
+            This web tool visualizes instruction source operand regions for the
+            Intel Graphics GEN architecture.
+          </p>
+        </div>
 
       </div> <!-- ./row-fluid -->
 
