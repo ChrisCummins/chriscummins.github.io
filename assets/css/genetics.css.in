@@ -1,3 +1,9 @@
+.fixed-width-container {
+  width: 730px;
+  min-width: 730px;
+  max-width: 730px;
+}
+
 /* this houses the pictures */
 #pictureframe {
   background: #000;
