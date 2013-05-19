@@ -51,7 +51,6 @@ css +=						\
 	assets/css/jquery.fancybox-thumbs.css	\
 	assets/css/jquery.fancybox.css		\
 	assets/css/music.css			\
-	assets/css/pictures.css			\
 	assets/css/site.css			\
 	assets/css/styles.css			\
 	$(NULL)
