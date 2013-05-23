@@ -71,10 +71,6 @@
             to produce unique generative art.
           </p>
 
-        </div>
-
-        <div class="span6">
-
           <div class="thumbnail">
             <a href="/gen-regions/">
               <img src="/assets/img/screenshot-gen-regions.jpg">
@@ -84,6 +80,21 @@
           <p>
             This web tool visualizes instruction source operand regions for the
             Intel Graphics GEN architecture.
+          </p>
+
+        </div>
+
+        <div class="span6">
+
+          <div class="thumbnail">
+            <a href="/crypto/julius">
+              <img src="/assets/img/screenshot-julius.jpg">
+              <h4>Julius, the Caesar Shifter</h4>
+            </a>
+          </div>
+          <p>
+            Use cryptographic substitution ciphers to analyse letter frequency
+            distributions in text.
           </p>
 
         </div>
