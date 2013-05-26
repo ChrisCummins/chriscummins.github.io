@@ -1,10 +1,10 @@
 <!--
     Receives JPEG webcam submission and saves to local file. File path:
 
-        uploads/[date]-webcam-[ip].jpg
+        uploads/[date]-[ip]-webcam.jpg
   -->
 <?php
-$filename = 'uploads/' . date('YmdHis') . '-webcam-' . $_SERVER['REMOTE_ADDR'] . '.jpg';
+$filename = 'uploads/' . date('YmdHis') . '-' . $_SERVER['REMOTE_ADDR'] . '-webcam.jpg';
 $result = file_put_contents($filename, file_get_contents('php://input'));
 if (!$result) {
   print "ERROR: Failed to write data image file!\n";
