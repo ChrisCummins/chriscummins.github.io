@@ -11,6 +11,7 @@ setcookie("visit", "1", time()+3600);
     <meta name="author" content="Chris Cummins">
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="viewport" content="width=1024" />
+    <meta property="fb:admins" content="896185001">
     <meta charset="utf-8" />
 
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,700|Noto+Sans:400,700" />
