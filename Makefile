@@ -46,6 +46,7 @@ html +=						\
 
 css +=						\
 	assets/css/buttons.css			\
+	assets/css/flat-ui.css			\
 	assets/css/gen-regions.css		\
 	assets/css/genetics.css			\
 	assets/css/jquery.fancybox-buttons.css	\
