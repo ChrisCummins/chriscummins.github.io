@@ -36,6 +36,7 @@ php +=						\
 
 html +=						\
 	404.html				\
+	crypto/julius.html			\
 	gen-regions/index.html			\
 	genetics/index.html			\
 	music/index.html			\
@@ -61,6 +62,7 @@ js += 						\
 	assets/js/jquery.fancybox-buttons.js	\
 	assets/js/jquery.fancybox-media.js	\
 	assets/js/jquery.fancybox-thumbs.js	\
+	assets/js/julius.js			\
 	assets/js/music.js			\
 	assets/js/pictures.js			\
 	assets/js/site.js			\
@@ -86,6 +88,7 @@ extra_site +=					\
 	assets/img/screenshot-gen-regions.jpg	\
 	assets/img/screenshot-genetics.jpg	\
 	assets/img/screenshot-github.png	\
+	assets/img/screenshot-julius.jpg	\
 	assets/img/screenshot-linkedin.png	\
 	assets/img/screenshot-soundcloud.png	\
 	assets/img/screenshot-youtube.png	\

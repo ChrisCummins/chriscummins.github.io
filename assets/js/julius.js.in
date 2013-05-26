@@ -1,0 +1,795 @@
+//
+// Modulus operator, see:
+// http://javascript.about.com/od/problemsolving/a/modulobug.htm
+//
+Number.prototype.mod = function(n) {
+  return ((this % n) + n) % n;
+};
+
+//
+// Gray theme for Highcharts JS
+// Written by Torstein Hønsi.
+//
+Highcharts.theme = {
+  colors: ['#DDDF0D', '#7798BF', '#55BF3B', '#DF5353', '#aaeeee', '#ff0066',
+           '#eeaaee', '#55BF3B', '#DF5353', '#7798BF', '#aaeeee'],
+  chart: {
+    backgroundColor: {
+      linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+      stops: [
+        [0, 'rgb(96, 96, 96)'],
+        [1, 'rgb(16, 16, 16)']
+      ]
+    },
+    borderWidth: 0,
+    borderRadius: 15,
+    plotBackgroundColor: null,
+    plotShadow: false,
+    plotBorderWidth: 0
+  },
+  title: {
+    style: {
+      color: '#FFF',
+      font: '16px Lucida Grande, Lucida Sans Unicode, Verdana, Arial, ' +
+          'Helvetica, sans-serif'
+    }
+  },
+  subtitle: {
+    style: {
+      color: '#DDD',
+      font: '12px Lucida Grande, Lucida Sans Unicode, Verdana, Arial, ' +
+          'Helvetica, sans-serif'
+    }
+  },
+  xAxis: {
+    gridLineWidth: 0,
+    lineColor: '#999',
+    tickColor: '#999',
+    labels: {
+      style: {
+        color: '#999',
+        fontWeight: 'bold'
+      }
+    },
+    title: {
+      style: {
+        color: '#AAA',
+        font: 'bold 12px Lucida Grande, Lucida Sans Unicode, Verdana, ' +
+            'Arial, Helvetica, sans-serif'
+      }
+    }
+  },
+  yAxis: {
+    alternateGridColor: null,
+    minorTickInterval: null,
+    gridLineColor: 'rgba(255, 255, 255, .1)',
+    minorGridLineColor: 'rgba(255,255,255,0.07)',
+    lineWidth: 0,
+    tickWidth: 0,
+    labels: {
+      style: {
+        color: '#999',
+        fontWeight: 'bold'
+      }
+    },
+    title: {
+      style: {
+        color: '#AAA',
+        font: 'bold 12px Lucida Grande, Lucida Sans Unicode, Verdana, ' +
+            'Arial, Helvetica, sans-serif'
+      }
+    }
+  },
+  legend: {
+    itemStyle: {
+      color: '#CCC'
+    },
+    itemHoverStyle: {
+      color: '#FFF'
+    },
+    itemHiddenStyle: {
+      color: '#333'
+    }
+  },
+  labels: {
+    style: {
+      color: '#CCC'
+    }
+  },
+  tooltip: {
+    backgroundColor: {
+      linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+      stops: [
+        [0, 'rgba(96, 96, 96, .8)'],
+        [1, 'rgba(16, 16, 16, .8)']
+      ]
+    },
+    borderWidth: 0,
+    style: {
+      color: '#FFF'
+    }
+  },
+
+  plotOptions: {
+    series: {
+      animation: false,
+      shadow: true
+    },
+    line: {
+      dataLabels: {
+        color: '#CCC'
+      },
+      marker: {
+        lineColor: '#333'
+      }
+    },
+    spline: {
+      marker: {
+        lineColor: '#333'
+      }
+    },
+    scatter: {
+      marker: {
+        lineColor: '#333'
+      }
+    },
+    candlestick: {
+      lineColor: 'white'
+    }
+  },
+
+  toolbar: {
+    itemStyle: {
+      color: '#CCC'
+    }
+  },
+
+  navigation: {
+    buttonOptions: {
+      symbolStroke: '#DDDDDD',
+      hoverSymbolStroke: '#FFFFFF',
+      theme: {
+        fill: {
+          linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+          stops: [
+            [0.4, '#606060'],
+            [0.6, '#333333']
+          ]
+        },
+        stroke: '#000000'
+      }
+    }
+  },
+
+  // scroll charts
+  rangeSelector: {
+    buttonTheme: {
+      fill: {
+        linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+        stops: [
+          [0.4, '#888'],
+          [0.6, '#555']
+        ]
+      },
+      stroke: '#000000',
+      style: {
+        color: '#CCC',
+        fontWeight: 'bold'
+      },
+      states: {
+        hover: {
+          fill: {
+            linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+            stops: [
+              [0.4, '#BBB'],
+              [0.6, '#888']
+            ]
+          },
+          stroke: '#000000',
+          style: {
+            color: 'white'
+          }
+        },
+        select: {
+          fill: {
+            linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+            stops: [
+              [0.1, '#000'],
+              [0.3, '#333']
+            ]
+          },
+          stroke: '#000000',
+          style: {
+            color: 'yellow'
+          }
+        }
+      }
+    },
+    inputStyle: {
+      backgroundColor: '#333',
+      color: 'silver'
+    },
+    labelStyle: {
+      color: 'silver'
+    }
+  },
+
+  navigator: {
+    handles: {
+      backgroundColor: '#666',
+      borderColor: '#AAA'
+    },
+    outlineColor: '#CCC',
+    maskFill: 'rgba(16, 16, 16, 0.5)',
+    series: {
+      color: '#7798BF',
+      lineColor: '#A6C7ED'
+    }
+  },
+
+  scrollbar: {
+    barBackgroundColor: {
+      linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+      stops: [
+        [0.4, '#888'],
+        [0.6, '#555']
+      ]
+    },
+    barBorderColor: '#CCC',
+    buttonArrowColor: '#CCC',
+    buttonBackgroundColor: {
+      linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+      stops: [
+        [0.4, '#888'],
+        [0.6, '#555']
+      ]
+    },
+    buttonBorderColor: '#CCC',
+    rifleColor: '#FFF',
+    trackBackgroundColor: {
+      linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+      stops: [
+        [0, '#000'],
+        [1, '#333']
+      ]
+    },
+    trackBorderColor: '#666'
+  },
+
+  // special colors for some of the demo examples
+  legendBackgroundColor: 'rgba(48, 48, 48, 0.8)',
+  legendBackgroundColorSolid: 'rgb(70, 70, 70)',
+  dataLabelsColor: '#444',
+  textColor: '#E0E0E0',
+  maskColor: 'rgba(255,255,255,0.3)'
+};
+
+//
+// We place everything in a Julius namespace.
+//
+var Julius = Julius || {};
+
+(function() {
+  'use strict';
+
+  // Get the letter frequencies of the string `s`
+  function freqCounts(s) {
+    var counts = [];
+
+    // Convert to upper case
+    s = s.toUpperCase();
+
+    // Initialise the results array
+    for (var i = 0; i < 26; i++) {
+      counts[String.fromCharCode(65 + i)] = 0;
+    }
+
+    // Populate the array
+    for (var i = 0; i < s.length; i++) {
+      var c = s.charAt(i);
+      var k = c.charCodeAt(0);
+
+      // Count the character
+      if (k >= 65 && k <= 90)
+        counts[c]++;
+    }
+
+    return counts;
+  }
+
+  // Get the letter frequency distribution from a letter frequency set
+  function freqDists(counts) {
+    var dists = [];
+    var total = 0;
+
+    // Initialise the results array
+    for (var i = 0; i < 26; i++) {
+      var c = String.fromCharCode(65 + i);
+
+      dists[c] = 0;
+      total += counts[c];
+    }
+
+    // Get the distribution
+    if (total > 0) {
+      for (var i = 0; i < 26; i++) {
+        var c = String.fromCharCode(65 + i);
+
+        dists[c] = counts[c] / total;
+      }
+    }
+
+    return dists;
+  }
+
+  // Shift alphabetic character `c` by index `n`. This does not affect
+  // characters not in the range [A-za-z].
+  function shiftChar(c, n) {
+    var k = c.charCodeAt(0);
+
+    if (k >= 65 && k <= 90) {
+      // Upper case shift
+      return String.fromCharCode((k - 65 + n).mod(26) + 65);
+    } else if (k >= 97 && k <= 122) {
+      // Lower case shift
+      return String.fromCharCode((k - 97 + n).mod(26) + 97);
+    } else {
+      // Not in range [A-Za-z]
+      return c;
+    }
+  }
+
+  function getFitness(distribution, target) {
+    var totalDiff = 0;
+
+    for (var i = 0; i < 26; i++) {
+      var d = distribution[i];
+      var t = target[i];
+
+      // Get the difference between the two distributions
+      var diff = Math.abs(t - d);
+
+      // Convert the diff into a ratio
+      if (d > 0)
+        diff /= d;
+      else {
+        if (t > 0)
+          diff = 1;
+        else
+          diff = 0;
+      }
+
+      totalDiff += diff;
+    }
+
+    // Return the inverse diff
+    return -totalDiff;
+  }
+
+  // Call shiftChar() on each character in the string `s`.
+  function alphabeticShift(s, n) {
+    var out = '';
+
+    for (var i = 0; i < s.length; i++) {
+      out += shiftChar(s.charAt(i), n);
+    }
+
+    return out;
+  }
+
+  //
+  // Letter Frequency Distributions.
+  //
+  // Source: http://en.wikipedia.org/wiki/Letter_frequency
+  var languageDistributions = {
+    'English': [
+      0.08167, // A
+      0.01492, // B
+      0.02782, // C
+      0.04253, // D
+      0.12702, // E
+      0.02228, // F
+      0.02015, // G
+      0.06094, // H
+      0.06966, // I
+      0.00153, // J
+      0.00772, // K
+      0.04025, // L
+      0.02406, // M
+      0.06749, // N
+      0.07507, // O
+      0.01929, // P
+      0.00095, // Q
+      0.05987, // R
+      0.06327, // S
+      0.09056, // T
+      0.02758, // U
+      0.00978, // V
+      0.02360, // W
+      0.00150, // X
+      0.01974, // Y
+      0.00074  // Z
+    ],
+    'Esperanto': [
+      0.12117, // A
+      0.00980, // B
+      0.00776, // C
+      0.03044, // D
+      0.08995, // E
+      0.01037, // F
+      0.01171, // G
+      0.00384, // H
+      0.10012, // I
+      0.03501, // J
+      0.04163, // K
+      0.06145, // L
+      0.02994, // M
+      0.07955, // N
+      0.08779, // O
+      0.02745, // P
+      0.00000, // Q
+      0.05914, // R
+      0.06092, // S
+      0.05276, // T
+      0.03183, // U
+      0.01904, // V
+      0.00000, // W
+      0.00000, // X
+      0.00000, // Y
+      0.00490  // Z
+    ],
+    'French': [
+      0.07636, // A
+      0.00901, // B
+      0.03260, // C
+      0.03669, // D
+      0.14715, // E
+      0.01066, // F
+      0.00866, // G
+      0.00737, // H
+      0.07529, // I
+      0.00545, // J
+      0.00049, // K
+      0.05456, // L
+      0.02968, // M
+      0.07095, // N
+      0.05378, // O
+      0.02521, // P
+      0.01362, // Q
+      0.06553, // R
+      0.07948, // S
+      0.07244, // T
+      0.06311, // U
+      0.01628, // V
+      0.00074, // W
+      0.00427, // X
+      0.00128, // Y
+      0.00326  // Z
+    ],
+    'German': [
+      0.06516, // A
+      0.01886, // B
+      0.02732, // C
+      0.05076, // D
+      0.17396, // E
+      0.01656, // F
+      0.03009, // G
+      0.04757, // H
+      0.07550, // I
+      0.00268, // J
+      0.01417, // K
+      0.03437, // L
+      0.02534, // M
+      0.09776, // N
+      0.02594, // O
+      0.00670, // P
+      0.00018, // Q
+      0.07003, // R
+      0.07273, // S
+      0.06154, // T
+      0.04346, // U
+      0.00846, // V
+      0.01921, // W
+      0.00034, // X
+      0.00039, // Y
+      0.01134  // Z
+    ],
+    'Italian': [
+      0.11745, // A
+      0.00927, // B
+      0.04501, // C
+      0.03736, // D
+      0.11792, // E
+      0.01153, // F
+      0.01644, // G
+      0.00636, // H
+      0.11283, // I
+      0.00011, // J
+      0.00009, // K
+      0.06510, // L
+      0.02512, // M
+      0.06883, // N
+      0.09832, // O
+      0.03056, // P
+      0.00505, // Q
+      0.06367, // R
+      0.04981, // S
+      0.05623, // T
+      0.03011, // U
+      0.02097, // V
+      0.00033, // W
+      0.00000, // X
+      0.00020, // Y
+      0.01181  // Z
+    ],
+    'Portugese': [
+      0.14634, // A
+      0.01043, // B
+      0.03882, // C
+      0.04992, // D
+      0.12570, // E
+      0.01023, // F
+      0.01303, // G
+      0.00781, // H
+      0.06186, // I
+      0.00397, // J
+      0.00015, // K
+      0.02779, // L
+      0.04738, // M
+      0.05046, // N
+      0.10735, // O
+      0.02523, // P
+      0.01204, // Q
+      0.06530, // R
+      0.07805, // S
+      0.04736, // T
+      0.04634, // U
+      0.01665, // V
+      0.00037, // W
+      0.00253, // X
+      0.00006, // Y
+      0.00470  // Z
+    ],
+    'Spanish': [
+      0.12525, // A
+      0.02215, // B
+      0.04139, // C
+      0.05860, // D
+      0.13681, // E
+      0.00692, // F
+      0.01768, // G
+      0.00703, // H
+      0.06247, // I
+      0.00443, // J
+      0.00011, // K
+      0.04967, // L
+      0.03157, // M
+      0.06719, // N
+      0.08683, // O
+      0.02510, // P
+      0.00877, // Q
+      0.06871, // R
+      0.07977, // S
+      0.04632, // T
+      0.03927, // U
+      0.01138, // V
+      0.00017, // W
+      0.00215, // X
+      0.01008, // Y
+      0.00517  // Z
+    ],
+    'Turkish': [
+      0.11680, // A
+      0.02952, // B
+      0.00970, // C
+      0.04871, // D
+      0.09007, // E
+      0.00444, // F
+      0.01340, // G
+      0.01145, // H
+      0.08274, // I
+      0.00046, // J
+      0.04715, // K
+      0.05752, // L
+      0.03745, // M
+      0.07231, // N
+      0.02653, // O
+      0.00788, // P
+      0.00000, // Q
+      0.06948, // R
+      0.02950, // S
+      0.03049, // T
+      0.03430, // U
+      0.00977, // V
+      0.00016, // W
+      0.00007, // X
+      0.03371, // Y
+      0.01497  // Z
+    ]
+  };
+
+  // The letter distributions of the input data
+  var letterDistributions = [
+    0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+    0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
+  ];
+
+  var targetDistribution = languageDistributions['English'];
+
+  var diff = 0;
+
+  // Our page elements
+  var slider = $('#slider');
+  var label = $('#shift-label');
+  var textarea = $('#textarea');
+
+  // We cache the starting shift value, so that shifts are performed relatively
+  var cachedShift = 0;
+
+  function setShift(n) {
+    label.text(n + ' shift');
+
+    // Perform the shift
+    textarea.val(alphabeticShift(textarea.val(), n - cachedShift));
+    cachedShift = n;
+
+    // Update the chart when we change shit
+    refreshChart();
+  }
+
+  // Setup the shift slider
+  slider.slider({
+    range: 'min',
+    min: 0,
+    max: 26,
+    step: 1,
+    value: 13,
+
+    // Slider change callback
+    slide: function(event, ui) {
+      setShift(ui.value - 13);
+    }
+  });
+
+  // Update the text area while we type
+  textarea.bind('input propertychange', function() {
+    // Update the frequency chart
+    refreshChart();
+  });
+
+  // Language dropdown button
+  $('#language').change(function() {
+    var lang = $('#language option:selected').text();
+
+    targetDistribution = languageDistributions[lang];
+
+    refreshChart();
+  });
+
+  // Auto button
+  $('#auto').click(function() {
+
+    var shift = slider.slider('value') - 13;
+    var bestShift = -13;
+    var fittest;
+
+    // Get the fittest shift
+    for (var i = 0; i < 26; i++) {
+      var text = alphabeticShift(textarea.val(), i - 13 - shift);
+      var counts = freqCounts(text);
+      var dists = freqDists(counts);
+      var d = [];
+
+      for (var j = 0; j < 26; j++) {
+        d.push(dists[String.fromCharCode(65 + j)]);
+      }
+
+      var f = getFitness(d, targetDistribution);
+
+      if (!i)
+        fittest = f;
+      else {
+        // Set fittest
+        if (f > fittest) {
+          bestShift = i - 13;
+          fittest = f;
+        }
+      }
+    }
+
+    // Set the fittest shift and update
+    slider.slider('value', bestShift + 13);
+    setShift(bestShift);
+  });
+
+  // Refresh the chart data and draw
+  function refreshChart() {
+    var counts = freqCounts(textarea.val());
+    var dists = freqDists(counts);
+
+    var d = [];
+    for (var i = 0; i < 26; i++) {
+      d.push(dists[String.fromCharCode(65 + i)]);
+    }
+
+    letterDistributions = d;
+    diff = getFitness(letterDistributions, targetDistribution);
+
+    drawChart();
+  }
+
+  // Draw the chart
+  function drawChart() {
+    $('#container').highcharts({
+      chart: {
+        type: 'area'
+      },
+      title: {
+        text: 'Letter Frequency Distribution'
+      },
+      subtitle: {
+        text: 'Strength: ' + Math.round(diff)
+      },
+      xAxis: {
+        labels: {
+          formatter: function() {
+            return String.fromCharCode(65 + this.value);
+          }
+        },
+        tickInterval: 1
+      },
+      yAxis: {
+        labels: {
+          formatter: function() {
+            return this.value * 100 + '%';
+          }
+        }
+      },
+      tooltip: {
+        formatter: function() {
+          return String.fromCharCode(65 + this.point.x) + ': ' +
+              (this.point.y * 100).toFixed(2) + '%';
+        }
+      },
+      plotOptions: {
+        area: {
+          pointStart: 0,
+          marker: {
+            enabled: false,
+            symbol: 'circle',
+            radius: 2,
+            states: {
+              hover: {
+                enabled: true
+              }
+            }
+          }
+        }
+      },
+      series: [{
+        name: 'Language average',
+        data: targetDistribution
+      }, {
+        name: 'Actual',
+        data: letterDistributions
+      }]
+    });
+  }
+
+  // Document ready preparations
+  this.init = function() {
+
+    // Set keyboard focus on the text area
+    textarea.focus();
+
+    // Set the theme
+    var highchartsOptions = Highcharts.setOptions(Highcharts.theme);
+
+    // Draw the empty chart
+    drawChart();
+  };
+
+}).call(Julius);
+
+// Call our init function when ready.
+window.onload = Julius.init;
