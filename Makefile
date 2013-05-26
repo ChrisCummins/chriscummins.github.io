@@ -97,6 +97,12 @@ extra_site +=					\
 	assets/img/slider-track.png		\
 	assets/img/soundcloud.png		\
 	assets/img/youtube.png			\
+	assets/fonts/Flat-UI-Icons.dev.svg	\
+	assets/fonts/Flat-UI-Icons.eot		\
+	assets/fonts/Flat-UI-Icons.svg		\
+	assets/fonts/Flat-UI-Icons.ttf		\
+	assets/fonts/Flat-UI-Icons.woff		\
+	assets/fonts/icomoon-session.json	\
 	genetics/eiffel-tower.jpg		\
 	genetics/kyle-broflovski.jpg		\
 	genetics/marilyn-monroe.jpg		\
