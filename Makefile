@@ -42,6 +42,7 @@ html +=						\
 	music/index.html			\
 	pictures/index.html			\
 	software/index.html			\
+	style.html				\
 	$(NULL)
 
 css +=						\
