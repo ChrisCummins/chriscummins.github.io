@@ -92,7 +92,7 @@
       </div>
 
       <div id="thingsido" class="step" data-x="1200" data-y="-100" data-rotate="90" data-scale="2">
-	I love making things. Especially
+	I love making things. Especially <br />
 	<a id="music" href="/music/">music</a>,
 	<a id="software" href="/software/">software</a>, and
 	<a id="pictures" href="/pictures/">pictures</a>.
@@ -163,7 +163,6 @@
   </body>
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script src="/assets/js/impress.js"></script>
-  <script src="/assets/js/site.js"></script>
+  <script src="/assets/js/index.js"></script>
 
 </html>

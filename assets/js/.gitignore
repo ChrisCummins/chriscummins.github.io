@@ -3,7 +3,7 @@
 /flatui.js
 /gen-regions.js
 /genetics.js
-/impress.js
+/index.js
 /jquery.fancybox-buttons.js
 /jquery.fancybox-media.js
 /jquery.fancybox-thumbs.js
@@ -12,5 +12,4 @@
 /julius.js
 /music.js
 /pictures.js
-/site.js
 /webcam.js

@@ -62,7 +62,7 @@ js += 						\
 	assets/js/flatui.js			\
 	assets/js/gen-regions.js		\
 	assets/js/genetics.js			\
-	assets/js/impress.js			\
+	assets/js/index.js			\
 	assets/js/jquery.fancybox-buttons.js	\
 	assets/js/jquery.fancybox-media.js	\
 	assets/js/jquery.fancybox-thumbs.js	\
@@ -70,7 +70,6 @@ js += 						\
 	assets/js/jquery.tagsinput.js		\
 	assets/js/julius.js			\
 	assets/js/pictures.js			\
-	assets/js/site.js			\
 	assets/js/webcam.js			\
 	$(NULL)
 
