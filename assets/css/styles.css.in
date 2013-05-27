@@ -1,6 +1,8 @@
 body {
-    min-height: 740px;
-    line-height: 1;
+  min-height: 1000px;
+  -webkit-box-shadow: 0 0 25px rgba(0,0,0,0.3) inset;
+  -moz-box-shadow:    0 0 25px rgba(0,0,0,0.3) inset;
+  box-shadow:         0 0 25px rgba(0,0,0,0.3) inset;
 }
 
 .arrow {
@@ -22,10 +24,10 @@ body {
     transition:         0.2s opacity;
 
     /* Fade the arrows in on page load */
-    animation:          fadein 2s;
-    -moz-animation:     fadein 2s;
-    -webkit-animation:  fadein 2s;
-    -o-animation:       fadein 2s;
+    animation:          fadein 1s;
+    -moz-animation:     fadein 1s;
+    -webkit-animation:  fadein 1s;
+    -o-animation:       fadein 1s;
 }
 @keyframes fadein {
     from { opacity: 0; } to { opacity: 0.1; }
@@ -43,10 +45,10 @@ body {
     opacity: 1;
 }
 #arrowLeft {
-    left: 20px;
+    left: 30px;
 }
 #arrowRight {
-    right: 20px;
+    right: 30px;
     background-position: top right;
 }
 .impress-on-hello #arrowLeft {
@@ -178,10 +180,10 @@ body {
   position: absolute;
   bottom: 5px;
 
-  width: -webkit-calc(50% - 25px);
-  width:    -moz-calc(50% - 25px);
-  width:      -o-calc(50% - 25px);
-  width:         calc(50% - 25px);
+  width: -webkit-calc(50% - 35px);
+  width:    -moz-calc(50% - 35px);
+  width:      -o-calc(50% - 35px);
+  width:         calc(50% - 35px);
 }
 .overlay > form #cancel {
   left: 5px;
