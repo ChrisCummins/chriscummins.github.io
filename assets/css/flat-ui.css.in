@@ -404,7 +404,6 @@ body {
 }
 #push,
 .footer {
-  /* Footer size */
   height: 60px;
 }
 .footer {
@@ -414,8 +413,11 @@ body {
 .footer > .wrapper {
   margin-top: 20px;
 }
-.footer > .container > p {
+.footer > .container > .footer-collapse > p {
   font-size: 18px;
+}
+.footer > .container > .footer-collapse > p > a {
+  text-decoration: none;
 }
 @media (max-width: 767px) {
   /* Apply responsive CSS fixes as necessary */
@@ -1116,6 +1118,14 @@ body {
 }
 
 /* Feedback-Form */
+#contact-me {
+  color: #35d59d;
+  font-weight: 300;
+  cursor: pointer;
+}
+#contact-me:hover {
+  color: #ff9700;
+}
 .feedback-overlay {
   display: none;
   position: fixed;

@@ -399,7 +399,7 @@
           </div>
         </div> <!-- /.row -->
 
-      </div> <!-- /container -->
+      </div> <!-- /.container -->
       <div id="push"></div>
     </div> <!-- /#wrap -->
 
@@ -417,9 +417,36 @@
           <iframe src="http://ghbtns.com/github-btn.html?user=ChrisCummins&repo=chriscummins.cc&type=watch&count=true"
                   allowtransparency="true" frameborder="0" scrolling="0" width="110" height="21"></iframe>
         </div>
-        <p class="muted">&copy; 2013 Chris Cummins</p>
+
+        <div class="footer-collapse">
+          <p class="muted">
+            &copy; 2013 Chris Cummins |
+            <a id="contact-me">Send me a message</a>
+          </p>
+        </div>
       </div>
     </div> <!-- /.footer -->
+
+    <!-- The feedback form -->
+    <div class="feedback-overlay"></div>
+    <div class="feedback-form">
+      <form id="feedback-form-messageform" name="contactme" action="">
+      	<p>Send me a message</p>
+      	<textarea id="feedback-form-message" name="message"></textarea>
+      	<p>Email</p>
+      	<input id="feedback-form-email" name="email" type="text" autocomplete="off" /><br />
+      	<input id="feedback-form-cancel" class="btn btn-large btn-warning" type="reset" value="Cancel" />
+      	<input id="feedback-form-send" class="btn btn-large btn-success" type="submit" value="Send" />
+      </form>
+      <div id="feedback-form-messagesuccess">
+        <center>
+	  <br /><br /><br /><br /><br /><br />
+	  <img src="/assets/img/check.png">
+	  <br /><br />
+	  Thanks for getting in touch!
+        </center>
+      </div>
+    </div>
 
   </body>
 
@@ -430,6 +457,7 @@
   <script src="/assets/js/jquery.fancybox-buttons.js"></script>
   <script src="/assets/js/jquery.fancybox-media.js"></script>
   <script src="/assets/js/jquery.fancybox-thumbs.js"></script>
+  <script src="/assets/js/flatui.js"></script>
 
   <script>
     $(document).ready(function() {
