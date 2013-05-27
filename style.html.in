@@ -725,19 +725,69 @@
   <script src="/assets/js/flatui.js"></script>
 
   <script>
-$(document).ready(function() {
-  $(".fancybox").fancybox({
-    openEffect	: 'fade',
-    closeEffect	: 'fade',
-    helpers : {
-      overlay : {
-        css : {
-          'background' : 'rgba(0, 0, 0, 0.9)'
+    $(document).ready(function() {
+      $(".fancybox").fancybox({
+        openEffect	: 'fade',
+        closeEffect	: 'fade',
+        helpers : {
+          overlay : {
+            css : {
+              'background' : 'rgba(0, 0, 0, 0.9)'
+            }
+          }
         }
+      });
+    });
+
+    $(function() {
+
+      // Todo list
+      $(".todo li").click(function() {
+        $(this).toggleClass("todo-done");
+      });
+
+      // Custom Select
+      $("select[name='herolist']").selectpicker({style: 'btn-primary', menuStyle: 'dropdown-inverse'});
+
+      // Tooltips
+      $("[data-toggle=tooltip]").tooltip("show");
+
+      // Tags Input
+      $(".tagsinput").tagsInput();
+
+      // jQuery UI Sliders
+      var $slider = $("#slider");
+      if ($slider.length) {
+        $slider.slider({
+          min: 1,
+          max: 5,
+          value: 2,
+          orientation: "horizontal",
+          range: "min"
+        }).addSliderSegments($slider.slider("option").max);
       }
-    }
-  });
-});
+
+      // Placeholders for input/textarea
+      $("input, textarea").placeholder();
+
+      // Make pagination demo work
+      $(".pagination a").on('click', function() {
+        $(this).parent().siblings("li").removeClass("active").end().addClass("active");
+      });
+
+      $(".btn-group a").on('click', function() {
+        $(this).siblings().removeClass("active").end().addClass("active");
+      });
+
+      // Disable link clicks to prevent page scrolling
+      $('a[href="#fakelink"]').on('click', function (e) {
+        e.preventDefault();
+      });
+
+      // Switch
+      $("[data-toggle='switch']").wrap('<div class="switch" />').parent().bootstrapSwitch();
+
+    });
   </script>
 
 </html>
