@@ -10,31 +10,12 @@
     <meta name="viewport" content="width=1024" />
     <meta charset="utf-8" />
 
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,700" />
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" />
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.1.0/css/font-awesome.css" />
+    <style type="text/css">body{padding-top:60px;}</style>
+    <link rel="stylesheet" href="/assets/css/flat-ui.css" />
     <link rel="stylesheet" href="/assets/css/jquery.fancybox.css" />
     <link rel="stylesheet" href="/assets/css/jquery.fancybox-buttons.css" />
     <link rel="stylesheet" href="/assets/css/jquery.fancybox-thumbs.css" />
-    <link rel="stylesheet" href="/assets/css/site.css" />
-    <link rel="stylesheet" href="/assets/css/music.css" />
     <link rel="shortcut icon" href="/assets/img/favicon.ico" />
-
-    <style>
-      /* inline our thumbnails */
-      .thumbnail {
-        display: inline;
-      }
-
-      .thumbnail > a > img {
-        margin: 4px;
-      }
-
-      .thumbnail > a:hover > img,
-      .thumbnail > a:focus > img {
-        opacity: 0.5;
-      }
-    </style>
   </head>
 
   <body>
@@ -52,153 +33,192 @@
       })();
     </script>
 
-    <div class="container-narrow">
+    <!-- header -->
+    <div id="wrap">
+      <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+          <div class="container">
+            <button type="button" class="btn btn-navbar"
+                    data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="brand" href="#">chriscummins.cc</a>
+            <div class="nav-collapse collapse pull-right">
+              <ul class="nav">
+                <li><a href="/">Home</a></li>
+                <li><a href="/blog/" target="_blank">Blog</a></li>
+                <li class="active"><a href="/music/">Music</a></li>
+                <li><a href="/software/">Software</a></li>
+                <li><a href="/pictures/">Pictures</a></li>
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div>
+        </div>
+      </div> <!-- /.navbar -->
 
-      <div class="masthead">
-        <ul class="nav nav-pills pull-right">
-          <li><a href="/blog/" target="_blank">Blog</a></li>
-          <li class="active"><a href="#">Music</a></li>
-          <li><a href="/software/">Software</a></li>
-          <li><a href="/pictures/">Pictures</a></li>
-        </ul>
-        <h3 class="serif-title">
-          <a href="http://chriscummins.cc">chriscummins.cc</a>
-        </h3>
+      <div class="container">
+
+        <div class="headline">
+          <h1 class="headline-title">
+            Drums
+            <small>&amp; Lesser Instruments</small>
+          </h1>
+        </div>
+
+        <div class="row">
+          <center>
+            <!-- brianstorm -->
+            <iframe class="lead-content" width="640" height="360"
+                    src="http://www.youtube.com/embed/Xgg4ChGK6VE?rel=0"
+                    frameborder="0"
+                    allowfullscreen>
+            </iframe>
+          </center>
+        </div> <!-- /.row -->
+
+        <div class="row">
+          <center>
+            <div class="bg-frame" style="min-width: 640px; max-width: 640px; padding: 0;">
+              <div class="thumbnail">
+                <a class="fancybox" rel="gallery"
+                   href="img/4b6595943c2facb4eb9c36a929d195a0.jpg">
+                  <img src="img/4b6595943c2facb4eb9c36a929d195a0-thumb.jpg" />
+                </a>
+              </div>
+              <div class="thumbnail">
+                <a class="fancybox" rel="gallery"
+                   href="img/0447dbc55c1e79cb21cf312d35562193.jpg">
+                  <img src="img/0447dbc55c1e79cb21cf312d35562193-thumb.jpg" />
+                </a>
+              </div>
+              <div class="thumbnail">
+                <a class="fancybox" rel="gallery"
+                   href="img/b972899ff4a7700f96a47cd477f38323.jpg">
+                  <img src="img/b972899ff4a7700f96a47cd477f38323-thumb.jpg" />
+                </a>
+              </div>
+              <div class="thumbnail">
+                <a class="fancybox" rel="gallery"
+                   href="img/b5cf02379d90774e4ba6da8e570cc63b.jpg">
+                  <img src="img/b5cf02379d90774e4ba6da8e570cc63b-thumb.jpg" />
+                </a>
+              </div>
+            </div> <!-- /.dark-frame -->
+          </center>
+        </div> <!-- /.row -->
+
+        <div class="row">
+          <div class="span6 offset3">
+            <blockquote style="margin: 20px auto">
+              <p>Without music, life would be a mistake.</p>
+              <small>Friedrich Nietzsche</small>
+            </blockquote>
+          </div>
+        </div>
+
+        <div class="row">
+          <center>
+            <div class="light-frame" style="min-width: 650px; max-width: 650px; padding: 5px">
+              <!-- plug in baby -->
+              <iframe width="318" height="179"
+                      src="http://www.youtube.com/embed/RgsS4lOblso?rel=0"
+                      frameborder="0"
+                      allowfullscreen>
+              </iframe>
+
+              <!-- muse piano -->
+              <iframe width="318" height="179"
+                      src="http://www.youtube.com/embed/RiZgZKPGHUs?rel=0"
+                      frameborder="0"
+                      allowfullscreen>
+              </iframe>
+
+              <!-- little sister -->
+              <iframe width="318" height="179"
+                      src="http://www.youtube.com/embed/qpDQkHGoMWY?rel=0"
+                      frameborder="0"
+                      allowfullscreen>
+              </iframe>
+
+              <!-- march of the pigs -->
+              <iframe width="318" height="179"
+                      src="http://www.youtube.com/embed/DZztp8EmHfo?rel=0"
+                      frameborder="0"
+                      allowfullscreen>
+              </iframe>
+            </div>
+          </center>
+        </div>
+
+        <div class="headline">
+          <h1 class="headline-title">
+            Bands
+            <small>&amp; Compositions</small>
+          </h1>
+        </div>
+
+        <div class="row">
+          <center>
+            <div class="frame" style="border-radius: 5px;">
+              <!-- billbeans -->
+              <iframe width="100%" height="166" scrolling="no" frameborder="no"
+                      src="https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F72824274&amp;color=006f48&amp;auto_play=false&amp;show_artwork=true">
+              </iframe>
+
+              <!-- fleshpest -->
+              <iframe width="100%" height="166" scrolling="no" frameborder="no"
+                      src="https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F72824273&amp;color=006f48&amp;auto_play=false&amp;show_artwork=true">
+              </iframe>
+          </center>
+          </div>
+        </div>
+
+        <div class="row">
+          <center>
+            <!-- youtube box -->
+            <div class="bg-frame"
+                 style="margin-top: 50px; min-width: 650px; max-width: 650px;">
+              <!-- donnie darko -->
+              <iframe width="318" height="239"
+                      src="http://www.youtube.com/embed/YtLjn3sriDA?rel=0"
+                      frameborder="0"
+                      allowfullscreen>
+              </iframe>
+
+              <!-- madman and the nun -->
+              <iframe width="318" height="239"
+                      src="http://www.youtube.com/embed/M5-tDc6JsSs?rel=0"
+                      frameborder="0"
+                      allowfullscreen>
+              </iframe>
+            </div>
+          </center>
+        </div> <!-- ./row -->
+
+
+      </div> <!-- /.container -->
+      <div id="push"></div>
+    </div> <!-- /#wrap -->
+
+    <!-- Site footer -->
+    <div class="footer">
+      <div class="container wrapper">
+        <div class="pull-right">
+          <!-- twitter tweet -->
+          <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://chriscummins.cc" data-via="iamchriscummins" data-dnt="true">Tweet</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+          <!-- facebook like -->
+          <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fchriscummins.cc&amp;send=false&amp;layout=button_count&amp;width=110&amp;show_faces=false&amp;font&amp;colorscheme=light&amp;action=like&amp;height=21"
+                  scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:110px; height:21px;" allowTransparency="true"></iframe>
+          <!-- github watch -->
+          <iframe src="http://ghbtns.com/github-btn.html?user=ChrisCummins&repo=chriscummins.cc&type=watch&count=true"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110" height="21"></iframe>
+        </div>
+        <p class="muted">&copy; 2013 Chris Cummins</p>
       </div>
-
-      <hr>
-
-      <div class="row-fluid">
-
-        <center>
-
-          <blockquote style="margin: 10px 30px 30px 30px;">
-            <p>Without music, life would be a mistake.</p>
-            <small>Friedrich Nietzsche</small>
-          </blockquote>
-
-
-          <!-- brianstorm -->
-          <iframe class="lead-content" width="640" height="360"
-                  src="http://www.youtube.com/embed/Xgg4ChGK6VE?rel=0"
-                  frameborder="0"
-                  allowfullscreen>
-          </iframe>
-
-          <!-- fancybox gallery -->
-          <div class="content-frame content-frame-inverse"
-               style="max-width: 495px;">
-
-            <div class="thumbnail">
-              <a class="fancybox" rel="gallery"
-                 href="img/4b6595943c2facb4eb9c36a929d195a0.jpg">
-                <img src="img/4b6595943c2facb4eb9c36a929d195a0-thumb.jpg" />
-              </a>
-            </div>
-
-            <div class="thumbnail">
-              <a class="fancybox" rel="gallery"
-                 href="img/0447dbc55c1e79cb21cf312d35562193.jpg">
-                <img src="img/0447dbc55c1e79cb21cf312d35562193-thumb.jpg" />
-              </a>
-            </div>
-
-            <div class="thumbnail">
-              <a class="fancybox" rel="gallery"
-                 href="img/b972899ff4a7700f96a47cd477f38323.jpg">
-                <img src="img/b972899ff4a7700f96a47cd477f38323-thumb.jpg" />
-              </a>
-            </div>
-
-            <div class="thumbnail">
-              <a class="fancybox" rel="gallery"
-                 href="img/b5cf02379d90774e4ba6da8e570cc63b.jpg">
-                <img src="img/b5cf02379d90774e4ba6da8e570cc63b-thumb.jpg" />
-              </a>
-            </div>
-
-          </div>
-
-          <hr>
-
-          <!-- youtube box -->
-          <div class="content-frame content-frame-inverse"
-               style="margin: 50px 0px;">
-            <!-- plug in baby -->
-            <iframe width="318" height="179"
-                    src="http://www.youtube.com/embed/RgsS4lOblso?rel=0"
-                    frameborder="0"
-                    allowfullscreen>
-            </iframe>
-
-            <!-- muse piano -->
-            <iframe width="318" height="179"
-                    src="http://www.youtube.com/embed/RiZgZKPGHUs?rel=0"
-                    frameborder="0"
-                    allowfullscreen>
-            </iframe>
-
-            <!-- little sister -->
-            <iframe width="318" height="179"
-                    src="http://www.youtube.com/embed/qpDQkHGoMWY?rel=0"
-                    frameborder="0"
-                    allowfullscreen>
-            </iframe>
-
-            <!-- march of the pigs -->
-            <iframe width="318" height="179"
-                    src="http://www.youtube.com/embed/DZztp8EmHfo?rel=0"
-                    frameborder="0"
-                    allowfullscreen>
-            </iframe>
-          </div>
-
-          <!-- soundcloud box -->
-          <div class="content-frame" style="margin: 50px 0px;">
-            <!-- billbeans -->
-            <iframe width="100%" height="166" scrolling="no" frameborder="no"
-                    src="https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F72824274&amp;color=0099cc&amp;auto_play=false&amp;show_artwork=true">
-            </iframe>
-
-            <!-- fleshpest -->
-            <iframe width="100%" height="166" scrolling="no" frameborder="no"
-                    src="https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F72824273&amp;color=0099cc&amp;auto_play=false&amp;show_artwork=true">
-            </iframe>
-          </div>
-
-          <hr>
-
-          <!-- youtube box -->
-          <div class="content-frame content-frame-inverse"
-               style="margin-top: 50px;">
-            <!-- donnie darko -->
-            <iframe width="318" height="239"
-                    src="http://www.youtube.com/embed/YtLjn3sriDA?rel=0"
-                    frameborder="0"
-                    allowfullscreen>
-            </iframe>
-
-            <!-- madman and the nun -->
-            <iframe width="318" height="239"
-                    src="http://www.youtube.com/embed/M5-tDc6JsSs?rel=0"
-                    frameborder="0"
-                    allowfullscreen>
-            </iframe>
-          </div>
-
-        </center>
-
-      </div> <!-- ./row-fluid -->
-
-      <!-- footer: -->
-      <hr>
-
-      <div class="footer">
-        <a href="/">chriscummins.cc</a> |
-        &copy; 2013 Chris Cummins
-      </div>
-
-    </div> <!-- /container -->
+    </div> <!-- /.footer -->
 
   </body>
 
@@ -209,6 +229,22 @@
   <script src="/assets/js/jquery.fancybox-buttons.js"></script>
   <script src="/assets/js/jquery.fancybox-media.js"></script>
   <script src="/assets/js/jquery.fancybox-thumbs.js"></script>
-  <script src="/assets/js/music.js"></script>
+
+  <!-- Prepare fancybox gallery -->
+  <script>
+    $(document).ready(function() {
+      $(".fancybox").fancybox({
+        openEffect: 'fade',
+        closeEffect: 'fade',
+        helpers: {
+          overlay: {
+            css: {
+              'background': 'rgba(0, 0, 0, 0.9)'
+            }
+          }
+        }
+      });
+    });
+  </script>
 
 </html>

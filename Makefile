@@ -70,7 +70,6 @@ js += 						\
 	assets/js/jquery.placeholder.js		\
 	assets/js/jquery.tagsinput.js		\
 	assets/js/julius.js			\
-	assets/js/music.js			\
 	assets/js/pictures.js			\
 	assets/js/site.js			\
 	assets/js/webcam.js			\
