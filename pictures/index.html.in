@@ -10,12 +10,12 @@
     <meta name="viewport" content="width=1024" />
     <meta charset="utf-8" />
 
+    <style type="text/css">body{padding-top:60px;}</style>
+    <link rel="stylesheet" href="/assets/css/flat-ui.css" />
     <link rel="stylesheet" href="/assets/css/jquery.fancybox.css" />
     <link rel="stylesheet" href="/assets/css/jquery.fancybox-buttons.css" />
     <link rel="stylesheet" href="/assets/css/jquery.fancybox-thumbs.css" />
-    <link rel="stylesheet" href="/assets/css/flat-ui.css" />
     <link rel="shortcut icon" href="/assets/img/favicon.ico" />
-
   </head>
 
   <body>
@@ -59,18 +59,16 @@
       </div> <!-- /.navbar -->
 
       <div class="container">
-        <div>
-          <blockquote>
-            <p>
-              For me, the camera is a sketch book, an instrument of intuition and
-              spontaneity.
-            </p>
-            <small>Henri Cartier-Bresson</small>
-          </blockquote>
+
+        <div class="headline">
+          <h1 class="headline-title">
+            Gallery
+            <small>Photographs & Pictures</small>
+          </h1>
         </div>
 
         <!-- fancybox gallery -->
-        <div class="frame">
+        <div class="row">
           <div class="thumbnail">
             <a class="fancybox" rel="gallery"
                href="img/b1bb546868e772d9cef41303b7383218.jpg">
@@ -386,9 +384,20 @@
             </a>
           </div>
 
-        </div> <!-- /.frame -->
+        </div> <!-- /.gallery -->
         <!-- end of fancybox gallery -->
 
+        <div class="row">
+          <div class="span10 offset1">
+            <blockquote>
+              <p>
+                For me, the camera is a sketch book, an instrument of intuition and
+                spontaneity.
+              </p>
+              <small>Henri Cartier-Bresson</small>
+            </blockquote>
+          </div>
+        </div> <!-- /.row -->
 
       </div> <!-- /container -->
       <div id="push"></div>
