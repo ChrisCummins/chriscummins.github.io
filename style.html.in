@@ -12,13 +12,13 @@
 
     <style type="text/css">body{padding-top:60px;}</style>
     <link rel="stylesheet" href="/assets/css/flat-ui.css" />
+    <link rel="stylesheet" href="/assets/css/jquery.fancybox.css" />
+    <link rel="stylesheet" href="/assets/css/jquery.fancybox-buttons.css" />
+    <link rel="stylesheet" href="/assets/css/jquery.fancybox-thumbs.css" />
     <link rel="shortcut icon" href="/assets/img/favicon.ico" />
 
-    <style type="text/css">
-      .row {
-      margin-bottom: 20px;
-      }
-    </style>
+    <!-- Pad out rows for demo -->
+    <style type="text/css">.row { margin-bottom: 40px; }</style>
   </head>
 
   <body>
@@ -211,7 +211,6 @@
                 </dl>
               </div>
             </div> <!-- /.row -->
-
           </div>
         </div> <!-- /swatches row -->
 
@@ -246,44 +245,9 @@
           </div>
         </div> <!-- /row -->
 
-        <h3>Menu</h3>
         <div class="row">
 
-          <div class="span3">
-            <select name="herolist" value="X-Men" class="select-block span3">
-              <option value="0">Choose hero</option>
-              <option value="1">Spider Man</option>
-              <option value="2">Wolverine</option>
-              <option value="3">Captain America</option>
-              <option value="X-Men" selected="selected">X-Men</option>
-              <option value="Crocodile">Crocodile</option>
-            </select>
-          </div>
-        </div> <!-- /row -->
-
-        <h3>Input</h3>
-        <div class="row">
-          <div class="span3">
-            <input type="text" value="" placeholder="Type here" class="span3" />
-          </div>
-          <div class="span3">
-            <div class="control-group error">
-              <input type="text" value="" placeholder="Error" class="span3" />
-            </div>
-          </div>
-          <div class="span3">
-            <div class="control-group success">
-              <input type="text" value="" placeholder="Success" class="span3" />
-              <i class="input-icon fui-check-inverted"></i>
-            </div>
-          </div>
-          <div class="span3">
-            <input type="text" value="" placeholder="Disabled" disabled="disabled" class="span3" />
-          </div>
-        </div> <!-- /row -->
-
-        <div class="row">
-          <div class="span5">
+          <div class="span6">
             <h3>Progress bars &amp; Sliders</h3>
             <div class="progress">
               <div class="bar" style="width: 45%;"></div>
@@ -304,36 +268,72 @@
             </div>
           </div> <!-- /sliders -->
 
-          <div class="span6 offset1">
-            <h3>Navigation</h3>
-            <div class="row demo-navigation">
-              <div class="span3">
-                <div class="btn-toolbar">
-                  <div class="btn-group">
-                    <a class="btn btn-primary" href="#fakelink"><i class="fui-time"></i></a>
-                    <a class="btn btn-primary" href="#fakelink"><i class="fui-photo"></i></a>
-                    <a class="btn btn-primary active" href="#fakelink"><i class="fui-heart"></i></a>
-                    <a class="btn btn-primary" href="#fakelink"><i class="fui-eye"></i></a>
-                  </div>
-                </div> <!-- /toolbar -->
-              </div>
-              <div class="span3 demo-pager">
-                <ul class="pager">
-                  <li class="previous">
-                    <a href="#fakelink">
-                      <i class="fui-arrow-left"></i>
-                      <span>All messages</span>
-                    </a>
-                  </li>
-                  <li class="next">
-                    <a href="#fakelink">
-                      <i class="fui-arrow-right"></i>
-                    </a>
-                  </li>
-                </ul> <!-- /pager -->
-              </div>
-            </div> <!-- /demo-navigation -->
+          <div class="span3 offset3">
+            <h3>Menu</h3>
+            <select name="herolist" value="X-Men" class="select-block span3">
+              <option value="1">Spider Man</option>
+              <option value="2">Wolverine</option>
+              <option value="3">Captain America</option>
+              <option value="X-Men" selected="selected">X-Men</option>
+              <option value="Crocodile">Crocodile</option>
+            </select>
+          </div> <!-- /herolist -->
 
+        </div> <!-- /row -->
+
+        <div class="row">
+          <div class="span12">
+            <h3>Input</h3>
+          </div>
+          <div class="span3">
+            <input type="text" value="" placeholder="Type here" class="span3" />
+          </div>
+          <div class="span3">
+            <div class="control-group error">
+              <input type="text" value="" placeholder="Error" class="span3" />
+            </div>
+          </div>
+          <div class="span3">
+            <div class="control-group success">
+              <input type="text" value="" placeholder="Success" class="span3" />
+              <i class="input-icon fui-check-inverted"></i>
+            </div>
+          </div>
+          <div class="span3">
+            <input type="text" value="" placeholder="Disabled" disabled="disabled" class="span3" />
+          </div>
+        </div> <!-- /row -->
+
+        <div class="row">
+          <div class="span3">
+            <h3>Navigation</h3>
+            <div class="btn-toolbar">
+              <div class="btn-group">
+                <a class="btn btn-primary" href="#fakelink"><i class="fui-time"></i></a>
+                <a class="btn btn-primary" href="#fakelink"><i class="fui-photo"></i></a>
+                <a class="btn btn-primary active" href="#fakelink"><i class="fui-heart"></i></a>
+                <a class="btn btn-primary" href="#fakelink"><i class="fui-eye"></i></a>
+              </div>
+            </div> <!-- /toolbar -->
+          </div>
+          <div class="span3">
+            <h3>Pager</h3>
+            <ul class="pager">
+              <li class="previous">
+                <a href="#fakelink">
+                  <i class="fui-arrow-left"></i>
+                  <span>All messages</span>
+                </a>
+              </li>
+              <li class="next">
+                <a href="#fakelink">
+                  <i class="fui-arrow-right"></i>
+                </a>
+              </li>
+            </ul> <!-- /pager -->
+          </div> <!-- /.span3 -->
+          <div class="span6">
+            <h3>Pagination</h3>
             <div class="pagination">
               <ul>
                 <li class="previous"><a href="#fakelink" class="fui-arrow-left"></a></li>
@@ -343,12 +343,10 @@
                 <li><a href="#fakelink">4</a></li>
                 <li><a href="#fakelink">5</a></li>
                 <li><a href="#fakelink">6</a></li>
-                <li><a href="#fakelink">7</a></li>
-                <li><a href="#fakelink">8</a></li>
                 <li class="next"><a href="#fakelink" class="fui-arrow-right"></a></li>
               </ul>
             </div> <!-- /pagination -->
-          </div> <!-- /navigation -->
+          </div> <!-- /.span6 -->
         </div> <!-- /row -->
 
         <div class="row">
@@ -466,30 +464,24 @@
           <div class="span3">
             <div class="demo-tooltips">
               <h3>Tooltips</h3>
-              <p align="center" data-toggle="tooltip" data-placement="bottom" title="Tooltip under the text."></p>
-              <p align="center" data-toggle="tooltip" title="Here is the sample of talltooltip that contains three lines or more. More."></p>
+              <p align="center" data-toggle="tooltip" data-placement="bottom"
+                 style="margin-top: 130px;" title="Tooltip under the text."></p>
+              <p align="center" data-toggle="tooltip"
+                 title="Here is the sample of talltooltip that contains three lines or more. More."></p>
             </div>
           </div> <!-- /span3 with tooltips -->
 
-          <div class="span4">
+          <div class="span6">
             <div class="demo-text-box prl">
               <h3>Text Box</h3>
               <p><strong>Lato</strong> is free web-font designed by <strong>Lukasz&nbsp;Dziedzic</strong> from Warsaw.</p>
+
               <p>Here you can feel the color, size, line height and margins between paragraphs. Don’t forget to underline
                 your links, they are an important <a href="#">visual marker</a> for users.</p>
               <p>Also, to attract attention you can mark some&nbsp;important words using <strong>bold weights</strong>.</p>
             </div>
           </div> <!-- /text box -->
 
-          <div class="span2">
-            <h3 class="demo-panel-title demo-headings">Headings</h3>
-            <h1>Header</h1>
-            <h2>Header 2</h2>
-            <h3>Header 3</h3>
-            <h4>Header 4</h4>
-            <h5>Header 5</h5>
-            <h6>Header 6</h6>
-          </div> <!-- /headings -->
         </div> <!-- /row -->
 
         <div class="row">
@@ -511,7 +503,20 @@
             </ul>
           </div>
 
-          <div class="span3">
+          <div class="span6">
+            <h3>Quotes</h3>
+            <blockquote>
+              <p>
+                Computers in the future may weigh no more than 1.5 tons.
+              </p>
+              <small>Popular Mechanics, 1949</small>
+            </blockquote>
+          </div>
+
+        </div>
+
+        <div class="row">
+          <div class="span6">
             <h3>Table</h3>
             <table class="table">
               <tr>
@@ -529,48 +534,98 @@
             </table>
           </div>
 
-          <div class="span3">
-            <h3>Quotes</h3>
-            <blockquote>
-              <p>
-                Computers in the future may weigh no more than 1.5 tons.
-              </p>
-              <small>Popular Mechanics, 1949</small>
-            </blockquote>
+          <div class="span6">
+            <h3>Preformatted</h3>
+            <pre>Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. <acronym title="National Basketball Association">NBA</acronym> Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus. <abbr title="Avenue">AVE</abbr></pre>
           </div>
-
         </div>
 
         <div class="row">
           <div class="span12">
-            <h3>Text</h3>
-            <p>
-              Lorem <sup>superscript</sup> dolor <sub>subscript</sub> amet,
-              consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque
-              aliquam. <cite>cite</cite>. Nunc iaculis suscipit dui. Nam sit amet
-              sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida
-              vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis
-              mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare
-              tortor. Donec sed tellus eget sapien fringilla
-              nonummy. <acronym title="National Basketball
-                                       Association">NBA</acronym> Mauris a ante. Suspendisse quam sem,
-              consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue
-              quis tellus.  <abbr title="Avenue">AVE</abbr>
-            </p>
+            <h3>Featured</h3>
+          </div>
+          <div class="span3">
+            <div class="feature">
+              <a href="#fakelink">
+                <h5>Featured 1</h5>
+                <p>
+                  Lorem ipsum dolor sit ametq, consectetuer adipiscing
+                  elit. Nullam dignissim convallis est.q
+                </p>
+              </a>
+            </div>
+          </div>
+          <div class="span3">
+            <div class="feature">
+              <a href="#fakelink">
+                <h5>Featured 2</h5>
+                <p>
+                  Lorem ipsum dolor sit ametq, consectetuer adipiscing
+                  elit. Nullam dignissim convallis est.q
+                </p>
+              </a>
+            </div>
+          </div>
+          <div class="span3">
+            <div class="feature">
+              <a href="#fakelink">
+                <h5>Featured 3</h5>
+                <p>
+                  Lorem ipsum dolor sit ametq, consectetuer adipiscing
+                  elit. Nullam dignissim convallis est.q
+                </p>
+              </a>
+            </div>
+          </div>
+          <div class="span3">
+            <div class="feature">
+              <a href="#fakelink">
+                <h5>Featured 4</h5>
+                <p>
+                  Lorem ipsum dolor sit ametq, consectetuer adipiscing
+                  elit. Nullam dignissim convallis est.q
+                </p>
+              </a>
+            </div>
+          </div>
+        </div>
 
-            <pre>
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam
-              dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis
-              suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at,
-              tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis
-              luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget
-              metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla
-              nonummy. <acronym title="National Basketball
-                                       Association">NBA</acronym> Mauris a ante. Suspendisse quam sem,
-              consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue
-              quis tellus.  <abbr title="Avenue">AVE</abbr>
-            </pre>
+        <div class="row">
+          <div class="span12">
+            <h3>Gallery</h3>
+            <div class="gallery">
+              <center>
+                <div class="thumbnail">
+                  <a class="fancybox" rel="gallery"
+                     href="/pictures/img/b1bb546868e772d9cef41303b7383218.jpg">
+                    <img src="/pictures/img/b1bb546868e772d9cef41303b7383218-thumb.jpg" />
+                  </a>
+                </div>
+                <div class="thumbnail">
+                  <a class="fancybox" rel="gallery"
+                     href="/pictures/img/b8202bb2b8e16d8fc04df6ac74f81fdd.jpg">
+                    <img src="/pictures/img/b8202bb2b8e16d8fc04df6ac74f81fdd-thumb.jpg" />
+                  </a>
+                </div>
+                <div class="thumbnail">
+                  <a class="fancybox" rel="gallery"
+                     href="/pictures/img/1e6ee2674312b3767a7cd6c8ba1c2c77.jpg">
+                    <img src="/pictures/img/1e6ee2674312b3767a7cd6c8ba1c2c77-thumb.jpg" />
+                  </a>
+                </div>
+                <div class="thumbnail">
+                  <a class="fancybox" rel="gallery"
+                     href="/pictures/img/3ead816af0403f4e1c3280868bd5f248.jpg">
+                    <img src="/pictures/img/3ead816af0403f4e1c3280868bd5f248-thumb.jpg" />
+                  </a>
+                </div>
+              </center>
+            </div>
+          </div>
+        </div>
 
+        <div class="row">
+          <div class="span6">
             <h1>Heading 1</h1>
             <p>
               Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam
@@ -578,25 +633,8 @@
               iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi,
               imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent
               mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu
-              volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed
-              tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse
-              quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi
-              imperdiet augue quis tellus.
+              volutpat enim diam eget metus.
             </p>
-
-            <h2>Heading 2</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam
-              dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc
-              iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi,
-              imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent
-              mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu
-              volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed
-              tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse
-              quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi
-              imperdiet augue quis tellus.
-            </p>
-
             <h3>Heading 3</h3>
             <p>
               Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam
@@ -604,25 +642,8 @@
               iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi,
               imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent
               mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu
-              volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed
-              tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse
-              quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi
-              imperdiet augue quis tellus.
+              volutpat enim diam eget metus.
             </p>
-
-            <h4>Heading 4</h4>
-            <p>
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam
-              dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc
-              iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi,
-              imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent
-              mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu
-              volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed
-              tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse
-              quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi
-              imperdiet augue quis tellus.
-            </p>
-
             <h5>Heading 5</h5>
             <p>
               Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam
@@ -630,12 +651,28 @@
               iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi,
               imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent
               mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu
-              volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed
-              tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse
-              quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi
-              imperdiet augue quis tellus.
+              volutpat enim diam eget metus.
             </p>
-
+          </div>
+          <div class="span6">
+            <h2>Heading 2</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam
+              dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc
+              iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi,
+              imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent
+              mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu
+              volutpat enim diam eget metus.
+            </p>
+            <h4>Heading 4</h4>
+            <p>
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam
+              dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc
+              iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi,
+              imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent
+              mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu
+              volutpat enim diam eget metus.
+            </p>
             <h6>Heading 6</h6>
             <p>
               Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam
@@ -643,14 +680,11 @@
               iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi,
               imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent
               mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu
-              volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed
-              tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse
-              quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi
-              imperdiet augue quis tellus.
+              volutpat enim diam eget metus.
             </p>
-
           </div>
-        </div>
+
+        </div> <!-- /.row -->
 
       </div> <!-- /.container -->
       <div id="push"></div>
@@ -677,6 +711,33 @@
   </body>
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.pack.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.0.6/jquery.mousewheel.min.js"></script>
+  <script src="/assets/js/jquery.fancybox-buttons.js"></script>
+  <script src="/assets/js/jquery.fancybox-media.js"></script>
+  <script src="/assets/js/jquery.fancybox-thumbs.js"></script>
+  <script src="/assets/js/jquery.placeholder.js"></script>
+  <script src="/assets/js/jquery.tagsinput.js"></script>
   <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+  <script src="/assets/js/bootstrap-select.js"></script>
+  <script src="/assets/js/bootstrap-switch.js"></script>
+  <script src="/assets/js/flatui.js"></script>
+
+  <script>
+$(document).ready(function() {
+  $(".fancybox").fancybox({
+    openEffect	: 'fade',
+    closeEffect	: 'fade',
+    helpers : {
+      overlay : {
+        css : {
+          'background' : 'rgba(0, 0, 0, 0.9)'
+        }
+      }
+    }
+  });
+});
+  </script>
 
 </html>
