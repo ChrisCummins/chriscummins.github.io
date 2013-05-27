@@ -78,12 +78,12 @@
             <div class="row">
               <div class="span2">
                 <dl class="palette palette-green">
-                  <dt>#00ab6f</dt>
+                  <dt>#00925f</dt>
                   <dd>Green</dd>
                 </dl>
-                <dl class="palette palette-green">
+                <dl class="palette palette-green-highlight">
                   <dt>#00ab6f</dt>
-                  <dd>Green</dd>
+                  <dd>Highlight</dd>
                 </dl>
               </div>
 
