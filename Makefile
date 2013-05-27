@@ -58,12 +58,15 @@ css +=						\
 	$(NULL)
 
 js += 						\
+	assets/js/flatui.js			\
 	assets/js/gen-regions.js		\
 	assets/js/genetics.js			\
 	assets/js/impress.js			\
 	assets/js/jquery.fancybox-buttons.js	\
 	assets/js/jquery.fancybox-media.js	\
 	assets/js/jquery.fancybox-thumbs.js	\
+	assets/js/jquery.placeholder.js		\
+	assets/js/jquery.tagsinput.js		\
 	assets/js/julius.js			\
 	assets/js/music.js			\
 	assets/js/pictures.js			\
@@ -72,6 +75,12 @@ js += 						\
 	$(NULL)
 
 extra_site +=					\
+	assets/fonts/Flat-UI-Icons.dev.svg	\
+	assets/fonts/Flat-UI-Icons.eot		\
+	assets/fonts/Flat-UI-Icons.svg		\
+	assets/fonts/Flat-UI-Icons.ttf		\
+	assets/fonts/Flat-UI-Icons.woff		\
+	assets/fonts/icomoon-session.json	\
 	assets/img/arrows.png			\
 	assets/img/blank.gif			\
 	assets/img/check.png			\
@@ -97,13 +106,16 @@ extra_site +=					\
 	assets/img/slider-handle.png		\
 	assets/img/slider-track.png		\
 	assets/img/soundcloud.png		\
+	assets/img/switch-mask.png		\
+	assets/img/tile-ribbon-2x.png		\
+	assets/img/tile-ribbon.png		\
+	assets/img/todo-done-2x.png		\
+	assets/img/todo-done.png		\
+	assets/img/todo-search-2x.png		\
+	assets/img/todo-search.png		\
+	assets/img/todo-todo-2x.png		\
+	assets/img/todo-todo.png		\
 	assets/img/youtube.png			\
-	assets/fonts/Flat-UI-Icons.dev.svg	\
-	assets/fonts/Flat-UI-Icons.eot		\
-	assets/fonts/Flat-UI-Icons.svg		\
-	assets/fonts/Flat-UI-Icons.ttf		\
-	assets/fonts/Flat-UI-Icons.woff		\
-	assets/fonts/icomoon-session.json	\
 	genetics/eiffel-tower.jpg		\
 	genetics/kyle-broflovski.jpg		\
 	genetics/marilyn-monroe.jpg		\
