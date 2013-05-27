@@ -141,6 +141,7 @@
     <a id="nav-arrow-right" class="nav-arrow">&gt;</a>
 
     <!-- The feedback form -->
+    <div class="feedback-overlay"></div>
     <div class="feedback-form">
       <form id="feedback-form-messageform" name="contactme" action="">
       	<p>Send me a message</p>

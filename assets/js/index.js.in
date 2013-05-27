@@ -931,8 +931,14 @@ function isInSlideshow() {
      */
     $(function() {
 
+      $('.feedback-overlay').click(function() {
+        $('.feedback-form').fadeOut('fast');
+        $('.feedback-overlay').fadeOut('fast');
+      });
+
       $('#feedback-form-cancel').click(function() {
         $('#feedback-form-messageform').fadeOut('fast');
+        $('.feedback-overlay').fadeOut('fast');
         api.impress_goto('hello');
       });
 
@@ -987,6 +993,7 @@ function isInSlideshow() {
         $('#feedback-form-messageform').show();
 
         /* Show the feedback-form */
+        $('.feedback-overlay').fadeIn('slow');
         $('.feedback-form').fadeIn('slow');
         break;
       case 'privacy':
@@ -1009,6 +1016,7 @@ function isInSlideshow() {
   $(document).on('impress:stepleave', function(e) {
 
     /* Hide the feedback-form */
+    $('.feedback-overlay').fadeOut('slow');
     $('.feedback-form').fadeOut('slow');
   });
 
