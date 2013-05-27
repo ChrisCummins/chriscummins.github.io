@@ -58,6 +58,8 @@ css +=						\
 	$(NULL)
 
 js += 						\
+	assets/js/bootstrap-select.js		\
+	assets/js/bootstrap-switch.js		\
 	assets/js/flatui.js			\
 	assets/js/gen-regions.js		\
 	assets/js/genetics.js			\
