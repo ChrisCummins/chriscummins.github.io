@@ -1,11 +1,8 @@
 body {
   min-height: 1000px;
-  -webkit-box-shadow: 0 0 25px rgba(0,0,0,0.3) inset;
-  -moz-box-shadow:    0 0 25px rgba(0,0,0,0.3) inset;
-  box-shadow:         0 0 25px rgba(0,0,0,0.3) inset;
 }
 
-.arrow {
+.nav-arrow {
     width: 29px;
     height: 54px;
     background: url('../img/arrows.png') no-repeat;
@@ -41,23 +38,23 @@ body {
 @-o-keyframes fadein {
     from { opacity: 0; } to { opacity: 0.1; }
 }
-.arrow:hover {
+.nav-arrow:hover {
     opacity: 1;
 }
-#arrowLeft {
+#nav-arrow-left {
     left: 30px;
 }
-#arrowRight {
+#nav-arrow-right {
     right: 30px;
     background-position: top right;
 }
-.impress-on-hello #arrowLeft {
+.impress-on-hello #nav-arrow-left {
     display: none;
 }
-.impress-on-nonstep #arrowLeft {
+.impress-on-nonstep #nav-arrow-left {
     display: none;
 }
-.impress-on-overview .arrow {
+.impress-on-overview .nav-arrow {
     display: none;
 }
 
@@ -121,7 +118,7 @@ body {
 }
 
 /* Fallback static HTML styles */
-.impress-not-supported .arrow {
+.impress-not-supported .nav-arrow {
   display: none;
 }
 .impress-not-supported .step {

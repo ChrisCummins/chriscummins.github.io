@@ -114,8 +114,8 @@
 
     </div> <!-- /.impress -->
 
-    <a id="arrowLeft" class="arrow">&lt;</a>
-    <a id="arrowRight" class="arrow">&gt;</a>
+    <a id="nav-arrow-left" class="nav-arrow">&lt;</a>
+    <a id="nav-arrow-right" class="nav-arrow">&gt;</a>
 
     <!-- The feedback form -->
     <div class="feedback-form">

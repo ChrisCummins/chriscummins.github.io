@@ -44,14 +44,14 @@
     /* BUTTON PRESS BEHAVIOUR *************************************************/
 
     /* Clicking the left arrow always takes you back to the previous step */
-    byId('arrowLeft').onclick = function() {
+    byId('nav-arrow-left').onclick = function() {
       api.prev();
     };
 
     /* Clicking the right arrow takes you to the next step, unless on a nonstep,
      * in which case it returns to the overview step.
      */
-    byId('arrowRight').onclick = function() {
+    byId('nav-arrow-right').onclick = function() {
       /* If on a nonstep, return to the overview. */
       if (body.className.match(/\bimpress-on-nonstep\b/)) {
         api.impress_goto('overview');
