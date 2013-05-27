@@ -34,64 +34,12 @@
   var formColorGood = '#81f781';
   var formColorBad = '#f2dede';
 
-  /* TOOLTIPS *****************************************************************/
-
-  (function($) {
-
-    $.fn.tooltip = function(tooltipEl, name) {
-      var $tooltipEl = $(tooltipEl);
-      var $name = $(name);
-      return this.each(function() {
-        var $this = $(this);
-        var hide = function() {
-          var timeout = setTimeout(function() {
-            $tooltipEl.fadeOut('slow');
-          }, 600);
-
-          $this.data('tooltip.timeout', timeout);
-        };
-
-        /* Bind an event handler to 'hover' (mouseover/mouseout): */
-        $this.hover(function() {
-
-          /* Don't do anything if on overview step: */
-          if (!$('body').hasClass('impress-on-overview')) {
-
-            /* Show tooltip: */
-            clearTimeout($this.data('tooltip.timeout'));
-            $tooltipEl.fadeIn('slow');
-
-            /* Set step text: */
-            if ($('body').hasClass('impress-supported')) {
-              var string = 'You can find me on ' + name + '.';
-              if (string != 'You can find me on undefined.')
-                $('#findme').text(string);
-            }
-          }
-        }, hide);
-
-        /* If the user is hovering over the tooltip div, cancel the timeout: */
-        $tooltipEl.hover(function() {
-          clearTimeout($this.data('tooltip.timeout'));
-        }, hide);
-      });
-    };
-
-  })(jQuery);
-
   /* DOCUMENT READY FUNCTIONS *************************************************/
 
   $(document).ready(function() {
 
     /* Bootstrap impress first */
     api.init();
-
-    /* Connect the tooltips to their parent elements */
-    $('#linkedin').tooltip('#tooltip-linkedin', 'Linked In');
-    $('#facebook').tooltip('#tooltip-facebook', 'Facebook');
-    $('#youtube').tooltip('#tooltip-youtube', 'YouTube');
-    $('#soundcloud').tooltip('#tooltip-soundcloud', 'SoundCloud');
-    $('#github').tooltip('#tooltip-github', 'GitHub');
 
     /* BUTTON PRESS BEHAVIOUR *************************************************/
 
@@ -116,6 +64,11 @@
      * so, an AJAX request is made and the form is submitted.
      */
     $(function() {
+
+      $('#cancel').click(function() {
+        $('#messageform').fadeOut('fast');
+        api.impress_goto('hello');
+      });
 
       $('#send').click(function() {
         if (formIsValid()) {

@@ -1,212 +1,70 @@
-/*
- *              Top level style sheet
- *
- * This defines global styles for use accross the website. It is based on the
- * stylesheet for the impress.js demo, available here:
- *
- *      https://github.com/bartaz/impress.js/
- */
-
-/*
- *              CSS Reset
- *
- * http://meyerweb.com/eric/tools/css/reset/
- * v2.0 | 20110126
- * License: none (public domain)
- */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-    margin:             0;
-    padding:            0;
-    border:             0;
-    font-size:          100%;
-    font:               inherit;
-    vertical-align:     baseline;
-}
-
-/*
- * HTML5 display-role reset for older browsers
- */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-    display:            block;
-}
-
-ol, ul {
-    list-style:         none;
-}
-
-blockquote, q {
-    quotes:             none;
-}
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-    content:            '';
-    content:            none;
-}
-
-table {
-    border-collapse:    collapse;
-    border-spacing:     0;
-}
-
-/*
- *              Top level styles
- */
 body {
-    min-height:         740px;
-    line-height:        1;
-
-    /*
-     * Set up a sweet, sweet radial background
-     */
-    background: rgb(215, 215, 215);
-    background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(rgb(240, 240, 240)), to(rgb(190, 190, 190)));
-    background: -webkit-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
-    background:    -moz-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
-    background:     -ms-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
-    background:      -o-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
-    background:         radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+    min-height: 740px;
+    line-height: 1;
 }
 
-/*
- * Add in some standard text styles
- */
-b, strong {
-    font-weight:        bold;
-}
-
-i, em {
-    font-style:         italic;
-}
-
-/*
- *              Hyperlink formatting
- */
-a {
-    text-decoration:    none;
-    font-weight:        bolder;
-    color:              inherit;
-    padding:            0 0.1em;
-    border-radius:      0.2em;
-
-    -webkit-transition: 0.5s;
-    -moz-transition:    0.5s;
-    -ms-transition:     0.5s;
-    -o-transition:      0.5s;
-    transition:         0.5s;
-}
-
-a:hover,
-a:focus {
-    opacity:            0.6;
-}
-
-/*
- *              Step Navigation Arrows
- *
- * This is the pair of navigation arrows which reside on either side of the
- * page.
- */
 .arrow {
-    width:              29px;
-    height:             54px;
-    background:         url('../img/arrows.png') no-repeat;
-    position:           fixed;
-    top:                50%;
-    margin-top:         -27px;
-    cursor:             pointer;
-    text-indent:        -9999px;
-    overflow:           hidden;
-    border:             none !important;
-    opacity:            0.5;
+    width: 29px;
+    height: 54px;
+    background: url('../img/arrows.png') no-repeat;
+    position: fixed;
+    top: 50%;
+    margin-top: -27px;
+    cursor: pointer;
+    text-indent: -9999px;
+    overflow: hidden;
+    border: none !important;
+    opacity: 0.1;
 
     -moz-transition:    0.2s opacity;
     -webkit-transition: 0.2s opacity;
     -o-transition:      0.2s opacity;
     transition:         0.2s opacity;
 
-    /*
-     * Keyframe animation to fade the arrows in on page load.
-     */
-    animation:          fadein 3s;
-    -moz-animation:     fadein 3s;
-    -webkit-animation:  fadein 3s;
-    -o-animation:       fadein 3s;
+    /* Fade the arrows in on page load */
+    animation:          fadein 2s;
+    -moz-animation:     fadein 2s;
+    -webkit-animation:  fadein 2s;
+    -o-animation:       fadein 2s;
 }
 @keyframes fadein {
-    from { opacity: 0; } to { opacity: 0.5; }
+    from { opacity: 0; } to { opacity: 0.1; }
 }
 @-moz-keyframes fadein {
-    from { opacity: 0; } to { opacity: 0.5; }
+    from { opacity: 0; } to { opacity: 0.1; }
 }
 @-webkit-keyframes fadein {
-    from { opacity: 0; } to { opacity: 0.5; }
+    from { opacity: 0; } to { opacity: 0.1; }
 }
 @-o-keyframes fadein {
-    from { opacity: 0; } to { opacity: 0.5; }
+    from { opacity: 0; } to { opacity: 0.1; }
 }
-
 .arrow:hover {
-    opacity:            1;
+    opacity: 1;
 }
-
 #arrowLeft {
-    left:               40px;
+    left: 20px;
 }
 #arrowRight {
-    right:               40px;
+    right: 20px;
     background-position: top right;
 }
-
 .impress-on-hello #arrowLeft {
-    display:            none;
+    display: none;
 }
-
 .impress-on-nonstep #arrowLeft {
-    display:            none;
+    display: none;
 }
-
-/* Don't have arrows on overview */
 .impress-on-overview .arrow {
-    display:            none;
+    display: none;
 }
 
-/*
- * Tooltip styles
- */
-.tooltip {
-    display:            none;
-    position:           fixed;
-    right:              0px;
-
-    padding:            3px;
-    border-radius:      15px;
-    background-color:   #fff;
-}
-
-/*
- *              Styling for presentation slides
- *
- * This describes the main styling for the page's presentation `steps'.
- */
+/* Styling for presentation slides */
 .step {
-    position:           relative;
-    width:              900px;
-    padding:            40px;
-    margin:             20px auto;
+    position: relative;
+    width: 900px;
+    padding: 40px;
+    margin: 20px auto;
 
     -webkit-box-sizing: border-box;
     -moz-box-sizing:    border-box;
@@ -214,198 +72,123 @@ a:focus {
     -o-box-sizing:      border-box;
     box-sizing:         border-box;
 
-    /*
-     * Text styling.
-     */
-    font-family:        'PT Serif', georgia, serif;
-    font-size:          48px;
-    line-height:        1.5;
+    font-family: "Lato", sans-serif;
+    font-size: 48px;
+    line-height: 1.5;
 
-    /*
-     * Opacity control.
-     */
-    -moz-transition:    0.9s opacity;
+    -moz-transition: 0.9s opacity;
     -webkit-transition: 0.9s opacity;
-    transition:         0.9s opacity;
-}
+    transition: 0.9s opacity;
 
-/*
- * Make the inactive steps translucent.
- */
-.step {
-    opacity:            0.25;
+    opacity: 0.25;
 }
-
 .step:hover,
 .step.active {
-    opacity:            1;
+    opacity: 1;
 }
+.step > a {
+  font-weight: 900;
+  text-decoration: none;
 
-/*
- *              Per-Step Styles
- *
- * Included here is specific styling information for individual steps.
- */
-#overview {
-    display:            none;
-    height:             1px;
+  -webkit-transition: 0.5s;
+  -moz-transition:    0.5s;
+  -ms-transition:     0.5s;
+  -o-transition:      0.5s;
+  transition:         0.5s;
 }
-
-/* Translucent steps on overview */
-.impress-on-overview .step {
-    opacity:            0.3;
-    cursor:             pointer;
-}
-
-/* Highlight steps on mousover */
-.impress-on-overview .step:hover {
-    opacity:            1;
-}
-
-/* Disable link hover effects on overview */
-.impress-on-overview a {
-    opacity:            1;
-}
-
-/*
- *              Fallback static HTML styles
- *
- * This provides styling for users which do not have impress support (mobile
- * browsers, no JavaScript, etc).
- */
-
-/*
- * Don't show the navigation arrows.
- */
-.impress-not-supported .arrow {
-    display:            none;
-}
-
-/*
- * Don't fade inactive steps.
- */
-.impress-not-supported .step {
-    opacity:            1;
-}
-
-/*
- * Special smallprint for block-text
- */
 .impress-supported .smallprint {
-    font-size:          28px;
+  font-size: 28px;
 }
 
-/*
- *
- */
-.overlay {
-    display:            none;
-
-    font-family:        'Noto', sans-serif;
-    font-size:          20px;
-    color:              #333;
-
-    /* center and bring to front */
-    position:           fixed;
-    top:                50%;
-    left:               50%;
-    z-index:            10;
-
-    width:              400px;
-    height:             390px;
-    margin-left:        -200px;
-    margin-top:         -210px;
-
-    padding:            10px;
-    border-radius:      10px;
-    border: 1px solid #999;
-    border: inset 1px solid #333;
-    -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
-    -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
-    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
-
-    background: -webkit-gradient(linear, 50% 50%, 0, 50% 50%, 500, from(rgb(240, 240, 240)), to(rgb(190, 190, 190)));
-    background: -webkit-linear-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
-    background:    -moz-linear-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
-    background:     -ms-linear-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
-    background:      -o-linear-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
-    background:         linear-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+/* Per-Step Styles */
+#overview {
+    display: none;
+    height: 1px;
+}
+.impress-on-overview .step {
+    opacity: 0.3;
+    cursor: pointer;
+}
+.impress-on-overview .step:hover {
+    opacity: 1;
+}
+.impress-on-overview a:hover,
+.impress-on-overview a:focus {
+  /* Zero link effects on overview */
+  color: #fff;
 }
 
-input,
-textarea {
-    font-family:        inherit;
-    font-size:          16px;
-    width:              390px;
-    border:             1px solid #999;
-    border-radius:      5px;
-    -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
-    -moz-box-shadow:    0px 0px 8px rgba(0, 0, 0, 0.3);
-    box-shadow:         0px 0px 8px rgba(0, 0, 0, 0.3);
+/* Fallback static HTML styles */
+.impress-not-supported .arrow {
+  display: none;
 }
-
-form #email {
-    height: 30px;
+.impress-not-supported .step {
+  /* Don't fade inactive steps */
+  opacity: 1;
 }
-
-form #message {
-    display:            block;
-    resize:             none;
-}
-
-/* The Send button */
-form #send {
-    width:              100px;
-    position:           absolute;
-    right:              15px;
-    bottom:             10px;
-    font-weight:        bold;
-    background:         #09C;
-    color:              #fff;
-    height:             30px;
-    -webkit-border-radius: 15px;
-    -moz-border-radius: 15px;
-    border-radius:      15px;
-    border:             1p solid #999;
-    cursor:             pointer;
-
-    -webkit-transition: 0.5s;
-    -moz-transition:    0.5s;
-    -ms-transition:     0.5s;
-    -o-transition:      0.5s;
-    transition:         0.5s;
-}
-
-form #send:hover {
-    background:         #fff;
-    color:              #09C;
-}
-
-/* Tiny text */
-.overlay .footer {
-    width:              280px;
-    font-size:          11px;
-    position:           absolute;
-    left:               10px;
-    bottom:             17px;
-    line-height:        150%;
-}
-
-.overlay .footer a:hover {
-    color:              #09C;
-}
-
-.overlay #messagesuccess {
-    display:            none;
-}
-
-/*
- * If impress isn't supported, then nonsteps are considered to be small
- * footprint blocks.
- */
 .impress-not-supported .nonstep {
-    font-size:          14px;
-    padding:            0px;
-    width:              50%;
-    color:              #242424;
+  /* If impress isn't supported, then nonsteps are considered to be small
+   * footprint blocks. */
+  font-size:          14px;
+  padding:            0px;
+  width:              50%;
+  color: #35d59d;
+}
+.impress-not-supported .nonstep > a {
+  color: #35d59d;
+}
+.impress-not-supported .nonstep > a:hover,
+.impress-not-supported .nonstep > a:focus {
+  color: #ff9700;
+}
+
+/* Overlay */
+.overlay {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  padding: 10px;
+  background-color: #006f48;
+
+  left: 50%;
+  width: 500px;
+  margin-left: -250px;
+
+  top: 50%;
+  height: 400px;
+  margin-top: -200px;
+
+  -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow:    0px 0px 8px rgba(0, 0, 0, 0.5);
+  box-shadow:         0px 0px 8px rgba(0, 0, 0, 0.5);
+}
+.overlay > form > p {
+ margin-bottom: 10px;
+}
+.overlay > form #message {
+  display: block;
+  resize: none;
+  width: 469px;
+  height: 220px;
+}
+.overlay > form #email {
+  width: 96%;
+}
+.overlay > form > .btn {
+  position: absolute;
+  bottom: 5px;
+
+  width: -webkit-calc(50% - 25px);
+  width:    -moz-calc(50% - 25px);
+  width:      -o-calc(50% - 25px);
+  width:         calc(50% - 25px);
+}
+.overlay > form #cancel {
+  left: 5px;
+}
+.overlay > form #send {
+  right: 5px;
+}
+.overlay #messagesuccess {
+    display: none;
 }

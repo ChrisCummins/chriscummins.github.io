@@ -651,6 +651,7 @@ body {
   margin-left: 0;
   margin-right: 0;
 }
+
 .caret {
   border-left-width: 6px;
   border-right-width: 6px;
@@ -680,6 +681,7 @@ body {
   border-right-width: 6px;
   border-left-width: 6px;
 }
+
 .navbar {
   font-size: 15.988px;
   /* 16px */
