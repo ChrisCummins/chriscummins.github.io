@@ -430,6 +430,21 @@
   <script src="/assets/js/jquery.fancybox-buttons.js"></script>
   <script src="/assets/js/jquery.fancybox-media.js"></script>
   <script src="/assets/js/jquery.fancybox-thumbs.js"></script>
-  <script src="/assets/js/pictures.js"></script>
+
+  <script>
+    $(document).ready(function() {
+      $(".fancybox").fancybox({
+        openEffect	: 'fade',
+        closeEffect	: 'fade',
+        helpers : {
+          overlay : {
+            css : {
+              'background' : 'rgba(0, 0, 0, 0.9)'
+            }
+          }
+        }
+      });
+    });
+  </script>
 
 </html>
