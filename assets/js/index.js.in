@@ -889,17 +889,6 @@ function isInSlideshow() {
   /* We keep track of the currently visible step here */
   var currentStep = 'hello';
 
-  /* The Regular expression used to validate email addresses. Note that this
-   * only checks that syntax, and doesn't validate against a list of known top
-   * level domains.
-   */
-  var emailRe = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
-  /* Form feedback settings */
-  var formColorTime = 500;
-  var formColorGood = '#81f781';
-  var formColorBad = '#f2dede';
-
   /* DOCUMENT READY FUNCTIONS *************************************************/
 
   $(document).ready(function() {
@@ -925,41 +914,6 @@ function isInSlideshow() {
         api.next();
       }
     };
-
-    /* Clicking on the form send button ensures that form contents are valid. If
-     * so, an AJAX request is made and the form is submitted.
-     */
-    $(function() {
-
-      $('.feedback-overlay').click(function() {
-        $('.feedback-form').fadeOut('fast');
-        $('.feedback-overlay').fadeOut('fast');
-      });
-
-      $('#feedback-form-cancel').click(function() {
-        $('#feedback-form-messageform').fadeOut('fast');
-        $('.feedback-overlay').fadeOut('fast');
-        api.impress_goto('hello');
-      });
-
-      $('#feedback-form-send').click(function() {
-        if (formIsValid()) {
-
-          $.ajax({
-            type: 'POST',
-            url: 'message.php',
-            data: 'email=' + $('#feedback-form-email')[0].value +
-              '&message=' + $('#feedback-form-message')[0].value,
-            success: function() {
-              onSubmitReceipt();
-            }
-          });
-        }
-
-        return false;
-      });
-    });
-
   });
 
   /* STEP BEHAVIOUR ***********************************************************/
@@ -1035,90 +989,5 @@ function isInSlideshow() {
 
     event.preventDefault();
   }, false);
-
-  /* THE FORM *****************************************************************/
-
-  /* Flash a background color */
-  function flashBgColor(element, color) {
-
-    element.style.background = color;
-
-    /* Queue the email form color reset */
-    var timeout = setInterval(function() {
-      element.style.background = '#FFF';
-      clearInterval(timeout);
-    }, formColorTime);
-  }
-
-  /* Validate the contents of the email form automatically */
-  $('#feedback-form-email').focusout(function(e) {
-    if ($('#feedback-form-email')[0].value != '' && validateEmail())
-      flashBgColor($('#feedback-form-email')[0], formColorGood);
-  });
-
-  /* Validate the email address */
-  function validateEmail() {
-
-    var ebox = $('#feedback-form-email')[0];
-
-    /* Validate the email and provide visual feedback */
-    if (emailRe.test(ebox.value))
-      return true;
-    else {
-      flashBgColor(ebox, formColorBad);
-      return false;
-    }
-
-  }
-
-  /* Validate the message form */
-  function validateMessage() {
-
-    var mbox = $('#feedback-form-message')[0];
-
-    if (mbox.value.replace(/\s*/, '') != '')
-      return true;
-    else {
-      flashBgColor(mbox, formColorBad);
-      return false;
-    }
-
-  }
-
-  /* Validate the form contents */
-  function formIsValid() {
-
-    /* We must be sure to run all validation checks regardless of the success of
-     * the others. This ensures that proper visual feedback is given */
-    var m = validateMessage();
-    var e = validateEmail();
-
-    return (m && e);
-
-  }
-
-  /* Form response behaviour. Show a thank you message, tidy up form state and
-   * reset view to start.
-   */
-  function onSubmitReceipt() {
-    $('#feedback-form-messageform').fadeOut('fast');
-
-    var successTimeout = setInterval(function() {
-      $('#feedback-form-messagesuccess').fadeIn('fast');
-      clearInterval(successTimeout);
-    }, 500);
-
-    var helloTimeout = setInterval(function() {
-      /* Go to start */
-      api.impress_goto('hello');
-      $('#hellomessage').text('Hello, friend.');
-
-      /* Clear the form contents */
-      $('#feedback-form-message')[0].value = '';
-      $('#feedback-form-email')[0].value = '';
-
-      clearInterval(helloTimeout);
-    }, 2500);
-  }
 
 })(document, window);
