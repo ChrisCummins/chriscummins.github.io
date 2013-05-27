@@ -694,6 +694,7 @@ body {
   /* 24px */
 
   font-weight: 700;
+  margin-top: 2px;
   margin-left: 0;
   padding: 23px 28px 24px 32px;
   text-shadow: none;
