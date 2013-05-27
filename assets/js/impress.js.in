@@ -731,8 +731,8 @@
 function isInSlideshow() {
   var e = document.activeElement;
 
-  return e != document.getElementById('message') &&
-         e != document.getElementById('email');
+  return e != document.getElementById('feedback-form-message') &&
+         e != document.getElementById('feedback-form-email');
 }
 
 /* NAVIGATION EVENTS **********************************************************/

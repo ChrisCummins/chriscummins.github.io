@@ -65,19 +65,19 @@
      */
     $(function() {
 
-      $('#cancel').click(function() {
-        $('#messageform').fadeOut('fast');
+      $('#feedback-form-cancel').click(function() {
+        $('#feedback-form-messageform').fadeOut('fast');
         api.impress_goto('hello');
       });
 
-      $('#send').click(function() {
+      $('#feedback-form-send').click(function() {
         if (formIsValid()) {
 
           $.ajax({
             type: 'POST',
             url: 'message.php',
-            data: 'email=' + $('#email')[0].value +
-              '&message=' + $('#message')[0].value,
+            data: 'email=' + $('#feedback-form-email')[0].value +
+              '&message=' + $('#feedback-form-message')[0].value,
             success: function() {
               onSubmitReceipt();
             }
@@ -116,12 +116,12 @@
         titleSuffix = 'Contact';
         break;
       case 'overview':
-        /* (Re)set the overlay state to show the 'send message' form */
-        $('#messagesuccess').hide();
-        $('#messageform').show();
+        /* (Re)set the feedback-form state to show the 'send message' form */
+        $('#feedback-form-messagesuccess').hide();
+        $('#feedback-form-messageform').show();
 
-        /* Show the overlay */
-        $('.overlay').fadeIn('slow');
+        /* Show the feedback-form */
+        $('.feedback-form').fadeIn('slow');
         break;
       case 'privacy':
         titleSuffix = 'Privacy';
@@ -142,8 +142,8 @@
    */
   $(document).on('impress:stepleave', function(e) {
 
-    /* Hide the overlay */
-    $('.overlay').fadeOut('slow');
+    /* Hide the feedback-form */
+    $('.feedback-form').fadeOut('slow');
   });
 
   /* KEY BINDINGS *************************************************************/
@@ -177,15 +177,15 @@
   }
 
   /* Validate the contents of the email form automatically */
-  $('#email').focusout(function(e) {
-    if ($('#email')[0].value != '' && validateEmail())
-      flashBgColor($('#email')[0], formColorGood);
+  $('#feedback-form-email').focusout(function(e) {
+    if ($('#feedback-form-email')[0].value != '' && validateEmail())
+      flashBgColor($('#feedback-form-email')[0], formColorGood);
   });
 
   /* Validate the email address */
   function validateEmail() {
 
-    var ebox = $('#email')[0];
+    var ebox = $('#feedback-form-email')[0];
 
     /* Validate the email and provide visual feedback */
     if (emailRe.test(ebox.value))
@@ -200,7 +200,7 @@
   /* Validate the message form */
   function validateMessage() {
 
-    var mbox = $('#message')[0];
+    var mbox = $('#feedback-form-message')[0];
 
     if (mbox.value.replace(/\s*/, '') != '')
       return true;
@@ -227,10 +227,10 @@
    * reset view to start.
    */
   function onSubmitReceipt() {
-    $('#messageform').fadeOut('fast');
+    $('#feedback-form-messageform').fadeOut('fast');
 
     var successTimeout = setInterval(function() {
-      $('#messagesuccess').fadeIn('fast');
+      $('#feedback-form-messagesuccess').fadeIn('fast');
       clearInterval(successTimeout);
     }, 500);
 
@@ -240,8 +240,8 @@
       $('#hellomessage').text('Hello, friend.');
 
       /* Clear the form contents */
-      $('#message')[0].value = '';
-      $('#email')[0].value = '';
+      $('#feedback-form-message')[0].value = '';
+      $('#feedback-form-email')[0].value = '';
 
       clearInterval(helloTimeout);
     }, 2500);

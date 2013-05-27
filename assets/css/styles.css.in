@@ -144,8 +144,8 @@ body {
   color: #ff9700;
 }
 
-/* Overlay */
-.overlay {
+/* Feedback-Form */
+.feedback-form {
   display: none;
   position: fixed;
   z-index: 10;
@@ -164,33 +164,33 @@ body {
   -moz-box-shadow:    0px 0px 8px rgba(0, 0, 0, 0.5);
   box-shadow:         0px 0px 8px rgba(0, 0, 0, 0.5);
 }
-.overlay > form > p {
+.feedback-form > form > p {
  margin-bottom: 10px;
 }
-.overlay > form #message {
+.feedback-form > form #feedback-form-message {
   display: block;
   resize: none;
   width: 469px;
-  height: 220px;
+  height: 210px;
 }
-.overlay > form #email {
-  width: 96%;
+.feedback-form > form #feedback-form-email {
+  width: 483px;
 }
-.overlay > form > .btn {
+.feedback-form > form > .btn {
   position: absolute;
-  bottom: 5px;
+  bottom: 10px;
 
   width: -webkit-calc(50% - 35px);
   width:    -moz-calc(50% - 35px);
   width:      -o-calc(50% - 35px);
   width:         calc(50% - 35px);
 }
-.overlay > form #cancel {
-  left: 5px;
+.feedback-form > form #feedback-form-cancel {
+  left: 10px;
 }
-.overlay > form #send {
-  right: 5px;
+.feedback-form > form #feedback-form-send {
+  right: 10px;
 }
-.overlay #messagesuccess {
+.feedback-form #feedback-form-messagesuccess {
     display: none;
 }

@@ -117,18 +117,17 @@
     <a id="arrowLeft" class="arrow">&lt;</a>
     <a id="arrowRight" class="arrow">&gt;</a>
 
-    <!-- The feedback overlay -->
-    <div class="overlay">
-      <form id="messageform" name="contactme" action="">
+    <!-- The feedback form -->
+    <div class="feedback-form">
+      <form id="feedback-form-messageform" name="contactme" action="">
       	<p>Send me a message</p>
-      	<textarea id="message" name="message"></textarea>
+      	<textarea id="feedback-form-message" name="message"></textarea>
       	<p>Email</p>
-      	<input id="email" name="email" type="text" autocomplete="off" /><br />
-      	<input id="cancel" class="btn btn-large btn-warning" value="Cancel" />
-      	<input id="send" class="btn btn-large btn-success" type="submit" value="Send" />
+      	<input id="feedback-form-email" name="email" type="text" autocomplete="off" /><br />
+      	<input id="feedback-form-cancel" class="btn btn-large btn-warning" type="reset" value="Cancel" />
+      	<input id="feedback-form-send" class="btn btn-large btn-success" type="submit" value="Send" />
       </form>
-
-      <div id="messagesuccess">
+      <div id="feedback-form-messagesuccess">
         <center>
 	  <br /><br /><br /><br /><br /><br />
 	  <img src="/assets/img/check.png">

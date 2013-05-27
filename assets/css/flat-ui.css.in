@@ -196,7 +196,6 @@ you can use the generic selector below, but it's slower:
 body {
   background-color: #00ab6f;
   color: #fff;
-
   font-family: "Lato", sans-serif;
   font-size: 20px;
   line-height: 1.231;
