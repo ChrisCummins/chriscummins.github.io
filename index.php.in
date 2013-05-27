@@ -13,8 +13,31 @@
 
     <style type="text/css">body{padding-top:60px;}</style>
     <link rel="stylesheet" href="/assets/css/flat-ui.css" />
-    <link rel="stylesheet" href="/assets/css/styles.css" />
     <link rel="shortcut icon" href="/assets/img/favicon.ico" />
+
+    <style>
+      body {
+        min-height: 1000px;
+      }
+
+      /* Per-Step Styles */
+      #overview {
+          display: none;
+          height: 1px;
+      }
+      .impress-on-overview .step {
+          opacity: 0.3;
+          cursor: pointer;
+      }
+      .impress-on-overview .step:hover {
+          opacity: 1;
+      }
+      .impress-on-overview a:hover,
+      .impress-on-overview a:focus {
+        /* Zero link effects on overview */
+        color: #fff;
+      }
+    </style>
   </head>
 
   <body class="impress-not-supported">

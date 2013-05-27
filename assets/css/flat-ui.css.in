@@ -1057,6 +1057,114 @@ body {
   color: #fff;
 }
 
+/* Navigation arrows */
+.nav-arrow {
+    width: 29px;
+    height: 54px;
+    background: url('../img/arrows.png') no-repeat;
+    position: fixed;
+    top: 50%;
+    margin-top: -27px;
+    cursor: pointer;
+    text-indent: -9999px;
+    overflow: hidden;
+    border: none !important;
+    opacity: 0.1;
+
+    -moz-transition:    0.2s opacity;
+    -webkit-transition: 0.2s opacity;
+    -o-transition:      0.2s opacity;
+    transition:         0.2s opacity;
+
+    /* Fade the arrows in on page load */
+    animation:          fadein 1s;
+    -moz-animation:     fadein 1s;
+    -webkit-animation:  fadein 1s;
+    -o-animation:       fadein 1s;
+}
+@keyframes fadein {
+    from { opacity: 0; } to { opacity: 0.1; }
+}
+@-moz-keyframes fadein {
+    from { opacity: 0; } to { opacity: 0.1; }
+}
+@-webkit-keyframes fadein {
+    from { opacity: 0; } to { opacity: 0.1; }
+}
+@-o-keyframes fadein {
+    from { opacity: 0; } to { opacity: 0.1; }
+}
+.nav-arrow:hover {
+    opacity: 1;
+}
+#nav-arrow-left {
+    left: 30px;
+}
+#nav-arrow-right {
+    right: 30px;
+    background-position: top right;
+}
+.impress-on-hello #nav-arrow-left {
+    display: none;
+}
+.impress-on-nonstep #nav-arrow-left {
+    display: none;
+}
+.impress-on-overview .nav-arrow {
+    display: none;
+}
+
+/* Feedback-Form */
+.feedback-form {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  padding: 10px;
+  background-color: #006f48;
+
+  left: 50%;
+  width: 500px;
+  margin-left: -250px;
+
+  top: 50%;
+  height: 400px;
+  margin-top: -200px;
+
+  -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow:    0px 0px 8px rgba(0, 0, 0, 0.5);
+  box-shadow:         0px 0px 8px rgba(0, 0, 0, 0.5);
+}
+.feedback-form > form > p {
+ margin-bottom: 10px;
+}
+.feedback-form > form #feedback-form-message {
+  display: block;
+  resize: none;
+  width: 469px;
+  height: 210px;
+}
+.feedback-form > form #feedback-form-email {
+  width: 483px;
+}
+.feedback-form > form > .btn {
+  position: absolute;
+  bottom: 10px;
+
+  width: -webkit-calc(50% - 35px);
+  width:    -moz-calc(50% - 35px);
+  width:      -o-calc(50% - 35px);
+  width:         calc(50% - 35px);
+}
+.feedback-form > form #feedback-form-cancel {
+  left: 10px;
+}
+.feedback-form > form #feedback-form-send {
+  right: 10px;
+}
+.feedback-form #feedback-form-messagesuccess {
+    display: none;
+}
+
 .select {
   display: inline-block;
   margin-bottom: 10px;
@@ -3153,4 +3261,69 @@ input.todo-search-field.placeholder {
 .mhl,
 .mal {
   margin-left: 20px;
+}
+
+/* impress.js styling */
+.step {
+    position: relative;
+    width: 900px;
+    padding: 40px;
+    margin: 20px auto;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing:    border-box;
+    -ms-box-sizing:     border-box;
+    -o-box-sizing:      border-box;
+    box-sizing:         border-box;
+
+    font-family: "Lato", sans-serif;
+    font-size: 48px;
+    line-height: 1.5;
+
+    -moz-transition: 0.9s opacity;
+    -webkit-transition: 0.9s opacity;
+    transition: 0.9s opacity;
+
+    opacity: 0.25;
+}
+.step:hover,
+.step.active {
+    opacity: 1;
+}
+.step > a {
+  font-weight: 900;
+  text-decoration: none;
+
+  -webkit-transition: 0.5s;
+  -moz-transition:    0.5s;
+  -ms-transition:     0.5s;
+  -o-transition:      0.5s;
+  transition:         0.5s;
+}
+.impress-supported .smallprint {
+  font-size: 28px;
+}
+
+/* impress.js fallback styles */
+.impress-not-supported .nav-arrow {
+  display: none;
+}
+.impress-not-supported .step {
+  /* Don't fade inactive steps */
+  opacity: 1;
+}
+.impress-not-supported .nonstep {
+  /* If impress isn't supported, then nonsteps are considered to be small
+   * footprint blocks. */
+  font-size:          14px;
+  padding:            0px;
+  width:              50%;
+  color: #35d59d;
+}
+.impress-not-supported .nonstep > a {
+  color: #35d59d;
+}
+.impress-not-supported .nonstep > a:hover,
+.impress-not-supported .nonstep > a:focus {
+  color: #ff9700;
 }
