@@ -2103,7 +2103,7 @@ textarea[class*="span"] {
 }
 .ui-slider-handle:hover,
 .ui-slider-handle:focus {
-  background-color: #48c9b0;
+  background-color: #a1cbf5;
   outline: none;
 }
 .ui-slider-handle:active {
