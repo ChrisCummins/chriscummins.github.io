@@ -56,14 +56,12 @@ css +=						\
 	$(NULL)
 
 js += 						\
-	assets/js/bootstrap-extras.js		\
 	assets/js/fancybox-extras.js		\
 	assets/js/flatui.js			\
+	assets/js/flatui-extras.js		\
 	assets/js/gen-regions.js		\
 	assets/js/genetics.js			\
 	assets/js/index.js			\
-	assets/js/jquery.placeholder.js		\
-	assets/js/jquery.tagsinput.js		\
 	assets/js/julius.js			\
 	assets/js/webcam.js			\
 	$(NULL)

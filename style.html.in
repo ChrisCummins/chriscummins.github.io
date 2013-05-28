@@ -594,11 +594,9 @@
   <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.pack.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.0.6/jquery.mousewheel.min.js"></script>
-  <script src="/assets/js/fancybox-extras.js"></script>
-  <script src="/assets/js/jquery.placeholder.js"></script>
-  <script src="/assets/js/jquery.tagsinput.js"></script>
   <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
-  <script src="/assets/js/bootstrap-extras.js"></script>
+  <script src="/assets/js/fancybox-extras.js"></script>
+  <script src="/assets/js/flatui-extras.js"></script>
   <script src="/assets/js/flatui.js"></script>
 
   <script>

@@ -282,7 +282,7 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-hashchange/v1.3/jquery.ba-hashchange.min.js"></script>
   <script src="//cdn.jsdelivr.net/jquery.hotkeys/0.1.0/jquery.hotkeys.js"></script>
   <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
-  <script src="/assets/js/bootstrap-extras.js"></script>
+  <script src="/assets/js/flatui-extras.js"></script>
   <script src="/assets/js/flatui.js"></script>
   <script src="/assets/js/gen-regions.js"></script>
 
