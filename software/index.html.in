@@ -107,8 +107,8 @@
 
         </div> <!-- ./row-fluid -->
 
-        <div class="row-fluid">
-          <div class="span12">
+        <div class="row">
+          <div class="span10 offset1">
             <blockquote style="margin: 50px;">
               <p>Software is like sex: it's better when it's free.</p>
               <small>Linus Torvalds</small>
