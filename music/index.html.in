@@ -179,7 +179,7 @@
           <center>
             <!-- youtube box -->
             <div class="bg-frame"
-                 style="margin-top: 50px; min-width: 650px; max-width: 650px;">
+                 style="margin: 50px auto; min-width: 650px; max-width: 650px;">
               <!-- donnie darko -->
               <iframe width="318" height="239"
                       src="http://www.youtube.com/embed/YtLjn3sriDA?rel=0"
