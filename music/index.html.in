@@ -251,9 +251,7 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.0.6/jquery.mousewheel.min.js"></script>
   <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.pack.js"></script>
-  <script src="/assets/js/jquery.fancybox-buttons.js"></script>
-  <script src="/assets/js/jquery.fancybox-media.js"></script>
-  <script src="/assets/js/jquery.fancybox-thumbs.js"></script>
+  <script src="/assets/js/fancybox-extras.js"></script>
   <script src="/assets/js/flatui.js"></script>
 
   <!-- Prepare fancybox gallery -->
