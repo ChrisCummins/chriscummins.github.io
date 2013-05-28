@@ -2801,6 +2801,13 @@ textarea[class*="span"] {
   border-radius: 0 6px 6px 0;
   border-color: #679ed2;
 }
+
+/* Preformatted */
+pre {
+  background-color: #fff;
+}
+
+/* Share */
 .share {
   background-color: #dfdfdf;
   position: relative;
