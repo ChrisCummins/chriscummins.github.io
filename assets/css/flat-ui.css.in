@@ -1132,6 +1132,10 @@ body {
   color: #bbb;
   font-weight: 300;
   cursor: pointer;
+  -webkit-transition: 0.25s;
+  -moz-transition:    0.25s;
+  -o-transition:      0.25s;
+  transition:         0.25s;
 }
 #contact-me:hover {
   color: #ff9700;
