@@ -1994,7 +1994,7 @@ textarea[class*="span"] {
 
 /* Progress bars and sliders */
 .progress {
-  background: #c5c5c5;
+  background: #ebedef;
   border-radius: 32px;
   height: 12px;
   -webkit-box-shadow: none;
@@ -2026,7 +2026,7 @@ textarea[class*="span"] {
   filter: unquote("progid:DXImageTransform.Microsoft.gradient(enabled = false)");
 }
 .ui-slider {
-  background: #c5c5c5;
+  background: #ebedef;
   border-radius: 32px;
   height: 12px;
   -webkit-box-shadow: none;
