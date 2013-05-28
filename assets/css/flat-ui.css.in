@@ -324,6 +324,7 @@ h6 {
 
 /* Frames */
 .frame,
+.bordered-frame,
 .light-frame,
 .emphasis-frame,
 .dark-frame,
@@ -331,8 +332,9 @@ h6 {
   margin: 20px auto;
   padding: 10px;
 }
-.frame {
-  background-color: #f5f5f5;
+.bordered-frame {
+  border-radius: 6px;
+  border: 2px solid #333;
 }
 .light-frame {
   background-color: #679ed2;

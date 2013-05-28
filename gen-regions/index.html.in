@@ -116,7 +116,7 @@
               GEN Regions
           </div>
 
-          <div id="gen-frame" class="frame">
+          <div id="gen-frame" class="bordered-frame">
             <center>
 
               <!-- canvas -->
