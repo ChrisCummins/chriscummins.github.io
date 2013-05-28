@@ -1318,9 +1318,9 @@ body {
   border-bottom-style: none;
   border-top-color: #ffffff;
   -webkit-transition: 0.25s;
-  -moz-transition: 0.25s;
-  -o-transition: 0.25s;
-  transition: 0.25s;
+  -moz-transition:    0.25s;
+  -o-transition:      0.25s;
+  transition:         0.25s;
   -webkit-backface-visibility: hidden;
 }
 textarea,
@@ -1993,9 +1993,9 @@ textarea[class*="span"] {
   zoom: 1;
   *display: inline;
   -webkit-transition: 0.25s;
-  -moz-transition: 0.25s;
-  -o-transition: 0.25s;
-  transition: 0.25s;
+  -moz-transition:    0.25s;
+  -o-transition:      0.25s;
+  transition:         0.25s;
   -webkit-backface-visibility: hidden;
 }
 .tagsinput-add:hover {
@@ -2093,9 +2093,9 @@ textarea[class*="span"] {
   width: 18px;
   z-index: 2;
   -webkit-transition: background 0.25s;
-  -moz-transition: background 0.25s;
-  -o-transition: background 0.25s;
-  transition: background 0.25s;
+  -moz-transition:    background 0.25s;
+  -o-transition:      background 0.25s;
+  transition:         background 0.25s;
   -webkit-backface-visibility: hidden;
 }
 .ui-slider-handle[style*='100'] {
@@ -2462,9 +2462,9 @@ textarea[class*="span"] {
   -moz-box-shadow:    none;
   box-shadow:         none;
   -webkit-transition: 0.25s;
-  -moz-transition: 0.25s;
-  -o-transition: 0.25s;
-  transition: 0.25s;
+  -moz-transition:    0.25s;
+  -o-transition:      0.25s;
+  transition:         0.25s;
   -webkit-backface-visibility: hidden;
 }
 .dropdown-menu.typeahead {
@@ -2597,9 +2597,9 @@ textarea[class*="span"] {
   z-index: 10;
   -webkit-transform: rotate(360deg);
   -webkit-transition: 0.25s;
-  -moz-transition: 0.25s;
-  -o-transition: 0.25s;
-  transition: 0.25s;
+  -moz-transition:    0.25s;
+  -o-transition:      0.25s;
+  transition:         0.25s;
   -webkit-backface-visibility: hidden;
 }
 .dropdown-inverse {
@@ -2696,9 +2696,9 @@ textarea[class*="span"] {
 }
 .has-switch > div.switch-animate {
   -webkit-transition: left 0.25s ease-out;
-  -moz-transition: left 0.25s ease-out;
-  -o-transition: left 0.25s ease-out;
-  transition: left 0.25s ease-out;
+  -moz-transition:    left 0.25s ease-out;
+  -o-transition:      left 0.25s ease-out;
+  transition:         left 0.25s ease-out;
   -webkit-backface-visibility: hidden;
 }
 .has-switch > div.switch-off {
@@ -2738,9 +2738,9 @@ textarea[class*="span"] {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   -webkit-transition: 0.25s ease-out;
-  -moz-transition: 0.25s ease-out;
-  -o-transition: 0.25s ease-out;
-  transition: 0.25s ease-out;
+  -moz-transition:    0.25s ease-out;
+  -o-transition:      0.25s ease-out;
+  transition:         0.25s ease-out;
   -webkit-backface-visibility: hidden;
 }
 .has-switch span.switch-left {
@@ -2770,9 +2770,9 @@ textarea[class*="span"] {
   width: 21px;
   z-index: 100;
   -webkit-transition: 0.25s ease-out;
-  -moz-transition: 0.25s ease-out;
-  -o-transition: 0.25s ease-out;
-  transition: 0.25s ease-out;
+  -moz-transition:    0.25s ease-out;
+  -o-transition:      0.25s ease-out;
+  transition:         0.25s ease-out;
   -webkit-backface-visibility: hidden;
 }
 .switch-square {
@@ -2922,9 +2922,9 @@ pre {
   padding: 18px 42px 17px 25px;
   position: relative;
   -webkit-transition: 0.25s;
-  -moz-transition: 0.25s;
-  -o-transition: 0.25s;
-  transition: 0.25s;
+  -moz-transition:    0.25s;
+  -o-transition:      0.25s;
+  transition:         0.25s;
   -webkit-backface-visibility: hidden;
 }
 .todo li:first-child {
