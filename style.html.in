@@ -600,8 +600,7 @@
   <script src="/assets/js/jquery.placeholder.js"></script>
   <script src="/assets/js/jquery.tagsinput.js"></script>
   <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
-  <script src="/assets/js/bootstrap-select.js"></script>
-  <script src="/assets/js/bootstrap-switch.js"></script>
+  <script src="/assets/js/bootstrap-extras.js"></script>
   <script src="/assets/js/flatui.js"></script>
 
   <script>
