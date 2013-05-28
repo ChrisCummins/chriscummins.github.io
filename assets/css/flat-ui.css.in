@@ -459,10 +459,10 @@ body {
   -webkit-box-shadow: none;
   -moz-box-shadow:    none;
   box-shadow:         none;
-  -webkit-transition: 0.25s;
-  -moz-transition: 0.25s;
-  -o-transition: 0.25s;
-  transition: 0.25s;
+  -webkit-transition: none;
+  -moz-transition:    none;
+  -o-transition:      none;
+  transition:         none;
   -webkit-backface-visibility: hidden;
 }
 .btn:hover,
@@ -471,10 +471,10 @@ body {
   background-color: #cacfd2;
   color: #ffffff;
   outline: none;
-  -webkit-transition: 0.25s;
-  -moz-transition: 0.25s;
-  -o-transition: 0.25s;
-  transition: 0.25s;
+  -webkit-transition: none;
+  -moz-transition:    none;
+  -o-transition:      none;
+  transition:         none;
   -webkit-backface-visibility: hidden;
 }
 .btn:active,
