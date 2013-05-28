@@ -2513,10 +2513,6 @@ textarea[class*="span"] {
   padding: 6px 15px 8px;
   text-decoration: none;
   *zoom: 1;
-  -webkit-transition: background-color 0.25s;
-  -moz-transition: background-color 0.25s;
-  -o-transition: background-color 0.25s;
-  transition: background-color 0.25s;
   -webkit-backface-visibility: hidden;
 }
 .dropdown-menu li > a:before,
