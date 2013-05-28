@@ -2,7 +2,7 @@ var footerCollapse = $('.footer-collapse');
 
 function collapseFooter() {
 
-  if ($(window).width() < 720)
+  if ($(window).width() < 690)
     footerCollapse.hide();
   else
     footerCollapse.show();
