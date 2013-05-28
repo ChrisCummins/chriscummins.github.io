@@ -1082,33 +1082,6 @@ body {
   text-indent: -9999px;
   overflow: hidden;
   border: none !important;
-  opacity: 0.2;
-
-  -webkit-transition: 0.25s opacity;
-  -moz-transition:    0.25s opacity;
-  -o-transition:      0.25s opacity;
-  transition:         0.25s opacity;
-
-  /* Fade the arrows in on page load */
-  animation:          fadein 1s;
-  -moz-animation:     fadein 1s;
-  -webkit-animation:  fadein 1s;
-  -o-animation:       fadein 1s;
-}
-@keyframes fadein {
-  from { opacity: 0; } to { opacity: 0.2; }
-}
-@-moz-keyframes fadein {
-  from { opacity: 0; } to { opacity: 0.2; }
-}
-@-webkit-keyframes fadein {
-  from { opacity: 0; } to { opacity: 0.2; }
-}
-@-o-keyframes fadein {
-  from { opacity: 0; } to { opacity: 0.2; }
-}
-.nav-arrow:hover {
-  opacity: 1;
 }
 #nav-arrow-left {
   left: 30px;
