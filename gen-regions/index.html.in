@@ -195,8 +195,8 @@
           <ol class="muted">
             <li>Select an execution size from the dropdown box.</li>
             <li>Enter a register region description into the text area.</li>
-            <li>Select 'Advanced' mode to change SubRegNum from being in bytes to
-              the unit of data type.</li>
+            <li>Toggle the advanced mode switch to change SubRegNum from being
+              in units of data type to byte offset.</li>
           </ol>
 
           <h3>Key Bindings</h3>
@@ -234,7 +234,8 @@
           </center>
 
           <h3>Sharing</h3>
-            The 'Share' button generates a URL that contains a description of the
+          <p class="muted">
+            The Share button generates a URL that contains a description of the
             current region. This can be saved, given to others and bookmarked for
             future reference.
           </p>
