@@ -413,6 +413,9 @@ body {
 .footer {
   background-color: #2c3e50;
   border-top: 1px solid #2c3e50;
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow:    0px 0px 10px rgba(0, 0, 0, 0.4);
+  box-shadow:         0px 0px 10px rgba(0, 0, 0, 0.4);
 }
 .footer > .wrapper {
   margin-top: 20px;
@@ -903,6 +906,9 @@ body {
   background: #4f6e8d;
   filter: unquote("progid:DXImageTransform.Microsoft.gradient(enabled = false)");
   border-bottom: 1px solid #4f6e8d;
+  -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow:    0px 0px 15px rgba(0, 0, 0, 0.4);
+  box-shadow:         0px 0px 15px rgba(0, 0, 0, 0.4);
 }
 .navbar-inverse .brand {
   color: #ffffff;
