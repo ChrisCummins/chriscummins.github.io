@@ -1897,6 +1897,8 @@ textarea[class*="span"] {
   opacity: 1;
   filter: alpha(opacity=100);
 }
+
+/* Tags */
 .tagsinput {
   background: white;
   border: 2px solid #679ed2;
@@ -1938,6 +1940,7 @@ textarea[class*="span"] {
   color: #ffffff;
   opacity: 1;
   display: block\9;
+  text-decoration: none;
 }
 .tagsinput input {
   background: transparent;
