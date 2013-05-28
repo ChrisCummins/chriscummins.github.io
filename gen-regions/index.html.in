@@ -35,13 +35,36 @@
     <meta name="viewport" content="width=1024" />
     <meta charset="utf-8" />
 
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,700" />
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" />
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.1.0/css/font-awesome.css" />
-    <link rel="stylesheet" href="/assets/css/buttons.css" />
-    <link rel="stylesheet" href="/assets/css/site.css" />
-    <link rel="stylesheet" href="/assets/css/gen-regions.css" />
+    <style type="text/css">body{padding-top:60px;}</style>
+    <link rel="stylesheet" href="/assets/css/flat-ui.css" />
     <link rel="shortcut icon" href="/assets/img/favicon.ico" />
+
+    <style>
+      label {
+        margin-left: 25px;
+        display: inline;
+      }
+
+      .alert {
+        display: none;
+      }
+
+      .btn {
+        display: inline;
+      }
+
+      #gen-frame td {
+        padding-right: 15px;
+      }
+
+      .select.select-block .btn {
+        margin-top: 10px;
+      }
+
+      .alert {
+        font-size: 14px;
+      }
+    </style>
   </head>
 
   <body>
@@ -59,162 +82,212 @@
       })();
     </script>
 
-    <div class="container-narrow">
+    <div id="wrap">
 
-      <!-- title section -->
-      <div class="masthead">
-        <ul class="nav nav-pills pull-right">
-          <li><a href="/blog/" target="_blank">Blog</a></li>
-          <li><a href="/music/">Music</a></li>
-          <li class="semi-active"><a href="/software/">Software</a></li>
-          <li><a href="/pictures/">Pictures</a></li>
-        </ul>
-        <h3 class="serif-title">
-          <a href="http://chriscummins.cc">chriscummins.cc</a>
-        </h3>
-      </div>
-
-      <hr>
-
-      <div class="fixed-container-narrow">
-
-        <center>
-
-          <h1 class="serif-title">GEN Regions</h1>
-
-          <!-- canvas -->
-          <canvas id="canvas" width="728" height="250"
-                  data-toggle="tooltip" title="No region set">
-            Unsupported browser!</canvas>
-
-        </center>
-
-        <!-- input -->
-        <div style="padding: 5px; margin-bottom: 10px;">
-
-          <!-- exec size dropdown -->
-          <label style="margin-left: 0px;">
-            Execution size
-            <select id="exec-size" style="width: 55px; margin-bottom: 0px;">
-              <option>1</option>
-              <option>2</option>
-              <option>4</option>
-              <option selected="selected">8</option>
-              <option>16</option>
-              <option>32</option>
-            </select>
-          </label>
-
-	  <!-- The region input text box: -->
-          <label>
-            Region
-            <input id="region-form" class="search-query" type="text"
-	           placeholder="Region" style="margin-left: 5px;">
-          </label>
-
-	  <!-- The `advanced' mode checkbox: -->
-          <label style="display: inline;">
-            Advanced <input id="advanced" class="ios-switch" type="checkbox">
-          </label>
-
+      <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+          <div class="container">
+            <button type="button" class="btn btn-navbar"
+                    data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="brand" href="http://chriscummins.cc">chriscummins.cc</a>
+            <div class="nav-collapse collapse pull-right">
+              <ul class="nav">
+                <li><a href="/">Home</a></li>
+                <li><a href="/blog/" target="_blank">Blog</a></li>
+                <li><a href="/music/">Music</a></li>
+                <li class="active"><a href="/software/">Software</a></li>
+                <li><a href="/pictures/">Pictures</a></li>
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div>
         </div>
+      </div> <!-- /.navbar -->
 
-        <!-- buttons -->
+      <div class="container">
+
+        <div class="fixed-container-narrow">
+
+          <div class="headline">
+            <h1 class="headline-title">
+              GEN Regions
+          </div>
+
+          <div id="gen-frame" class="frame">
+            <center>
+
+              <!-- canvas -->
+              <canvas id="canvas" width="728" height="250"
+                      data-toggle="tooltip" title="No region set">
+                Unsupported browser!</canvas>
+
+              <!-- input -->
+              <table style="padding: 5px; margin: 5px auto;">
+                <tr>
+                  <td>
+                    <!-- exec size dropdown -->
+                    <select id="exec-size" name="exec-size"
+                            class="select-block"
+                            value="8" data-width="80px"
+                            data-toggle="tooltip" title="Execution Size">
+                      <option>1</option>
+                      <option>2</option>
+                      <option>4</option>
+                      <option selected="selected">8</option>
+                      <option>16</option>
+                      <option>32</option>
+                    </select>
+                  </td>
+                  <td>
+	            <!-- The region input text box: -->
+                    <input id="region-form" class="search-query" type="text"
+	                   placeholder="Region description" style="width: 250px;"
+                           data-toggle="tooltip" title="Region description">
+                  </td>
+                  <td>
+	            <!-- The `advanced' mode checkbox: -->
+                    <input id="advanced" type="checkbox"
+                           checked="" data-toggle="switch">
+                  </td>
+                  <td style="padding-left: 80px;">
+                    <!-- submit button -->
+                    <button id="submit" class="btn btn-success">
+                      Submit
+                    </button>
+                  </td>
+                  <td>
+	            <!-- share button -->
+                    <button id="share-btn" class="btn btn-primary">
+                      Share
+                    </button>
+                  </td>
+                </tr>
+              </table>
+
+            </center>
+
+            <!-- alerts area -->
+            <div>
+              <!-- share URL -->
+              <div id="share" class="alert alert-success"><strong>URL</strong>
+                <textarea id="share-hash" class="text"
+                          style="width: 579px; height: 30px; resize: none; margin-bottom: 0px; margin-left: 10px;"
+                          readonly></textarea>
+                <button type="button" class="close">&times;</button></div>
+              <!-- error -->
+              <div id="alert-error" class="alert alert-error">
+                <button type="button" class="close">&times;</button>
+	        <div id="alert-error-placeholder"></div></div>
+              <!-- warning -->
+              <div id="alert" class="alert">
+	        <button type="button" class="close">&times;</button>
+	        <div id="alert-placeholder"></div></div>
+
+            </div> <!-- /alerts area -->
+
+          </div> <!-- /frame -->
+
+          <!-- documentation -->
+          <h3>Usage</h3>
+
+          <ol>
+            <li>Select an execution size from the dropdown box.</li>
+            <li>Enter a register region description into the text area.</li>
+            <li>Select 'Advanced' mode to change SubRegNum from being in bytes to
+              the unit of data type.</li>
+          </ol>
+
+          <h3>Key Bindings</h3>
+          The following page-wide keybindings are defined for convenience:
+          <br/><br/>
+
+          <center>
+            <table>
+              <tr><td style="text-align: right; padding-right: 10px;">
+                  <code><strong>[return]</strong></code></td>
+                <td>Submit region</td></tr>
+
+              <tr><td style="text-align: right; padding-right: 10px;">
+                  <code><strong>[escape]</strong></code></td>
+                <td>Dismiss warnings</td></tr>
+
+              <tr><td style="text-align: right; padding-right: 10px;">
+                  <code><strong>a</strong></code></td>
+                <td>Toggle --advanced</td></tr>
+
+              <tr><td style="text-align: right; padding-right: 10px;">
+                  <code><strong>r</strong></code></td>
+                <td>Focus on region text box</td></tr>
+
+              <tr><td style="text-align: right; padding-right: 10px;">
+                  <code><strong>c</strong></code></td>
+                <td>Clear region description</td></tr>
+
+              <tr><td style="text-align: right; padding-right: 10px;">
+                  <code><strong>s</strong></code></td>
+                <td>Share</td></tr>
+            </table>
+          </center>
+
+          <h3>Sharing</h3>
+            The 'Share' button generates a URL that contains a description of the
+            current region. This can be saved, given to others and bookmarked for
+            future reference.
+          </p>
+
+        </div> <!-- fixed-container-narrow -->
+
+      </div> <!-- /.container -->
+      <div id="push"></div>
+    </div> <!-- /#wrap -->
+
+    <!-- Site footer -->
+    <div class="footer" style="margin-top: 50px;">
+      <div class="container wrapper">
         <div class="pull-right">
-
-	  <!-- share button -->
-          <button id="share-btn" class="btn btn-primary">
-            <strong>Share</strong>
-          </button>
-
-          <!-- submit button -->
-          <button id="submit" class="btn btn-success" style="margin-right: 50px;">
-            <strong>Submit</strong>
-          </button>
-
+          <!-- twitter tweet -->
+          <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://chriscummins.cc" data-via="iamchriscummins" data-dnt="true">Tweet</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+          <!-- facebook like -->
+          <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fchriscummins.cc&amp;send=false&amp;layout=button_count&amp;width=110&amp;show_faces=false&amp;font&amp;colorscheme=light&amp;action=like&amp;height=21"
+                  scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:110px; height:21px;" allowTransparency="true"></iframe>
+          <!-- github watch -->
+          <iframe src="http://ghbtns.com/github-btn.html?user=ChrisCummins&repo=chriscummins.cc&type=watch&count=true"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110" height="21"></iframe>
         </div>
 
-        <!-- alerts area -->
-        <div style="margin-top: 50px">
-
-          <!-- share URL -->
-          <div id="share" class="alert alert-success"><strong>URL</strong>
-            <textarea id="share-hash" class="text"
-                      style="width: 600px; height: 20px; resize: none; margin-bottom: 0px; margin-left: 10px;"
-                      readonly></textarea>
-            <button type="button" class="close">&times;</button></div>
-
-          <!-- error -->
-          <div id="alert-error" class="alert alert-error">
-            <button type="button" class="close">&times;</button>
-	    <div id="alert-error-placeholder"></div></div>
-
-          <!-- warning -->
-          <div id="alert" class="alert">
-	    <button type="button" class="close">&times;</button>
-	    <div id="alert-placeholder"></div></div>
-
+        <div class="footer-collapse">
+          <p class="muted">
+            &copy; 2013 Intel Corporation |
+            <a id="contact-me">Send me a message</a>
+          </p>
         </div>
-
       </div>
+    </div> <!-- /.footer -->
 
-      <!-- documentation -->
-      <h2>Usage</h2>
-
-      <ol>
-        <li>Select an execution size from the dropdown box.</li>
-        <li>Enter a register region description into the text area.</li>
-        <li>Select 'Advanced' mode to change SubRegNum from being in bytes to
-          the unit of data type.</li>
-      </ol>
-
-      <h2>Key Bindings</h2>
-      The following page-wide keybindings are defined for convenience:
-      <br/><br/>
-
-      <center>
-        <table>
-          <tr><td style="text-align: right; padding-right: 10px;">
-              <code><strong>[return]</strong></code></td>
-            <td>Submit region</td></tr>
-
-          <tr><td style="text-align: right; padding-right: 10px;">
-              <code><strong>[escape]</strong></code></td>
-            <td>Dismiss warnings</td></tr>
-
-          <tr><td style="text-align: right; padding-right: 10px;">
-              <code><strong>a</strong></code></td>
-            <td>Toggle --advanced</td></tr>
-
-          <tr><td style="text-align: right; padding-right: 10px;">
-              <code><strong>r</strong></code></td>
-            <td>Focus on region text box</td></tr>
-
-          <tr><td style="text-align: right; padding-right: 10px;">
-              <code><strong>c</strong></code></td>
-            <td>Clear region description</td></tr>
-
-          <tr><td style="text-align: right; padding-right: 10px;">
-              <code><strong>s</strong></code></td>
-            <td>Share</td></tr>
-        </table>
-      </center>
-
-      <h2>Sharing</h2>
-
-      The 'Share' button generates a URL that contains a description of the
-      current region. This can be saved, given to others and bookmarked for
-      future reference.
-
-      <!-- footer -->
-      <hr>
-      <div class="footer">
-        <a href="http://chriscummins.cc">chriscummins.cc</a> |
-        &copy; 2013 Intel Corporation
+    <!-- The feedback form -->
+    <div class="feedback-overlay"></div>
+    <div class="feedback-form">
+      <form id="feedback-form-messageform" name="contactme" action="">
+        <p>Send me a message</p>
+        <textarea id="feedback-form-message" name="message"></textarea>
+        <p>Email</p>
+        <input id="feedback-form-email" name="email" type="text" autocomplete="off" /><br />
+        <input id="feedback-form-cancel" class="btn btn-large btn-warning" type="reset" value="Cancel" />
+        <input id="feedback-form-send" class="btn btn-large btn-success" type="submit" value="Send" />
+      </form>
+      <div id="feedback-form-messagesuccess">
+        <center>
+          <br /><br /><br /><br /><br /><br />
+          <img src="/assets/img/check.png">
+          <br /><br />
+          Thanks for getting in touch!
+        </center>
       </div>
-
     </div>
-
   </body>
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -222,6 +295,9 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-hashchange/v1.3/jquery.ba-hashchange.min.js"></script>
   <script src="//cdn.jsdelivr.net/jquery.hotkeys/0.1.0/jquery.hotkeys.js"></script>
   <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+  <script src="/assets/js/bootstrap-select.js"></script>
+  <script src="/assets/js/bootstrap-switch.js"></script>
+  <script src="/assets/js/flatui.js"></script>
   <script src="/assets/js/gen-regions.js"></script>
 
 </html>

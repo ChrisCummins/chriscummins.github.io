@@ -1183,6 +1183,13 @@ body {
   display: none;
 }
 
+/* Fixed width container */
+.fixed-container-narrow {
+  margin: 0 auto;
+  min-width: 730px;
+  max-width: 730px;
+}
+
 .select {
   display: inline-block;
   margin-bottom: 10px;

@@ -786,6 +786,17 @@ var GenRegions = GenRegions || {};
    */
   this.init = function() {
 
+    /* Dropdown */
+    $("select[name='exec-size']").selectpicker({
+      style: 'btn-primary',
+      menuStyle: 'dropdown-inverse'
+    });
+    $('.dropdown-toggle').attr('data-original-title', 'Execution size').tooltip('fixTitle');
+
+    /* Switch */
+    $("[data-toggle='switch']").wrap('<div class="switch" />').parent().bootstrapSwitch();
+    $('.switch').attr('data-original-title', 'Advanced mode').tooltip('fixTitle');
+
     /*
      * Prepare the ios switches
      */
@@ -808,7 +819,11 @@ var GenRegions = GenRegions || {};
       submitEmptyRegion();
     }
 
+    /* Tooltips */
     $('#canvas').tooltip('hide');
+    $('#exec-size').tooltip('hide');
+    $('#region-form').tooltip('hide');
+    $('#advanced').tooltip('hide');
   };
 
 }).call(GenRegions);
