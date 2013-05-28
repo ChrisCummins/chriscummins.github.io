@@ -1793,15 +1793,13 @@ textarea[class*="span"] {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+
+/* Radios and checkboxes */
 .checkbox,
 .radio {
   margin-bottom: 12px;
   padding-left: 32px;
   position: relative;
-  -webkit-transition: color 0.25s linear;
-  -moz-transition: color 0.25s linear;
-  -o-transition: color 0.25s linear;
-  transition: color 0.25s linear;
   -webkit-backface-visibility: hidden;
 }
 .checkbox input,
@@ -1821,10 +1819,6 @@ textarea[class*="span"] {
   text-align: center;
   line-height: 20px;
   font-size: 20px;
-  -webkit-transition: color 0.25s linear;
-  -moz-transition: color 0.25s linear;
-  -o-transition: color 0.25s linear;
-  transition: color 0.25s linear;
   -webkit-backface-visibility: hidden;
 }
 .checkbox .icons .first-icon-icon,
