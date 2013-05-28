@@ -70,6 +70,54 @@
           </h1>
         </div>
 
+        <h3>Featured</h3>
+        <div class="row">
+          <div class="span3">
+            <div class="feature">
+              <a href="#fakelink">
+                <h5>Featured 1</h5>
+                <p>
+                  Lorem ipsum dolor sit ametq, consectetuer adipiscing
+                  elit. Nullam dignissim convallis est.q
+                </p>
+              </a>
+            </div>
+          </div>
+          <div class="span3">
+            <div class="feature">
+              <a href="#fakelink">
+                <h5>Featured 2</h5>
+                <p>
+                  Lorem ipsum dolor sit ametq, consectetuer adipiscing
+                  elit. Nullam dignissim convallis est.q
+                </p>
+              </a>
+            </div>
+          </div>
+          <div class="span3">
+            <div class="feature">
+              <a href="#fakelink">
+                <h5>Featured 3</h5>
+                <p>
+                  Lorem ipsum dolor sit ametq, consectetuer adipiscing
+                  elit. Nullam dignissim convallis est.q
+                </p>
+              </a>
+            </div>
+          </div>
+          <div class="span3">
+            <div class="feature">
+              <a href="#fakelink">
+                <h5>Featured 4</h5>
+                <p>
+                  Lorem ipsum dolor sit ametq, consectetuer adipiscing
+                  elit. Nullam dignissim convallis est.q
+                </p>
+              </a>
+            </div>
+          </div>
+        </div>
+
         <h3>Buttons</h3>
         <div class="row">
           <div class="span3">
@@ -393,56 +441,6 @@
           <div class="span6">
             <h3>Preformatted</h3>
             <pre>Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. <acronym title="National Basketball Association">NBA</acronym> Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus. <abbr title="Avenue">AVE</abbr></pre>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="span12">
-            <h3>Featured</h3>
-          </div>
-          <div class="span3">
-            <div class="feature">
-              <a href="#fakelink">
-                <h5>Featured 1</h5>
-                <p>
-                  Lorem ipsum dolor sit ametq, consectetuer adipiscing
-                  elit. Nullam dignissim convallis est.q
-                </p>
-              </a>
-            </div>
-          </div>
-          <div class="span3">
-            <div class="feature">
-              <a href="#fakelink">
-                <h5>Featured 2</h5>
-                <p>
-                  Lorem ipsum dolor sit ametq, consectetuer adipiscing
-                  elit. Nullam dignissim convallis est.q
-                </p>
-              </a>
-            </div>
-          </div>
-          <div class="span3">
-            <div class="feature">
-              <a href="#fakelink">
-                <h5>Featured 3</h5>
-                <p>
-                  Lorem ipsum dolor sit ametq, consectetuer adipiscing
-                  elit. Nullam dignissim convallis est.q
-                </p>
-              </a>
-            </div>
-          </div>
-          <div class="span3">
-            <div class="feature">
-              <a href="#fakelink">
-                <h5>Featured 4</h5>
-                <p>
-                  Lorem ipsum dolor sit ametq, consectetuer adipiscing
-                  elit. Nullam dignissim convallis est.q
-                </p>
-              </a>
-            </div>
           </div>
         </div>
 
