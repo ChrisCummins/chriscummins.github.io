@@ -2777,11 +2777,6 @@ textarea[class*="span"] {
   border-color: #679ed2;
 }
 
-/* Preformatted */
-pre {
-  background-color: #fff;
-}
-
 /* Share */
 .share {
   background-color: #dfdfdf;
