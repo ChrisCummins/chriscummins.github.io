@@ -685,6 +685,7 @@ body {
   border-left-width: 6px;
 }
 
+/* Navbar */
 .navbar {
   font-size: 15.988px;
   /* 16px */
@@ -908,6 +909,10 @@ body {
 .navbar-inverse .brand {
   color: #ffffff;
   padding: 10px 28px 11px 32px;
+  -webkit-transition: 0.25s;
+  -moz-transition:    0.25s;
+  -o-transition:      0.25s;
+  transition:         0.25s;
 }
 .navbar-inverse .btn-navbar {
   color: #ffffff;
