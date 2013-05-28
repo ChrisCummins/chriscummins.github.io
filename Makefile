@@ -106,12 +106,6 @@ extra_site +=					\
 	assets/img/switch-mask.png		\
 	assets/img/tile-ribbon-2x.png		\
 	assets/img/tile-ribbon.png		\
-	assets/img/todo-done-2x.png		\
-	assets/img/todo-done.png		\
-	assets/img/todo-search-2x.png		\
-	assets/img/todo-search.png		\
-	assets/img/todo-todo-2x.png		\
-	assets/img/todo-todo.png		\
 	assets/img/youtube.png			\
 	genetics/eiffel-tower.jpg		\
 	genetics/kyle-broflovski.jpg		\
