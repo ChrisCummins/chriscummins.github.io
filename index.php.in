@@ -35,7 +35,7 @@
       .impress-on-overview a:hover,
       .impress-on-overview a:focus {
         /* Zero link effects on overview */
-        color: #fff;
+        color: #4f6e8d;
       }
     </style>
   </head>
