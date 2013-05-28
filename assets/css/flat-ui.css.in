@@ -363,6 +363,10 @@ blockquote small {
 
 /* Muted */
 .muted {
+  color: #555555;
+}
+
+.footer .muted {
   color: #c6c7c9;
 }
 
