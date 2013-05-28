@@ -189,7 +189,7 @@ you can use the generic selector below, but it's slower:
 
 /* Body */
 body {
-  background-color: #f5f5f5;
+  background-color: #fff;
   color: #333333;
   font-family: "Lato", sans-serif;
   font-size: 18px;
@@ -288,12 +288,13 @@ h6 {
   -o-transition:      0.25s;
   transition:         0.25s;
 }
-.feature > a:hover {
+.feature > a:hover,
+.feature > a:focus {
   color: #ff9700;
 }
 .feature:hover,
 .feature:focus {
-  background-color: #eaeaea;
+  background-color: #f5f5f5;
 }
 .feature h1,
 .feature h2,
@@ -360,7 +361,7 @@ blockquote small {
 
 /* Muted */
 .muted {
-  color: #666;
+  color: #c6c7c9;
 }
 
 /* Thumbnails */
@@ -406,14 +407,13 @@ body {
   height: 60px;
 }
 .footer {
-  background-color: #2c3e50;
-  border-top: 1px solid #2c3e50;
-  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
-  -moz-box-shadow:    0px 0px 10px rgba(0, 0, 0, 0.4);
-  box-shadow:         0px 0px 10px rgba(0, 0, 0, 0.4);
+  background-color: #eceef0;
+  -webkit-box-shadow: 0 1px 5px rgba(0,0,0,.1);
+  -moz-box-shadow:    0 1px 5px rgba(0,0,0,.1);
+  box-shadow:         0 1px 5px rgba(0,0,0,.1);
 }
 .footer > .wrapper {
-  margin-top: 20px;
+  padding-top: 20px;
 }
 .footer > .container > .footer-collapse > p {
   font-size: 18px;
@@ -703,6 +703,10 @@ body {
   margin-left: 0;
   padding: 23px 28px 24px 32px;
   text-shadow: none;
+  -webkit-transition: 0.25s;
+  -moz-transition:    0.25s;
+  -o-transition:      0.25s;
+  transition:         0.25s;
 }
 .navbar .brand:hover,
 .navbar .brand:focus {
@@ -885,8 +889,8 @@ body {
   padding-left: 0;
   padding-right: 0;
   -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  border-radius: 6px;
+  -moz-border-radius:    6px;
+  border-radius:         6px;
   filter: unquote("progid:DXImageTransform.Microsoft.gradient(enabled = false)");
   -webkit-box-shadow: none;
   -moz-box-shadow:    none;
@@ -909,10 +913,6 @@ body {
 .navbar-inverse .brand {
   color: #ffffff;
   padding: 10px 28px 11px 32px;
-  -webkit-transition: 0.25s;
-  -moz-transition:    0.25s;
-  -o-transition:      0.25s;
-  transition:         0.25s;
 }
 .navbar-inverse .btn-navbar {
   color: #ffffff;
@@ -1102,7 +1102,7 @@ body {
 
 /* Feedback-Form */
 #contact-me {
-  color: #bbb;
+  color: #4f6e8d;
   font-weight: 300;
   cursor: pointer;
   -webkit-transition: 0.25s;
