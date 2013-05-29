@@ -35,13 +35,13 @@ $(document).ready(function () {
   var emailRe = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
   function showFeedbackForm() {
-    $('.feedback-overlay').fadeIn('fast');
+    $('.feedback-overlay').fadeIn('slow');
     $('.feedback-form').fadeIn('fast');
   }
 
   function hideFeedbackForm() {
     $('.feedback-form').fadeOut('fast');
-    $('.feedback-overlay').fadeOut('fast');
+    $('.feedback-overlay').fadeOut('slow');
   }
 
   function resetFeedbackForm() {
