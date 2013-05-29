@@ -9,46 +9,27 @@
     <meta name="viewport" content="width=1024" />
     <meta charset="utf-8" />
 
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,700" />
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" />
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.1.0/css/font-awesome.css" />
-    <link rel="stylesheet" href="/assets/css/buttons.css" />
-    <link rel="stylesheet" href="/assets/css/site.css" />
+    <style type="text/css">body{padding-top:60px;}</style>
+    <link rel="stylesheet" href="/assets/css/flat-ui.css" />
     <link rel="shortcut icon" href="/assets/img/favicon.ico" />
 
     <style>
-      section {
-        width: 730px;
-        height: 30px;
-        margin: 10px auto;
-        position: relative;
+      #textarea {
+        resize: none;
       }
 
-      #slider{
-	border-width: 1px;
-	border-style: solid;
-	border-color: #333 #333 #777 #333;
-	border-radius: 25px;
-	position: absolute;
-        left: 20px;
-	width: 690px;
-	height: 13px;
-	background-color: #8e8d8d;
-	background: url('/assets/img/slider-track.png') repeat top left;
-        box-shadow: inset 0 1px 5px 0px rgba(0, 0, 0, .5),
-                          0 1px 0 0px rgba(250, 250, 250, .5);
-     }
-      .ui-slider-handle {
-	position: absolute;
-	z-index: 2;
-	width: 25px;
-	height: 25px;
-	cursor: pointer;
-	background: url('/assets/img/slider-handle.png') no-repeat 50% 50%;
-	outline: none;
-	top: -7px;
-	margin-left: -12px;
-}
+      #textarea,
+      #container {
+        margin: 0 auto;
+      }
+
+      #container {
+        height: 300px;
+      }
+
+      button {
+        min-width: 110px;
+      }
     </style>
   </head>
 
@@ -67,85 +48,144 @@
       })();
     </script>
 
-    <div class="container-narrow">
+    <div id="wrap">
 
-      <!-- title section -->
-      <div class="masthead">
-        <ul class="nav nav-pills pull-right">
-          <li><a href="/blog/" target="_blank">Blog</a></li>
-          <li><a href="/music/">Music</a></li>
-          <li class="semi-active"><a href="/software/">Software</a></li>
-          <li><a href="/pictures/">Pictures</a></li>
-        </ul>
-        <h3 class="serif-title">
-          <a href="http://chriscummins.cc">chriscummins.cc</a>
-        </h3>
-      </div>
-
-      <hr>
-
-      <div class="fixed-container-narrow">
-
-        <center>
-
-          <h1 class="serif-title">Julius</h1>
-
-          <!-- input -->
-
-          <div style="display: block;">
-      	    <textarea id="textarea" rows="12"
-                      style="width: 716px; margin: 10px auto;"
-                      placeholder="Type your message here"></textarea>
-          </div>
-
-          <!-- slider -->
-	  <section>
-	    <div id="slider"></div>
-	  </section>
-
-          <!-- language selection -->
-          <div class="btn-group pull-left">
-            <select id="language" style="width: 110px;">
-              <option selected="selected">English</option>
-              <option>Esperanto</option>
-              <option>French</option>
-              <option>German</option>
-              <option>Italian</option>
-              <option>Portugese</option>
-              <option>Spanish</option>
-              <option>Turkish</option>
-            </select>
-          </div>
-
-          <div class="btn-group pull-right">
-            <!-- auto button -->
-            <button id="auto" class="btn btn-success"
-                    style="width: 110px;">
-              Auto
+      <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+          <div class="container">
+            <button type="button" class="btn btn-navbar"
+                    data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
             </button>
+            <a class="brand" href="http://chriscummins.cc">chriscummins.cc</a>
+            <div class="nav-collapse collapse pull-right">
+              <ul class="nav">
+                <li><a href="/">Home</a></li>
+                <li><a href="/blog/" target="_blank">Blog</a></li>
+                <li><a href="/music/">Music</a></li>
+                <li class="active"><a href="/software/">Software</a></li>
+                <li><a href="/pictures/">Pictures</a></li>
+              </ul>
+            </div><!--/.nav-collapse -->
           </div>
+        </div>
+      </div> <!-- /.navbar -->
 
-          <div>
-            <!-- shift label -->
-            <p id="shift-label" class="lead">
-              0 shift
-            </p>
-          </div>
+      <div class="container">
 
-          <div>
-            <div id="container" style="width: 730px; height: 300px; margin: 30px auto;"></div>
-          </div>
-
-        </center>
-
-        <!-- footer -->
-        <hr>
-        <div class="footer">
-          <a href="http://chriscummins.cc">chriscummins.cc</a> |
-          &copy; 2013 Chris Cummins
+        <div class="headline">
+          <h1 class="headline-title">
+            Julius
+            <small>The Caesar Shifter</small>
+          </h1>
         </div>
 
+        <div class="row">
+          <div class="span6">
+            <!-- input -->
+      	    <textarea id="textarea" class="spanFull" rows="12"
+                      placeholder="Type your message here"></textarea>
+
+            <!-- (padding) -->
+            <p style="margin: 0; visibility: hidden;">P</p>
+
+            <!-- slider -->
+	    <section>
+	      <div id="shift-slider"></div>
+	    </section>
+
+            <div class="btn-group pull-right">
+              <button id="shift-auto" class="btn btn-success" disabled>
+                Auto
+              </button>
+            </div>
+            <center>
+              <p id="shift-label" class="lead"
+                 style="margin-left: 110px;">
+                0 shift
+              </p>
+            </center>
+
+          </div> <!-- /.span -->
+
+          <div class="span6">
+            <!-- chart -->
+            <div id="container"></div>
+
+            <!-- (padding) -->
+            <p style="margin: 0; visibility: hidden;">P</p>
+
+            <!-- slider -->
+	    <section>
+	      <div id="lang-slider"></div>
+	    </section>
+
+            <div class="btn-group pull-right">
+              <button id="lang-auto" class="btn btn-success" disabled>
+                Auto
+              </button>
+            </div>
+            <center>
+              <p id="lang-label" class="lead"
+                 style="margin-left: 110px;">
+                English
+              </p>
+            </center>
+
+          </div> <!-- /.span -->
+
+        </div> <!-- /.row -->
+
+      </div> <!-- /.container -->
+      <div id="push"></div>
+    </div> <!-- /#wrap -->
+
+    <!-- Site footer -->
+    <div class="footer">
+      <div class="container wrapper">
+        <div class="pull-right">
+          <!-- twitter tweet -->
+          <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://chriscummins.cc" data-via="iamchriscummins" data-dnt="true">Tweet</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+          <!-- facebook like -->
+          <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fchriscummins.cc&amp;send=false&amp;layout=button_count&amp;width=110&amp;show_faces=false&amp;font&amp;colorscheme=light&amp;action=like&amp;height=21"
+                  scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:110px; height:21px;" allowTransparency="true"></iframe>
+          <!-- github watch -->
+          <iframe src="http://ghbtns.com/github-btn.html?user=ChrisCummins&repo=chriscummins.cc&type=watch&count=true"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110" height="21"></iframe>
+        </div>
+
+        <div class="footer-collapse">
+          <p class="muted">
+            &copy; 2013 Chris Cummins |
+            <a id="contact-me">Send me a message</a>
+          </p>
+        </div>
       </div>
+    </div> <!-- /.footer -->
+
+    <!-- The feedback form -->
+    <div class="feedback-overlay"></div>
+    <div class="feedback-form">
+      <form id="feedback-form-messageform" name="contactme" action="">
+      	<p>Send me a message</p>
+      	<textarea id="feedback-form-message" name="message"></textarea>
+      	<p>Email</p>
+      	<input id="feedback-form-email" name="email" type="text" autocomplete="off" /><br />
+      	<input id="feedback-form-cancel" class="btn btn-large btn-warning" type="reset" value="Cancel" />
+      	<input id="feedback-form-send" class="btn btn-large btn-success" type="submit" value="Send" />
+      </form>
+      <div id="feedback-form-messagesuccess">
+        <center>
+	  <br /><br /><br /><br /><br /><br />
+	  <img src="/assets/img/check.png">
+	  <br /><br />
+	  Thanks for getting in touch!
+        </center>
+      </div>
+    </div>
 
   </body>
 
@@ -154,6 +194,8 @@
   <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
   <script src="//code.highcharts.com/highcharts.js"></script>
   <script src="//code.highcharts.com/modules/exporting.js"></script>
+  <script src="/assets/js/flatui-extras.js"></script>
+  <script src="/assets/js/flatui.js"></script>
   <script src="/assets/js/julius.js"></script>
 
 </html>

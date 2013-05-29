@@ -1,59 +1,48 @@
 //
 // Modulus operator, see:
-// http://javascript.about.com/od/problemsolving/a/modulobug.htm
+//     http://javascript.about.com/od/problemsolving/a/modulobug.htm
 //
 Number.prototype.mod = function(n) {
   return ((this % n) + n) % n;
 };
 
 //
-// Gray theme for Highcharts JS
-// Written by Torstein Hønsi.
+// Highchart theme.
+//
+// Based on:
+//     Gray theme for Highcharts JS
+//     Written by Torstein Hønsi.
 //
 Highcharts.theme = {
   colors: ['#DDDF0D', '#7798BF', '#55BF3B', '#DF5353', '#aaeeee', '#ff0066',
            '#eeaaee', '#55BF3B', '#DF5353', '#7798BF', '#aaeeee'],
   chart: {
-    backgroundColor: {
-      linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
-      stops: [
-        [0, 'rgb(96, 96, 96)'],
-        [1, 'rgb(16, 16, 16)']
-      ]
-    },
-    borderWidth: 0,
-    borderRadius: 15,
+    borderWidth: 2,
+    borderRadius: 6,
     plotBackgroundColor: null,
     plotShadow: false,
     plotBorderWidth: 0
   },
   title: {
     style: {
-      color: '#FFF',
+      color: '#333333',
       font: '16px Lucida Grande, Lucida Sans Unicode, Verdana, Arial, ' +
-          'Helvetica, sans-serif'
-    }
-  },
-  subtitle: {
-    style: {
-      color: '#DDD',
-      font: '12px Lucida Grande, Lucida Sans Unicode, Verdana, Arial, ' +
           'Helvetica, sans-serif'
     }
   },
   xAxis: {
     gridLineWidth: 0,
-    lineColor: '#999',
-    tickColor: '#999',
+    lineColor: '#666666',
+    tickColor: '#666666',
     labels: {
       style: {
-        color: '#999',
+        color: '#666666',
         fontWeight: 'bold'
       }
     },
     title: {
       style: {
-        color: '#AAA',
+        color: '#333333',
         font: 'bold 12px Lucida Grande, Lucida Sans Unicode, Verdana, ' +
             'Arial, Helvetica, sans-serif'
       }
@@ -62,19 +51,19 @@ Highcharts.theme = {
   yAxis: {
     alternateGridColor: null,
     minorTickInterval: null,
-    gridLineColor: 'rgba(255, 255, 255, .1)',
-    minorGridLineColor: 'rgba(255,255,255,0.07)',
+    gridLineColor: '#666666',
+    minorGridLineColor: '#666666',
     lineWidth: 0,
     tickWidth: 0,
     labels: {
       style: {
-        color: '#999',
+        color: '#666666',
         fontWeight: 'bold'
       }
     },
     title: {
       style: {
-        color: '#AAA',
+        color: '#333333',
         font: 'bold 12px Lucida Grande, Lucida Sans Unicode, Verdana, ' +
             'Arial, Helvetica, sans-serif'
       }
@@ -82,13 +71,13 @@ Highcharts.theme = {
   },
   legend: {
     itemStyle: {
-      color: '#CCC'
+      color: '#333333'
     },
     itemHoverStyle: {
-      color: '#FFF'
+      color: '#666666'
     },
     itemHiddenStyle: {
-      color: '#333'
+      color: '#666666'
     }
   },
   labels: {
@@ -109,7 +98,6 @@ Highcharts.theme = {
       color: '#FFF'
     }
   },
-
   plotOptions: {
     series: {
       animation: false,
@@ -137,13 +125,11 @@ Highcharts.theme = {
       lineColor: 'white'
     }
   },
-
   toolbar: {
     itemStyle: {
       color: '#CCC'
     }
   },
-
   navigation: {
     buttonOptions: {
       symbolStroke: '#DDDDDD',
@@ -160,7 +146,6 @@ Highcharts.theme = {
       }
     }
   },
-
   // scroll charts
   rangeSelector: {
     buttonTheme: {
@@ -213,7 +198,6 @@ Highcharts.theme = {
       color: 'silver'
     }
   },
-
   navigator: {
     handles: {
       backgroundColor: '#666',
@@ -226,7 +210,6 @@ Highcharts.theme = {
       lineColor: '#A6C7ED'
     }
   },
-
   scrollbar: {
     barBackgroundColor: {
       linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
@@ -255,7 +238,6 @@ Highcharts.theme = {
     },
     trackBorderColor: '#666'
   },
-
   // special colors for some of the demo examples
   legendBackgroundColor: 'rgba(48, 48, 48, 0.8)',
   legendBackgroundColorSolid: 'rgb(70, 70, 70)',
@@ -381,36 +363,35 @@ var Julius = Julius || {};
   // Letter Frequency Distributions.
   //
   // Source: http://en.wikipedia.org/wiki/Letter_frequency
-  var languageDistributions = {
-    'English': [
-      0.08167, // A
-      0.01492, // B
-      0.02782, // C
-      0.04253, // D
-      0.12702, // E
-      0.02228, // F
-      0.02015, // G
-      0.06094, // H
-      0.06966, // I
-      0.00153, // J
-      0.00772, // K
-      0.04025, // L
-      0.02406, // M
-      0.06749, // N
-      0.07507, // O
-      0.01929, // P
-      0.00095, // Q
-      0.05987, // R
-      0.06327, // S
-      0.09056, // T
-      0.02758, // U
-      0.00978, // V
-      0.02360, // W
-      0.00150, // X
-      0.01974, // Y
-      0.00074  // Z
-    ],
-    'Esperanto': [
+  var languageDistributions = [
+    { name: 'Dutch', dist: [
+      0.07486, // A
+      0.01584, // B
+      0.01242, // C
+      0.05933, // D
+      0.18914, // E
+      0.00805, // F
+      0.03403, // G
+      0.02380, // H
+      0.06499, // I
+      0.01461, // J
+      0.02248, // K
+      0.03568, // L
+      0.02213, // M
+      0.10032, // N
+      0.06063, // O
+      0.01370, // P
+      0.00009, // Q
+      0.06411, // R
+      0.03733, // S
+      0.06923, // T
+      0.02192, // U
+      0.01854, // V
+      0.01821, // W
+      0.00036, // X
+      0.00035, // Y
+      0.01374  // Z
+    ]}, { name: 'Esperanto', dist: [
       0.12117, // A
       0.00980, // B
       0.00776, // C
@@ -437,8 +418,7 @@ var Julius = Julius || {};
       0.00000, // X
       0.00000, // Y
       0.00490  // Z
-    ],
-    'French': [
+    ]}, { name: 'French', dist: [
       0.07636, // A
       0.00901, // B
       0.03260, // C
@@ -465,8 +445,7 @@ var Julius = Julius || {};
       0.00427, // X
       0.00128, // Y
       0.00326  // Z
-    ],
-    'German': [
+    ]}, { name: 'German', dist: [
       0.06516, // A
       0.01886, // B
       0.02732, // C
@@ -493,8 +472,7 @@ var Julius = Julius || {};
       0.00034, // X
       0.00039, // Y
       0.01134  // Z
-    ],
-    'Italian': [
+    ]}, {name: 'Italian', dist: [
       0.11745, // A
       0.00927, // B
       0.04501, // C
@@ -521,8 +499,61 @@ var Julius = Julius || {};
       0.00000, // X
       0.00020, // Y
       0.01181  // Z
-    ],
-    'Portugese': [
+    ]}, { name: 'English', dist: [
+      0.08167, // A
+      0.01492, // B
+      0.02782, // C
+      0.04253, // D
+      0.12702, // E
+      0.02228, // F
+      0.02015, // G
+      0.06094, // H
+      0.06966, // I
+      0.00153, // J
+      0.00772, // K
+      0.04025, // L
+      0.02406, // M
+      0.06749, // N
+      0.07507, // O
+      0.01929, // P
+      0.00095, // Q
+      0.05987, // R
+      0.06327, // S
+      0.09056, // T
+      0.02758, // U
+      0.00978, // V
+      0.02360, // W
+      0.00150, // X
+      0.01974, // Y
+      0.00074  // Z
+    ]}, { name: 'Polish', dist: [
+      0.11503, // A
+      0.01740, // B
+      0.03895, // C
+      0.04225, // D
+      0.08352, // E
+      0.00143, // F
+      0.01731, // G
+      0.01015, // H
+      0.09328, // I
+      0.01836, // J
+      0.02753, // K
+      0.03064, // L
+      0.02515, // M
+      0.06737, // N
+      0.07167, // O
+      0.02445, // P
+      0.00000, // Q
+      0.05743, // R
+      0.06224, // S
+      0.02475, // T
+      0.02062, // U
+      0.00000, // V
+      0.06313, // W
+      0.00000, // X
+      0.03206, // Y
+      0.05852  // Z
+    ]}, { name: 'Portugese', dist: [
       0.14634, // A
       0.01043, // B
       0.03882, // C
@@ -549,8 +580,7 @@ var Julius = Julius || {};
       0.00253, // X
       0.00006, // Y
       0.00470  // Z
-    ],
-    'Spanish': [
+    ]}, { name: 'Spanish', dist: [
       0.12525, // A
       0.02215, // B
       0.04139, // C
@@ -577,8 +607,34 @@ var Julius = Julius || {};
       0.00215, // X
       0.01008, // Y
       0.00517  // Z
-    ],
-    'Turkish': [
+    ]}, { name: 'Swedish', dist: [
+      0.09341, // A
+      0.01254, // B
+      0.01213, // C
+      0.04521, // D
+      0.09647, // E
+      0.01931, // F
+      0.03269, // G
+      0.02103, // H
+      0.07190, // I
+      0.00652, // J
+      0.03214, // K
+      0.05229, // L
+      0.03460, // M
+      0.08796, // N
+      0.04317, // O
+      0.01437, // P
+      0.00007, // Q
+      0.08309, // R
+      0.06374, // S
+      0.08693, // T
+      0.02066, // U
+      0.02289, // V
+      0.02107, // W
+      0.00103, // X
+      0.00601, // Y
+      0.00020  // Z
+    ]}, { name: 'Turkish', dist: [
       0.11680, // A
       0.02952, // B
       0.00970, // C
@@ -605,8 +661,8 @@ var Julius = Julius || {};
       0.00007, // X
       0.03371, // Y
       0.01497  // Z
-    ]
-  };
+    ]}
+  ];
 
   // The letter distributions of the input data
   var letterDistributions = [
@@ -614,20 +670,27 @@ var Julius = Julius || {};
     0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
   ];
 
-  var targetDistribution = languageDistributions['English'];
+  // Default to English
+  var targetDistribution = languageDistributions[5].dist;
 
   var diff = 0;
 
   // Our page elements
-  var slider = $('#slider');
-  var label = $('#shift-label');
   var textarea = $('#textarea');
+
+  var shiftSlider = $('#shift-slider');
+  var shiftLabel = $('#shift-label');
+  var shiftAuto = $('#shift-auto');
+
+  var langSlider = $('#lang-slider');
+  var langLabel = $('#lang-label');
+  var langAuto = $('#lang-auto');
 
   // We cache the starting shift value, so that shifts are performed relatively
   var cachedShift = 0;
 
   function setShift(n) {
-    label.text(n + ' shift');
+    shiftLabel.text(n + ' shift');
 
     // Perform the shift
     textarea.val(alphabeticShift(textarea.val(), n - cachedShift));
@@ -637,39 +700,24 @@ var Julius = Julius || {};
     refreshChart();
   }
 
-  // Setup the shift slider
-  slider.slider({
-    range: 'min',
-    min: 0,
-    max: 26,
-    step: 1,
-    value: 13,
-
-    // Slider change callback
-    slide: function(event, ui) {
-      setShift(ui.value - 13);
-    }
-  });
-
   // Update the text area while we type
   textarea.bind('input propertychange', function() {
+    if (textarea.val().length > 0) {
+      shiftAuto.removeAttr('disabled');
+      langAuto.removeAttr('disabled');
+    } else {
+      shiftAuto.attr('disabled', 'disabled');
+      langAuto.attr('disabled', 'disabled');
+    }
+
     // Update the frequency chart
     refreshChart();
   });
 
-  // Language dropdown button
-  $('#language').change(function() {
-    var lang = $('#language option:selected').text();
-
-    targetDistribution = languageDistributions[lang];
-
-    refreshChart();
-  });
-
   // Auto button
-  $('#auto').click(function() {
+  shiftAuto.click(function() {
 
-    var shift = slider.slider('value') - 13;
+    var shift = shiftSlider.slider('value') - 13;
     var bestShift = -13;
     var fittest;
 
@@ -698,7 +746,7 @@ var Julius = Julius || {};
     }
 
     // Set the fittest shift and update
-    slider.slider('value', bestShift + 13);
+    shiftSlider.slider('value', bestShift + 13);
     setShift(bestShift);
   });
 
@@ -728,7 +776,7 @@ var Julius = Julius || {};
         text: 'Letter Frequency Distribution'
       },
       subtitle: {
-        text: 'Strength: ' + Math.round(diff)
+        text: ''
       },
       xAxis: {
         labels: {
@@ -779,6 +827,10 @@ var Julius = Julius || {};
   // Document ready preparations
   this.init = function() {
 
+    // Disable buttons
+    shiftAuto.attr('disabled', 'disabled');
+    langAuto.attr('disabled', 'disabled');
+
     // Set keyboard focus on the text area
     textarea.focus();
 
@@ -787,6 +839,36 @@ var Julius = Julius || {};
 
     // Draw the empty chart
     drawChart();
+
+    // Setup the shift slider
+    shiftSlider.slider({
+      range: 'min',
+      min: 0,
+      max: 26,
+      step: 1,
+      value: 13,
+
+      // Slider change callback
+      slide: function(event, ui) {
+        setShift(ui.value - 13);
+      }
+    });
+
+    // Setup the shift slider
+    langSlider.slider({
+      range: 'min',
+      min: 0,
+      max: languageDistributions.length - 1,
+      step: 1,
+      value: 5,
+
+      // Slider change callback
+      slide: function(event, ui) {
+        targetDistribution = languageDistributions[ui.value].dist;
+        langLabel.text(languageDistributions[ui.value].name);
+        refreshChart();
+      }
+    });
   };
 
 }).call(Julius);
