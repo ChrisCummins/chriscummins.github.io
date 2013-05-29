@@ -694,6 +694,12 @@ body {
   /* 16px */
 
 }
+.navbar-fixed-top .navbar-inner,
+.navbar-static-top .navbar-inner  {
+  -webkit-box-shadow: none;
+  -moz-box-shadow:    none;
+  box-shadow:         none;
+}
 .navbar .brand {
   text-decoration: none;
   border-radius: 6px 0 0 6px;
