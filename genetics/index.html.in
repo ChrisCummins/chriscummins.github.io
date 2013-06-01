@@ -9,14 +9,98 @@
     <meta name="viewport" content="width=1024" />
     <meta charset="utf-8" />
 
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,700" />
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.no-icons.min.css" />
+    <style type="text/css">body{padding-top:60px;}</style>
+    <link rel="stylesheet" href="/assets/css/flat-ui.css" />
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.1.0/css/font-awesome.css" />
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
-    <link rel="stylesheet" href="/assets/css/buttons.css" />
-    <link rel="stylesheet" href="/assets/css/site.css" />
-    <link rel="stylesheet" href="/assets/css/genetics.css" />
     <link rel="shortcut icon" href="/assets/img/favicon.ico" />
+
+    <style>
+      #pictureframe {
+        width: 730px;
+        margin-bottom: 15px;
+        border: 2px solid #000;
+      }
+
+      #pictureframe .picture {
+        width: 350px;
+        height: 350px;
+        margin: 8px;
+
+        /* inactive canvas appearance */
+        background: solid;
+        background-color: #222;
+        -webkit-box-shadow: inset 0 0 20px #000;
+        -moz-box-shadow:    inset 0 0 20px #000;
+        box-shadow:         inset 0 0 20px #000;
+      }
+
+      #pictureframe .btn-toolbar {
+        margin-top: 0;
+      }
+
+      /* start/stop buttons */
+      .control-btn {
+        width: 150px !important;
+        font-weight: bold;
+      }
+
+      /* icons */
+      i {
+        margin-left: 6px;
+      }
+
+      .icon-large {
+        margin-left: 0px;
+        margin-right: 6px;
+      }
+
+      .tooltip-inner {
+        max-width: 450px;
+      }
+
+      /* webcam chooser */
+      .webcam-overlay {
+        display: none;
+        position: fixed;
+        top: 25%;
+        left: 50%;
+        z-index: 100;
+        width: 380px;
+        height: 410px;
+        margin-left: -190px;
+        margin-right: -200px;
+        padding-top: 15px;
+
+        border: 1px solid #999;
+        border: inset 1px solid #333;
+        -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+        -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+        box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+
+        background: #fff;
+      }
+
+      /* hidden file chooser. just shunt this out of the way somewhere */
+      #file-chooser {
+        visibility: hidden;
+        position: absolute;
+        top: 0px;
+        left: -1000px;
+        width: 1px;
+        height: 1px
+      }
+
+      /* tables */
+      .conf-table, #analytics-table {
+        font-size: 16px;
+        table-layout: fixed;
+        margin-top: 15px;
+      }
+
+      .conf-table td {
+        border-top: none;
+      }
+    </style>
   </head>
 
   <body class="genetics-inactive">
@@ -34,92 +118,99 @@
       })();
     </script>
 
-    <div class="container-narrow">
+    <div id="wrap">
 
-      <!-- title section -->
-      <div class="masthead">
-        <ul class="nav nav-pills pull-right">
-          <li><a href="/blog/" target="_blank">Blog</a></li>
-          <li><a href="/music/">Music</a></li>
-          <li class="semi-active"><a href="/software/">Software</a></li>
-          <li><a href="/pictures/">Pictures</a></li>
-        </ul>
-        <h3 class="serif-title">
-          <a href="http://chriscummins.cc">chriscummins.cc</a>
-        </h3>
-      </div>
-
-      <center>
-
-        <hr>
-
-        <div class="fixed-width-container">
-
-          <h1 class="serif-title">Grow Your Own Picture</h1>
-
-          <!-- pictures -->
-          <div id="pictureframe">
-            <canvas id="referenceCanvas" class="picture" width="350" height="350" style="margin-right: 4px;"></canvas>
-            <canvas id="outputCanvas" class="picture" width="350" height="350" style="margin-left: 4px;"></canvas>
-          </div>
-
-          <!-- button bar -->
-          <div class="btn-toolbar">
-            <div class="btn-group">
-
-              <!-- image dropdown -->
-              <a class="btn dropdown-toggle btn-inverse" data-toggle="dropdown"
-                 href="#" style="border-top-right-radius: 0px; border-bottom-right-radius: 0px;">
-                Select Image &nbsp;<span class="caret"></span>
-              </a>
-              <ul id="stock-image-menu" class="dropdown-menu" style="text-align: start;">
-                <li><a href="#">Mona Lisa</a></li>
-                <li><a href="#">Kyle Broflovski</a></li>
-                <li><a href="#">Marilyn Monroe</a></li>
-                <li><a href="#">Tom Waits</a></li>
-                <li><a href="#">Piet Mondrian</a></li>
-                <li><a href="#">Eiffel Tower</a></li>
-                <li><a href="#">Sunflowers</a></li>
+      <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+          <div class="container">
+            <button type="button" class="btn btn-navbar"
+                    data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="brand" href="http://chriscummins.cc">chriscummins.cc</a>
+            <div class="nav-collapse collapse pull-right">
+              <ul class="nav">
+                <li><a href="/">Home</a></li>
+                <li><a href="/blog/" target="_blank">Blog</a></li>
+                <li><a href="/music/">Music</a></li>
+                <li class="active"><a href="/software/">Software</a></li>
+                <li><a href="/pictures/">Pictures</a></li>
               </ul>
-
-              <!-- webcam button -->
-              <button id="webcam-upload-btn" class="btn btn-inverse">
-                Webcam <i class="icon-camera"></i></button>
-
-            </div>
-
-            <button id="start" class="btn control-btn btn-success"
-                    style="margin-left: 150px;" disabled>
-              Start
-            </button>
-
-            <button id="stop" class="btn control-btn btn-danger" disabled>
-              Stop
-            </button>
+            </div><!--/.nav-collapse -->
           </div>
+        </div>
+      </div> <!-- /.navbar -->
 
+      <div class="container">
+
+        <div class="headline">
+          <h1 class="headline-title">
+            Grow Your Own Picture
+            <small>Genetic Algorithms &amp; Generative Art</small>
+          </h1>
         </div>
 
-      </center>
+        <div class="row">
+          <center>
 
-      <div class="tabbable tabs-left" style="margin-top: 30px;">
-        <ul class="nav nav-tabs" style="margin-right: 0px;">
+            <!-- pictures -->
+            <div id="pictureframe">
+              <canvas id="referenceCanvas" class="picture" width="350" height="350" style="margin-right: 4px;"></canvas>
+              <canvas id="outputCanvas" class="picture" width="350" height="350" style="margin-left: 4px;"></canvas>
 
-          <li class="active"><a href="#pane-about" data-toggle="tab">
-              <i class="icon-info-sign icon-large"></i> About</a></li>
+              <!-- button bar -->
+              <div class="btn-toolbar">
+                <div class="btn-group">
 
-          <li><a href="#pane-configuration" data-toggle="tab">
-              <i class="icon-cog icon-large"></i> Configuration</a></li>
+                  <!-- webcam button -->
+                  <button id="webcam-upload-btn" class="btn btn-inverse control-btn"
+                          style="border-top-right-radius: 0; border-bottom-right-radius: 0;">
+                    Webcam <i class="icon-camera"></i></button>
 
-          <li><a href="#pane-analytics" data-toggle="tab">
-              <i class="icon-beaker icon-large"></i> Analytics</a></li>
+                  <!-- image dropdown -->
+                  <a class="btn dropdown-toggle btn-inverse control-btn"
+                     data-toggle="dropdown" href="#"
+                     style="border-top-left-radius: 0; border-bottom-left-radius: 0;">
+                    Select Image &nbsp;<span class="caret"></span>
+                  </a>
+                  <ul id="stock-image-menu" class="dropdown-menu" style="text-align: start;">
+                    <li><a href="#">Mona Lisa</a></li>
+                    <li><a href="#">Kyle Broflovski</a></li>
+                    <li><a href="#">Marilyn Monroe</a></li>
+                    <li><a href="#">Tom Waits</a></li>
+                    <li><a href="#">Piet Mondrian</a></li>
+                    <li><a href="#">Eiffel Tower</a></li>
+                    <li><a href="#">Sunflowers</a></li>
+                  </ul>
 
-          <li><a href="#pane-results" data-toggle="tab">
-              <i class="icon-bar-chart icon-large"></i> Results</a></li>
-        </ul>
+                </div> <!-- /.btn-group -->
 
-        <div class="tab-content">
-          <div id="pane-about" class="tab-pane active well">
+                <div class="btn-group">
+                  <button id="stop" class="btn control-btn btn-danger"
+                          style="margin-left: 80px;" disabled>
+                    Stop
+                  </button>
+
+                  <button id="start" class="btn control-btn btn-success"
+                          disabled>
+                    Start
+                  </button>
+                </div> <!-- /.btn-group -->
+
+              </div>
+
+            </div> <!-- /#pictureframe -->
+
+          </center>
+        </div> <!-- /.row -->
+
+        <div class="row">
+
+          <div class="span6" style="margin-bottom: 30px;">
+
+            <center><h4>Evolving theMona Lisa</h4></center>
 
             Welcome! Click start to see genetics in action, as a randomly
             generated collection of shapes evolve to resemble a given
@@ -127,41 +218,22 @@
             pre-chosen images, or supply your own by taking a picture with the
             webcam on your device.
 
-            <h4>Evolving the Mona Lisa</h4>
+            <center><h5>How it Works</h5></center>
 
             This page uses a genetic algorithm to model a population of
-            individuals, each containing a string of DNA which can be
-            visualised in the form of an image. By starting with a population
-            consisting of a randomly generated gene pool, each individual is
-            compared against the reference image (the one on the left), and
-            the individuals can then be ranked by their likeness to it, known
-            as their "fitness", with the best fit being displayed on the
-            output image (the one on the right). By breeding the fittest
-            individuals from the population, the DNA which produces the most
-            accurate representation of the reference image is selected over
-            successive generations, effectively demonstrating the power of a
-            natural selection process to produce the best candidate for any
-            given environment.
+            individuals, each containing a string of DNA which can be visualised
+            in the form of an image. By starting with a population consisting of
+            a randomly generated gene pool, each individual is compared against
+            the reference image (the one on the left), and the individuals can
+            then be ranked by their likeness to it, known as their "fitness",
+            with the best fit being displayed on the output image (the one on
+            the right). By breeding the fittest individuals from the population,
+            the DNA which produces the most accurate representation of the
+            reference image is selected over successive generations, effectively
+            demonstrating the power of a natural selection process to produce
+            the best candidate for any given environment.
 
-            <h4>Examples</h4>
-
-            Here are some example sessions. Click on one of the images to load
-            the configuration and try it for yourself!
-
-            <center>
-              <a href="#" id="examples-crude">
-                <img class="example conf-option" data-toggle="tooltip"
-                     title="Crude Squares"
-                     src="/assets/img/examples-crude.jpg" />
-              </a>
-              <a href="#" id="examples-line-art">
-                <img class="example conf-option" data-toggle="tooltip"
-                     title="Line Art"
-                     src="/assets/img/examples-line-art.jpg" />
-              </a>
-            </center>
-
-            <h4>Source Code</h4>
+            <center><h5>Source Code</h5></center>
 
             As with all good things in life, this was created for fun, free,
             and science. The full source code for this site is available on
@@ -172,280 +244,248 @@
             implementation <a href="https://github.com/ChrisCummins/chriscummins.cc/blob/master/assets/js/genetics.js.in"
                               target="_blank">here</a>.
 
-            <h4>Bugs, comments and improvements</h4>
+            <center><h5>Bugs, comments and improvements</h5></center>
 
-            I would love to hear your feedback. Don't be afraid of
-            <a href="http://chriscummins.cc/#overview" target="_blank">sending
-              me a message</a> with any thoughts and suggestions.  If you would
-            like to be a little more involved in the process, please open an
-            issue on
+            I would love to know what you think. Don't be afraid of
+            <a id="get-in-touch" href="#">getting in touch</a> with any thoughts
+            and suggestions.  If you would like to be a little more involved in
+            the process, please open an issue on
             the <a href="https://github.com/ChrisCummins/chriscummins.cc/issues"
-                   target="_blank">website bug tracker</a>.  To contribute to the
-            code, you can fork the source code repository and submit a pull
-            request when ready.
+            target="_blank">website bug tracker</a>.  To contribute to the code,
+            you can fork the source code repository and submit a pull request
+            when ready.
+          </div> <!-- /.span6 -->
 
-          </div>
+          <div class="span6">
 
-          <div id="pane-configuration" class="tab-pane well">
+            <div class="tabbable">
+              <ul class="nav nav-tabs">
+                <li class="active">
+                  <a href="#pane-configuration" data-toggle="tab">
+                    <i class="icon-cog icon-large"></i> Configuration
+                  </a>
+                </li>
 
-            <!-- configuration synopsis -->
-            <div class="alert alert-info">
-              <a href="#" class="close" data-dismiss="alert">&times;</a>
-              This tab enables you to configure the parameters to be used for
-              the genetics simulation. Hover over an option to see what it
-              does.
-            </div>
+                <li>
+                  <a href="#pane-analytics" data-toggle="tab">
+                    <i class="icon-beaker icon-large"></i> Analytics
+                  </a>
+                </li>
+              </ul>
 
-            <center><h4 style="margin-top: 0px;">Genetics</h4></center>
+              <div class="tab-content">
+                <div id="pane-configuration" class="tab-pane active">
 
-            <table class="table conf-table">
+                  <center><h5 style="margin-top: 0px; padding-top: 15px;">Genetics</h5></center>
 
-              <tr class="conf-option" data-toggle="tooltip"
-                  title="The number of individuals in a the population. This determines the size of the gene pool. If the population is 1, then reproduction occurs asexually">
-                <td style="width: 160px;">
-                  Population Size
-                </td>
-                <td><div id="population-size-slider" class="conf-slider"></div></td>
-                <td id="population-size" style="width: 80px;"></td>
-              <tr/>
+                  <table class="table conf-table">
 
-              <tr class="conf-option" data-toggle="tooltip"
-                  title="This determines the number of individuals from a given generation that get selected to breed the next. A lower percentage indicates more selective breeding">
-                <td>
-                  Selection Cutoff
-                </td>
-                <td><div id="cutoff-slider" class="conf-slider"></div></td>
-                <td id="cutoff"></td>
-              <tr/>
+                    <tr class="conf-option" data-toggle="tooltip"
+                        title="The number of individuals in a the population. This determines the size of the gene pool. If the population is 1, then reproduction occurs asexually">
+                      <td style="width: 160px;">
+                        Population Size
+                      </td>
+                      <td><div id="population-size-slider" class="conf-slider"></div></td>
+                      <td id="population-size" style="width: 80px;"></td>
+                    <tr/>
 
-              <tr class="conf-option" data-toggle="tooltip"
-                  title="The chance that a string of DNA will mutate during breeding. A higher chance represents less accurate DNA replication">
-                <td>
-                  Mutation Chance
-                </td>
-                <td><div id="mutation-chance-slider" class="conf-slider"></div></td>
-                <td id="mutation-chance"></td>
-              <tr/>
+                    <tr class="conf-option" data-toggle="tooltip"
+                        title="This determines the number of individuals from a given generation that get selected to breed the next. A lower percentage indicates more selective breeding">
+                      <td>
+                        Selection Cutoff
+                      </td>
+                      <td><div id="cutoff-slider" class="conf-slider"></div></td>
+                      <td id="cutoff"></td>
+                    <tr/>
 
-              <tr class="conf-option" data-toggle="tooltip"
-                  title="The amount of random data that will be introduced to a string of DNA during mutation">
-                <td>
-                  Mutation Amount
-                </td>
-                <td><div id="mutation-amount-slider" class="conf-slider"></div></td>
-                <td id="mutation-amount"></td>
-              <tr/>
+                    <tr class="conf-option" data-toggle="tooltip"
+                        title="The chance that a string of DNA will mutate during breeding. A higher chance represents less accurate DNA replication">
+                      <td>
+                        Mutation Chance
+                      </td>
+                      <td><div id="mutation-chance-slider" class="conf-slider"></div></td>
+                      <td id="mutation-chance"></td>
+                    <tr/>
 
-              <tr class="conf-option" data-toggle="tooltip"
-                  title="If enabled, genes are inherited randomly from mother and father, as opposed to inheriting an even number from both">
-                <td>
-                  Random Inheritance
-                </td>
-                <td></td>
-                <td><label>
-                    <input id="random-inheritance" class="ios-switch"
-                           type="checkbox" />
-                </label></td>
-              <tr/>
+                    <tr class="conf-option" data-toggle="tooltip"
+                        title="The amount of random data that will be introduced to a string of DNA during mutation">
+                      <td>
+                        Mutation Amount
+                      </td>
+                      <td><div id="mutation-amount-slider" class="conf-slider"></div></td>
+                      <td id="mutation-amount"></td>
+                    <tr/>
 
-              <tr class="conf-option" data-toggle="tooltip"
-                  title="This determines whether the fitness algorithm is linear or exponential">
-                <td>
-                  Difference squared
-                </td>
-                <td></td>
-                <td><label>
-                    <input id="diff-squared" class="ios-switch"
-                           type="checkbox" />
-                </label></td>
-              <tr/>
+                    <tr class="conf-option" data-toggle="tooltip"
+                        title="If enabled, genes are inherited randomly from mother and father, as opposed to inheriting an even number from both">
+                      <td>
+                        Random Inheritance
+                      </td>
+                      <td></td>
+                      <td><label>
+                          <input id="random-inheritance" type="checkbox"
+                                 data-toggle="switch" />
+                      </label></td>
+                    <tr/>
 
-              <tr class="conf-option" data-toggle="tooltip"
-                  title="If enabled, the lifespan of an individual is determined by its fitness, with the strongest individuals from each generation surviving">
-                <td>
-                  Fittest survive
-                </td>
-                <td></td>
-                <td><label>
-                    <input id="fittest-survive" class="ios-switch"
-                           type="checkbox" />
-                </label></td>
-              <tr/>
+                    <tr class="conf-option" data-toggle="tooltip"
+                        title="This determines whether the fitness algorithm is linear or exponential">
+                      <td>
+                        Difference squared
+                      </td>
+                      <td></td>
+                      <td><label>
+                          <input id="diff-squared" type="checkbox"
+                                 data-toggle="switch" checked="" />
+                      </label></td>
+                    <tr/>
 
-            </table>
+                    <tr class="conf-option" data-toggle="tooltip"
+                        title="If enabled, the lifespan of an individual is determined by its fitness, with the strongest individuals from each generation surviving">
+                      <td>
+                        Fittest survive
+                      </td>
+                      <td></td>
+                      <td><label>
+                          <input id="fittest-survive" type="checkbox"
+                                 data-toggle="switch" />
+                      </label></td>
+                    <tr/>
 
-            <!-- graphics settings -->
-            <center><h4>Graphics</h4></center>
+                  </table>
 
-            <table class="table conf-table">
+                  <!-- graphics settings -->
+                  <center><h5>Graphics</h5></center>
 
-              <tr class="conf-option" data-toggle="tooltip"
-                  title="A higher internal resolution improves the accuracy of the fitness algorithm, but decreases performance">
-                <td style="width: 160px;">
-                  Internal Resolution
-                </td>
-                <td><div id="resolution-slider" class="conf-slider"></div></td>
-                <td id="resolution" style="width: 80px;"></td>
-              <tr/>
+                  <table class="table conf-table">
 
-              <tr class="conf-option" data-toggle="tooltip"
-                  title="This determines the number of visible polygons which are used in the drawing. A higher number leads to more detailed drawings">
-                <td>
-                  Number of polygons
-                </td>
-                <td><div id="polygons-slider" class="conf-slider"></div></td>
-                <td id="polygons"></td>
-              <tr/>
+                    <tr class="conf-option" data-toggle="tooltip"
+                        title="A higher internal resolution improves the accuracy of the fitness algorithm, but decreases performance">
+                      <td style="width: 160px;">
+                        Internal Resolution
+                      </td>
+                      <td><div id="resolution-slider" class="conf-slider"></div></td>
+                      <td id="resolution" style="width: 80px;"></td>
+                    <tr/>
 
-              <tr class="conf-option" data-toggle="tooltip"
-                  title="The number of sides that each polygon has. For example, setting this to 3 will create triangles">
-                <td>
-                  Number of vertices
-                </td>
-                <td><div id="vertices-slider" class="conf-slider"></div></td>
-                <td id="vertices"></td>
-              <tr/>
+                    <tr class="conf-option" data-toggle="tooltip"
+                        title="This determines the number of visible polygons which are used in the drawing. A higher number leads to more detailed drawings">
+                      <td>
+                        Number of polygons
+                      </td>
+                      <td><div id="polygons-slider" class="conf-slider"></div></td>
+                      <td id="polygons"></td>
+                    <tr/>
 
-              <tr class="conf-option" data-toggle="tooltip"
-                  title="Draw solid shapes or traced lines">
-                <td>
-                  Fill polygons
-                </td>
-                <td></td>
-                <td><label>
-                    <input id="fill-polygons" class="ios-switch"
-                           type="checkbox" />
-                </label></td>
-              <tr/>
+                    <tr class="conf-option" data-toggle="tooltip"
+                        title="The number of sides that each polygon has. For example, setting this to 3 will create triangles">
+                      <td>
+                        Number of vertices
+                      </td>
+                      <td><div id="vertices-slider" class="conf-slider"></div></td>
+                      <td id="vertices"></td>
+                    <tr/>
 
-            </table>
-          </div>
+                    <tr class="conf-option" data-toggle="tooltip"
+                        title="Draw solid shapes or traced lines">
+                      <td>
+                        Fill polygons
+                      </td>
+                      <td></td>
+                      <td><label>
+                          <input id="fill-polygons" type="checkbox"
+                                 data-toggle="switch" checked="" />
+                      </label></td>
+                    <tr/>
 
-          <div id="pane-analytics" class="tab-pane well">
+                  </table>
+                </div> <!-- /.tab-pane -->
 
-            <div class="alert alert-info">
-              <a href="#" class="close" data-dismiss="alert">&times;</a>
-              This tab shows real time data from a running simulation.
-            </div>
+                <div id="pane-analytics" class="tab-pane">
 
-            <h4 style="margin-top: 0px;">Real Time Analysis</h4>
+                  <center><h5 style="margin-top: 0px; padding-top: 15px;">Real Time Analysis</h5></center>
 
-            <table id="analytics-table"
-                   class="table table-bordered table-striped">
-              <tr>
-                <td>Elapsed time</td>
-                <td id="elapsed-time"></td>
-              </tr>
-              <tr>
-                <td>Number of generations</td>
-                <td id="number-of-generations"></td>
-              </tr>
-              <tr>
-                <td>Average time per generation</td>
-                <td id="time-per-generation"></td>
-              </tr>
-              <tr>
-                <td>Average time per improvement</td>
-                <td id="time-per-improvement"></td>
-              </tr>
-              <tr>
-                <td>Current fitness</td>
-                <td id="current-fitness"></td>
-              </tr>
-              <tr>
-                <td>Highest fitness</td>
-                <td id="highest-fitness"></td>
-              </tr>
-              <tr>
-                <td>Lowest fitness</td>
-                <td id="lowest-fitness"></td>
-              </tr>
-            </table>
+                  <table id="analytics-table"
+                         class="table table-bordered table-striped">
+                    <tr>
+                      <td>Elapsed time</td>
+                      <td id="elapsed-time"></td>
+                    </tr>
+                    <tr>
+                      <td>Number of generations</td>
+                      <td id="number-of-generations"></td>
+                    </tr>
+                    <tr>
+                      <td>Average time per generation</td>
+                      <td id="time-per-generation"></td>
+                    </tr>
+                    <tr>
+                      <td>Average time per improvement</td>
+                      <td id="time-per-improvement"></td>
+                    </tr>
+                    <tr>
+                      <td>Current fitness</td>
+                      <td id="current-fitness"></td>
+                    </tr>
+                    <tr>
+                      <td>Highest fitness</td>
+                      <td id="highest-fitness"></td>
+                    </tr>
+                    <tr>
+                      <td>Lowest fitness</td>
+                      <td id="lowest-fitness"></td>
+                    </tr>
+                  </table>
 
-          </div>
+                  <h5 style="display: inline;">Share</h5>
 
-          <div id="pane-results" class="tab-pane well">
+                  <button id="get-url"
+                          class="btn btn-primary pull-right results-btn"
+                          style="width: 150px;" disabled>
+                    Get URL
+                  </button>
 
-            <div class="alert alert-info">
-              <a href="#" class="close" data-dismiss="alert">&times;</a>
-              Pause the simulation to save an image or examine the DNA.
-            </div>
+                  <div id="share" class="alert alert-success"
+                       style="display: none; margin-top: 25px;">
+                    <button id="close-url" type="button" class="close">&times;</button>
+                    <strong>URL</strong><br />
+                    <textarea id="share-url" class="text"
+                              style="width: 460px; min-height: 40px; resize: none;"
+                              readonly>
+                    </textarea>
+                  </div>
 
-            <h4 style="margin-top: 0px; display: inline;">
-              Share
-            </h4>
+                  <p style="margin-top: 15px; margin-bottom: 20px;">
+                    You can save your current settings to a URL for bookmarking,
+                    sharing and future reference.
+                  </p>
 
-            <button id="get-url"
-                    class="btn btn-primary pull-right results-btn" disabled>
-              Get URL
-            </button>
+                  <h5 style="margin-top: 0px; display: inline;">
+                    Save image to file
+                  </h5>
 
-            <div id="share" class="alert alert-success"
-                 style="display: none; margin-top: 15px;">
-              <button id="close-url" type="button" class="close">&times;</button>
-              <strong>URL</strong><br />
-              <textarea id="share-url" class="text"
-                        style="width: 460px; min-height: 40px; resize: none;"
-                        readonly>
-              </textarea>
-            </div>
+                  <button id="save-png" style="width: 150px;"
+                          class="btn btn-primary pull-right results-btn" disabled>
+                    Export to PNG
+                  </button>
 
-            <p style="margin-top: 15px; margin-bottom: 20px;">
-              You can save your current settings to a URL for bookmarking,
-              sharing and future reference.
-            </p>
+                  <p style="margin-top: 15px; margin-bottom: 15px;">
+                    Press 'Export to PNG' to render the current strongest individual
+                    as an image. You can save this image file to your hard disk.
+                  </p>
 
-            <h4 style="margin-top: 0px; display: inline;">
-              Save image to file
-            </h4>
+                </div>
 
-            <button id="save-png"
-                    class="btn btn-primary pull-right results-btn" disabled>
-              Export to PNG
-            </button>
+              </div> <!-- /.tab-content -->
+            </div> <!-- /.tabbable -->
 
-            <p style="margin-top: 15px;">
-              Press 'Export to PNG' to render the current strongest individual
-              as an image. You can save this image file to your hard disk.
-            </p>
+          </div> <!-- /.span6 -->
 
-            <h4 style="display: inline;">
-              DNA string of strongest individual
-            </h4>
+        </div> <!-- /.row -->
+      </div> <!-- /.container -->
 
-            <button id="select-dna"
-                    class="btn btn-primary pull-right results-btn" disabled>
-              Select Text
-            </button>
-
-            <p style="margin-top: 15px;">
-              This represents the whole genome of the strongest
-              individual. Press 'Select Text' to highlight it for copying.
-            </p>
-
-            <textarea id="strongest-dna" class="text" readonly></textarea>
-
-          </div>
-
-        </div> <!-- /.tab-content -->
-      </div> <!-- /.tabbale -->
-
-      <hr class="footer-hr">
-      <div class="footer">
-
-        <!-- social buttons -->
-        <div id="fb-root"></div>
-        <a href="https://twitter.com/share" class="twitter-share-button" data-via="iamchriscummins" data-count="none">Tweet</a>
-        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-        <script>(function(d, s, id) {var js, fjs = d.getElementsByTagName(s)[0];if (d.getElementById(id)) return;js = d.createElement(s); js.id = id;js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1";fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));</script>
-        <div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true"></div>
-        <script>(function(d, t) {var g = d.createElement(t),s = d.getElementsByTagName(t)[0];g.src = '//hnbutton.appspot.com/static/hn.min.js';s.parentNode.insertBefore(g, s);}(document, 'script'));</script>
-        <a href="http://news.ycombinator.com/submit" class="hn-share-button">Vote on HN</a><br />
-
-        <a href="/">chriscummins.cc</a> |
-        &copy; 2013 Chris Cummins
-      </div>
-    </div>
+      <div id="push"></div>
+    </div> <!-- /#wrap -->
 
     <!-- The hidden bits: -->
     <img id="referenceImage"
@@ -480,7 +520,51 @@
                  type=button value="Take Snapshot">
         </form>
       </center>
+    </div>
 
+    <!-- Site footer -->
+    <div class="footer">
+      <div class="container wrapper">
+        <div class="pull-right">
+          <!-- twitter tweet -->
+          <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://chriscummins.cc" data-via="iamchriscummins" data-dnt="true">Tweet</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+          <!-- facebook like -->
+          <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fchriscummins.cc&amp;send=false&amp;layout=button_count&amp;width=110&amp;show_faces=false&amp;font&amp;colorscheme=light&amp;action=like&amp;height=21"
+                  scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:110px; height:21px;" allowTransparency="true"></iframe>
+          <!-- github watch -->
+          <iframe src="http://ghbtns.com/github-btn.html?user=ChrisCummins&repo=chriscummins.cc&type=watch&count=true"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110" height="21"></iframe>
+        </div>
+
+        <div class="footer-collapse">
+          <p class="muted">
+            &copy; 2013 Chris Cummins |
+            <a id="contact-me">Send me a message</a>
+          </p>
+        </div>
+      </div>
+    </div> <!-- /.footer -->
+
+    <!-- The feedback form -->
+    <div class="feedback-overlay"></div>
+    <div class="feedback-form">
+      <form id="feedback-form-messageform" name="contactme" action="">
+        <p>Send me a message</p>
+        <textarea id="feedback-form-message" name="message"></textarea>
+        <p>Email</p>
+        <input id="feedback-form-email" name="email" type="text" autocomplete="off" /><br />
+        <input id="feedback-form-cancel" class="btn btn-large btn-warning" type="reset" value="Cancel" />
+        <input id="feedback-form-send" class="btn btn-large btn-success" type="submit" value="Send" />
+      </form>
+      <div id="feedback-form-messagesuccess">
+        <center>
+          <br /><br /><br /><br /><br /><br />
+          <img src="/assets/img/check.png">
+          <br /><br />
+          Thanks for getting in touch!
+        </center>
+      </div>
     </div>
 
   </body>
@@ -488,6 +572,8 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
   <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+  <script src="/assets/js/flatui-extras.js"></script>
+  <script src="/assets/js/flatui.js"></script>
   <script src="/assets/js/webcam.js"></script>
   <script src="/assets/js/genetics.js"></script>
 

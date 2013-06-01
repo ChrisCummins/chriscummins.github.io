@@ -510,19 +510,10 @@ var Genetics = Genetics || {};
     });
 
     /*
-     * Prepare the ios switches
+     * Prepare the toggle switches
      */
-    var iosSwitches =
-        document.querySelectorAll('input[type="checkbox"].ios-switch');
-    for (var i = 0, sw; sw = iosSwitches[i++];) {
-      var div = document.createElement('div');
-      div.className = 'switch';
-      sw.parentNode.insertBefore(div, sw.nextSibling);
-      sw.style.width = div.style.width;
-      sw.style.height = div.style.height;
-    }
-  }
-
+    $("[data-toggle='switch']").wrap('<div class="switch" />').parent().bootstrapSwitch();
+  };
 
   /*
    * Set a new configuration. If any parameter is missing, default values are
@@ -685,7 +676,6 @@ var Genetics = Genetics || {};
     $('.ios-switch').attr('disabled', true);
     $('#start').text('Pause');
     $('.results-btn').attr('disabled', 'disabled');
-    $('#strongest-dna').text('');
     runSimulation();
   }
 
@@ -698,7 +688,6 @@ var Genetics = Genetics || {};
     resumedTime = new Date().getTime() - startTime;
     $('#start').text('Resume');
     $('.results-btn').removeAttr('disabled');
-    $('#strongest-dna').text(population.getFittest().dna);
   }
 
   /*
@@ -716,7 +705,6 @@ var Genetics = Genetics || {};
     $('#elapsed-time').text('0:00');
     $('.conf-slider').slider('option', 'disabled', false);
     $('.ios-switch').attr('disabled', false);
-    $('#strongest-dna').text('');
     $('.results-btn').attr('disabled', 'disabled');
 
     document.body.classList.remove('genetics-active');
@@ -784,35 +772,10 @@ var Genetics = Genetics || {};
   });
 
   /*
-   * 'Select Text' button on results pane
-   */
-  $('#select-dna').click(function() {
-    $('#strongest-dna').focus();
-    $('#strongest-dna').select();
-  });
-
-  /*
-   * Examples
-   */
-  $('#examples-crude').click(function() {
-    window.scrollTo(0, 0);
-    stopSimulation();
-    setImage('/genetics/piet-mondrian');
-    setConfiguration(35, 20, false, 3.0, 10, 100, 4, 40, true, false, true);
-  });
-
-  $('#examples-line-art').click(function() {
-    window.scrollTo(0, 0);
-    stopSimulation();
-    setImage('/genetics/tom-waits.jpg');
-    setConfiguration(50, 15, false, 1.5, 30, 30, 30, 100, false, false, true);
-  });
-
-  /*
    *  Webcam button callback.
    */
   $('#webcam-upload-btn').click(function() {
-    $('.underlay').fadeIn('slow');
+    $('.feedback-overlay').fadeIn('slow');
     $('.webcam-overlay').fadeIn('fast');
 
     if (isRunning())
@@ -824,7 +787,7 @@ var Genetics = Genetics || {};
    * Dispose of the webcam upload overlay.
    */
   function hideWebcamUpload() {
-    $('.underlay').fadeOut('slow');
+    $('.feedback-overlay').fadeOut('slow');
     $('.webcam-overlay').fadeOut('fast');
   }
 
@@ -843,14 +806,14 @@ var Genetics = Genetics || {};
     }
     else {
       /* FIXME: better alert, please */
-      alert('PHP Error: ' + url);
+      alert('Oops! Something went wrong: ' + url);
     }
   };
 
   /*
    * Underlay grabs all input and hides.
    */
-  $('.underlay').click(function() {
+  $('.feedback-overlay').click(function() {
     hideWebcamUpload();
   });
 
@@ -915,6 +878,11 @@ var Genetics = Genetics || {};
         ((randomInheritance) ? 1 : 0) + '&' +
         ((diffSquared) ? 1 : 0);
   }
+
+  $('#get-in-touch').click(function () {
+    $('.feedback-overlay').fadeIn('slow');
+    $('.feedback-form').fadeIn('fast');
+  });
 
   /*
    * Document ready preparations.
