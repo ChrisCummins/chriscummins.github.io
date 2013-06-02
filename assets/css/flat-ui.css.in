@@ -190,7 +190,7 @@ you can use the generic selector below, but it's slower:
 /* Body */
 body {
   background-color: #fff;
-  color: #333333;
+  color: #555555;
   font-family: "Lato", sans-serif;
   font-size: 16px;
   line-height: 1.231;
@@ -217,15 +217,15 @@ a:hover {
 .nav-tabs > li > a,
 .nav-tabs > li > a:hover,
 .nav-tabs > li > a:focus {
-  color: #333333;
+  color: #555555;
   background: none;
-  border-color: #333333;
+  border-color: #555555;
 }
 .nav-tabs > .active > a,
 .nav-tabs > .active > a:hover,
 .nav-tabs > .active > a:focus {
   color: #4f6e8d;
-  border-color: #333333;
+  border-color: #555555;
   border-bottom-color: transparent;
 }
 ul.nav.nav-tabs {
@@ -234,7 +234,7 @@ ul.nav.nav-tabs {
 }
 .tab-pane {
   min-height: 250px;
-  border: 1px solid #333333;
+  border: 1px solid #555555;
   border-top: transparent;
   margin-top: 0;
   padding: 10px;
@@ -247,6 +247,7 @@ h3,
 h4,
 h5,
 h6 {
+  color: #333333;
   margin-top: 20px;
 }
 h1 {
@@ -348,7 +349,7 @@ h6 {
   outline-color: #ff9700;
 }
 .feature p {
-  color: #333333;
+  color: #555555;
   margin-bottom: 0;
 }
 
@@ -2488,7 +2489,7 @@ textarea[class*="span"] {
 
 .dropdown-menu {
   background-color: #f3f4f5;
-  border: 1px solid #333333;
+  border: 1px solid #555555;
   display: block;
   margin-top: 8px;
   opacity: 0;
