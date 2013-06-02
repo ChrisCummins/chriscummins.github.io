@@ -323,8 +323,9 @@
                       </td>
                       <td></td>
                       <td><label>
-                          <input id="random-inheritance" type="checkbox"
-                                 data-toggle="switch" />
+                          <div class="switch switch-square">
+                            <input id="random-inheritance" type="checkbox" />
+                          </div>
                       </label></td>
                     <tr/>
 
@@ -335,8 +336,10 @@
                       </td>
                       <td></td>
                       <td><label>
-                          <input id="diff-squared" type="checkbox"
-                                 data-toggle="switch" checked="" />
+                          <div class="switch switch-square">
+                            <input id="diff-squared" type="checkbox"
+                                   checked="" />
+                          </div>
                       </label></td>
                     <tr/>
 
@@ -347,8 +350,9 @@
                       </td>
                       <td></td>
                       <td><label>
-                          <input id="fittest-survive" type="checkbox"
-                                 data-toggle="switch" />
+                          <div class="switch switch-square">
+                            <input id="fittest-survive" type="checkbox" />
+                          </div>
                       </label></td>
                     <tr/>
 
@@ -393,8 +397,10 @@
                       </td>
                       <td></td>
                       <td><label>
-                          <input id="fill-polygons" type="checkbox"
-                                 data-toggle="switch" checked="" />
+                          <div class="switch switch-square">
+                            <input id="fill-polygons" type="checkbox"
+                                   checked="" />
+                          </div>
                       </label></td>
                     <tr/>
 

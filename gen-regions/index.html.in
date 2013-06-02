@@ -149,8 +149,9 @@
                   </td>
                   <td>
 	            <!-- The `advanced' mode checkbox: -->
-                    <input id="advanced" type="checkbox"
-                           checked="" data-toggle="switch">
+                    <div class="switch switch-square">
+                      <input id="advanced" type="checkbox" checked="">
+                    </div>
                   </td>
                   <td style="padding-left: 80px;">
                     <!-- submit button -->

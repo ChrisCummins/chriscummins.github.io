@@ -508,11 +508,6 @@ var Genetics = Genetics || {};
         $('#resolution').text(resolution + 'x' + resolution);
       }
     });
-
-    /*
-     * Prepare the toggle switches
-     */
-    $("[data-toggle='switch']").wrap('<div class="switch" />').parent().bootstrapSwitch();
   };
 
   /*
@@ -673,7 +668,7 @@ var Genetics = Genetics || {};
     }
 
     $('.conf-slider').slider('option', 'disabled', true);
-    $('.ios-switch').attr('disabled', true);
+    $('input[type="checkbox"]').attr('disabled', true);
     $('#start').text('Pause');
     $('.results-btn').attr('disabled', 'disabled');
     runSimulation();
@@ -704,7 +699,7 @@ var Genetics = Genetics || {};
     resumedTime = 0;
     $('#elapsed-time').text('0:00');
     $('.conf-slider').slider('option', 'disabled', false);
-    $('.ios-switch').attr('disabled', false);
+    $('input[type="checkbox"]').attr('disabled', false);
     $('.results-btn').attr('disabled', 'disabled');
 
     document.body.classList.remove('genetics-active');
