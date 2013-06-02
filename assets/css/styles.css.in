@@ -647,6 +647,8 @@ body {
   font-weight: 300;
   padding-left: 10px;
 }
+
+/* Button groups */
 .btn-group > .btn {
   border-radius: 0;
   text-align: center;
@@ -656,12 +658,12 @@ body {
   border-left-color: transparent;
 }
 .btn-group > .btn:first-of-type {
-  border-top-left-radius: 6px;
-  border-bottom-left-radius: 6px;
+  border-top-left-radius:    0;
+  border-bottom-left-radius: 0;
 }
 .btn-group > .btn:last-of-type {
-  border-top-right-radius: 6px;
-  border-bottom-right-radius: 6px;
+  border-top-right-radius:    0;
+  border-bottom-right-radius: 0;
 }
 .btn-group > .btn + .btn {
   margin-left: 0;
