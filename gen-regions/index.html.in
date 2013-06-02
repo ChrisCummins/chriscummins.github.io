@@ -40,17 +40,13 @@
     <link rel="shortcut icon" href="/assets/img/favicon.ico" />
 
     <style>
-      label {
-        margin-left: 25px;
-        display: inline;
-      }
-
       .alert {
         display: none;
       }
 
       .btn {
         display: inline;
+        width: 110px;
       }
 
       #gen-frame td {
@@ -153,7 +149,7 @@
                       <input id="advanced" type="checkbox" checked="">
                     </div>
                   </td>
-                  <td style="padding-left: 80px;">
+                  <td>
                     <!-- submit button -->
                     <button id="submit" class="btn btn-success">
                       Submit
