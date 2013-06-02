@@ -231,7 +231,7 @@
 
     perspective: 1000,
 
-    transitionDuration: 1000
+    transitionDuration: 750
   };
 
   /* it's just an empty function ... and a useless comment. */
@@ -731,8 +731,8 @@
 function isInSlideshow() {
   var e = document.activeElement;
 
-  return e != document.getElementById('message') &&
-         e != document.getElementById('email');
+  return e != document.getElementById('feedback-form-message') &&
+         e != document.getElementById('feedback-form-email');
 }
 
 /* NAVIGATION EVENTS **********************************************************/
@@ -878,6 +878,116 @@ function isInSlideshow() {
       api.impress_goto(document.querySelector('.active'), 500);
     }, 250), false);
 
+  }, false);
+
+  /* A global reference to the impress API */
+  var api = impress();
+
+  /* A global reference to the document body */
+  var body = document.body;
+
+  /* We keep track of the currently visible step here */
+  var currentStep = 'hello';
+
+  /* DOCUMENT READY FUNCTIONS *************************************************/
+
+  $(document).ready(function() {
+
+    /* Bootstrap impress first */
+    api.init();
+
+    /* BUTTON PRESS BEHAVIOUR *************************************************/
+
+    /* Clicking the left arrow always takes you back to the previous step */
+    $('#nav-arrow-left')[0].onclick = function() {
+      api.prev();
+    };
+
+    /* Clicking the right arrow takes you to the next step, unless on a nonstep,
+     * in which case it returns to the overview step.
+     */
+    $('#nav-arrow-right')[0].onclick = function() {
+      /* If on a nonstep, return to the overview. */
+      if (body.className.match(/\bimpress-on-nonstep\b/)) {
+        api.impress_goto('overview');
+      } else {
+        api.next();
+      }
+    };
+  });
+
+  /* STEP BEHAVIOUR ***********************************************************/
+
+  /* This is called every time that a new step is focused on, including the
+   * first step on page load.
+   */
+  $(document).on('impress:stepenter', function(e) {
+
+    var titleSuffix;
+
+    /* Set the global current step */
+    currentStep = $(e.target).attr('id');
+
+    switch (currentStep) {
+      case 'hello':
+        titleSuffix = 'Hi';
+        break;
+      case 'thingsido':
+        titleSuffix = 'Activities';
+        break;
+      case 'writings':
+        titleSuffix = 'Writings';
+        break;
+      case 'contactme':
+        titleSuffix = 'Contact';
+        break;
+      case 'overview':
+        /* (Re)set the feedback-form state to show the 'send message' form */
+        $('#feedback-form-messagesuccess').hide();
+        $('#feedback-form-messageform').show();
+
+        /* Show the feedback-form */
+        $('.feedback-overlay').fadeIn('slow');
+        $('.feedback-form').fadeIn('slow');
+        break;
+      case 'privacy':
+        titleSuffix = 'Privacy';
+        break;
+      case 'source':
+        titleSuffix = 'Source';
+        break;
+    }
+
+    if (titleSuffix)
+      window.document.title = 'Chris Cummins | ' + titleSuffix;
+    else
+      window.document.title = 'Chris Cummins';
+
+  });
+
+  /* This is called immediately after every time that a step is left.
+   */
+  $(document).on('impress:stepleave', function(e) {
+
+    /* Hide the feedback-form */
+    $('.feedback-overlay').fadeOut('slow');
+    $('.feedback-form').fadeOut('slow');
+  });
+
+  /* KEY BINDINGS *************************************************************/
+
+  document.addEventListener('keyup', function(event) {
+    var key = event.keyCode;
+
+    /* Override the default key behaviour here */
+    if (key == 27) {
+      if (currentStep == 'overview')
+        api.impress_goto('hello');
+      else
+        api.impress_goto('overview');
+    }
+
+    event.preventDefault();
   }, false);
 
 })(document, window);

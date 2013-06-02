@@ -786,18 +786,15 @@ var GenRegions = GenRegions || {};
    */
   this.init = function() {
 
-    /*
-     * Prepare the ios switches
-     */
-    var iosSwitches =
-        document.querySelectorAll('input[type="checkbox"].ios-switch');
-    for (var i = 0, sw; sw = iosSwitches[i++];) {
-      var div = document.createElement('div');
-      div.className = 'switch';
-      sw.parentNode.insertBefore(div, sw.nextSibling);
-      sw.style.width = div.style.width;
-      sw.style.height = div.style.height;
-    }
+    /* Dropdown */
+    $("select[name='exec-size']").selectpicker({
+      style: 'btn-primary',
+      menuStyle: 'dropdown-inverse'
+    });
+    $('.dropdown-toggle').attr('data-original-title', 'Execution size').tooltip('fixTitle');
+
+    /* Switch */
+    $('.switch').attr('data-original-title', 'Advanced mode').tooltip('fixTitle');
 
     $('#share-btn').attr('disabled', 'disabled');
 
@@ -808,7 +805,11 @@ var GenRegions = GenRegions || {};
       submitEmptyRegion();
     }
 
+    /* Tooltips */
     $('#canvas').tooltip('hide');
+    $('#exec-size').tooltip('hide');
+    $('#region-form').tooltip('hide');
+    $('#advanced').tooltip('hide');
   };
 
 }).call(GenRegions);

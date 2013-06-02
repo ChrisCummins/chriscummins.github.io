@@ -1,6 +1,4 @@
-<?php
-setcookie("visit", "1", time()+3600);
-?>
+<?php setcookie("visit", "1", time()+3600); ?>
 
 <!doctype html>
 
@@ -14,36 +12,88 @@ setcookie("visit", "1", time()+3600);
     <meta property="fb:admins" content="896185001">
     <meta charset="utf-8" />
 
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,700|Noto+Sans:400,700" />
+    <style type="text/css">body{padding-top:60px;}</style>
     <link rel="stylesheet" href="/assets/css/styles.css" />
     <link rel="shortcut icon" href="/assets/img/favicon.ico" />
+
+    <style>
+      body {
+        min-height: 1000px;
+      }
+
+      /* Per-Step Styles */
+      #overview {
+          display: none;
+          height: 1px;
+      }
+      .impress-on-overview .step {
+          opacity: 0.3;
+          cursor: pointer;
+      }
+      .impress-on-overview .step:hover {
+          opacity: 1;
+      }
+      .impress-on-overview a:hover,
+      .impress-on-overview a:focus {
+        /* Zero link effects on overview */
+        color: #4f6e8d;
+      }
+    </style>
   </head>
 
   <body class="impress-not-supported">
 
-    <?php include_once("assets/ga.php") ?>
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-40829804-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="http://chriscummins.cc">chriscummins.cc</a>
+          <div class="nav-collapse collapse pull-right">
+            <ul class="nav">
+              <li class="active"><a href="/">Home</a></li>
+              <li><a href="/blog/" target="_blank">Blog</a></li>
+              <li><a href="/music/">Music</a></li>
+              <li><a href="/software/">Software</a></li>
+              <li><a href="/pictures/">Pictures</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div> <!-- /.navbar -->
 
     <div id="impress">
 
       <div id="hello" class="step" data-y="500">
 	<center>
 	  <img src="/assets/img/my-face.jpg"
-	       style="border-radius: 15px; padding: 5px; background-color: #fff;"
+	       style="padding: 10px; background-color: #4f6e8d;"
 	       alt="My name is Chris.">
 	  <br/>
 	  <p id="hellomessage">
 	    <?php
-	      if (isset($_COOKIE["visit"]))
-	        echo "Hello again.";
-	      else
-	        echo "Hi.";
-	    ?>
+	       if (isset($_COOKIE["visit"]))
+	       echo "Hello again.";
+	       else
+	       echo "Hi.";
+	       ?>
 	  </p>
 	</center>
       </div>
 
       <div id="thingsido" class="step" data-x="1200" data-y="-100" data-rotate="90" data-scale="2">
-	I love making things. Especially
+	I love making things. Especially <br />
 	<a id="music" href="/music/">music</a>,
 	<a id="software" href="/software/">software</a>, and
 	<a id="pictures" href="/pictures/">pictures</a>.
@@ -54,39 +104,20 @@ setcookie("visit", "1", time()+3600);
 	when the mood takes me.
       </div>
 
-      <div id="contactme" class="step" data-x="-900" data-y="-350" data-rotate="270">
-	  <center><div id="findme">You can find me elsewhere:</div>
+      <div id="contactme" class="step" data-x="-1200" data-y="-350" data-rotate="270">
+	<center><div id="findme">You can find me elsewhere:</div>
 
-	    <a id="linkedin" href="http://www.linkedin.com/profile/view?id=195091553" target="_blank">
-	      <img src="/assets/img/linkedin.png" alt="Linked In"></a>
-	    <div id="tooltip-linkedin" class="tooltip"> <!-- tooltip -->
-	      <a href="http://www.linkedin.com/profile/view?id=195091553" target="_blank">
-		<img src="/assets/img/screenshot-linkedin.png" style="border-radius: 10px;"></a></div>
-
-	    <a id="facebook" href="http://www.facebook.com/cecummins" target="_blank">
-	      <img src="/assets/img/facebook.png" alt="Facebook"></a>
-	    <div id="tooltip-facebook" class="tooltip"> <!-- tooltip -->
-	      <a href="https://www.facebook.com/cecummins" target="_blank">
-	      <img src="/assets/img/screenshot-facebook.png" style="border-radius: 10px;"></a></div>
-
-	    <a id="youtube" href="http://www.youtube.com/user/ChrisCummins" target="_blank">
-	      <img src="/assets/img/youtube.png" alt="YouTube"></a>
- 	    <div id="tooltip-youtube"  class="tooltip"> <!-- tooltip -->
-	      <a href="http://www.youtube.com/user/ChrisCummins" target="_blank">
-		<img src="/assets/img/screenshot-youtube.png"  style="border-radius: 10px;"></a></div>
-
-	    <a id="soundcloud" href="http://soundcloud.com/peakstudio" target="_blank">
-	      <img src="/assets/img/soundcloud.png" alt="SoundCloud"></a>
- 	    <div id="tooltip-soundcloud"  class="tooltip"> <!-- tooltip -->
-	      <a href="http://soundcloud.com/peakstudio" target="_blank">
-		<img src="/assets/img/screenshot-soundcloud.png"  style="border-radius: 10px;"></a></div>
-
-	    <a id="github" href="https://github.com/ChrisCummins" target="_blank">
-	      <img src="/assets/img/github.png" alt="GitHub"></a>
-	    <div id="tooltip-github"  class="tooltip">  <!-- tooltip -->
-	      <a href="https://github.com/ChrisCummins" target="_blank">
-		<img src="/assets/img/screenshot-github.png"  style="border-radius: 10px;"></a></div>
-	  </center>
+	  <a id="linkedin" href="http://www.linkedin.com/profile/view?id=195091553" target="_blank">
+	    <img src="/assets/img/linkedin.png" alt="Linked In"></a>
+	  <a id="facebook" href="http://www.facebook.com/cecummins" target="_blank">
+	    <img src="/assets/img/facebook.png" alt="Facebook"></a>
+	  <a id="youtube" href="http://www.youtube.com/user/ChrisCummins" target="_blank">
+	    <img src="/assets/img/youtube.png" alt="YouTube"></a>
+	  <a id="soundcloud" href="http://soundcloud.com/peakstudio" target="_blank">
+	    <img src="/assets/img/soundcloud.png" alt="SoundCloud"></a>
+	  <a id="github" href="https://github.com/ChrisCummins" target="_blank">
+	    <img src="/assets/img/github.png" alt="GitHub"></a>
+	</center>
       </div>
 
       <div id="overview" class="step" data-x="200" data-y="-300" data-scale="3" data-rotate="25"></div>
@@ -105,39 +136,36 @@ setcookie("visit", "1", time()+3600);
 	promise, but you wouldn't believe me.
       </div>
 
-    </div>
+    </div> <!-- /.impress -->
 
-    <a id="arrowLeft" class="arrow">&lt;</a>
-    <a id="arrowRight" class="arrow">&gt;</a>
+    <a id="nav-arrow-left" class="nav-arrow">&lt;</a>
+    <a id="nav-arrow-right" class="nav-arrow">&gt;</a>
 
-    <!-- The feedback overlay -->
-    <div class="overlay">
-      <form id="messageform" name="contactme" action="">
-      	Send me a message
-      	<textarea id="message" name="message" rows="14"></textarea>
-      	Email
-      	<input id="email" name="email" type="text" autocomplete="off" /><br />
-      	<input id="send" type="submit" value="Send" />
+    <!-- The feedback form -->
+    <div class="feedback-overlay"></div>
+    <div class="feedback-form">
+      <form id="feedback-form-messageform" name="contactme" action="">
+      	<p>Send me a message</p>
+      	<textarea id="feedback-form-message" name="message"></textarea>
+      	<p>Email</p>
+      	<input id="feedback-form-email" name="email" type="text" autocomplete="off" /><br />
+      	<input id="feedback-form-cancel" class="btn btn-large btn-warning" type="reset" value="Cancel" />
+      	<input id="feedback-form-send" class="btn btn-large btn-success" type="submit" value="Send" />
       </form>
-
-      <div id="messagesuccess">
-	<center>
+      <div id="feedback-form-messagesuccess">
+        <center>
 	  <br /><br /><br /><br /><br /><br />
 	  <img src="/assets/img/check.png">
 	  <br /><br />
 	  Thanks for getting in touch!
-	</center>
+        </center>
       </div>
-
-      <p class="footer">
-	<a href="#/source">Source code</a> |
-	<a href="#/privacy">Privacy Policy</a> |
-	&copy; 2013 Chris Cummins
-      </p>
     </div>
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="/assets/js/impress.js"></script>
-    <script src="/assets/js/site.js"></script>
   </body>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="/assets/js/index.js"></script>
+  <script src="/assets/js/site.js"></script>
+
 </html>

@@ -42,34 +42,34 @@ html +=						\
 	music/index.html			\
 	pictures/index.html			\
 	software/index.html			\
+	style.html				\
 	$(NULL)
 
 css +=						\
-	assets/css/buttons.css			\
-	assets/css/gen-regions.css		\
-	assets/css/genetics.css			\
 	assets/css/jquery.fancybox-buttons.css	\
 	assets/css/jquery.fancybox-thumbs.css	\
 	assets/css/jquery.fancybox.css		\
-	assets/css/site.css			\
 	assets/css/styles.css			\
 	$(NULL)
 
 js += 						\
+	assets/js/fancybox-extras.js		\
 	assets/js/gen-regions.js		\
 	assets/js/genetics.js			\
-	assets/js/impress.js			\
-	assets/js/jquery.fancybox-buttons.js	\
-	assets/js/jquery.fancybox-media.js	\
-	assets/js/jquery.fancybox-thumbs.js	\
+	assets/js/index.js			\
 	assets/js/julius.js			\
-	assets/js/music.js			\
-	assets/js/pictures.js			\
+	assets/js/site-components.js		\
 	assets/js/site.js			\
 	assets/js/webcam.js			\
 	$(NULL)
 
 extra_site +=					\
+	assets/fonts/Flat-UI-Icons.dev.svg	\
+	assets/fonts/Flat-UI-Icons.eot		\
+	assets/fonts/Flat-UI-Icons.svg		\
+	assets/fonts/Flat-UI-Icons.ttf		\
+	assets/fonts/Flat-UI-Icons.woff		\
+	assets/fonts/icomoon-session.json	\
 	assets/img/arrows.png			\
 	assets/img/blank.gif			\
 	assets/img/check.png			\
@@ -95,6 +95,9 @@ extra_site +=					\
 	assets/img/slider-handle.png		\
 	assets/img/slider-track.png		\
 	assets/img/soundcloud.png		\
+	assets/img/switch-mask.png		\
+	assets/img/tile-ribbon-2x.png		\
+	assets/img/tile-ribbon.png		\
 	assets/img/youtube.png			\
 	genetics/eiffel-tower.jpg		\
 	genetics/kyle-broflovski.jpg		\

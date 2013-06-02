@@ -10,14 +10,8 @@
     <meta name="viewport" content="width=1024" />
     <meta charset="utf-8" />
 
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,700" />
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" />
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.1.0/css/font-awesome.css" />
-    <link rel="stylesheet" href="/assets/css/jquery.fancybox.css" />
-    <link rel="stylesheet" href="/assets/css/jquery.fancybox-buttons.css" />
-    <link rel="stylesheet" href="/assets/css/jquery.fancybox-thumbs.css" />
-    <link rel="stylesheet" href="/assets/css/site.css" />
-    <link rel="stylesheet" href="/assets/css/software.css" />
+    <style type="text/css">body{padding-top:60px;}</style>
+    <link rel="stylesheet" href="/assets/css/styles.css" />
     <link rel="shortcut icon" href="/assets/img/favicon.ico" />
   </head>
 
@@ -36,94 +30,145 @@
       })();
     </script>
 
-    <div class="container-narrow">
+    <div id="wrap">
 
-      <div class="masthead">
-        <ul class="nav nav-pills pull-right">
-          <li><a href="/blog/" target="_blank">Blog</a></li>
-          <li><a href="/music/">Music</a></li>
-          <li class="active"><a href="/software/">Software</a></li>
-          <li><a href="/pictures/">Pictures</a></li>
-        </ul>
-        <h3 class="serif-title">
-          <a href="http://chriscummins.cc">
-            chriscummins.cc
-          </a>
-        </h3>
-      </div>
-
-      <hr>
-
-      <center><h1 class="serif-title">Web software</h1></center>
-
-      <div class="row-fluid" style="margin-top: 30px">
-
-        <div class="span6">
-
-          <div class="thumbnail">
-            <a href="/genetics/">
-              <img src="/assets/img/screenshot-genetics.jpg">
-              <h4>Grow Your Own Picture</h4>
-            </a>
+      <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+          <div class="container">
+            <button type="button" class="btn btn-navbar"
+                    data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="brand" href="http://chriscummins.cc">chriscummins.cc</a>
+            <div class="nav-collapse collapse pull-right">
+              <ul class="nav">
+                <li><a href="/">Home</a></li>
+                <li><a href="/blog/" target="_blank">Blog</a></li>
+                <li><a href="/music/">Music</a></li>
+                <li class="active"><a href="/software/">Software</a></li>
+                <li><a href="/pictures/">Pictures</a></li>
+              </ul>
+            </div><!--/.nav-collapse -->
           </div>
-          <p>
-            Harnessing the powers of natural selection and genetics algorithms
-            to produce unique generative art.
-          </p>
+        </div>
+      </div> <!-- /.navbar -->
 
-          <div class="thumbnail">
-            <a href="/gen-regions/">
-              <img src="/assets/img/screenshot-gen-regions.jpg">
-              <h4>Gen Regions</h4>
-            </a>
-          </div>
-          <p>
-            This web tool visualizes instruction source operand regions for the
-            Intel Graphics GEN architecture.
-          </p>
+      <div class="container">
 
+        <div class="headline">
+          <h1 class="headline-title">
+            Web
+            <small>Online Software</small>
+          </h1>
         </div>
 
-        <div class="span6">
+        <div class="row">
 
-          <div class="thumbnail">
-            <a href="/crypto/julius.html">
-              <img src="/assets/img/screenshot-julius.jpg">
-              <h4>Julius, the Caesar Shifter</h4>
-            </a>
+          <div class="span4">
+            <div class="feature">
+              <a href="/genetics/">
+                <h5>Grow Your Own Picture</h5>
+                <img src="/assets/img/screenshot-genetics.jpg">
+                <p>
+                  Harnessing genetics algorithms to produce unique generative
+                  art using the power of natural selection.
+                </p>
+              </a>
+            </div> <!-- /.feature -->
+          </div> <!-- /.span4 -->
+
+          <div class="span4">
+            <div class="feature">
+              <a href="/crypto/julius.html">
+                <h5>Julius</h5>
+                <img src="/assets/img/screenshot-julius.jpg">
+                <p>
+                  Introductory cryptanalysis using substitution ciphers to
+                  analyse letter frequency distributions in plain text.
+                </p>
+              </a>
+            </div> <!-- /.feature -->
+          </div> <!-- /.span4 -->
+
+          <div class="span4">
+            <div class="feature">
+              <a href="/gen-regions/">
+                <h5>Gen Regions</h5>
+                <img src="/assets/img/screenshot-gen-regions.jpg">
+                <p>
+                  A tool for visualising assembly instruction source operand
+                  regions for the Intel's SIMD GEN graphics architecture.
+                </p>
+              </a>
+            </div> <!-- /.feature -->
+          </div> <!-- /.span4 -->
+
+        </div> <!-- ./row-fluid -->
+
+        <div class="row">
+          <div class="span10 offset1">
+            <blockquote style="margin: 50px;">
+              <p>Software is like sex: it's better when it's free.</p>
+              <small>Linus Torvalds</small>
+            </blockquote>
           </div>
-          <p>
-            Use cryptographic substitution ciphers to analyse letter frequency
-            distributions in text.
-          </p>
-
         </div>
 
-      </div> <!-- ./row-fluid -->
+      </div> <!-- /.container -->
+      <div id="push"></div>
+    </div> <!-- /#wrap -->
 
-      <blockquote style="margin: 50px;">
-        <p>Software is like sex: it's better when it's free.</p>
-        <small>Linus Torvalds</small>
-      </blockquote>
+    <!-- Site footer -->
+    <div class="footer">
+      <div class="container wrapper">
+        <div class="pull-right">
+          <!-- twitter tweet -->
+          <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://chriscummins.cc" data-via="iamchriscummins" data-dnt="true">Tweet</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+          <!-- facebook like -->
+          <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fchriscummins.cc&amp;send=false&amp;layout=button_count&amp;width=110&amp;show_faces=false&amp;font&amp;colorscheme=light&amp;action=like&amp;height=21"
+                  scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:110px; height:21px;" allowTransparency="true"></iframe>
+          <!-- github watch -->
+          <iframe src="http://ghbtns.com/github-btn.html?user=ChrisCummins&repo=chriscummins.cc&type=watch&count=true"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110" height="21"></iframe>
+        </div>
 
-      <!-- footer: -->
-      <hr>
-
-      <div class="footer">
-        <a href="/">chriscummins.cc</a> |
-        &copy; 2013 Chris Cummins
+        <div class="footer-collapse">
+          <p class="muted">
+            &copy; 2013 Chris Cummins |
+            <a id="contact-me">Send me a message</a>
+          </p>
+        </div>
       </div>
+    </div> <!-- /.footer -->
 
-    </div> <!-- /container -->
+    <!-- The feedback form -->
+    <div class="feedback-overlay"></div>
+    <div class="feedback-form">
+      <form id="feedback-form-messageform" name="contactme" action="">
+      	<p>Send me a message</p>
+      	<textarea id="feedback-form-message" name="message"></textarea>
+      	<p>Email</p>
+      	<input id="feedback-form-email" name="email" type="text" autocomplete="off" /><br />
+      	<input id="feedback-form-cancel" class="btn btn-large btn-warning" type="reset" value="Cancel" />
+      	<input id="feedback-form-send" class="btn btn-large btn-success" type="submit" value="Send" />
+      </form>
+      <div id="feedback-form-messagesuccess">
+        <center>
+	  <br /><br /><br /><br /><br /><br />
+	  <img src="/assets/img/check.png">
+	  <br /><br />
+	  Thanks for getting in touch!
+        </center>
+      </div>
+    </div>
 
   </body>
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.0.6/jquery.mousewheel.min.js"></script>
   <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.pack.js"></script>
-  <script src="/assets/js/jquery.fancybox-buttons.js"></script>
-  <script src="/assets/js/jquery.fancybox-media.js"></script>
-  <script src="/assets/js/jquery.fancybox-thumbs.js"></script>
+  <script src="/assets/js/site.js"></script>
 
 </html>
