@@ -10,7 +10,7 @@
     <meta charset="utf-8" />
 
     <style type="text/css">body{padding-top:60px;}</style>
-    <link rel="stylesheet" href="/assets/css/flat-ui.css" />
+    <link rel="stylesheet" href="/assets/css/styles.css" />
     <link rel="shortcut icon" href="/assets/img/favicon.ico" />
 
     <style>
@@ -194,8 +194,8 @@
   <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
   <script src="//code.highcharts.com/highcharts.js"></script>
   <script src="//code.highcharts.com/modules/exporting.js"></script>
-  <script src="/assets/js/flatui-extras.js"></script>
-  <script src="/assets/js/flatui.js"></script>
+  <script src="/assets/js/site-components.js"></script>
+  <script src="/assets/js/site.js"></script>
   <script src="/assets/js/julius.js"></script>
 
 </html>

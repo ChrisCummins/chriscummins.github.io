@@ -796,19 +796,6 @@ var GenRegions = GenRegions || {};
     /* Switch */
     $('.switch').attr('data-original-title', 'Advanced mode').tooltip('fixTitle');
 
-    /*
-     * Prepare the ios switches
-     */
-    var iosSwitches =
-        document.querySelectorAll('input[type="checkbox"].ios-switch');
-    for (var i = 0, sw; sw = iosSwitches[i++];) {
-      var div = document.createElement('div');
-      div.className = 'switch';
-      sw.parentNode.insertBefore(div, sw.nextSibling);
-      sw.style.width = div.style.width;
-      sw.style.height = div.style.height;
-    }
-
     $('#share-btn').attr('disabled', 'disabled');
 
     if (loadStateFromHash()) {

@@ -46,22 +46,20 @@ html +=						\
 	$(NULL)
 
 css +=						\
-	assets/css/buttons.css			\
-	assets/css/flat-ui.css			\
 	assets/css/jquery.fancybox-buttons.css	\
 	assets/css/jquery.fancybox-thumbs.css	\
 	assets/css/jquery.fancybox.css		\
-	assets/css/site.css			\
+	assets/css/styles.css			\
 	$(NULL)
 
 js += 						\
 	assets/js/fancybox-extras.js		\
-	assets/js/flatui.js			\
-	assets/js/flatui-extras.js		\
 	assets/js/gen-regions.js		\
 	assets/js/genetics.js			\
 	assets/js/index.js			\
 	assets/js/julius.js			\
+	assets/js/site-components.js		\
+	assets/js/site.js			\
 	assets/js/webcam.js			\
 	$(NULL)
 
