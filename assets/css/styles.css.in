@@ -2,7 +2,7 @@
 @import url("//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css");
 
 /* Fonts */
-@import url("//fonts.googleapis.com/css?family=Lato:400,700,700italic,900,400italic,300");
+@import url("//fonts.googleapis.com/css?family=Lato:400,700,900,300");
 @font-face {
   font-family: 'Flat-UI-Icons';
   src: url('../fonts/Flat-UI-Icons.eot');
