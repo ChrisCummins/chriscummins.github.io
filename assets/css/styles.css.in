@@ -424,10 +424,6 @@ blockquote small {
 .thumbnail img {
   margin: 8px;
   border: 2px solid #111;
-  -webkit-transition: 0.25s;
-  -moz-transition:    0.25s;
-  -o-transition:      0.25s;
-  transition:         0.25s;
 }
 .thumbnail img:hover,
 .thumbnail img:focus {
