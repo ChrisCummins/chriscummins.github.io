@@ -18,7 +18,7 @@ Highcharts.theme = {
            '#eeaaee', '#55BF3B', '#DF5353', '#7798BF', '#aaeeee'],
   chart: {
     borderWidth: 2,
-    borderRadius: 6,
+    borderRadius: 0,
     plotBackgroundColor: null,
     plotShadow: false,
     plotBorderWidth: 0
