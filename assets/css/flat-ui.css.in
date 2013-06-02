@@ -303,17 +303,32 @@ h6 {
 /* Features */
 .feature {
   padding: 20px;
-  -webkit-transition: 0.25s;
-  -moz-transition:    0.25s;
-  -o-transition:      0.25s;
-  transition:         0.25s;
+}
+.feature > a > h1,
+.feature > a > h2,
+.feature > a > h3,
+.feature > a > h4,
+.feature > a > h5,
+.feature > a > h6 {
+  color: #4f6e8d;
+  text-align: center;
+}
+.feature > a:hover > h1,
+.feature > a:focus > h1,
+.feature > a:hover > h2,
+.feature > a:focus > h2,
+.feature > a:hover > h3,
+.feature > a:focus > h3,
+.feature > a:hover > h4,
+.feature > a:focus > h4,
+.feature > a:hover > h5,
+.feature > a:focus > h5,
+.feature > a:hover > h6,
+.feature > a:focus > h6 {
+  color: #ff9700;
 }
 .feature > a {
   text-decoration: none;
-  -webkit-transition: 0.25s;
-  -moz-transition:    0.25s;
-  -o-transition:      0.25s;
-  transition:         0.25s;
 }
 .feature > a:hover,
 .feature > a:focus {
@@ -321,20 +336,16 @@ h6 {
 }
 .feature:hover,
 .feature:focus {
-  background-color: #f5f5f5;
-}
-.feature h1,
-.feature h2,
-.feature h3,
-.feature h4,
-.feature h5,
-.feature h6 {
-  text-align: center;
+  background-color: #f0f0f0;
 }
 .feature > a > img {
   display: block;
   margin: 10px auto;
-  outline: #fff solid 3px;
+  outline: #4f6e8d solid 1px;
+}
+.feature > a:hover > img,
+.feature > a:focus > img {
+  outline-color: #ff9700;
 }
 .feature p {
   color: #333333;
