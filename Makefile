@@ -37,6 +37,7 @@ php +=						\
 html +=						\
 	404.html				\
 	crypto/julius.html			\
+	empty.html				\
 	gen-regions/index.html			\
 	genetics/index.html			\
 	music/index.html			\
