@@ -69,8 +69,8 @@
           <div class="span4">
             <div class="feature">
               <a href="/genetics/">
+                <img src="/assets/img/icon-genetics.png">
                 <h5>Grow Your Own Picture</h5>
-                <img src="/assets/img/screenshot-genetics.jpg">
               </a>
               <p>
                 Harnessing genetics algorithms to produce unique generative art
@@ -82,8 +82,8 @@
           <div class="span4">
             <div class="feature">
               <a href="/crypto/julius.html">
+                <img src="/assets/img/icon-julius.png">
                 <h5>Julius</h5>
-                <img src="/assets/img/screenshot-julius.jpg">
               </a>
               <p>
                 Introductory cryptanalysis using substitution ciphers to analyse
@@ -95,8 +95,8 @@
           <div class="span4">
             <div class="feature">
               <a href="/gen-regions/">
+                <img src="/assets/img/icon-gen-regions.png">
                 <h5>Gen Regions</h5>
-                <img src="/assets/img/screenshot-gen-regions.jpg">
               </a>
               <p>
                 A tool for visualising assembly instruction source operand

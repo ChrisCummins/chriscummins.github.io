@@ -83,13 +83,13 @@ extra_site +=					\
 	assets/img/fancybox_sprite.png		\
 	assets/img/favicon.ico			\
 	assets/img/github.png			\
+	assets/img/icon-gen-regions.png		\
+	assets/img/icon-genetics.png		\
+	assets/img/icon-julius.png		\
 	assets/img/linkedin.png			\
 	assets/img/my-face.jpg			\
 	assets/img/screenshot-facebook.png	\
-	assets/img/screenshot-gen-regions.jpg	\
-	assets/img/screenshot-genetics.jpg	\
 	assets/img/screenshot-github.png	\
-	assets/img/screenshot-julius.jpg	\
 	assets/img/screenshot-linkedin.png	\
 	assets/img/screenshot-soundcloud.png	\
 	assets/img/screenshot-youtube.png	\

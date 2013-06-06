@@ -314,18 +314,18 @@ h6 {
   color: #4f6e8d;
   text-align: center;
 }
-.feature > a:hover > h1,
-.feature > a:focus > h1,
-.feature > a:hover > h2,
-.feature > a:focus > h2,
-.feature > a:hover > h3,
-.feature > a:focus > h3,
-.feature > a:hover > h4,
-.feature > a:focus > h4,
-.feature > a:hover > h5,
-.feature > a:focus > h5,
-.feature > a:hover > h6,
-.feature > a:focus > h6 {
+.feature > a > h1:hover,
+.feature > a > h1:focus,
+.feature > a > h2:hover,
+.feature > a > h2:focus,
+.feature > a > h3:hover,
+.feature > a > h3:focus,
+.feature > a > h4:hover,
+.feature > a > h4:focus,
+.feature > a > h5:hover,
+.feature > a > h5:focus,
+.feature > a > h6:hover,
+.feature > a > h6:focus {
   color: #ff9700;
 }
 .feature > a {
@@ -342,11 +342,6 @@ h6 {
 .feature > a > img {
   display: block;
   margin: 10px auto;
-  outline: #4f6e8d solid 1px;
-}
-.feature > a:hover > img,
-.feature > a:focus > img {
-  outline-color: #ff9700;
 }
 .feature p {
   color: #555555;
