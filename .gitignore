@@ -66,6 +66,7 @@ Thumbs.db
 /message.php
 /privacy.html
 /style.html
+/tmp/*
 
 #
 # Files we don't want to ignore
