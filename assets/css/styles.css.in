@@ -190,7 +190,7 @@ you can use the generic selector below, but it's slower:
 /* Body */
 body {
   background-color: #fff;
-  color: #555555;
+  color: #111111;
   font-family: "Lato", sans-serif;
   font-size: 16px;
   line-height: 1.231;
@@ -217,15 +217,15 @@ a:hover {
 .nav-tabs > li > a,
 .nav-tabs > li > a:hover,
 .nav-tabs > li > a:focus {
-  color: #555555;
+  color: #111111;
   background: none;
-  border-color: #555555;
+  border-color: #111111;
 }
 .nav-tabs > .active > a,
 .nav-tabs > .active > a:hover,
 .nav-tabs > .active > a:focus {
   color: #4f6e8d;
-  border-color: #555555;
+  border-color: #111111;
   border-bottom-color: transparent;
 }
 ul.nav.nav-tabs {
@@ -234,7 +234,7 @@ ul.nav.nav-tabs {
 }
 .tab-pane {
   min-height: 250px;
-  border: 1px solid #555555;
+  border: 1px solid #111111;
   border-top: transparent;
   margin-top: 0;
   padding: 10px;
@@ -247,7 +247,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: #333333;
+  color: #111111;
   margin-top: 20px;
 }
 h1 {
@@ -344,7 +344,7 @@ h6 {
   margin: 10px auto;
 }
 .feature p {
-  color: #555555;
+  color: #444444;
   margin-bottom: 0;
 }
 
@@ -385,6 +385,7 @@ h6 {
 
 /* Blockquote */
 blockquote {
+  color: #555555;
   border-color: #bbb;
 }
 blockquote p {
@@ -1773,7 +1774,7 @@ textarea[disabled],
 textarea[readonly] {
   background-color: #f4f6f6;
   border-color: #d5dbdb;
-  color: #444444;
+  color: #111111;
   cursor: default;
 }
 input,
