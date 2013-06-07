@@ -74,46 +74,38 @@
         <div class="row">
           <div class="span3">
             <div class="feature">
-              <a href="#fakelink">
-                <h5>Featured 1</h5>
-                <p>
-                  Lorem ipsum dolor sit ametq, consectetuer adipiscing
-                  elit. Nullam dignissim convallis est.q
-                </p>
-              </a>
+              <a href="#fakelink"><h5>Featured 1</h5></a>
+              <p>
+                Lorem ipsum dolor sit ametq, consectetuer adipiscing
+                elit. Nullam dignissim convallis est.q
+              </p>
             </div>
           </div>
           <div class="span3">
             <div class="feature">
-              <a href="#fakelink">
-                <h5>Featured 2</h5>
-                <p>
-                  Lorem ipsum dolor sit ametq, consectetuer adipiscing
-                  elit. Nullam dignissim convallis est.q
-                </p>
-              </a>
+              <a href="#fakelink"><h5>Featured 2</h5></a>
+              <p>
+                Lorem ipsum dolor sit ametq, consectetuer adipiscing
+                elit. Nullam dignissim convallis est.q
+              </p>
             </div>
           </div>
           <div class="span3">
             <div class="feature">
-              <a href="#fakelink">
-                <h5>Featured 3</h5>
-                <p>
-                  Lorem ipsum dolor sit ametq, consectetuer adipiscing
-                  elit. Nullam dignissim convallis est.q
-                </p>
-              </a>
+              <a href="#fakelink"><h5>Featured 3</h5></a>
+              <p>
+                Lorem ipsum dolor sit ametq, consectetuer adipiscing
+                elit. Nullam dignissim convallis est.q
+              </p>
             </div>
           </div>
           <div class="span3">
             <div class="feature">
-              <a href="#fakelink">
-                <h5>Featured 4</h5>
-                <p>
-                  Lorem ipsum dolor sit ametq, consectetuer adipiscing
-                  elit. Nullam dignissim convallis est.q
-                </p>
-              </a>
+              <a href="#fakelink"><h5>Featured 4</h5></a>
+              <p>
+                Lorem ipsum dolor sit ametq, consectetuer adipiscing
+                elit. Nullam dignissim convallis est.q
+              </p>
             </div>
           </div>
         </div>
