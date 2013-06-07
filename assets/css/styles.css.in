@@ -341,7 +341,7 @@ h6 {
 }
 .feature > a > img {
   display: block;
-  margin: 10px auto;
+  margin: 0 auto 10px;
 }
 .feature p {
   color: #444444;
