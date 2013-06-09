@@ -60,13 +60,6 @@
 
       <div class="container">
 
-        <div class="headline">
-          <h1 class="headline-title">
-            Gallery
-            <small>Photographs & Pictures</small>
-          </h1>
-        </div>
-
         <!-- fancybox gallery -->
         <div class="row">
           <div class="thumbnail">
