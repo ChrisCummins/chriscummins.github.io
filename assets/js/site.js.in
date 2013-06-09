@@ -117,7 +117,20 @@ $(document).ready(function () {
           data: 'email=' + $('#feedback-form-email')[0].value +
             '&message=' + $('#feedback-form-message')[0].value,
           success: function() {
-            onSubmitReceipt();
+            $('#feedback-form-messageform').fadeOut('fast');
+
+            setTimeout(function() {
+              $('#feedback-form-messagesuccess').fadeIn('fast');
+            }, 500);
+
+            setTimeout(function() {
+              $('.feedback-overlay').fadeOut('fast');
+              $('.feedback-form').fadeOut('fast');
+            }, 2000);
+
+            setTimeout(function() {
+              resetFeedbackForm();
+            }, 2500);
           }
         });
       }
@@ -131,24 +144,4 @@ $(document).ready(function () {
     if ($('#feedback-form-email')[0].value != '' && validateEmail())
       flashBgColor($('#feedback-form-email')[0], formColorGood);
   });
-
-  /* Form response behaviour. Show a thank you message, tidy up form state and
-   * reset view to start.
-   */
-  function onSubmitReceipt() {
-    $('#feedback-form-messageform').fadeOut('fast');
-
-    setTimeout(function() {
-      $('#feedback-form-messagesuccess').fadeIn('fast');
-    }, 500);
-
-    setTimeout(function() {
-      $('.feedback-overlay').fadeOut('fast');
-      $('.feedback-form').fadeOut('fast');
-    }, 2000);
-
-    setTimeout(function() {
-      resetFeedbackForm();
-    }, 2500);
-  }
 });
