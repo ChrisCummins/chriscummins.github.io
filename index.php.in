@@ -142,9 +142,9 @@
     <div class="feedback-form">
       <form id="feedback-form-messageform" name="contactme" action="">
       	<p>Send me a message</p>
-      	<textarea id="feedback-form-message" name="message"></textarea>
+      	<textarea id="feedback-form-message" name="message" maxlength="2000"></textarea>
       	<p>Email</p>
-      	<input id="feedback-form-email" name="email" type="text" autocomplete="off" /><br />
+      	<input id="feedback-form-email" name="email" type="text" autocomplete="off" maxlength="50" /><br />
       	<input id="feedback-form-cancel" class="btn btn-large btn-warning" type="reset" value="Cancel" />
       	<input id="feedback-form-send" class="btn btn-large btn-success" type="submit" value="Send" />
       </form>
