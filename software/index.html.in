@@ -57,14 +57,7 @@
 
       <div class="container">
 
-        <div class="headline">
-          <h1 class="headline-title">
-            Web
-            <small>Online Software</small>
-          </h1>
-        </div>
-
-        <div class="row">
+        <div class="row" style="margin-top: 30px;">
 
           <div class="span4">
             <div class="feature">
