@@ -87,7 +87,6 @@ extra_site +=					\
 	assets/img/icon-genetics.png		\
 	assets/img/icon-julius.png		\
 	assets/img/linkedin.png			\
-	assets/img/my-face.jpg			\
 	assets/img/screenshot-facebook.png	\
 	assets/img/screenshot-github.png	\
 	assets/img/screenshot-linkedin.png	\

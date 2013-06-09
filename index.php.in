@@ -77,10 +77,6 @@
 
       <div id="hello" class="step" data-y="500">
 	<center>
-	  <img src="/assets/img/my-face.jpg"
-	       style="padding: 10px; background-color: #4f6e8d;"
-	       alt="My name is Chris.">
-	  <br/>
 	  <p id="hellomessage">
 	    <?php
 	       if (isset($_COOKIE["visit"]))
