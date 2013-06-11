@@ -62,6 +62,7 @@ js += 						\
 	assets/js/julius.js			\
 	assets/js/site-components.js		\
 	assets/js/site.js			\
+	assets/js/music.js			\
 	assets/js/webcam.js			\
 	$(NULL)
 

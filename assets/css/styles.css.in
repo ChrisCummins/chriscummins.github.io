@@ -2026,6 +2026,48 @@ textarea[class*="span"] {
   color: #90111a !important;
 }
 
+/* Carousels */
+.carousel .container {
+   position: relative;
+  z-index: 9;
+}
+.carousel-control {
+  height: 80px;
+  margin-top: 0;
+  font-size: 120px;
+  text-shadow: 0 1px 1px rgba(0,0,0,.4);
+  background-color: transparent;
+  border: 0;
+  z-index: 10;
+}
+.carousel .item {
+  min-height: 100px;
+  max-height: 720px;
+  background-color: #000;
+}
+.carousel-indicators {
+  position: absolute;
+  right: 35px;
+  top: 35px;
+}
+.carousel-caption {
+  background-color: transparent;
+  position: static;
+  max-width: 550px;
+  padding: 0 20px;
+  margin-top: 200px;
+}
+.carousel-caption h1,
+.carousel-caption .lead {
+  margin: 0;
+  line-height: 1.25;
+  color: #fff;
+  text-shadow: 0 1px 1px rgba(0,0,0,.4);
+}
+.carousel-caption .btn {
+  margin-top: 10px;
+}
+
 /* Progress bars and sliders */
 .progress {
   background: #ebedef;

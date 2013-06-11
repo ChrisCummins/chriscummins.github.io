@@ -60,23 +60,79 @@
 
       <div class="container">
 
-        <div class="headline">
-          <h1 class="headline-title">
-            Drums
-            <small>&amp; Lesser Instruments</small>
-          </h1>
+        <div id="carousel" class="carousel slide">
+          <center>
+            <ol class="carousel-indicators">
+              <li data-target="#carousel" data-slide-to="0" class="active"></li>
+              <li data-target="#carousel" data-slide-to="1"></li>
+              <li data-target="#carousel" data-slide-to="2"></li>
+              <li data-target="#carousel" data-slide-to="3"></li>
+              <li data-target="#carousel" data-slide-to="4"></li>
+              <li data-target="#carousel" data-slide-to="5"></li>
+              <li data-target="#carousel" data-slide-to="6"></li>
+            </ol>
+          </center>
+          <!-- Carousel items -->
+          <div class="carousel-inner">
+            <div class="active item yt">
+              <!-- Brianstorm - Arctic Monkeys -->
+              <iframe width="1280" height="720" src="http://www.youtube.com/embed/Xgg4ChGK6VE?rel=0" frameborder="0" allowfullscreen></iframe>
+            </div>
+
+            <div class="item yt">
+              <!-- Plug in baby - Muse -->
+              <iframe width="1280" height="720" src="http://www.youtube.com/embed/RgsS4lOblso?rel=0" frameborder="0" allowfullscreen></iframe>
+            </div>
+
+            <div class="item yt">
+              <!-- Little Sister - QOTSA -->
+              <iframe width="1280" height="720" src="http://www.youtube.com/embed/qpDQkHGoMWY?rel=0" frameborder="0" allowfullscreen></iframe>
+            </div>
+
+            <div class="item yt">
+              <!-- Make it which you - QOTSA -->
+              <iframe width="1280" height="720" src="http://www.youtube.com/embed/uGQYcX3tNcs?rel=0" frameborder="0" allowfullscreen></iframe>
+            </div>
+
+            <div class="item yt">
+              <!-- March of the pigs - NiN -->
+              <iframe width="1280" height="720" src="http://www.youtube.com/embed/DZztp8EmHfo?rel=0" frameborder="0" allowfullscreen></iframe>
+            </div>
+
+            <div class="item yt">
+              <!-- Plug in Truman - philip glass / muse -->
+              <iframe width="1280" height="720" src="http://www.youtube.com/embed/RiZgZKPGHUs?rel=0" frameborder="0" allowfullscreen></iframe>
+            </div>
+
+            <div class="item yt">
+              <!-- Sabotage - Beastie Boys -->
+              <iframe width="1280" height="720" src="http://www.youtube.com/embed/C2UMzAStXfc?rel=0" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>
+          <!-- Carousel nav -->
+          <a class="carousel-control left" href="#carousel" data-slide="prev">&lsaquo;</a>
+          <a class="carousel-control right" href="#carousel" data-slide="next">&rsaquo;</a>
         </div>
+
+
+        <div class="row">
+        </div> <!-- /.row -->
 
         <div class="row">
           <center>
-            <!-- brianstorm -->
-            <iframe class="lead-content" width="640" height="360"
-                    src="http://www.youtube.com/embed/Xgg4ChGK6VE?rel=0"
-                    frameborder="0"
-                    allowfullscreen>
-            </iframe>
+            <div class="frame" style="border-radius: 5px;">
+              <!-- billbeans -->
+              <iframe width="100%" height="166" scrolling="no" frameborder="no"
+                      src="https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F72824274&amp;color=679ed2&amp;auto_play=false&amp;show_artwork=true">
+              </iframe>
+
+              <!-- fleshpest -->
+              <iframe width="100%" height="166" scrolling="no" frameborder="no"
+                      src="https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F72824273&amp;color=679ed2&amp;auto_play=false&amp;show_artwork=true">
+              </iframe>
           </center>
-        </div> <!-- /.row -->
+          </div>
+        </div>
 
         <div class="row">
           <center>
@@ -117,85 +173,6 @@
             </blockquote>
           </div>
         </div>
-
-        <div class="row">
-          <center>
-            <div class="light-frame" style="min-width: 650px; max-width: 650px; padding: 5px">
-              <!-- plug in baby -->
-              <iframe width="318" height="179"
-                      src="http://www.youtube.com/embed/RgsS4lOblso?rel=0"
-                      frameborder="0"
-                      allowfullscreen>
-              </iframe>
-
-              <!-- muse piano -->
-              <iframe width="318" height="179"
-                      src="http://www.youtube.com/embed/RiZgZKPGHUs?rel=0"
-                      frameborder="0"
-                      allowfullscreen>
-              </iframe>
-
-              <!-- little sister -->
-              <iframe width="318" height="179"
-                      src="http://www.youtube.com/embed/qpDQkHGoMWY?rel=0"
-                      frameborder="0"
-                      allowfullscreen>
-              </iframe>
-
-              <!-- march of the pigs -->
-              <iframe width="318" height="179"
-                      src="http://www.youtube.com/embed/DZztp8EmHfo?rel=0"
-                      frameborder="0"
-                      allowfullscreen>
-              </iframe>
-            </div>
-          </center>
-        </div>
-
-        <div class="headline">
-          <h1 class="headline-title">
-            Bands
-            <small>&amp; Compositions</small>
-          </h1>
-        </div>
-
-        <div class="row">
-          <center>
-            <div class="frame" style="border-radius: 5px;">
-              <!-- billbeans -->
-              <iframe width="100%" height="166" scrolling="no" frameborder="no"
-                      src="https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F72824274&amp;color=679ed2&amp;auto_play=false&amp;show_artwork=true">
-              </iframe>
-
-              <!-- fleshpest -->
-              <iframe width="100%" height="166" scrolling="no" frameborder="no"
-                      src="https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F72824273&amp;color=679ed2&amp;auto_play=false&amp;show_artwork=true">
-              </iframe>
-          </center>
-          </div>
-        </div>
-
-        <div class="row">
-          <center>
-            <!-- youtube box -->
-            <div class="bg-frame"
-                 style="margin: 50px auto; min-width: 650px; max-width: 650px;">
-              <!-- donnie darko -->
-              <iframe width="318" height="239"
-                      src="http://www.youtube.com/embed/YtLjn3sriDA?rel=0"
-                      frameborder="0"
-                      allowfullscreen>
-              </iframe>
-
-              <!-- madman and the nun -->
-              <iframe width="318" height="239"
-                      src="http://www.youtube.com/embed/M5-tDc6JsSs?rel=0"
-                      frameborder="0"
-                      allowfullscreen>
-              </iframe>
-            </div>
-          </center>
-        </div> <!-- ./row -->
 
       </div> <!-- /.container -->
       <div id="push"></div>
@@ -253,22 +230,6 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.pack.js"></script>
   <script src="/assets/js/fancybox-extras.js"></script>
   <script src="/assets/js/site.js"></script>
-
-  <!-- Prepare fancybox gallery -->
-  <script>
-    $(document).ready(function() {
-      $(".fancybox").fancybox({
-        openEffect: 'fade',
-        closeEffect: 'fade',
-        helpers: {
-          overlay: {
-            css: {
-              'background': 'rgba(0, 0, 0, 0.9)'
-            }
-          }
-        }
-      });
-    });
-  </script>
+  <script src="/assets/js/music.js"></script>
 
 </html>
