@@ -42,6 +42,7 @@ html +=						\
 	genetics/index.html			\
 	music/index.html			\
 	pictures/index.html			\
+	site.html				\
 	software/index.html			\
 	style.html				\
 	$(NULL)
