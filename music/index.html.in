@@ -48,7 +48,7 @@
             <div class="nav-collapse collapse pull-right">
               <ul class="nav">
                 <li><a href="/">Home</a></li>
-                <li><a href="/blog/" target="_blank">Blog</a></li>
+                <li><a href="/blog/">Blog</a></li>
                 <li class="active"><a href="/music/">Music</a></li>
                 <li><a href="/software/">Software</a></li>
                 <li><a href="/pictures/">Pictures</a></li>

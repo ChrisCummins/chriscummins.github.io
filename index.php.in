@@ -63,7 +63,7 @@
           <div class="nav-collapse collapse pull-right">
             <ul class="nav">
               <li class="active"><a href="/">Home</a></li>
-              <li><a href="/blog/" target="_blank">Blog</a></li>
+              <li><a href="/blog/">Blog</a></li>
               <li><a href="/music/">Music</a></li>
               <li><a href="/software/">Software</a></li>
               <li><a href="/pictures/">Pictures</a></li>
@@ -96,7 +96,7 @@
       </div>
 
       <div id="writings" class="step" data-y="-1300" data-scale="0.7">
-	Occasionally I <a href="blog/" target="_blank">write</a>,
+	Occasionally I <a href="blog/">write</a>,
 	when the mood takes me.
       </div>
 
