@@ -380,9 +380,9 @@
         </div> <!-- /.gallery -->
         <!-- end of fancybox gallery -->
 
-        <div class="row" style="margin: 50px;">
+        <div class="row">
           <div class="span10 offset1">
-            <blockquote>
+            <blockquote class="footer-quote">
               <p>
                 For me, the camera is a sketch book, an instrument of intuition and
                 spontaneity.

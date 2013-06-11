@@ -395,6 +395,9 @@ blockquote small {
   color: #679ed2;
   font-size: 14px;
 }
+.footer-quote {
+  margin: 50px auto;
+}
 
 /* Muted */
 .muted {

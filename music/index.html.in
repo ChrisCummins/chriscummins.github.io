@@ -167,7 +167,7 @@
 
         <div class="row">
           <div class="span6 offset3">
-            <blockquote style="margin: 20px auto">
+            <blockquote class="footer-quote">
               <p>Without music, life would be a mistake.</p>
               <small>Friedrich Nietzsche</small>
             </blockquote>
