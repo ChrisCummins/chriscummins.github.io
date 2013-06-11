@@ -1,0 +1,79 @@
+var container;
+var width, height;
+
+var camera, scene, renderer, sphere;
+
+function getDimensions() {
+  width = window.innerWidth / 5 * 4;
+  height = window.innerHeight / 5 * 4;
+}
+
+function init() {
+  getDimensions();
+  container = document.getElementById('cosmonaut-container');
+
+  scene = new THREE.Scene();
+
+  /* Renderer */
+  renderer = new THREE.CanvasRenderer();
+  renderer.setSize(width, height);
+  container.appendChild(renderer.domElement);
+
+  /* Camera */
+  camera = new THREE.PerspectiveCamera(75, width / height, 1, 10000);
+  camera.position.z = 2000;
+  scene.add(camera);
+
+  sphere = new THREE.Mesh(new THREE.SphereGeometry(500, 50, 10),
+                          new THREE.MeshLambertMaterial({
+                            shading: THREE.FlatShading
+                          }));
+  sphere.position.x = 0;
+  sphere.position.y = 0;
+  sphere.position.z = 0;
+  scene.add(sphere);
+
+  /* Lights */
+  var ambientLight = new THREE.AmbientLight(0x00);
+  scene.add(ambientLight);
+
+  var directionalLight = new THREE.DirectionalLight(Math.random() * 0xffffff);
+  directionalLight.position.x = Math.random() - 0.5;
+  directionalLight.position.y = Math.random() - 0.5;
+  directionalLight.position.z = Math.random() - 0.5;
+  directionalLight.position.normalize();
+  scene.add(directionalLight);
+
+  var directionalLight = new THREE.DirectionalLight(Math.random() * 0xffffff);
+  directionalLight.position.x = Math.random() - 0.5;
+  directionalLight.position.y = Math.random() - 0.5;
+  directionalLight.position.z = Math.random() - 0.5;
+  directionalLight.position.normalize();
+  scene.add(directionalLight);
+
+  window.addEventListener('resize', onWindowResize, false);
+}
+
+function onWindowResize() {
+  getDimensions();
+
+  camera.left = width / - 2;
+  camera.right = width / 2;
+  camera.top = height / 2;
+  camera.bottom = height / - 2;
+
+  camera.updateProjectionMatrix();
+
+  renderer.setSize(width, height);
+}
+
+function draw() {
+  renderer.render(scene, camera);
+
+  requestAnimationFrame(animate);
+}
+
+window.onload = function() {
+  init();
+  draw();
+};
