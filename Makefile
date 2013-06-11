@@ -67,6 +67,7 @@ js += 						\
 	$(NULL)
 
 extra_site +=					\
+	assets/js/three.min.js			\
 	assets/fonts/Flat-UI-Icons.dev.svg	\
 	assets/fonts/Flat-UI-Icons.eot		\
 	assets/fonts/Flat-UI-Icons.svg		\
