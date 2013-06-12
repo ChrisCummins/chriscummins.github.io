@@ -49,14 +49,11 @@ html +=						\
 	$(NULL)
 
 css +=						\
-	assets/css/jquery.fancybox-buttons.css	\
-	assets/css/jquery.fancybox-thumbs.css	\
 	assets/css/jquery.fancybox.css		\
 	assets/css/styles.css			\
 	$(NULL)
 
 js += 						\
-	assets/js/fancybox-extras.js		\
 	assets/js/gen-regions.js		\
 	assets/js/genetics.js			\
 	assets/js/index.js			\
