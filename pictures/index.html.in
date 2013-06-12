@@ -11,10 +11,10 @@
     <meta charset="utf-8" />
 
     <style type="text/css">body{padding-top:60px;}</style>
-    <link rel="stylesheet" href="/assets/css/styles.css" />
     <link rel="stylesheet" href="/assets/css/jquery.fancybox.css" />
     <link rel="stylesheet" href="/assets/css/jquery.fancybox-buttons.css" />
     <link rel="stylesheet" href="/assets/css/jquery.fancybox-thumbs.css" />
+    <link rel="stylesheet" href="/assets/css/styles.css" />
     <link rel="shortcut icon" href="/assets/img/favicon.ico" />
   </head>
 
@@ -458,7 +458,7 @@
         helpers : {
           overlay : {
             css : {
-              'background' : 'rgba(0, 0, 0, 0.9)'
+              'background' : 'rgba(255, 255, 255, 0.9)'
             }
           }
         }

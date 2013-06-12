@@ -433,6 +433,14 @@ blockquote small {
   opacity: 0.1;
 }
 
+/* Fancybox */
+.fancybox-skin {
+  background: #fff;
+}
+.fancybox-close {
+  display: none;
+}
+
 /* Sticky footer */
 html,
 body {
