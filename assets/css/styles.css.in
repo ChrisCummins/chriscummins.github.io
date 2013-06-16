@@ -917,6 +917,7 @@ body {
 }
 .navbar-inner {
   background: #fff;
+  opacity: 0.85;
   border: none;
   padding-left: 0;
   padding-right: 0;
