@@ -1,18 +1,25 @@
-<!doctype html>
+<!DOCTYPE html>
 
 <html lang="en">
 
   <head>
-    <title>Chris Cummins | Software</title>
+    <title>Chris Cummins | Boids - Flocking Algorithms</title>
     <meta name="description" content="">
     <meta name="author" content="Chris Cummins">
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="viewport" content="width=1024" />
     <meta charset="utf-8" />
 
-    <style type="text/css">body{padding-top:60px;}</style>
+    <style type="text/css">body{padding-top:47px;}</style>
     <link rel="stylesheet" href="/assets/css/styles.css" />
     <link rel="shortcut icon" href="/assets/img/favicon.ico" />
+
+    <style>
+      canvas {
+        margin: 5px auto 10px;
+        outline: 2px solid #000;
+      }
+    </style>
   </head>
 
   <body>
@@ -57,69 +64,52 @@
 
       <div class="container">
 
-        <div class="row" style="margin-top: 30px;">
-          <div class="span6">
-            <div class="feature">
-              <a href="/genetics/">
-                <img src="/assets/img/icon-genetics.png">
-                <h5>Grow Your Own Picture</h5>
-              </a>
-              <p>
-                Harnessing genetics algorithms to produce unique generative art
-                using the power of natural selection.
-              </p>
-            </div> <!-- /.feature -->
-          </div> <!-- /.span4 -->
-          <div class="span6">
-            <div class="feature">
-              <a href="/boids/">
-                <img src="/assets/img/icon-boids.png">
-                <h5>Boids</h5>
-              </a>
-              <p>
-                An HTML and JavaScript implementation of the classic 1986 Boyds
-                flocking algorithm.
-              </p>
-            </div> <!-- /.feature -->
-          </div> <!-- /.span4 -->
-        </div>
-        <div class="row" style="margin-top: 30px;">
-          <div class="span6">
-            <div class="feature">
-              <a href="/crypto/julius.html">
-                <img src="/assets/img/icon-julius.png">
-                <h5>Julius</h5>
-              </a>
-              <p>
-                Introductory cryptanalysis using substitution ciphers to analyse
-                letter frequency distributions in plain text.
-              </p>
-            </div> <!-- /.feature -->
-          </div> <!-- /.span4 -->
-          <div class="span6">
-            <div class="feature">
-              <a href="/gen-regions/">
-                <img src="/assets/img/icon-gen-regions.png">
-                <h5>Gen Regions</h5>
-              </a>
-              <p>
-                A tool for visualising assembly instruction source operand
-                regions for the Intel's SIMD GEN graphics architecture.
-              </p>
-            </div> <!-- /.feature -->
-          </div> <!-- /.span4 -->
-
-        </div> <!-- ./row-fluid -->
+        <center>
+          <div id="container"></div>
+        </center>
 
         <div class="row">
-          <div class="span10 offset1">
-            <blockquote class="footer-quote">
-              <p>Software is like sex: it's better when it's free.</p>
-              <small>Linus Torvalds</small>
-            </blockquote>
-          </div>
-        </div>
+          <div class="span4">
+            <p id="cohesion" class="pull-right"></p>
+            <p><b>Rule 1</b> Cohesion</p>
+            <div id="cohesion-slider" class="conf-slider slider-success"></div>
 
+            <p id="alignment" class="pull-right"></p>
+            <p><b>Rule 2</b> Alignment</p>
+            <div id="alignment-slider" class="conf-slider slider-success"></div>
+
+            <p id="separation" class="pull-right"></p>
+            <p><b>Rule 3</b> Separation</p>
+            <div id="separation-slider" class="conf-slider slider-success"></div>
+          </div>
+
+          <div class="span4">
+            <p id="no-of-boids" class="pull-right"></p>
+            <p>Number of boids</p>
+            <div id="no-of-boids-slider" class="conf-slider"></div>
+
+            <p id="speed" class="pull-right"></p>
+            <p>Speed</p>
+            <div id="speed-slider" class="conf-slider"></div>
+
+            <p id="sight" class="pull-right"></p>
+            <p>Line of Sight</p>
+            <div id="sight-slider" class="conf-slider"></div>
+          </div>
+
+          <div class="span4">
+
+            <p id="width" class="pull-right"></p>
+            <p>Width</p>
+            <div id="width-slider" class="conf-slider slider-warning"></div>
+
+            <p id="height" class="pull-right"></p>
+            <p>Height</p>
+            <div id="height-slider" class="conf-slider slider-warning"></div>
+
+            <button id="reset" class="btn btn-large btn-block btn-danger">Reset</button>
+          </div>
+        </div> <!-- /.row -->
       </div> <!-- /.container -->
       <div id="push"></div>
     </div> <!-- /#wrap -->
@@ -138,7 +128,6 @@
           <iframe src="http://ghbtns.com/github-btn.html?user=ChrisCummins&repo=chriscummins.cc&type=watch&count=true"
                   allowtransparency="true" frameborder="0" scrolling="0" width="110" height="21"></iframe>
         </div>
-
         <div class="footer-collapse">
           <p class="muted">
             &copy; 2013 Chris Cummins |
@@ -172,7 +161,10 @@
   </body>
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
   <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
-  <script src="/assets/js/site.js"></script>
+  <script src="/assets/js/site-components.js"></script>
+  <script src="/assets/js/three.min.js"></script>
+  <script src="/assets/js/boids.js"></script>
 
 </html>

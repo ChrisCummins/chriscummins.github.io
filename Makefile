@@ -36,6 +36,7 @@ php +=						\
 
 html +=						\
 	404.html				\
+	boids/index.html			\
 	crypto/julius.html			\
 	empty.html				\
 	gen-regions/index.html			\
@@ -54,6 +55,7 @@ css +=						\
 	$(NULL)
 
 js += 						\
+	assets/js/boids.js			\
 	assets/js/gen-regions.js		\
 	assets/js/genetics.js			\
 	assets/js/index.js			\
@@ -85,6 +87,7 @@ extra_site +=					\
 	assets/img/fancybox_sprite.png		\
 	assets/img/favicon.ico			\
 	assets/img/github.png			\
+	assets/img/icon-boids.png		\
 	assets/img/icon-gen-regions.png		\
 	assets/img/icon-genetics.png		\
 	assets/img/icon-julius.png		\
