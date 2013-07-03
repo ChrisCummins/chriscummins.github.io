@@ -2040,7 +2040,7 @@ textarea[class*="span"] {
 
 /* Carousels */
 .carousel .container {
-   position: relative;
+  position: relative;
   z-index: 9;
 }
 .carousel-control {
