@@ -2182,6 +2182,26 @@ textarea[class*="span"] {
   position: absolute;
   z-index: 1;
 }
+.slider-warning > .ui-slider-range {
+  background-color: #f1c40f;
+}
+.slider-warning > .ui-slider-handle {
+  background-color: #d38100;
+}
+.slider-warning > .ui-slider-handle:hover,
+.slider-warning > .ui-slider-handle:focus {
+  background-color: #ffc56b;
+}
+.slider-success > .ui-slider-range {
+  background-color: #2ecc71;
+}
+.slider-success > .ui-slider-handle {
+  background-color: #219050;
+}
+.slider-success > .ui-slider-handle:hover,
+.slider-success > .ui-slider-handle:focus {
+  background-color: #78ffb1;
+}
 .ui-slider-segment {
   background-color: #d9dbdd;
   border-radius: 50%;
