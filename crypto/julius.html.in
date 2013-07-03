@@ -30,6 +30,10 @@
       button {
         min-width: 110px;
       }
+
+      p.lead {
+        padding-top: 6px;
+      }
     </style>
   </head>
 
@@ -137,6 +141,91 @@
           </div> <!-- /.span -->
 
         </div> <!-- /.row -->
+
+        <div class="row" style="margin-top: 20px">
+          <div class="span6">
+            <h3>Shift Ciphers</h3>
+
+            <p>
+              By 50 BC, <a href="http://en.wikipedia.org/wiki/Julius_Caesar"
+              target="_blank">Julius Caesar</a> had discovered the importance of
+              protecting sensitive military data and was using a primitive
+              substitution cipher to encrypt his messages to generals. According
+              to <a href="http://en.wikipedia.org/wiki/Suetonius"
+              target="_blank">Gaius Suetonius</a>, Caesar would encode message
+              such that the first letter of the alphabet become the fourth, the
+              second would become the fifth and so on, with X Y and Z wrapping
+              around to be A B and C respectively. In formal notation, this can
+              be described as:
+
+              <div class="equation">
+                <img src="/assets/img/shift-p3.gif"/>
+              </div>
+
+              Where 26 is the size of
+              the <a href="http://en.wikipedia.org/wiki/Modular_arithmetic"
+              target="_blank">modulus</a>, in the case being the number of
+              letters in the range [A, Z].
+            </p>
+
+            <p>
+              By entering a message into the text box on this page, you can drag
+              the slider around to see how shifting the letters affects the
+              text by performing a transformation of size <i>n</i>:
+
+              <div class="equation">
+                <img src="/assets/img/shift-pn.gif"/>
+              </div>
+
+              The auto button will attempt to decipher a message by analysing
+              the letter frequency distribution (see right) and selecting the
+              closest match to the given language.
+            </p>
+
+          </div> <!-- /span -->
+
+          <div class="span6">
+            <h3>Letter frequency</h3>
+            <p>
+              The Latin character set used in English contains 26 letters, but
+              their usage in language is not uniform. For example, the
+              letter <i>E</i> is used 15 times in this sentence, but the
+              letter <i>X</i> occurs only twice. The frequency of a specific
+              letter in a given body of text can be found using:
+
+              <div class="equation">
+                <img src="/assets/img/letter-distribution.gif"/>
+              </div>
+
+              It is possible to create an average letter frequency distribution
+              by analysing enough text of a specific language. This gives each
+              language a characteristic 'footprint'. For example, the
+              letter <i>E</i> is the most common letter in English, whereas the
+              letter <i>A</i> is the most frequently used letter in Esperanto.
+            </p>
+            <p>
+              Moving the language slider on this page allows you to compare the
+              different letter frequency distributions of several European
+              languages and to compare that against the letter frequency
+              distribution of a given message.
+            </p>
+            <p>
+              The Auto button will attempt to identify the language of a given
+              message by analysing the letter frequency distribution. It should
+              be noted that this is not the accuracy of this guessing algorithm
+              is limited by the fact that accented letters are not considered.
+            </p>
+          </div> <!-- /span -->
+        </div> <!-- /.row -->
+
+        <div class="row">
+          <div class="span6 offset3">
+            <blockquote class="footer-quote">
+              <p>Experience is the teacher of all things.</p>
+              <small>Julius Caesar</small>
+            </blockquote>
+          </div>
+        </div>
 
       </div> <!-- /.container -->
       <div id="push"></div>

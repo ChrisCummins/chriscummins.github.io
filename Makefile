@@ -86,6 +86,7 @@ extra_site +=					\
 	assets/img/fancybox_overlay.png		\
 	assets/img/fancybox_sprite.png		\
 	assets/img/favicon.ico			\
+	assets/img/letter-distribution.gif	\
 	assets/img/github.png			\
 	assets/img/icon-boids.png		\
 	assets/img/icon-gen-regions.png		\
@@ -97,6 +98,8 @@ extra_site +=					\
 	assets/img/screenshot-linkedin.png	\
 	assets/img/screenshot-soundcloud.png	\
 	assets/img/screenshot-youtube.png	\
+	assets/img/shift-p3.gif			\
+	assets/img/shift-pn.gif			\
 	assets/img/slider-handle.png		\
 	assets/img/slider-track.png		\
 	assets/img/soundcloud.png		\

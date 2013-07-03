@@ -2936,6 +2936,11 @@ textarea[class*="span"] {
   width: 50%;
 }
 
+.equation > img {
+  display: block;
+  margin: 20px 30px;
+}
+
 /* impress.js styling */
 .step {
   position: relative;
