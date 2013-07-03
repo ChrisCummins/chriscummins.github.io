@@ -2079,6 +2079,9 @@ textarea[class*="span"] {
 .carousel-caption .btn {
   margin-top: 10px;
 }
+#music-carousel {
+  max-width: 90%;
+}
 
 /* Progress bars and sliders */
 .progress {

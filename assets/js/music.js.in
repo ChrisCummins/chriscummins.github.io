@@ -160,7 +160,7 @@ function callPlayerIframe(iframe, func, args) {
 
 $(document).ready(function() {
 
-  var $carousel = $('#carousel')
+  var $carousel = $('#music-carousel')
 
   /* Scale videos to fit carousel */
   $('.yt').fitVids();

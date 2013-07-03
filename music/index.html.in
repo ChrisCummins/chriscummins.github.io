@@ -58,59 +58,59 @@
 
       <div class="container">
 
-        <div id="carousel" class="carousel slide">
-          <center>
+        <center>
+          <div id="music-carousel" class="carousel slide">
             <ol class="carousel-indicators">
-              <li data-target="#carousel" data-slide-to="0" class="active"></li>
-              <li data-target="#carousel" data-slide-to="1"></li>
-              <li data-target="#carousel" data-slide-to="2"></li>
-              <li data-target="#carousel" data-slide-to="3"></li>
-              <li data-target="#carousel" data-slide-to="4"></li>
-              <li data-target="#carousel" data-slide-to="5"></li>
-              <li data-target="#carousel" data-slide-to="6"></li>
+              <li data-target="#music-carousel" data-slide-to="0" class="active"></li>
+              <li data-target="#music-carousel" data-slide-to="1"></li>
+              <li data-target="#music-carousel" data-slide-to="2"></li>
+              <li data-target="#music-carousel" data-slide-to="3"></li>
+              <li data-target="#music-carousel" data-slide-to="4"></li>
+              <li data-target="#music-carousel" data-slide-to="5"></li>
+              <li data-target="#music-carousel" data-slide-to="6"></li>
             </ol>
-          </center>
-          <!-- Carousel items -->
-          <div class="carousel-inner">
-            <div class="active item yt">
-              <!-- Brianstorm - Arctic Monkeys -->
-              <iframe width="1280" height="720" src="http://www.youtube.com/embed/Xgg4ChGK6VE?rel=0" frameborder="0" allowfullscreen></iframe>
-            </div>
+            <!-- Carousel items -->
+            <div class="carousel-inner">
+              <div class="active item yt">
+                <!-- Brianstorm - Arctic Monkeys -->
+                <iframe width="1280" height="720" src="http://www.youtube.com/embed/Xgg4ChGK6VE?rel=0" frameborder="0" allowfullscreen></iframe>
+              </div>
 
-            <div class="item yt">
-              <!-- Plug in baby - Muse -->
-              <iframe width="1280" height="720" src="http://www.youtube.com/embed/RgsS4lOblso?rel=0" frameborder="0" allowfullscreen></iframe>
-            </div>
+              <div class="item yt">
+                <!-- Plug in baby - Muse -->
+                <iframe width="1280" height="720" src="http://www.youtube.com/embed/RgsS4lOblso?rel=0" frameborder="0" allowfullscreen></iframe>
+              </div>
 
-            <div class="item yt">
-              <!-- Little Sister - QOTSA -->
-              <iframe width="1280" height="720" src="http://www.youtube.com/embed/qpDQkHGoMWY?rel=0" frameborder="0" allowfullscreen></iframe>
-            </div>
+              <div class="item yt">
+                <!-- Little Sister - QOTSA -->
+                <iframe width="1280" height="720" src="http://www.youtube.com/embed/qpDQkHGoMWY?rel=0" frameborder="0" allowfullscreen></iframe>
+              </div>
 
-            <div class="item yt">
-              <!-- Make it which you - QOTSA -->
-              <iframe width="1280" height="720" src="http://www.youtube.com/embed/uGQYcX3tNcs?rel=0" frameborder="0" allowfullscreen></iframe>
-            </div>
+              <div class="item yt">
+                <!-- Make it which you - QOTSA -->
+                <iframe width="1280" height="720" src="http://www.youtube.com/embed/uGQYcX3tNcs?rel=0" frameborder="0" allowfullscreen></iframe>
+              </div>
 
-            <div class="item yt">
-              <!-- March of the pigs - NiN -->
-              <iframe width="1280" height="720" src="http://www.youtube.com/embed/DZztp8EmHfo?rel=0" frameborder="0" allowfullscreen></iframe>
-            </div>
+              <div class="item yt">
+                <!-- March of the pigs - NiN -->
+                <iframe width="1280" height="720" src="http://www.youtube.com/embed/DZztp8EmHfo?rel=0" frameborder="0" allowfullscreen></iframe>
+              </div>
 
-            <div class="item yt">
-              <!-- Plug in Truman - philip glass / muse -->
-              <iframe width="1280" height="720" src="http://www.youtube.com/embed/RiZgZKPGHUs?rel=0" frameborder="0" allowfullscreen></iframe>
-            </div>
+              <div class="item yt">
+                <!-- Plug in Truman - philip glass / muse -->
+                <iframe width="1280" height="720" src="http://www.youtube.com/embed/RiZgZKPGHUs?rel=0" frameborder="0" allowfullscreen></iframe>
+              </div>
 
-            <div class="item yt">
-              <!-- Sabotage - Beastie Boys -->
-              <iframe width="1280" height="720" src="http://www.youtube.com/embed/C2UMzAStXfc?rel=0" frameborder="0" allowfullscreen></iframe>
+              <div class="item yt">
+                <!-- Sabotage - Beastie Boys -->
+                <iframe width="1280" height="720" src="http://www.youtube.com/embed/C2UMzAStXfc?rel=0" frameborder="0" allowfullscreen></iframe>
+              </div>
             </div>
+            <!-- Carousel nav -->
+            <a class="carousel-control left" href="#music-carousel" data-slide="prev">&lsaquo;</a>
+            <a class="carousel-control right" href="#music-carousel" data-slide="next">&rsaquo;</a>
           </div>
-          <!-- Carousel nav -->
-          <a class="carousel-control left" href="#carousel" data-slide="prev">&lsaquo;</a>
-          <a class="carousel-control right" href="#carousel" data-slide="next">&rsaquo;</a>
-        </div>
+        </center>
 
 
         <div class="row">
