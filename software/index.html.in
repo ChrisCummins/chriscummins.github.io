@@ -58,7 +58,7 @@
       <div class="container">
 
         <div class="row" style="margin-top: 30px;">
-          <div class="span6">
+          <div class="span4">
             <div class="feature">
               <a href="/genetics/">
                 <img src="/assets/img/icon-genetics.png">
@@ -70,7 +70,19 @@
               </p>
             </div> <!-- /.feature -->
           </div> <!-- /.span4 -->
-          <div class="span6">
+          <div class="span4">
+            <div class="feature">
+              <a href="/crypto/julius.html">
+                <img src="/assets/img/icon-julius.png">
+                <h5>Julius</h5>
+              </a>
+              <p>
+                Introductory cryptanalysis using substitution ciphers to analyse
+                letter frequency distributions in plain text.
+              </p>
+            </div> <!-- /.feature -->
+          </div> <!-- /.span4 -->
+          <div class="span4">
             <div class="feature">
               <a href="/boids/">
                 <img src="/assets/img/icon-boids.png">
@@ -84,19 +96,7 @@
           </div> <!-- /.span4 -->
         </div>
         <div class="row" style="margin-top: 30px;">
-          <div class="span6">
-            <div class="feature">
-              <a href="/crypto/julius.html">
-                <img src="/assets/img/icon-julius.png">
-                <h5>Julius</h5>
-              </a>
-              <p>
-                Introductory cryptanalysis using substitution ciphers to analyse
-                letter frequency distributions in plain text.
-              </p>
-            </div> <!-- /.feature -->
-          </div> <!-- /.span4 -->
-          <div class="span6">
+          <div class="span4">
             <div class="feature">
               <a href="/gen-regions/">
                 <img src="/assets/img/icon-gen-regions.png">
