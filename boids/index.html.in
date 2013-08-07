@@ -10,14 +10,52 @@
     <meta name="viewport" content="width=1024" />
     <meta charset="utf-8" />
 
-    <style type="text/css">body{padding-top:47px;}</style>
     <link rel="stylesheet" href="/assets/css/styles.css" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.1.0/css/font-awesome.css" />
     <link rel="shortcut icon" href="/assets/img/favicon.ico" />
 
-    <style>
+    <style type="text/css">
+      body {
+        background-color: #83caff;
+      }
+      p {
+        color: #ebedef;
+      }
       canvas {
-        margin: 5px auto 10px;
-        outline: 2px solid #000;
+        margin: 0;
+      }
+      #show-settings {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background-color: #2b70a6;
+        width: 46px;
+        height: 41px;
+      }
+      #show-settings:hover,
+      #show-settings:focus {
+        background-color: #7aa1bf;
+      }
+      #settings {
+        position: absolute;
+        top: 0;
+        box-sizing:border-box;
+        -moz-box-sizing:border-box;
+        width: 100%;
+        padding: 15px;
+        background-color: #2b70a6;
+        display: none;
+      }
+      #mouse-behaviour .switch-left {
+        padding-left: 2px;
+        text-align: left;
+      }
+      #settings,
+      #show-settings {
+        opacity: 0.8;
+      }
+      .row-fluid {
+        margin-top: 46px;
       }
     </style>
   </head>
@@ -62,13 +100,14 @@
         </div>
       </div> <!-- /.navbar -->
 
-      <div class="container">
+      <div id="container"></div>
 
-        <center>
-          <div id="container"></div>
-        </center>
+      <button id="show-settings" class="btn btn-block">
+        <center><i class="icon-cog icon-large"></i></center>
+      </button>
 
-        <div class="row">
+      <div id="settings">
+        <div class="row-fluid">
           <div class="span4">
             <p id="cohesion" class="pull-right"></p>
             <p><b>Rule 1</b> Cohesion</p>
@@ -99,72 +138,36 @@
 
           <div class="span4">
 
-            <p id="width" class="pull-right"></p>
-            <p>Width</p>
-            <div id="width-slider" class="conf-slider slider-warning"></div>
+            <div id="first-person" class="switch switch-square pull-right">
+              <input type="checkbox" />
+            </div>
+            <p style="margin-bottom: 21px;">Boid-cam&trade;</p>
 
-            <p id="height" class="pull-right"></p>
-            <p>Height</p>
-            <div id="height-slider" class="conf-slider slider-warning"></div>
+            <div id="mouse-behaviour" class="switch switch-square pull-right"
+                 data-on-label="Friend" data-off-label="Foe">
+              <input type="checkbox" checked="" />
+            </div>
+            <p style="margin-bottom: 21px;">Mouse behaviour</p>
+
+            <div id="stats-visible" class="switch switch-square pull-right">
+              <input type="checkbox" />
+            </div>
+            <p style="margin-bottom: 21px;">Performance stats</p>
 
             <button id="reset" class="btn btn-large btn-block btn-danger">Reset</button>
           </div>
-        </div> <!-- /.row -->
-      </div> <!-- /.container -->
-      <div id="push"></div>
-    </div> <!-- /#wrap -->
-
-    <!-- Site footer -->
-    <div class="footer">
-      <div class="container wrapper">
-        <div class="pull-right">
-          <!-- twitter tweet -->
-          <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://chriscummins.cc" data-via="iamchriscummins" data-dnt="true">Tweet</a>
-          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-          <!-- facebook like -->
-          <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fchriscummins.cc&amp;send=false&amp;layout=button_count&amp;width=110&amp;show_faces=false&amp;font&amp;colorscheme=light&amp;action=like&amp;height=21"
-                  scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:110px; height:21px;" allowTransparency="true"></iframe>
-          <!-- github watch -->
-          <iframe src="http://ghbtns.com/github-btn.html?user=ChrisCummins&repo=chriscummins.cc&type=watch&count=true"
-                  allowtransparency="true" frameborder="0" scrolling="0" width="110" height="21"></iframe>
         </div>
-        <div class="footer-collapse">
-          <p class="muted">
-            &copy; 2013 Chris Cummins |
-            <a id="contact-me">Send me a message</a>
-          </p>
-        </div>
-      </div>
-    </div> <!-- /.footer -->
-
-    <!-- The feedback form -->
-    <div class="feedback-overlay"></div>
-    <div class="feedback-form">
-      <form id="feedback-form-messageform" name="contactme" action="">
-      	<p>Send me a message</p>
-      	<textarea id="feedback-form-message" name="message"></textarea>
-      	<p>Email</p>
-      	<input id="feedback-form-email" name="email" type="text" autocomplete="off" /><br />
-      	<input id="feedback-form-cancel" class="btn btn-large btn-warning" type="reset" value="Cancel" />
-      	<input id="feedback-form-send" class="btn btn-large btn-success" type="submit" value="Send" />
-      </form>
-      <div id="feedback-form-messagesuccess">
-        <center>
-	  <br /><br /><br /><br /><br /><br />
-	  <img src="/assets/img/check.png">
-	  <br /><br />
-	  Thanks for getting in touch!
-        </center>
       </div>
     </div>
-
   </body>
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
   <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+  <script src="//cdn.jsdelivr.net/jquery.hotkeys/0.1.0/jquery.hotkeys.js"></script>
   <script src="/assets/js/site-components.js"></script>
   <script src="/assets/js/three.min.js"></script>
+  <script src="/assets/js/stats.min.js"></script>
   <script src="/assets/js/boids.js"></script>
 
 </html>

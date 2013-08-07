@@ -105,6 +105,7 @@ extra_site +=					\
 	assets/img/tile-ribbon-2x.png		\
 	assets/img/tile-ribbon.png		\
 	assets/img/youtube.png			\
+	assets/js/stats.min.js			\
 	genetics/eiffel-tower.jpg		\
 	genetics/kyle-broflovski.jpg		\
 	genetics/marilyn-monroe.jpg		\
