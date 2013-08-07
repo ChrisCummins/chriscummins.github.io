@@ -66,7 +66,6 @@ js += 						\
 	$(NULL)
 
 extra_site +=					\
-	assets/js/three.min.js			\
 	assets/fonts/Flat-UI-Icons.dev.svg	\
 	assets/fonts/Flat-UI-Icons.eot		\
 	assets/fonts/Flat-UI-Icons.svg		\
@@ -84,12 +83,12 @@ extra_site +=					\
 	assets/img/fancybox_overlay.png		\
 	assets/img/fancybox_sprite.png		\
 	assets/img/favicon.ico			\
-	assets/img/letter-distribution.gif	\
 	assets/img/github.png			\
 	assets/img/icon-boids.png		\
 	assets/img/icon-gen-regions.png		\
 	assets/img/icon-genetics.png		\
 	assets/img/icon-julius.png		\
+	assets/img/letter-distribution.gif	\
 	assets/img/linkedin.png			\
 	assets/img/screenshot-facebook.png	\
 	assets/img/screenshot-github.png	\
@@ -106,6 +105,7 @@ extra_site +=					\
 	assets/img/tile-ribbon.png		\
 	assets/img/youtube.png			\
 	assets/js/stats.min.js			\
+	assets/js/three.min.js			\
 	genetics/eiffel-tower.jpg		\
 	genetics/kyle-broflovski.jpg		\
 	genetics/marilyn-monroe.jpg		\
