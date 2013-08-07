@@ -41,7 +41,6 @@ html +=						\
 	empty.html				\
 	gen-regions/index.html			\
 	genetics/index.html			\
-	lonely-cosmonaut/index.html		\
 	music/index.html			\
 	pictures/index.html			\
 	site.html				\
@@ -60,7 +59,6 @@ js += 						\
 	assets/js/genetics.js			\
 	assets/js/index.js			\
 	assets/js/julius.js			\
-	assets/js/lonely-cosmonaut.js		\
 	assets/js/music.js			\
 	assets/js/site-components.js		\
 	assets/js/site.js			\
