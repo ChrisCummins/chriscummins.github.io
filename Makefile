@@ -144,13 +144,6 @@ clean_files = 					\
 all: $(local_files)
 
 #
-# Private publishing routines
-#
-include Makefile.publish
-
-publish: private_publish
-
-#
 # Remove generated files
 #
 .PHONY: clean
