@@ -41,6 +41,7 @@ html +=						\
 	empty.html				\
 	gen-regions/index.html			\
 	genetics/index.html			\
+	gol/index.html				\
 	music/index.html			\
 	pictures/index.html			\
 	site.html				\
@@ -57,6 +58,7 @@ js += 						\
 	assets/js/boids.js			\
 	assets/js/gen-regions.js		\
 	assets/js/genetics.js			\
+	assets/js/gol.js			\
 	assets/js/index.js			\
 	assets/js/julius.js			\
 	assets/js/music.js			\

@@ -1,6 +1,7 @@
 /boids.js
 /gen-regions.js
 /genetics.js
+/gol.js
 /index.js
 /julius.js
 /music.js
