@@ -158,7 +158,7 @@ clean:
 	@echo '  JS       $@'
 	$(QUIET)chmod 644 $<
 ifndef DEBUG
-	$(QUIET)java -jar libs/closure-compiler.jar --js=$< --js_output_file=$@
+	$(QUIET)java -jar ../build/jar/closure-compiler.jar --js=$< --js_output_file=$@
 else
 	$(QUIET)cp $< $@
 endif
@@ -167,7 +167,7 @@ endif
 	@echo '  CSS      $@'
 	$(QUIET)chmod 644 $<
 ifndef DEBUG
-	$(QUIET)java -jar libs/yuicompressor.jar --charset utf-8 -v \
+	$(QUIET)java -jar ../build/jar/yuicompressor.jar --charset utf-8 -v \
 						 --type css $< >$@
 else
 	$(QUIET)cp $< $@
@@ -177,7 +177,7 @@ endif
 	@echo '  HTML     $@'
 	$(QUIET)chmod 644 $<
 ifndef DEBUG
-	$(QUIET)java -jar libs/htmlcompressor.jar 		\
+	$(QUIET)java -jar ../build/jar/htmlcompressor.jar 		\
 					--compress-js 		\
 					--compress-css 		\
 					$< >$@
@@ -189,7 +189,7 @@ endif
 	@echo '  PHP      $@'
 	$(QUIET)chmod 644 $<
 ifndef DEBUG
-	$(QUIET)java -jar libs/htmlcompressor.jar $< >$@
+	$(QUIET)java -jar ../build/jar/htmlcompressor.jar $< >$@
 else
 	$(QUIET)cp $< $@
 endif
