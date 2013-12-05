@@ -73,8 +73,7 @@ dnl ================================================================
 m4_define([author],[chrisc.101@gmail.com])
 
 AC_INIT([cc],[cc_version],[author])
-dnl TODO: Uncomment the next line once we have an index.php file
-dnl AC_CONFIG_SRCDIR([www/index.php])
+AC_CONFIG_SRCDIR([www/index.php])
 AC_CONFIG_AUX_DIR([build])
 
 dnl Support for --program-prefix, --program-suffix and
