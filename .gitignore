@@ -87,5 +87,6 @@ Icon
 Thumbs.db
 
 #
-# Files we don't want to ignore
+# Project-specific ignore patterns
 #
+/config.summary
