@@ -136,7 +136,7 @@ local_files = 					\
 
 # generated files
 clean_files = 					\
-	$(html) $(css) $(js) 			\
+	$(php) $(html) $(css) $(js) 		\
 	$(NULL)
 
 #
