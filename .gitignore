@@ -25,6 +25,26 @@
 # SOFTWARE.
 
 #
+# Autotools by-products
+#
+/aclocal.m4
+/autom4te.cache
+/compile
+/config.h
+/config.h.in
+/config.log
+/config.status
+/configure
+/configure.scan
+/depcomp
+/libtool
+/stamp-h1
+install-sh
+Makefile
+Makefile.in
+missing
+
+#
 # Editor backups and transient files
 #
 *~
