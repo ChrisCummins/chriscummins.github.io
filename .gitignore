@@ -61,6 +61,18 @@ Session.vim
 .netrwhist
 
 #
+# Patches, diffs and VCS integration
+#
+*.diff
+*.orig
+*.patch
+*.rej
+*/.cvsignore
+*/CVS/*
+.cvsignore
+/CVS/*
+
+#
 # Platform specific noise
 #
 $RECYCLE.BIN/
