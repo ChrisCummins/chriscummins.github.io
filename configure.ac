@@ -454,6 +454,10 @@ dnl 10. Generate files
 dnl ================================================================
 AC_OUTPUT([
 	Makefile
+	build/Makefile
+	build/jar/Makefile
+	www/Makefile
+	www/.htaccess
 ])
 
 

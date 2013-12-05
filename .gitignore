@@ -39,10 +39,8 @@
 /depcomp
 /libtool
 /stamp-h1
-install-sh
 Makefile
 Makefile.in
-missing
 
 #
 # Editor backups and transient files
