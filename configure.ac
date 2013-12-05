@@ -454,36 +454,6 @@ dnl 10. Generate files
 dnl ================================================================
 AC_OUTPUT([
 	Makefile
-	build/Makefile
-	build/jar/Makefile
-	design/Makefile
-	design/d1/Makefile
-	design/d1/pages/Makefile
-	design/d1/pages/renders/Makefile
-	design/d1/previous/Makefile
-	design/d1/previous/renders/Makefile
-	design/d1/tasks/Makefile
-	design/d1/tasks/renders/Makefile
-	Documentation/Makefile
-	Documentation/plan/Makefile
-	scripts/Makefile
-	scripts/git/Makefile
-	scripts/git/flow/Makefile
-	scripts/git/hooks/Makefile
-	scripts/git/hooks/pre-commit
-	tools/Makefile
-	tools/dsa.sh
-	www/Makefile
-	www/.htaccess
-	www/admin/Makefile
-	www/css/Makefile
-	www/fonts/Makefile
-	www/html/Makefile
-	www/img/Makefile
-	www/js/Makefile
-	www/lib/Makefile
-	www/lib/config.php
-	www/lib/Twig/Makefile
 ])
 
 
