@@ -64,7 +64,6 @@ Session.vim
 # Platform specific noise
 #
 $RECYCLE.BIN/
-.*
 .AppleDouble
 .DS_Store
 .LSOverride
@@ -78,4 +77,3 @@ Thumbs.db
 #
 # Files we don't want to ignore
 #
-!.gitignore
