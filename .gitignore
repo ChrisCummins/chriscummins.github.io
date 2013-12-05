@@ -56,19 +56,6 @@ Icon
 Thumbs.db
 
 #
-# Site generated files
-#
-/404.html
-/empty.html
-/index.php
-/license.html
-/message.php
-/privacy.html
-/site.html
-/style.html
-/tmp/*
-
-#
 # Files we don't want to ignore
 #
 !.gitignore
