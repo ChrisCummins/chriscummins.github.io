@@ -522,8 +522,8 @@ echo "This file contains a summary of the configuration options generated" > $s
 echo "by the configure script, generated at $(date)." >> $s
 
 echo "" >> $s
-echo "pip-db - $PIPDB_VERSION" >> $s
-echo "--------------" >> $s
+echo "chriscummins.cc - $CC_VERSION" >> $s
+echo "-----------------------" >> $s
 
 
 # Build options:
