@@ -61,9 +61,9 @@ dnl ================================================================
 dnl ================================================================
 dnl 1. Project versions (i.e. the package version)
 dnl ================================================================
-m4_define([cc_major_version],[0])
-m4_define([cc_minor_version],[1])
-m4_define([cc_micro_version],[6])
+m4_define([cc_major_version],[2])
+m4_define([cc_minor_version],[0])
+m4_define([cc_micro_version],[0])
 m4_define([cc_version],[cc_major_version.cc_minor_version.cc_micro_version])
 
 
