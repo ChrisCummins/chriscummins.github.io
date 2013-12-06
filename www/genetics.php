@@ -10,9 +10,9 @@
     <meta charset="utf-8" />
 
     <style type="text/css">body{padding-top:60px;}</style>
-    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.1.0/css/font-awesome.css" />
-    <link rel="shortcut icon" href="/assets/img/favicon.ico" />
+    <link rel="shortcut icon" href="/img/favicon.ico" />
 
     <style>
       #pictureframe {
@@ -241,7 +241,7 @@
                target="_blank">GitHub</a> and is released under the terms of the
             MIT License. If you just want to see how the genetics algorithm
             works, you can see the JavaScript
-            implementation <a href="https://github.com/ChrisCummins/chriscummins.cc/blob/master/assets/js/genetics.js.in"
+            implementation <a href="https://github.com/ChrisCummins/chriscummins.cc/blob/master/js/genetics.js.in"
                               target="_blank">here</a>.
 
             <center><h5>Bugs, comments and improvements</h5></center>
@@ -566,7 +566,7 @@
       <div id="feedback-form-messagesuccess">
         <center>
           <br /><br /><br /><br /><br /><br />
-          <img src="/assets/img/check.png">
+          <img src="/img/check.png">
           <br /><br />
           Thanks for getting in touch!
         </center>
@@ -578,9 +578,9 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
   <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
-  <script src="/assets/js/site-components.js"></script>
-  <script src="/assets/js/site.js"></script>
-  <script src="/assets/js/webcam.js"></script>
-  <script src="/assets/js/genetics.js"></script>
+  <script src="/js/site-components.js"></script>
+  <script src="/js/site.js"></script>
+  <script src="/js/webcam.js"></script>
+  <script src="/js/genetics.js"></script>
 
 </html>

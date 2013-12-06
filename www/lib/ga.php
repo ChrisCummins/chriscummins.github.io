@@ -4,7 +4,7 @@
 This file contains a minified version of the Google Analytics tracking code. To
 use this file, include it in your .php document:
 
-    <?php include_once("/assets/ga.php") ?>
+    <?php include_once("/ga.php") ?>
 
 For reference, this is the full script:
 

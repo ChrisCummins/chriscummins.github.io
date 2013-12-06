@@ -11,8 +11,8 @@
     <meta charset="utf-8" />
 
     <style type="text/css">body{padding-top:60px;}</style>
-    <link rel="stylesheet" href="/assets/css/styles.css" />
-    <link rel="shortcut icon" href="/assets/img/favicon.ico" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="shortcut icon" href="/img/favicon.ico" />
 
     <style>
       .span3 {
@@ -207,7 +207,7 @@
       <div id="feedback-form-messagesuccess">
         <center>
 	  <br /><br /><br /><br /><br /><br />
-	  <img src="/assets/img/check.png">
+	  <img src="/img/check.png">
 	  <br /><br />
 	  Thanks for getting in touch!
         </center>
@@ -218,6 +218,6 @@
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
-  <script src="/assets/js/site.js"></script>
+  <script src="/js/site.js"></script>
 
 </html>

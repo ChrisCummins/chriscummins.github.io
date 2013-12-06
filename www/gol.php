@@ -10,8 +10,8 @@
     <meta name="viewport" content="width=1024" />
     <meta charset="utf-8" />
 
-    <link rel="stylesheet" href="/assets/css/styles.css" />
-    <link rel="shortcut icon" href="/assets/img/favicon.ico" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="shortcut icon" href="/img/favicon.ico" />
 
     <style type="text/css">
       @import url(http://fonts.googleapis.com/css?family=Monda|Stalinist+One);
@@ -89,6 +89,6 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
   <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
-  <script src="/assets/js/gol.js"></script>
+  <script src="/js/gol.js"></script>
 
 </html>

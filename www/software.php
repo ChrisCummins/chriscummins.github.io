@@ -11,8 +11,8 @@
     <meta charset="utf-8" />
 
     <style type="text/css">body{padding-top:60px;}</style>
-    <link rel="stylesheet" href="/assets/css/styles.css" />
-    <link rel="shortcut icon" href="/assets/img/favicon.ico" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="shortcut icon" href="/img/favicon.ico" />
   </head>
 
   <body>
@@ -61,7 +61,7 @@
           <div class="span4">
             <div class="feature">
               <a href="/genetics/">
-                <img src="/assets/img/icon-genetics.png">
+                <img src="/img/icon-genetics.png">
                 <h5>Grow Your Own Picture</h5>
               </a>
               <p>
@@ -73,7 +73,7 @@
           <div class="span4">
             <div class="feature">
               <a href="/crypto/julius.html">
-                <img src="/assets/img/icon-julius.png">
+                <img src="/img/icon-julius.png">
                 <h5>Julius</h5>
               </a>
               <p>
@@ -85,7 +85,7 @@
           <div class="span4">
             <div class="feature">
               <a href="/boids/">
-                <img src="/assets/img/icon-boids.png">
+                <img src="/img/icon-boids.png">
                 <h5>Boids</h5>
               </a>
               <p>
@@ -99,7 +99,7 @@
           <div class="span4">
             <div class="feature">
               <a href="/gen-regions/">
-                <img src="/assets/img/icon-gen-regions.png">
+                <img src="/img/icon-gen-regions.png">
                 <h5>Gen Regions</h5>
               </a>
               <p>
@@ -162,7 +162,7 @@
       <div id="feedback-form-messagesuccess">
         <center>
 	  <br /><br /><br /><br /><br /><br />
-	  <img src="/assets/img/check.png">
+	  <img src="/img/check.png">
 	  <br /><br />
 	  Thanks for getting in touch!
         </center>
@@ -173,6 +173,6 @@
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
-  <script src="/assets/js/site.js"></script>
+  <script src="/js/site.js"></script>
 
 </html>

@@ -13,8 +13,8 @@
     <meta charset="utf-8" />
 
     <style type="text/css">body{padding-top:60px;}</style>
-    <link rel="stylesheet" href="/assets/css/styles.css" />
-    <link rel="shortcut icon" href="/assets/img/favicon.ico" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="shortcut icon" href="/img/favicon.ico" />
 
     <style>
       body {
@@ -104,15 +104,15 @@
 	<center><div id="findme">You can find me elsewhere:</div>
 
 	  <a id="linkedin" href="http://www.linkedin.com/profile/view?id=195091553" target="_blank">
-	    <img src="/assets/img/linkedin.png" alt="Linked In"></a>
+	    <img src="/img/linkedin.png" alt="Linked In"></a>
 	  <a id="facebook" href="http://www.facebook.com/cecummins" target="_blank">
-	    <img src="/assets/img/facebook.png" alt="Facebook"></a>
+	    <img src="/img/facebook.png" alt="Facebook"></a>
 	  <a id="youtube" href="http://www.youtube.com/user/ChrisCummins" target="_blank">
-	    <img src="/assets/img/youtube.png" alt="YouTube"></a>
+	    <img src="/img/youtube.png" alt="YouTube"></a>
 	  <a id="soundcloud" href="http://soundcloud.com/peakstudio" target="_blank">
-	    <img src="/assets/img/soundcloud.png" alt="SoundCloud"></a>
+	    <img src="/img/soundcloud.png" alt="SoundCloud"></a>
 	  <a id="github" href="https://github.com/ChrisCummins" target="_blank">
-	    <img src="/assets/img/github.png" alt="GitHub"></a>
+	    <img src="/img/github.png" alt="GitHub"></a>
 	</center>
       </div>
 
@@ -151,7 +151,7 @@
       <div id="feedback-form-messagesuccess">
         <center>
 	  <br /><br /><br /><br /><br /><br />
-	  <img src="/assets/img/check.png">
+	  <img src="/img/check.png">
 	  <br /><br />
 	  Thanks for getting in touch!
         </center>
@@ -161,7 +161,7 @@
   </body>
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script src="/assets/js/index.js"></script>
-  <script src="/assets/js/site.js"></script>
+  <script src="/js/index.js"></script>
+  <script src="/js/site.js"></script>
 
 </html>

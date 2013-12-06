@@ -10,8 +10,8 @@
     <meta charset="utf-8" />
 
     <style type="text/css">body{padding-top:60px;}</style>
-    <link rel="stylesheet" href="/assets/css/styles.css" />
-    <link rel="shortcut icon" href="/assets/img/favicon.ico" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="shortcut icon" href="/img/favicon.ico" />
 
     <style>
       #textarea {
@@ -159,7 +159,7 @@
               be described as:
 
               <div class="equation">
-                <img src="/assets/img/shift-p3.gif"/>
+                <img src="/img/shift-p3.gif"/>
               </div>
 
               Where 26 is the size of
@@ -174,7 +174,7 @@
               text by performing a transformation of size <i>n</i>:
 
               <div class="equation">
-                <img src="/assets/img/shift-pn.gif"/>
+                <img src="/img/shift-pn.gif"/>
               </div>
 
               The auto button will attempt to decipher a message by analysing
@@ -194,7 +194,7 @@
               letter in a given body of text can be found using:
 
               <div class="equation">
-                <img src="/assets/img/letter-distribution.gif"/>
+                <img src="/img/letter-distribution.gif"/>
               </div>
 
               It is possible to create an average letter frequency distribution
@@ -269,7 +269,7 @@
       <div id="feedback-form-messagesuccess">
         <center>
 	  <br /><br /><br /><br /><br /><br />
-	  <img src="/assets/img/check.png">
+	  <img src="/img/check.png">
 	  <br /><br />
 	  Thanks for getting in touch!
         </center>
@@ -283,8 +283,8 @@
   <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
   <script src="//code.highcharts.com/highcharts.js"></script>
   <script src="//code.highcharts.com/modules/exporting.js"></script>
-  <script src="/assets/js/site-components.js"></script>
-  <script src="/assets/js/site.js"></script>
-  <script src="/assets/js/julius.js"></script>
+  <script src="/js/site-components.js"></script>
+  <script src="/js/site.js"></script>
+  <script src="/js/julius.js"></script>
 
 </html>

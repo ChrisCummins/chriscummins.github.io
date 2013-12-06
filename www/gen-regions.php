@@ -36,8 +36,8 @@
     <meta charset="utf-8" />
 
     <style type="text/css">body{padding-top:60px;}</style>
-    <link rel="stylesheet" href="/assets/css/styles.css" />
-    <link rel="shortcut icon" href="/assets/img/favicon.ico" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="shortcut icon" href="/img/favicon.ico" />
 
     <style>
       .alert {
@@ -260,8 +260,8 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-hashchange/v1.3/jquery.ba-hashchange.min.js"></script>
   <script src="//cdn.jsdelivr.net/jquery.hotkeys/0.1.0/jquery.hotkeys.js"></script>
   <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
-  <script src="/assets/js/site-components.js"></script>
-  <script src="/assets/js/site.js"></script>
-  <script src="/assets/js/gen-regions.js"></script>
+  <script src="/js/site-components.js"></script>
+  <script src="/js/site.js"></script>
+  <script src="/js/gen-regions.js"></script>
 
 </html>

@@ -10,9 +10,9 @@
     <meta name="viewport" content="width=1024" />
     <meta charset="utf-8" />
 
-    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.1.0/css/font-awesome.css" />
-    <link rel="shortcut icon" href="/assets/img/favicon.ico" />
+    <link rel="shortcut icon" href="/img/favicon.ico" />
 
     <style type="text/css">
       body {
@@ -165,9 +165,9 @@
   <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
   <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
   <script src="//cdn.jsdelivr.net/jquery.hotkeys/0.1.0/jquery.hotkeys.js"></script>
-  <script src="/assets/js/site-components.js"></script>
-  <script src="/assets/js/three.min.js"></script>
-  <script src="/assets/js/stats.min.js"></script>
-  <script src="/assets/js/boids.js"></script>
+  <script src="/js/site-components.js"></script>
+  <script src="/js/three.min.js"></script>
+  <script src="/js/stats.min.js"></script>
+  <script src="/js/boids.js"></script>
 
 </html>
