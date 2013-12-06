@@ -21,12 +21,6 @@ if ENABLE_AUTHENTICATION
 noinst_SCRIPTS += $(WWW_BUILD)/.htpasswd
 endif
 
-EXTRA_DIST =
-	$(SRC) \
-	.htaccess.in \
-	$(GOOGLE_TOKEN) \
-	$(NULL)
-
 $(WWW_BUILD)/%.php: %.php
 	@test -d $(WWW_BUILD) || { \
 		$(MKDIR_P) $(WWW_BUILD); \
