@@ -547,9 +547,6 @@ echo "        Password authentication:        $enable_authentication" >> $s
 echo "" >> $s
 echo " • Extras:" >> $s
 echo "        Build tools:                    $enable_tools" >> $s
-echo "        Build LaTeX documentation:      $HAVE_PDFLATEX" >> $s
-echo "        Build Markdown documentation:   $HAVE_PANDOC" >> $s
-echo "        Build Markdown contents pages:  $HAVE_DOCTOC" >> $s
 echo "        Install custom git hooks:       $enable_git_hooks" >> $s
 
 
