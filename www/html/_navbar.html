@@ -14,11 +14,11 @@
       <a class="brand" href="http://chriscummins.cc">chriscummins.cc</a>
       <div class="nav-collapse collapse pull-right">
         <ul class="nav">
-          <li><a href="/">Home</a></li>
-          <li><a href="/blog">Blog</a></li>
-          <li><a href="/music">Music</a></li>
-          <li class="active"><a href="/software">Software</a></li>
-          <li><a href="/pictures">Pictures</a></li>
+
+          {% for name, href in _links.toplevel %}
+            <li><a href="{{ href }}">{{ name }}</a></li>
+          {% endfor %}
+
         </ul>
       </div><!--/.nav-collapse -->
     </div>
