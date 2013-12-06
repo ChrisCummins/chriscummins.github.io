@@ -14,15 +14,13 @@ abstract class Pip_Links {
 	static function val() {
 		$links = array(
 			'root' => '',
-			'setup' => '/admin/setup',
-			'advanced' => '/advanced',
-			'results' => '/s',
-			'index' => '/home',
-			'login' => '/login',
-			'logout' => '/logout',
-			'search' => '/s',
-			'record' => '/r',
-			'upload' => '/upload',
+			'Home' => '/',
+			'toplevel' => array(
+				'Blog' => '/blog',
+				'Music' => '/music',
+				'Software' => '/software',
+				'Photographs' => '/pictures',
+				)
 			);
 
 		if ( '' !== '@WWW_PREFIX@' ) {
