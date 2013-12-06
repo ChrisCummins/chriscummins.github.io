@@ -34,11 +34,6 @@ class Pip_Template
 							  'rendered!' );
 		}
 
-		/* Add user session to content */
-		$session = cc_login_get_user_details();
-		if ( null !== $session )
-			$content['session'] = $session;
-
 		/* Add site links to content */
 		$content['_links'] = Pip_Links::val();
 
