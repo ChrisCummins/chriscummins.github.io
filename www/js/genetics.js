@@ -716,7 +716,7 @@ var Genetics = Genetics || {};
    * Stock image dropdown item selected.
    */
   $('#stock-image-menu li a').click(function() {
-    setImage('/genetics/' +
+    setImage('/img/' +
              $(this).text().toLowerCase().replace(/ /g, '-') +
              '.jpg');
   });
