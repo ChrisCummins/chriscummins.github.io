@@ -1,12 +1,2 @@
-#
-# Site generated files
-#
-/404.html
-/empty.html
-/index.php
-/license.html
-/message.php
-/privacy.html
-/site.html
-/style.html
-/tmp/*
+/.htaccess
+/.htpasswd

@@ -25,6 +25,24 @@
 # SOFTWARE.
 
 #
+# Autotools by-products
+#
+/aclocal.m4
+/autom4te.cache
+/compile
+/config.h
+/config.h.in
+/config.log
+/config.status
+/configure
+/configure.scan
+/depcomp
+/libtool
+/stamp-h1
+Makefile
+Makefile.in
+
+#
 # Editor backups and transient files
 #
 *~
@@ -41,10 +59,21 @@ Session.vim
 .netrwhist
 
 #
+# Patches, diffs and VCS integration
+#
+*.diff
+*.orig
+*.patch
+*.rej
+*/.cvsignore
+*/CVS/*
+.cvsignore
+/CVS/*
+
+#
 # Platform specific noise
 #
 $RECYCLE.BIN/
-.*
 .AppleDouble
 .DS_Store
 .LSOverride
@@ -56,6 +85,6 @@ Icon
 Thumbs.db
 
 #
-# Files we don't want to ignore
+# Project-specific ignore patterns
 #
-!.gitignore
+/config.summary
