@@ -2,6 +2,11 @@
 SRC = $(shell find . -maxdepth 1 -name '*.php' -exec basename {} \;)
 PHP = $(addprefix $(WWW_BUILD)/,$(SRC))
 
+SUBDIRS = \
+	css \
+	js \
+	$(NULL)
+
 noinst_SCRIPTS = $(PHP) $(WWW_BUILD)/.htaccess
 
 if ENABLE_AUTHENTICATION
