@@ -2,9 +2,15 @@
 SRC = $(shell find . -maxdepth 1 -name '*.php' -exec basename {} \;)
 PHP = $(addprefix $(WWW_BUILD)/,$(SRC))
 
+# We must build the HTML sources first in order to allow for content hashing ref
+# updating.
 SUBDIRS = \
+	html \
 	css \
+	fonts \
+	img \
 	js \
+	lib \
 	$(NULL)
 
 noinst_SCRIPTS = $(PHP) $(WWW_BUILD)/.htaccess
