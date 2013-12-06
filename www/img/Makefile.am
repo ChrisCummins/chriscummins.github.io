@@ -1,6 +1,8 @@
+IMG_REGEXP = \.(bmp|gif|jpg|png)$
+
 # Generate lists of source files and targets
 DEST = $(WWW_BUILD)/img
-SRC = $(shell find . -name '*.png' -exec basename {} \;)
+SRC = $(shell ls | grep -E '$(IMG_REGEXP)')
 IMG = $(addprefix $(DEST)/,$(SRC))
 
 noinst_SCRIPTS = $(IMG)
@@ -8,13 +10,14 @@ noinst_SCRIPTS = $(IMG)
 EXTRA_DIST = $(SRC)
 
 # Export images
-$(DEST)/%.png : %.png
+$(DEST)/%: %
 	@test -d $(DEST) || { \
 		$(MKDIR_P) $(DEST); \
 	}
 if ENABLE_CONTENT_HASHING
 	$(eval CHASH := $(shell $(HASH_BIN) $< | cut -c1-$(HASH_LENGTH)))
-	$(eval NAME := $(addsuffix -$(CHASH).png,$(patsubst %.png,%,$@)))
+	$(eval EXT := $(shell echo $< | awk -F . '{ print $$NF }'))
+	$(eval NAME := $(addsuffix -$(CHASH).$(EXT),$(patsubst %.$(EXT),%,$@)))
 else
 	$(eval NAME := $@)
 endif
@@ -23,8 +26,8 @@ endif
 		cp $< $(NAME); \
 	}
 if ENABLE_CONTENT_HASHING
-	$(eval TARGET := img\/$(patsubst %.png,%,$<))
+	$(eval TARGET := img\/$(patsubst %.$(EXT),%,$<))
 	@for h in $(HTML); do \
-		sed -ri 's/(<img src=\"(\{\{ *(\w|[_.])+ *\}\})*\/?)$(TARGET)(-[0-9a-f]{$(HASH_LENGTH)})?(\.png\")/\1$(TARGET)-$(CHASH)\5/' $$h; \
+		sed -ri 's/(<img src=\"(\{\{ *(\w|[_.])+ *\}\})*\/?)$(TARGET)(-[0-9a-f]{$(HASH_LENGTH)})?($(IMG_REGEXP)\")/\1$(TARGET)-$(CHASH)\5/' $$h; \
 	done
 endif
