@@ -1,0 +1,35 @@
+<?php
+
+/*
+ * Configuration file.
+ *
+ * Contains global configuration and constants.
+ */
+
+/*
+ * Global config constants
+ */
+abstract class Pip_Links {
+
+	static function val() {
+		$links = array(
+			'root' => '',
+			'setup' => '/admin/setup',
+			'advanced' => '/advanced',
+			'results' => '/s',
+			'index' => '/home',
+			'login' => '/login',
+			'logout' => '/logout',
+			'search' => '/s',
+			'record' => '/r',
+			'upload' => '/upload',
+			);
+
+		if ( '' !== '@WWW_PREFIX@' ) {
+			foreach ( $links as $key => $val )
+				$links[$key] =  '@WWW_PREFIX@' . $val;
+		}
+
+		return $links;
+	}
+}
