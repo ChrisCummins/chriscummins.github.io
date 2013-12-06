@@ -1107,7 +1107,7 @@ body {
 .nav-arrow {
   width: 29px;
   height: 54px;
-  background: url('../img/arrows.png') no-repeat;
+  background: url('/img/arrows.png') no-repeat;
   position: fixed;
   top: 50%;
   margin-top: -27px;
