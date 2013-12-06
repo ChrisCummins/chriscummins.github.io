@@ -464,6 +464,7 @@ AC_OUTPUT([
 	www/img/Makefile
 	www/js/Makefile
 	www/lib/Makefile
+	www/lib/Twig/Makefile
 ])
 
 

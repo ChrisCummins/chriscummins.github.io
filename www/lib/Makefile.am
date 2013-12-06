@@ -4,6 +4,8 @@ SRC = $(shell find . -maxdepth 1 -name '*.html' -exec basename {} \;) \
 LIB = $(addprefix $(DEST)/,$(SRC))
 export LIB
 
+SUBDIRS = Twig
+
 noinst_SCRIPTS = $(LIB)
 
 EXTRA_DIST = $(SRC)
