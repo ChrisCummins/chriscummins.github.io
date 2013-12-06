@@ -16,7 +16,11 @@
         <ul class="nav">
 
           {% for name, href in _links.toplevel %}
-            <li><a href="{{ href }}">{{ name }}</a></li>
+          {% if _page.title == name %}
+          <li class="active"><a href="{{ href }}">{{ name }}</a></li>
+          {% else %}
+          <li><a href="{{ href }}">{{ name }}</a></li>
+          {% endif %}
           {% endfor %}
 
         </ul>
