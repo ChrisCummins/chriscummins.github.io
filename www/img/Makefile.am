@@ -29,5 +29,6 @@ if ENABLE_CONTENT_HASHING
 	$(eval TARGET := img\/$(patsubst %.$(EXT),%,$<))
 	@for h in $(HTML); do \
 		sed -ri 's/(<img src=\"(\{\{ *(\w|[_.])+ *\}\})*\/?)$(TARGET)(-[0-9a-f]{$(HASH_LENGTH)})?($(IMG_REGEXP)\")/\1$(TARGET)-$(CHASH)\5/' $$h; \
+		sed -ri 's/(href=\"(\{\{ *(\w|[_.])+ *\}\})*\/?)$(TARGET)(-[0-9a-f]{$(HASH_LENGTH)})?($(IMG_REGEXP)\")/\1$(TARGET)-$(CHASH)\5/' $$h; \
 	done
 endif
