@@ -4,6 +4,11 @@ PHP = $(addprefix $(WWW_BUILD)/,$(SRC))
 
 GOOGLE_TOKEN = google14e46588787ed55b.html
 
+TEMPLATE_DEST = $(WWW_BUILD)/html
+TEMPLATE_SRC = $(shell find html -maxdepth 1 -name '*.html' -exec basename {} \;)
+HTML = $(addprefix $(TEMPLATE_DEST)/,$(TEMPLATE_SRC))
+export HTML
+
 # We must build the HTML sources first in order to allow for content hashing ref
 # updating.
 SUBDIRS = \
