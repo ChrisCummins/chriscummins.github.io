@@ -458,6 +458,8 @@ AC_OUTPUT([
 	build/jar/Makefile
 	www/Makefile
 	www/.htaccess
+	www/css/Makefile
+	www/js/Makefile
 ])
 
 
