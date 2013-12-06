@@ -20,6 +20,13 @@ abstract class Pip_Links {
 				'Music' => '/music',
 				'Software' => '/software',
 				'Photographs' => '/pictures',
+				),
+			'software' => array(
+				'julius' => '/julius',
+				'boids' => '/boids',
+				'gol' => '/gol',
+				'genetics' => '/genetics',
+				'gen_regions' => '/gen-regions'
 				)
 			);
 
