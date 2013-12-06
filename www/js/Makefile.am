@@ -6,6 +6,8 @@ JS = $(addprefix $(DEST)/,$(SRC))
 EXTERN_SRC = \
 	three.min.js \
 	stats.min.js \
+	jquery-1.10.2.min.js \
+	modernizr-2.7.0.min.js \
 	$(NULL)
 
 MINIFIED = $(addprefix $(DEST)/, $(EXTERN_SRC))
