@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Chris Cummins | {{ _page.title }}</title>
+    <meta name="description" content="{{ _page.description }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="msapplication-tooltip" content="Protein Isoelectric Point Database.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style type="text/css">
+      body{
+        padding-top:60px;
+      }
+    </style>
+
+    <link rel="stylesheet" href="{{ _links.root }}/css/styles.css"/>
+
+    {% block header %}{% endblock %}
+
+    <script src="{{ _links.root }}/js/modernizr-2.7.0.min.js"></script>
+  </head>
+
+  <body class="impress-not-supported">
+
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-40829804-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+
+    <!-- Content wrapper -->
+    <div id="wrap">
+
+      {% if not _navbar.hidden %}
+        {% include "_navbar.html" %}
+      {% endif %}
+
+      <!-- Container -->
+      <div class="container">
+
+        <!--[if lt IE 8]>
+          <div class="browseralert">
+            <div class="alert alert-danger alert-dismissable">
+              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+              <p>You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+            </div>
+          </div>
+        <![endif]-->
+
+        {% if _title is defined %}
+          {% include "_title.html" %}
+        {% endif %}
+
+        {% block content %}{% endblock %}
+
+      </div> <!-- /.container -->
+      <div id="push"></div>
+    </div> <!-- /.wrap -->
+
+    {% if not _footer.hidden %}
+      {% include "_footer.html" %}
+    {% endif %}
+
+    <!-- The feedback form -->
+    <div class="feedback-overlay"></div>
+    <div class="feedback-form">
+      <form id="feedback-form-messageform" name="contactme" action="">
+      	<p>Send me a message</p>
+      	<textarea id="feedback-form-message" name="message"></textarea>
+      	<p>Email</p>
+      	<input id="feedback-form-email" name="email" type="text" autocomplete="off" /><br />
+      	<input id="feedback-form-cancel" class="btn btn-large btn-warning" type="reset" value="Cancel" />
+      	<input id="feedback-form-send" class="btn btn-large btn-success" type="submit" value="Send" />
+      </form>
+      <div id="feedback-form-messagesuccess">
+        <center>
+	  <br /><br /><br /><br /><br /><br />
+	  <img src="/img/check.png">
+	  <br /><br />
+	  Thanks for getting in touch!
+        </center>
+      </div>
+    </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="{{ _links.root }}/js/jquery-1.10.2.min.js"><\/script>')</script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+
+    <script src="/js/site-components.js"></script>
+    <script src="{{ _links.root }}/js/site.js"></script>
+
+    {% block footer %}{% endblock %}
+
+  </body>
+</html>
