@@ -1,0 +1,15 @@
+# Variables set by GitHub
+safe: true
+lsi: false
+pygments: true
+source: .
+
+# Use nice sensible URLs like:
+#
+#    /nice/sensible/url
+#
+# Not:
+#
+#    /15/05/12/nasty/url
+#
+permalink: /:title
