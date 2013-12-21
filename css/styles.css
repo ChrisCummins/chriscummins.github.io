@@ -25,10 +25,6 @@ h1 {
   font-size:28px;
 }
 
-#cummins {
-  color: #555;
-}
-
 h2 {
   color:#393939;
 }
@@ -41,10 +37,16 @@ a {
   color:#39c;
   font-weight:400;
   text-decoration:none;
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration:    0.5s;
+  -o-transition-duration:      0.5s;
+}
+
+header a:hover {
+  color:#0E587E;
 }
 
 a small {
-  font-size:11px;
   color:#777;
   margin-top:-0.6em;
   display:block;
@@ -100,16 +102,27 @@ img {
   max-width:100%;
 }
 
-header {
-  zoom: 1.2;
+header,
+footer {
+  zoom: 1.1;
   width:270px;
   float:left;
   position:fixed;
 }
 
+footer {
+  bottom:0px;
+}
+footer p {
+  margin-bottom: 3px;
+}
+footer small {
+  font-size: 11px;
+}
+
+
 header h1 a {
   color:#222;
-  font-weight:700;
 }
 
 header .img-frame {
@@ -137,9 +150,9 @@ header img {
 }
 
 header img:hover {
-  transform:         scale(1.1);
-  -ms-transform:     scale(1.1);
-  -webkit-transform: scale(1.1);
+  transform:         scale(1.04);
+  -ms-transform:     scale(1.04);
+  -webkit-transform: scale(1.04);
 }
 
 header ul {
@@ -182,7 +195,7 @@ section {
 }
 
 small {
-  font-size:11px;
+  font-size:12px;
 }
 
 hr {
@@ -190,13 +203,6 @@ hr {
   background:#e5e5e5;
   height:1px;
   margin:0 0 20px;
-}
-
-footer {
-  width:270px;
-  float:left;
-  position:fixed;
-  bottom:50px;
 }
 
 @media print, screen and (max-width: 960px) {
