@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>{{ page.title }}</title>
+
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="wrapper">
+
+      <header>
+        <h1>
+          <a href="/">
+            <span id="chris">Chris</span><span id="cummins">Cummins</span>
+          </a>
+        </h1>
+
+        <div class="img-frame">
+          <img src="/images/my-face.jpg"/>
+        </div>
+
+        <p class="view">
+          <a href="https://github.com/ChrisCummins" target="_blank">
+            GitHub
+            <small>Serious business</small>
+          </a>
+        </p>
+        <p class="view">
+          <a href="http://www.linkedin.com/profile/view?id=195091553" target="_blank">
+            Linked In
+            <small>All professional like</small>
+          </a>
+        </p>
+        <p class="view">
+          <a href="http://www.facebook.com/cecummins" target="_blank">
+            Facebook
+            <small>All unprofessional like</small>
+          </a>
+        </p>
+        <p class="view">
+          <a href="http://www.youtube.com/user/ChrisCummins" target="_blank">
+            YouTube
+            <small>Hitting drums with sticks</small>
+          </a>
+        </p>
+        <p class="view">
+          <a href="http://soundcloud.com/peakstudio" target="_blank">
+            SoundCloud
+            <small>Making noises with other people</small>
+          </a>
+        </p>
+      </header>
+
+      <section>
+        {% if page.title != "Chris Cummins" %}
+          <h1>{{ page.title }}</h1>
+        {% endif %}
+        {{ content }}
+      </section>
+      <footer>
+        <p>
+          <small>
+            Hosted on <a href="http://pages.github.com">GitHub Pages</a>
+            &mdash;
+            Theme by <a href="https://github.com/orderedlist">orderedlist</a>.
+          </small>
+        </p>
+      </footer>
+    </div>
+    <script src="/js/scale.fix.js"></script>
+  </body>
+</html>
