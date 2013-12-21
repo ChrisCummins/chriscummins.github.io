@@ -113,6 +113,7 @@ header h1 a {
 
 header .img-frame {
   width:180px;
+  height:180px;
   border-radius:90px;
   overflow:hidden;
   z-index: 1;
