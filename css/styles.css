@@ -24,6 +24,10 @@ h1 {
   font-size:28px;
 }
 
+#cummins {
+  color: #555;
+}
+
 h2 {
   color:#393939;
 }
@@ -102,41 +106,42 @@ header {
   position:fixed;
 }
 
+header h1 a {
+  color:#222;
+  font-weight:700;
+}
+
+header .img-frame {
+  width:180px;
+  border-radius:90px;
+  overflow:hidden;
+  z-index: 1;
+  /*
+   * Needed to prevent strange clipping error during scale animation of
+   * underlying image.
+   *
+   * See: http://stackoverflow.com/a/20037972
+   */
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+}
+
+header img {
+  transform:         scale(1.0);
+  -ms-transform:     scale(1.0);
+  -webkit-transform: scale(1.0);
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration:    0.5s;
+  -o-transition-duration:      0.5s;
+}
+
+header img:hover {
+  transform:         scale(1.1);
+  -ms-transform:     scale(1.1);
+  -webkit-transform: scale(1.1);
+}
+
 header ul {
-  list-style:none;
-  height:40px;
-  
-  padding:0;
-  
-  background: #eee;
-  background: -moz-linear-gradient(top, #f8f8f8 0%, #dddddd 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f8f8f8), color-stop(100%,#dddddd));
-  background: -webkit-linear-gradient(top, #f8f8f8 0%,#dddddd 100%);
-  background: -o-linear-gradient(top, #f8f8f8 0%,#dddddd 100%);
-  background: -ms-linear-gradient(top, #f8f8f8 0%,#dddddd 100%);
-  background: linear-gradient(top, #f8f8f8 0%,#dddddd 100%);
-  
-  border-radius:5px;
-  border:1px solid #d2d2d2;
-  box-shadow:inset #fff 0 1px 0, inset rgba(0,0,0,0.03) 0 -1px 0;
-  width:270px;
-}
-
-header li {
-  width:89px;
-  float:left;
-  border-right:1px solid #d2d2d2;
-  height:40px;
-}
-
-header ul a {
-  line-height:1;
-  font-size:11px;
-  color:#999;
-  display:block;
-  text-align:center;
-  padding-top:6px;
-  height:40px;
+  list-style: none;
 }
 
 strong {
@@ -158,6 +163,14 @@ header ul a strong {
   font-size:14px;
   display:block;
   color:#222;
+}
+
+header p.view {
+  margin-bottom: 2px;
+}
+
+header p.view small {
+  padding-top: 4px;
 }
 
 section {
