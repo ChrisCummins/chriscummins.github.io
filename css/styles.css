@@ -96,6 +96,7 @@ img {
 }
 
 header {
+  zoom: 1.2;
   width:270px;
   float:left;
   position:fixed;
