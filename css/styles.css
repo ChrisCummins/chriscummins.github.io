@@ -155,8 +155,9 @@ header img:hover {
   -webkit-transform: scale(1.04);
 }
 
-header ul {
+#posts ul {
   list-style: none;
+  padding-left: 0;
 }
 
 strong {
