@@ -39,6 +39,10 @@
           transition-duration: @transition-duration;
 }
 
+.link-hover {
+  color: @color-link-hover;
+}
+
 /*****************************/
 /* BASIC LAYOUT & COMPONENTS */
 /*****************************/
@@ -208,17 +212,30 @@ footer {
   float: left;
   position: fixed;
 }
-header h1 a {
+header a:hover {
+  .link-hover();
+}
+header #navbar {
+  margin-bottom: 10px;
+}
+header #navbar h1 {
+  margin-bottom: 0;
+}
+header #navbar #nav {
+  font-size: @font-size-small;
+}
+header #navbar a {
   /*
    * The site header is a link back to the homepage, but we want it formatted
    * like a regular header:
    */
   color: @color-primary-darkest;
 }
-header a:hover {
-  color: @color-link-hover;
+header #navbar a:hover {
+  .link-hover();
 }
 header .img-frame {
+  margin: 15px 0 5px;
   width: 180px;
   height: 180px;
   border-radius: 90px;
