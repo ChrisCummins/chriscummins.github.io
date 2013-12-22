@@ -1,11 +1,25 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:300italic,700italic,300,700);
 
+@font-family-sans-serif: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-monospace: Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal;
+
+@font-size-base:          20px;
+@font-size-large:         ceil(@font-size-base * 1.25);
+@font-size-small:         ceil(@font-size-base * 0.6);
+
+@font-size-h1:            floor(@font-size-base * 1.55);
+@font-size-h2:            floor(@font-size-base * 1.2);
+@font-size-h3:            ceil(@font-size-base * 1.2);
+@font-size-h4:            ceil(@font-size-base * 1.1);
+@font-size-h5:            @font-size-base;
+@font-size-h6:            ceil(@font-size-base * 0.85);
+
 body {
   padding: 50px;
-  font: 14px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #666;
+  font-family: @font-family-sans-serif;
   font-weight: 300;
-  font-size: 20px;
+  font-size: @font-size-base
 }
 
 h1,
@@ -34,11 +48,23 @@ h3 {
 }
 
 h1 {
-  font-size: 28px;
+  font-size: @font-size-h1;
 }
-
 h2 {
   color: #393939;
+  font-size: @font-size-h2;
+}
+h3 {
+  font-size: @font-size-h3;
+}
+h4 {
+  font-size: @font-size-h4;
+}
+h5 {
+  font-size: @font-size-h5;
+}
+h6 {
+  font-size: @font-size-h6;
 }
 
 h3,
@@ -80,9 +106,9 @@ blockquote {
 
 code,
 pre {
-  font-family: Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal;
+  font-family: @font-family-monospace;
   color: #333;
-  font-size: 12px;
+  font-size: @font-size-small;
 }
 
 pre {
@@ -133,7 +159,7 @@ footer p {
   margin-bottom: 3px;
 }
 footer small {
-  font-size: 11px;
+  font-size: @font-size-small;
 }
 
 
@@ -212,7 +238,7 @@ section {
 }
 
 small {
-  font-size: 12px;
+  font-size: @font-size-small;
 }
 
 hr {
@@ -292,7 +318,7 @@ hr {
 @media print {
   body {
     padding: 0.4in;
-    font-size: 12pt;
+    font-size: @font-size-small;
     color: #444;
   }
 }
