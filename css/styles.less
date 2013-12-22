@@ -34,6 +34,10 @@
 @color-link-hover:        @color-emphasis-darkest;
 @color-code:              @color-primary-darker;
 
+.transition-duration(@transition-duration) {
+  -webkit-transition-duration: @transition-duration;
+          transition-duration: @transition-duration;
+}
 
 /*****************************/
 /* BASIC LAYOUT & COMPONENTS */
@@ -130,9 +134,7 @@ a {
   color: @color-link;
   font-weight: @font-weight-links;
   text-decoration: none;
-  -webkit-transition-duration: 0.5s;
-  -moz-transition-duration:    0.5s;
-  -o-transition-duration:      0.5s;
+  .transition-duration(0.5s);
 }
 a small {
   color: @color-text;
@@ -230,9 +232,7 @@ header img {
   transform:         scale(1.0);
   -ms-transform:     scale(1.0);
   -webkit-transform: scale(1.0);
-  -webkit-transition-duration: 0.5s;
-  -moz-transition-duration:    0.5s;
-  -o-transition-duration:      0.5s;
+  .transition-duration(0.5s);
 }
 header img:hover {
   transform:         scale(1.04);
