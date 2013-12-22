@@ -34,6 +34,10 @@
 @color-link-hover:        @color-emphasis-darkest;
 @color-code:              @color-primary-darker;
 
+
+/*****************************/
+/* BASIC LAYOUT & COMPONENTS */
+/*****************************/
 body {
   padding: 50px;
   color: @color-text;
@@ -42,6 +46,46 @@ body {
   font-size: @font-size-base
 }
 
+.wrapper {
+  width: 860px;
+  margin: 0 auto;
+}
+
+p,
+ul,
+ol,
+table,
+pre,
+dl {
+  margin: 0 0 20px;
+}
+
+img {
+  max-width: 100%;
+}
+
+section {
+  width: 500px;
+  float: right;
+  padding-bottom: 50px;
+}
+
+hr {
+  border: 0;
+  background: #e5e5e5;
+  height: 1px;
+  margin: 0 0 20px;
+}
+
+#posts ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+
+/**************/
+/* TYPOGRAPHY */
+/**************/
 h1,
 h2,
 h3,
@@ -51,7 +95,6 @@ h6 {
   color: @color-primary-darkest;
   margin: 0 0 20px;
 }
-
 h1 {
   font-size: @font-size-h1;
 }
@@ -71,27 +114,16 @@ h5 {
 h6 {
   font-size: @font-size-h6;
 }
-
 h3,
 h4,
 h5,
 h6 {
   color: @color-primary-dark;
 }
-
 h1,
 h2,
 h3 {
   line-height: @line-height-headings;
-}
-
-p,
-ul,
-ol,
-table,
-pre,
-dl {
-  margin: 0 0 20px;
 }
 
 a {
@@ -102,20 +134,10 @@ a {
   -moz-transition-duration:    0.5s;
   -o-transition-duration:      0.5s;
 }
-
-header a:hover {
-  color: @color-link-hover;
-}
-
 a small {
   color: @color-text;
   margin-top: -0.6em;
   display: block;
-}
-
-.wrapper {
-  width: 860px;
-  margin: 0 auto;
 }
 
 blockquote {
@@ -130,7 +152,6 @@ pre {
   color: @color-code;
   font-size: @font-size-small;
 }
-
 pre {
   padding: 8px 15px;
   background: #f8f8f8;
@@ -139,31 +160,41 @@ pre {
   overflow-x: auto;
 }
 
+strong {
+  color: @color-primary-darkest;
+  font-weight: @font-weight-strong;
+}
+
+small {
+  font-size: @font-size-small;
+}
+
+
+/**********/
+/* TABLES */
+/**********/
 table {
   width: 100%;
   border-collapse: collapse;
 }
-
 th,
 td {
   text-align: left;
   padding: 5px 10px;
   border-bottom: 1px solid #e5e5e5;
 }
-
 dt {
   color: @color-primary-darker;
   font-weight: @font-weight-strong;
 }
-
 th {
   color: @color-primary-darker;
 }
 
-img {
-  max-width: 100%;
-}
 
+/*********************/
+/* HEADER AND FOOTER */
+/*********************/
 header,
 footer {
   zoom: 1.1;
@@ -171,22 +202,16 @@ footer {
   float: left;
   position: fixed;
 }
-
-footer {
-  bottom: 0px;
-}
-footer p {
-  margin-bottom: 3px;
-}
-footer small {
-  font-size: @font-size-small;
-}
-
-
 header h1 a {
+  /*
+   * The site header is a link back to the homepage, but we want it formatted
+   * like a regular header:
+   */
   color: @color-primary-darkest;
 }
-
+header a:hover {
+  color: @color-link-hover;
+}
 header .img-frame {
   width: 180px;
   height: 180px;
@@ -201,7 +226,6 @@ header .img-frame {
    */
   -webkit-mask-image: -webkit-radial-gradient(white, black);
 }
-
 header img {
   transform:         scale(1.0);
   -ms-transform:     scale(1.0);
@@ -210,58 +234,32 @@ header img {
   -moz-transition-duration:    0.5s;
   -o-transition-duration:      0.5s;
 }
-
 header img:hover {
   transform:         scale(1.04);
   -ms-transform:     scale(1.04);
   -webkit-transform: scale(1.04);
 }
-
-#posts ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-strong {
-  color: @color-primary-darkest;
-  font-weight: @font-weight-strong;
-}
-
-header ul li + li {
-  width: 88px;
-  border-left: 1px solid #fff;
-}
-
-header ul li + li + li {
-  border-right: none;
-  width: 89px;
-}
-
 header p.view {
   margin-bottom: 2px;
 }
-
 header p.view small {
   padding-top: 4px;
 }
 
-section {
-  width: 500px;
-  float: right;
-  padding-bottom: 50px;
+footer {
+  bottom: 0px;
 }
-
-small {
+footer p {
+  margin-bottom: 3px;
+}
+footer small {
   font-size: @font-size-small;
 }
 
-hr {
-  border: 0;
-  background: #e5e5e5;
-  height: 1px;
-  margin: 0 0 20px;
-}
 
+/**************/
+/* RESPONSIVE */
+/**************/
 @media print, screen and (max-width: 960px) {
 
   div.wrapper {
