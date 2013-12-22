@@ -20,9 +20,23 @@
 @font-weight-links:       400;
 @font-weight-strong:      700;
 
+@color-primary-darkest:   #222;
+@color-primary-darker:    #393939;
+@color-primary-dark:      #494949;
+@color-primary:           #666;
+@color-primary-light:     #777;
+
+@color-emphasis-darkest:  #0E587E;
+@color-emphasis:          #39c;
+
+@color-text:              @color-primary;
+@color-link:              @color-emphasis;
+@color-link-hover:        @color-emphasis-darkest;
+@color-code:              @color-primary-darker;
+
 body {
   padding: 50px;
-  color: #666;
+  color: @color-text;
   font-family: @font-family-sans-serif;
   font-weight: @font-weight-base;
   font-size: @font-size-base
@@ -34,7 +48,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: #222;
+  color: @color-primary-darkest;
   margin: 0 0 20px;
 }
 
@@ -42,7 +56,7 @@ h1 {
   font-size: @font-size-h1;
 }
 h2 {
-  color: #393939;
+  color: @color-primary-darker;
   font-size: @font-size-h2;
 }
 h3 {
@@ -62,7 +76,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: #494949;
+  color: @color-primary-dark;
 }
 
 h1,
@@ -81,7 +95,7 @@ dl {
 }
 
 a {
-  color: #39c;
+  color: @color-link;
   font-weight: @font-weight-links;
   text-decoration: none;
   -webkit-transition-duration: 0.5s;
@@ -90,11 +104,11 @@ a {
 }
 
 header a:hover {
-  color: #0E587E;
+  color: @color-link-hover;
 }
 
 a small {
-  color: #777;
+  color: @color-text;
   margin-top: -0.6em;
   display: block;
 }
@@ -113,7 +127,7 @@ blockquote {
 code,
 pre {
   font-family: @font-family-monospace;
-  color: #333;
+  color: @color-code;
   font-size: @font-size-small;
 }
 
@@ -138,12 +152,12 @@ td {
 }
 
 dt {
-  color: #444;
+  color: @color-primary-darker;
   font-weight: @font-weight-strong;
 }
 
 th {
-  color: #444;
+  color: @color-primary-darker;
 }
 
 img {
@@ -170,7 +184,7 @@ footer small {
 
 
 header h1 a {
-  color: #222;
+  color: @color-primary-darkest;
 }
 
 header .img-frame {
@@ -209,7 +223,7 @@ header img:hover {
 }
 
 strong {
-  color: #222;
+  color: @color-primary-darkest;
   font-weight: @font-weight-strong;
 }
 
@@ -319,6 +333,6 @@ hr {
   body {
     padding: 0.4in;
     font-size: @font-size-small;
-    color: #444;
+    color: @color-primary-darker;
   }
 }
