@@ -12,4 +12,4 @@ source: .
 #
 #    /15/05/12/nasty/url
 #
-permalink: /:title
+permalink: /posts/:title
