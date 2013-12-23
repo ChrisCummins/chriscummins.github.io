@@ -76,10 +76,21 @@
       </header>
 
       <section>
-        {% if page.title != "Chris Cummins" %}
-          <h1>{{ page.title }}</h1>
+        {% comment %} page.date is used as a sentinel to find out if we are
+        rendering a post {% endcomment %}
+        {% if page.date %}
+          <div id="post">
+            <h1>{{ page.title }}</h1>
         {% endif %}
+
         {{ content }}
+
+        {% if page.date %}
+            <div id="date">
+              {{ page.date | date_to_string }}
+            </div>
+          </div>
+        {% endif %}
       </section>
       <footer>
         <center>
