@@ -43,6 +43,14 @@
   color: @color-link-hover;
 }
 
+.user-select(@select) {
+  -webkit-user-select: @select;
+     -moz-user-select: @select;
+      -ms-user-select: @select;
+       -o-user-select: @select;
+          user-select: @select;
+}
+
 /*****************************/
 /* BASIC LAYOUT & COMPONENTS */
 /*****************************/
@@ -233,6 +241,9 @@ header #navbar a {
 }
 header #navbar a:hover {
   .link-hover();
+}
+header #egobar {
+  .user-select(none);
 }
 header .img-frame {
   margin: 15px 0 5px;
