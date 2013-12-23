@@ -3,13 +3,13 @@
 @font-family-sans-serif:  Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
 @font-family-monospace:   Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal;
 
-@font-size-base:          20px;
+@font-size-base:          22px;
 @font-size-large:         ceil(@font-size-base * 1.25);
-@font-size-small:         ceil(@font-size-base * 0.6);
+@font-size-small:         ceil(@font-size-base * 0.55);
 
-@font-size-h1:            floor(@font-size-base * 1.55);
+@font-size-h1:            floor(@font-size-base * 1.5);
 @font-size-h2:            floor(@font-size-base * 1.2);
-@font-size-h3:            ceil(@font-size-base * 1.2);
+@font-size-h3:            ceil(@font-size-base * 1.15);
 @font-size-h4:            ceil(@font-size-base * 1.1);
 @font-size-h5:            @font-size-base;
 @font-size-h6:            ceil(@font-size-base * 0.85);
@@ -29,7 +29,7 @@
 @color-emphasis-darkest:  #0E587E;
 @color-emphasis:          #39c;
 
-@color-text:              @color-primary;
+@color-text:              #222222;
 @color-link:              @color-emphasis;
 @color-link-hover:        @color-emphasis-darkest;
 @color-code:              @color-primary-darker;
@@ -51,7 +51,7 @@ body {
   color: @color-text;
   font-family: @font-family-sans-serif;
   font-weight: @font-weight-base;
-  font-size: @font-size-base
+  font-size: @font-size-base;
 }
 
 .wrapper {
@@ -222,7 +222,7 @@ header #navbar h1 {
   margin-bottom: 0;
 }
 header #navbar #nav {
-  font-size: @font-size-small;
+  font-size: ceil(@font-size-base * 0.58);
 }
 header #navbar a {
   /*
