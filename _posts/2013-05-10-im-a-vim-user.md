@@ -15,7 +15,7 @@ To avoid the catastrophic repercussions of letting a vim user loose within your
 beloved Emacs session, I wrote a small function for my `init.el` which spawns a
 new terminal and opens the current file at the exact same place in vim:
 
-```
+```lisp
 (defun open-in-vim ()
   "Opens the current file in vim."
   (interactive)
@@ -34,6 +34,6 @@ new terminal and opens the current file at the exact same place in vim:
 
 You can assign it a top level key binding for easy button mashing:
 
-```
+```lisp
 (global-set-key [f12] 'open-in-vim)
 ```

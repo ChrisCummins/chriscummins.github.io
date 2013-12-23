@@ -7,7 +7,7 @@ The following shell function may be a useful snippet for the `~/.bashrc` of
 other incredibly vane bastards who spend a lot of time browsing their own
 contributions to a git repository:
 
-```
+```sh
 egosurf() {
   git branch > /dev/null 2>&1 || {
     echo 'not a git repository!' >&2;

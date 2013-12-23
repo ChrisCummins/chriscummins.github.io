@@ -26,7 +26,7 @@ void foo(struct foo *f) {
 
 For future reference, Doxygen can easily be configured to ignore certain macros:
 
-```
+```ini
 # ======================================
 # Allow us to define our own list of
 # macros to expand during preprocessing

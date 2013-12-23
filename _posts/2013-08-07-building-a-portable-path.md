@@ -14,7 +14,7 @@ that allows me to maintain a list of all the desired PATH directories which are
 then added on an as-needed basis, only if the directory exists on the current
 system:
 
-```
+```sh
 # The list of directories to add to the path. Directories
 # are added sequentially from first to last. A directory
 # is only added if it exists.
