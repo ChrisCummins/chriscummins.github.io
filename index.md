@@ -4,8 +4,10 @@ title: Chris Cummins
 ---
 
 Hello, I'm Chris. A full time geek and student of Computer Science and
-Electronic Engineering in the UK. My passion is to become a full time
-programmer.
+Electronic Engineering in the UK. My passion is to make software for a living.
+
+I'm currently looking for a *job*! Take a look at my [CV](/cv.html) and drop me
+an [email](mailto:chrisc.101@gmail.com), I'd love to have a chat. ;-)
 
 -----
 
