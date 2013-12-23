@@ -9,6 +9,7 @@ The following directories and their contents are Copyright Chris Cummins. You
 may not reuse anything therein without my permission:
 
 * _posts/
+* assets/
 * images/
 
 All other directories and files are
