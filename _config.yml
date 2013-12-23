@@ -4,6 +4,8 @@ lsi: false
 pygments: true
 source: .
 
+markdown: redcarpet
+
 # Use nice sensible URLs like:
 #
 #    /nice/sensible/url
