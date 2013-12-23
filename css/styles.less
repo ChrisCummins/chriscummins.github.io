@@ -1,13 +1,11 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:300italic,700italic,300,700);
+@font-family-headings:    "Open Sans", sans-serif;
+@font-family-sans-serif:  "Computer Modern Bright";
+@font-family-monospace:   "Computer Modern Typewriter";
 
-@font-family-sans-serif:  Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
-@font-family-monospace:   Monaco, Menlo, Consolas, "Courier New", monospace;
+@font-size-base:          20px;
+@font-size-small:         12px;
 
-@font-size-base:          22px;
-@font-size-large:         ceil(@font-size-base * 1.25);
-@font-size-small:         ceil(@font-size-base * 0.55);
-
-@font-size-h1:            floor(@font-size-base * 1.5);
+@font-size-h1:            30px;
 @font-size-h2:            floor(@font-size-base * 1.2);
 @font-size-h3:            ceil(@font-size-base * 1.15);
 @font-size-h4:            ceil(@font-size-base * 1.1);
@@ -127,6 +125,7 @@ h3,
 h4,
 h5,
 h6 {
+  font-family: @font-family-headings;
   color: @color-primary-darkest;
   margin: 0 0 10px;
   text-align: center;
@@ -187,7 +186,7 @@ code,
 pre {
   font-family: @font-family-monospace;
   color: @color-code;
-  font-size: 80%;
+  font-size: 85%;
 }
 pre {
   padding: 0 15px;
@@ -246,6 +245,7 @@ header #navbar {
   margin-bottom: 10px;
 }
 header #navbar h1 {
+  font-family: @font-family-sans-serif;
   margin-bottom: 0;
 }
 header #navbar #nav {
