@@ -99,6 +99,10 @@ hr {
   margin: 0 0 20px;
 }
 
+#posts a {
+  /* We don't want underlines beneath every post title on the homepage: */
+  text-decoration: none;
+}
 #posts ul {
   list-style: none;
   padding-left: 0;
@@ -165,10 +169,12 @@ h6 {
 }
 
 a {
+  color: @color-text;
+  text-decoration: underline;
+  .transition-duration(0.3s);
+}
+a:hover {
   color: @color-link;
-  font-weight: @font-weight-links;
-  text-decoration: none;
-  .transition-duration(0.5s);
 }
 a small {
   color: @color-text;
@@ -241,6 +247,11 @@ footer {
   position: fixed;
   text-align: center;
 }
+header a {
+  /* Styling for the links to Github, Facebook etc: */
+  color: @color-link;
+  text-decoration: none;
+}
 header a:hover {
   .link-hover();
 }
@@ -260,6 +271,7 @@ header #navbar a {
    * like a regular header:
    */
   color: @color-primary-darkest;
+  font-weight: @font-weight-base;
 }
 header #navbar a:hover {
   .link-hover();
