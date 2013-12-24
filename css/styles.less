@@ -134,6 +134,27 @@ h6 {
   margin: 0 0 10px;
   text-align: center;
 }
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a,
+header a {
+  font-weight: @font-weight-base;
+  color: @color-link;
+  text-decoration: none;
+}
+h1 a:hover,
+h2 a:hover,
+h3 a:hover,
+h4 a:hover,
+h5 a:hover,
+h6 a:hover,
+header a:hover {
+  .link-hover();
+}
+
 h3,
 h4,
 h5,
@@ -246,14 +267,6 @@ footer {
   float: left;
   position: fixed;
   text-align: center;
-}
-header a {
-  /* Styling for the links to Github, Facebook etc: */
-  color: @color-link;
-  text-decoration: none;
-}
-header a:hover {
-  .link-hover();
 }
 header #navbar {
   margin-bottom: 10px;
