@@ -35,6 +35,11 @@
 @selection-bg:            #333;
 @selection-color:         #ddd;
 
+@media-reduced-width:     960px;
+@media-collapse-width:    890px;
+@media-tiny-width:        480px;
+@media-min-width:         400px;
+
 .transition-duration(@transition-duration) {
   -webkit-transition-duration: @transition-duration;
           transition-duration: @transition-duration;
@@ -57,7 +62,7 @@
 /*****************************/
 html {
   /* The absolute width that the website will crush down to: */
-  min-width: 400px;
+  min-width: @media-min-width;
 }
 body {
   padding: 50px;
@@ -354,13 +359,13 @@ footer small {
 /**************/
 /* RESPONSIVE */
 /**************/
-@media screen and (min-width: 890px) {
+@media screen and (min-width: @media-collapse-width) {
   section h1:first-child {
     margin-bottom: 30px;
   }
 }
 
-@media print, screen and (max-width: 960px) {
+@media print, screen and (max-width: @media-reduced-width) {
   .wrapper {
     width: 100%;
   }
@@ -371,7 +376,7 @@ footer small {
   }
 }
 
-@media print, screen and (max-width: 890px) {
+@media print, screen and (max-width: @media-collapse-width) {
 
   body {
     word-wrap: break-word;
@@ -422,7 +427,7 @@ footer small {
   }
 }
 
-@media print, screen and (max-width: 480px) {
+@media print, screen and (max-width: @media-tiny-width) {
   body {
     padding: 15px;
   }
