@@ -354,7 +354,24 @@ footer small {
 /**************/
 /* RESPONSIVE */
 /**************/
+@media screen and (min-width: 890px) {
+  section h1:first-child {
+    margin-bottom: 30px;
+  }
+}
+
 @media print, screen and (max-width: 960px) {
+  .wrapper {
+    width: 100%;
+  }
+
+  header,
+  footer {
+    margin-left: -40px;
+  }
+}
+
+@media print, screen and (max-width: 890px) {
 
   body {
     word-wrap: break-word;
