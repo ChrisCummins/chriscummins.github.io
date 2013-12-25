@@ -46,6 +46,12 @@
           transition-duration: @transition-duration;
 }
 
+.transform(@transformation) {
+  -webkit-transform: @transformation;
+      -ms-transform: @transformation;
+          transform: @transformation;
+}
+
 .link-hover {
   color: @color-link-hover;
 }
@@ -333,15 +339,11 @@ header .img-frame {
   -webkit-mask-image: -webkit-radial-gradient(white, black);
 }
 header img {
-  transform:         scale(1.0);
-  -ms-transform:     scale(1.0);
-  -webkit-transform: scale(1.0);
+  .transform(scale(1.0));
   .transition-duration(0.5s);
 }
 header img:hover {
-  transform:         scale(1.04);
-  -ms-transform:     scale(1.04);
-  -webkit-transform: scale(1.04);
+  .transform(scale(1.04));
 }
 header p.view {
   margin-bottom: 2px;
