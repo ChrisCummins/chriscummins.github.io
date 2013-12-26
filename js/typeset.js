@@ -719,7 +719,7 @@ jQuery(function ($) {
     return cache[str];
   }
 
-  lineLength = $('#typeset').width();
+  lineLength = $('section').width();
 
   ruler = $('<div class="ruler">&nbsp;</div>').css({
     visibility: 'hidden',
@@ -747,7 +747,7 @@ jQuery(function ($) {
 
   lineHeight = parseFloat(ruler.html('Hello World').css('lineHeight'));
 
-  $('#post').each(function () {
+  $('section').each(function () {
     $(this).find('p, img').each(function (index, element) {
       var paragraph,
           nodes = [],
