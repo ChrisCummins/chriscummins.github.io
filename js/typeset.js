@@ -763,9 +763,10 @@ jQuery(function ($) {
       if (element.nodeName.toUpperCase() === 'P') {
         paragraph = $(element);
 
-        if (index !== 0) {
-          nodes.push(linebreak.box(30, ''));
-        }
+        /* Indent the first line of each paragraph after the first: */
+        // if (index !== 0) {
+        //   nodes.push(linebreak.box(30, ''));
+        // }
 
         words = paragraph.text().split(/\s/);
 
