@@ -4,21 +4,23 @@
 $(document).ready(function() {
 
   /*
-   * Remove the empty first of preformatted code blocks.
+   * Remove the empty first line in pre-formatted code blocks.
    */
-  var codeBlocks = document.getElementsByTagName("code");
-
-  for(var i = 0; i < codeBlocks.length; i++)
-    codeBlocks[i].innerHTML = codeBlocks[i].innerHTML.replace(/^\s*\n/, '');
+  $('code').each(function(index) {
+    $(this).html($(this).html().replace(/^\s*\n/, ''));
+  });
 
   /*
    * Open all links outside the current site in a new window.
    */
-  var links = document.links;
+  $('a').each(function(index) {
+    var link = $(this)[0];
 
-  for (var i=0; i < links.length; i++)
-    if (links[i].hostname != window.location.hostname)
-      links[i].target = "_blank";
+    if (link.hostname != window.location.hostname) {
+      link.target = '_blank';
+      link.title = 'Link opens in new window';
+    }
+  });
 
 });
 
