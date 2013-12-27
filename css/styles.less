@@ -37,7 +37,7 @@
 
 @media-reduced-width:     960px;
 @media-collapse-width:    890px;
-@media-tiny-width:        480px;
+@media-tiny-width:        640px;
 @media-min-width:         400px;
 
 .transition-duration(@transition-duration) {
@@ -294,8 +294,6 @@ header,
 footer {
   zoom: 1.1;
   width: 270px;
-  float: left;
-  position: fixed;
   text-align: center;
 }
 header #navbar {
@@ -360,6 +358,12 @@ footer small {
 /* RESPONSIVE */
 /**************/
 @media screen and (min-width: @media-collapse-width) {
+  header,
+  footer {
+    float: left;
+    position: fixed;
+  }
+
   section h1:first-child {
     margin-bottom: 30px;
   }
@@ -369,7 +373,9 @@ footer small {
   .wrapper {
     width: 100%;
   }
+}
 
+@media screen and (min-width: @media-collapse-width) and (max-width: @media-reduced-width) {
   header,
   footer {
     margin-left: -40px;
@@ -392,7 +398,8 @@ footer small {
   footer {
     float: none;
     position: static;
-    width: auto;
+    width: 500px;
+    margin: auto;
   }
 
   header {
@@ -418,7 +425,6 @@ footer small {
     border: 1px solid #e5e5e5;
     border-width: 1px 0;
     padding: 1em 0;
-    margin: 0 0 20px;
   }
 
   pre,
