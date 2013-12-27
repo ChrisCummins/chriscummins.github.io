@@ -27,6 +27,22 @@ $(document).ready(function() {
    */
   $('section p, section p a').hyphenate('en-gb');
 
+  /*
+   * For each image within a page that links to itself, add a "Click
+   * to see original" caption.
+   */
+  $('section a > img').each(function(index) {
+
+    var img = $(this);
+    var link = $(this).parent();
+
+    if (img.attr('src') == link.attr('href')) {
+      img.attr('title', 'Click to see original');
+      link.attr('target', '_blank');
+    }
+
+  });
+
 });
 
 /*
