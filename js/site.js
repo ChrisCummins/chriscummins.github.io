@@ -22,6 +22,11 @@ $(document).ready(function() {
     }
   });
 
+  /*
+   * Hyphenate the site text.
+   */
+  $('section p, section p a').hyphenate('en-gb');
+
 });
 
 /*
@@ -306,11 +311,3 @@ function gestureStart() {
     window['Hypher']['languages'][module.exports.id[i]] = h;
   }
 }());
-
-
-/*
- * Hyphenate the site text.
- */
-jQuery(function($) {
-  $('section p, section p a').hyphenate('en-gb');
-});
