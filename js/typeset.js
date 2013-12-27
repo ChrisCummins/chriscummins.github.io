@@ -25,6 +25,12 @@ jQuery(function ($) {
     return cache[str];
   }
 
+  function strip(html) {
+    var tmp = document.createElement("div");
+    tmp.innerHTML = html;
+    return tmp.textContent || tmp.innerText || "";
+  }
+
   lineLength = $('section').width();
 
   ruler = $('<div class="ruler">&nbsp;</div>').css({
@@ -74,15 +80,25 @@ jQuery(function ($) {
         //   nodes.push(linebreak.box(30, ''));
         // }
 
-        words = paragraph.text().split(/\s/);
+        var words = [];
 
-        words.forEach(function (word, index, array) {
-          var hyphenated = [];
+        var elem = paragraph[0];
+
+        for(var i = 0, childs = elem.childNodes; i < childs.length; i ++) {
+          if (childs[i].nodeType === 3 /* document.TEXT_NODE */) {
+            words = words.concat(childs[i].nodeValue.trim().split(/\s+/));
+          } else {
+            words.push(childs[i].outerHTML);
+          }
+        }
+
+        words.forEach(function (html, index, array) {
+          var hyphenated = [], word = strip(html);
           if (word.length > 6) {
             hyphenated = h.hyphenate(word, 'en');
           }
 
-          if (hyphenated.length > 1) {
+          if (hyphenated.length > 1 && word.length == hyphenated.length) {
             hyphenated.forEach(function (part, partIndex, partArray) {
               nodes.push(linebreak.box(measureString(part), part));
               if (partIndex !== partArray.length - 1) {
@@ -90,7 +106,7 @@ jQuery(function ($) {
               }
             });
           } else {
-            nodes.push(linebreak.box(measureString(word), word));
+            nodes.push(linebreak.box(measureString(word), html));
           }
 
           if (index === array.length - 1) {
