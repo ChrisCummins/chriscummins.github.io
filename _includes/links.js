@@ -1,0 +1,1 @@
+{% comment %} links.js - Open all links outside of the current host in a new window. {% endcomment %}for(var L=document.links,i=0,l=L.length;i<l;i++)L[i].hostname!=window.location.hostname&&(L[i].target="_blank");
