@@ -1,3 +1,55 @@
+/*
+ * site.js -- Full site JavaScript
+ */
+$(document).ready(function() {
+
+  /*
+   * Remove the empty first of preformatted code blocks.
+   */
+  var codeBlocks = document.getElementsByTagName("code");
+
+  for(var i = 0; i < codeBlocks.length; i++)
+    codeBlocks[i].innerHTML = codeBlocks[i].innerHTML.replace(/^\s*\n/, '');
+
+  /*
+   * Open all links outside the current site in a new window.
+   */
+  var links = document.links;
+
+  for (var i=0; i < links.length; i++)
+    if (links[i].hostname != window.location.hostname)
+      links[i].target = "_blank";
+
+});
+
+/*
+ * scale.fix.js -- Scale fix for GitHub pages
+ */
+var metas = document.getElementsByTagName('meta');
+var i;
+if (navigator.userAgent.match(/iPhone/i)) {
+  for (i=0; i<metas.length; i++) {
+    if (metas[i].name == "viewport") {
+      metas[i].content = "width=device-width, minimum-scale=1.0, maximum-scale=1.0";
+    }
+  }
+  document.addEventListener("gesturestart", gestureStart, false);
+}
+function gestureStart() {
+  for (i=0; i<metas.length; i++) {
+    if (metas[i].name == "viewport") {
+      metas[i].content = "width=device-width, minimum-scale=0.25, maximum-scale=1.6";
+    }
+  }
+}
+
+/*
+ * jquery.hypher.js -- A fast and small JavaScript hyphenation engine
+ * Copyright 2011 Bram Stein.
+ * BSD License.
+ *
+ * See: https://github.com/bramstein/hypher/blob/master/dist/jquery.hypher.js
+ */
 (function () {
 
   var module = {
@@ -214,6 +266,12 @@
   };
 }(jQuery));
 
+/*
+ * en-gb.js -- Hyphenation patterns for use with Hypher
+ * LGPL License.
+ *
+ * See: https://github.com/bramstein/hyphenation-patterns/blob/master/dist/browser/en-gb.js
+ */
 (function () {
 
   var module = {
@@ -246,3 +304,11 @@
     window['Hypher']['languages'][module.exports.id[i]] = h;
   }
 }());
+
+
+/*
+ * Hyphenate the site text.
+ */
+jQuery(function($) {
+  $('section p, section p a').hyphenate('en-gb');
+});
