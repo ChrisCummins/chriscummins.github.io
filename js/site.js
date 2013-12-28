@@ -4,11 +4,9 @@
 $(document).ready(function() {
 
   /*
-   * Remove the empty first line in pre-formatted code blocks.
+   * Page-wide text functions:
+   * *************************
    */
-  $('code').each(function(index) {
-    $(this).html($(this).html().replace(/^\s*\n/, ''));
-  });
 
   /*
    * Open all links outside the current site in a new window.
@@ -23,24 +21,29 @@ $(document).ready(function() {
   });
 
   /*
+   * Section-wide text functions:
+   * ****************************
+   */
+
+  /*
    * Hyphenate the site text.
    */
   $('section p, section p a').hyphenate('en-gb');
 
   /*
-   * For each image within a page that links to itself, add a "Click
-   * to see original" caption.
+   * Remove the empty first line in pre-formatted code blocks.
    */
-  $('section a > img').each(function(index) {
+  $('section code').each(function(index) {
+    $(this).html($(this).html().replace(/^\s*\n/, ''));
+  });
 
-    var img = $(this);
-    var link = $(this).parent();
-
-    if (img.attr('src') == link.attr('href')) {
-      img.attr('title', 'Click to see original');
-      link.attr('target', '_blank');
-    }
-
+  /*
+   * For each image, add a "Click to see original" link.
+   */
+  $('section img').each(function(index) {
+    $(this).wrap('<a href="' + $(this).attr('src') + '" ' +
+                 'title="Click to see original" ' +
+                 'target="_blank"></a>');
   });
 
 });
