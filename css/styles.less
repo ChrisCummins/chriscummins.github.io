@@ -27,7 +27,7 @@
 @color-emphasis-darkest:  #0E587E;
 @color-emphasis:          #39c;
 
-@color-text:              #444;
+@color-text:              #000;
 @color-link:              @color-emphasis;
 @color-link-hover:        @color-emphasis-darkest;
 @color-code:              @color-primary-darker;
@@ -218,7 +218,6 @@ hr {
 #posts a {
   /* We don't want underlines beneath every post title on the homepage: */
   text-decoration: none;
-  color: @color-primary-darkest;
 }
 #posts a:hover {
   color: @color-link;
@@ -257,7 +256,7 @@ h4,
 h5,
 h6 {
   font-family: @font-family-headings;
-  color: @color-primary-darkest;
+  color: @color-text;
   margin: 0 0 10px;
   text-align: center;
 }
@@ -291,6 +290,7 @@ h6 {
 h1,
 h2,
 h3 {
+  color: @color-primary-dark;
   line-height: @line-height-headings;
 }
 h1 {
@@ -298,15 +298,12 @@ h1 {
   margin: 0 0 20px;
 }
 h2 {
-  color: @color-primary-darker;
   font-size: @font-size-h2;
 }
 h3 {
-  color: @color-primary-dark;
   font-size: @font-size-h3;
 }
 h4 {
-  color: @color-primary-dark;
   font-size: @font-size-h4;
 }
 h5 {
