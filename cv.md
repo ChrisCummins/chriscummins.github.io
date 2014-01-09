@@ -25,8 +25,6 @@ Jekyll.
 ###### Rolls Royce Holdings PLC (2008)
 Summer week placement within the Design Methods group.
 
-----
-
 # Key Skills
 
 ###### Software Engineering
@@ -56,18 +54,16 @@ Excellent written and verbal communication skills, including working
 effectively with geographically distributed and inter-disciplinary
 teams, both in remote and office environments.
 
-----
-
 # Education
 
-*Aston University*
+Aston University (2014)
 
-* **MEng** Electrical Engineering and Computer Science
+ * MEng Electrical Engineering and Computer Science
 
-*Birkdale School*
+Birkdale School (2009)
 
-* **A Levels** Electronics, Mathematics, Physics
-* **AS Levels** Electronics, Economics, Mathematics, Physics
+* A Levels - Electronics, Mathematics, Physics
+* AS Levels - Electronics, Economics, Mathematics, Physics
 
 ----
 
