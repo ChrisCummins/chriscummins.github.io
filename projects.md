@@ -13,8 +13,8 @@ number of different applications, such as the contact manager, control
 centre and [photo manager](http://www.yorba.org/projects/shotwell/).
 
 [Linux Kernel](https://www.kernel.org/) - The popular operating system
-kernel. I was fortunate enough to author a patch to enable improved
-debugging in the ioctl subsystem.
+kernel. I was fortunate enough to get the opportunity to author a
+patch which enables improved debugging in the ioctl subsystem.
 
 [Wayland](http://wayland.freedesktop.org/) - I have developed
 Wayland-enabling features for the [GTK+](http://www.gtk.org/),
