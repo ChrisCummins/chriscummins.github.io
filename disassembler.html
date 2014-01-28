@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <title>&micro;C Disassembler</title>
+    <meta name="description" content="">
+    <meta name="author" content="Chris Cummins">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=1024" />
+    <meta charset="utf-8" />
+
+    <link rel="stylesheet" href="/css/app.css" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.1.0/css/font-awesome.css" />
+
+    <style type="text/css">
+      body{
+        padding-top:60px;
+      }
+
+      #code {
+        resize: none;
+      }
+
+      #submit {
+        min-width: 200px;
+      }
+
+      table thead td {
+        font-weight: bold;
+      }
+
+      #output td {
+        border-top: none;
+      }
+
+      #output td.address,
+      #output td.opcode,
+      #output td.instruction {
+        font-family: monospace;
+      }
+
+      #output td.address,
+      #output td.opcode {
+        width: 100px;
+      }
+
+      #output td.instruction {
+        width: 200px;
+      }
+    </style>
+
+  </head>
+
+  <body>
+    <div id="wrap">
+      <div class="container">
+        <div class="fixed-container-narrow">
+
+          <div class="headline">
+            <div class="headline-title">
+              <h1>&micro;C Disassembler</h1>
+            </div>
+          </div>
+
+          <div class="row-fluid">
+            <div class="span12">
+              <textarea id="code" class="spanFull" placeholder="Enter your program" rows="6"></textarea>
+            </div>
+          </div>
+
+          <div id="errors" class="row-fluid">
+
+          </div>
+
+          <div class="row-fluid">
+            <div class="span12">
+              <table class="table table-condensed table-hover">
+                <thead id="labels" style="display: none;">
+                  <tr>
+                    <td>Address</td>
+                    <td>Opcode</td>
+                    <td>Instruction</td>
+                    <td>Description</td>
+                  </tr>
+                </thead>
+                <tbody id="output"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+  <script src="//cdn.jsdelivr.net/jquery.hotkeys/0.1.0/jquery.hotkeys.js"></script>
+  <script src="/js/app-components.js"></script>
+  <script src="/js/disassembler.js"></script>
+
+</html>
