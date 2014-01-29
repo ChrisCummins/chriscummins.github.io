@@ -34,28 +34,28 @@ var Disassembler = Disassembler || {};
     switch (parseInt(bytes[0], 16)) {
     case 0:
       this.instruction = 'IUC';
-      this.desc = 'Increment unconditionally';
+      this.desc = 'No operation';
       break;
     case 1:
       this.instruction = 'HUC';
-      this.desc = 'Halt unconditionally';
+      this.desc = 'Terminate';
       break;
     case 2:
       var address = + bytes[1] + bytes[2] + bytes[3];
       this.instruction = 'BUC  ' + address;
-      this.desc = 'Jump to address ' + address;
+      this.desc = 'Jump to ' + address;
       break;
     case 3:
       var address = + bytes[1] + bytes[2] + bytes[3];
       this.instruction = 'BIC  ' + address;
-      this.desc = 'Branch conditionally to ' + address;
+      this.desc = 'Jump to ' + address + ' if condition flag is set';
       break;
     case 4:
-      this.instruction = 'SET0 ' + bytes[1] + ' ' + bytes[2] + ' ' + bytes[3];
+      this.instruction = 'SET0 ' + bytes[1] + bytes[2] + bytes[3];
       this.desc = 'Set outputs ' + bytes[1] + ' AND ' + bytes[2] + ' XOR ' + bytes[3];
       break;
     case 5:
-      this.instruction = 'TSTI ' + bytes[1] + ' ' + bytes[2] + ' ' + bytes[3];
+      this.instruction = 'TSTI ' + bytes[1] + bytes[2] + bytes[3];
       this.desc = 'Test inputs ' + bytes[1] + ' AND ' + bytes[2] + ' XOR ' + bytes[3];
       break;
     default:
