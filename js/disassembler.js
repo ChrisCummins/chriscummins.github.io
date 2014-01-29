@@ -3,16 +3,6 @@ var Disassembler = Disassembler || {};
 (function() {
   'use strict';
 
-  var toBytes = function(number) {
-    var p = [];
-
-    for (var i = Math.floor(number.length / 2); i-->0;) {
-      p[i] = number.slice(i * 2, (i + 1) * 2);
-    }
-
-    return p;
-  }
-
   function pad(n, width, z) {
     z = z || '0';
     n = n + '';
@@ -21,6 +11,16 @@ var Disassembler = Disassembler || {};
 
   // An instruction
   var Instruction = function(instruction, address) {
+
+    var toBytes = function(number) {
+      var p = [];
+
+      for (var i = Math.floor(number.length / 2); i-->0;) {
+        p[i] = number.slice(i * 2, (i + 1) * 2);
+      }
+
+      return p;
+    }
 
     if (instruction.length != 8 || !instruction.match(/[0-9a-fA-F]{8}/)) {
       throw "Invalid instruction '" + instruction + "'";
