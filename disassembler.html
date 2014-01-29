@@ -38,11 +38,17 @@
       #output td.opcode,
       #output td.instruction {
         font-family: monospace;
+        font-size: 0.9em;
       }
 
       #output td.address,
       #output td.opcode {
         width: 100px;
+      }
+
+      #output td.address,
+      #output td.description {
+        color: #666;
       }
 
       #output td.instruction {
@@ -82,8 +88,8 @@
                   <tr>
                     <td>Address</td>
                     <td>Opcode</td>
+                    <td>Assembly</td>
                     <td>Instruction</td>
-                    <td>Description</td>
                   </tr>
                 </thead>
                 <tbody id="output"></tbody>
