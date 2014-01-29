@@ -59,7 +59,7 @@ var Disassembler = Disassembler || {};
       this.desc = 'Test inputs ' + bytes[1] + ' AND ' + bytes[2] + ' XOR ' + bytes[3];
       break;
     default:
-      throw "Invalid opcode '" + op.toString(2) + "'";
+      throw "Invalid opcode '" + bytes[0] + "'";
     };
   };
 
