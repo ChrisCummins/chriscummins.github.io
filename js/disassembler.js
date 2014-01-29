@@ -3,6 +3,8 @@ var Disassembler = Disassembler || {};
 (function() {
   'use strict';
 
+  var diagram;
+
   function pad(n, width, z) {
     z = z || '0';
     n = n + '';
@@ -30,6 +32,7 @@ var Disassembler = Disassembler || {};
 
     this.opcode = instruction;
     this.address = pad(address.toString(16), 8).toUpperCase();
+    this.next = [parseInt(this.address, 16) + 1];
 
     switch (parseInt(bytes[0], 16)) {
     case 0:
@@ -44,11 +47,13 @@ var Disassembler = Disassembler || {};
       var address = + bytes[1] + bytes[2] + bytes[3];
       this.instruction = 'BUC  ' + address;
       this.desc = 'Jump to ' + address;
+      this.next = [parseInt(address, 16)];
       break;
     case 3:
       var address = + bytes[1] + bytes[2] + bytes[3];
       this.instruction = 'BIC  ' + address;
       this.desc = 'Jump to ' + address + ' if condition flag is set';
+      this.next.push(parseInt(address, 16));
       break;
     case 4:
       this.instruction = 'SET0 ' + bytes[1] + bytes[2] + bytes[3];
@@ -87,6 +92,42 @@ var Disassembler = Disassembler || {};
     show(instructions);
   }
 
+  var instructionsToChart = function(instructions) {
+    var text = "";
+
+    for (var i = 0; i < instructions.length; i++) {
+      var instruction = instructions[i];
+
+      if (instruction.next[1])
+        text += "i" + i + "=>condition: " + instruction.instruction + "\n";
+      else
+        text += "i" + i + "=>operation: " + instruction.instruction + "\n";
+    }
+
+    instructions.forEach(function(instruction) {
+      instruction.next.forEach(function(address) {
+        if (address >= instructions.length)
+          address = -1;
+      });
+    });
+
+    for (var i = 0; i < instructions.length - 1; i++) {
+      var instruction = instructions[i];
+
+      if (instruction.next[1]) {
+        if (instruction.next[0] !== -1)
+          text += "i" + i + "(no)->i" + instruction.next[0] + "\n";
+        if (instruction.next[1] !== -1)
+          text += "i" + i + "(yes, right)->i" + instruction.next[1] + "\n";
+      } else {
+        if (instruction.next[0] !== -1)
+          text += "i" + i + "->i" + instruction.next[0] + "\n";
+      }
+    }
+
+    return text;
+  }
+
   // Display an array of instructions
   var show = function(instructions) {
     instructions.forEach(function(e) {
@@ -97,6 +138,13 @@ var Disassembler = Disassembler || {};
       $('#labels').show();
     else
       $('#labels').hide();
+
+    // Draw flowchart
+    if (diagram)
+      diagram.clean();
+
+    diagram = flowchart.parse(instructionsToChart(instructions));
+    diagram.drawSVG('diagram');
   };
 
   var clearErrors = function() {
