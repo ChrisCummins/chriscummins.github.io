@@ -94,39 +94,51 @@ var Disassembler = Disassembler || {};
   }
 
   var instructionsToChart = function(instructions) {
-    var text = "";
+    var instructionDefinition = function(instruction, i) {
+      if (instruction.next[1] !== undefined)
+        return "i" + i + "=>condition: " + instruction.instruction + "\n";
+      else {
+        if (i === 0)
+          return "i" + i + "=>start: " + instruction.instruction + "\n";
+        else if (i === instructions.length - 1)
+          return "i" + i + "=>end: " + instruction.instruction + "\n";
+        else
+          return "i" + i + "=>operation: " + instruction.instruction + "\n";
+      }
+    };
 
-    for (var i = 0; i < instructions.length; i++) {
-      var instruction = instructions[i];
+    var instructionLinks = function(instruction, i) {
+      if (instruction.next[1] !== undefined) {
+        var links = "";
 
-      if (instruction.next[1])
-        text += "i" + i + "=>condition: " + instruction.instruction + "\n";
-      else
-        text += "i" + i + "=>operation: " + instruction.instruction + "\n";
-    }
-
-    instructions.forEach(function(instruction) {
-      instruction.next.forEach(function(address) {
-        if (address >= instructions.length)
-          address = -1;
-      });
-    });
-
-    for (var i = 0; i < instructions.length - 1; i++) {
-      var instruction = instructions[i];
-
-      if (instruction.next[1]) {
         if (instruction.next[0] !== -1)
-          text += "i" + i + "(no)->i" + instruction.next[0] + "\n";
+          links = "i" + i + "(no)->i" + instruction.next[0] + "\n";
         if (instruction.next[1] !== -1)
-          text += "i" + i + "(yes, right)->i" + instruction.next[1] + "\n";
+          links += "i" + i + "(yes, right)->i" + instruction.next[1] + "\n";
+
+        return links
       } else {
         if (instruction.next[0] !== -1)
-          text += "i" + i + "->i" + instruction.next[0] + "\n";
+          return "i" + i + "->i" + instruction.next[0] + "\n";
+        else
+          return "";
       }
     }
 
-    return text;
+    var definitions = "", links = "";
+
+    for (var i = 0; i < instructions.length; i++) {
+      if (instructions[i].next[0] >= instructions.length)
+        instructions[i].next[0] = -1;
+
+      if (instructions[i].next[1] >= instructions.length)
+        instructions[i].next[1] = -1;
+
+      definitions += instructionDefinition(instructions[i], i);
+      links += instructionLinks(instructions[i], i);
+    }
+
+    return definitions + links;
   }
 
   // Display an array of instructions
