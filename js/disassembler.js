@@ -61,7 +61,8 @@ var Disassembler = Disassembler || {};
       break;
     case 5:
       this.instruction = 'TSTI ' + bytes[1] + bytes[2] + bytes[3];
-      this.desc = 'Test inputs ' + bytes[1] + ' AND ' + bytes[2] + ' XOR ' + bytes[3];
+      this.desc = 'Test input port ' + parseInt(bytes[1], 16) + ' AND ' +
+        bytes[2] + ' XOR ' + bytes[3];
       break;
     default:
       throw "Invalid opcode '" + bytes[0] + "'";
