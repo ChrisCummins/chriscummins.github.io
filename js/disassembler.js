@@ -97,14 +97,8 @@ var Disassembler = Disassembler || {};
     var instructionDefinition = function(instruction, i) {
       if (instruction.next[1] !== undefined)
         return "i" + i + "=>condition: " + instruction.instruction + "\n";
-      else {
-        if (i === 0)
-          return "i" + i + "=>start: " + instruction.instruction + "\n";
-        else if (i === instructions.length - 1)
-          return "i" + i + "=>end: " + instruction.instruction + "\n";
-        else
-          return "i" + i + "=>operation: " + instruction.instruction + "\n";
-      }
+      else
+        return "i" + i + "=>operation: " + instruction.instruction + "\n";
     };
 
     var instructionLinks = function(instruction, i) {
@@ -125,7 +119,12 @@ var Disassembler = Disassembler || {};
       }
     }
 
-    var definitions = "", links = "";
+    var definitions = "st=>start: Start\ne=>end: End\n", links = "";
+
+    if (instructions.length) {
+      links += "st->i0\n";
+      links += "i" + (instructions.length - 1) + "->e\n";
+    }
 
     for (var i = 0; i < instructions.length; i++) {
       if (instructions[i].next[0] >= instructions.length)
