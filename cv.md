@@ -16,11 +16,10 @@ design team.
 
 ###### Freelance web developer (2010-Ongoing)
 
-Working with small business clients to turn ideas into a finished
-website, including graphic design and branding.  Extensive frontend
-experience in JavaScript using jQuery and Bootstrap, and backend
-development using Clojure, PHP, MySQL, PostgreSQL, Node.js, and
-Jekyll.
+Working with small business clients to turn ideas into beautiful
+websites, including graphic design and branding.  Extensive frontend
+experience using jQuery and Bootstrap, and backend development using
+Clojure, PHP, MySQL, PostgreSQL, Node.js, and Jekyll.
 
 ###### Rolls Royce Holdings PLC (2008)
 Summer week placement within the Design Methods group.
