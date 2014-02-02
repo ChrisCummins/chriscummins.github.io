@@ -459,7 +459,7 @@ body {
 }
 .footer > .wrapper {
   text-align: center;
-  padding-top: 20px;
+  padding: 20px 0;
 }
 .footer > .container > .footer-collapse > p > a {
   text-decoration: none;
