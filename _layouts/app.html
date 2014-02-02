@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>{{ page.title }}</title>
+    <meta name="description" content="The personal website of software developer Chris Cummins.">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="msapplication-tooltip" content="Chris Cummins personal website">
+
+    <link rel="stylesheet" href="/css/app.css" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.1.0/css/font-awesome.css" />
+
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    {%include google-analytics.html %}
+  </head>
+
+  <body>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+    <script src="/js/app-components.js"></script>
+
+    {{ content }}
+
+  </body>
+
+</html>

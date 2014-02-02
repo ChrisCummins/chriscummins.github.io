@@ -1,118 +1,99 @@
-<!DOCTYPE html>
+---
+layout: app
+title: uC Disassembler
+---
 
-<html lang="en">
+<style type="text/css">
+  #code {
+    resize: none;
+  }
 
-  <head>
-    <title>&micro;C Disassembler</title>
-    <meta name="description" content="">
-    <meta name="author" content="Chris Cummins">
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="viewport" content="width=1024" />
-    <meta charset="utf-8" />
+  #submit {
+    min-width: 200px;
+  }
 
-    <link rel="stylesheet" href="/css/app.css" />
+  table thead td {
+    font-weight: bold;
+  }
 
-    <style type="text/css">
-      #code {
-        resize: none;
-      }
+  #output td {
+    border-top: none;
+  }
 
-      #submit {
-        min-width: 200px;
-      }
+  #output td.address,
+  #output td.opcode,
+  #output td.instruction {
+    font-family: monospace;
+  }
 
-      table thead td {
-        font-weight: bold;
-      }
+  #output td.address,
+  #output td.opcode {
+    width: 100px;
+  }
 
-      #output td {
-        border-top: none;
-      }
+  #output td.address,
+  #output td.description {
+    color: #666;
+  }
 
-      #output td.address,
-      #output td.opcode,
-      #output td.instruction {
-        font-family: monospace;
-      }
+  #output td.instruction {
+    width: 200px;
+  }
+</style>
 
-      #output td.address,
-      #output td.opcode {
-        width: 100px;
-      }
+<div id="wrap">
+  <div class="container">
+    <div class="fixed-container-narrow">
 
-      #output td.address,
-      #output td.description {
-        color: #666;
-      }
-
-      #output td.instruction {
-        width: 200px;
-      }
-    </style>
-
-    {%include google-analytics.html %}
-
-  </head>
-
-  <body>
-    <div id="wrap">
-      <div class="container">
-        <div class="fixed-container-narrow">
-
-          <div class="headline">
-            <div class="headline-title">
-              <h1>&micro;C Disassembler</h1>
-            </div>
-          </div>
-
-          <div class="row-fluid">
-            <div class="span12">
-              <textarea id="code" class="spanFull"
-                        placeholder="Type or copy and paste your assembled program here"
-                        rows="6"></textarea>
-            </div>
-          </div>
-
-          <div id="errors" class="row-fluid">
-
-          </div>
-
-          <div class="row-fluid">
-            <div class="span12">
-              <table class="table table-condensed table-hover">
-                <thead id="labels" style="display: none;">
-                  <tr>
-                    <td>Address</td>
-                    <td>Opcode</td>
-                    <td>Assembly</td>
-                    <td>Instruction</td>
-                  </tr>
-                </thead>
-                <tbody id="output"></tbody>
-              </table>
-            </div>
-          </div>
-
-          <div id="diagram-frame">
-            <div id="diagram"></div>
-          </div>
-
+      <div class="headline">
+        <div class="headline-title">
+          <h1>&micro;C Disassembler</h1>
         </div>
       </div>
-      <div id="push"></div>
-    </div>
 
-    <div class="footer">
-      <div class="container wrapper">
-        By <a href="/">Chris Cummins</a>.
+      <div class="row-fluid">
+        <div class="span12">
+          <textarea id="code" class="spanFull"
+                    placeholder="Type or copy and paste your assembled program here"
+                    rows="6"></textarea>
+        </div>
       </div>
+
+      <div id="errors" class="row-fluid">
+
+      </div>
+
+      <div class="row-fluid">
+        <div class="span12">
+          <table class="table table-condensed table-hover">
+            <thead id="labels" style="display: none;">
+              <tr>
+                <td>Address</td>
+                <td>Opcode</td>
+                <td>Assembly</td>
+                <td>Instruction</td>
+              </tr>
+            </thead>
+            <tbody id="output"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div id="diagram-frame">
+        <div id="diagram"></div>
+      </div>
+
     </div>
+  </div>
+  <div id="push"></div>
+</div>
 
-  </body>
+<div class="footer">
+  <div class="container wrapper">
+    By <a href="/">Chris Cummins</a>.
+  </div>
+</div>
 
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script>
-  <script src="/js/flowchart-1.2.7.min.js"></script>
-  <script src="/js/disassembler.js"></script>
-
-</html>
+<script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script>
+<script src="/js/flowchart-1.2.7.min.js"></script>
+<script src="/js/disassembler.js"></script>
