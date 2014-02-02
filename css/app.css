@@ -455,15 +455,10 @@ body {
 }
 #push,
 .footer {
-  height: 60px;
-}
-.footer {
-  background-color: #eceef0;
-  -webkit-box-shadow: 0 1px 5px rgba(0,0,0,.1);
-  -moz-box-shadow:    0 1px 5px rgba(0,0,0,.1);
-  box-shadow:         0 1px 5px rgba(0,0,0,.1);
+  height: 40px;
 }
 .footer > .wrapper {
+  text-align: center;
   padding-top: 20px;
 }
 .footer > .container > .footer-collapse > p > a {
@@ -1217,7 +1212,7 @@ body {
 
 /* Fixed width container */
 .fixed-container-narrow {
-  margin: 0 auto;
+  margin: 60px auto 0;
   min-width: 730px;
   max-width: 730px;
 }
