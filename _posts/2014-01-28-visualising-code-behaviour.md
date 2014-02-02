@@ -75,4 +75,4 @@ instruction set, with a whopping six operations:
 The disassembler and code visualiser are packaged into an interactive
 web application here:
 
-### [uC Disassembler](/disassembler)
+### [uC Disassembler](/disassembler/)
