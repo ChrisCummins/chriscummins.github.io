@@ -274,6 +274,7 @@ var Disassembler = Disassembler || {};
   var clearInstructions = function() {
     output.html('');
     assembly.html('');
+    _labelCounter = 0;
   };
 
   var addInstruction = function(instruction) {
