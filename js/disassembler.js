@@ -64,7 +64,7 @@ var Disassembler = Disassembler || {};
     case 4:
       this.mnemonic = 'seto 0x' + bytes[1] + ', 0x' +
         bytes[2] + ', 0x' + bytes[3];
-      this.instruction = 'SETO' + bytes[1] + bytes[2] + bytes[3];
+      this.instruction = 'SETO ' + bytes[1] + bytes[2] + bytes[3];
       this.desc = 'Set outputs ' + bytes[1] + ' AND ' + bytes[2] + ' XOR ' + bytes[3];
       break;
     case 5:
