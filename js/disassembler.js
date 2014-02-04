@@ -78,13 +78,13 @@ var Disassembler = Disassembler || {};
     var instructions = [];
 
     try { // Parse instruction
-      var count = 0;
+      var address = 0;
 
       for (var i = 0; i < text.length; i++) {
         var string = text[i].trim()
 
         if (string.length)
-          instructions.push(new Instruction(string, count++));
+          instructions.push(new Instruction(string, address++));
       }
 
     } catch (err) {
