@@ -12,8 +12,25 @@ title: uC Disassembler
     min-width: 200px;
   }
 
+  .tabbable {
+    margin-bottom: 20px;
+  }
+  .tab-pane {
+    min-height: 0;
+  }
+
+  table.table {
+    margin-bottom: 0;
+  }
   table thead td {
     font-weight: bold;
+  }
+
+  pre {
+    background: none;
+    border: none;
+    font-family: monospace;
+    font-size: 16px;
   }
 
   #output td {
@@ -63,19 +80,38 @@ title: uC Disassembler
 
       </div>
 
-      <div class="row-fluid">
+      <div id="code-output" class="row-fluid" style="display: none;">
         <div class="span12">
-          <table class="table table-condensed table-hover">
-            <thead id="labels" style="display: none;">
-              <tr>
-                <td>Address</td>
-                <td>Opcode</td>
-                <td>Assembly</td>
-                <td>Instruction</td>
-              </tr>
-            </thead>
-            <tbody id="output"></tbody>
-          </table>
+          <div class="tabbable">
+            <ul class="nav nav-tabs"> <!-- Tab buttons -->
+              <li class="active">
+                <a href="#pane-disassembled" data-toggle="tab">Disassembled</a>
+              </li>
+              <li>
+                <a href="#pane-assembly" data-toggle="tab">Assembly</a>
+              </li>
+            </ul>
+
+            <div class="tab-content">
+              <div id="pane-disassembled" class="tab-pane active">
+                <table class="table table-condensed table-hover">
+                  <thead>
+                    <tr>
+                      <td>Address</td>
+                      <td>Opcode</td>
+                      <td>Assembly</td>
+                      <td>Instruction</td>
+                    </tr>
+                  </thead>
+                  <tbody id="output"></tbody>
+                </table>
+              </div>
+
+              <div id="pane-assembly" class="tab-pane">
+                <pre id="assembly"></pre>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 

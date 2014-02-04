@@ -30,36 +30,46 @@ var Disassembler = Disassembler || {};
 
     var bytes = toBytes(instruction);
 
-    this.opcode = instruction;
-    this.address = pad(address.toString(16), 8).toUpperCase();
-    this.next = [parseInt(this.address, 16) + 1];
+    this.binary = instruction;
+    this.address = address;
+    this.next = [this.address + 1];
 
     switch (parseInt(bytes[0], 16)) {
     case 0:
-      this.instruction = 'IUC';
+      this.mnemonic = 'iuc';
+      this.instruction = this.mnemonic.toUpperCase();
       this.desc = 'No operation';
       break;
     case 1:
-      this.instruction = 'HUC';
+      this.mnemonic = 'huc';
+      this.instruction = this.mnemonic.toUpperCase();
       this.desc = 'Terminate';
       break;
     case 2:
-      var address = + bytes[1] + bytes[2] + bytes[3];
-      this.instruction = 'BUC  ' + address;
+      var address = bytes[1] + bytes[2] + bytes[3];
+
+      this.mnemonic = 'buc';
+      this.instruction = this.mnemonic.toUpperCase() + ' ' + address;
       this.desc = 'Jump to ' + address;
       this.next = [parseInt(address, 16)];
       break;
     case 3:
-      var address = + bytes[1] + bytes[2] + bytes[3];
-      this.instruction = 'BIC  ' + address;
+      var address = bytes[1] + bytes[2] + bytes[3];
+
+      this.mnemonic = 'bic';
+      this.instruction = this.mnemonic.toUpperCase() + ' ' + address;
       this.desc = 'Jump to ' + address + ' if condition flag is set';
       this.next.push(parseInt(address, 16));
       break;
     case 4:
-      this.instruction = 'SET0 ' + bytes[1] + bytes[2] + bytes[3];
+      this.mnemonic = 'seto 0x' + bytes[1] + ', 0x' +
+        bytes[2] + ', 0x' + bytes[3];
+      this.instruction = 'SETO' + bytes[1] + bytes[2] + bytes[3];
       this.desc = 'Set outputs ' + bytes[1] + ' AND ' + bytes[2] + ' XOR ' + bytes[3];
       break;
     case 5:
+      this.mnemonic = 'tsti 0x' + bytes[1] + ', 0x' +
+        bytes[2] + ', 0x' + bytes[3];
       this.instruction = 'TSTI ' + bytes[1] + bytes[2] + bytes[3];
       this.desc = 'Test input port ' + parseInt(bytes[1], 16) + ' AND ' +
         bytes[2] + ' XOR ' + bytes[3];
@@ -67,11 +77,63 @@ var Disassembler = Disassembler || {};
     default:
       throw "Invalid opcode '" + bytes[0] + "'";
     };
+
+    this._label = null;
+    this.getLabel = function() {
+      if (this._label === null)
+        this._label = new Label();
+
+      return this._label;
+    };
+
+    this.hasLabel = function() {
+      return this._label !== null;
+    };
+
+    this.toString = function(instructions) {
+      var string = '';
+
+      if (this.hasLabel())
+        string += this.getLabel().toString() + '\n';
+
+      string += '        ';
+
+      // Generate labels
+      if (this.next[0] !== this.address + 1)
+        string += this.mnemonic + ' ' + instructions[this.next[0]].getLabel().name;
+      else if (this.next[1] !== undefined)
+        string += this.mnemonic + ' ' + instructions[this.next[1]].getLabel().name;
+      else
+        string += this.mnemonic;
+
+      return string;
+    };
+  };
+
+  var Comment = function(text) {
+    this.toString = function() {
+      return ';; ' + text;
+    };
+  };
+
+  var BlankLine = function() {
+    this.toString = function() {
+      return '';
+    };
+  };
+
+  var Label = function(name) {
+    this.name = name !== undefined ? name : getLabelName();
+
+    this.toString = function() {
+      return this.name + ':';
+    };
   };
 
   var code = $('#code');
   var errors = $('#errors');
   var output = $('#output');
+  var assembly = $('#assembly');
 
   // Decode an array of strings, one instruction per string
   var decode = function(text) {
@@ -141,16 +203,55 @@ var Disassembler = Disassembler || {};
     return definitions + links;
   }
 
+  var _labelCounter = 0;
+  var getLabelName = function() {
+    return 'label' + _labelCounter++;
+  };
+
+  var instructionsToProgram = function(instructions) {
+    var prog = [new Comment('Generated assembly, see:'),
+                new Comment('    http://chriscummins.cc/disassembler'),
+                new Comment(''),
+                new BlankLine()];
+
+    instructions[0]._label = new Label('start');
+
+    // Generate labels
+    // TODO:
+
+    instructions.forEach(function(e) {
+      prog.push(e);
+    });
+
+    // Generate label cross references
+    prog.forEach(function(e) {
+      e.toString(instructions);
+    });
+
+    prog.push(new BlankLine());
+    prog.push(new Comment('End of program code'))
+
+    // Generate textual representation
+    var string = '';
+    prog.forEach(function(e) {
+      string += e.toString(instructions) + '\n';
+    });
+
+    return string;
+  };
+
   // Display an array of instructions
   var show = function(instructions) {
     instructions.forEach(function(e) {
       addInstruction(e);
     });
 
+    assembly.html(instructionsToProgram(instructions));
+
     if (instructions.length)
-      $('#labels').show();
+      $('#code-output').show();
     else
-      $('#labels').hide();
+      $('#code-output').hide();
 
     // Draw flowchart
     if (diagram)
@@ -172,15 +273,17 @@ var Disassembler = Disassembler || {};
 
   var clearInstructions = function() {
     output.html('');
+    assembly.html('');
   };
 
   var addInstruction = function(instruction) {
-    output.append("<tr><td class=\"address\">" + instruction.address + "</td>" +
-                  "<td class=\"opcode\">" + instruction.opcode + "</td>" +
+    output.append("<tr><td class=\"address\">" +
+                  pad(instruction.address.toString(16), 8).toUpperCase() +
+                  "</td><td class=\"opcode\">" + instruction.binary + "</td>" +
                   "<td class=\"instruction\">" + instruction.instruction + "</td>" +
                   "<td class=\"description\">" + instruction.desc + "</td>" +
                   "</tr>");
-  }
+  };
 
   // Update as the user types
   code.bind('input propertychange', function() {
