@@ -109,8 +109,10 @@ var Disassembler = Disassembler || {};
     };
   };
 
+  var _labelCounter = 0; // Used for automatic label naming
+
   var Label = function(name) {
-    this.name = name ? name : getLabelName();
+    this.name = name ? name : 'label' + _labelCounter++;
 
     this.toString = function() {
       return this.name + ':';
