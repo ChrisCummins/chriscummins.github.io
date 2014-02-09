@@ -137,7 +137,7 @@ var Disassembler = Disassembler || {};
       addError("<strong>At line " + i + ":</strong> " + err);
     }
 
-    show(instructions);
+    return instructions;
   }
 
   var instructionsToChart = function(instructions) {
@@ -276,7 +276,7 @@ var Disassembler = Disassembler || {};
   code.bind('input propertychange', function() {
     clearErrors();
     clearInstructions();
-    decode(code.val().split("\n"));
+    show(decode(code.val().split("\n")));
   });
 
 }).call(Disassembler);
