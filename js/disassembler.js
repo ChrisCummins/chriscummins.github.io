@@ -3,6 +3,7 @@ var Disassembler = Disassembler || {};
 (function() {
   'use strict';
 
+  // Pad the number 'n' to 'width', using padding digit 'z'
   function pad(n, width, z) {
     z = z || '0';
     n = n + '';
@@ -85,9 +86,9 @@ var Disassembler = Disassembler || {};
 
       string += '        ';
 
-      if (this.next[0] !== this.address + 1)
+      if (this.next[0] !== this.address + 1) // Jump instruction
         string += this.mnemonic + ' ' + instructions[this.next[0]].getLabel().name;
-      else if (this.next[1] !== undefined)
+      else if (this.next[1] !== undefined) // Branch instruction
         string += this.mnemonic + ' ' + instructions[this.next[1]].getLabel().name;
       else
         string += this.mnemonic;
@@ -109,7 +110,7 @@ var Disassembler = Disassembler || {};
   };
 
   var Label = function(name) {
-    this.name = name !== undefined ? name : getLabelName();
+    this.name = name ? name : getLabelName();
 
     this.toString = function() {
       return this.name + ':';
@@ -123,18 +124,15 @@ var Disassembler = Disassembler || {};
 
   // Decode an array of strings, one instruction per string
   var decode = function(text) {
-    var instructions = [];
+    var instructions = [], address = 0, string = '';
 
-    try { // Parse instruction
-      var address = 0;
-
+    try { // Parse instructions
       for (var i = 0; i < text.length; i++) {
-        var string = text[i].trim()
+        string = text[i].trim()
 
         if (string.length)
           instructions.push(new Instruction(string, address++));
       }
-
     } catch (err) {
       addError("<strong>At line " + i + ":</strong> " + err);
     }
