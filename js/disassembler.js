@@ -142,9 +142,9 @@ var Disassembler = Disassembler || {};
 
   var instructionsToChart = function(instructions) {
     var instructionDefinition = function(instruction, i) {
-      if (instruction.next[1] !== undefined)
+      if (instruction.next[1] !== undefined) // Conditional instruction
         return "i" + i + "=>condition: " + instruction.instruction + "\n";
-      else
+      else // Unconditional instruction
         return "i" + i + "=>operation: " + instruction.instruction + "\n";
     };
 
