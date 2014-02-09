@@ -135,7 +135,7 @@ var Disassembler = Disassembler || {};
         if (string.length)
           instructions.push(new Instruction(string, address++));
       }
-    } catch (err) {
+    } catch (err) { // Stop decoding on first error
       addError("<strong>At line " + i + ":</strong> " + err);
     }
 
@@ -143,6 +143,8 @@ var Disassembler = Disassembler || {};
   }
 
   var instructionsToChart = function(instructions) {
+    var definitions = "st=>start: Start\ne=>end: End\n", links = "";
+
     var instructionDefinition = function(instruction, i) {
       if (instruction.next[1] !== undefined) // Conditional instruction
         return "i" + i + "=>condition: " + instruction.instruction + "\n";
@@ -151,31 +153,28 @@ var Disassembler = Disassembler || {};
     };
 
     var instructionLinks = function(instruction, i) {
-      if (instruction.next[1] !== undefined) {
+      if (instruction.next[1] !== undefined) { // Conditional instruction
         var links = "";
 
-        if (instruction.next[0] !== -1)
+        if (instruction.next[0] !== -1) // Valid address
           links = "i" + i + "(no)->i" + instruction.next[0] + "\n";
-        if (instruction.next[1] !== -1)
+        if (instruction.next[1] !== -1) // Valid address
           links += "i" + i + "(yes, right)->i" + instruction.next[1] + "\n";
 
         return links
       } else {
-        if (instruction.next[0] !== -1)
+        if (instruction.next[0] !== -1) // Valid address
           return "i" + i + "->i" + instruction.next[0] + "\n";
         else
           return "";
       }
     }
 
-    var definitions = "st=>start: Start\ne=>end: End\n", links = "";
-
-    if (instructions.length) {
-      links += "st->i0\n";
-      links += "i" + (instructions.length - 1) + "->e\n";
-    }
+    if (instructions.length) // Start and end symbols
+      links += "st->i0\ni" + (instructions.length - 1) + "->e\n";
 
     for (var i = 0; i < instructions.length; i++) {
+      // Check for valid addresses
       if (instructions[i].next[0] >= instructions.length)
         instructions[i].next[0] = -1;
 
@@ -189,21 +188,14 @@ var Disassembler = Disassembler || {};
     return definitions + links;
   }
 
-  var _labelCounter = 0;
-  var getLabelName = function() {
-    return 'label' + _labelCounter++;
-  };
-
   var instructionsToProgram = function(instructions) {
     var prog = [new Comment('Generated assembly, see:'),
                 new Comment('    http://chriscummins.cc/disassembler'),
                 new Comment(''),
-                new BlankLine()];
+                new BlankLine()], string = '';
 
-    instructions[0].label = new Label('start');
-
-    // Generate labels
-    // TODO:
+    if (instructions.length)
+      instructions[0].label = new Label('start');
 
     instructions.forEach(function(e) {
       prog.push(e);
@@ -218,7 +210,6 @@ var Disassembler = Disassembler || {};
     prog.push(new Comment('End of program code'))
 
     // Generate textual representation
-    var string = '';
     prog.forEach(function(e) {
       string += e.toString(instructions) + '\n';
     });
@@ -230,10 +221,13 @@ var Disassembler = Disassembler || {};
 
   // Display an array of instructions
   var show = function(instructions) {
+
+    // Show disassembled table
     instructions.forEach(function(e) {
       addInstruction(e);
     });
 
+    // Show assembly code
     assembly.html(instructionsToProgram(instructions));
 
     if (instructions.length)
@@ -249,20 +243,10 @@ var Disassembler = Disassembler || {};
     _diagram.drawSVG('diagram');
   };
 
-  var clearErrors = function() {
-    errors.html('');
-  };
-
   var addError = function(msg) {
     errors.append("<div class=\"alert alert-error\">" + msg +
                   "<a class=\"close\" data-dismiss=\"alert\" " +
                   "href=\"#\">&times;</a></div>");
-  };
-
-  var clearInstructions = function() {
-    output.html('');
-    assembly.html('');
-    _labelCounter = 0;
   };
 
   var addInstruction = function(instruction) {
@@ -276,9 +260,11 @@ var Disassembler = Disassembler || {};
 
   // Update as the user types
   code.bind('input propertychange', function() {
-    clearErrors();
-    clearInstructions();
+    errors.html('');
+    output.html('');
+    assembly.html('');
+    _labelCounter = 0;
+
     show(decode(code.val().split("\n")));
   });
-
 }).call(Disassembler);
