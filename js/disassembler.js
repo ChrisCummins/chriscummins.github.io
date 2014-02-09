@@ -73,27 +73,18 @@ var Disassembler = Disassembler || {};
       throw "Invalid opcode '" + bytes[0] + "'";
     };
 
-    this._label = null;
     this.getLabel = function() {
-      if (this._label === null)
-        this._label = new Label();
+      if (this.label === undefined)
+        this.label = new Label();
 
-      return this._label;
-    };
-
-    this.hasLabel = function() {
-      return this._label !== null;
+      return this.label;
     };
 
     this.toString = function(instructions) {
-      var string = '';
-
-      if (this.hasLabel())
-        string += this.getLabel().toString() + '\n';
+      var string = this.label ? this.getLabel().toString() + '\n' : '';
 
       string += '        ';
 
-      // Generate labels
       if (this.next[0] !== this.address + 1)
         string += this.mnemonic + ' ' + instructions[this.next[0]].getLabel().name;
       else if (this.next[1] !== undefined)
@@ -209,7 +200,7 @@ var Disassembler = Disassembler || {};
                 new Comment(''),
                 new BlankLine()];
 
-    instructions[0]._label = new Label('start');
+    instructions[0].label = new Label('start');
 
     // Generate labels
     // TODO:
