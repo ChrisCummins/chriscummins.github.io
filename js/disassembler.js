@@ -3,8 +3,6 @@ var Disassembler = Disassembler || {};
 (function() {
   'use strict';
 
-  var diagram;
-
   function pad(n, width, z) {
     z = z || '0';
     n = n + '';
@@ -240,6 +238,8 @@ var Disassembler = Disassembler || {};
     return string;
   };
 
+  var _diagram; // The flowchart
+
   // Display an array of instructions
   var show = function(instructions) {
     instructions.forEach(function(e) {
@@ -254,11 +254,11 @@ var Disassembler = Disassembler || {};
       $('#code-output').hide();
 
     // Draw flowchart
-    if (diagram)
-      diagram.clean();
+    if (_diagram)
+      _diagram.clean();
 
-    diagram = flowchart.parse(instructionsToChart(instructions));
-    diagram.drawSVG('diagram');
+    _diagram = flowchart.parse(instructionsToChart(instructions));
+    _diagram.drawSVG('diagram');
   };
 
   var clearErrors = function() {
