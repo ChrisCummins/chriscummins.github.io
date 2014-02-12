@@ -73,6 +73,33 @@ var Disassembler = Disassembler || {};
       this.desc = 'Test input port ' + parseInt(bytes[1], 16) + ' AND ' +
         bytes[2] + ' XOR ' + bytes[3];
       break;
+    case 6:
+      this.mnemonic = 'bsr';
+      this.instruction = this.mnemonic.toUpperCase() + '  ' + address;
+      this.desc = 'Call subroutine ' + address;
+      this.next = [jumpAddress];
+      programContainsRoutines = true; // Shit!
+      break;
+    case 7:
+      this.mnemonic = 'rsr';
+      this.instruction = this.mnemonic.toUpperCase();
+      this.desc = 'Return from subroutine';
+      break;
+    case 8:
+      this.mnemonic = 'rir';
+      this.instruction = this.mnemonic.toUpperCase();
+      this.desc = 'Return from interrupt';
+      break;
+    case 9:
+      this.mnemonic = 'sei';
+      this.instruction = this.mnemonic.toUpperCase();
+      this.desc = 'Enable interrupts';
+      break;
+    case 10:
+      this.mnemonic = 'cli';
+      this.instruction = this.mnemonic.toUpperCase();
+      this.desc = 'Disable interrupts';
+      break;
     default:
       throw "Invalid opcode '" + bytes[0] + "'";
     };
