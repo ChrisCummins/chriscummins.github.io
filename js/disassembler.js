@@ -202,16 +202,16 @@ var Disassembler = Disassembler || {};
   // Decode an array of strings, one instruction per string
   var decode = function(text) {
 
-    var instructions = [], idt = [], address = 0, string = '', lineNo = 0;
+    var instructions = [], idt = [], address = 0, string = '', i = 0;
 
     try { // Parse instructions
-      for (lineNo = 0; lineNo < text.length; lineNo++) {
-        string = text[lineNo].trim();
+      for (i = 0; i < text.length; i++) {
+        string = text[i].trim();
 
         if (string.length) {
-          if (lineNo < idtLength) { // Interrupt descriptor
+          if (i < idtLength) { // Interrupt descriptor
             idt.push(new Instruction(string, address++,
-                                     'Interrupt handler ' + lineNo));
+                                     'Interrupt handler ' + i));
           } else { // Instruction
             instructions.push(new Instruction(string, address++));
           }
