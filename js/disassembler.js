@@ -260,19 +260,23 @@ var Disassembler = Disassembler || {};
       }
     }
 
+    var lastAddress = instructions.length + idtLength, instruction = '';
+
     if (instructions.length) // Start and end symbols
-      links += "st->i0\ni" + (instructions.length - 1) + "->e\n";
+      links += "st->i" + idtLength + "\ni" + (lastAddress - 1) + "->e\n";
 
-    for (var i = 0; i < instructions.length; i++) {
+    for (var i = idtLength; i < lastAddress; i++) {
+      instruction = instructions[i - idtLength];
+
       // Check for valid addresses
-      if (instructions[i].next[0] >= instructions.length)
-        instructions[i].next[0] = -1;
+      if (instruction.next[0] >= lastAddress)
+        instruction.next[0] = -1;
 
-      if (instructions[i].next[1] >= instructions.length)
-        instructions[i].next[1] = -1;
+      if (instruction.next[1] >= lastAddress)
+        instruction.next[1] = -1;
 
-      definitions += instructionDefinition(instructions[i], i);
-      links += instructionLinks(instructions[i], i);
+      definitions += instructionDefinition(instruction, i);
+      links += instructionLinks(instruction, i);
     }
 
     return definitions + links;
@@ -397,7 +401,6 @@ var Disassembler = Disassembler || {};
   $('.switch').attr('data-original-title', 'Interrupt Table').tooltip('fixTitle');
 
   $('#idt-enable-switch').click(function() {
-    console.log(idtLength);
     idtLength = $('#idt-enable')[0].checked ? 8 : 0;
     refresh();
   });
