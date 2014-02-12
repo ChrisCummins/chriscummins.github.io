@@ -3,11 +3,13 @@ var Disassembler = Disassembler || {};
 (function() {
   'use strict';
 
-  // Pad the number 'n' to 'width', using padding digit 'z'
-  function pad(n, width, z) {
+  // Pad the number 'n' to with padding character 'z' to width 'width'.
+  function pad(n, width, z, tail) {
     z = z || '0';
     n = n + '';
-    return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
+    return n.length >= width ? n : tail ?
+      n + new Array(width - n.length + 1).join(z) :
+      new Array(width - n.length + 1).join(z) + n;
   }
 
   // An instruction
