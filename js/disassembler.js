@@ -377,15 +377,29 @@ var Disassembler = Disassembler || {};
     };
   };
 
-  // Update as the user types
-  $code.bind('input propertychange', function() {
+  var refresh = function() { // Refresh display
     $errors.html('');
     $warnings.html('');
     $output.html('');
     _labelCounter = 0;
     _routineCounter = 0;
     _handlerCounter = 0;
+    programContainsRoutines = false;
 
     show(decode($code.val().split("\n")));
+  };
+
+  // Update as the user types
+  $code.bind('input propertychange', function() {
+    refresh();
   });
+
+  $('.switch').attr('data-original-title', 'Interrupt Table').tooltip('fixTitle');
+
+  $('#idt-enable-switch').click(function() {
+    console.log(idtLength);
+    idtLength = $('#idt-enable')[0].checked ? 8 : 0;
+    refresh();
+  });
+
 }).call(Disassembler);
