@@ -8,22 +8,26 @@ title: uC Disassembler
     resize: none;
   }
 
-  #submit {
-    min-width: 200px;
+  .table {
+    width: 830px;
+    margin-left: -100px;
   }
 
-  .tabbable {
-    margin-bottom: 20px;
-  }
-  .tab-pane {
-    min-height: 0;
+  #output td {
+    padding: 0;
+    border-top: none;
   }
 
-  table.table {
-    margin-bottom: 0;
+  #output td.address {
+    width: 100px;
   }
-  table thead td {
-    font-weight: bold;
+  #output td.address pre {
+    color: #bdc3c7;
+  }
+
+  #output td.instruction {
+    border-left: 2px solid #bdc3c7;
+    padding-left: 11px;
   }
 
   pre {
@@ -31,30 +35,8 @@ title: uC Disassembler
     border: none;
     font-family: monospace;
     font-size: 16px;
-  }
-
-  #output td {
-    border-top: none;
-  }
-
-  #output td.address,
-  #output td.opcode,
-  #output td.instruction {
-    font-family: monospace;
-  }
-
-  #output td.address,
-  #output td.opcode {
-    width: 100px;
-  }
-
-  #output td.address,
-  #output td.description {
-    color: #666;
-  }
-
-  #output td.instruction {
-    width: 200px;
+    padding: 0;
+    margin: 0;
   }
 </style>
 
@@ -95,36 +77,11 @@ title: uC Disassembler
 
       <div id="code-output" class="row-fluid" style="display: none;">
         <div class="span12">
-          <div class="tabbable">
-            <ul class="nav nav-tabs"> <!-- Tab buttons -->
-              <li class="active">
-                <a href="#pane-assembly" data-toggle="tab">Assembly</a>
-              </li>
-              <li>
-                <a href="#pane-disassembled" data-toggle="tab">Disassembled</a>
-              </li>
-            </ul>
 
-            <div class="tab-content">
-              <div id="pane-disassembled" class="tab-pane">
-                <table class="table table-condensed table-hover">
-                  <thead>
-                    <tr>
-                      <td>Address</td>
-                      <td>Opcode</td>
-                      <td>Assembly</td>
-                      <td>Instruction</td>
-                    </tr>
-                  </thead>
-                  <tbody id="output"></tbody>
-                </table>
-              </div>
+          <table class="table table-condensed table-hover">
+            <tbody id="output"></tbody>
+          </table>
 
-              <div id="pane-assembly" class="tab-pane active">
-                <pre id="assembly"></pre>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
 

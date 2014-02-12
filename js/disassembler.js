@@ -160,7 +160,7 @@ var Disassembler = Disassembler || {};
 
   var BlankLine = function() {
     this.toString = function() {
-      return '';
+      return '  ';
     };
   };
 
@@ -196,7 +196,6 @@ var Disassembler = Disassembler || {};
   var $errors = $('#errors');
   var $warnings = $('#warnings');
   var $output = $('#output');
-  var $assembly = $('#assembly');
 
   var idtLength = 8; // Interrupt Descriptor Table length (in words)
 
@@ -279,7 +278,7 @@ var Disassembler = Disassembler || {};
     return definitions + links;
   }
 
-  var assemble = function(data) {
+  var showAssembly = function(data) {
     var instructions = data.instructions;
     var idt = data.idt;
     var prog = [new Comment('Generated assembly, see:'),
@@ -316,12 +315,10 @@ var Disassembler = Disassembler || {};
     prog.push(new BlankLine());
     prog.push(new Comment('End of program code'))
 
-    // Generate textual representation
+    // Display table
     prog.forEach(function(e) {
-      string += e.toString(instructions) + '\n';
+      addInstruction(e, instructions);
     });
-
-    return string;
   };
 
   var _diagram; // The flowchart
@@ -332,17 +329,7 @@ var Disassembler = Disassembler || {};
     var instructions = data.instructions;
     var idt = data.idt;
 
-    // Show disassembled table
-    idt.forEach(function(e) {
-      addInstruction(e);
-    });
-
-    instructions.forEach(function(e) {
-      addInstruction(e);
-    });
-
-    // Show assembly code
-    $assembly.html(assemble(data));
+    showAssembly(data);
 
     if (idt.length || instructions.length)
       $('#code-output').show();
@@ -371,13 +358,16 @@ var Disassembler = Disassembler || {};
                      "href=\"#\">&times;</a></div>");
   };
 
-  var addInstruction = function(instruction) {
-    $output.append("<tr><td class=\"address\">" +
-                   pad(instruction.address.toString(16), 8).toUpperCase() +
-                   "</td><td class=\"opcode\">" + instruction.binary + "</td>" +
-                   "<td class=\"instruction\">" + instruction.instruction + "</td>" +
-                   "<td class=\"description\">" + instruction.desc + "</td>" +
-                   "</tr>");
+  var addInstruction = function(instruction, instructions) {
+    var html = '<tr><td class="address"><pre>';
+
+    if (instruction.address !== undefined)
+      html += pad(instruction.address.toString(16), 8).toUpperCase();
+
+    html += "</pre></td><td class=\"instruction\"><pre>" +
+      instruction.toString(instructions) + "</pre></td></tr>";
+
+    $output.append(html);
   };
 
   // Update as the user types
@@ -385,7 +375,6 @@ var Disassembler = Disassembler || {};
     $errors.html('');
     $warnings.html('');
     $output.html('');
-    $assembly.html('');
     _labelCounter = 0;
     _routineCounter = 0;
     _handlerCounter = 0;
