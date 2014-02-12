@@ -113,7 +113,7 @@ var Disassembler = Disassembler || {};
         if (type == 'routine')
           this.label = new RoutineLabel();
         else if (type == 'interrupt')
-          this.label = new HandlerLabel();
+          this.label = new VectorLabel();
         else
           this.label = new Label();
       }
@@ -128,7 +128,7 @@ var Disassembler = Disassembler || {};
       if (this.next[0] !== this.address + 1) {
         string += this.mnemonic + '    ';
 
-        if (this.address < idtLength) // Interrupt handler
+        if (this.address < idtLength) // Interrupt vector
           string += instructions[this.next[0]].getLabel('interrupt').name;
         else if (this.mnemonic == 'bsr')
           string += instructions[this.next[0]].getLabel('routine').name;
@@ -167,7 +167,7 @@ var Disassembler = Disassembler || {};
 
   var _labelCounter = 0; // Used for automatic label naming
   var _routineCounter = 0; // Used for automatic interrupt label naming
-  var _handlerCounter = 0; // Used for automatic interrupt label naming
+  var _vectorCounter = 0; // Used for automatic interrupt label naming
 
   var Label = function(name) {
     this.name = name ? name : 'label' + _labelCounter++;
@@ -185,8 +185,8 @@ var Disassembler = Disassembler || {};
     };
   };
 
-  var HandlerLabel = function(name) {
-    this.name = name ? name : 'irq' + _handlerCounter++;
+  var VectorLabel = function(name) {
+    this.name = name ? name : 'irq' + _vectorCounter++;
 
     this.toString = function() {
       return this.name + ':';
@@ -212,7 +212,7 @@ var Disassembler = Disassembler || {};
         if (string.length) {
           if (i < idtLength) { // Interrupt descriptor
             idt.push(new Instruction(string, address++,
-                                     'Interrupt handler ' + i));
+                                     'Interrupt vector ' + i));
           } else { // Instruction
             instructions.push(new Instruction(string, address++));
           }
@@ -403,7 +403,7 @@ var Disassembler = Disassembler || {};
     $output.html('');
     _labelCounter = 0;
     _routineCounter = 0;
-    _handlerCounter = 0;
+    _vectorCounter = 0;
     programContainsRoutines = false;
 
     show(decode($code.val().split("\n")));
