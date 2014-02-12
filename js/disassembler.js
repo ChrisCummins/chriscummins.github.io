@@ -356,7 +356,6 @@ var Disassembler = Disassembler || {};
       if (_diagram)
         _diagram.clean();
 
-      console.log(instructionsToChart(instructions));
       _diagram = flowchart.parse(instructionsToChart(instructions));
       _diagram.drawSVG('diagram');
     } else {
