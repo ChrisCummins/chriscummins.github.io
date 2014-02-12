@@ -138,7 +138,9 @@ var Disassembler = Disassembler || {};
       addError("<strong>At line " + i + ":</strong> " + err);
     }
 
-    return instructions;
+    return {
+      instructions: instructions,
+    };
   }
 
   var instructionsToChart = function(instructions) {
@@ -187,7 +189,9 @@ var Disassembler = Disassembler || {};
     return definitions + links;
   }
 
-  var instructionsToProgram = function(instructions) {
+  var assemble = function(data) {
+    var instructions = data.instructions;
+    var idt = data.idt;
     var prog = [new Comment('Generated assembly, see:'),
                 new Comment('    http://chriscummins.cc/disassembler'),
                 new Comment(''),
@@ -219,15 +223,16 @@ var Disassembler = Disassembler || {};
   var _diagram; // The flowchart
 
   // Display an array of instructions
-  var show = function(instructions) {
+  var show = function(data) {
 
+    var instructions = data.instructions;
     // Show disassembled table
     instructions.forEach(function(e) {
       addInstruction(e);
     });
 
     // Show assembly code
-    assembly.html(instructionsToProgram(instructions));
+    assembly.html(assemble(data));
 
     if (instructions.length)
       $('#code-output').show();
