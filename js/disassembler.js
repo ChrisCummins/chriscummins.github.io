@@ -359,15 +359,22 @@ var Disassembler = Disassembler || {};
   };
 
   var addInstruction = function(instruction, instructions) {
-    var html = '<tr><td class="address"><pre>';
+    var addRow = function(address, instruction) {
+      $output.append('<tr><td class="address"><pre>' + address +
+                     '</pre></td><td class=\"instruction\"><pre>' +
+                     instruction + '</pre></td></tr>');
+    };
 
-    if (instruction.address !== undefined)
-      html += pad(instruction.address.toString(16), 8).toUpperCase();
+    var address = instruction.address === undefined ? '' :
+      pad(instruction.address.toString(16), 8).toUpperCase();
+    var lines = instruction.toString(instructions).split('\n');
 
-    html += "</pre></td><td class=\"instruction\"><pre>" +
-      instruction.toString(instructions) + "</pre></td></tr>";
-
-    $output.append(html);
+    if (lines.length > 1) { // Instruction contains label
+      addRow('', lines[0]);
+      addRow(address, lines[1]);
+    } else {
+      addRow(address, lines[0]);
+    };
   };
 
   // Update as the user types
