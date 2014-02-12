@@ -147,7 +147,7 @@ var Disassembler = Disassembler || {};
     };
   };
 
-  var Section = function(name) {
+  var Directive = function(name) {
     this.toString = function() {
       return '.' + name;
     };
@@ -292,8 +292,8 @@ var Disassembler = Disassembler || {};
                 new BlankLine()];
     var string = '';
 
-    prog.push(new Section('cseg'));
-    prog.push(new Section('org 0x0000'));
+    prog.push(new Directive('cseg'));
+    prog.push(new Directive('org 0x0000'));
 
     if (idt.length) { // Show interrupt table label
       prog.push(new BlankLine());
@@ -304,7 +304,7 @@ var Disassembler = Disassembler || {};
       });
 
       prog.push(new BlankLine());
-      prog.push(new Section('org 0x0008'));
+      prog.push(new Directive('org 0x0008'));
     }
 
     prog.push(new BlankLine());
