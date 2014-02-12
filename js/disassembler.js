@@ -316,7 +316,12 @@ var Disassembler = Disassembler || {};
 
     // Generate label cross references
     prog.forEach(function(e) {
-      e.toString(instructions);
+      try {
+        e.toString(instructions);
+      } catch (err) {
+        addError("<strong>At address " + e.addressHex +
+                 ":</strong> Branch address out of bounds!")
+      }
     });
 
     prog.push(new BlankLine());
@@ -324,7 +329,9 @@ var Disassembler = Disassembler || {};
 
     // Display table
     prog.forEach(function(e) {
-      addInstruction(e, instructions);
+      try {
+        addInstruction(e, instructions);
+      } catch (e) {}
     });
   };
 
