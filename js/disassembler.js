@@ -30,6 +30,9 @@ var Disassembler = Disassembler || {};
     this.address = address;
     this.next = [this.address + 1];
 
+    var address = bytes[1] + bytes[2] + bytes[3];
+    var jumpAddress = parseInt(address, 16) - 8;
+
     switch (parseInt(bytes[0], 16)) {
     case 0:
       this.mnemonic = 'iuc';
@@ -42,20 +45,16 @@ var Disassembler = Disassembler || {};
       this.desc = 'Terminate';
       break;
     case 2:
-      var address = bytes[1] + bytes[2] + bytes[3];
-
       this.mnemonic = 'buc';
       this.instruction = this.mnemonic.toUpperCase() + ' ' + address;
       this.desc = 'Jump to ' + address;
-      this.next = [parseInt(address, 16)];
+      this.next = [jumpAddress];
       break;
     case 3:
-      var address = bytes[1] + bytes[2] + bytes[3];
-
       this.mnemonic = 'bic';
       this.instruction = this.mnemonic.toUpperCase() + ' ' + address;
       this.desc = 'Jump to ' + address + ' if condition flag is set';
-      this.next.push(parseInt(address, 16));
+      this.next.push(jumpAddress);
       break;
     case 4:
       this.mnemonic = 'seto 0x' + bytes[1] + ', 0x' +
