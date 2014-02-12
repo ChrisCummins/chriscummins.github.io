@@ -32,6 +32,7 @@ var Disassembler = Disassembler || {};
 
     this.binary = instruction;
     this.address = address;
+    this.addressHex = pad(address.toString(16), 8).toUpperCase();
     this.next = [this.address + 1];
 
     if (comment !== undefined)
@@ -375,8 +376,8 @@ var Disassembler = Disassembler || {};
                      instruction + '</pre></td></tr>');
     };
 
-    var address = instruction.address === undefined ? '' :
-      pad(instruction.address.toString(16), 8).toUpperCase();
+    var address = instruction.address === undefined ?
+      '' : instruction.addressHex;
     var lines = instruction.toString(instructions).split('\n');
 
     if (lines.length > 1) { // Instruction contains label
