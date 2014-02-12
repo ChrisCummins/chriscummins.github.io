@@ -192,11 +192,11 @@ var Disassembler = Disassembler || {};
     };
   };
 
-  var code = $('#code');
-  var errors = $('#errors');
-  var warnings = $('#warnings');
-  var output = $('#output');
-  var assembly = $('#assembly');
+  var $code = $('#code');
+  var $errors = $('#errors');
+  var $warnings = $('#warnings');
+  var $output = $('#output');
+  var $assembly = $('#assembly');
 
   var idtLength = 8; // Interrupt Descriptor Table length (in words)
 
@@ -342,7 +342,7 @@ var Disassembler = Disassembler || {};
     });
 
     // Show assembly code
-    assembly.html(assemble(data));
+    $assembly.html(assemble(data));
 
     if (idt.length || instructions.length)
       $('#code-output').show();
@@ -360,36 +360,36 @@ var Disassembler = Disassembler || {};
   };
 
   var addError = function(msg) {
-    errors.append("<div class=\"alert alert-error\">" + msg +
-                  "<a class=\"close\" data-dismiss=\"alert\" " +
-                  "href=\"#\">&times;</a></div>");
+    $errors.append("<div class=\"alert alert-error\">" + msg +
+                   "<a class=\"close\" data-dismiss=\"alert\" " +
+                   "href=\"#\">&times;</a></div>");
   };
 
   var addWarning = function(msg) {
-    warnings.append("<div class=\"alert alert-warning\">" + msg +
-                  "<a class=\"close\" data-dismiss=\"alert\" " +
-                  "href=\"#\">&times;</a></div>");
+    $warnings.append("<div class=\"alert alert-warning\">" + msg +
+                     "<a class=\"close\" data-dismiss=\"alert\" " +
+                     "href=\"#\">&times;</a></div>");
   };
 
   var addInstruction = function(instruction) {
-    output.append("<tr><td class=\"address\">" +
-                  pad(instruction.address.toString(16), 8).toUpperCase() +
-                  "</td><td class=\"opcode\">" + instruction.binary + "</td>" +
-                  "<td class=\"instruction\">" + instruction.instruction + "</td>" +
-                  "<td class=\"description\">" + instruction.desc + "</td>" +
-                  "</tr>");
+    $output.append("<tr><td class=\"address\">" +
+                   pad(instruction.address.toString(16), 8).toUpperCase() +
+                   "</td><td class=\"opcode\">" + instruction.binary + "</td>" +
+                   "<td class=\"instruction\">" + instruction.instruction + "</td>" +
+                   "<td class=\"description\">" + instruction.desc + "</td>" +
+                   "</tr>");
   };
 
   // Update as the user types
-  code.bind('input propertychange', function() {
-    errors.html('');
-    warnings.html('');
-    output.html('');
-    assembly.html('');
+  $code.bind('input propertychange', function() {
+    $errors.html('');
+    $warnings.html('');
+    $output.html('');
+    $assembly.html('');
     _labelCounter = 0;
     _routineCounter = 0;
     _handlerCounter = 0;
 
-    show(decode(code.val().split("\n")));
+    show(decode($code.val().split("\n")));
   });
 }).call(Disassembler);
