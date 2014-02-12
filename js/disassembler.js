@@ -107,21 +107,34 @@ var Disassembler = Disassembler || {};
       throw "Invalid opcode '" + bytes[0] + "'";
     };
 
-    this.getLabel = function() {
-      if (this.label === undefined)
-        this.label = new Label();
+    this.getLabel = function(type) {
+      if (this.label === undefined) {
+        if (type == 'routine')
+          this.label = new RoutineLabel();
+        else if (type == 'interrupt')
+          this.label = new HandlerLabel();
+        else
+          this.label = new Label();
+      }
 
       return this.label;
     };
 
     this.toString = function(instructions) {
-      var string = this.label ? this.getLabel().toString() + '\n' : '';
+      var label = this.label ? this.getLabel().toString() + '\n' : '';
+      var string = '        ';
 
-      string += '        ';
+      if (this.next[0] !== this.address + 1) {
+        string += this.mnemonic + '  ';
 
-      if (this.next[0] !== this.address + 1) // Jump instruction
-        string += this.mnemonic + '  ' + instructions[this.next[0]].getLabel().name;
-      else if (this.next[1] !== undefined) // Branch instruction
+        if (this.address < idtLength) // Interrupt handler
+          string += instructions[this.next[0]].getLabel('interrupt').name;
+        else if (this.mnemonic == 'bsr')
+          string += instructions[this.next[0]].getLabel('routine').name;
+        else // Jump instruction
+          string += instructions[this.next[0]].getLabel().name;
+
+      } else if (this.next[1] !== undefined) // Branch instruction
         string += this.mnemonic + '  ' + instructions[this.next[1]].getLabel().name;
       else
         string += this.mnemonic;
@@ -129,7 +142,7 @@ var Disassembler = Disassembler || {};
       if (this.comment) // Add inline comment at character 32
         string = pad(string, 30, ' ', true) + ' ; ' + this.comment;
 
-      return string;
+      return label + string;
     };
   };
 
@@ -152,9 +165,27 @@ var Disassembler = Disassembler || {};
   };
 
   var _labelCounter = 0; // Used for automatic label naming
+  var _routineCounter = 0; // Used for automatic interrupt label naming
+  var _handlerCounter = 0; // Used for automatic interrupt label naming
 
   var Label = function(name) {
     this.name = name ? name : 'label' + _labelCounter++;
+
+    this.toString = function() {
+      return this.name + ':';
+    };
+  };
+
+  var RoutineLabel = function(name) {
+    this.name = name ? name : 'subroutine' + _routineCounter++;
+
+    this.toString = function() {
+      return this.name + ':';
+    };
+  };
+
+  var HandlerLabel = function(name) {
+    this.name = name ? name : 'irq' + _handlerCounter++;
 
     this.toString = function() {
       return this.name + ':';
@@ -356,6 +387,8 @@ var Disassembler = Disassembler || {};
     output.html('');
     assembly.html('');
     _labelCounter = 0;
+    _routineCounter = 0;
+    _handlerCounter = 0;
 
     show(decode(code.val().split("\n")));
   });
