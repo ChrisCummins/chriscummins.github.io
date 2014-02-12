@@ -376,21 +376,22 @@ var Disassembler = Disassembler || {};
   };
 
   var addInstruction = function(instruction, instructions) {
-    var addRow = function(address, instruction) {
-      $output.append('<tr><td class="address"><pre>' + address +
+    var addRow = function(address, instruction, caption) {
+      $output.append('<tr title="' + caption + '"><td class="address"><pre>' + address +
                      '</pre></td><td class=\"instruction\"><pre>' +
                      instruction + '</pre></td></tr>');
     };
 
     var address = instruction.address === undefined ?
       '' : instruction.addressHex;
+    var caption = instruction.desc === undefined ? '' : instruction.desc;
     var lines = instruction.toString(instructions).split('\n');
 
     if (lines.length > 1) { // Instruction contains label
-      addRow('', lines[0]);
-      addRow(address, lines[1]);
+      addRow('', lines[0], '');
+      addRow(address, lines[1], caption);
     } else {
-      addRow(address, lines[0]);
+      addRow(address, lines[0], caption);
     };
   };
 
