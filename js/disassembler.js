@@ -12,6 +12,8 @@ var Disassembler = Disassembler || {};
       new Array(width - n.length + 1).join(z) + n;
   }
 
+  var programContainsRoutines = false;
+
   // An instruction
   var Instruction = function(instruction, address) {
 
@@ -122,6 +124,7 @@ var Disassembler = Disassembler || {};
 
   var code = $('#code');
   var errors = $('#errors');
+  var warnings = $('#warnings');
   var output = $('#output');
   var assembly = $('#assembly');
 
@@ -139,6 +142,11 @@ var Disassembler = Disassembler || {};
     } catch (err) { // Stop decoding on first error
       addError("<strong>At line " + i + ":</strong> " + err);
     }
+
+    if (programContainsRoutines)
+      addWarning("<strong>No code visualisation</strong> " +
+                 "Sorry, the code visualiser can't handle programs which " +
+                 "contain subroutines.");
 
     return {
       instructions: instructions,
@@ -245,12 +253,20 @@ var Disassembler = Disassembler || {};
     if (_diagram)
       _diagram.clean();
 
-    _diagram = flowchart.parse(instructionsToChart(instructions));
-    _diagram.drawSVG('diagram');
+    if (!programContainsRoutines) { // Only draw the flowchart if we can
+      _diagram = flowchart.parse(instructionsToChart(instructions));
+      _diagram.drawSVG('diagram');
+    }
   };
 
   var addError = function(msg) {
     errors.append("<div class=\"alert alert-error\">" + msg +
+                  "<a class=\"close\" data-dismiss=\"alert\" " +
+                  "href=\"#\">&times;</a></div>");
+  };
+
+  var addWarning = function(msg) {
+    warnings.append("<div class=\"alert alert-warning\">" + msg +
                   "<a class=\"close\" data-dismiss=\"alert\" " +
                   "href=\"#\">&times;</a></div>");
   };
@@ -267,6 +283,7 @@ var Disassembler = Disassembler || {};
   // Update as the user types
   code.bind('input propertychange', function() {
     errors.html('');
+    warnings.html('');
     output.html('');
     assembly.html('');
     _labelCounter = 0;
