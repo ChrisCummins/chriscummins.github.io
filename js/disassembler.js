@@ -48,13 +48,13 @@ var Disassembler = Disassembler || {};
       break;
     case 2:
       this.mnemonic = 'buc';
-      this.instruction = this.mnemonic.toUpperCase() + ' ' + address;
+      this.instruction = this.mnemonic.toUpperCase() + '  ' + address;
       this.desc = 'Jump to ' + address;
       this.next = [jumpAddress];
       break;
     case 3:
       this.mnemonic = 'bic';
-      this.instruction = this.mnemonic.toUpperCase() + ' ' + address;
+      this.instruction = this.mnemonic.toUpperCase() + '  ' + address;
       this.desc = 'Jump to ' + address + ' if condition flag is set';
       this.next.push(jumpAddress);
       break;
@@ -88,9 +88,9 @@ var Disassembler = Disassembler || {};
       string += '        ';
 
       if (this.next[0] !== this.address + 1) // Jump instruction
-        string += this.mnemonic + ' ' + instructions[this.next[0]].getLabel().name;
+        string += this.mnemonic + '  ' + instructions[this.next[0]].getLabel().name;
       else if (this.next[1] !== undefined) // Branch instruction
-        string += this.mnemonic + ' ' + instructions[this.next[1]].getLabel().name;
+        string += this.mnemonic + '  ' + instructions[this.next[1]].getLabel().name;
       else
         string += this.mnemonic;
 
