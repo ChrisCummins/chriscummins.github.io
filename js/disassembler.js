@@ -39,7 +39,7 @@ var Disassembler = Disassembler || {};
       this.comment = comment;
 
     var address = bytes[1] + bytes[2] + bytes[3];
-    var jumpAddress = parseInt(address, 16) - 8;
+    var jumpAddress = parseInt(address, 16) - idtLength;
 
     switch (parseInt(bytes[0], 16)) {
     case 0:
