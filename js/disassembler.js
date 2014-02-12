@@ -15,7 +15,7 @@ var Disassembler = Disassembler || {};
   var programContainsRoutines = false;
 
   // An instruction
-  var Instruction = function(instruction, address) {
+  var Instruction = function(instruction, address, comment) {
 
     if (instruction.length != 8 || !instruction.match(/[0-9a-fA-F]{8}/)) {
       throw "Invalid instruction '" + instruction + "'";
@@ -33,6 +33,9 @@ var Disassembler = Disassembler || {};
     this.binary = instruction;
     this.address = address;
     this.next = [this.address + 1];
+
+    if (comment !== undefined)
+      this.comment = comment;
 
     var address = bytes[1] + bytes[2] + bytes[3];
     var jumpAddress = parseInt(address, 16) - 8;
@@ -123,7 +126,16 @@ var Disassembler = Disassembler || {};
       else
         string += this.mnemonic;
 
+      if (this.comment) // Add inline comment at character 32
+        string = pad(string, 30, ' ', true) + ' ; ' + this.comment;
+
       return string;
+    };
+  };
+
+  var Section = function(name) {
+    this.toString = function() {
+      return 'SECTION .' + name;
     };
   };
 
@@ -155,16 +167,25 @@ var Disassembler = Disassembler || {};
   var output = $('#output');
   var assembly = $('#assembly');
 
+  var idtLength = 8; // Interrupt Descriptor Table length (in words)
+
   // Decode an array of strings, one instruction per string
   var decode = function(text) {
-    var instructions = [], address = 0, string = '';
+
+    var instructions = [], idt = [], address = 0, string = '', lineNo = 0;
 
     try { // Parse instructions
-      for (var i = 0; i < text.length; i++) {
-        string = text[i].trim()
+      for (lineNo = 0; lineNo < text.length; lineNo++) {
+        string = text[lineNo].trim();
 
-        if (string.length)
-          instructions.push(new Instruction(string, address++));
+        if (string.length) {
+          if (lineNo < idtLength) { // Interrupt descriptor
+            idt.push(new Instruction(string, address++,
+                                     'Interrupt handler ' + lineNo));
+          } else { // Instruction
+            instructions.push(new Instruction(string, address++));
+          }
+        }
       }
     } catch (err) { // Stop decoding on first error
       addError("<strong>At line " + i + ":</strong> " + err);
@@ -177,6 +198,7 @@ var Disassembler = Disassembler || {};
 
     return {
       instructions: instructions,
+      idt: idt
     };
   }
 
@@ -232,9 +254,23 @@ var Disassembler = Disassembler || {};
     var prog = [new Comment('Generated assembly, see:'),
                 new Comment('    http://chriscummins.cc/disassembler'),
                 new Comment(''),
-                new BlankLine()], string = '';
+                new BlankLine(),
+                new Section('data'),
+                new BlankLine()];
+    var string = '';
 
-    if (instructions.length)
+    if (idt.length) // Set interrupt table label
+      idt[0].label = new Label('interrupt_vectors');
+
+    idt.forEach(function(e) {
+      prog.push(e);
+    });
+
+    prog.push(new BlankLine());
+    prog.push(new Section('text'));
+    prog.push(new BlankLine());
+
+    if (instructions.length) // Set special "start" label
       instructions[0].label = new Label('start');
 
     instructions.forEach(function(e) {
@@ -263,7 +299,13 @@ var Disassembler = Disassembler || {};
   var show = function(data) {
 
     var instructions = data.instructions;
+    var idt = data.idt;
+
     // Show disassembled table
+    idt.forEach(function(e) {
+      addInstruction(e);
+    });
+
     instructions.forEach(function(e) {
       addInstruction(e);
     });
@@ -271,7 +313,7 @@ var Disassembler = Disassembler || {};
     // Show assembly code
     assembly.html(assemble(data));
 
-    if (instructions.length)
+    if (idt.length || instructions.length)
       $('#code-output').show();
     else
       $('#code-output').hide();
