@@ -141,7 +141,7 @@ var Disassembler = Disassembler || {};
         string += this.mnemonic;
 
       if (this.comment) // Add inline comment at character 32
-        string = pad(string, 30, ' ', true) + ' ; ' + this.comment;
+        string = pad(string, 31, ' ', true) + ' ; ' + this.comment;
 
       return label + string;
     };
