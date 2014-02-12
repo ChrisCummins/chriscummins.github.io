@@ -340,13 +340,17 @@ var Disassembler = Disassembler || {};
     else
       $('#code-output').hide();
 
-    // Draw flowchart
-    if (_diagram)
-      _diagram.clean();
+    if (!programContainsRoutines && instructions.length) { // Only draw the flowchart if we can
+      $('#diagram').show();
 
-    if (!programContainsRoutines) { // Only draw the flowchart if we can
+      if (_diagram)
+        _diagram.clean();
+
+      console.log(instructionsToChart(instructions));
       _diagram = flowchart.parse(instructionsToChart(instructions));
       _diagram.drawSVG('diagram');
+    } else {
+      $('#diagram').hide();
     }
   };
 
