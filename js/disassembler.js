@@ -54,24 +54,24 @@ var Disassembler = Disassembler || {};
       break;
     case 2:
       this.mnemonic = 'buc';
-      this.instruction = this.mnemonic.toUpperCase() + '  ' + address;
+      this.instruction = this.mnemonic.toUpperCase() + '    ' + address;
       this.desc = 'Jump to ' + address;
       this.next = [jumpAddress];
       break;
     case 3:
       this.mnemonic = 'bic';
-      this.instruction = this.mnemonic.toUpperCase() + '  ' + address;
+      this.instruction = this.mnemonic.toUpperCase() + '    ' + address;
       this.desc = 'Jump to ' + address + ' if condition flag is set';
       this.next.push(jumpAddress);
       break;
     case 4:
-      this.mnemonic = 'seto 0x' + bytes[1] + ', 0x' +
+      this.mnemonic = 'seto   0x' + bytes[1] + ', 0x' +
         bytes[2] + ', 0x' + bytes[3];
       this.instruction = 'SETO ' + bytes[1] + bytes[2] + bytes[3];
       this.desc = 'Set outputs ' + bytes[1] + ' AND ' + bytes[2] + ' XOR ' + bytes[3];
       break;
     case 5:
-      this.mnemonic = 'tsti 0x' + bytes[1] + ', 0x' +
+      this.mnemonic = 'tsti   0x' + bytes[1] + ', 0x' +
         bytes[2] + ', 0x' + bytes[3];
       this.instruction = 'TSTI ' + bytes[1] + bytes[2] + bytes[3];
       this.desc = 'Test input port ' + parseInt(bytes[1], 16) + ' AND ' +
@@ -126,7 +126,7 @@ var Disassembler = Disassembler || {};
       var string = '        ';
 
       if (this.next[0] !== this.address + 1) {
-        string += this.mnemonic + '  ';
+        string += this.mnemonic + '    ';
 
         if (this.address < idtLength) // Interrupt handler
           string += instructions[this.next[0]].getLabel('interrupt').name;
@@ -136,7 +136,7 @@ var Disassembler = Disassembler || {};
           string += instructions[this.next[0]].getLabel().name;
 
       } else if (this.next[1] !== undefined) // Branch instruction
-        string += this.mnemonic + '  ' + instructions[this.next[1]].getLabel().name;
+        string += this.mnemonic + '    ' + instructions[this.next[1]].getLabel().name;
       else
         string += this.mnemonic;
 
