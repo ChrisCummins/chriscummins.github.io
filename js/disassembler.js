@@ -288,19 +288,21 @@ var Disassembler = Disassembler || {};
     var prog = [new Comment('Generated assembly, see:'),
                 new Comment('    http://chriscummins.cc/disassembler'),
                 new Comment(''),
-                new BlankLine(),
-                new Section('data'),
                 new BlankLine()];
     var string = '';
 
-    if (idt.length) // Set interrupt table label
+    if (idt.length) { // Show interrupt table label
+      prog.push(new Section('data'));
+      prog.push(new BlankLine());
+
       idt[0].label = new Label('interrupt_vectors');
+      idt.forEach(function(e) {
+        prog.push(e);
+      });
 
-    idt.forEach(function(e) {
-      prog.push(e);
-    });
+      prog.push(new BlankLine());
+    }
 
-    prog.push(new BlankLine());
     prog.push(new Section('text'));
     prog.push(new BlankLine());
 
