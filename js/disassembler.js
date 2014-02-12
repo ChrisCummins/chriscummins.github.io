@@ -405,10 +405,8 @@ var Disassembler = Disassembler || {};
     refresh();
   });
 
-  $('.switch').attr('data-original-title', 'Interrupt Table').tooltip('fixTitle');
-
-  $('#idt-enable-switch').click(function() {
-    idtLength = $('#idt-enable')[0].checked ? 8 : 0;
+  $('#idt-enable').change(function() {
+    idtLength = parseInt($('#idt-enable option:selected').val());
     refresh();
   });
 
