@@ -149,7 +149,7 @@ var Disassembler = Disassembler || {};
 
   var Section = function(name) {
     this.toString = function() {
-      return 'SECTION .' + name;
+      return '.' + name;
     };
   };
 
@@ -292,8 +292,10 @@ var Disassembler = Disassembler || {};
                 new BlankLine()];
     var string = '';
 
+    prog.push(new Section('cseg'));
+    prog.push(new Section('org 0x0000'));
+
     if (idt.length) { // Show interrupt table label
-      prog.push(new Section('data'));
       prog.push(new BlankLine());
 
       idt[0].label = new Label('interrupt_vectors');
@@ -302,13 +304,13 @@ var Disassembler = Disassembler || {};
       });
 
       prog.push(new BlankLine());
+      prog.push(new Section('org 0x0008'));
     }
 
-    prog.push(new Section('text'));
     prog.push(new BlankLine());
 
     if (instructions.length) // Set special "start" label
-      instructions[0].label = new Label('start');
+      instructions[0].label = new Label('_main');
 
     instructions.forEach(function(e) {
       prog.push(e);
