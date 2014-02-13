@@ -134,7 +134,7 @@ var Disassembler = Disassembler || {};
 
         if (this.address < idtLength) // Interrupt vector
           string += instructions[this.next[0]].getLabel('interrupt').name;
-        else if ('<span class="mnemonic">' + this.mnemonic + '</span>' == 'bsr')
+        else if (this.mnemonic == 'bsr')
           string += instructions[this.next[0]].getLabel('routine').name;
         else // Jump instruction
           string += instructions[this.next[0]].getLabel().name;
