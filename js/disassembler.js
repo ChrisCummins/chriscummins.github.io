@@ -7,9 +7,12 @@ var Disassembler = Disassembler || {};
   function pad(n, width, z, tail) {
     z = z || '0';
     n = n + '';
-    return n.length >= width ? n : tail ?
-      n + new Array(width - n.length + 1).join(z) :
-      new Array(width - n.length + 1).join(z) + n;
+    // Pop out any html tags when calculating length
+    var length = n.replace(/<\/?[a-zA-Z ="]+>/g, '').length;
+
+    return length >= width ? n : tail ?
+      n + new Array(width - length + 1).join(z) :
+      new Array(width - length + 1).join(z) + n;
   }
 
   var programContainsRoutines = false;
@@ -126,22 +129,32 @@ var Disassembler = Disassembler || {};
       var string = '        ';
 
       if (this.next[0] !== this.address + 1) {
-        string += this.mnemonic + '    ';
+        string += '<span class="mnemonic">' + this.mnemonic +
+          '</span>' + '    ';
 
         if (this.address < idtLength) // Interrupt vector
           string += instructions[this.next[0]].getLabel('interrupt').name;
-        else if (this.mnemonic == 'bsr')
+        else if ('<span class="mnemonic">' + this.mnemonic + '</span>' == 'bsr')
           string += instructions[this.next[0]].getLabel('routine').name;
         else // Jump instruction
           string += instructions[this.next[0]].getLabel().name;
 
-      } else if (this.next[1] !== undefined) // Branch instruction
-        string += this.mnemonic + '    ' + instructions[this.next[1]].getLabel().name;
-      else
-        string += this.mnemonic;
+      } else if (this.next[1] !== undefined) { // Branch instruction
+        string += '<span class="mnemonic">' + this.mnemonic + '</span>' +
+          '    ' + instructions[this.next[1]].getLabel().name;
+      } else {
+        var components = this.mnemonic.replace(/,/g, '').replace(/ +/g, ' ').split(' ');
 
-      if (this.comment) // Add inline comment at character 32
-        string = pad(string, 39, ' ', true) + ' ; ' + this.comment;
+        string += '<span class="mnemonic">' + components[0] +
+          '</span>   <span class="value">' +
+          components.slice(1).join('</span>, <span class="value">')
+          + '</span>';
+      }
+
+      if (this.comment) {// Add inline comment at character 32
+        string = pad(string, 39, ' ', true) +
+          ' <span class="comment">; ' + this.comment + '</span>';
+      }
 
       return label + string;
     };
@@ -149,19 +162,19 @@ var Disassembler = Disassembler || {};
 
   var Directive = function(name) {
     this.toString = function() {
-      return '.' + name;
+      return '<span class="directive">.' + name + '</span>';
     };
   };
 
   var Comment = function(text) {
     this.toString = function() {
-      return ';; ' + text;
+      return '<span class="comment">;; ' + text + '</span>';
     };
   };
 
   var BlankLine = function() {
     this.toString = function() {
-      return '  ';
+      return ' ';
     };
   };
 
@@ -173,7 +186,7 @@ var Disassembler = Disassembler || {};
     this.name = name ? name : 'label' + _labelCounter++;
 
     this.toString = function() {
-      return this.name + ':';
+      return '<span class="asm-label">' + this.name + '</span>:';
     };
   };
 
@@ -181,7 +194,7 @@ var Disassembler = Disassembler || {};
     this.name = name ? name : 'subroutine' + _routineCounter++;
 
     this.toString = function() {
-      return this.name + ':';
+      return '<span class="asm-label">' + this.name + '</span>:';
     };
   };
 
@@ -189,7 +202,7 @@ var Disassembler = Disassembler || {};
     this.name = name ? name : 'irq' + _vectorCounter++;
 
     this.toString = function() {
-      return this.name + ':';
+      return '<span class="asm-label">' + this.name + '</span>:';
     };
   };
 
