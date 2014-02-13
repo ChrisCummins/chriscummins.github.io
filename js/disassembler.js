@@ -194,7 +194,7 @@ var Disassembler = Disassembler || {};
     this.name = name ? name : 'subroutine' + _routineCounter++;
 
     this.toString = function() {
-      return '<span class="asm-label">' + this.name + '</span>:';
+      return ' \n<span class="asm-label">' + this.name + '</span>:';
     };
   };
 
@@ -202,7 +202,7 @@ var Disassembler = Disassembler || {};
     this.name = name ? name : 'irq' + _vectorCounter++;
 
     this.toString = function() {
-      return '<span class="asm-label">' + this.name + '</span>:';
+      return ' \n<span class="asm-label">' + this.name + '</span>:';
     };
   };
 
@@ -391,10 +391,42 @@ var Disassembler = Disassembler || {};
   };
 
   var addInstruction = function(instruction, instructions) {
-    var addRow = function(address, instruction, caption) {
-      $output.append('<tr title="' + caption + '"><td class="address"><pre>' + address +
-                     '</pre></td><td class=\"instruction\"><pre>' +
-                     instruction + '</pre></td></tr>');
+
+    var addRow = function(address, instruction, caption, id, target) {
+      var html = '<tr';
+
+      if (caption && caption !== '')
+        html += ' title="' + caption + '"';
+
+      if (id && id !== '')
+        html += ' id="' + id + '"';
+
+      if (target && target !== '')
+        html += ' data-target="' + target + '"';
+
+      html += '><td class="address"><pre>';
+
+      if (address && address !== '')
+        html += address;
+
+      html += '</pre></td><td class="instruction"><pre>' +
+        instruction + '</pre></td></tr>';
+
+      $output.append(html);
+    };
+
+    var addInstructionRow = function(address, text, caption,
+                                     instruction, instructions) {
+      if (!instruction.next) // Non-instructions: comments, directives etc.
+        addRow(address, text, caption);
+      if (instruction.next[0] !== instruction.address + 1) // Jump instructions
+        addRow(address, text, caption, '',
+               instructions[instruction.next[0]].addressHex);
+      else if (Number(instruction.next[1])) // Branch instructions
+        addRow(address, text, caption, '',
+               instructions[instruction.next[1]].addressHex);
+      else // Standard instruction
+        addRow(address, text, caption);
     };
 
     var address = instruction.address === undefined ?
@@ -403,11 +435,13 @@ var Disassembler = Disassembler || {};
     var lines = instruction.toString(instructions).split('\n');
 
     if (lines.length > 1) { // Instruction contains label
-      addRow('', lines[0], '');
-      addRow(address, lines[1], caption);
+      for (var i = 0; i < lines.length - 2; i++)
+        addRow('', lines[i]);
+      addRow('', lines[lines.length - 2], '', instruction.addressHex);
+      addInstructionRow(address, lines[lines.length - 1], caption, instruction, instructions);
     } else {
-      addRow(address, lines[0], caption);
-    };
+      addInstructionRow(address, lines[0], caption, instruction, instructions);
+    }
   };
 
   var refresh = function() { // Refresh display
@@ -420,6 +454,16 @@ var Disassembler = Disassembler || {};
     programContainsRoutines = false;
 
     show(decode($code.val().split("\n")));
+
+    $('#output tr').click(function() {
+      var target = $(this).attr('data-target');
+
+      if (target) {
+        $('tr').removeClass('highlight');
+        $('#' + target).addClass('highlight');
+        window.location.hash = target;
+      }
+    });
   };
 
   // Update as the user types
