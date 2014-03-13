@@ -18,10 +18,12 @@ var Disassembler = Disassembler || {};
   // An instruction
   var Instruction = function(instruction, address, comment) {
 
+    // Sanity check for correct instruction length
     if (instruction.length != 8 || !instruction.match(/[0-9a-fA-F]{8}/)) {
       throw "Invalid instruction '" + instruction + "'";
     }
 
+    // Convenience variables
     var bytes = function(number) {
       var p = [];
 
@@ -30,18 +32,29 @@ var Disassembler = Disassembler || {};
 
       return p;
     }(instruction);
+    var address = bytes[1] + bytes[2] + bytes[3];
+    var jumpAddress = parseInt(address, 16) - idtLength;
+    var regA = hex2RegName(bytes[1]);
+    var regB = hex2RegName(bytes[2]);
+    var regC = hex2RegName(bytes[3]);
+    var intByte0 = parseInt(bytes[0], 16);
+    var intByte1 = parseInt(bytes[1], 16);
+    var intByte2 = parseInt(bytes[2], 16);
+    var intByte3 = parseInt(bytes[2], 16);
+    var value = bytes[2] + bytes[3];
+    var paddedAddress = '00' + value;
 
-    this.binary = instruction;
     this.address = address;
     this.addressHex = pad(address.toString(16), 8).toUpperCase();
     this.next = [this.address + 1];
 
+    // Convert a hex encoded byte to a register name
     var hex2RegName = function(hex) {
       var id = parseInt(hex, 16)
 
       switch (id) {
       case 0:
-        return 'null';
+        return 'NULL';
       case 1:
         return 'SP';
       case 2:
@@ -51,18 +64,8 @@ var Disassembler = Disassembler || {};
       }
     };
 
-    var address = bytes[1] + bytes[2] + bytes[3];
-    var jumpAddress = parseInt(address, 16) - idtLength;
-    var regA = hex2RegName(bytes[1]);
-    var regB = hex2RegName(bytes[2]);
-    var regC = hex2RegName(bytes[3]);
-    var intByte1 = parseInt(bytes[1], 16);
-    var intByte2 = parseInt(bytes[2], 16);
-    var intByte3 = parseInt(bytes[2], 16);
-    var value = bytes[2] + bytes[3];
-    var paddedAddress = '00' + value;
-
-    switch (parseInt(bytes[0], 16)) {
+    // Decode instruction opcode
+    switch (intByte0) {
     case 0:
       this.mnemonic = 'nop';
       break;
@@ -202,6 +205,7 @@ var Disassembler = Disassembler || {};
       throw "Invalid opcode 0x'" + bytes[0] + "'";
     };
 
+    // Set the inline instruction comment
     if (comment !== undefined)
       this.comment = comment;
     else if (this.desc !== undefined)
@@ -209,6 +213,7 @@ var Disassembler = Disassembler || {};
     else
       this.comment = '';
 
+    // Return a label for the given address
     this.getLabel = function(type) {
       if (this.label === undefined) {
         if (type == 'routine')
@@ -222,6 +227,7 @@ var Disassembler = Disassembler || {};
       return this.label;
     };
 
+    // Return a string representation of an instruction
     this.toString = function(instructions) {
       var label = this.label ? this.getLabel().toString() + '\n' : '';
       var string = '        ';
