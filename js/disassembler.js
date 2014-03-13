@@ -23,31 +23,6 @@ var Disassembler = Disassembler || {};
       throw "Invalid instruction '" + instruction + "'";
     }
 
-    // Convenience variables
-    var bytes = function(number) {
-      var p = [];
-
-      for (var i = Math.floor(number.length / 2); i-->0;)
-        p[i] = number.slice(i * 2, (i + 1) * 2);
-
-      return p;
-    }(instruction);
-    var address = bytes[1] + bytes[2] + bytes[3];
-    var jumpAddress = parseInt(address, 16) - idtLength;
-    var regA = hex2RegName(bytes[1]);
-    var regB = hex2RegName(bytes[2]);
-    var regC = hex2RegName(bytes[3]);
-    var intByte0 = parseInt(bytes[0], 16);
-    var intByte1 = parseInt(bytes[1], 16);
-    var intByte2 = parseInt(bytes[2], 16);
-    var intByte3 = parseInt(bytes[2], 16);
-    var value = bytes[2] + bytes[3];
-    var paddedAddress = '00' + value;
-
-    this.address = address;
-    this.addressHex = pad(address.toString(16), 8).toUpperCase();
-    this.next = [this.address + 1];
-
     // Convert a hex encoded byte to a register name
     var hex2RegName = function(hex) {
       var id = parseInt(hex, 16)
@@ -64,119 +39,143 @@ var Disassembler = Disassembler || {};
       }
     };
 
+    // Convenience variables
+    var bytes = function(number) {
+      var p = [];
+
+      for (var i = Math.floor(number.length / 2); i-->0;)
+        p[i] = number.slice(i * 2, (i + 1) * 2);
+
+      return p;
+    }(instruction);
+
+    this.address = address;
+    this.addressHex = pad(address.toString(16), 8).toUpperCase();
+
+    var opAddress = bytes[1] + bytes[2] + bytes[3];
+    var jumpAddress = parseInt(opAddress, 16) - idtLength;
+    var regA = hex2RegName(bytes[1]);
+    var regB = hex2RegName(bytes[2]);
+    var regC = hex2RegName(bytes[3]);
+    var intByte0 = parseInt(bytes[0], 16);
+    var intByte1 = parseInt(bytes[1], 16);
+    var intByte2 = parseInt(bytes[2], 16);
+    var intByte3 = parseInt(bytes[2], 16);
+    var value = bytes[2] + bytes[3];
+    var paddedAddress = '00' + value;
+
     // Decode instruction opcode
     switch (intByte0) {
     case 0:
-      this.mnemonic = 'nop';
+      this.ops = ['nop'];
       break;
     case 1:
-      this.mnemonic = 'halt';
+      this.ops = ['halt'];
       break;
     case 2:
-      this.mnemonic = 'jmp';
-      this.desc = 'Jump to 0x' + address;
-      this.next = [jumpAddress];
+      this.ops = ['jmp', '0x' + opAddress];
+      this.desc = 'Jump to 0x' + opAddress;
+      this.jump = jumpAddress;
       break;
     case 3:
-      this.mnemonic = 'brts';
-      this.desc = 'Branch to 0x' + address + ' if T flag set';
-      this.next.push(jumpAddress);
+      this.ops = ['brts', '0x' + opAddress];
+      this.desc = 'Branch to 0x' + opAddress + ' if SR[T] set';
+      this.jump = jumpAddress;
       break;
     case 4:
-      this.mnemonic = 'seto   0x' + bytes[1] + ', 0x' +
-        bytes[2] + ', 0x' + bytes[3];
-      this.desc = 'port[' + intByte1 + '] &= 0x' + bytes[2] + ' ^ 0x' + bytes[3];
+      this.ops = ['seto', '0x' + bytes[1], '0x' + bytes[2], '0x' + bytes[3]];
+      this.desc = 'OUT[' + intByte1 + '] = (OUT[' + intByte1 + '] & 0x' +
+        bytes[2] + ') ^ 0x' + bytes[3];
       break;
     case 5:
-      this.mnemonic = 'tsti   0x' + bytes[1] + ', 0x' +
-        bytes[2] + ', 0x' + bytes[3];
-      this.desc = 'TST = port[' + intByte1 + '] & 0x' + bytes[2] + ' ^ 0x' + bytes[3];
+      this.ops = ['tsti', '0x' + bytes[1], '0x' + bytes[2], '0x' + bytes[3]];
+      this.desc = 'SR[T] = (OUT[' + intByte1 + '] & 0x' + bytes[2] + ') ^ 0x' + bytes[3];
       break;
     case 6:
-      this.mnemonic = 'call';
-      this.desc = 'Call 0x' + address;
-      this.next = [jumpAddress];
+      this.ops = ['call'];
+      this.desc = 'Call 0x' + opAddress;
+      this.jump = jumpAddress;
       break;
     case 7:
-      this.mnemonic = 'ret';
+      this.ops = ['ret'];
       break;
     case 8:
-      this.mnemonic = 'reti';
+      this.ops = ['reti'];
       break;
     case 9:
-      this.mnemonic = 'sei';
+      this.ops = ['sei'];
       this.desc = 'Global interrupt enable';
       break;
     case 10:
-      this.mnemonic = 'cli';
+      this.ops = ['cli'];
       this.desc = 'Global interrupt disable';
       break;
     case 11:
-      this.mnemonic = 'mtr ' + regA + ' 0x' + paddedAddress;
+      this.ops = ['mtr', regA, '0x' + paddedAddress];
       this.desc = regA + ' = RAM[0x' + paddedAddress + ']';
       break;
     case 12:
-      this.mnemonic = 'rtm ' + regA + ' 0x' + paddedAddress;
+      this.ops = ['rtm', regA, '0x' + paddedAddress];
       this.desc = 'RAM[0x' + paddedAddress + '] = ' + regA;
       break;
     case 13:
-      this.mnemonic = 'imtr ' + regA + ', ' + regB + ', ' + regC;
+      this.ops = ['imtr', regA, regB, regC];
       this.desc = regA + ' = RAM[' + regB + ' + ' + regC + ']';
       break
     case 14:
-      this.mnemonic = 'rtim ' + regA + ', ' + regB + ', ' + regC;
+      this.ops = ['rtim', regA, regB, regC];
       this.desc = 'RAM[' + regB + ' + '+ regC + '] = ' + regA;
       break;
     case 15:
-      this.mnemonic = 'pshr ' + regA;
+      this.ops = ['pshr', regA];
       this.desc = 'Push register ' + regA + ' to stack';
       break;
     case 16:
-      this.mnemonic = 'popr ' + regA;
+      this.ops = ['popr', regA];
       this.desc = 'Pop stack to register ' + regA;
       break;
     case 17:
-      this.mnemonic = 'rtio 0x' + bytes[1] + ', ' + regA;
-      this.desc = 'Register ' + regA + ' to IO port 0x' + bytes[1];
+      this.ops = ['rtio', '0x' + bytes[1], regB];
+      this.desc = 'OUT[' + intByte1 + '] = ' + regB;
       break;
     case 18:
-      this.mnemonic = 'iotr ' + regA + ', 0x' + bytes[2];
-      this.desc = 'IO port 0x' + bytes[1] + ' to register ' + regA;
+      this.ops = ['iotr', regA, '0x' + bytes[2]];
+      this.desc = regA + ' = OUT[' + intByte2 + ']';
       break;
     case 19:
-      this.mnemonic = 'ldl ' + regA + ', 0x' + value;
+      this.ops = ['ldl', regA, '0x' + value];
       this.desc = regA + '(15 downto 0) = 0x' + value;
       break;
     case 20:
-      this.mnemonic = 'ldu ' + regA + ', 0x' + value;
+      this.ops = ['ldu', regA, '0x' + value];
       this.desc = regB + '(31 downto 16) = 0x' + value;
       break;
     case 21:
-      this.mnemonic = 'andr ' + regA + ', ' + regB + ', ' + regC;
-      this.desc = 'Set ' + regA + ' to ' + regB + ' & ' + regC;
+      this.ops = ['andr', regA, regB, regC];
+      this.desc = regA + ' = ' + regB + ' & ' + regC;
       break;
     case 22:
-      this.mnemonic = 'orr ' + regA + ', ' + regB + ', ' + regC;
-      this.desc = 'Set ' + regA + ' to ' + regB + ' | ' + regC;
+      this.ops = ['orr', regA, regB, regC];
+      this.desc = regA + ' = ' + regB + ' | ' + regC;
       break;
     case 23:
-      this.mnemonic = 'xorr ' + regA + ', ' + regB + ', ' + regC;
-      this.desc = 'Set ' + regA + ' to ' + regB + ' ^ ' + regC;
+      this.ops = ['xorr', regA, regB, regC];
+      this.desc = regA + ' = ' + regB + ' ^ ' + regC;
       break;
     case 24:
-      this.mnemonic = 'srlr ' + regA + ', ' + regB + ', ' + regC;
+      this.ops = ['srlr', regA, regB, regC];
       this.desc = regA + ' = ' + regB + ' >> ' + regC;
       break;
     case 25:
-      this.mnemonic = 'sllr ' + regA + ', ' + regB + ', ' + regC;
+      this.ops = ['sllr', regA, regB, regC];
       this.desc = regA + ' = ' + regB + ' << ' + regC;
       break;
     case 26:
-      this.mnemonic = 'cmpu ' + regA + ', ' + regB + ', ' + regC;
+      this.ops = ['cmpu', regA, regB, regC];
       this.desc = '' // TODO:
       break;
     case 27:
-      this.mnemonic = 'cmps ' + regA + ', ' + regB + ', ' + regC;
+      this.ops = ['cmps', regA, regB, regC];
       this.desc = '' // TODO:
       break;
     case 32:
@@ -187,7 +186,7 @@ var Disassembler = Disassembler || {};
     case 37:
     case 38:
     case 39:
-      this.mnemonic = 'aluu ' + regA + ', ' + regB + ', ' + regC;
+      this.ops = ['aluu', regA, regB, regC];
       this.desc = '' // TODO:
       break;
     case 40:
@@ -198,7 +197,7 @@ var Disassembler = Disassembler || {};
     case 45:
     case 46:
     case 47:
-      this.mnemonic = 'alus ' + regA + ', ' + regB + ', ' + regC;
+      this.ops = ['alus', regA, regB, regC];
       this.desc = '' // TODO:
       break;
     default:
@@ -232,26 +231,25 @@ var Disassembler = Disassembler || {};
       var label = this.label ? this.getLabel().toString() + '\n' : '';
       var string = '        ';
 
-      if (this.next[0] !== this.address + 1) {
-        string += '<span class="mnemonic">' + this.mnemonic +
-          '</span>' + '\t';
+      if (this.jump) {
+        string += '<span class="mnemonic">' + this.ops[0] + '\t';
 
         if (this.address < idtLength) // Interrupt vector
-          string += instructions[this.next[0]].getLabel('interrupt').name;
-        else if (this.mnemonic == 'call')
-          string += instructions[this.next[0]].getLabel('routine').name;
+          string += instructions[this.jump].getLabel('interrupt').name;
+        else if (this.ops[0] == 'call')
+          string += instructions[this.jump].getLabel('routine').name;
         else // Jump instruction
-          string += instructions[this.next[0]].getLabel().name;
+          string += instructions[this.jump].getLabel().name;
 
-      } else if (this.next[1] !== undefined) { // Branch instruction
-        string += '<span class="mnemonic">' + this.mnemonic + '</span>' +
-          '\t' + instructions[this.next[1]].getLabel().name;
+        string += '</span>';
+
+      } else if (this.jump) { // Jump or branch instruction
+        string += '<span class="mnemonic">' + this.ops[0] + '</span>' +
+          '\t' + instructions[this.jump].getLabel().name;
       } else {
-        var components = this.mnemonic.replace(/,/g, '').replace(/ +/g, ' ').split(' ');
-
-        string += '<span class="mnemonic">' + components[0] +
+        string += '<span class="mnemonic">' + this.ops[0] +
           '</span>\t<span class="value">' +
-          components.slice(1).join('</span>, <span class="value">')
+          this.ops.slice(1).join('</span>, <span class="value">')
           + '</span>';
       }
 
@@ -357,7 +355,7 @@ var Disassembler = Disassembler || {};
     var string = '', currentAddress = 0;
 
     var paddedAddress = function(address) {
-      return pad(address.toString(16), 8);
+      return pad(address.toString(16).toUpperCase(), 8);
     };
 
     prog.push(new Directive('cseg'));
@@ -399,18 +397,20 @@ var Disassembler = Disassembler || {};
     prog.push(new Comment('End of program code'))
 
     // Display table
-    currentAddress = 0;
+    currentAddress = -1;
     prog.forEach(function(e) {
       // Skip NOP rows
-      if (e.mnemonic !== 'nop') {
+      if (!e.ops || e.ops[0] !== 'nop') {
 
         // Increment address for proper instructions
-        if (e.next)
+        if (e.ops)
           currentAddress++;
 
         // Insert org directives to show jumps in memory
-        if (e.mnemonic && e.address !== currentAddress) {
+        if (e.address && e.address !== currentAddress) {
+          console.log(currentAddress, e.address);
           currentAddress = e.address;
+
           addInstruction(new BlankLine(), instructions);
           addInstruction(new Directive('org 0x' + paddedAddress(currentAddress)),
                          instructions);
@@ -477,14 +477,11 @@ var Disassembler = Disassembler || {};
 
     var addInstructionRow = function(address, text, caption,
                                      instruction, instructions) {
-      if (!instruction.next) // Non-instructions: comments, directives etc.
+      if (!instruction.ops) // Non-instructions: comments, directives etc.
         addRow(address, instruction.comment, text, caption);
-      else if (instruction.next[0] !== instruction.address + 1) // Jump instructions
+      else if (instruction.jump) // Jump & branch instructions
         addRow(address, instruction.comment, text, caption, '',
-               instructions[instruction.next[0]].addressHex);
-      else if (Number(instruction.next[1])) // Branch instructions
-        addRow(address, instruction.comment, text, caption, '',
-               instructions[instruction.next[1]].addressHex);
+               instructions[instruction.jump].addressHex);
       else // Standard instruction
         addRow(address, instruction.comment, text, caption);
     };
