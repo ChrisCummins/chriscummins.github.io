@@ -62,7 +62,7 @@ var Disassembler = Disassembler || {};
     var intByte2 = parseInt(bytes[2], 16);
     var intByte3 = parseInt(bytes[2], 16);
     var value = bytes[2] + bytes[3];
-    var paddedAddress = '00' + value;
+    var paddedAddress = '0000' + value;
 
     // Decode instruction opcode
     switch (intByte0) {
