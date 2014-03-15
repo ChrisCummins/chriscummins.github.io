@@ -81,28 +81,14 @@ title: uC Disassembler
       </div>
 
       <div class="row-fluid">
-        <div class="span8">
-          <p>
-            Instruction set:
-            <code>IUC</code>,
-            <code>HUC</code>,
-            <code>BUC</code>,
-            <code>BIC</code>,
-            <code>SETO</code>,
-            <code>TSTI</code>,
-            <code>BSR</code>,
-            <code>RSR</code>.
-          </p>
-        </div>
-
-        <div class="span4">
-          <select id="idt-enable" class="pull-right"
-                  title="Set the start address of the program instructions, offsetting interrupt vector table.">
+        <center>
+          <select id="idt-enable" title="Set the start address of the program instructions.">
             <option value="8">Program start: 0x08</option>
             <option value="0">Program start: 0x00</option>
           </select>
-        </div>
+        </center>
       </div>
+
       <div class="row-fluid">
         <div class="span12">
           <textarea id="code" class="spanFull"
@@ -136,4 +122,115 @@ title: uC Disassembler
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script>
 <script src="/js/flowchart-1.2.7.min.js"></script>
-<script src="/js/disassembler.js"></script>
+<script src="/js/ee4dsa-util.js"></script>
+<script src="/js/ee4dsa-asm.js"></script>
+<script src="/js/ee4dsa-disassembler.js"></script>
+
+<script>
+  // HTML elements
+  var $code = $('#code');
+  var $errors = $('#errors');
+  var $output = $('#output');
+
+  // Internal state
+  var idtSize = 8;
+
+  // Add a new visible error
+  var addError = function(msg) {
+    $errors.append("<div class=\"alert alert-error\">" + msg +
+                   "<a class=\"close\" data-dismiss=\"alert\" " +
+                   "href=\"#\">&times;</a></div>");
+  };
+
+  var addInstruction = function(instruction, instructions) {
+
+    var addRow = function(address, comment, instruction, id, target) {
+      var html = '<tr';
+      if (id && id !== '')
+        html += ' id="' + id + '"';
+      if (target && target !== '')
+        html += ' data-target="' + target + '"';
+      html += '><td class="address"><pre>';
+      if (address)
+        html += address;
+      html += '</pre></td><td class="instruction"><pre>' +
+        instruction + '</pre></td><td class="comment">';
+      if (comment)
+        html += '<pre><span class="comment">; ' + comment + '</span></pre>';
+      html += '</td></tr>';
+
+      $output.append(html);
+    };
+
+    var addInstructionRow = function(address, text, instruction, instructions) {
+      if (!instruction.ops) // Non-instructions: comments, directives etc.
+        addRow(address, instruction.comment, text);
+      else if (instruction.jump) // Jump & branch instructions
+        addRow(address, instruction.comment, text, '',
+               instructions[instruction.jump].addressHex32);
+      else // Standard instruction
+        addRow(address, instruction.comment, text);
+    };
+
+    var lines = instruction.html(instructions).split('\n');
+
+    if (lines.length > 1) { // Instruction contains label
+      for (var i = 0; i < lines.length - 2; i++)
+        addRow('', '', lines[i]);
+      addRow('', '', lines[lines.length - 2], instruction.addressHex32);
+      addInstructionRow(instruction.addressHex32, lines[lines.length - 1],
+                        instruction, instructions);
+    } else {
+      addInstructionRow(instruction.addressHex32, lines[0],
+                        instruction, instructions);
+    }
+  };
+
+  // Display an array of instructions
+  var show = function() {
+    try {
+      var data = words2sections($code.val().split("\n"), idtSize);
+
+      sections2prog(data).forEach(function(e) {
+        addInstruction(e, data.instructions);
+      });
+
+      if (data.idt.length || data.instructions.length)
+        $('#code-output').show();
+      else
+        $('#code-output').hide();
+
+    } catch (err)    {
+      addError(err);
+    }
+  };
+
+  var refresh = function() { // Refresh display
+    $errors.html('');
+    $output.html('');
+    resetLabelCounters();
+
+    show();
+
+    // Jump instruction listeners
+    $('#output tr').click(function() {
+      var target = $(this).attr('data-target');
+
+      if (target) {
+        $('tr').removeClass('highlight');
+        $('#' + target).addClass('highlight');
+        window.location.hash = target;
+      }
+    });
+  };
+
+  // Update as the user types
+  $code.bind('input propertychange', function() {
+    refresh();
+  });
+
+  $('#idt-enable').change(function() {
+    idtSize = parseInt($('#idt-enable option:selected').val());
+    refresh();
+  });
+</script>
