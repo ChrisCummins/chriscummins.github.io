@@ -15,12 +15,18 @@ var Disassembler = Disassembler || {};
       new Array(width - length + 1).join(z) + n;
   }
 
-  // An instruction
-  var Instruction = function(instruction, address, comment) {
+  /*
+   * An instruction. Accepts three arguments:
+   *    word:    The word value of the instruction, encoded as an 4 byte
+   *             hexadecimal value.
+   *    address: The address of the instruction.
+   *    comment: (optional) A special comment for the instruction.
+   */
+  var Instruction = function(word, address, comment) {
 
-    // Sanity check for correct instruction length
-    if (instruction.length != 8 || !instruction.match(/[0-9a-fA-F]{8}/)) {
-      throw "Invalid instruction '" + instruction + "'";
+    // Sanity check for correct word length
+    if (word.length != 8 || !word.match(/[0-9a-fA-F]{8}/)) {
+      throw "Invalid instruction '" + word + "'";
     }
 
     // Convert a hex encoded byte to a register name
@@ -39,7 +45,7 @@ var Disassembler = Disassembler || {};
       }
     };
 
-    // Convenience variables
+    // The raw bytes of the word
     var bytes = function(number) {
       var p = [];
 
@@ -47,13 +53,12 @@ var Disassembler = Disassembler || {};
         p[i] = number.slice(i * 2, (i + 1) * 2);
 
       return p;
-    }(instruction);
+    }(word);
 
     this.address = address;
     this.addressHex = pad(address.toString(16), 8).toUpperCase();
 
-    var opAddress = bytes[1] + bytes[2] + bytes[3];
-    var jumpAddress = parseInt(opAddress, 16) - idtLength;
+    // Convenience variables.
     var regA = hex2RegName(bytes[1]);
     var regB = hex2RegName(bytes[2]);
     var regC = hex2RegName(bytes[3]);
@@ -61,6 +66,8 @@ var Disassembler = Disassembler || {};
     var intByte1 = parseInt(bytes[1], 16);
     var intByte2 = parseInt(bytes[2], 16);
     var intByte3 = parseInt(bytes[2], 16);
+    var opAddress = bytes[1] + bytes[2] + bytes[3];
+    var jumpAddress = parseInt(opAddress, 16) - idtLength;
     var value = bytes[2] + bytes[3];
     var paddedAddress = '0000' + value;
 
@@ -226,7 +233,7 @@ var Disassembler = Disassembler || {};
       return this.label;
     };
 
-    // Return a string representation of an instruction
+    // Return a HTML encoded string representation of an instruction
     this.toString = function(instructions) {
       var label = this.label ? this.getLabel().toString() + '\n' : '';
       var string = '        ';
@@ -257,6 +264,7 @@ var Disassembler = Disassembler || {};
     };
   };
 
+  // A program directive
   var Directive = function(name) {
     this.comment = '';
     this.toString = function() {
@@ -264,6 +272,7 @@ var Disassembler = Disassembler || {};
     };
   };
 
+  // A full-line comment
   var Comment = function(text) {
     this.comment = '';
     this.toString = function() {
@@ -271,6 +280,7 @@ var Disassembler = Disassembler || {};
     };
   };
 
+  // An empty line
   var BlankLine = function() {
     this.comment = '';
     this.toString = function() {
@@ -282,6 +292,7 @@ var Disassembler = Disassembler || {};
   var _routineCounter = 0; // Used for automatic interrupt label naming
   var _vectorCounter = 0; // Used for automatic interrupt label naming
 
+  // A section label
   var Label = function(name) {
     this.name = name ? name : 'label' + _labelCounter++;
 
@@ -290,6 +301,7 @@ var Disassembler = Disassembler || {};
     };
   };
 
+  // An assembly routine label
   var RoutineLabel = function(name) {
     this.name = name ? name : 'subroutine' + _routineCounter++;
 
@@ -298,6 +310,7 @@ var Disassembler = Disassembler || {};
     };
   };
 
+  // An interrupt handler label
   var VectorLabel = function(name) {
     this.name = name ? name : 'irq' + _vectorCounter++;
 
@@ -306,6 +319,7 @@ var Disassembler = Disassembler || {};
     };
   };
 
+  // HTML elements
   var $code = $('#code');
   var $errors = $('#errors');
   var $output = $('#output');
@@ -345,6 +359,7 @@ var Disassembler = Disassembler || {};
     };
   }
 
+  // Display a program
   var showAssembly = function(data) {
     var instructions = data.instructions;
     var idt = data.idt;
@@ -424,7 +439,6 @@ var Disassembler = Disassembler || {};
 
   // Display an array of instructions
   var show = function(data) {
-
     var instructions = data.instructions;
     var idt = data.idt;
 
@@ -436,12 +450,14 @@ var Disassembler = Disassembler || {};
       $('#code-output').hide();
   };
 
+  // Add a new visible error
   var addError = function(msg) {
     $errors.append("<div class=\"alert alert-error\">" + msg +
                    "<a class=\"close\" data-dismiss=\"alert\" " +
                    "href=\"#\">&times;</a></div>");
   };
 
+  // Add a new visible warning
   var addWarning = function(msg) {
     $errors.append("<div class=\"alert alert-warning\">" + msg +
                    "<a class=\"close\" data-dismiss=\"alert\" " +
@@ -449,7 +465,6 @@ var Disassembler = Disassembler || {};
   };
 
   var addInstruction = function(instruction, instructions) {
-
     var addRow = function(address, comment, instruction, id, target) {
       var html = '<tr';
 
