@@ -150,7 +150,7 @@ title: uC Disassembler
       var html = '<tr';
       if (id && id !== '')
         html += ' id="' + id + '"';
-      if (target && target !== '')
+      if (target !== undefined)
         html += ' data-target="' + target + '"';
       html += '><td class="address"><pre>';
       if (address)
@@ -165,12 +165,13 @@ title: uC Disassembler
     };
 
     var addInstructionRow = function(address, text, instruction, instructions) {
-      if (!instruction.ops) // Non-instructions: comments, directives etc.
+
+      if (!instruction.mnemonic)                       // Non-instructions
         addRow(address, instruction.comment, text);
-      else if (instruction.jump) // Jump & branch instructions
+      else if (instruction.jumpAddress !== undefined) {// Jump & branch instructions
         addRow(address, instruction.comment, text, '',
-               instructions[instruction.jump].addressHex32);
-      else // Standard instruction
+               instructions[instruction.jumpAddress].addressHex32);
+      }else                                            // Standard instruction
         addRow(address, instruction.comment, text);
     };
 
