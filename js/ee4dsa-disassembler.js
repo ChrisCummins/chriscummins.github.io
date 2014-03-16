@@ -264,7 +264,7 @@ var sections2prog = function(sections) {
               new Comment(''),
               new BlankLine(),
               new Directive('cseg'),
-              new Directive('org 0x' + int2hex32(0)),
+              new Org(0),
               new BlankLine()], minProg = [];
   var currentAddress = 0;
 
@@ -277,7 +277,7 @@ var sections2prog = function(sections) {
     });
 
     prog.push(new BlankLine());
-    prog.push(new Directive('org 0x' + int2hex32(currentAddress)));
+    prog.push(new Org(currentAddress));
     prog.push(new BlankLine());
   }
 
@@ -318,7 +318,7 @@ var sections2prog = function(sections) {
         currentAddress = e.address;
 
         minProg.push(new BlankLine());
-        minProg.push(new Directive('org 0x' + int2hex32(currentAddress)));
+        minProg.push(new Org(currentAddress));
       }
 
       // Add instruction

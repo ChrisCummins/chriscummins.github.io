@@ -65,6 +65,13 @@ var Directive = function(name) {
   };
 };
 
+var Org = function(address) {
+  this.html = function() {
+    return new Directive('org <span class="value">' +
+                         int2hex32(address) + '</span>').html();
+  };
+};
+
 /*
  * Generate an instruction from a given set of options, where 'ops' is
  * a map with the following values:
