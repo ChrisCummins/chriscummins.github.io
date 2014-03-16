@@ -1,5 +1,5 @@
 /*
- * util.js - EE4DSA disassembler utility functions
+ * util.js - EE4DSA utility functions
  */
 
 /*
@@ -21,12 +21,12 @@ function pad(n, width, z, prefix) {
  * Casts a decimal integer to a hexadecimal string.
  */
 var int2hex = function(n) {
-  return n ? n.toString(16).toUpperCase() : '';
+  return n !== undefined ? n.toString(16).toUpperCase() : '';
 };
 
 /*
  * Casts a decimal integer to a 32 bit hexadecimal string (0 padded).
  */
 var int2hex32 = function(n) {
-  return n ? pad(int2hex(n), 8) : '';
+  return n !== undefined ? pad(int2hex(n), 8) : '';
 };
