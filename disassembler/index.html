@@ -4,20 +4,59 @@ title: uC Disassembler
 ---
 
 <style type="text/css">
+  /*
+   * Base styles
+   */
+
+  body {
+    background-color: #002b36;
+  }
+
+  body,
+  h1,
+  select,
+  textarea,
+  a, a:hover, a:focus, a:active {
+    color: #eee8d5;
+  }
+
+  textarea {
+    background-color: #073642;
+    border-color: #586e75;
+  }
+
+  select {
+    background-color: #586e75;
+  }
+
   #code {
     resize: vertical;
   }
 
+  pre {
+    color: #93a1a1;
+    background: none;
+    border: none;
+    font-family: monospace;
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+  }
+  pre:hover {
+    cursor: default;
+  }
+
+  /*
+   * Table formatting
+   */
   .table {
     width: 830px;
     margin-left: -120px;
   }
-
   #output td {
     padding: 0;
     border-top: none;
   }
-
   #output td.address {
     width: 100px;
     -webkit-user-select: none;
@@ -28,47 +67,46 @@ title: uC Disassembler
     padding-right: 20px;
   }
   #output td.address pre {
-    color: #bdc3c7;
+    color: #586e75;
   }
-
   #output td.instruction {
-    border-left: 2px solid #bdc3c7;
+    border-left: 2px solid #586e75;
     padding-left: 11px;
   }
-
-
-  /* Syntax highlighting */
-  span.comment {
-    color: #181;
-  }
-  span.directive {
-    font-weight: bold;
-  }
-  span.mnemonic {
-    color: #445588;
-  }
-  span.value {
-    color: #d14;
-  }
-
   tr.highlight {
-    background-color: #f8eec7;
-  }
-
-  pre {
-    background: none;
-    border: none;
-    font-family: monospace;
-    font-size: 14px;
-    padding: 0;
-    margin: 0;
-  }
-
-  pre:hover {
-    cursor: default;
+    background-color: #073642;
   }
   tr[data-target] pre:hover {
     cursor: pointer;
+  }
+  #output tr:hover {
+    background-color: #073642;
+  }
+
+  /*
+   * Syntax highlighting
+   */
+  span.comment {
+    color: #586e75;
+    font-weight: normal;
+  }
+  span.directive {
+    color: #b58900;
+    font-weight: bold;
+  }
+  span.mnemonic {
+    color: #dc322f;
+    font-weight: normal;
+  }
+  span.value {
+    color: #268bd2;
+    font-weight: normal;
+  }
+  span.asm-label {
+  }
+  span.register {
+    color: #d33682;
+    font-weight: normal;
   }
 </style>
 
@@ -104,7 +142,7 @@ title: uC Disassembler
       <div id="code-output" class="row-fluid" style="display: none;">
         <div class="span12">
 
-          <table class="table table-condensed table-hover">
+          <table class="table table-condensed">
             <tbody id="output"></tbody>
           </table>
 
