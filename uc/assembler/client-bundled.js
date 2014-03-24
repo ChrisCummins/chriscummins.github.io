@@ -87,7 +87,252 @@ module.exports = function(data, options, callback) {
 
   var u = require('./ee4dsa-util');
 
+  /*
+   * Compose an input data file into an assembly source, stripping
+   * comments and whitespace.
+   */
+  var data2source = function(data) {
+    var lines = data.split(/\n/), outLines = [];
+
+    for (var i = 0; i < lines.length; i++) {
+      var words = lines[i].split(/\s+/), outWords = [];
+
+      for (var j = 0; j < words.length; j++) {
+        var word = words[j];
+
+        if (word.match(/^;/))
+          break;
+
+        if (word !== '')
+          outWords.push(word);
+      }
+
+      if (outWords.length)
+        outLines.push(outWords.join(' '));
+    }
+
+    return outLines.join('\n');
+  };
+
+  /*
+   * Recursively expand macro from table
+   *
+   *   word - a string
+   *   symbols - an array of maps of symbol/value pairs
+   *   data - user data for dynamic symbol expansion
+   */
+  var resolveSymbols = function(word, symbols, data) {
+    for (var i in symbols)
+      if (symbols[i][word] !== undefined) {
+        // Either call dynamic symbol function or lookup static symbol
+        var value = typeof symbols[i][word] === 'function' ?
+          symbols[i][word](data) : symbols[i][word];
+
+        // Recurse
+        return resolveSymbols(value, symbols, data);
+      }
+
+    return '' + word;
+  };
+
+  /* Resolve expressions within a set of tokens */
+  var resolveExpressions = function(tokens) {
+    var t = [], token, match, opA = '', operators = [];
+
+    // Iterate over every token
+    for (var i = 0; i < tokens.length; i++) {
+      token = new String(tokens[i]);
+
+      // Convert Hex digits to numbers
+      if (token.match(/^0x[0-9a-f]+$/)) {
+        var n = parseInt(token.replace(/^0x/, ''), 16);
+
+        if (!isNaN(n))
+          token = n;
+      } else if (token.match(/^0b[01]+$/)) {
+        var n = parseInt(token.replace(/^0b/, ''), 2);
+
+        if (!isNaN(n))
+          token = n;
+      } else if (token.match(/^[-+]?[0-9]+$/)) {
+        // Convert numbers to numbers
+        var n = parseInt(token);
+
+        if (!isNaN(n))
+          token = n;
+      } else if ((match = token.match(/^(~)(.+)/))) {
+        // Calculate bitwise complements
+        var n = new Number(match[2]);
+
+        if (!isNaN(n))
+          token = eval(match[1] + n);
+      }
+
+      // Hunt for the first numerical token
+      if (operators.length < 1 && typeof token === 'number' && i < tokens.length - 2) {
+        if (opA !== '') // Flush out a previous operand
+          t.push('' + opA);
+
+        opA = token;
+      } else if (opA !== '' && token.toString().match(/^([\+\-\*^\/|&^]|(>>)|(<<))$/) && i < tokens.length - 1) {
+        operators.push('' + token);
+      } else if (opA !== '' && typeof token === 'number' && operators.length > 0) {
+        t.push('' + eval('(' + opA + ')' + ' ' + operators.join(' ') + ' (' + token + ')'));
+        return resolveExpressions(t.concat(tokens.slice(i + 1)))
+      } else {
+        if (opA !== '')
+          t.push(opA);
+        if (operators.length)
+          t.push(operators.join(' '));
+
+        opA = '', operators = [];
+
+        t.push('' + token);
+      }
+    }
+
+    return t;
+  };
+
+  /*
+   * Tokenize a string
+   *
+   *   str - string to tokenize
+   *   symbols - (optional) an array of maps of symbol/value pairs
+   *   data - (optional) user data for performing dynamic symbol expansion
+   */
+  var tokenize = function(str, symbols, data) {
+    symbols = symbols || [[]];
+    data = data || {};
+    var tokens = [];
+
+    /*
+     * The expandToken flag is used to determine whether to lookup the
+     * current token in the macro table or to skip it. This is needed
+     * for the symbol directives (.DEF, .UNDEF, etc), which requires the
+     * argument token to be interpreted literally so as to be removed
+     * from the macro table.
+     */
+    var expandToken = true;
+
+    // Split str into words
+    str.split(/[ 	]+/).forEach(function(token) {
+
+      // Remove commas
+      token = token.replace(/,$/, '');
+
+      if (expandToken && typeof token.match === 'function') {
+        // Resolve symbols, ignoring valid prefixes and suffixes
+        var match = token.match(/^([\+\-~]?)([^:]+)([:]?)/);
+
+        token = match[1] + resolveSymbols(match[2], symbols, data) + match[3];
+      } else
+        expandToken = true;
+
+      // Don't expand the token after symbol directives
+      if (token.match(/\.(def)|(defp)|(undef)/))
+        expandToken = false;
+
+      if (token !== '')
+        tokens.push(token);
+    });
+
+    // Resolve numerical expressions
+    tokens = resolveExpressions(tokens);
+
+    return tokens;
+  };
+
+  /*
+   * Pre-process the text by recursively expanding macro instructions.
+   */
+  var preProcess = function(text) {
+    var processed = text
+    // Branch if equal
+      .replace(/(^|\s)breq\s+([^,]+),\s+([^,]+),\s+([^\s]+)/,
+               '$1equ $2, $3\n' +
+               'brts $4')
+    // Branch if equal immediate
+      .replace(/(^|\s)breqi\s+([^,]+),\s+([^,]+),\s+([^\s]+)/,
+               '$1ldi __r, $3\n' +
+               'equ $2, __r\n' +
+               'brts $4')
+    // Branch if not equal
+      .replace(/(^|\s)brne\s+([^,]+),\s+([^,]+),\s+([^\s]+)/,
+               '$1neq $2, $3\n' +
+               'brts $4')
+    // Branch if less than / greater than (equal)
+      .replace(/(^|\s)br(lt|lte|gt|gte)\s+([^,]+),\s+([^,]+),\s+([^\s]+)/,
+               '$1$2 $3, $4\n' +
+               'brts $5')
+    // Branch if not equal immediate
+      .replace(/(^|\s)brnei\s+([^,]+),\s+([^,]+),\s+([^\s]+)/,
+               '$1ldi __r, $3\n' +
+               'neq $2, __r\n' +
+               'brts $4')
+    // Store (indirect) immediate
+      .replace(/(^|\s)st(r?)i\s+([^,]+),\s+([^\s]+)/,
+               '$1ldi __r, $4\n' +
+               'st$2 $3, __r')
+    // Store indirect offset immediate
+      .replace(/(^|\s)stdi\s+([^,]+),\s+([^,]+),\s+([^\s]+)/,
+               '$1ldi __r, $3\n' +
+               'std $2, __r, $4')
+    // Push immediate
+      .replace(/(^|\s)pshi\s+([^\s]+)/,
+               '$1ldi __r, $2\n' +
+               'pshr __r')
+    // Load immediate
+      .replace(/(^|\s)ldi\s+([^,]+),\s+([^\s]+)/,
+               '$1ldih $2, $3 >> 16\n' +
+               'ldil $2, $3')
+    // Load indirect to register
+      .replace(/(^|\s)lddi\s+([^,]+),\s+([^,]+),\s+([^\s]+)/,
+               '$1ldi __r, $4\n' +
+               'ldd $2, $3, __r')
+    // Equals immediate
+      .replace(/(^|\s)eqi\s+([^,]+),\s+([^\s]+)/,
+               '$1ldi __r, $3\n' +
+               'equ $2, __r')
+    // Not equals immediate
+      .replace(/(^|\s)neqi\s+([^,]+),\s+([^\s]+)/,
+               '$1ldi __r, $3\n' +
+               'neq $2, __r')
+    // Less than / Great than (or equal) (signed) immediate
+      .replace(/(^|\s)(lt|gt)(e?)(s?)i\s+([^,]+),\s+([^\s]+)/,
+               '$1ldi __r, $6\n' +
+               '$2$3$4 $5, __r')
+    // Add / Subtract (signed) immediate
+      .replace(/(^|\s)(add|sub)(s?)i\s+([^,]+),\s+([^,]+),\s+([^\s]+)/,
+               '$1ldi __r, $6\n' +
+               '$2$3 $4, $5, __r')
+    // AND / OR / XOR immediate
+      .replace(/(^|\s)(and|or|xor)i\s+([^,]+),\s+([^\s]+),\s+([^\s]+)/,
+               '$1ldi __r, $5\n' +
+               '$2 $3, $4, __r')
+    // Logical shift left / right
+      .replace(/(^|\s)ls([lr])\s+([^,]+),\s+([^\s]+),\s+([^\s]+)/,
+               '$1mov $3, $4\n' +
+               'mov __r, $5\n' +
+               'eqz __r\n' +
+               'rbrts 4\n' +
+               'ls$2i $3, $3, 1\n' +
+               'dec __r\n' +
+               'rjmp -4');
+
+    if (processed !== text)
+      return preProcess(processed);
+    else
+      return text;
+  };
+
+  /*
+   * Convert lines of assembly into internal code representation.
+   */
   var asm2prog = function(lines) {
+    if (options.idtSize === undefined)
+      options.idtSize = 8;
+
     var prog = {
       size: options.size || 4096,
       idt_size: options.idtSize,
@@ -95,23 +340,30 @@ module.exports = function(data, options, callback) {
       dseg: {},
       memory: {},
       labels: [],
-      symbols: {}
+      symbols: {},
+      // Assembler context:
+      memoryCounter: options.idtSize,
+      currentSegment: 'cseg'
     };
 
-    if (prog.idt_size === undefined)
-      prog.idt_size = 8;
-
-    // Populate useful values into macro table
+    // Add built-in symbols:
     prog.symbols['ram_size'] = prog.size;
     prog.symbols['idt_size'] = prog.idt_size;
     prog.symbols['idt_start'] = 0;
     prog.symbols['prog_start'] = prog.idt_size;
-
-    // Keep track of where we are in the memory
-    var memoryCounter = prog.idt_size;
-
-    // Keep track of whether we're dealing with code or data
-    var currentSegment = 'cseg';
+    prog.symbols['__r'] = 'r4';
+    prog.symbols['active_address'] = function(prog) {
+      return prog.memoryCounter;
+    };
+    prog.symbols['active_segment'] = function(prog) {
+      return prog.currentSegment;
+    };
+    prog.symbols['cseg_size'] = function(prog) {
+      return u.len(prog.cseg);
+    };
+    prog.symbols['dseg_size'] = function(prog) {
+      return u.len(prog.dseg);
+    };
 
     // Populate empty interrupt descriptor table
     for (var i = 0; i < prog.idt_size; i++)
@@ -127,10 +379,12 @@ module.exports = function(data, options, callback) {
       if (line === '')
         continue;
 
-      // Tokenize each line
-      var tokens = u.tokenize(line, [prog.symbols, prog.labels, prog.memory]);
+      var tokens = tokenize(line, [prog.symbols, prog.labels, prog.memory], prog);
 
-      if (tokens[0].match(/^\./)) {
+      /*
+       * Interpret tokens.
+       */
+      if (tokens[0].match(/^\.(?!byte|word)/)) {
         // DIRECTIVE
 
         var directive = tokens.shift().replace(/^\./, '');
@@ -138,16 +392,20 @@ module.exports = function(data, options, callback) {
         switch (directive) {
         case 'dseg':
         case 'cseg':
-          currentSegment = directive;
+          prog.currentSegment = directive;
           break;
         case 'org':
-          memoryCounter = u.requireUint(tokens[0]);
+          prog.memoryCounter = u.requireUint(tokens[0]);
           break;
         case 'isr':
           prog.cseg[u.requireUint(tokens[0])] = ['jmp', tokens[1]];
           break;
         case 'def':
           prog.symbols[u.requireString(tokens[0])] = u.requireString(tokens[1]);
+          break;
+        case 'defp':
+          if (prog.symbols[u.requireString(tokens[0])] === undefined)
+            prog.symbols[u.requireString(tokens[0])] = u.requireString(tokens[1]);
           break;
         case 'undef':
           delete prog.symbols[u.requireString(tokens[0])];
@@ -163,13 +421,27 @@ module.exports = function(data, options, callback) {
 
       } else {
 
-        if (currentSegment === 'cseg') {
+        if (prog.currentSegment === 'cseg') {
           // INSTRUCTION
 
           // Process instruction labels
           if (tokens[0].match(/:$/)) {
+            var label = tokens.shift().replace(/:$/, '');
+
+            // If label is a numerical address, then we have already
+            // defined the label, so perform a reverse lookup from
+            // within the labels table:
+            if (!isNaN(new Number(label)))
+              label = (function (address) {
+                for (var l in prog.labels)
+                  if (prog.labels[l] == label)
+                    return l;
+
+                throw 'Invalid label name "' + label + '"';
+              })(label);
+
             // Add reference to labels table
-            prog.labels[tokens.shift().replace(/:$/, '')] = memoryCounter;
+            prog.labels[label] = prog.memoryCounter;
 
             // Continue processing only if there are tokens remaining
             if (tokens.length < 1)
@@ -177,47 +449,67 @@ module.exports = function(data, options, callback) {
           }
 
           // Add instruction to instructions map
-          prog.cseg[memoryCounter] = tokens;
-          memoryCounter++;
-        } else if (currentSegment === 'dseg') {
+          prog.cseg[prog.memoryCounter] = tokens;
+          prog.memoryCounter++;
+        } else if (prog.currentSegment === 'dseg') {
           // DATA
 
-          // Process memory labels
-          if (tokens[0].match(/:$/) && tokens.length === 3) {
-            var label = tokens[0].replace(/:$/, '');
-            var size = (function(type) {
-              switch (type) {
-              case '.byte':
-                return 0.25;
-              case '.word':
-                return 1;
-              default:
-                throw 'Unrecognised data type "' + type + '"';
-              }
-            })(tokens[1]);
-            var length = u.requireUint(tokens[2]);
+          // Process instruction labels
+          if (tokens[0].match(/:$/)) {
             var label = tokens.shift().replace(/:$/, '');
-            var dstart = memoryCounter, dend = dstart + Math.ceil(size * length);
 
-            // Add reference in memory table and populate dseg
-            prog.memory[label] = dstart;
-            for (var i = dstart; i < dend; i++) {
-              prog.dseg[i] = label;
+            // If label is a numerical address, then we have already
+            // defined the label, so perform a reverse lookup from
+            // within the labels table:
+            if (!isNaN(new Number(label)))
+              label = (function (address) {
+                for (var l in prog.memory)
+                  if (prog.memory[l] == label)
+                    return l;
 
-              if (dend - dstart > 1)
-                prog.dseg[i] += '[' + (i - dstart) + ']';
-            }
+                throw 'Invalid variable name "' + label + '"';
+              })(label);
 
-            // Update memory counter
-            memoryCounter = dend;
+            // Add reference to memory table
+            prog.memory[label] = prog.memoryCounter;
 
             // Continue processing only if there are tokens remaining
             if (tokens.length < 1)
               continue;
-          } else
-            throw 'Failed to parse data segment token "' + tokens[0] + '"';
+          }
 
-        }
+          // Process memory labels
+          var size = (function(type) {
+            switch (type) {
+            case '.byte':
+              return 0.25;
+            case '.word':
+              return 1;
+            default:
+              throw 'Unrecognised data type "' + type + '"';
+            }
+          })(tokens[0]);
+
+          var length = u.requireUint(tokens[1]);
+          var dstart = new Number(prog.memoryCounter), dend = dstart + Math.ceil(size * length);
+
+          // Populate dseg
+          for (var i = dstart; i < dend; i++) {
+            prog.dseg[i] = label;
+
+            if (dend - dstart > 1)
+              prog.dseg[i] += '[' + (i - dstart) + ']';
+          }
+
+          // Update memory counter
+          prog.memoryCounter = dend;
+
+          // Continue processing only if there are tokens remaining
+          if (tokens.length < 1)
+            continue;
+        } else
+          throw 'Failed to parse data segment token "' + label + '"';
+
       }
     }
 
@@ -233,6 +525,9 @@ module.exports = function(data, options, callback) {
         else if (prog.labels[token] !== undefined) // Label
           instruction[j] = prog.labels[token];
       }
+
+      // Resolve expressions on label addresses:
+      prog.cseg[i] = resolveExpressions(instruction);
     }
 
     // Write metadata
@@ -241,6 +536,10 @@ module.exports = function(data, options, callback) {
     prog.dseg_size = u.len(prog.dseg);
     prog.dseg_util = prog.dseg_size / prog.size;
     prog.util = prog.cseg_util + prog.dseg_util;
+
+    // Remove run-time information
+    delete prog.memoryCounter;
+    delete prog.currentSegment;
 
     return prog;
   };
@@ -259,7 +558,9 @@ module.exports = function(data, options, callback) {
         var p = [];
         s += '\n';
         for (var j in prog[i]) {        // Property -> Value pair
-          if (typeof prog[i][j].join === 'function')
+          if (typeof prog[i][j] === 'function')
+            p.push('        ' + j + ' = [dynamic]');
+          else if (typeof prog[i][j].join === 'function')
             p.push('        ' + j + ' = ' + prog[i][j].join(' '));
           else
             p.push('        ' + j + ' = ' + prog[i][j]);
@@ -289,6 +590,7 @@ module.exports = function(data, options, callback) {
             case 'jmp':   return '02' + u.requireAddress(t[1]);
             case 'rjmp':  return '02' + (u.requireAddress(eval(i + u.requireInt(t[1]))));
             case 'brts':  return '03' + u.requireAddress(t[1]);
+            case 'rbrts': return '03' + (u.requireAddress(eval(i + u.requireInt(t[1]))));
             case 'seto':  return '04' + u.requireByte(t[1]) + u.requireByte(t[2]) + u.requireByte(t[3]);
             case 'tsti':  return '05' + u.requireByte(t[1]) + u.requireByte(t[2]) + u.requireByte(t[3]);
             case 'call':  return '06' + u.requireAddress(t[1]);
@@ -298,20 +600,22 @@ module.exports = function(data, options, callback) {
             case 'sei':   return '09000000';
             case 'cli':   return '0A000000';
             case 'ld':    return '0B' + u.requireReg(t[1]) + u.require16Address(t[2]);
-            case 'st':    return '0C' + u.requireReg(t[1]) + u.require16Address(t[2]);
-            case 'ldd':   return '0D' + u.requireReg(t[1]) + u.requireReg(t[2]) + u.requireReg(t[3]);
-            case 'std':   return '0E' + u.requireReg(t[1]) + u.requireReg(t[2]) + u.requireReg(t[3]);
-            case 'pshr':  return '0F' + u.requireReg(t[1]) + '0000';
-            case 'popr':  return '10' + u.requireReg(t[1]) + '0000';
-            case 'stio':  return '11' + u.requireByte(t[1]) + u.requireReg(t[2]) + '00';
-            case 'ldio':  return '12' + u.requireReg(t[1]) + u.requireByte(t[2]) + '00';
             case 'ldil':  return '13' + u.requireReg(t[1]) + u.require16Address(t[2]);
             case 'ldih':  return '14' + u.requireReg(t[1]) + u.require16Address(t[2]);
+            case 'ldr':   return '0D' + u.requireReg(t[1]) + '00' + u.requireReg(t[2]);
+            case 'ldd':   return '0D' + u.requireReg(t[1]) + u.requireReg(t[2]) + u.requireReg(t[3]);
+            case 'ldio':  return '12' + u.requireReg(t[1]) + u.requireByte(t[2]) + '00';
+            case 'st':    return '0C' + u.requireReg(t[2]) + u.require16Address(t[1]); // Note the reverse order!
+            case 'str':   return '0E' + u.requireReg(t[1]) + '00' + u.requireReg(t[2]);
+            case 'std':   return '0E' + u.requireReg(t[1]) + u.requireReg(t[2]) + u.requireReg(t[3]);
+            case 'stio':  return '11' + u.requireByte(t[1]) + u.requireReg(t[2]) + '00';
+            case 'pshr':  return '0F' + u.requireReg(t[1]) + '0000';
+            case 'popr':  return '10' + u.requireReg(t[1]) + '0000';
             case 'and':   return '15' + u.requireReg(t[1]) + u.requireReg(t[2]) + u.requireReg(t[3]);
             case 'or':    return '16' + u.requireReg(t[1]) + u.requireReg(t[2]) + u.requireReg(t[3]);
             case 'xor':   return '17' + u.requireReg(t[1]) + u.requireReg(t[2]) + u.requireReg(t[3]);
-            case 'lsr':   return '18' + u.requireReg(t[1]) + u.requireReg(t[2]) + u.requireByte(t[3]);
-            case 'lsl':   return '19' + u.requireReg(t[1]) + u.requireReg(t[2]) + u.requireByte(t[3]);
+            case 'lsri':  return '18' + u.requireReg(t[1]) + u.requireReg(t[2]) + u.requireByte(t[3]);
+            case 'lsli':  return '19' + u.requireReg(t[1]) + u.requireReg(t[2]) + u.requireByte(t[3]);
             case 'equ':   return '1A00' + u.requireReg(t[1]) + u.requireReg(t[2]);
             case 'neq':   return '1A01' + u.requireReg(t[1]) + u.requireReg(t[2]);
             case 'lt':    return '1A02' + u.requireReg(t[1]) + u.requireReg(t[2]);
@@ -326,12 +630,13 @@ module.exports = function(data, options, callback) {
             case 'nez':   return '1A07' + u.requireReg(t[1]) + '00';
             case 'mov':   return '20' + u.requireReg(t[1]) + u.requireReg(t[2]) + '00';
             case 'clr':   return '20' + u.requireReg(t[1]) + '0000';
+            case 'neg':   return '22' + u.requireReg(t[1]) + u.requireReg(t[1]) + '00'
             case 'inc':   return '21' + u.requireReg(t[1]) + u.requireReg(t[1]) + '00';
             case 'incs':  return '29' + u.requireReg(t[1]) + u.requireReg(t[1]) + '00';
-            case 'dec':   return '22' + u.requireReg(t[1]) + u.requireReg(t[1]) + u.requireReg(t[1]);
-            case 'decs':  return '2A' + u.requireReg(t[1]) + u.requireReg(t[1]) + u.requireReg(t[1]);
+            case 'dec':   return '22' + u.requireReg(t[1]) + u.requireReg(t[1]) + '00';
+            case 'decs':  return '2A' + u.requireReg(t[1]) + u.requireReg(t[1]) + '00';
             case 'add':   return '20' + u.requireReg(t[1]) + u.requireReg(t[2]) + u.requireReg(t[3]);
-            case 'ads':   return '28' + u.requireReg(t[1]) + u.requireReg(t[2]) + u.requireReg(t[3]);
+            case 'adds':   return '28' + u.requireReg(t[1]) + u.requireReg(t[2]) + u.requireReg(t[3]);
             case 'sub':   return '23' + u.requireReg(t[1]) + u.requireReg(t[2]) + u.requireReg(t[3]);
             case 'subs':  return '2B' + u.requireReg(t[1]) + u.requireReg(t[2]) + u.requireReg(t[3]);
 
@@ -361,11 +666,17 @@ module.exports = function(data, options, callback) {
   };
 
   try {
+    // Pre-process:
+    var source = preProcess(data2source(data));
+
     // First pass:
-    var prog = asm2prog(data.split('\n'));
+    var prog = asm2prog(source.split('\n'));
 
     // Second pass:
-    callback(0, { prog: prog, ram: prog2ram(prog), list: prog2list(prog) });
+    callback(0, { prog: prog,
+                  source: source,
+                  ram: prog2ram(prog),
+                  list: prog2list(prog) });
   } catch (err) {
     callback(err);
   }
@@ -384,11 +695,9 @@ var pad = function(n, width, z, prefix) {
   z = z || '0';
   n = n + '';
   // Pop out any html tags when calculating length
-  var length = n.replace(/<\/?[a-zA-Z ="]+>/g, '').length;
-
-  return length >= width ? n : prefix ?
-    n + new Array(width - length + 1).join(z) :
-    new Array(width - length + 1).join(z) + n;
+  return n.length >= width ? n : prefix ?
+    n + new Array(width - n.length + 1).join(z) :
+    new Array(width - n.length + 1).join(z) + n;
 };
 module.exports.pad = pad;
 
@@ -415,7 +724,11 @@ var int2hex = function(n, len) {
     if (isNaN(n))
       throw 'Failed to convert number!';
 
-    return pad(n.toString(16).toUpperCase(), len);
+    // Pad and truncate string as required
+    var string = pad(n.toString(16).toUpperCase(), len);
+    var start = string.length > len ? string.length - len : 0;
+
+    return string.substring(start);
   }
 
   throw 'Failed to convert number "' + n + '"';
@@ -498,7 +811,7 @@ module.exports.requireByte = requireByte;
 
 var requireReg = function(word) {
   if (word !== undefined)
-    return requireByte(word.replace(/^r/, ''));
+    return requireByte(new String(word).replace(/^r/, ''));
 
   throw 'Failed to parse reg "' + word + '"';
 };
@@ -535,118 +848,5 @@ var perc = function(n, precision) {
   return n + '%';
 };
 module.exports.perc = perc;
-
-/*
- * Recursively expand macro from table
- *
- *   word - a string
- *   symbols - an array of maps of symbol/value pairs
- */
-var resolveSymbols = function(word, symbols) {
-  for (var i in symbols)
-    if (symbols[i][word] !== undefined)
-      return resolveSymbols(symbols[i][word], symbols);
-
-  return '' + word;
-};
-module.exports.resolveSymbols = resolveSymbols;
-
-/* Resolve expressions within a set of tokens */
-var resolveExpressions = function(tokens) {
-  var t = [], token, match, opA = '', operators = [];
-
-  // Iterate over every token
-  for (var i = 0; i < tokens.length; i++) {
-    token = tokens[i];
-
-    // Convert Hex digits to numbers
-    if (token.match(/^0x[0-9a-f]+$/)) {
-      var n = parseInt(token.replace(/^0x/, ''), 16);
-
-      if (!isNaN(n))
-        token = n;
-    } else if (token.match(/^[-+]?[0-9]+$/)) {
-      // Convert numbers to numbers
-      var n = parseInt(token);
-
-      if (!isNaN(n))
-        token = n;
-    } else if ((match = token.match(/^(~)(.+)/))) {
-      // Calculate bitwise complements
-      var n = new Number(match[2]);
-
-      if (!isNaN(n))
-        token = eval(match[1] + n);
-    }
-
-    // Hunt for the first numerical token
-    if (opA === '' && typeof token === 'number' && i < tokens.length - 2) {
-      opA = token;
-    } else if (opA !== '' && token.toString().match(/^([\+\-\*^\/|&^]|(>>)|(<<))$/) && i < tokens.length - 1) {
-      operators.push(token);
-    } else if (opA !== '' && typeof token === 'number' && operators.length > 0) {
-      t.push('' + eval('(' + opA + ')' + ' ' + operators.join(' ') + ' (' + token + ')'));
-      return resolveExpressions(t.concat(tokens.slice(i + 1)))
-    } else {
-      if (opA !== '')
-        t.push(opA);
-      if (operators.length)
-        t.push(operators.join(' '));
-
-      opA = '', operators = [];
-
-      t.push('' + token);
-    }
-  }
-
-  return t;
-};
-module.exports.resolveExpressions = resolveExpressions;
-
-/* Tokenize a row */
-var tokenize = function(str, symbols) {
-  symbols = symbols || [[]];
-  var tokens = [];
-
-  /*
-   * The expandToken flag is used to determine whether to lookup
-   * the current token in the macro table or to skip it. This is
-   * needed for the .UNDEF directive, which requires the
-   * argument token to be interpreted literally so as to be
-   * removed from the macro table.
-   */
-  var expandToken = true;
-
-  // Split str into words
-  str.split(/[ 	]+/).forEach(function(token) {
-
-    // Remove commas
-    token = token.replace(/,$/, '');
-
-    if (expandToken && typeof token.match === 'function') {
-      // Resolve symbols, but ignoring
-      var match = token.match(/^([\+\-~]?)(.*)+/);
-
-      if (match[1] !== '')
-        token = match[1] + resolveSymbols(match[2], symbols);
-      else
-        token = resolveSymbols(match[2], symbols)
-    } else
-      expandToken = true;
-
-    // Don't expand the token after .UNDEF directive
-    if (token === '.undef')
-      expandToken = false;
-
-    if (token !== '')
-      tokens.push(token);
-  });
-
-  // Resolve numerical expressions
-  tokens = resolveExpressions(tokens);
-
-  return tokens;
-};
-module.exports.tokenize = tokenize;
 
 },{}]},{},[1])
