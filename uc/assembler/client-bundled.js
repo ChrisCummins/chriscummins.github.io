@@ -249,69 +249,69 @@ module.exports = function(data, options, callback) {
   var preProcess = function(text) {
     var processed = text
     // Branch if equal
-      .replace(/(^|\s)breq\s+([^,]+),\s+([^,]+),\s+([^\s]+)/,
+      .replace(/(^|\s)breq\s+([^,]+),\s+([^,]+),\s+(.+)/,
                '$1equ $2, $3\n' +
                'brts $4')
     // Branch if equal immediate
-      .replace(/(^|\s)breqi\s+([^,]+),\s+([^,]+),\s+([^\s]+)/,
+      .replace(/(^|\s)breqi\s+([^,]+),\s+([^,]+),\s+(.+)/,
                '$1ldi __r, $3\n' +
                'equ $2, __r\n' +
                'brts $4')
     // Branch if not equal
-      .replace(/(^|\s)brne\s+([^,]+),\s+([^,]+),\s+([^\s]+)/,
+      .replace(/(^|\s)brne\s+([^,]+),\s+([^,]+),\s+(.+)/,
                '$1neq $2, $3\n' +
                'brts $4')
     // Branch if less than / greater than (equal)
-      .replace(/(^|\s)br(lt|lte|gt|gte)\s+([^,]+),\s+([^,]+),\s+([^\s]+)/,
+      .replace(/(^|\s)br(lt|lte|gt|gte)\s+([^,]+),\s+([^,]+),\s+(.+)/,
                '$1$2 $3, $4\n' +
                'brts $5')
     // Branch if not equal immediate
-      .replace(/(^|\s)brnei\s+([^,]+),\s+([^,]+),\s+([^\s]+)/,
+      .replace(/(^|\s)brnei\s+([^,]+),\s+([^,]+),\s+(.+)/,
                '$1ldi __r, $3\n' +
                'neq $2, __r\n' +
                'brts $4')
     // Store (indirect) immediate
-      .replace(/(^|\s)st(r?)i\s+([^,]+),\s+([^\s]+)/,
+      .replace(/(^|\s)st(r?)i\s+([^,]+),\s+(.+)/,
                '$1ldi __r, $4\n' +
                'st$2 $3, __r')
     // Store indirect offset immediate
-      .replace(/(^|\s)stdi\s+([^,]+),\s+([^,]+),\s+([^\s]+)/,
+      .replace(/(^|\s)stdi\s+([^,]+),\s+([^,]+),\s+(.+)/,
                '$1ldi __r, $3\n' +
                'std $2, __r, $4')
     // Push immediate
-      .replace(/(^|\s)pshi\s+([^\s]+)/,
+      .replace(/(^|\s)pshi\s+(.+)/,
                '$1ldi __r, $2\n' +
                'pshr __r')
     // Load immediate
-      .replace(/(^|\s)ldi\s+([^,]+),\s+([^\s]+)/,
+      .replace(/(^|\s)ldi\s+([^,]+),\s+(.+)/,
                '$1ldih $2, $3 >> 16\n' +
                'ldil $2, $3')
     // Load indirect to register
-      .replace(/(^|\s)lddi\s+([^,]+),\s+([^,]+),\s+([^\s]+)/,
+      .replace(/(^|\s)lddi\s+([^,]+),\s+([^,]+),\s+(.+)/,
                '$1ldi __r, $4\n' +
                'ldd $2, $3, __r')
     // Equals immediate
-      .replace(/(^|\s)eqi\s+([^,]+),\s+([^\s]+)/,
+      .replace(/(^|\s)eqi\s+([^,]+),\s+(.+)/,
                '$1ldi __r, $3\n' +
                'equ $2, __r')
     // Not equals immediate
-      .replace(/(^|\s)neqi\s+([^,]+),\s+([^\s]+)/,
+      .replace(/(^|\s)neqi\s+([^,]+),\s+(.+)/,
                '$1ldi __r, $3\n' +
                'neq $2, __r')
     // Less than / Great than (or equal) (signed) immediate
-      .replace(/(^|\s)(lt|gt)(e?)(s?)i\s+([^,]+),\s+([^\s]+)/,
+      .replace(/(^|\s)(lt|gt)(e?)(s?)i\s+([^,]+),\s+(.+)/,
                '$1ldi __r, $6\n' +
                '$2$3$4 $5, __r')
     // Add / Subtract (signed) immediate
-      .replace(/(^|\s)(add|sub)(s?)i\s+([^,]+),\s+([^,]+),\s+([^\s]+)/,
+      .replace(/(^|\s)(add|sub)(s?)i\s+([^,]+),\s+([^,]+),\s+(.+)/,
                '$1ldi __r, $6\n' +
                '$2$3 $4, $5, __r')
     // AND / OR / XOR immediate
-      .replace(/(^|\s)(and|or|xor)i\s+([^,]+),\s+([^\s]+),\s+([^\s]+)/,
+      .replace(/(^|\s)(and|or|xor)i\s+([^,]+),\s+([^\s]+),\s+(.+)/,
                '$1ldi __r, $5\n' +
                '$2 $3, $4, __r')
     // Logical shift left / right
-      .replace(/(^|\s)ls([lr])\s+([^,]+),\s+([^\s]+),\s+([^\s]+)/,
+      .replace(/(^|\s)ls([lr])\s+([^,]+),\s+([^\s]+),\s+(.+)/,
                '$1mov $3, $4\n' +
                'mov __r, $5\n' +
                'eqz __r\n' +
@@ -801,7 +801,8 @@ var requireByte = function(word) {
   if (word !== undefined) {
     var i = requireUint(word);
 
-    if (i >= 0 && i < 256)
+    // Check that number is within bounds of signed or unsigned byte
+    if (i >= -129 && i < 256)
       return int2hex(i, 2);
   }
 
