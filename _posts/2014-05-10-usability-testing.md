@@ -5,7 +5,7 @@ title: 10 tips for effective usability testing
 
 As part of the evaluation of my project
 [pip-db](http://www.pip-db.org), I have been conducting usability
-tests with volunteer biology students and a couple of other stagglers
+tests with volunteer biology students and a couple of other stragglers
 who I managed to coerce into helping. It has been an incredibly
 educational experience, so I recorded notes on how each test went and
 have compiled a list of tips based on my findings:
