@@ -16,42 +16,14 @@ design team.
 
 ###### Freelance web developer (2010-Ongoing)
 
-Working with small business clients to turn ideas into beautiful
-websites, including graphic design and branding.  Extensive frontend
-experience using jQuery and Bootstrap, and backend development using
-Clojure, PHP, MySQL, PostgreSQL, Node.js, and Jekyll.
+Working with small business clients to turn ideas into full websites,
+including graphic design and branding. Extensive front-end experience
+using jQuery and Bootstrap, and backend development using Clojure,
+PHP, MySQL, PostgreSQL, Node.js, and Jekyll.
 
 ###### Rolls Royce Holdings PLC (2008)
+
 Summer week placement within the Design Methods group.
-
-# Key Skills
-
-###### Software Engineering
-
-Advanced programming in Python, C/C++, Java and JavaScript. Experience
-with PHP/Apache and SQL backends. Full stack experience from debugging
-kernel drivers, to JavaScript frontend development. Particular
-interest in distributed application development.
-
-###### Electronic Engineering
-
-I have a traditional background in engineering and mathematics,
-covering digital logic synthesis networking theory and protocols,
-hardware design and embedded systems.
-
-###### Product development
-
-I have a results driven attitude towards delivering products, with
-experience working with agile and test driven development processes. I
-apply a consistent and methodical approach to all projects, from using
-good version control practises to working within large and small
-teams.
-
-###### Communication skills
-
-Excellent written and verbal communication skills, including working
-effectively with geographically distributed and inter-disciplinary
-teams, both in remote and office environments.
 
 # Education
 
@@ -63,6 +35,35 @@ Birkdale School (2009)
 
 * A Levels - Electronics, Mathematics, Physics
 * AS Levels - Electronics, Economics, Mathematics, Physics
+
+# Key Skills
+
+###### Software Engineering
+
+Advanced programming in Python, Clojure, C/C++, JavaScript, and
+Java. Full stack experience from debugging kernel drivers to web
+front-end development. Particular interest in low level systems and OS
+development, compilers and languages, concurrent and distributed
+systems.
+
+###### Electronic Engineering
+
+I have a traditional background in engineering and mathematics,
+covering digital logic synthesis, networking theory and protocols,
+hardware design, and embedded systems.
+
+###### Product development
+
+I have a results driven attitude towards delivering products, with
+experience working with agile and iterative processes. I apply a
+consistent and methodical approach to all projects, from using good
+version control practises to working within large and small teams.
+
+###### Communication skills
+
+Excellent written and verbal communication skills, including working
+effectively with geographically distributed and inter-disciplinary
+teams, both in remote and office environments.
 
 ----
 
