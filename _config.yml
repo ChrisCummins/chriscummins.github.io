@@ -19,3 +19,6 @@ permalink: /posts/:title
 # Enable HTTP redirects
 gems:
   - jekyll-redirect-from
+
+# Ignore patterns
+exclude: [README.md, scripts/, old-site/]
