@@ -67,4 +67,4 @@ teams, both in remote and office environments.
 
 ----
 
-#### [Download the full PDF](/assets/cv.pdf)
+#### [Download the full PDF](ChrisCummins.pdf)
