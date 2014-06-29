@@ -14,7 +14,7 @@ $(document).ready(function() {
   $('a').each(function(index) {
     var link = $(this)[0];
 
-    if (link.hostname != window.location.hostname) {
+    if (link.hostname && link.hostname != window.location.hostname) {
       link.target = '_blank';
       link.title = 'Link opens in new window';
     }
