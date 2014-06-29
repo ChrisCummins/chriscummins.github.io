@@ -41,9 +41,10 @@ $(document).ready(function() {
    * For each image, add a "Click to see original" link.
    */
   $('section img').each(function(index) {
-    $(this).wrap('<a href="' + $(this).attr('src') + '" ' +
-                 'title="Click to see original" ' +
-                 'target="_blank"></a>');
+    if (!$(this).parent().is('a')) // Check that parent isn't already a link
+      $(this).wrap('<a href="' + $(this).attr('src') + '" ' +
+                   'title="Click to see original" ' +
+                   'target="_blank"></a>');
   });
 
 });
