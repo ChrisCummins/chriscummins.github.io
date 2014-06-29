@@ -93,10 +93,13 @@
         {{ content }}
 
         {% if page.date %}
+            <div id="read-more">
+              <a href="/" title="Return to home page">&lt;&lt; Read More</a>
+            </div>
             <div id="date">
               {{ page.date | date_to_string }}
             </div>
-          </div>
+          </div><!-- /#post -->
         {% endif %}
       </section>
       <footer>
