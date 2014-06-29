@@ -455,6 +455,13 @@ header .img-frame {
    */
   -webkit-mask-image: -webkit-radial-gradient(white, black);
 }
+header img {
+  .transform(scale(1.0));
+  .transition-duration(0.45s);
+}
+header img:hover {
+  .transform(scale(1.1));
+}
 header p.view {
   line-height: 1.3;
   margin: 0.5em 0;
