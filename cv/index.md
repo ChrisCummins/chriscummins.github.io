@@ -3,6 +3,17 @@ layout: default
 title: Curriculum Vitae
 ---
 
+# Education
+
+###### Aston University (2014)
+
+ * MEng Electrical Engineering and Computer Science,<br/> *First Class Honours*
+
+###### Birkdale School (2009)
+
+* A Levels - Electronics, Mathematics, Physics
+* AS Levels - Electronics, Economics, Mathematics, Physics
+
 # Professional Experience
 
 ###### Intel Corporation   (2012-2013)
@@ -24,17 +35,6 @@ PHP, MySQL, PostgreSQL, Node.js, and Jekyll.
 ###### Rolls Royce Holdings PLC (2008)
 
 Summer week placement within the Design Methods group.
-
-# Education
-
-Aston University (2014)
-
- * MEng Electrical Engineering and Computer Science
-
-Birkdale School (2009)
-
-* A Levels - Electronics, Mathematics, Physics
-* AS Levels - Electronics, Economics, Mathematics, Physics
 
 # Key Skills
 
