@@ -65,6 +65,13 @@ Excellent written and verbal communication skills, including working
 effectively with geographically distributed and inter-disciplinary
 teams, both in remote and office environments.
 
+# Awards
+
+* Institute of Engineering & Technology Prize (2014)
+* Arkwright Scholarship, Rolls Royce Plc (2009)
+* Engineering Education Scheme of England (2009)
+* AESSEAL Design Innovation Award (2008)
+
 ----
 
 #### [Download the full PDF](ChrisCummins.pdf)
