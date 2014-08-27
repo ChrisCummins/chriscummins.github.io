@@ -96,8 +96,12 @@
       </header>
 
       <section>
-        {% comment %} page.date is used as a sentinel to find out if we are
-        rendering a post {% endcomment %}
+        {% comment %}
+
+        The page.date variable is used as a sentinel to find out if we
+        are rendering a post.
+
+        {% endcomment %}
         {% if page.date %}
           <div id="post">
             <h1 class="title">{{ page.title }}</h1>
@@ -113,7 +117,7 @@
             <div id="date">
               {{ page.date | date_to_string }}
             </div>
-          </div><!-- /#post -->
+          </div>
         {% endif %}
       </section>
       <footer>
