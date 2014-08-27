@@ -4,8 +4,19 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    {% comment %}
+
+    We check to see what the page title is before appending
+    "| Chris Cummins" to it, as otherwise this would result with an
+    index title of "Chris Cummins | Chris Cummins".
+
+    {% endcomment %}
+    {% if page.title == "Chris Cummins" %}
     <title>{{ page.title }}</title>
-    <meta name="description" content="The personal website of software developer Chris Cummins.">
+    {% else %}
+    <title>{{ page.title }} | Chris Cummins</title>
+    {% endif %}
+    <meta name="description" content="The personal website of software developer and geek Chris Cummins.">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="msapplication-tooltip" content="Chris Cummins personal website">
 
