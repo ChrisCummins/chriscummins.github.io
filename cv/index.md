@@ -48,16 +48,9 @@ systems.
 
 ###### Electronic Engineering
 
-I have a traditional background in engineering and mathematics,
+Traditional engineering background in engineering and mathematics,
 covering digital logic synthesis, networking theory and protocols,
-hardware design, and embedded systems.
-
-###### Product development
-
-I have a results driven attitude towards delivering products, with
-experience working with agile and iterative processes. I apply a
-consistent and methodical approach to all projects, from using good
-version control practises to working within large and small teams.
+hardware design, analogue electronics, and embedded systems.
 
 ###### Communication skills
 
