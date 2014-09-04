@@ -3,9 +3,36 @@ layout: default
 title: Open Source Projects
 ---
 
-# Open Source Projects
+# Personal Projects
 
-##### Projects that I have worked on
+**[pip-db](https://github.com/ChrisCummins/pip-db)** - A search engine
+and data analysis application for storing specific biological data,
+which allows scientific researchers to query particular molecular
+properties of proteins.
+
+**[emu](https://github.com/ChrisCummins/emu)** - Fast snapshot backup
+software inspired by git and Apple's Time Machine. Creates a compact
+rotating history of file system revisions, capable of transparently
+handling huge volumes of data without the need for arbitrary binary
+blobs.
+
+**[shit.js](https://github.com/ChrisCummins/shit.js)** - A proof of
+concept realtime intrusion detection system for Linux that offers
+remote file system monitoring and tamper prevention through a web
+interface, written in Node.js. Acronym for *S*ecure *H*ost *I*ntrusion
+*T*echnology. Proof that I can not and should not name projects.
+
+**[liquid-src](https://github.com/ChrisCummins/liquid-src)** - A tiny
+JavaScript library that allows for very simple management of
+hyperlinks across multiple HTML pages.
+
+**[euclid](https://github.com/ChrisCummins/euclid)** - A toy x86
+operating system kernel, written in C and assembly.
+
+**[pat](https://github.com/ChrisCummins/pat)** - A lightweight mail
+notification daemon for email clients on Linux desktops.
+
+# Contributions
 
 **[GNOME](http://www.gnome.org/)** - A desktop environment and application
 suite for Linux. My contributions include multiple patches for a
@@ -25,32 +52,5 @@ implementing animated cursors and client side decorations.
 **[Rig](http://roblog.sixbynine.org/2012/10/rig-1-ui-designer-engine.html)** -
 A unique 3D UI design tool, which enables the power of modern GPUs in
 user interfaces. I developed a prototype of organic swarming
-behaviours for this, modelling the flocking behaviour and movements of
-birds in flight.
-
-##### Projects that I have created
-
-**[pip-db](https://github.com/ChrisCummins/pip-db)** - A search engine
-and data analysis application for storing specific biological data,
-which allows scientific researchers to query particular molecular
-properties of proteins.
-
-**[liquid-src](https://github.com/ChrisCummins/liquid-src)** - A tiny
-JavaScript library that allows for very simple management of
-hyperlinks across multiple HTML pages.
-
-**[emu](https://github.com/ChrisCummins/emu)** - Snapshot backup
-software inspired by Apple's Time Machine and git, creating a compact
-rotating history of file system revisions, implemented completely
-transparently and automatable.
-
-**[shit.js](https://github.com/ChrisCummins/shit.js)** - A "proof of
-concept" intrusion detection system that offers realtime filesystem
-monitoring and tamper prevention with a remote web interface, written
-in Node.js.
-
-**[pat](https://github.com/ChrisCummins/pat)** - A lightweight mail
-notification daemon for email clients on Linux desktops.
-
-**[euclid](https://github.com/ChrisCummins/euclid)** - A toy x86
-operating system kernel, written in C and assembly.
+behaviours, modelling the flocking behaviour and movements of birds in
+flight.
