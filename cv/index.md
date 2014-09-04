@@ -5,6 +5,10 @@ title: Curriculum Vitae
 
 # Education
 
+###### Edinburgh University (2015)
+
+ * MSc by Research, Pervasive Parallelism (ongoing)
+
 ###### Aston University (2014)
 
  * MEng Electrical Engineering and Computer Science,<br/> *First Class Honours*
