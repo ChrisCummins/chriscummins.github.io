@@ -29,6 +29,6 @@ updates.
 
  * [Part 1: Sinks and sources](/posts/emu-by-example-1/)
  * [Part 2: Push and log](/posts/emu-by-example-2/)
- * Part 3: Verify and checkout (work in progress)
+ * [Part 3: Verify and checkout](/posts/emu-by-example-3/)
  * Part 4: Squash and prune (work in progress)
  * Part 5: Clean and customisation (work in progress)
