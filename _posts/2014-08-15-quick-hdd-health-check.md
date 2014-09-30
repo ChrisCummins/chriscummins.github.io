@@ -7,7 +7,7 @@ Recently I have had to deal with two hardware disk failures in quick
 succession, which has led to two changes:
 
 1. A much increased pace of development on
-   [emu](https://github.com/ChrisCummins/emu) (more on that soon!).
+   [emu](/posts/emu-by-example/) (more on that soon!).
 2. Taking a more programmatic and astute approach to keeping on eye on
    system health.
 
