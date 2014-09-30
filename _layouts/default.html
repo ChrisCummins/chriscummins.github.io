@@ -112,7 +112,11 @@
         {% if page.date %}
             <hr style="margin: 20pt 0 10pt;">
             <div id="read-more">
+              {% if page.previous %}
+              <a href="{{ page.previous.url }}" title="Read the previous post">Previous post &gt;&gt;</a>
+              {% else %}
               <a href="/#posts" title="Return to home page">Read more &gt;&gt;</a>
+              {% endif %}
             </div>
             <div id="date">
               {{ page.date | date_to_string }}
