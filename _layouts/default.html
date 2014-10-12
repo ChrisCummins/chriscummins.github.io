@@ -98,18 +98,19 @@
       <section>
         {% comment %}
 
-        The page.date variable is used as a sentinel to find out if we
-        are rendering a post.
+        The page.date and page.render_post variables are used as a sentinel
+        to find out if we are rendering a post. If either are present,
+        we use the post style.
 
         {% endcomment %}
-        {% if page.date %}
+        {% if page.date or page.render_post %}
           <div id="post">
             <h1 class="title">{{ page.title }}</h1>
         {% endif %}
 
         {{ content }}
 
-        {% if page.date %}
+        {% if page.date or page.render_post %}
             <hr style="margin: 20pt 0 10pt;">
             <div id="read-more">
               {% if page.previous %}
@@ -118,9 +119,11 @@
               <a href="/#posts" title="Return to home page">Read more &gt;&gt;</a>
               {% endif %}
             </div>
+            {% if page.date %}
             <div id="date">
-              {{ page.date | date_to_string }}
+              {{ page.date or page.render_post | date_to_string }}
             </div>
+            {% endif %}
           </div>
         {% endif %}
       </section>
