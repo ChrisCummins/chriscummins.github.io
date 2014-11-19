@@ -1,10 +1,12 @@
 <div id="posts">
   <ul>
     {% for post in site.posts %}
-    <li>
-      <a href="{{ post.url }}">{{ post.title }}</a>
-      <span class="date">{{ post.date | date_to_string }}</span>
-    </li>
+    <a href="{{ post.url }}">
+      <li>
+        {{ post.title }}
+        <span class="date">{{ post.date | date_to_string }}</span>
+      </li>
+    </a>
     {% endfor %}
   </ul>
 </div>
