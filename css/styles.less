@@ -1,7 +1,7 @@
 /* Google Font import: */
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,700|Inconsolata);
 
-@font-family-sans-serif:  @font-family-headings;
+@font-family-sans-serif:  "Open Sans", sans-serif;
 @font-family-monospace:   "Inconsolata", monospace;
 
 @font-size-base:          18px;
@@ -18,7 +18,6 @@
 @line-height-headings:    1.1;
 
 @font-weight-base:        300;
-@font-weight-links:       400;
 @font-weight-strong:      700;
 
 @color-primary-darkest:   #222;
@@ -137,8 +136,8 @@ hr {
 #posts ul li .date {
   color: @color-primary-light;
   float: right !important;
-  font-size: @font-size-date;
-  padding: (@font-size-base - @font-size-date) / 2 0;
+  font-size: @font-size-small;
+  padding: (@font-size-base - @font-size-small) / 2 0;
 }
 
 #post {
@@ -151,7 +150,7 @@ hr {
   float: left !important;
   color: @color-primary-light;
   font-size: @font-size-small;
-  padding: (@font-size-base - @font-size-date) / 2 0;
+  padding: (@font-size-base - @font-size-small) / 2 0;
 }
 #post #read-more {
   float: right !important;
@@ -178,7 +177,7 @@ hr {
 /* TYPOGRAPHY */
 /**************/
 b {
-  font-weight: 700;
+  font-weight: @font-weight-strong;
 }
 
 h1,
@@ -187,6 +186,7 @@ h3,
 h4,
 h5,
 h6 {
+  font-weight: @font-weight-base;
   color: @color-text;
   margin: 0 0 10px;
   text-align: center;
@@ -198,7 +198,6 @@ h4 a,
 h5 a,
 h6 a,
 header a {
-  font-weight: @font-weight-base;
   color: @color-link;
   text-decoration: none;
 }
@@ -212,6 +211,10 @@ header a:hover {
   .link-hover();
 }
 
+h5,
+h6 {
+  font-weight: @font-weight-strong;
+}
 h3,
 h4,
 h5,
