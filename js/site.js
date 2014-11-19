@@ -21,6 +21,49 @@ $(document).ready(function() {
   });
 
   /*
+   * Sidebar horizontal position and scrolling:
+   * ******************************************
+   */
+
+  // Scroll position and opacity update callback.
+  var updateSidebar = function() {
+    var width = $(window).width(); // Current window width
+
+    // Minimum width of display before view "collapses" into a single
+    // column layout. NOTE THAT THIS VALUE IS DUPLICATED IN styles.less:
+    var reducedWidth = 960;
+    var collapseWidth = 890;
+
+    // Left margin of header and footer. NOTE THAT THIS VALUE IS
+    // DUPLICATED IN styles.less:
+    var left = width < reducedWidth ? -40 : 0;
+
+    var opacity = 1; // Default sidebar opacity.
+    var x = $(window).scrollLeft(); // Horizontal position of scroll.
+
+    // If we're scrolling left in sidebar view: shift header and footer
+    // and fade opacity.
+    if (width > collapseWidth) {
+      left -= x * 1.015;
+      opacity -= x * 0.005;
+    }
+
+    // Set new position and opacity:
+    $('header,footer').css('margin-left', left + 'px');
+    $('header,footer').css('opacity', opacity);
+
+    if (width < collapseWidth)
+      $('header,footer').removeAttr('style');
+  };
+
+  /*
+   * Update sidebar position on window load, resize, and scroll.
+   */
+  $(window).ready(updateSidebar);
+  $(window).resize(updateSidebar);
+  $(window).scroll(updateSidebar);
+
+  /*
    * Section-wide text functions:
    * ****************************
    */
