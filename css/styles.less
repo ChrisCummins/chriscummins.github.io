@@ -1,9 +1,11 @@
-@font-family-headings:    "Montserrat", sans-serif;
-@font-family-sans-serif:  "Computer Modern Bright", sans-serif;
-@font-family-monospace:   "Computer Modern Typewriter", monospace;
+/* Google Font import: */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,700|Inconsolata);
+
+@font-family-sans-serif:  @font-family-headings;
+@font-family-monospace:   "Inconsolata", monospace;
 
 @font-size-base:          18px;
-@font-size-small:         13px;
+@font-size-small:         12px;
 
 @font-size-h1:            30px;
 @font-size-h2:            floor(@font-size-base * 1.2);
@@ -12,6 +14,7 @@
 @font-size-h5:            @font-size-base;
 @font-size-h6:            ceil(@font-size-base * 0.85);
 
+@line-height:             1.4;
 @line-height-headings:    1.1;
 
 @font-weight-base:        300;
@@ -64,105 +67,6 @@
           user-select: @select;
 }
 
-/*************/
-/* WEB FONTS */
-/*************/
-
-/*
- * cmun-bright.css
- */
-@font-face {
-	font-family: 'Computer Modern Bright';
-	src: url('/fonts/cmunbmr.eot');
-	src: url('/fonts/cmunbmr.eot?#iefix') format('embedded-opentype'),
-		 url('/fonts/cmunbmr.woff') format('woff'),
-		 url('/fonts/cmunbmr.ttf') format('truetype'),
-		 url('/fonts/cmunbmr.svg#cmunbmr') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: 'Computer Modern Bright';
-	src: url('/fonts/cmunbbx.eot');
-	src: url('/fonts/cmunbbx.eot?#iefix') format('embedded-opentype'),
-		 url('/fonts/cmunbbx.woff') format('woff'),
-		 url('/fonts/cmunbbx.ttf') format('truetype'),
-		 url('/fonts/cmunbbx.svg#cmunbbx') format('svg');
-	font-weight: bold;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: 'Computer Modern Bright';
-	src: url('/fonts/cmunbmo.eot');
-	src: url('/fonts/cmunbmo.eot?#iefix') format('embedded-opentype'),
-		 url('/fonts/cmunbmo.woff') format('woff'),
-		 url('/fonts/cmunbmo.ttf') format('truetype'),
-		 url('/fonts/cmunbmo.svg#cmunbmo') format('svg');
-	font-weight: normal;
-	font-style: italic;
-}
-
-@font-face {
-	font-family: 'Computer Modern Bright';
-	src: url('/fonts/cmunbxo.eot');
-	src: url('/fonts/cmunbxo.eot?#iefix') format('embedded-opentype'),
-		 url('/fonts/cmunbxo.woff') format('woff'),
-		 url('/fonts/cmunbxo.ttf') format('truetype'),
-		 url('/fonts/cmunbxo.svg#cmunbxo') format('svg');
-	font-weight: bold;
-	font-style: italic;
-}
-
-
-/*
- * cmun-typewriter.css
- */
-@font-face {
-	font-family: 'Computer Modern Typewriter';
-	src: url('/fonts/cmuntt.eot');
-	src: url('/fonts/cmuntt.eot?#iefix') format('embedded-opentype'),
-		 url('/fonts/cmuntt.woff') format('woff'),
-		 url('/fonts/cmuntt.ttf') format('truetype'),
-		 url('/fonts/cmuntt.svg#cmuntt') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: 'Computer Modern Typewriter';
-	src: url('/fonts/cmuntb.eot');
-	src: url('/fonts/cmuntb.eot?#iefix') format('embedded-opentype'),
-		 url('/fonts/cmuntb.woff') format('woff'),
-		 url('/fonts/cmuntb.ttf') format('truetype'),
-		 url('/fonts/cmuntb.svg#cmuntb') format('svg');
-	font-weight: bold;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: 'Computer Modern Typewriter';
-	src: url('/fonts/cmunit.eot');
-	src: url('/fonts/cmunit.eot?#iefix') format('embedded-opentype'),
-		 url('/fonts/cmunit.woff') format('woff'),
-		 url('/fonts/cmunit.ttf') format('truetype'),
-		 url('/fonts/cmunit.svg#cmunit') format('svg');
-	font-weight: normal;
-	font-style: italic;
-}
-
-@font-face {
-	font-family: 'Computer Modern Typewriter';
-	src: url('/fonts/cmuntx.eot');
-	src: url('/fonts/cmuntx.eot?#iefix') format('embedded-opentype'),
-		 url('/fonts/cmuntx.woff') format('woff'),
-		 url('/fonts/cmuntx.ttf') format('truetype'),
-		 url('/fonts/cmuntx.svg#cmuntx') format('svg');
-	font-weight: bold;
-	font-style: italic;
-}
-
 
 /*****************************/
 /* BASIC LAYOUT & COMPONENTS */
@@ -177,7 +81,7 @@ body {
   font-family: @font-family-sans-serif;
   font-weight: @font-weight-base;
   font-size: @font-size-base;
-  line-height: 1.6;
+  line-height: @line-height;
 }
 
 ::selection {
@@ -283,7 +187,6 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: @font-family-headings;
   color: @color-text;
   margin: 0 0 10px;
   text-align: center;
@@ -367,7 +270,7 @@ code,
 pre {
   font-family: @font-family-monospace;
   color: @color-code;
-  font-size: 85%;
+  font-size: 90%;
   line-height: 1.1em;
 }
 pre {
