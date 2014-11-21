@@ -15,7 +15,7 @@ software inspired by git and Apple's Time Machine. Creates a compact
 rotating history of file system revisions, capable of transparently
 handling huge volumes of data without the need for arbitrary binary
 blobs.
-[Read More >>](/posts/emu-by-example/)
+[[Read More]](/posts/emu-by-example/).
 
 **[shit.js](https://github.com/ChrisCummins/shit.js)** - A proof of
 concept realtime intrusion detection system for Linux that offers
@@ -26,7 +26,7 @@ interface, written in Node.js. Acronym for *S*ecure *H*ost *I*ntrusion
 **[liquid-src](https://github.com/ChrisCummins/liquid-src)** - A tiny
 JavaScript library that enables very simple centralised management of
 hyperlinks across websites and pages.
-[Read More >>](/posts/scratching-an-itch/)
+[[Read More]](/posts/scratching-an-itch/).
 
 **[euclid](https://github.com/ChrisCummins/euclid)** - A toy x86
 operating system kernel, written in C and assembly.

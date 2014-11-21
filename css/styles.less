@@ -37,6 +37,7 @@
 @color-link:              @color-emphasis;
 @color-link-hover:        @color-emphasis-dark;
 @color-code:              @color-primary-darkest;
+@color-border-line:       #e5e5e5;
 
 @selection-bg:            #444;
 @selection-color:         #ddd;
@@ -141,7 +142,7 @@ section {
   padding-bottom: 50px;
 
   @media print, screen and (max-width: @media-collapse-width) {
-    border: 1px solid #e5e5e5;
+    border: 1px solid @color-border-line;
     border-width: 1px 0;
     padding: 1em 0;
   }
@@ -149,7 +150,7 @@ section {
 
 hr {
   border: 0;
-  background: #e5e5e5;
+  background: @color-border-line;
   height: 1px;
   margin: 0 0 20px;
 }
@@ -289,7 +290,7 @@ h1 {
   font-size: @font-size-h1;
   padding: 0 0 30px;
   margin: 30px 0;
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid @color-border-line;
 }
 h2 {
   font-size: @font-size-h2;
@@ -377,16 +378,18 @@ section {
 table {
   width: 100%;
   border-collapse: collapse;
-}
-th,
-td {
-  text-align: left;
-  padding: 5px 10px;
-  border-bottom: 1px solid #e5e5e5;
-}
-thead td,
-dt {
-  font-weight: @font-weight-strong;
+
+  thead td,
+  dt {
+    font-weight: @font-weight-strong;
+  }
+
+  th,
+  td {
+    text-align: left;
+    padding: 5px 10px;
+    border-bottom: 1px solid @color-border-line;
+  }
 }
 
 
@@ -431,10 +434,7 @@ footer {
 
       li {
         display: inline;
-
-        & + li:before {
-          content: "|";
-        }
+        & + li:before { content: "|"; }
       }
     }
   }
@@ -464,9 +464,7 @@ footer {
     li {
       margin: .8em 0;
 
-      small {
-        padding-top: .5em;
-      }
+      small { padding: .5em 0 0 .5em; }
     }
   }
 
@@ -478,15 +476,10 @@ footer {
 
 footer {
   bottom: 0px;
+  p { margin-bottom: 3px; }
+  a { color: @color-primary-light; text-decoration: none; }
 
-  p {
-    margin-bottom: 3px;
-  }
-
-  small {
-    font-size: @font-size-small;
-  }
-
+  /* Prevent footer from overlapping navbar on short screens: */
   @media screen
          and (max-height: @media-height-hide-footer)
          and (min-width: @media-collapse-width) {
