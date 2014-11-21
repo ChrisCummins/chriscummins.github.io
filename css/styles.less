@@ -40,10 +40,11 @@
 @selection-bg:            #444;
 @selection-color:         #ddd;
 
-@media-reduced-width:     960px;
-@media-collapse-width:    890px;
-@media-tiny-width:        640px;
-@media-min-width:         400px;
+@media-reduced-width:      960px;
+@media-collapse-width:     890px;
+@media-tiny-width:         640px;
+@media-min-width:          400px;
+@media-height-hide-footer: 670px;
 
 .transition-duration(@transition-duration) {
   -webkit-transition-duration: @transition-duration;
@@ -69,6 +70,10 @@
           user-select: @select;
 }
 
+.tight() {
+  margin: 0;
+  padding: 0;
+}
 
 /*****************************/
 /* BASIC LAYOUT & COMPONENTS */
@@ -345,27 +350,16 @@ footer {
   zoom: 1.1;
   width: 270px;
   text-align: center;
-}
-header {
-  #navbar {
-    margin-bottom: 10px;
+  .user-select(none);
 
-    h1 {
-      font-family: @font-family-sans-serif;
-      padding: 0;
-      margin: 0;
-      border: none;
-    }
-
-    #nav {
-      font-size: @font-size-small;
-    }
+  /* Site header and nav links: */
+  h1 {
+    font-family: @font-family-sans-serif;
+    padding: 0;
+    margin: 0 0 .5em 0;
+    border: none;
 
     a {
-      /*
-       * The site header is a link back to the homepage,
-       * but we want it formatted like a regular header:
-       */
       color: @color-primary-darkest;
       font-weight: @font-weight-base;
       padding: 5px;
@@ -373,6 +367,19 @@ header {
       &:hover {
         .link-hover();
         color: @color-emphasis;
+      }
+    }
+
+    ul {
+      font-size: @font-size-small;
+      .tight();
+
+      li {
+        display: inline;
+
+        & + li:before {
+          content: "|";
+        }
       }
     }
   }
@@ -392,27 +399,26 @@ header {
      */
     -webkit-mask-image: -webkit-radial-gradient(white, black);
   }
-  img {
-    .transform(scale(1.0));
-    .transition-duration(0.45s);
-  }
-  img:hover {
-    .transform(scale(1.1));
-  }
-  p.view {
+
+  ul {
+    list-style-type: none;
     line-height: 1.3;
     margin: 0.5em 0;
+    .tight();
 
-    small {
-      padding-top: 4px;
+    li {
+      margin: .8em 0;
+
+      small {
+        padding-top: .5em;
+      }
     }
   }
-}
 
-header #navbar
-header #egobar {
-  .user-select(none);
-  padding-bottom: 0.8em;
+  /* Collapsed view: show link subtitles on same line: */
+  @media (max-width: @media-collapse-width) {
+    a small { display: inline; }
+  }
 }
 
 footer {
@@ -424,6 +430,12 @@ footer {
 
   small {
     font-size: @font-size-small;
+  }
+
+  @media screen
+         and (max-height: @media-height-hide-footer)
+         and (min-width: @media-collapse-width) {
+    display: none;
   }
 }
 
@@ -474,33 +486,6 @@ body {
     padding: 0.4in;
     font-size: @font-size-small;
     color: @color-primary-darkest;
-  }
-}
-
-header {
-  @media print, screen and (max-width: @media-collapse-width) {
-    padding: 0;
-
-    ul,
-    p.view {
-      position: static;
-    }
-
-    a small {
-      display: inline;
-    }
-
-    ul {
-      position: absolute;
-      right: 50px;
-      top: 52px;
-    }
-  }
-
-  @media print, screen and (max-width: @media-tiny-width) {
-    ul {
-      display: none;
-    }
   }
 }
 

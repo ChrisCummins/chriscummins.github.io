@@ -68,62 +68,33 @@
 
     <div class="wrapper">
 
+      {% comment %}
+
+      The header section. Contains title, navbar links, a picture, and
+      external links.
+
+      {% endcomment %}
       <header>
-
         <center>
-          <div id="navbar">
-            <h1>
-              <a href="/">
-                CHRIS<b>CUMMINS</b>
-              </a>
-            </h1>
-            <div id="nav">
-                <a href="/cv/"><b>C</b>urriculum <b>V</b>itae</a> |
-                <a href="/projects/">Open Source Software</a>
-            </div>
-          </div>
-
-          <div id="egobar">
-
-            <div class="img-frame">
-              <a href="mailto:chrisc.101@gmail.com" title="Send me an email">
-                <img src="/images/selfie.jpg" width="180" height="180"/>
-              </a>
-            </div>
-
-            <p class="view">
-              <a href="https://github.com/ChrisCummins" target="_blank">
-                GitHub
-                <small>Code goes here</small>
-              </a>
-            </p>
-            <p class="view">
-              <a href="http://www.linkedin.com/profile/view?id=195091553" target="_blank">
-                Linked In
-                <small>All professional like</small>
-              </a>
-            </p>
-            <p class="view">
-              <a href="http://www.facebook.com/cecummins" target="_blank">
-                Facebook
-                <small>All unprofessional like</small>
-              </a>
-            </p>
-            <p class="view">
-              <a href="http://www.youtube.com/user/ChrisCummins" target="_blank">
-                YouTube
-                <small>Hitting drums with sticks</small>
-              </a>
-            </p>
-            <p class="view">
-              <a href="http://soundcloud.com/peakstudio" target="_blank">
-                SoundCloud
-                <small>Making noises with other people</small>
-              </a>
-            </p>
-
-          </div>
-
+          <h1>
+            {% comment %} Title {% endcomment %}
+            <a href="/">CHRIS<b>CUMMINS</b></a>
+            {% comment %} Navbar links {% endcomment %}
+            <ul>
+              <li><a href="/cv/"><b>C</b>urriculum <b>V</b>itae</a></li>
+              <li><a href="/projects/">Open Source Software</a></li>
+            </ul>
+          </h1>
+          {% comment %} Picture {% endcomment %}
+          <div class="img-frame"><img src="/images/selfie.jpg" width="180" height="180"/></div>
+          {% comment %} External Links {% endcomment %}
+          <ul>
+            <li><a href="https://github.com/ChrisCummins" target="_blank">GitHub<small>Code goes here</small></a></li>
+            <li><a href="http://www.linkedin.com/profile/view?id=195091553" target="_blank">Linked In<small>All professional like</small></a></li>
+            <li><a href="http://www.facebook.com/cecummins" target="_blank">Facebook<small>All unprofessional like</small></a></li>
+            <li><a href="http://www.youtube.com/user/ChrisCummins" target="_blank">YouTube<small>Hitting drums with sticks</small></a></li>
+            <li><a href="http://soundcloud.com/peakstudio" target="_blank">SoundCloud<small>Making noises with other people</small></a></li>
+          </ul>
         </center>
       </header>
 
