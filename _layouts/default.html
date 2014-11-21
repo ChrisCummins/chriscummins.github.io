@@ -111,19 +111,30 @@
         {{ content }}
 
         {% if page.date or page.render_post %}
-            <hr style="margin: 20pt 0 10pt;">
-            <div id="read-more">
-              {% if page.previous %}
-              <a href="{{ page.previous.url }}" title="Read the previous post">Previous post &gt;&gt;</a>
-              {% else %}
-              <a href="/#posts" title="Return to home page">Read more &gt;&gt;</a>
+            <div class="nav">
+              <hr>
+
+              <div class="next">
+                {% if page.next %}
+                <a href="{{ page.next.url }}" title="Read the previous post">Newer post</a>
+                {% else %}
+                <a href="/#posts" title="Return to home page">Read more</a>
+                {% endif %}
+              </div>
+
+              <div class="previous">
+                {% if page.previous %}
+                <a href="{{ page.previous.url }}" title="Read the previous post">Older post</a>
+                {% else %}
+                <a href="/#posts" title="Return to home page">Read more</a>
+                {% endif %}
+              </div>
+
+              {% if page.date %}
+              <div class="date">
+                {{ page.date | date_to_string }}
+              </div>
               {% endif %}
-            </div>
-            {% if page.date %}
-            <div id="date">
-              {{ page.date or page.render_post | date_to_string }}
-            </div>
-            {% endif %}
           </div>
         {% endif %}
       </section>

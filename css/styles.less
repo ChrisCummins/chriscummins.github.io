@@ -158,17 +158,31 @@ hr {
 #post {
   padding-bottom: 1em;
 
-  #date {
-    float: left !important;
-    color: @color-primary-light;
-    font-size: @font-size-small;
+  .nav {
     font-weight: @font-weight-light;
-    padding: (@font-size-base - @font-size-small) / 2 0;
-  }
 
-  #read-more {
-    float: right !important;
-    font-weight: @font-weight-light;
+    hr {
+      margin: 20px 0 10px;
+    }
+
+    /* Three column layout for <next> <date> <prev> */
+    .next {
+      float: left;
+      width: 33%;
+    }
+    .date {
+      display: inline-block;
+      width: 33%;
+      text-align: center;
+      color: @color-primary-light;
+      font-size: @font-size-small;
+      padding: (@font-size-base - @font-size-small) / 2 0;
+    }
+    .previous {
+      float: right;
+      width: 33%;
+      text-align: right;
+    }
   }
 }
 
