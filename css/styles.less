@@ -122,55 +122,66 @@ hr {
   margin: 0 0 20px;
 }
 
-#posts a {
-  /* We don't want underlines beneath every post title on the homepage: */
-  text-decoration: none;
-}
-#posts a:hover {
-  color: @color-link;
-}
-#posts ul {
-  list-style: none;
-  padding-left: 0;
-}
-#posts ul li {
-  padding: 8px 0;
-}
-#posts ul li .date {
-  color: @color-primary-light;
-  float: right !important;
-  font-size: @font-size-small;
-  padding: (@font-size-base - @font-size-small) / 2 0;
-}
+#posts {
+  a {
+    /* We don't want underlines beneath every post title on the homepage: */
+    text-decoration: none;
 
+    &:hover {
+      color: @color-link;
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+
+    li {
+      padding: 8px 0;
+
+      .date {
+        color: @color-primary-light;
+        float: right !important;
+        font-size: @font-size-small;
+        padding: (@font-size-base - @font-size-small) / 2 0;
+      }
+    }
+  }
+}
 #post {
   padding-bottom: 1em;
-}
-#post #date {
-  float: left !important;
-  color: @color-primary-light;
-  font-size: @font-size-small;
-  padding: (@font-size-base - @font-size-small) / 2 0;
-}
-#post #read-more {
-  float: right !important;
+
+  #date {
+    float: left !important;
+    color: @color-primary-light;
+    font-size: @font-size-small;
+    padding: (@font-size-base - @font-size-small) / 2 0;
+  }
+
+  #read-more {
+    float: right !important;
+  }
 }
 
 .paper,
 .paper p {
   text-align: center;
 }
-.paper img {
-  max-width: 250px;
-  border: solid 1px #aaa;
-  -webkit-box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.75);
-  -moz-box-shadow:    7px 7px 5px 0px rgba(50, 50, 50, 0.75);
-  box-shadow:         7px 7px 5px 0px rgba(50, 50, 50, 0.75);
-}
-.paper .description {
-  font-size: 90%;
-  max-width: 75%;
-  margin: auto;
+.paper {
+
+  img {
+    max-width: 250px;
+    border: solid 1px #aaa;
+    -webkit-box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+    box-shadow:         7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+  }
+
+  .description {
+    font-size: 90%;
+    max-width: 75%;
+    margin: auto;
+  }
 }
 
 /**************/
@@ -252,14 +263,16 @@ a {
   color: @color-primary-darkest;
   text-decoration: underline;
   .transition-duration(0.3s);
-}
-a:hover {
-  color: @color-link;
-}
-a small {
-  color: @color-text;
-  margin-top: -0.6em;
-  display: block;
+
+  &:hover {
+    color: @color-link;
+  }
+
+  small {
+    color: @color-text;
+    margin-top: -0.6em;
+    display: block;
+  }
 }
 
 blockquote {
@@ -293,12 +306,15 @@ small {
   font-size: @font-size-small;
 }
 
-section p {
-  text-align: justify;
-  text-justify: newspaper;
-}
-section h1:first-child {
-  margin-top: 0;
+section {
+  p {
+    text-align: justify;
+    text-justify: newspaper;
+  }
+
+  h1:first-child {
+    margin-top: 0;
+  }
 }
 
 
@@ -330,157 +346,174 @@ footer {
   width: 270px;
   text-align: center;
 }
-header #navbar {
-  margin-bottom: 10px;
+header {
+  #navbar {
+    margin-bottom: 10px;
+
+    h1 {
+      font-family: @font-family-sans-serif;
+      padding: 0;
+      margin: 0;
+      border: none;
+    }
+
+    #nav {
+      font-size: @font-size-small;
+    }
+
+    a {
+      /*
+       * The site header is a link back to the homepage,
+       * but we want it formatted like a regular header:
+       */
+      color: @color-primary-darkest;
+      font-weight: @font-weight-base;
+
+      &:hover {
+        .link-hover();
+      }
+    }
+  }
+
+  .img-frame {
+    margin: 15px 0;
+    width: 180px;
+    height: 180px;
+    border-radius: 90px;
+    overflow: hidden;
+    z-index: 1;
+    /*
+     * Needed to prevent strange clipping error during scale animation of
+     * underlying image.
+     *
+     * See: http://stackoverflow.com/a/20037972
+     */
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+  }
+  img {
+    .transform(scale(1.0));
+    .transition-duration(0.45s);
+  }
+  img:hover {
+    .transform(scale(1.1));
+  }
+  p.view {
+    line-height: 1.3;
+    margin: 0.5em 0;
+
+    small {
+      padding-top: 4px;
+    }
+  }
 }
-header #navbar h1 {
-  font-family: @font-family-sans-serif;
-  padding: 0;
-  margin: 0;
-  border: none;
-}
-header #navbar #nav {
-  font-size: @font-size-small;
-}
-header #navbar a {
-  /*
-   * The site header is a link back to the homepage, but we want it formatted
-   * like a regular header:
-   */
-  color: @color-primary-darkest;
-  font-weight: @font-weight-base;
-}
-header #navbar a:hover {
-  .link-hover();
-}
+
+header #navbar
 header #egobar {
   .user-select(none);
   padding-bottom: 0.8em;
 }
-header .img-frame {
-  margin: 15px 0;
-  width: 180px;
-  height: 180px;
-  border-radius: 90px;
-  overflow: hidden;
-  z-index: 1;
-  /*
-   * Needed to prevent strange clipping error during scale animation of
-   * underlying image.
-   *
-   * See: http://stackoverflow.com/a/20037972
-   */
-  -webkit-mask-image: -webkit-radial-gradient(white, black);
-}
-header img {
-  .transform(scale(1.0));
-  .transition-duration(0.45s);
-}
-header img:hover {
-  .transform(scale(1.1));
-}
-header p.view {
-  line-height: 1.3;
-  margin: 0.5em 0;
-}
-header p.view small {
-  padding-top: 4px;
-}
 
 footer {
   bottom: 0px;
-}
-footer p {
-  margin-bottom: 3px;
-}
-footer small {
-  font-size: @font-size-small;
+
+  p {
+    margin-bottom: 3px;
+  }
+
+  small {
+    font-size: @font-size-small;
+  }
 }
 
 
 /**************/
 /* RESPONSIVE */
 /**************/
-@media screen and (min-width: @media-collapse-width) {
-  header,
-  footer {
+header,
+footer {
+  @media screen and (min-width: @media-collapse-width) {
     float: left;
     position: fixed;
   }
 }
 
-@media print, screen and (max-width: @media-reduced-width) {
-  .wrapper {
-    width: 100%;
-  }
-}
-
-@media print, screen and (max-width: @media-collapse-width) {
-
-  body {
-    word-wrap: break-word;
-  }
-
-  div.wrapper {
-    width: auto;
-    margin: 0;
-  }
-
-  header,
-  section,
-  footer {
+header,
+section,
+footer {
+  @media print, screen and (max-width: @media-collapse-width) {
     float: none;
     position: static;
     width: 500px;
     margin: auto;
   }
+}
 
-  header {
+.wrapper {
+  @media print, screen and (max-width: @media-reduced-width) {
+    width: 100%;
+  }
+
+  @media print, screen and (max-width: @media-collapse-width) {
+    width: auto;
+    margin: 0;
+  }
+}
+
+body {
+  @media print, screen and (max-width: @media-collapse-width) {
+    word-wrap: break-word;
+  }
+
+  @media print, screen and (max-width: @media-tiny-width) {
+    padding: 15px;
+  }
+
+  @media print {
+    padding: 0.4in;
+    font-size: @font-size-small;
+    color: @color-primary-darkest;
+  }
+}
+
+header {
+  @media print, screen and (max-width: @media-collapse-width) {
     padding: 0;
+
+    ul,
+    p.view {
+      position: static;
+    }
+
+    a small {
+      display: inline;
+    }
+
+    ul {
+      position: absolute;
+      right: 50px;
+      top: 52px;
+    }
   }
 
-  header ul,
-  header p.view {
-    position: static;
+  @media print, screen and (max-width: @media-tiny-width) {
+    ul {
+      display: none;
+    }
   }
+}
 
-  header a small {
-    display: inline;
-  }
-
-  header ul {
-    position: absolute;
-    right: 50px;
-    top: 52px;
-  }
-
-  section {
+section {
+  @media print, screen and (max-width: @media-collapse-width) {
     border: 1px solid #e5e5e5;
     border-width: 1px 0;
     padding: 1em 0;
   }
+}
 
-  pre,
-  code {
+pre,
+code {
+  @media print, screen and (max-width: @media-collapse-width) {
     word-wrap: normal;
-  }
-}
-
-@media print, screen and (max-width: @media-tiny-width) {
-  body {
-    padding: 15px;
-  }
-
-  header ul {
-    display: none;
-  }
-}
-
-@media print {
-  body {
-    padding: 0.4in;
-    font-size: @font-size-small;
-    color: @color-primary-darkest;
   }
 }
 
