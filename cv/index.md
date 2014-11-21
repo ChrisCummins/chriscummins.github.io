@@ -18,6 +18,13 @@ title: Curriculum Vitae
 * A Levels - Electronics, Mathematics, Physics
 * AS Levels - Electronics, Economics, Mathematics, Physics
 
+# Publications
+
+E. Bunkute, C. Cummins, F. Crofts, G. Bunce, I. T. Nabney, and
+D. R. Flower,
+[“PIP-DB: The Protein Isoelectric Point Database”](http://eprints.aston.ac.uk/24052/1/pipdb_bio_2.pdf),
+Bioinformatics, pp. 1–2, 2014.
+
 # Professional Experience
 
 ###### Intel Corporation   (2012-2013)
