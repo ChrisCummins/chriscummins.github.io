@@ -90,6 +90,18 @@ body {
   font-weight: @font-weight-base;
   font-size: @font-size-base;
   line-height: @line-height;
+
+  @media print, screen and (max-width: @media-collapse-width) {
+    word-wrap: break-word;
+  }
+  @media print, screen and (max-width: @media-tiny-width) {
+    padding: 15px;
+  }
+  @media print {
+    padding: 0.4in;
+    font-size: @font-size-small;
+    color: @color-primary-darkest;
+  }
 }
 
 ::selection {
@@ -100,6 +112,14 @@ body {
 .wrapper {
   width: 860px;
   margin: 0 auto;
+
+  @media print, screen and (max-width: @media-reduced-width) {
+    width: 100%;
+  }
+  @media print, screen and (max-width: @media-collapse-width) {
+    width: auto;
+    margin: 0;
+  }
 }
 
 p,
@@ -119,6 +139,12 @@ section {
   width: 500px;
   float: right;
   padding-bottom: 50px;
+
+  @media print, screen and (max-width: @media-collapse-width) {
+    border: 1px solid #e5e5e5;
+    border-width: 1px 0;
+    padding: 1em 0;
+  }
 }
 
 hr {
@@ -310,6 +336,10 @@ pre {
   color: @color-code;
   font-size: 90%;
   line-height: 1.1em;
+
+  @media print, screen and (max-width: @media-collapse-width) {
+    word-wrap: normal;
+  }
 }
 pre {
   padding: 0 15px;
@@ -370,6 +400,11 @@ footer {
   text-align: center;
   .user-select(none);
   font-weight: @font-weight-light;
+
+  @media screen and (min-width: @media-collapse-width) {
+    float: left;
+    position: fixed;
+  }
 
   /* Site header and nav links: */
   h1 {
@@ -464,14 +499,6 @@ footer {
 /* RESPONSIVE */
 /**************/
 header,
-footer {
-  @media screen and (min-width: @media-collapse-width) {
-    float: left;
-    position: fixed;
-  }
-}
-
-header,
 section,
 footer {
   @media print, screen and (max-width: @media-collapse-width) {
@@ -479,48 +506,6 @@ footer {
     position: static;
     width: 500px;
     margin: auto;
-  }
-}
-
-.wrapper {
-  @media print, screen and (max-width: @media-reduced-width) {
-    width: 100%;
-  }
-
-  @media print, screen and (max-width: @media-collapse-width) {
-    width: auto;
-    margin: 0;
-  }
-}
-
-body {
-  @media print, screen and (max-width: @media-collapse-width) {
-    word-wrap: break-word;
-  }
-
-  @media print, screen and (max-width: @media-tiny-width) {
-    padding: 15px;
-  }
-
-  @media print {
-    padding: 0.4in;
-    font-size: @font-size-small;
-    color: @color-primary-darkest;
-  }
-}
-
-section {
-  @media print, screen and (max-width: @media-collapse-width) {
-    border: 1px solid #e5e5e5;
-    border-width: 1px 0;
-    padding: 1em 0;
-  }
-}
-
-pre,
-code {
-  @media print, screen and (max-width: @media-collapse-width) {
-    word-wrap: normal;
   }
 }
 
