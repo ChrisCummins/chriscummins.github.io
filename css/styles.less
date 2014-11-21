@@ -1,5 +1,5 @@
 /* Google Font import: */
-@import url(http://fonts.googleapis.com/css?family=Raleway:400,300,700);
+@import url(http://fonts.googleapis.com/css?family=Raleway:300,400,700);
 @import url(http://fonts.googleapis.com/css?family=Ubuntu:300,400,700);
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,700|Inconsolata);
 
@@ -20,7 +20,8 @@
 @line-height:             1.4;
 @line-height-headings:    1.1;
 
-@font-weight-base:        300;
+@font-weight-light:       300;
+@font-weight-base:        400;
 @font-weight-strong:      700;
 
 @color-primary-darkest:   #000;
@@ -148,6 +149,7 @@ hr {
         color: @color-primary-light;
         float: right !important;
         font-size: @font-size-small;
+        font-weight: @font-weight-light;
         padding: (@font-size-base - @font-size-small) / 2 0;
       }
     }
@@ -160,11 +162,13 @@ hr {
     float: left !important;
     color: @color-primary-light;
     font-size: @font-size-small;
+    font-weight: @font-weight-light;
     padding: (@font-size-base - @font-size-small) / 2 0;
   }
 
   #read-more {
     float: right !important;
+    font-weight: @font-weight-light;
   }
 }
 
@@ -202,7 +206,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: @font-weight-base;
+  font-weight: @font-weight-light;
   color: @color-primary-darkest;
   margin: 0 0 10px;
   text-align: center;
@@ -351,6 +355,7 @@ footer {
   width: 270px;
   text-align: center;
   .user-select(none);
+  font-weight: @font-weight-light;
 
   /* Site header and nav links: */
   h1 {
@@ -361,7 +366,7 @@ footer {
 
     a {
       color: @color-primary-darkest;
-      font-weight: @font-weight-base;
+      font-weight: @font-weight-light;
       padding: 5px;
 
       &:hover {
@@ -372,6 +377,7 @@ footer {
 
     ul {
       font-size: @font-size-small;
+      font-weight: @font-weight-base;
       .tight();
 
       li {
