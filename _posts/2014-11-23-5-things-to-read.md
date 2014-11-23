@@ -3,10 +3,10 @@ layout: default
 title: 5 things I wish I read 5 months ago
 ---
 
-One of the few constant factors of PhD student's experiences is the
-sheer wealth of reading, especially in the first few months. This post
-contains 5 recommendations of essential reading that would have served
-me well before starting my PhD.
+One of the few comment factors among every PhD student's experiences
+is the sheer wealth of reading that is required, especially in the
+first few months. This post contains 5 recommendations for essential
+reading that would have served me well before starting my PhD.
 
 1. [The illustrated guide to a Ph.D.](http://matt.might.net/articles/phd-school-in-pictures/)
    This 5 minute read contains an excellent deconstruction of the PhD
@@ -57,7 +57,7 @@ me well before starting my PhD.
    formative months in which you hone your research topic through
    extensive literature review.
 
-This list reflects only my personal experience, but I feel that they
-cover a wide enough variety of topics to be worth recommending to any
-student preparing to start a PhD. There will be a *lot* of reading, so
-the earlier you start, the better.
+This list reflects only my personal experience, but I feel that the
+recommendations cover a wide enough variety of topics to be worth read
+for any student preparing to start a PhD. There will be a *lot* of
+reading, so the earlier you start, the better.

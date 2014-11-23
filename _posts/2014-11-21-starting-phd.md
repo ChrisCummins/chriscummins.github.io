@@ -40,14 +40,14 @@ learning, practising, and improving, meant that a PhD was the only
 logical choice for my next career move.
 
 Once I had decided to become a postgraduate student (trepidatiously,
-at first), I began my search for the right position, and was quickly
+at first), I began searching for the right position, and was quickly
 overwhelmed by the sheer range of available courses, Universities,
 fields of research, and potential supervisors. Compared to applying
-for graduate jobs, or even undergraduate degrees (a process that had
+for graduate jobs or even undergraduate degrees (a process that had
 long since faded from memory), the process of applying for a PhD is
-much more proactive and somewhat alienating. When looking for a job,
-you find a list of employees who have advertised open positions, you
-pick one that appeals to you and submit a CV. By contrast, the PhD
+more proactive and somewhat alienating. When looking for a job, you
+find a list of employees who have advertised open positions, you pick
+one or two that appeal to you and submit CVs. By contrast, the PhD
 application process starts with you *creating* a job: you find a
 potential supervisor at an institution of your choice and you have to
 get them motivated about your field of research and make them want to
@@ -56,23 +56,22 @@ hire you.
 I sought advice from my undergraduate supervisor, who gave me a short
 list of recommended Universities to consider, of which Edinburgh was
 one. Once I found the CDT website, it immediately became clear to me
-that this was the right position for me, and thankfully, after
-initially feeling overwhelmed and crippled by choice by the whole PhD
-application process, Edinburgh was the **only** University I submitted
-an application to.
+that this was the right position for me, and thankfully, after the
+initial feeling of being overwhelmed and crippled by choice, Edinburgh
+was the **only** University I ended up submitting an application to.
 
 After deciding that the Pervasive Parallelism course was the right one
 for me, the application process was relatively straightforward. From a
-list of supervisors available on their website, I chose two whose
+list of supervisors available on the school website, I chose two whose
 research area appealed to me the most, and cold-emailed them to
 register my interest as a possible research student. Of the two
 supervisors I contacted, I received a very positive response from one,
-and after a pair of informal Skype interviews, a coding challenge, and
-a review of my research proposal, I was provisionally offered a
+and after two informal Skype interviews, a coding challenge, and a
+review of my research proposal, I was provisionally offered a
 place. The provisional aspect of their offer was dependent on my
 successful completion of a formal application with the University,
-which went without a hitch, and was largely an exercise in completing
-various information about my current academic progress.
+which went without a hitch, and was largely an exercise in providing
+information about my academic history and expected degree.
 
 For me, the most unexpected part of the application process was the
 lack of "filtering". At any reasonably sized company, you can expect a
@@ -80,17 +79,19 @@ job application to go through at least one layer of indirection, as it
 gets filtered through the HR department before getting near to the
 people you will be working with. When applying for a PhD, your first
 interaction will likely be with world experts in your intended
-research field, and this can intimidating if not expected. Still, know
-that this intimidation is entirely unfounded, and my entire
-application process was an utter pleasure and very enjoyable.
+research field, and this can be as intimidating as it is
+direct. Still, know that this intimidation is entirely unfounded, and
+my entire application process was an utter pleasure and very
+enjoyable.
 
 ----
 
 I share my research proposal here not because it is in any way
 representative of my current research (it's not), nor as a model of a
 good research proposal (it's *definitely* not), but purely as a
-curiosity to the interested reader, as I found that example research
-proposals in related fields were hard to come by, and I would have
-appreciated having some more to refer to when writing my own.
+curiosity to the interested reader. When writing my proposal, I found
+that examples proposals in related fields in were hard to come by, and
+I would have appreciated having some more to refer to when writing my
+own.
 
 #### [Research Proposal](/u/ed/application.pdf)
