@@ -3,7 +3,7 @@ layout: default
 title: 5 things I wish I read 5 months ago
 ---
 
-One of the few common factors among every PhD student's experiences is
+One of the few common factors among every PhD student's experience is
 the sheer wealth of reading that is required, especially in the first
 few months. This post contains 5 recommendations for essential reading
 that would have served me well before starting my PhD.
