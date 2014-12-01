@@ -21,34 +21,6 @@ $(document).ready(function() {
   });
 
   /*
-   * Scale blog post titles so that they fit on a single line.
-   */
-  var $scratch = $('#hidden-title');
-  var $title = $('h1.title');
-  var titlewidth = $title.width();
-  var size = parseInt($title.css('font-size'));
-  var i = 0;
-
-  // Copy text over to scratch
-  $scratch.text($title.text());
-
-  // If the text doesn't fit on one line:
-  if ($scratch.width() > titlewidth) {
-    // Scale text width down until it fits on a single line:
-    do {
-      $scratch.css({fontSize: size});
-      var ratio = titlewidth / $scratch.width();
-      var size = size * ratio;
-      // We use the counter "i" to break an infinite loop in case it
-      // doesn't converge.
-      i++;
-    } while ($scratch.width() > titlewidth && i < 10)
-
-    // Set new title font size.
-    $title.css({fontSize: size});
-  }
-
-  /*
    * Sidebar horizontal position and scrolling:
    * ******************************************
    */
@@ -117,7 +89,41 @@ $(document).ready(function() {
                    'title="Click to see original" ' +
                    'target="_blank"></a>');
   });
+});
 
+/*
+ * Scale blog post titles so that they fit on a single line.
+ */
+var scaleBlogHeader = function() {
+  var $scratch = $('#hidden-title');
+  var $title = $('h1.title');
+  var titlewidth = $title.width();
+  var size = parseInt($title.css('font-size'));
+  var i = 0;
+
+  // Copy text over to scratch
+  $scratch.text($title.text());
+
+  // If the text doesn't fit on one line:
+  if ($scratch.width() > titlewidth) {
+    // Scale text width down until it fits on a single line:
+    do {
+      var ratio = titlewidth / $scratch.width();
+      var size = size * ratio;
+
+      $scratch.css({fontSize: size});
+      // We use the counter "i" to break an infinite loop in case it
+      // doesn't converge.
+      i++;
+    } while ($scratch.width() > titlewidth && i < 10)
+
+    // Set new title font size.
+    $title.css({fontSize: size});
+  }
+}
+
+$(window).load(function() {
+  scaleBlogHeader();
 });
 
 /*
