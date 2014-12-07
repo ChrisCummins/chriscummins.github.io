@@ -746,9 +746,10 @@ var Genetics = Genetics || {};
    */
   $('#get-url').click(function() {
     var urlBox = $('#share-url')[0];
+    // NOTE THIS MUST BE UPDATED IF THE PAGE MOVES:
+    var location = 'http://chriscummins.cc/s/genetics/';
 
-    urlBox.value = 'http://chriscummins.cc/genetics/#' +
-        configurationToString();
+    urlBox.value = location + '#' + configurationToString();
     $('#share').show();
     urlBox.focus();
     urlBox.select();
