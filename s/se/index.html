@@ -20,6 +20,12 @@ title: Space Explorer
   button.ctrl {
     width: 33%;
   }
+
+  #space {
+    width: 100%;
+    height: 350px;
+    border: 1px solid #000;
+  }
 </style>
 
 <div id="wrap">
@@ -39,6 +45,17 @@ title: Space Explorer
       <div class="span6" style="margin-bottom: 30px;">
 
         <center><h5>Space</h5></center>
+
+        <div id="space"></div>
+
+        <table class="table conf-table">
+          <tr class="conf-option" data-toggle="tooltip"
+              title="Controls the size of the generated space">
+            <td>Size</td>
+            <td><div id="size-slider" class="conf-slider"></div></td>
+            <td id="size">256 x 256</td>
+          </tr>
+        </table>
 
       </div> <!-- /.span6 -->
 
@@ -80,4 +97,8 @@ title: Space Explorer
   </div>
 </div>
 
+<script src="three.min.js"></script>
+<script src="OrbitControls.js"></script>
+<script src="ImprovedNoise.js"></script>
+<script src="Detector.js"></script>
 <script src="se.js"></script>
