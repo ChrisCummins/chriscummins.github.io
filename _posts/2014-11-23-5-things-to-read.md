@@ -26,8 +26,8 @@ that would have served me well before starting my PhD.
    expert, the success of which relies largely on your ability to
    communicate and interact well with peers and superiors whose
    opinions and interests may not coincide with your own. This book
-   does a great job of providing an explicit framework for these
-   interactions.
+   does a great job of providing an explicit framework for improving
+   the quality of these interactions.
 1. [The Elements of Style](http://www.amazon.co.uk/dp/020530902X).
    The primary medium of communicating research is the written
    word. For this reason, the importance of the ability to write
@@ -58,6 +58,6 @@ that would have served me well before starting my PhD.
    extensive literature review.
 
 This list reflects only my personal experience, but I feel that the
-recommendations cover a wide enough variety of topics to be worth read
-for any student preparing to start a PhD. There will be a *lot* of
-reading, so the earlier you start, the better.
+recommendations cover a wide enough variety of topics to be a worthy
+read for any student preparing to start a PhD. There will be a *lot*
+of reading, so the earlier you start, the better.

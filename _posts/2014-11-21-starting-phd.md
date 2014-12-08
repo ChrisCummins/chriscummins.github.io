@@ -7,8 +7,7 @@ Two months ago I joined the the University of Edinburgh as one of the
 first students of the
 [CDT in Pervasive Parallelism](http://pervasiveparallelism.inf.ed.ac.uk/).
 This post consists of a brief account of my experience applying for
-and accepting the position, which may be of interest to anyone
-considering pursuing a PhD.
+and accepting the position as a PhD student.
 
 The CDT (College for Doctoral Training) that I have joined is a four
 year course that consists of a first year MSc by Research, followed by
@@ -31,19 +30,18 @@ London office which allowed me to hone my software development skills
 and contribute to some great open source projects (and some terrible
 closed source ones). The decision not to rejoin them after graduating
 was not an easy one to make, and the rationale changed from day to
-day: was it that I wanted to distance myself from the corporate
-machine? To be intellectually free from profit driven incentives? To
-make a dent in the perimeter of human knowledge?  To truly and
-selflessly absorb myself in a field of research?  The simple truth
-was, I was having *too much fun in Uni*. The joy of continuously
-learning, practising, and improving, meant that a PhD was the only
-logical choice for my next career move.
+day: was it that I wanted to distance myself from the "corporate
+machine"? To be intellectually free? To make a dent in the boundary of
+human knowledge? To truly absorb myself in a field of research? The
+simple and selfish truth is that I was having *too much fun in
+Uni*. The joy of continuously learning, practising, and improving,
+meant that a PhD was the only logical choice for my next career move.
 
 Once I had decided to become a postgraduate student (trepidatiously,
 at first), I began searching for the right position, and was quickly
 overwhelmed by the sheer range of available courses, Universities,
 fields of research, and potential supervisors. Compared to applying
-for graduate jobs or even undergraduate degrees (a process that had
+for graduate jobs or even undergraduate degrees (a process that has
 long since faded from memory), the process of applying for a PhD is
 more proactive and somewhat alienating. When looking for a job, you
 find a list of employees who have advertised open positions, you pick
