@@ -17,6 +17,18 @@ title: Space Explorer
     border-top: none;
   }
 
+  #algorithm-menu-grp,
+  #algorithm-menu-btn {
+    font-weight: bold;
+    width: 100%;
+    min-width: 160px;
+    margin-bottom: 1em;
+  }
+
+  .algorithms > div:not(.active) {
+    display: none;
+  }
+
   button.ctrl {
     width: 33%;
   }
@@ -63,7 +75,33 @@ title: Space Explorer
 
       <div class="span6">
 
-        <center><h5>Search Technique</h5></center>
+        <center>
+          <h5>Search Algorithm</h5>
+          <div id="algorithm-menu-grp" class="btn-group">
+            <a id="algorithm-menu-btn" data-toggle="dropdown" href="#"
+               class="btn dropdown-toggle btn-inverse control-btn">Random</a>
+            <ul id="algorithm-menu" class="dropdown-menu">
+              <li><a href="#">Random</a></li>
+              <li><a href="#">Exhaustive</a></li>
+            </ul>
+          </div>
+        </center>
+
+        <div class="algorithms">
+          <!-- Random search -->
+          <div id="random" class="active">
+            A random search.
+          </div>
+
+          <!-- Exhaustive search -->
+          <div id="exhaustive">
+            <p>
+              The exhaustive, or brute-force, search.
+            </p>
+          </div>
+        </div>
+
+        <hr>
 
         <table class="table conf-table">
 

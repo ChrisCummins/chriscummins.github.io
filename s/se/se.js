@@ -38,7 +38,14 @@ var SpaceExplorer = function() {
     btns: {  // Button collections.
       ctrl:  $('button.ctrl')
     },
+    algorithms: {
+      divs: $('.algorithms > div')
+    },
     ctrl: {
+      algorithm: {
+        btn: $('#algorithm-menu-btn'),
+        li: $('#algorithm-menu li a')
+      },
       frequency: {
         slider: $('#frequency-slider'),
         label: $('#frequency')
@@ -51,14 +58,47 @@ var SpaceExplorer = function() {
     space: $('#space')
   };
 
+  // The search algorithms.
+  var algorithms = {
+    // Random search algorithm.
+    'random': {
+      data: {},
+      init: function(history, data, dimen) {}, // Stateless search.
+      predict: function(history, data, dimen) {
+        return [Math.floor(Math.random() * dimen[0]),
+                Math.floor(Math.random() * dimen[1])];
+      }
+    },
+    // Exhaustive search algorithm.
+    'exhaustive': {
+      data: { index: 0 },
+      init: function(history, data, dimen) { data.index = -1 },
+      predict: function(history, data, dimen) {
+        data.index++; // Update location counter.
+        return [Math.floor(data.index / dimen[0]) % dimen[0],
+                data.index % dimen[1]];
+      }
+    }
+  }
 
   // Our simulation object.
   var Simulation = function() {
     this.jiffies = 0; // Number of iterations in simulation.
     this.isRunning = false; // "true" if simulation running.
     this.frequency = 4; // Frequency (in Hz) of running.
+    this.measurement_noise = 0; // Measurement noise, [0,1].
+    this.history = [];
+
+    // Set a default algorithm.
+    this.setAlgorithm(algorithms['random']);
   };
 
+  // Set the current algorithm.
+  Simulation.prototype.setAlgorithm = function(algorithm) {
+    this.algorithm = algorithm;
+    this.algorithm.init(this.history, this.algorithm.data,
+                        [worldSize, worldSize]);
+  };
 
   // Returns whether the simulation is running.
   Simulation.prototype.running = function() {
@@ -88,20 +128,35 @@ var SpaceExplorer = function() {
 
 
   Simulation.prototype.reset = function() {
-    this.pause();
-
+    // Erase progress.
     this.jiffies = 0;
+    this.history = [];
 
     // Update the GUI.
     disableBtn(gui.btn.reset);
   };
 
   // Single step through simulation.
+  Simulation.prototype.evaluate = function(prediction) {
+    // TODO: Something interesting here!
+    return 0;
+  };
+
+  // Single step through simulation.
   Simulation.prototype.step = function() {
     this.jiffies++;
 
-    // TODO: Interesting stuff here!
-    console.log(this.jiffies);
+    // Get the predicted best next move.
+    var input = this.algorithm.predict(this.history,
+                                       this.algorithm.data,
+                                       [worldSize, worldSize]);
+    // Get the reward outcome value.
+    var reward = this.evaluate(input);
+    // Add this to the input + outcome pair to the history.
+    this.history.push({outcome: reward, input: prediction});
+
+    // Update the GUI.
+    enableBtn(gui.btn.reset);
   };
 
 
@@ -124,7 +179,6 @@ var SpaceExplorer = function() {
     this.isRunning = true;
 
     // Update the GUI.
-    enableBtn(gui.btn.reset);
     disableBtn(gui.btn.step);
     gui.btn.run.text('Pause');
 
@@ -157,6 +211,23 @@ var SpaceExplorer = function() {
 
   // "Reset" button event handler.
   gui.btn.reset.click(function() { simulation.reset(); });
+
+  // Algorithm selector handler.
+  gui.ctrl.algorithm.li.click(function() {
+    var btn = gui.ctrl.algorithm.btn; // Button.
+    var val = $(this).text(); // Algorithm name.
+    var id = val.toLowerCase().replace(/ /g, '-'); // Algorithm ID.
+    var algorithm = algorithms[id]; // The Algorithm.
+    var selector = '#' + id; // Algorithm div selector.
+
+    // Set the simulation algorithm.
+    simulation.setAlgorithm(algorithm);
+
+    // Update GUI.
+    btn.text(val);
+    gui.algorithms.divs.removeClass('active');
+    $(selector).addClass('active');
+  });
 
   // Frequency slider initialise.
   gui.ctrl.frequency.slider.slider({
