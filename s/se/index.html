@@ -1,0 +1,83 @@
+---
+layout: app
+title: Space Explorer
+---
+
+<style>
+  .tooltip-inner {
+    max-width: 450px;
+  }
+
+  .conf-table {
+    font-size: 16px;
+    table-layout: fixed;
+    margin-top: 15px;
+  }
+  .conf-table td {
+    border-top: none;
+  }
+
+  button.ctrl {
+    width: 33%;
+  }
+</style>
+
+<div id="wrap">
+  <div class="container">
+
+    <div class="headline">
+      <h1 class="headline-title">
+        Space Explorer
+        <small>Search techniques in action.</small>
+      </h1>
+    </div>
+
+    <div class="row">
+
+      <!-- LEFT COLUMN -->
+
+      <div class="span6" style="margin-bottom: 30px;">
+
+        <center><h5>Space</h5></center>
+
+      </div> <!-- /.span6 -->
+
+      <!-- RIGHT COLUMN -->
+
+      <div class="span6">
+
+        <center><h5>Search Technique</h5></center>
+
+        <table class="table conf-table">
+
+          <tr class="conf-option" data-toggle="tooltip"
+              title="The number of iterations per second">
+            <td>Simulation speed</td>
+            <td><div id="frequency-slider" class="conf-slider"></div></td>
+            <td id="frequency">2</td>
+          </tr>
+
+        </table>
+
+        <div class="ctrl btn-group" style="width: 100%";>
+          <center>
+            <button class="btn-reset ctrl btn control-btn btn-danger"  disabled>Reset</button>
+            <button class="btn-step  ctrl btn control-btn btn-warning" disabled>Step</button>
+            <button class="btn-run   ctrl btn control-btn btn-success" disabled>Run</button>
+          </center>
+        </div>
+
+      </div> <!-- /.span6 -->
+    </div> <!-- /.row -->
+
+  </div>
+  <div id="push"></div>
+</div>
+
+<div class="footer">
+  <div class="container wrapper">
+    By <a href="/">Chris Cummins</a>.
+  </div>
+</div>
+
+<script src="se.js"></script>
