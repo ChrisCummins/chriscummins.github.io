@@ -106,10 +106,17 @@ title: Space Explorer
         <table class="table conf-table">
 
           <tr class="conf-option" data-toggle="tooltip"
+              title="The amount that each measurement can deviate from the truth">
+            <td>Measurement noise</td>
+            <td><div id="measurement-noise-slider" class="conf-slider"></div></td>
+            <td id="measurement-noise">0 %</td>
+          </tr>
+
+          <tr class="conf-option" data-toggle="tooltip"
               title="The number of iterations per second">
             <td>Simulation speed</td>
             <td><div id="frequency-slider" class="conf-slider"></div></td>
-            <td id="frequency">2</td>
+            <td id="frequency">2 Hz</td>
           </tr>
 
         </table>

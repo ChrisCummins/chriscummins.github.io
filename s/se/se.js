@@ -50,6 +50,10 @@ var SpaceExplorer = function() {
         slider: $('#frequency-slider'),
         label: $('#frequency')
       },
+      measurement_noise: {
+        slider: $('#measurement-noise-slider'),
+        label: $('#measurement-noise')
+      },
       size: {
         slider: $('#size-slider'),
         label: $('#size')
@@ -235,10 +239,23 @@ var SpaceExplorer = function() {
     min: 1,
     max: 30,
     step: 1,
-    value: Math.max(gui.ctrl.frequency.label.text()),
+    value: parseInt(gui.ctrl.frequency.label.text()),
     slide: function(event, ui) {
-      gui.ctrl.frequency.label.text(Math.max(1, ui.value));
+      gui.ctrl.frequency.label.text(ui.value + ' Hz');
       simulation.frequency = ui.value;
+    }
+  });
+
+  // Initialise Measurement noise slider.
+  gui.ctrl.measurement_noise.slider.slider({
+    range: 'min',
+    min: 0,
+    max: 200,
+    step: 5,
+    value: parseInt(gui.ctrl.measurement_noise.label.text()),
+    slide: function(event, ui) {
+      gui.ctrl.measurement_noise.label.text(ui.value + ' %');
+      simulation.measurement_noise = ui.value / 100;
     }
   });
 
@@ -283,9 +300,9 @@ var SpaceExplorer = function() {
 
     for (var j = 0; j < 4; j ++) {
       for (var i = 0; i < area; i ++) {
-	var x = i % size;
+        var x = i % size;
         var y = ~~ (i / size);
-	data[i] += Math.abs(noise(x / quality, y / quality, z) * quality * 1.75);
+        data[i] += Math.abs(noise(x / quality, y / quality, z) * quality * 1.75);
       }
 
       quality *= 5;
