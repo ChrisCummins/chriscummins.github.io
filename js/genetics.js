@@ -205,26 +205,25 @@ var Genetics = Genetics || {};
                                             workingSize,
                                             workingSize).data;
     var diff = 0;
-    var p = workingSize * workingSize * 4 - 1;
 
-    do {
-      if (p % 3) {
+    /*
+     * Sum up the difference between the pixel values of the reference
+     * image and the current individual. Subtract the ratio of this
+     * difference and the largest possible difference from 1 in order
+     * to get the fitness.
+     */
+    if (diffSquared) {  // Sum squared differences.
+      for (var p = 0; p < workingSize * workingSize * 4; p++) {
         var dp = imageData[p] - workingData[p];
-        if (diffSquared) {
-          diff += dp * dp;
-        } else {
-          if (dp < 0)
-            diff -= dp;
-          else
-            diff += dp;
-        }
+        diff += dp * dp;
       }
-    } while (--p);
 
-    if (diffSquared) {
-      this.fitness = (1 - diff / (workingSize * workingSize * 3 * 256 * 256));
-    } else {
-      this.fitness = (1 - diff / (workingSize * workingSize * 3 * 256));
+    this.fitness = 1 - diff / (workingSize * workingSize * 4 * 256 * 256);
+    } else {  // Sum differences.
+      for (var p = 0; p < workingSize * workingSize * 4; p++)
+        diff += Math.abs(imageData[p] - workingData[p]);
+
+      this.fitness = 1 - diff / (workingSize * workingSize * 4 * 256);
     }
   }
 
