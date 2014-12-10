@@ -354,7 +354,7 @@ var SpaceExplorer = function() {
     this.frequency = 4; // Frequency (in Hz) of running.
     this.measurement_noise = 0; // Measurement noise, [0,1].
     this.history = []; // Array of chronological event outcomes and inputs.
-    this.space = new Space(256) // The space to search.
+    this.space = new Space(128) // The space to search.
 
     // Set a default algorithm.
     this.setAlgorithm(algorithms['random']);
