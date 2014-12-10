@@ -109,13 +109,15 @@ var SpaceExplorer = function() {
 
       quality *= 5;
     }
+
+    this.max = Math.max.apply(Math, this.data);
   };
 
 
-  // Return the uint8 height at location [x,y].
+  // Return the normalized height at location [x,y].
   Space.prototype.height = function(x, y) {
     var index = y * this.size + x; // X,Y coordinates to 1D index
-    return data[index];
+    return Number(this.data[index]) / this.max; // Noramlize.
   };
 
 
@@ -261,9 +263,9 @@ var SpaceExplorer = function() {
     geometry.applyMatrix(new THREE.Matrix4().makeRotationX(-Math.PI / 2));
 
     // 2. Vertices.
-    vertices = geometry.attributes.position.array;
-    for (var i = 0, j = 0, l = vertices.length; i < l; i ++, j += 3)
-      vertices[j + 1] = data[i] * 10;
+    this.vertices = geometry.attributes.position.array;
+    for (var i = 0, j = 0, l = this.vertices.length; i < l; i++, j += 3)
+      this.vertices[j + 1] = data[i] * 10;
 
     // 3. Texture.
     texture = new THREE.Texture(this.getTexture(data),
@@ -281,8 +283,13 @@ var SpaceExplorer = function() {
   };
 
 
-  // Se the optimisation space.
+  // Set the optimisation space.
   Renderer.prototype.setSpace = function(space) {
+
+    // Clear the point space if necessary.
+    if (space.size !== this.size)
+      this.removeAllPoints();
+
     this.size = space.size;
     this.area = space.area;
 
@@ -307,8 +314,37 @@ var SpaceExplorer = function() {
 
   // Add an explored point.
   Renderer.prototype.addPoint = function(x, y, z) {
-    // TODO: push a new point at x,y,z
+    // Normalize the height into an "intensity" value.
+    var intensity = z / simulation.space.max;
+    // Use the intensity to determine the size and colour of the
+    // point.
+    var radius = 15 + 5 * intensity;
+    var color = new THREE.Color().setHSL((.7 + .5 * intensity) % 1,
+                                         .7, .1 + .8 * intensity);
+
+    // Create a new point at [x,y,z].
+    var geometry = new THREE.SphereGeometry(radius, 4, 4);
+    var material = new THREE.MeshBasicMaterial({color: color});
+    var point = new THREE.Mesh(geometry, material);
+
+    // Get the vertices at [x,y].
+    var index = y * 3 * this.size + x * 3;
+    point.position.x = this.vertices[index];
+    point.position.y = z * 10;
+    point.position.z = this.vertices[index + 2];
+
+    this.points.push(point);
+    this.scene.add(point);
   };
+
+
+  // Remove all points.
+  Renderer.prototype.removeAllPoints = function() {
+    for (var i = 0, l = this.points.length; i < l; i++)
+      this.scene.remove(this.points[i]);
+
+    this.points = []
+  }
 
 
   // Our simulation object.
@@ -364,6 +400,7 @@ var SpaceExplorer = function() {
     // Erase progress.
     this.jiffies = 0;
     this.history = [];
+    renderer.removeAllPoints();
 
     // Update the GUI.
     disableBtn(gui.btn.reset);
@@ -371,8 +408,12 @@ var SpaceExplorer = function() {
 
   // Single step through simulation.
   Simulation.prototype.evaluate = function(prediction) {
-    // TODO: Something interesting here!
-    return 0;
+    // Get the height at that point.
+    var height = this.space.height(prediction[0], prediction[1]);
+
+    // TODO: Apply measurement noise.
+
+    return height;
   };
 
   // Single step through simulation.
@@ -387,10 +428,11 @@ var SpaceExplorer = function() {
     // Evaluate the move and prepend the outcome.
     event.unshift(this.evaluate(event));
 
+    // Render the new point.
+    renderer.addPoint(event[1], event[2], event[0] * this.space.max);
+
     // Add this event to history.
     this.history.push(event);
-
-    console.log(event);
 
     // Update the GUI.
     enableBtn(gui.btn.reset);
