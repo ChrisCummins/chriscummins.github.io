@@ -8,6 +8,10 @@ title: Space Explorer
     max-width: 450px;
   }
 
+  .wide {
+    width: 100%;
+  }
+
   .conf-table {
     font-size: 16px;
     table-layout: fixed;
@@ -33,10 +37,13 @@ title: Space Explorer
     width: 33%;
   }
 
+  #space-container {
+    border: 1px solid #000;
+  }
+
   #space {
     width: 100%;
     height: 350px;
-    border: 1px solid #000;
   }
 </style>
 
@@ -58,7 +65,13 @@ title: Space Explorer
 
         <center><h5>Space</h5></center>
 
-        <div id="space"></div>
+        <div id="space-container">
+          <div id="space"></div>
+        </div>
+
+        <div class="btn-group wide">
+          <button class="btn-randomise wide btn btn-primary">Randomise</button>
+        </div>
 
         <table class="table conf-table">
           <tr class="conf-option" data-toggle="tooltip"
@@ -121,7 +134,7 @@ title: Space Explorer
 
         </table>
 
-        <div class="ctrl btn-group" style="width: 100%";>
+        <div class="ctrl btn-group" style="width: 100%;">
           <center>
             <button class="btn-reset ctrl btn control-btn btn-danger"  disabled>Reset</button>
             <button class="btn-step  ctrl btn control-btn btn-warning" disabled>Step</button>

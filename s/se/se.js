@@ -31,6 +31,7 @@ var SpaceExplorer = function() {
   // GUI elements.
   var gui = {
     btn: {  // Buttons.
+      randomise: $('button.btn-randomise'),
       reset: $('button.ctrl.btn-reset'),
       step:  $('button.ctrl.btn-step'),
       run:   $('button.ctrl.btn-run')
@@ -429,6 +430,14 @@ var SpaceExplorer = function() {
   }
 
 
+  // Set a new simulation space.
+  var setSpace = function(space) {
+    gui.ctrl.size.label.text(space.size + ' x ' + space.size);
+    simulation.space = space;
+    renderer.setSpace(space);
+  }
+
+
   // INITIALISATION.
 
   // Enable tooltips.
@@ -490,6 +499,11 @@ var SpaceExplorer = function() {
     }
   });
 
+  // Randmoise button handler.
+  gui.btn.randomise.click(function() {
+    setSpace(new Space(simulation.space.size));
+  });
+
   // Size slider initialise.
   gui.ctrl.size.slider.slider({
     range: 'min',
@@ -497,15 +511,7 @@ var SpaceExplorer = function() {
     max: 512,
     step: 16,
     value: parseInt(gui.ctrl.size.label.text()),
-    slide: function(event, ui) {
-      gui.ctrl.size.label.text(ui.value + ' x ' + ui.value);
-
-      var space = new Space(ui.value);
-
-      // Update simulation and renderer
-      simulation.space = space;
-      renderer.setSpace(space);
-    }
+    slide: function(event, ui) { setSpace(new Space(ui.value)); }
   });
 
   // Enable buttons.
