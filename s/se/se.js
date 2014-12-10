@@ -273,6 +273,7 @@ var SpaceExplorer = function() {
 
     // 4. Material.
     material = new THREE.MeshBasicMaterial({ map: texture });
+    material.side = THREE.DoubleSide; // Double sided material.
 
     // 5. Mesh.
     return new THREE.Mesh(geometry, material);
