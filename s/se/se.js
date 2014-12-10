@@ -124,7 +124,7 @@ var SpaceExplorer = function() {
   // Class which renders a 3D visualisation of "space" in "container".
   var Renderer = function(container, space) {
     // Renderer background color.
-    var bg = new THREE.Color(0xfefefe);
+    var bg = new THREE.Color(0x000000);
 
     // WebGL browser compatability check.
     if (!Detector.webgl) {
