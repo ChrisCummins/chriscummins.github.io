@@ -60,7 +60,27 @@ var SpaceExplorer = function() {
         label: $('#size')
       }
     },
-    space: $('#space')
+    space: $('#space'),
+    analytics: {
+      iterations: $('#iterations'),
+      progress: {
+        explored: {
+          label: $('#progress-explored')
+        },
+        current: {
+          label: $('#progress-current')
+        },
+        best: {
+          label: $('#progress-best')
+        },
+        worst: {
+          label: $('#progress-worst')
+        },
+        avg: {
+          label: $('#progress-avg')
+        }
+      }
+    }
   };
 
   // The search algorithms.
@@ -347,6 +367,48 @@ var SpaceExplorer = function() {
   }
 
 
+  // Simulation progress analytics class.
+  var Analytics = function() {
+    this.best = 0; // The % best outcome (initialise low).
+    this.worst = 100; // The % worst outcome (intialise high).
+    this.sum = 0; // A running total of all outcomes.
+  };
+
+
+  // Update the analytics.
+  Analytics.prototype.set = function(simulation) {
+    var history = simulation.history;
+    var currentProgress = 0;
+    var average = 0;
+    var explored = 0;
+
+    if (history.length) { // Update statistics.
+      var last = simulation.history[simulation.history.length - 1];
+      this.sum += last[0];
+
+      currentProgress = Math.round(last[0] * 100);
+      average = Math.round((this.sum / history.length) * 100);
+      explored = Math.min((history.length / simulation.space.area) * 100,
+                          100).toFixed(2);
+
+      this.worst = currentProgress < this.worst ? currentProgress : this.worst;
+      this.best = currentProgress > this.best ? currentProgress : this.best;
+    } else { // Reset.
+      this.best = 0;
+      this.worst = 100;
+      this.sum = 0;
+    }
+
+    // Update GUI.
+    gui.analytics.iterations.text(history.length);
+    gui.analytics.progress.explored.label.text(explored + '%');
+    gui.analytics.progress.current.label.text(currentProgress + '%');
+    gui.analytics.progress.best.label.text(this.best + '%');
+    gui.analytics.progress.worst.label.text(this.worst + '%');
+    gui.analytics.progress.avg.label.text(average + '%');
+  };
+
+
   // Our simulation object.
   var Simulation = function() {
     this.jiffies = 0; // Number of iterations in simulation.
@@ -404,6 +466,7 @@ var SpaceExplorer = function() {
 
     // Update the GUI.
     disableBtn(gui.btn.reset);
+    analytics.set(this);
   };
 
   // Single step through simulation.
@@ -436,6 +499,7 @@ var SpaceExplorer = function() {
 
     // Update the GUI.
     enableBtn(gui.btn.reset);
+    analytics.set(this);
   };
 
 
@@ -562,6 +626,7 @@ var SpaceExplorer = function() {
 
   // The simulation and renderer objects.
   var simulation = new Simulation();
+  var analytics = new Analytics();
   var renderer = new Renderer(gui.space, simulation.space);
 
   // Start animation loop.

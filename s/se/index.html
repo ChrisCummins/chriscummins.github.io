@@ -32,6 +32,9 @@ title: Space Explorer
   .algorithms > div:not(.active) {
     display: none;
   }
+  .algorithms {
+    text-align: center;
+  }
 
   button.ctrl {
     width: 33%;
@@ -108,6 +111,17 @@ title: Space Explorer
               The exhaustive, or brute-force, search.
             </p>
           </div>
+        </div>
+
+        <div class="analytics">
+          <table class="table conf-table">
+            <tr><td>Iteration count</td><td id="iterations">0</td></tr>
+            <tr><td>Maximum space explored</td><td id="progress-explored">0.00%</td></tr>
+            <tr><td>Current</td><td id="progress-current">0%</td></tr>
+            <tr><td>Best</td><td id="progress-best">0%</td></tr>
+            <tr><td>Worst</td><td id="progress-worst">0%</td></tr>
+            <tr><td>Average</td><td id="progress-avg">0%</td></tr>
+          </table>
         </div>
 
         <hr>
