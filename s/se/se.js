@@ -85,24 +85,251 @@ var SpaceExplorer = function() {
     }
   }
 
+
+  // Class repesenting a square 2D search space.
+  var Space = function(size) {
+    this.size = size; // The size of the space.
+    this.area = size * size; // The area of the space.
+    this.dimen = [size, size] // Dimensions as array.
+    this.data = new Uint8Array(this.area) // Height data.
+
+    // Generate the height data.
+    var noise = new ImprovedNoise().noise;
+    var quality = 1;
+    var z = Math.random() * 100;
+
+    for (var j = 0; j < 4; j ++) {
+      for (var i = 0; i < this.area; i ++) {
+        var x = i % this.size;
+        var y = ~~ (i / this.size);
+        this.data[i] += Math.abs(noise(x / quality, y / quality, z) *
+                                 quality * 1.75);
+      }
+
+      quality *= 5;
+    }
+  };
+
+
+  // Return the uint8 height at location [x,y].
+  Space.prototype.height = function(x, y) {
+    var index = y * this.size + x; // X,Y coordinates to 1D index
+    return data[index];
+  };
+
+
+  // Class which renders a 3D visualisation of "space" in "container".
+  var Renderer = function(container, space) {
+    // Renderer background color.
+    var bg = new THREE.Color(0xfefefe);
+
+    // WebGL browser compatability check.
+    if (!Detector.webgl) {
+      container[0].innerHTML = "";
+      Detector.addGetWebGLMessage();
+    }
+
+    // The Renderer container.
+    this.container = container;
+    this.width = container.width();
+    this.height = container.height();
+
+    // Explorered points.
+    this.points = []
+
+    // Create camera. Params: FOV, aspect, z-near, z-far.
+    this.camera = new THREE.PerspectiveCamera(45, this.width / this.height, 1, 30000);
+    this.controls = new THREE.OrbitControls(this.camera);
+    this.clock = new THREE.Clock();
+    this.scene = new THREE.Scene();
+
+    // Set the space.
+    this.setSpace(space);
+
+    // Create renderer.
+    this.renderer = new THREE.WebGLRenderer();
+    this.renderer.setClearColor(bg);
+    this.renderer.setSize(this.width, this.height);
+
+    // Create DOM element.
+    this.container[0].innerHTML = "";
+    this.container[0].appendChild(this.renderer.domElement);
+
+    // Register a resize callback.
+    window.addEventListener('resize', (function(self) {
+      return function() { self.resizeCallback(); }
+    })(this), false);
+  };
+
+
+  // Render optimisation space.
+  Renderer.prototype.render = function() {
+    this.controls.update(this.clock.getDelta());
+    this.renderer.render(this.scene, this.camera);
+  }
+
+
+  // Handle a resize.
+  Renderer.prototype.resizeCallback = function() {
+    // Update width and height.
+    this.width = this.container.width();
+    this.height = this.container.height();
+
+    // Update camera and renderer.
+    this.camera.aspect = this.width / this.height;
+    this.camera.updateProjectionMatrix();
+    this.renderer.setSize(this.width, this.height);
+  };
+
+
+  // Generate terrain texture.
+  Renderer.prototype.getTexture = function(data) {
+    var canvas;
+    var canvasScaled;
+    var context;
+    var image;
+    var imageData;
+    var level;
+    var diff;
+    var vector3 = new THREE.Vector3(0, 0, 0);
+    var ambience = .2;
+    var sun = new THREE.Vector3(ambience, ambience, ambience);
+    var shade;
+
+    canvas = document.createElement('canvas');
+    canvas.width = this.size;
+    canvas.height = this.size;
+
+    context = canvas.getContext('2d');
+    context.fillStyle = '#000';
+    context.fillRect(0, 0, this.size, this.size);
+
+    image = context.getImageData(0, 0, canvas.width, canvas.height);
+    imageData = image.data;
+
+    for (var i = 0, j = 0, l = imageData.length; i < l; i += 4, j ++) {
+      vector3.x = data[j - 2] - data[j + 2];
+      vector3.y = 2;
+      vector3.z = data[j - this.size * 2] - data[j + this.size * 2];
+      vector3.normalize();
+
+      shade = vector3.dot(sun);
+
+      // R,G,B values:
+      imageData[i]     = (110 + shade * 128)  * (0.5 + data[j]  * 0.007);
+      imageData[i + 1] = (32  + shade * 96)   * (0.5 + data[j]  * 0.007);
+      imageData[i + 2] = (0   + shade * 50)   * (0.5 + data[j]  * 0.007);
+    }
+
+    context.putImageData(image, 0, 0);
+
+    // Scaled 4x
+
+    canvasScaled = document.createElement('canvas');
+    canvasScaled.width = this.size * 4;
+    canvasScaled.height = this.size * 4;
+
+    context = canvasScaled.getContext('2d');
+    context.scale(4, 4);
+    context.drawImage(canvas, 0, 0);
+
+    image = context.getImageData(0, 0, canvasScaled.width, canvasScaled.height);
+    imageData = image.data;
+
+    for (var i = 0, l = imageData.length; i < l; i += 4) {
+      var v = ~~ (Math.random() * 5);
+      imageData[i    ] += v;
+      imageData[i + 1] += v;
+      imageData[i + 2] += v;
+    }
+
+    context.putImageData(image, 0, 0);
+
+    return canvasScaled;
+  };
+
+
+  // Generate terrain.
+  Renderer.prototype.getMesh = function(data) {
+    var geometry, vertices, texture, material;
+
+    // 1. Geometry.
+    geometry = new THREE.PlaneBufferGeometry(7500, 7500,
+                                             this.size - 1,
+                                             this.size - 1);
+    geometry.applyMatrix(new THREE.Matrix4().makeRotationX(-Math.PI / 2));
+
+    // 2. Vertices.
+    vertices = geometry.attributes.position.array;
+    for (var i = 0, j = 0, l = vertices.length; i < l; i ++, j += 3)
+      vertices[j + 1] = data[i] * 10;
+
+    // 3. Texture.
+    texture = new THREE.Texture(this.getTexture(data),
+                                new THREE.UVMapping(),
+                                THREE.ClampToEdgeWrapping,
+                                THREE.ClampToEdgeWrapping);
+    texture.needsUpdate = true;
+
+    // 4. Material.
+    material = new THREE.MeshBasicMaterial({ map: texture });
+
+    // 5. Mesh.
+    return new THREE.Mesh(geometry, material);
+  };
+
+
+  // Se the optimisation space.
+  Renderer.prototype.setSpace = function(space) {
+    this.size = space.size;
+    this.area = space.area;
+
+    // Generate a new mesh.
+    var newMesh = this.getMesh(space.data);
+
+    // Remove old mesh.
+    if (this.mesh)
+      this.scene.remove(this.mesh);
+
+    // Add new mesh.
+    this.mesh = newMesh;
+    this.scene.add(this.mesh);
+
+    // Update camera position.
+    var distanceFactor = 6144 / this.size;
+    this.camera.position.x = -distanceFactor * this.size;
+    this.camera.position.y = distanceFactor * this.size;
+    this.camera.position.z = distanceFactor * this.size;
+  };
+
+
+  // Add an explored point.
+  Renderer.prototype.addPoint = function(x, y, z) {
+    // TODO: push a new point at x,y,z
+  };
+
+
   // Our simulation object.
   var Simulation = function() {
     this.jiffies = 0; // Number of iterations in simulation.
     this.isRunning = false; // "true" if simulation running.
     this.frequency = 4; // Frequency (in Hz) of running.
     this.measurement_noise = 0; // Measurement noise, [0,1].
-    this.history = [];
+    this.history = []; // Array of chronological event outcomes and inputs.
+    this.space = new Space(256) // The space to search.
 
     // Set a default algorithm.
     this.setAlgorithm(algorithms['random']);
   };
 
+
   // Set the current algorithm.
   Simulation.prototype.setAlgorithm = function(algorithm) {
     this.algorithm = algorithm;
     this.algorithm.init(this.history, this.algorithm.data,
-                        [worldSize, worldSize]);
+                        [this.space.size, this.space.size]);
   };
+
 
   // Returns whether the simulation is running.
   Simulation.prototype.running = function() {
@@ -151,13 +378,17 @@ var SpaceExplorer = function() {
     this.jiffies++;
 
     // Get the predicted best next move.
-    var input = this.algorithm.predict(this.history,
+    var event = this.algorithm.predict(this.history,
                                        this.algorithm.data,
-                                       [worldSize, worldSize]);
-    // Get the reward outcome value.
-    var reward = this.evaluate(input);
-    // Add this to the input + outcome pair to the history.
-    this.history.push({outcome: reward, input: prediction});
+                                       this.space.dimen);
+
+    // Evaluate the move and prepend the outcome.
+    event.unshift(this.evaluate(event));
+
+    // Add this event to history.
+    this.history.push(event);
+
+    console.log(event);
 
     // Update the GUI.
     enableBtn(gui.btn.reset);
@@ -189,16 +420,15 @@ var SpaceExplorer = function() {
     return this.callback();
   };
 
-  // INITIALISATION.
 
-  // WebGL browser compatability check.
-  if (!Detector.webgl) {
-    gui.space[0].innerHTML = "";
-    Detector.addGetWebGLMessage();
+  // Animate optimisation space.
+  var animate = function() {
+    requestAnimationFrame(animate); // Request next animation frmae
+    renderer.render();
   }
 
-  // Our simulation instance.
-  var simulation = new Simulation();
+
+  // INITIALISATION.
 
   // Enable tooltips.
   $('.conf-option').tooltip('hide');
@@ -268,8 +498,12 @@ var SpaceExplorer = function() {
     value: parseInt(gui.ctrl.size.label.text()),
     slide: function(event, ui) {
       gui.ctrl.size.label.text(ui.value + ' x ' + ui.value);
-      worldSize = ui.value;
-      generateTerrain();
+
+      var space = new Space(ui.value);
+
+      // Update simulation and renderer
+      simulation.space = space;
+      renderer.setSpace(space);
     }
   });
 
@@ -277,195 +511,11 @@ var SpaceExplorer = function() {
   enableBtn(gui.btn.step);
   enableBtn(gui.btn.run);
 
+  // The simulation and renderer objects.
+  var simulation = new Simulation();
+  var renderer = new Renderer(gui.space, simulation.space);
 
-  // Update WebGL space rendering.
-  var onWindowResize = function() {
-    var width = gui.space.width();
-    var height = gui.space.height();
-
-    camera.aspect = width / height;
-    camera.updateProjectionMatrix();
-    renderer.setSize(width, height);
-    controls.handleResize();
-  };
-
-
-  // Generate terrain height map.
-  var createData = function(size) {
-    var area = size * size;
-    var data = new Uint8Array(area);
-    var noise = new ImprovedNoise().noise;
-    var quality = 1;
-    var z = Math.random() * 100;
-
-    for (var j = 0; j < 4; j ++) {
-      for (var i = 0; i < area; i ++) {
-        var x = i % size;
-        var y = ~~ (i / size);
-        data[i] += Math.abs(noise(x / quality, y / quality, z) * quality * 1.75);
-      }
-
-      quality *= 5;
-    }
-
-    return data;
-  };
-
-
-  // Generate terrain texture.
-  var generateTexture = function(data, width, height) {
-    var canvas;
-    var canvasScaled;
-    var context;
-    var image;
-    var imageData;
-    var level;
-    var diff;
-    var vector3 = new THREE.Vector3(0, 0, 0);
-    var ambience = .2;
-    var sun = new THREE.Vector3(ambience, ambience, ambience);
-    var shade;
-
-    canvas = document.createElement('canvas');
-    canvas.width = width;
-    canvas.height = height;
-
-    context = canvas.getContext('2d');
-    context.fillStyle = '#000';
-    context.fillRect(0, 0, width, height);
-
-    image = context.getImageData(0, 0, canvas.width, canvas.height);
-    imageData = image.data;
-
-    for (var i = 0, j = 0, l = imageData.length; i < l; i += 4, j ++) {
-      vector3.x = data[j - 2] - data[j + 2];
-      vector3.y = 2;
-      vector3.z = data[j - width * 2] - data[j + width * 2];
-      vector3.normalize();
-
-      shade = vector3.dot(sun);
-
-      // R,G,B values:
-      imageData[i]     = (110 + shade * 128)  * (0.5 + data[j]  * 0.007);
-      imageData[i + 1] = (32  + shade * 96)   * (0.5 + data[j]  * 0.007);
-      imageData[i + 2] = (0   + shade * 50)   * (0.5 + data[j]  * 0.007);
-    }
-
-    context.putImageData(image, 0, 0);
-
-    // Scaled 4x
-
-    canvasScaled = document.createElement('canvas');
-    canvasScaled.width = width * 4;
-    canvasScaled.height = height * 4;
-
-    context = canvasScaled.getContext('2d');
-    context.scale(4, 4);
-    context.drawImage(canvas, 0, 0);
-
-    image = context.getImageData(0, 0, canvasScaled.width, canvasScaled.height);
-    imageData = image.data;
-
-    for (var i = 0, l = imageData.length; i < l; i += 4) {
-      var v = ~~ (Math.random() * 5);
-      imageData[i] += v;
-      imageData[i + 1] += v;
-      imageData[i + 2] += v;
-    }
-
-    context.putImageData(image, 0, 0);
-
-    return canvasScaled;
-  }
-
-
-  var generateTerrain = function() {
-    if (mesh)
-      scene.remove(mesh);
-
-    // Terrain data.
-    data = createData(worldSize);
-
-    // Terrain geometry.
-    var geometry = new THREE.PlaneBufferGeometry(7500, 7500,
-                                                 worldSize - 1,
-                                                 worldSize - 1);
-    geometry.applyMatrix(new THREE.Matrix4().makeRotationX(-Math.PI / 2));
-    var vertices = geometry.attributes.position.array;
-
-    for (var i = 0, j = 0, l = vertices.length; i < l; i ++, j += 3)
-      vertices[j + 1] = data[i] * 10;
-
-    // Terain texture.
-    texture = new THREE.Texture(generateTexture(data, worldSize, worldSize),
-                                 new THREE.UVMapping(),
-                                 THREE.ClampToEdgeWrapping,
-                                 THREE.ClampToEdgeWrapping);
-    texture.needsUpdate = true;
-
-    // Terrain material.
-    var material = new THREE.MeshBasicMaterial({ map: texture });
-
-    // Terrain mesh.
-    mesh = new THREE.Mesh(geometry, material);
-    scene.add(mesh);
-
-    // Update camera.
-    distanceFactor = 6144 / worldSize;
-    camera.position.x = -distanceFactor * worldSize;
-    camera.position.y = distanceFactor * worldSize;
-    camera.position.z = distanceFactor * worldSize;
-  };
-
-
-  // Animate optimisation space.
-  var animate = function() {
-    requestAnimationFrame(animate);
-    render();
-  }
-
-
-  // Render optimisation space.
-  var render = function() {
-    controls.update(clock.getDelta());
-    renderer.render(scene, camera);
-  }
-
-
-  var worldSize = 256;
-  var distanceFactor = 6144 / worldSize;
-  var bg = new THREE.Color(0xfefefe);
-
-  var camera = new THREE.PerspectiveCamera(45, gui.space.width()
-                                           / gui.space.height(), 1, 30000);
-  var clock = new THREE.Clock();
-  var container = gui.space[0];
-  var controls = new THREE.OrbitControls(camera);
-  var data;
-  var mesh;
-  var renderer;
-  var scene = new THREE.Scene();
-  var texture;
-
-
-  // Initialise WebGL optimisation space.
-  var init = function() {
-    var width = gui.space.width();
-    var height = gui.space.height();
-
-    generateTerrain();
-
-    renderer = new THREE.WebGLRenderer();
-    renderer.setClearColor(bg);
-    renderer.setSize(width, height);
-
-    container.innerHTML = "";
-    container.appendChild(renderer.domElement);
-
-    window.addEventListener('resize', onWindowResize, false);
-  }
-
-  init();
+  // Start animation loop.
   animate();
 };
 
