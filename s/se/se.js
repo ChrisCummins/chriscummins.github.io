@@ -103,6 +103,62 @@ var SpaceExplorer = function() {
         return [Math.floor(data.index / dimen[0]) % dimen[0],
                 data.index % dimen[1]];
       }
+    },
+    // Hill climber search.
+    'hill-climber': {
+      data: { minDist: 1, maxDist: 5, stochastic: 0 },
+      gui: {
+        permute: {
+          slider: $('#hill-climber-permute-slider'),
+          label: $('#hill-climber-permute')
+        },
+        stochastic: {
+          slider: $('#hill-climber-stochastic-slider'),
+          label: $('#hill-climber-stochastic')
+        }
+      },
+      init: function(history, data, dimen) {},
+      predict: function(history, data, dimen) {
+
+        // Permute a random direction and distance from point [x,y].
+        var permute = function(x, y) {
+          var direction = Math.random() * 2 * Math.PI;
+          var distance = data.minDist + Math.random() * data.maxDist;
+
+          // Get new coordinates.
+          var x2 = x + Math.floor(Math.cos(direction) * distance);
+          var y2 = y + Math.floor(Math.sin(direction) * distance);
+
+          // Bound the coordinates to prevent permuting outside of the
+          // search space.
+          x2 = Math.max(0, Math.min(x2, dimen[0] - 1));
+          y2 = Math.max(0, Math.min(y2, dimen[1] - 1));
+
+          return [x2, y2];
+        }
+
+        // Pick a random starting point.
+        if (!history.length) {
+          return [Math.floor(Math.random() * dimen[0]),
+                  Math.floor(Math.random() * dimen[1])];
+        }
+
+        var last = history[history.length - 1]; // Last event
+
+        // If this is the second iteration, *always* randomly permute.
+        if (history.length === 1)
+          return permute(last[1], last[2]);
+
+        var secondToLast = history[history.length - 2]; // Second to last event
+
+        // If the last move was an *worse* than the previous point,
+        // then return to the previous point, with probability
+        // "data.stochastic". Else, permute to a new random point.
+        if (last[0] < secondToLast[0] && Math.random() > data.stochastic)
+          return [secondToLast[1], secondToLast[2]];
+        else
+          return permute(last[1], last[2]);
+      }
     }
   }
 
@@ -630,6 +686,39 @@ var SpaceExplorer = function() {
     step: 16,
     value: parseInt(gui.ctrl.size.label.text()),
     slide: function(event, ui) { setSpace(new Space(ui.value)); }
+  });
+
+  // Hill climber permute distance slider.
+  algorithms['hill-climber'].gui.permute.slider.slider({
+    range: true,
+    min: 1,
+    max: 20,
+    step: 1,
+    values: [1, 5],
+    slide: function(event, ui) {
+      var algorithm = algorithms['hill-climber'];
+      algorithm.data.minDist = ui.values[0];
+      algorithm.data.maxDist = ui.values[1];
+
+      // Update slider label.
+      algorithm.gui.permute.label.text(ui.values[0] + ' - ' + ui.values[1]);
+    }
+  });
+
+  // Hill climber stochastic slider.
+  algorithms['hill-climber'].gui.stochastic.slider.slider({
+    range: 'min',
+    min: 0,
+    max: 50,
+    step: 1,
+    value: 0,
+    slide: function(event, ui) {
+      var algorithm = algorithms['hill-climber'];
+      algorithm.data.stochastic = ui.value / 100;
+
+      // Update slider label.
+      algorithm.gui.stochastic.label.text(ui.value + '%');
+    }
   });
 
   // Enable buttons.
