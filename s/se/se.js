@@ -471,12 +471,24 @@ var SpaceExplorer = function() {
 
   // Single step through simulation.
   Simulation.prototype.evaluate = function(prediction) {
-    // Get the height at that point.
-    var height = this.space.height(prediction[0], prediction[1]);
 
-    // TODO: Apply measurement noise.
+    // Add gaussian noise.
+    var add_noise = function(mean, stdev) {
 
-    return height;
+      // Gaussian distribution.
+      var rnd_snd = function() {
+        return ((Math.random() * 2 - 1) +
+                (Math.random() * 2 - 1) +
+                (Math.random() * 2 - 1));
+      };
+
+      return mean + rnd_snd() * stdev;
+    };
+
+    // Return a noisy observation using gaussian noise of strength
+    // "measurement_noise".
+    return add_noise(this.space.height(prediction[0], prediction[1]), // Height
+                     this.measurement_noise); // User set measurement noise
   };
 
   // Single step through simulation.
@@ -596,8 +608,8 @@ var SpaceExplorer = function() {
   gui.ctrl.measurement_noise.slider.slider({
     range: 'min',
     min: 0,
-    max: 200,
-    step: 5,
+    max: 25,
+    step: 1,
     value: parseInt(gui.ctrl.measurement_noise.label.text()),
     slide: function(event, ui) {
       gui.ctrl.measurement_noise.label.text(ui.value + ' %');
