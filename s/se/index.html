@@ -76,14 +76,16 @@ title: Space Explorer
           <button class="btn-randomise wide btn btn-primary">Randomise</button>
         </div>
 
-        <table class="table conf-table">
-          <tr class="conf-option" data-toggle="tooltip"
-              title="Controls the size of the generated space">
-            <td>Size</td>
-            <td><div id="size-slider" class="conf-slider"></div></td>
-            <td id="size">128 x 128</td>
-          </tr>
-        </table>
+        <div class="analytics">
+          <table class="table conf-table">
+            <tr><td>Iteration count</td><td id="iterations">0</td></tr>
+            <tr><td>Maximum space explored</td><td id="progress-explored">0.00%</td></tr>
+            <tr><td>Current</td><td id="progress-current">0%</td></tr>
+            <tr><td>Best</td><td id="progress-best">0%</td></tr>
+            <tr><td>Worst</td><td id="progress-worst">0%</td></tr>
+            <tr><td>Average</td><td id="progress-avg">0%</td></tr>
+          </table>
+        </div>
 
       </div> <!-- /.span6 -->
 
@@ -142,20 +144,16 @@ title: Space Explorer
           </div>
         </div>
 
-        <div class="analytics">
-          <table class="table conf-table">
-            <tr><td>Iteration count</td><td id="iterations">0</td></tr>
-            <tr><td>Maximum space explored</td><td id="progress-explored">0.00%</td></tr>
-            <tr><td>Current</td><td id="progress-current">0%</td></tr>
-            <tr><td>Best</td><td id="progress-best">0%</td></tr>
-            <tr><td>Worst</td><td id="progress-worst">0%</td></tr>
-            <tr><td>Average</td><td id="progress-avg">0%</td></tr>
-          </table>
-        </div>
-
         <hr>
 
         <table class="table conf-table">
+
+          <tr class="conf-option" data-toggle="tooltip"
+              title="Controls the size of the generated space">
+            <td>Space Size</td>
+            <td><div id="size-slider" class="conf-slider"></div></td>
+            <td id="size">128 x 128</td>
+          </tr>
 
           <tr class="conf-option" data-toggle="tooltip"
               title="The amount that each measurement can deviate from the truth">
