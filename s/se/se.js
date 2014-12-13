@@ -338,7 +338,7 @@ var SpaceExplorer = function() {
     var intensity = z / simulation.space.max;
     // Use the intensity to determine the size and colour of the
     // point.
-    var radius = 15 + 5 * intensity;
+    var radius = 30 - 10 * intensity;
     var color = new THREE.Color().setHSL((.7 + .5 * intensity) % 1,
                                          .7, .1 + .8 * intensity);
 
