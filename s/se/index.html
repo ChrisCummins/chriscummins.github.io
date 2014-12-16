@@ -102,6 +102,7 @@ title: Space Explorer
               <li><a href="#">Random</a></li>
               <li><a href="#">Exhaustive</a></li>
               <li><a href="#">Hill climber</a></li>
+              <li><a href="#">Genetic</a></li>
             </ul>
           </div>
         </center>
@@ -139,6 +140,43 @@ title: Space Explorer
                 <td>Stochastic</td>
                 <td><div id="hill-climber-stochastic-slider" class="conf-slider"></div></td>
                 <td id="hill-climber-stochastic">0%</td>
+              </tr>
+            </table>
+          </div>
+
+          <!-- Genetic algorithm -->
+          <div id="genetic">
+            <p>
+              Genetic algorithm driven search.
+            </p>
+
+            <table class="table conf-table">
+              <tr class="conf-option" data-toggle="tooltip"
+                  title="The number of individuals in a population">
+                <td>Population size</td>
+                <td><div id="genetic-size-slider" class="conf-slider"></div></td>
+                <td id="genetic-size">25</td>
+              </tr>
+
+              <tr class="conf-option" data-toggle="tooltip"
+                  title="The proportion of the population which is used for tournament selection">
+                <td>Tournament size</td>
+                <td><div id="genetic-tournament-slider" class="conf-slider"></div></td>
+                <td id="genetic-tournament">50%</td>
+              </tr>
+
+              <tr class="conf-option" data-toggle="tooltip"
+                  title="The rate at which new individuals are created by crossover of parents">
+                <td>Crossover rate</td>
+                <td><div id="genetic-crossover-slider" class="conf-slider"></div></td>
+                <td id="genetic-crossover">90%</td>
+              </tr>
+
+              <tr class="conf-option" data-toggle="tooltip"
+                  title="The rate at which new individuals are created by mutating a parent">
+                <td>Mutation rate</td>
+                <td><div id="genetic-mutation-slider" class="conf-slider"></div></td>
+                <td id="genetic-mutation">1%</td>
               </tr>
             </table>
           </div>

@@ -54,6 +54,23 @@ var SpaceExplorer = function() {
   };
 
 
+  // Scramble the elements of an array.
+  //+ Jonas Raoni Soares Silva
+  //@ http://jsfromhell.com/array/shuffle [v1.0]
+  var shuffle = function(o){ //v1.0
+    for (var j, x, i = o.length; i;
+         j = Math.floor(Math.random() * i),
+         x = o[--i], o[i] = o[j], o[j] = x);
+    return o;
+  };
+
+
+  // Rank the elements of "history" from best to worst.
+  var sortHistory = function(history) {
+    return history.sort(function(a, b) { return b[0]- a[0]; });
+  };
+
+
   // GUI elements.
   var gui = {
     btn: {  // Buttons.
@@ -165,6 +182,104 @@ var SpaceExplorer = function() {
           return [secondToLast[1], secondToLast[2]];
         else
           return permutePoint(last.slice(1), permuteRange, dimen);
+      }
+    },
+    'genetic': {
+      data: {
+        pop: [],
+        popSize: 25,
+        nextPopSize: 25,
+        tournamentSize: 0.5,
+        crossoverRate: 0.9,
+        mutationRate: 0.01
+      },
+      gui: {
+        size: {
+          slider: $('#genetic-size-slider'),
+          label: $('#genetic-size')
+        },
+        tournament: {
+          slider: $('#genetic-tournament-slider'),
+          label: $('#genetic-tournament')
+        },
+        crossover: {
+          slider: $('#genetic-crossover-slider'),
+          label: $('#genetic-crossover')
+        },
+        mutation: {
+          slider: $('#genetic-mutation-slider'),
+          label: $('#genetic-mutation')
+        }
+      },
+      init: function(history, data, dimen) {
+        data.pop = [];
+      },
+      predict: function(history, data, dimen) {
+
+        // Crossover two individuals using uniform crossover.
+        var crossover = function(a, b) {
+          if (Math.random < 0.5)
+            return [a[1], b[2]];
+          else
+            return [b[1], a[2]];
+        }
+
+        // Mutate an individual.
+        var mutate = function(a) {
+          return permutePoint(a.slice(1), [1, 10], dimen);
+        }
+
+        var replicate = function(a) {
+          return a.slice(1);
+        }
+
+        //+ Jonas Raoni Soares Silva
+        //@ http://jsfromhell.com/array/shuffle [v1.0]
+        var shuffle = function(o){ //v1.0
+          for (var j, x, i = o.length; i;
+               j = Math.floor(Math.random() * i),
+               x = o[--i], o[i] = o[j], o[j] = x);
+          return o;
+        };
+
+        // Generate a new population from "lastPop". If not given,
+        // generate a random population.
+        var genPop = function(lastPop) {
+          var pop = []; // The new population
+          data.popSize = data.nextPopSize; // Set the next population size
+
+          if (lastPop && data.tournamentSize) {
+            // Breed a new population using tournament selection.
+            var poolSize = Math.max(data.tournamentSize * lastPop.length, 1);
+
+            while (pop.length < data.popSize) {
+              // Generate a ranked tournament.
+              var tournament = sortHistory(shuffle(lastPop).slice(0, poolSize));
+
+              // Crossver, mutate, or replicate.
+              if (Math.random() < data.crossoverRate && poolSize > 1)
+                pop.push(crossover(tournament[0], tournament[1]));
+              else if (Math.random() < data.mutationRate)
+                pop.push(mutate(tournament[0])); // Mutate
+              else
+                pop.push(replicate(tournament[0])) // Replicate
+            }
+          } else {
+            // Generate a random population.
+            for (var i = 0; i < data.popSize; i++)
+              pop.push(randomPoint(dimen));
+          }
+
+          return pop;
+        }
+
+        // Generate a starting population.
+        if (!history.length)
+          data.pop = genPop();
+        else if (!data.pop.length)
+          data.pop = genPop(history.slice(0, data.popSize));
+
+        return data.pop.pop();
       }
     }
   }
@@ -725,6 +840,86 @@ var SpaceExplorer = function() {
 
       // Update slider label.
       algorithm.gui.stochastic.label.text(ui.value + '%');
+    }
+  });
+
+  // Genetic algorithm population size slider.
+  algorithms['genetic'].gui.size.slider.slider({
+    range: 'min',
+    min: 1,
+    max: 50,
+    step: 1,
+    value: 25,
+    slide: function(event, ui) {
+      var algorithm = algorithms['genetic'];
+      algorithm.data.nextPopSize = ui.value;
+
+      // Update slider label.
+      algorithm.gui.size.label.text(ui.value);
+    }
+  });
+
+  // Genetic algorithm population size slider.
+  algorithms['genetic'].gui.size.slider.slider({
+    range: 'min',
+    min: 1,
+    max: 100,
+    step: 1,
+    value: 25,
+    slide: function(event, ui) {
+      var algorithm = algorithms['genetic'];
+      algorithm.data.nextPopSize = ui.value;
+
+      // Update slider label.
+      algorithm.gui.size.label.text(ui.value);
+    }
+  });
+
+  // Genetic algorithm tournament size slider.
+  algorithms['genetic'].gui.tournament.slider.slider({
+    range: 'min',
+    min: 0,
+    max: 100,
+    step: 5,
+    value: 50,
+    slide: function(event, ui) {
+      var algorithm = algorithms['genetic'];
+      algorithm.data.tournament = ui.value / 100;
+
+      // Update slider label.
+      algorithm.gui.tournament.label.text(ui.value + '%');
+    }
+  });
+
+  // Genetic algorithm population crossover slider.
+  algorithms['genetic'].gui.crossover.slider.slider({
+    range: 'min',
+    min: 0,
+    max: 100,
+    step: 5,
+    value: 90,
+    slide: function(event, ui) {
+      var algorithm = algorithms['genetic'];
+      algorithm.data.crossoverRate = ui.value / 100;
+
+      // Update slider label.
+      algorithm.gui.crossover.label.text(ui.value + '%');
+    }
+  });
+
+  // Genetic algorithm population mutation slider.
+  algorithms['genetic'].gui.mutation.slider.slider({
+    range: 'min',
+    min: 0,
+    max: 10,
+    step: 1,
+    value: 1,
+    slide: function(event, ui) {
+      var algorithm = algorithms['genetic'];
+      algorithm.data.mutationRate = ui.value / 100;
+
+      // Update slider label.
+      algorithm.gui.mutation.label.text(ui.value + '%');
     }
   });
 
