@@ -35,6 +35,25 @@ var SpaceExplorer = function() {
   };
 
 
+  // Permute "point" in space "dimen" by a random distance within
+  // "range".
+  var permutePoint = function(point, range, dimen) {
+    var direction = Math.random() * 2 * Math.PI;
+    var distance = range[0] + Math.random() * range[1];
+
+    // Get new coordinates.
+    var x2 = point[0] + Math.floor(Math.cos(direction) * distance);
+    var y2 = point[1] + Math.floor(Math.sin(direction) * distance);
+
+    // Bound the coordinates to prevent mutating outside of the
+    // search space.
+    x2 = Math.max(0, Math.min(x2, dimen[0] - 1));
+    y2 = Math.max(0, Math.min(y2, dimen[1] - 1));
+
+    return [x2, y2];
+  };
+
+
   // GUI elements.
   var gui = {
     btn: {  // Buttons.
@@ -126,32 +145,16 @@ var SpaceExplorer = function() {
       init: function(history, data, dimen) {},
       predict: function(history, data, dimen) {
 
-        // Permute a random direction and distance from point [x,y].
-        var permute = function(x, y) {
-          var direction = Math.random() * 2 * Math.PI;
-          var distance = data.minDist + Math.random() * data.maxDist;
-
-          // Get new coordinates.
-          var x2 = x + Math.floor(Math.cos(direction) * distance);
-          var y2 = y + Math.floor(Math.sin(direction) * distance);
-
-          // Bound the coordinates to prevent permuting outside of the
-          // search space.
-          x2 = Math.max(0, Math.min(x2, dimen[0] - 1));
-          y2 = Math.max(0, Math.min(y2, dimen[1] - 1));
-
-          return [x2, y2];
-        }
-
         // Pick a random starting point.
         if (!history.length)
           return randomPoint(dimen);
 
         var last = history[history.length - 1]; // Last event
+        var permuteRange = [data.minDist, data.maxDist];
 
         // If this is the second iteration, *always* randomly permute.
         if (history.length === 1)
-          return permute(last[1], last[2]);
+          return permutePoint(last.slice(1), permuteRange, dimen);
 
         var secondToLast = history[history.length - 2]; // Second to last event
 
@@ -161,7 +164,7 @@ var SpaceExplorer = function() {
         if (last[0] < secondToLast[0] && Math.random() > data.stochastic)
           return [secondToLast[1], secondToLast[2]];
         else
-          return permute(last[1], last[2]);
+          return permutePoint(last.slice(1), permuteRange, dimen);
       }
     }
   }
