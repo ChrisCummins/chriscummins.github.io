@@ -28,6 +28,13 @@ var SpaceExplorer = function() {
   };
 
 
+  // Generate a random point withim "dimen".
+  var randomPoint = function(dimen) {
+    return [Math.floor(Math.random() * dimen[0]),
+            Math.floor(Math.random() * dimen[1])]
+  };
+
+
   // GUI elements.
   var gui = {
     btn: {  // Buttons.
@@ -90,8 +97,7 @@ var SpaceExplorer = function() {
       data: {},
       init: function(history, data, dimen) {}, // Stateless search.
       predict: function(history, data, dimen) {
-        return [Math.floor(Math.random() * dimen[0]),
-                Math.floor(Math.random() * dimen[1])];
+        return randomPoint(dimen);
       }
     },
     // Exhaustive search algorithm.
@@ -138,10 +144,8 @@ var SpaceExplorer = function() {
         }
 
         // Pick a random starting point.
-        if (!history.length) {
-          return [Math.floor(Math.random() * dimen[0]),
-                  Math.floor(Math.random() * dimen[1])];
-        }
+        if (!history.length)
+          return randomPoint(dimen);
 
         var last = history[history.length - 1]; // Last event
 
