@@ -6,9 +6,9 @@ title: Open Source Projects
 # Personal Projects
 
 **[pip-db](https://github.com/ChrisCummins/pip-db)** - A search engine
-and data analysis application for storing specific biological data,
-which allows scientific researchers to query particular molecular
-properties of proteins.
+and data analysis application for storing biological data about
+isoelectric points. It enables researchers to query the molecular
+properties of proteins. [[Read More]](/posts/pip-db/).
 
 **[emu](https://github.com/ChrisCummins/emu)** - Fast snapshot backup
 software inspired by git and Apple's Time Machine. Creates a compact
