@@ -22,7 +22,7 @@ title: Curriculum Vitae
 
 E. Bunkute, C. Cummins, F. Crofts, G. Bunce, I. T. Nabney, and
 D. R. Flower,
-[“PIP-DB: The Protein Isoelectric Point Database”](http://eprints.aston.ac.uk/24052/1/pipdb_bio_2.pdf),
+[“PIP-DB: The Protein Isoelectric Point Database”](http://bioinformatics.oxfordjournals.org/content/31/2/295.full?etoc),
 Bioinformatics, pp. 1–2, 2014.
 
 # Professional Experience
