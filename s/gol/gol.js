@@ -20,19 +20,19 @@ var Gol = Gol || {};
     this.leftDown = false;
 
     /*
-     * Given a mouse object, create a new cell if the mouse is positioned over a
-     * cell.
+     * Create a new cell if the mouse is positioned over a cell.
      */
-    function spawnCellUnderMouse(mouse) {
+    function spawnCell(mouse) {
+      var cell;
 
       /*
        * Returns the cell at the mouse point, or null if the mouse is not over
        * one.
        */
-      function getCellAtMouse(mouse) {
+      function getCellAtPos(x, y) {
         /* Get the i, j coordinates of the cell. */
-        var col = Math.floor((mouse.x - tile.offX) / (tile.size + tile.margin));
-        var row = Math.floor((mouse.y - tile.offY) / (tile.size + tile.margin));
+        var col = Math.floor((x - tile.offX) / (tile.size + tile.margin));
+        var row = Math.floor((y - tile.offY) / (tile.size + tile.margin));
 
         /* Return nothing if the coordinates are invalid */
         if (col > grid.w || col < 0 || row > grid.h || row < 0)
@@ -42,11 +42,10 @@ var Gol = Gol || {};
         return cells[row * grid.w + col];
       }
 
-      var cell = getCellAtMouse(mouse);
-
-      if (cell !== null)
+      /* Spawn a cell if possible. */
+      if ((cell = getCellAtPos(mouse.x, mouse.y)) !== null)
         cell.spawn();
-    }
+    };
 
     /* Event listeners */
     canvas.addEventListener('mousemove', function(event) {
@@ -54,13 +53,13 @@ var Gol = Gol || {};
       this.y = event.clientY - bounds.top;
 
       if (this.leftDown)
-        spawnCellUnderMouse(this);
+        spawnCell(this);
     }, false);
 
     canvas.addEventListener('mousedown', function(event) {
       if (event.button == 0) {
         this.leftDown = true;
-        spawnCellUnderMouse(this);
+        spawnCell(this);
       } else if (event.button == 2)
         paused = true;
     }, false);
