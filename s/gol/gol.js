@@ -18,7 +18,6 @@ var Gol = Gol || {};
     this.x = 0,
     this.y = 0,
     this.leftDown = false;
-    this.rightDown = false;
 
     /*
      * Given a mouse object, create a new cell if the mouse is positioned over a
@@ -62,19 +61,15 @@ var Gol = Gol || {};
       if (event.button == 0) {
         this.leftDown = true;
         spawnCellUnderMouse(this);
-      } else if (event.button == 2) {
-        this.rightDown = true;
+      } else if (event.button == 2)
         paused = true;
-      }
     }, false);
 
     canvas.addEventListener('mouseup', function(event) {
       if (event.button == 0)
         this.leftDown = false;
-      else if (event.button == 2) {
-        this.rightDown = false;
+      else if (event.button == 2)
         paused = false;
-      }
     }, false);
   }
 
