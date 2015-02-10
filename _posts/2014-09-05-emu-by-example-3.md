@@ -121,3 +121,5 @@ You should be able to get by 90% of the time with just the commands
 we've already covered. In Part 4, we'll cover the more exotic `squash`
 and `prune` commands, for performing more advanced backup
 administration.
+
+#### [Part 4: Squash and prune](/posts/emu-by-example-4/)
