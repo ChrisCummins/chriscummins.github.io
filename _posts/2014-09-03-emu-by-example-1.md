@@ -137,7 +137,7 @@ Head:
 Device:          tmpfs
 ```
 
-While incredible simplistic, this tutorial has hopefully demonstrated
+While incredibly simplistic, this tutorial has hopefully demonstrated
 a key strength of emu: **transparency**. Pointers are just files, data
 is stored in plain text, and things aren't wrapped up in unnecessary
 complexity. In later tutorials we will cover some of the advanced
