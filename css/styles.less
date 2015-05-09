@@ -510,6 +510,68 @@ footer {
   }
 }
 
+/*********************/
+/* Thumbnail gallery */
+/*********************/
+@thumbnail-label-init-opacity:  0;
+@thumbnail-label-hover-opacity: 1;
+
+@thumbnail-img-init-opacity:    1;
+@thumbnail-img-hover-opacity:   .5;
+
+.thumbnails {
+    .thumbnail {
+        display: inline-block;
+        position: relative;
+        overflow: hidden;
+        width: 160px;
+        height: 160px;
+        background: #000;
+        border: solid 1px #000;
+
+        .image {
+            height: 160px;
+            line-height: 0;
+            img { opacity: @thumbnail-img-init-opacity; }
+        }
+
+        .label {
+            margin: 0;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            z-index: 10;
+            opacity: @thumbnail-label-init-opacity;
+            p {
+                position: absolute;
+                width: 100%;
+                margin: 0;
+                top: 50%;
+                transform: translate(0, -50%);
+                text-align: center;
+                color: #fff;
+                font-weight: 700;
+                text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+            }
+        }
+
+        .image img,
+        .label {
+            -webkit-transition: all .5s ease;
+               -moz-transition: all .5s ease;
+                -ms-transition: all .5s ease;
+                 -o-transition: all .5s ease;
+                    transition: all .5s ease;
+        }
+
+        :hover {
+            .image img { opacity: @thumbnail-img-hover-opacity; }
+            .label     { opacity: @thumbnail-label-hover-opacity; }
+        }
+
+    }
+}
+
 
 /***********************/
 /* Syntax highlighting */
