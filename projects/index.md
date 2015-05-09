@@ -3,6 +3,30 @@ layout: default
 title: Open Source Projects
 ---
 
+# Hacks & Demos
+
+<div class="thumbnails">
+    <!-- Thumbnail row -->
+    <div class="thumbnail">
+        <a href="/s/genetics/">
+            <div class="label"><p>Genetic<br/>Algorithms</p></div>
+            <div class="image"><img src="/images/projects/gyop.png" /></div>
+        </a>
+    </div>
+    <div class="thumbnail">
+        <a href="/s/boids/">
+            <div class="label"><p>Flocking<br/>Behaviours</p></div>
+            <div class="image"><img src="/images/projects/boids.png" /></div>
+        </a>
+    </div>
+    <div class="thumbnail">
+        <a href="/s/gol/">
+            <div class="label"><p>Conway's<br/>Game of Life</p></div>
+            <div class="image"><img src="/images/projects/gol.png" /></div>
+        </a>
+    </div>
+</div>
+
 # Personal Projects
 
 <div class="thumbnails">
