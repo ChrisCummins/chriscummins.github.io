@@ -333,10 +333,16 @@ a {
   }
 }
 
-blockquote {
-  border-left: 2px solid #d5d5d5;
-  margin: 0;
-  padding: 0 0 0 20px;
+blockquote,
+pre {
+  /* Add left rule but maintain vertical alignment. */
+  @rule-colour: #d5d5d5;
+  @rule-width: 2px;
+  @rule-offset: 10px;
+
+  border-left: @rule-width solid @rule-colour;
+  margin: 0 0 0 -(@rule-width + @rule-offset);
+  padding: 0 0 0 @rule-offset;
 }
 
 code,
@@ -349,10 +355,6 @@ pre {
   @media print, screen and (max-width: @media-collapse-width) {
     word-wrap: normal;
   }
-}
-pre {
-  padding: 0 15px;
-  border-left: 2px solid #d5d5d5;
 }
 /* Inline code, but not pre-formatted code blocks: */
 p code {
