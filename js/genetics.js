@@ -646,8 +646,8 @@ var Genetics = Genetics || {};
       /* Write out the internal state to analytics panel */
       ap.elapsedTime.text(secondsToString(Math.round(totalTime)));
       ap.numberOfGenerations.text(jiffies);
-      ap.timePerGeneration.text(timePerGeneration.toFixed(2) + ' ms');
-      ap.timePerImprovment.text(timePerImprovment.toFixed(2) + ' ms');
+      ap.timePerGeneration.text((10 * timePerGeneration.toFixed(2)) + ' ms');
+      ap.timePerImprovment.text((10 * timePerImprovment.toFixed(2)) + ' ms');
       ap.currentFitness.text(currentFitness.toFixed(2) + '%');
       ap.highestFitness.text(highestFitness.toFixed(2) + '%');
       ap.lowestFitness.text(lowestFitness.toFixed(2) + '%');
