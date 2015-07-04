@@ -631,7 +631,7 @@ var Genetics = Genetics || {};
 
       var fittest = population.getFittest();
       var totalTime = ((new Date().getTime() - startTime) / 1000);
-      var timePerGeneration = (totalTime / jiffies) * 100;
+      var timePerGeneration = (totalTime / jiffies) * 1000;
       var timePerImprovment = 0;
       var currentFitness = (fittest.fitness * 100);
 
