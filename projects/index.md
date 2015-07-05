@@ -8,19 +8,19 @@ title: Open Source Projects
 <div class="thumbnails">
     <!-- Thumbnail row -->
     <div class="thumbnail">
-        <a href="/s/genetics/">
+        <a href="/s/genetics/" target="_blank">
             <div class="label"><p>Genetic<br/>Algorithms</p></div>
             <div class="image"><img src="/images/projects/gyop.png" /></div>
         </a>
     </div>
     <div class="thumbnail">
-        <a href="/s/boids/">
+        <a href="/s/boids/" target="_blank">
             <div class="label"><p>Flocking<br/>Behaviours</p></div>
             <div class="image"><img src="/images/projects/boids.png" /></div>
         </a>
     </div>
     <div class="thumbnail">
-        <a href="/s/gol/">
+        <a href="/s/gol/" target="_blank">
             <div class="label"><p>Conway's<br/>Game of Life</p></div>
             <div class="image"><img src="/images/projects/gol.png" /></div>
         </a>
@@ -32,19 +32,19 @@ title: Open Source Projects
 <div class="thumbnails">
     <!-- Thumbnail row -->
     <div class="thumbnail">
-        <a href="https://github.com/ChrisCummins/rt">
+        <a href="https://github.com/ChrisCummins/rt" target="_blank">
             <div class="label"><p>Ray Tracer</p></div>
             <div class="image"><img src="/images/projects/rt.jpg" /></div>
         </a>
     </div>
     <div class="thumbnail">
-        <a href="https://github.com/ChrisCummins/pip-db">
+        <a href="https://github.com/ChrisCummins/pip-db" target="_blank">
             <div class="label"><p>Protein<br/>Isoeletric Point<br/>Database</p></div>
             <div class="image"><img src="/images/projects/pip-db.png" /></div>
         </a>
     </div>
     <div class="thumbnail">
-        <a href="https://github.com/ChrisCummins/pip-db">
+        <a href="https://github.com/ChrisCummins/pip-db" target="_blank">
             <div class="label"><p>Backup<br/>Management</p></div>
             <div class="image"><img src="/images/projects/emu.png" /></div>
         </a>
@@ -52,19 +52,19 @@ title: Open Source Projects
 
     <!-- Thumbnail row -->
     <div class="thumbnail">
-        <a href="https://github.com/ChrisCummins/euclid">
+        <a href="https://github.com/ChrisCummins/euclid" target="_blank">
             <div class="label"><p>x86 Kernel</p></div>
             <div class="image"><img src="/images/projects/euclid.png" /></div>
         </a>
     </div>
     <div class="thumbnail">
-        <a href="https://github.com/ChrisCummins/shit.js">
+        <a href="https://github.com/ChrisCummins/shit.js" target="_blank">
             <div class="label"><p>Filesystem<br/>Monitoring</p></div>
             <div class="image"><img src="/images/projects/shit.png" /></div>
         </a>
     </div>
     <div class="thumbnail">
-        <a href="https://github.com/ChrisCummins/liquid-src">
+        <a href="https://github.com/ChrisCummins/liquid-src" target="_blank">
             <div class="label"><p>HTML Asset<br/>Management</p></div>
             <div class="image"><img src="/images/projects/liquid-src.png" /></div>
         </a>
@@ -81,7 +81,7 @@ title: Open Source Projects
 contributions include multiple patches for a number of different
 applications, such as the contact manager, control centre and photo
 manager. -->
-        <a href="http://www.gnome.org/">
+        <a href="http://www.gnome.org/" target="_blank">
             <div class="label"><p>GNOME</p></div>
             <div class="image"><img src="/images/projects/gnome.png" /></div>
         </a>
@@ -90,7 +90,7 @@ manager. -->
 <!-- The popular operating system kernel. I was fortunate enough to
 get the opportunity to author a patch which enables improved debugging
 in the ioctl subsystem. -->
-        <a href="https://www.kernel.org/">
+        <a href="https://www.kernel.org/" target="_blank">
             <div class="label"><p>Linux Kernel</p></div>
             <div class="image"><img src="/images/projects/linux.png" /></div>
         </a>
@@ -100,14 +100,14 @@ in the ioctl subsystem. -->
 GPUs in user interfaces. I developed a prototype of organic swarming
 behaviours, modelling the flocking behaviour and movements of birds in
 flight. -->
-        <a href="http://roblog.sixbynine.org/2012/10/rig-1-ui-designer-engine.html">
+        <a href="http://roblog.sixbynine.org/2012/10/rig-1-ui-designer-engine.html" target="_blank">
             <div class="label"><p>Rig</p></div>
             <div class="image"><img src="/images/projects/rig.png" /></div>
         </a>
     </div>
     <!-- Thumbnail row -->
     <div class="thumbnail">
-      <a href="http://www.gtk.org/">
+      <a href="http://www.gtk.org/" target="_blank">
             <div class="label"><p>GTK+</p></div>
             <div class="image"><img src="/images/projects/gtk.png" /></div>
         </a>
@@ -116,13 +116,13 @@ flight. -->
 <!-- I have developed Wayland-enabling features for the GTK+, Cogl and
 Clutter libraries, including implementing animated cursors and client
 side decorations. -->
-      <a href="http://wayland.freedesktop.org/">
+      <a href="http://wayland.freedesktop.org/" target="_blank">
             <div class="label"><p>Wayland</p></div>
             <div class="image"><img src="/images/projects/wayland.png" /></div>
         </a>
     </div>
     <div class="thumbnail">
-      <a href="http://www.cogl3d.org/">
+      <a href="http://www.cogl3d.org/" target="_blank">
             <div class="label"><p>cogl</p></div>
             <div class="image"><img src="/images/projects/cogl.png" /></div>
         </a>
