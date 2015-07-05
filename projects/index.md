@@ -44,7 +44,7 @@ title: Open Source Projects
         </a>
     </div>
     <div class="thumbnail">
-        <a href="https://github.com/ChrisCummins/pip-db" target="_blank">
+        <a href="http://chriscummins.cc/posts/emu-by-example/" target="_blank">
             <div class="label"><p>Backup<br/>Management</p></div>
             <div class="image"><img src="/images/projects/emu.png" /></div>
         </a>
