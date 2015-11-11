@@ -61,6 +61,7 @@ var Genetics = Genetics || {};
    */
   var clock;
   var jiffies;
+  var numberOfImprovements
   var geneSize;
   var dnaLength;
   var lowestFitness;
@@ -618,6 +619,7 @@ var Genetics = Genetics || {};
 
     if (isStopped()) {
       jiffies = 0;
+      numberOfImprovements = 0;
       startTime = new Date().getTime();
       population = new Population(populationSize);
     }
@@ -632,13 +634,22 @@ var Genetics = Genetics || {};
       var fittest = population.getFittest();
       var totalTime = ((new Date().getTime() - startTime) / 1000);
       var timePerGeneration = (totalTime / jiffies) * 1000;
-      var timePerImprovment = 0;
+      var timePerImprovment = (totalTime / numberOfImprovements) * 1000;
       var currentFitness = (fittest.fitness * 100);
+      
+      if (currentFitness < lowestFitness) {
+	  lowestFitness = currentFitness;
+      } else {
+	  lowestFitness = lowestFitness;
+      }
 
-      lowestFitness = (currentFitness < lowestFitness) ?
-          currentFitness : lowestFitness;
-      highestFitness = (currentFitness > highestFitness) ?
-          currentFitness : highestFitness;
+      if (currentFitness > highestFitness) {
+	  highestFitness = currentFitness;
+	  /* Improvement was made */
+	  numberOfImprovements++;
+      } else {
+	  highestFitness = highestFitness;
+      }
 
       /* Draw the best fit to output */
       fittest.draw(outputCtx, 350, 350);
