@@ -8,16 +8,12 @@ title: Curriculum Vitae
 ###### University of Edinburgh
 
 * **2018** Ph.D, Informatics *(ongoing)*.
-* **2015** MSc by Research, Pervasive Parallelism.
+* **2015** MSc by Research, Pervasive Parallelism. *Distinction*.
 
 ###### Aston University
 
-* **2014** MEng Electronic Engineering and Computer Science, *First Class Honours*.
-
-###### Birkdale School
-
-* **2009** A Levels - Electronics, Mathematics, Physics.<br/>
-* **2008** AS Levels - Electronics, Economics, Mathematics, Physics.
+* **2014** MEng Electronic Engineering and Computer Science.
+  *First Class Honours*.
 
 # Publications
 
@@ -40,7 +36,8 @@ contributions.
 
 Full-stack development for small businesses, including graphic design
 and branding. Frontend experience with JavaScript; backend development
-using Clojure, Node.js, PHP, MySQL, PostgreSQL, and Jekyll.
+using Clojure, Node.js, PHP, MySQL, PostgreSQL, and Jekyll. Experience
+with Bootstrap framework and WordPress CMS.
 
 ###### Rolls Royce Holdings plc (2008)
 
@@ -55,23 +52,22 @@ Work shadowing (1 week).
 
 ###### Software Engineering
 
-Advanced programming in Python, Clojure, C/C++, JavaScript, and
-Java. Full stack experience from debugging kernel drivers to web
-front-end development. Particular interest in low level systems and OS
-development, compilers and languages, concurrent and distributed
-systems.
+Advanced programming in C/C++, Python, and JavaScript. Full stack
+experience from debugging kernel drivers to web front-end
+development. Particular interests in compilers, automatic performance
+tuning, and parallelisation.
 
 ###### Electronic Engineering
 
-Traditional engineering background in engineering and mathematics,
-covering digital logic synthesis, networking theory and protocols,
-hardware design, analogue electronics, and embedded systems.
+Traditional background in engineering and mathematics, covering
+digital logic, networking theory and protocols, hardware design,
+analogue electronics, and embedded systems.
 
 ###### Communication skills
 
 Excellent written and verbal communication skills, including working
-effectively with geographically distributed and inter-disciplinary
-teams, both in remote and office environments.
+effectively with open source projects, and a published author in the
+academic community.
 
 # Awards
 
@@ -82,4 +78,4 @@ teams, both in remote and office environments.
 
 ----
 
-#### [Download the full PDF](/cv.pdf)
+#### [Download PDF version](/cv.pdf)
