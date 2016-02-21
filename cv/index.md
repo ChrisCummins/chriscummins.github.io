@@ -7,24 +7,35 @@ title: Curriculum Vitae
 
 ###### University of Edinburgh
 
-* **2018** Ph.D, Informatics *(ongoing)*.
-* **2015** MSc by Research, Pervasive Parallelism. *Distinction*.
+* **2018** *(expected)* Ph.D, Informatics.
+  Thesis: *Optimizing Compilation for Skeleton-based Heterogeneous Programming*.
+* **2015** MSc by Research, Pervasive Parallelism.
+  **Distinction**.
+  Thesis: *<a target="_blank" title="Link opens in new window" href="/posts/msc/">Autotuning Stencils Codes with Algorithmic Skeletons</a>*.
 
 ###### Aston University
 
 * **2014** MEng Electronic Engineering and Computer Science.
-  *First Class Honours*.
+  **First Class Honours**.
+  Thesis: *<a target="_blank" title="Link opens in new window" href="/posts/pip-db/">Protein Isoelectric Point Database</a>*.
+
 
 # Publications
 
-E. Bunkute, C. Cummins, F. Crofts, G. Bunce, I. T. Nabney, and
-D. R. Flower,
-[“PIP-DB: The Protein Isoelectric Point Database”](http://bioinformatics.oxfordjournals.org/content/31/2/295.full?etoc),
-Bioinformatics (2015), 31(2), 295-296. Chicago.
+1. C. Cummins, P. Petoumenos, M. Steuwer, H. Leather.
+   <a target="_blank" title="Link opens in new window" href="/pub/2016-hlpgpu.pdf">"Towards Collaborative Performance Tuning of Algorithmic Skeletons"</a>,
+   (2016). HLPGPU, HiPEAC.
+1. C. Cummins, P. Petoumenos, M. Steuwer, H. Leather.
+   <a target="_blank" title="Link opens in new window" href="/pub/2016-adapt.pdf">"Autotuning OpenCL Workgroup Size for Stencil Patterns"</a>,
+   (2016). ADAPT, HiPEAC. [arXiv](http://arxiv.org/abs/1511.02490).
+1. E. Bunkute, C. Cummins, F. Crofts, G. Bunce, I. T. Nabney, D. R. Flower.
+  [“PIP-DB: The Protein Isoelectric Point Database”](http://bioinformatics.oxfordjournals.org/content/31/2/295.full?etoc),
+  (2015). Bioinformatics, 31(2), 295-296. Chicago.
+
 
 # Professional Experience
 
-###### Intel Corporation   (2012-2013)
+###### Intel Corporation (2012-2013)
 
 Patched ioctl subsystem in Linux kernel. Developed tools for Intel GPU
 assembly programming. Implemented GTK+ support for Wayland display
@@ -41,41 +52,45 @@ with Bootstrap framework and WordPress CMS.
 
 ###### Rolls Royce Holdings plc (2008)
 
-Summer week placement within the Design Methods group.
-
-###### Oakleaf Graphic Design (2006)
-
-Work shadowing (1 week).
+Summer week placement, Design Methods Group.
 
 
 # Key Skills
 
 ###### Software Engineering
 
-Advanced programming in C/C++, Python, and JavaScript. Full stack
-experience from debugging kernel drivers to web front-end
-development. Particular interests in compilers, automatic performance
-tuning, and parallelisation.
+Advanced programming in C/C++, Python, and Bash, with a particular
+interest in compiler and systems development. Expert git, linux, and
+emacs user. Competent with Java, OpenCL, Clojure, JavaScript, SQL, and
+PHP.
 
 ###### Electronic Engineering
 
 Traditional background in engineering and mathematics, covering
-digital logic, networking theory and protocols, hardware design,
-analogue electronics, and embedded systems.
+digital logic, hardware synthesis, network design, analogue
+electronics, and embedded systems.
 
 ###### Communication skills
 
-Excellent written and verbal communication skills, including working
-effectively with open source projects, and a published author in the
-academic community.
+Excellent written and verbal communication skills. Work effectively
+with open source communities, and am a published author of academic
+research.
+
 
 # Awards
 
-* **2014** Institute of Engineering & Technology Prize
-* **2009** Arkwright Scholarship, Rolls Royce Plc
-* **2009** Engineering Education Scheme of England
-* **2008** AESSEAL Design Innovation Award
+* **2015** PhD studentship, EPSRC
+  [grant EP/L01503X/1](http://gow.epsrc.ac.uk/NGBOViewGrant.aspx?GrantRef=EP/L01503X/1)
+* **2014** [IET](http://www.theiet.org/membership/awards/index.cfm)
+  Institute of Engineering & Technology Prize
+* **2009** [Arkwright Scholarship](http://www.arkwright.org.uk/),
+  Rolls Royce Plc
+* **2009**
+  [EES](http://www.etrust.org.uk/engineering-education-scheme)
+  Engineering Education Scheme of England
+* **2008** [AESSEAL](http://www.aesseal.co.uk/en)
+  Design Innovation Award
 
 ----
 
-#### [Download PDF version](/cv.pdf)
+#### <a href="/cv.pdf" target="_blank" title="Link opens in new window">Download paper CV</a>
