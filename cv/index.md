@@ -91,6 +91,24 @@ research.
 * **2008** [AESSEAL](http://www.aesseal.co.uk/en)
   Design Innovation Award
 
+
+# Academic Activities
+
+* **Peer reviews:** [ACM TACO](http://taco.acm.org/) (2016),
+  [LCTES 2016](http://lctes16.citi.sinica.edu.tw/),
+  [CGO 2016](http://cgo.org/cgo2016/).
+* **Talks:**
+  [PPar lunch](http://pervasiveparallelism.inf.ed.ac.uk/ppar-lunch/)
+  2016,
+  [PPar kickoff](http://pervasiveparallelism.inf.ed.ac.uk/kick-off/)
+  2014.
+* **Posters:** [HiPEAC 2016](https://www.hipeac.net/2016/prague/),
+  [PPar Industrial Engagement Event](http://pervasiveparallelism.inf.ed.ac.uk/internal-conference-2015/)
+  2015.
+* **Events Volunteering:**
+  [ParCo 2015](http://www.parco2015.org/home).
+
+
 ----
 
-#### <a href="/cv.pdf" target="_blank" title="Link opens in new window">Download paper CV</a>
+#### <a href="/cv.pdf" target="_blank" title="Link opens in new window">Download printable version</a>
