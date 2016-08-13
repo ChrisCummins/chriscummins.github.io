@@ -4,7 +4,7 @@ lsi: false
 pygments: true
 source: .
 
-markdown: redcarpet
+markdown: kramdown
 
 # Use nice sensible URLs like:
 #
