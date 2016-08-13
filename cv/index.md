@@ -99,16 +99,16 @@ research.
 # Awards
 
 * **2015** PhD studentship, EPSRC
-  [grant EP/L01503X/1](http://gow.epsrc.ac.uk/NGBOViewGrant.aspx?GrantRef=EP/L01503X/1)
+  [grant EP/L01503X/1](http://gow.epsrc.ac.uk/NGBOViewGrant.aspx?GrantRef=EP/L01503X/1).
 * **2014** [IET](http://www.theiet.org/membership/awards/index.cfm)
-  Institute of Engineering & Technology Prize
+  Institute of Engineering & Technology Prize.
 * **2009** [Arkwright Scholarship](http://www.arkwright.org.uk/),
-  Rolls Royce Plc
+  Rolls Royce Plc.
 * **2009**
   [EES](http://www.etrust.org.uk/engineering-education-scheme)
-  Engineering Education Scheme of England
+  Engineering Education Scheme of England.
 * **2008** [AESSEAL](http://www.aesseal.co.uk/en)
-  Design Innovation Award
+  Design Innovation Award.
 
 
 # Academic Activities
