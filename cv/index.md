@@ -22,21 +22,22 @@ title: Curriculum Vitae
 
 # Publications
 
-1. C. Cummins, P. Petoumenos, M. Steuwer, H. Leather.  <a
-   target="_blank" title="Link opens in new window"
-   href="/pub/2016-hlpgpu.pdf">"Towards Collaborative Performance
-   Tuning of Algorithmic Skeletons"</a>,
+1. C. Cummins, P. Petoumenos, M. Steuwer, H. Leather. "Towards
+   Collaborative Performance Tuning of Algorithmic Skeletons",
    (2016). [HLPGPU](https://sites.google.com/site/hlpgpu2016/),
-   HiPEAC.
-1. C. Cummins, P. Petoumenos, M. Steuwer, H. Leather.  <a
-   target="_blank" title="Link opens in new window"
-   href="/pub/2016-adapt.pdf">"Autotuning OpenCL Workgroup Size for
-   Stencil Patterns"</a>,
+   HiPEAC. <a target="_blank" title="Link opens in new window"
+   href="/pub/2016-hlpgpu.pdf">pdf</a>.
+1. C. Cummins, P. Petoumenos, M. Steuwer, H. Leather. "Autotuning
+   OpenCL Workgroup Size for Stencil Patterns",
    (2016). [ADAPT](http://adapt-workshop.org/index2016.html),
-   HiPEAC. [arXiv](http://arxiv.org/abs/1511.02490).
-1. E. Bunkute, C. Cummins, F. Crofts, G. Bunce, I. T. Nabney, D. R. Flower.
-  [“PIP-DB: The Protein Isoelectric Point Database”](http://bioinformatics.oxfordjournals.org/content/31/2/295.full?etoc),
-  (2015). Bioinformatics, 31(2), 295-296. Chicago.
+   HiPEAC. [arXiv](http://arxiv.org/abs/1511.02490). <a
+   target="_blank" title="Link opens in new window"
+   href="/pub/2016-adapt.pdf">pdf</a>.
+1. E. Bunkute, C. Cummins, F. Crofts, G. Bunce, I. T. Nabney,
+   D. R. Flower.  “PIP-DB: The Protein Isoelectric Point Database”,
+   (2015). Bioinformatics, 31(2),
+   295-296. Chicago.
+   [journal](http://bioinformatics.oxfordjournals.org/content/31/2/295.full?etoc).
 
 
 # Professional Experience
