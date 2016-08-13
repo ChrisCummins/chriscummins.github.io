@@ -11,13 +11,13 @@ title: Curriculum Vitae
   Thesis: *Deep Learning over Programs*.
 * **2015** MSc by Research, Pervasive Parallelism.
   **Distinction**.
-  Thesis: *<a target="_blank" title="Link opens in new window" href="/posts/msc/">Autotuning Stencils Codes with Algorithmic Skeletons</a>*.
+  Thesis: <a target="_blank" title="Link opens in new window" href="/posts/msc/">Autotuning Stencils Codes with Algorithmic Skeletons</a>.
 
 ###### Aston University
 
 * **2014** MEng Electronic Engineering and Computer Science.
   **First Class Honours**.
-  Thesis: *<a target="_blank" title="Link opens in new window" href="/posts/pip-db/">Protein Isoelectric Point Database</a>*.
+  Thesis: <a target="_blank" title="Link opens in new window" href="/posts/pip-db/">Protein Isoelectric Point Database</a>.
 
 
 # Publications
