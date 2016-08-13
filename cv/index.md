@@ -136,7 +136,8 @@ research.
   2016,
   [HiPEAC](https://www.hipeac.net/2016/prague/)
   2016,
-  [PPar Industrial Engagement Event](http://pervasiveparallelism.inf.ed.ac.uk/internal-conference-2015/)
+  Google 2015,
+  [PPar](http://pervasiveparallelism.inf.ed.ac.uk/internal-conference-2015/)
   2015.
 * **Events Volunteering:**
   [ParCo](http://www.parco2015.org/home)
