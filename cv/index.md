@@ -121,6 +121,8 @@ research.
   [CGO](http://cgo.org/cgo2016/)
   2016.
 * **Talks:**
+  [Codeplay Software](https://www.codeplay.com)
+  2016,
   [Ocado Technology](http://www.ocadotechnology.com/)
   2016,
   [Amazon Development Centre](http://www.amazondc.com/)
