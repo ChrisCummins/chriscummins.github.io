@@ -22,6 +22,10 @@ title: Curriculum Vitae
 
 # Publications
 
+1. C. Cummins, P. Petoumenos, Z. Wang, H. Leather. "Synthesizing Benchmarks
+   for Predictive Modeling", (2017). To appear in
+   [CGO](http://cgo.org/cgo2017/) (22\% acceptance rate, nominated for best
+   paper), Austin, Texas.
 1. C. Cummins, P. Petoumenos, M. Steuwer, H. Leather. "Towards
    Collaborative Performance Tuning of Algorithmic Skeletons",
    (2016). [HLPGPU](https://sites.google.com/site/hlpgpu2016/),
