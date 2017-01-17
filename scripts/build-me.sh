@@ -2,7 +2,7 @@
 #
 # Slightly hacky bash script to quickly start of the development tools.
 #
-topsrcdir=chriscummins.github.io
+topsrcdir=chriscummins.cc
 
 # Look up the top source directory. Do this by traversing up the directory tree
 # from the current directory. If we haven't found the top directory by the time
