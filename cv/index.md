@@ -7,25 +7,34 @@ title: Curriculum Vitae
 
 ###### University of Edinburgh
 
-* **2018** *(expected)* Ph.D, Informatics.
-  Thesis: *Deep Learning over Programs*.
-* **2015** MSc by Research, Pervasive Parallelism.
-  **Distinction**.
-  Thesis: <a target="_blank" title="Link opens in new window" href="/posts/msc/">Autotuning Stencils Codes with Algorithmic Skeletons</a>.
+**2018** *(expected)* Ph.D, Informatics.
+
+  * Thesis: *Deep Learning over Programs*.
+  * [Best Paper Award](http://chriscummins.cc/posts/cgo17), CGO 2017.
+  * 3 publications, 4 conferences, 3 invited talks.
+
+**2015** MSc by Research, Pervasive Parallelism.
+
+  * Graduated with Distinction.
+  * Thesis:
+*<a target="_blank" title="Link opens in new window" href="/posts/msc">Autotuning Stencils Codes with Algorithmic Skeletons</a>* (mark 85%).
 
 ###### Aston University
 
-* **2014** MEng Electronic Engineering and Computer Science.
-  **First Class Honours**.
-  Thesis: <a target="_blank" title="Link opens in new window" href="/posts/pip-db/">Protein Isoelectric Point Database</a>.
+**2014** MEng Electronic Engineering and Computer Science.
 
+  * Graduated with First Class Honours.
+  * Thesis:
+*<a target="_blank" title="Link opens in new window" href="/posts/pip-db">Protein Isoelectric Point Database</a>* (mark 90%).
+  * Institute of Engineering & Technology Prize.
 
 # Publications
 
 1. C. Cummins, P. Petoumenos, Z. Wang, H. Leather. "Synthesizing Benchmarks
-   for Predictive Modeling", (2017). To appear in
-   [CGO](http://cgo.org/cgo2017/) (22% acceptance rate, nominated for *best
-   paper*), Austin, Texas.
+   for Predictive Modeling", (2017).
+   [CGO](http://cgo.org/cgo2017/) (Best Paper award, 22% acceptance rate),
+   Austin, Texas.  <a target="_blank" title="Link opens in new window"
+   href="/pub/2017-cgo.pdf">pdf</a>.
 1. C. Cummins, P. Petoumenos, M. Steuwer, H. Leather. "Towards
    Collaborative Performance Tuning of Algorithmic Skeletons",
    (2016). [HLPGPU](https://sites.google.com/site/hlpgpu2016/),
@@ -84,8 +93,7 @@ Summer week placement, Design Methods Group.
 
 Advanced programming in C/C++, Python, and Bash, with a particular
 interest in compiler and systems development. Expert git, GNU/Linux,
-and Emacs user. Competent with Java, OpenCL, Clojure, JavaScript, SQL,
-and PHP.
+and Emacs user. Competent with Java, OpenCL, Clojure, JavaScript, SQL.
 
 ###### Electronic Engineering
 
@@ -102,6 +110,7 @@ research.
 
 # Awards
 
+* **2017** Best Paper Award, [CGO](http://cgo.org/cgo2017/).
 * **2015** PhD studentship, EPSRC
   [grant EP/L01503X/1](http://gow.epsrc.ac.uk/NGBOViewGrant.aspx?GrantRef=EP/L01503X/1).
 * **2014** [IET](http://www.theiet.org/membership/awards/index.cfm)
@@ -124,27 +133,20 @@ research.
   2016,
   [CGO](http://cgo.org/cgo2016/)
   2016.
-* **Talks:**
+* **Invited Talks:**
   [Codeplay Software](https://www.codeplay.com)
   2016,
   [Ocado Technology](http://www.ocadotechnology.com/)
   2016,
   [Amazon Development Centre](http://www.amazondc.com/)
-  2016,
-  [PPar lunch](http://pervasiveparallelism.inf.ed.ac.uk/ppar-lunch/)
-  2016,
-  [PPar kickoff](http://pervasiveparallelism.inf.ed.ac.uk/kick-off/)
-  2014.
+  2016.
 * **Posters:**
-  [ACACES](http://acaces.hipeac.net/2016/)
-  2016,
-  [PLDI](http://conf.researchr.org/home/pldi-2016)
-  2016,
-  [HiPEAC](https://www.hipeac.net/2016/prague/)
-  2016,
+  Google 2016,
+  [ACACES](http://acaces.hipeac.net/2016/) 2016,
+  [PLDI](http://conf.researchr.org/home/pldi-2016) 2016,
+  [HiPEAC](https://www.hipeac.net/2016/prague/) 2016,
   Google 2015,
-  [PPar](http://pervasiveparallelism.inf.ed.ac.uk/internal-conference-2015/)
-  2015.
+  [PPar](http://pervasiveparallelism.inf.ed.ac.uk/internal-conference-2015/) 2015.
 * **Events Volunteering:**
   [ParCo](http://www.parco2015.org/home)
   2015.
