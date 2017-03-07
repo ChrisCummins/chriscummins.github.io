@@ -7,7 +7,7 @@ title: Curriculum Vitae
 
 ###### University of Edinburgh
 
-**2018** *(expected)* Ph.D, Informatics.
+**2019** *(expected)* Ph.D, Informatics.
 
   * Thesis: *Deep Learning over Programs*.
   * [Best Paper Award](http://chriscummins.cc/posts/cgo17), CGO 2017.
