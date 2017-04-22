@@ -29,55 +29,30 @@ title: Open Source Projects
 
 # Personal Projects
 
-<div class="thumbnails">
-    <!-- Thumbnail row -->
-    <div class="thumbnail">
-        <a href="https://github.com/ChrisCummins/rt" target="_blank">
-            <div class="label"><p>Ray Tracer</p></div>
-            <div class="image"><img src="/images/projects/rt.jpg" /></div>
-        </a>
-    </div>
-    <div class="thumbnail">
-        <a href="https://github.com/ChrisCummins/pip-db" target="_blank">
-            <div class="label"><p>Protein<br/>Isoeletric Point<br/>Database</p></div>
-            <div class="image"><img src="/images/projects/pip-db.png" /></div>
-        </a>
-    </div>
-    <div class="thumbnail">
-        <a href="http://chriscummins.cc/posts/emu-by-example/" target="_blank">
-            <div class="label"><p>Backup<br/>Management</p></div>
-            <div class="image"><img src="/images/projects/emu.png" /></div>
-        </a>
-    </div>
-
-    <!-- Thumbnail row -->
-    <div class="thumbnail">
-        <a href="https://github.com/ChrisCummins/euclid" target="_blank">
-            <div class="label"><p>x86 Kernel</p></div>
-            <div class="image"><img src="/images/projects/euclid.png" /></div>
-        </a>
-    </div>
-    <div class="thumbnail">
-        <a href="https://github.com/ChrisCummins/shit.js" target="_blank">
-            <div class="label"><p>Filesystem<br/>Monitoring</p></div>
-            <div class="image"><img src="/images/projects/shit.png" /></div>
-        </a>
-    </div>
-    <div class="thumbnail">
-        <a href="https://github.com/ChrisCummins/liquid-src" target="_blank">
-            <div class="label"><p>HTML Asset<br/>Management</p></div>
-            <div class="image"><img src="/images/projects/liquid-src.png" /></div>
-        </a>
-    </div>
-
-</div>
+* [cldrive](https://github.com/ChrisCummins/cldrive) Tool for arbitrary OpenCL execution
+* [clgen](http://chriscummins.cc/clgen/) Deep learning program generator
+* [emu](http://chriscummins.cc/posts/emu-by-example/) Fast, incremental backups
+* [euclid](https://github.com/ChrisCummins/euclid) Toy x86 kernel
+* [humanorrobot.uk](http://humanorrobot.uk/) Crowdsourced Turing Tests for machine learning research
+* [labm8](https://github.com/ChrisCummins/labm8) Python utilities for quantitative experimental data
+* [liquid-src](https://github.com/ChrisCummins/liquid-src) Fluid HTML link management
+* [lmk](https://github.com/ChrisCummins/lmk) Alarm clock for the command line
+* [omnitune](https://github.com/ChrisCummins/omnitune) Distributed machine learning autotuning framework
+* [pe](https://github.com/ChrisCummins/pe) Particle effects and swarming behaviors
+* [pip-db](https://github.com/ChrisCummins/pip-db) Search engine for bioinformatics research
+* [rt](https://github.com/ChrisCummins/rt) Parallelized ray tracer
+* [shit.js](https://github.com/ChrisCummins/shit.js) Secure Host Intrusion Technology
+* [shutterbug](https://github.com/ChrisCummins/shutterbug) DVD photo backups
+* [srtime](https://github.com/ChrisCummins/srtime) A statistically rigorous 'time' replacement
 
 # Contributions
 
 * [Clojure Koans](http://clojurekoans.com/) (bug fix)
+* [CLSmith](https://github.com/ChrisLidbury/CLSmith) (new features)
 * [clutter](https://blogs.gnome.org/clutter/) (new features)
 * [cogl](http://www.cogl3d.org/) (new features)
 * [Eigen](http://eigen.tuxfamily.org/index.php?title=Main_Page) (SYCL support)
+* [grammarVAE](https://github.com/mkusner/grammarVAE) (bug fix)
 * [Gertboard](https://projects.drogon.net/raspberry-pi/gertboard/) (new tests)
 * [GNOME Desktop](http://www.gnome.org/) (multiple bug fixes)
 * [GTK+](http://www.gtk.org/) (multiple bug fixes)
@@ -87,8 +62,9 @@ title: Open Source Projects
 * [SkelCL](http://skelcl.uni-muenster.de/) (autotuned stencil)
 * [TensorFlow](https://www.tensorflow.org/) (SYCL support)
 * [textlint](https://github.com/DamienCassou/textlint) (maintainer)
-* [torch](https://github.com/torch/distro) (new feature)
 * [torch-rnn](https://github.com/jcjohnson/torch-rnn) (new features)
+* [torch](https://github.com/torch/distro) (new feature)
 * [triSYCL](https://github.com/amd/triSYCL) (bug fix)
 * [watch-less](https://github.com/jgreene/watch-less) (bug fixes)
 * [Wayland](http://wayland.freedesktop.org/) (GTK+ support)
+* [visioncpp](https://github.com/ChrisCummins/visioncpp) (code owner Python bindings)
