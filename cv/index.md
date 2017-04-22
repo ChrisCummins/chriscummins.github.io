@@ -11,7 +11,7 @@ title: Curriculum Vitae
 
   * Thesis: *Deep Learning over Programs*.
   * [Best Paper Award](http://chriscummins.cc/posts/cgo17), CGO 2017.
-  * 3 publications, 4 conferences, 3 invited talks.
+  * 3 publications, 4 conferences, 4 invited talks.
 
 **2015** MSc by Research, Pervasive Parallelism.
 
@@ -134,6 +134,7 @@ research.
   [CGO](http://cgo.org/cgo2016/)
   2016.
 * **Invited Talks:**
+  [SPLS](http://www.dcs.gla.ac.uk/research/spls/) 2017,
   [Codeplay Software](https://www.codeplay.com)
   2016,
   [Ocado Technology](http://www.ocadotechnology.com/)
