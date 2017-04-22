@@ -91,9 +91,9 @@ Summer week placement, Design Methods Group.
 
 ###### Software Engineering
 
-Advanced programming in C/C++, Python, and Bash, with a particular
-interest in compiler and systems development. Expert git, GNU/Linux,
-and Emacs user. Competent with Java, OpenCL, Clojure, JavaScript, SQL.
+Advanced programming in C/C++, Python, and Bash, with a particular interest in
+compiler and systems development. Expert GNU/Linux and git user. Competent with
+Java, OpenCL, TensorFlow, JavaScript, SQL.
 
 ###### Electronic Engineering
 
