@@ -62,7 +62,7 @@ title: Open Source Projects
 * [SkelCL](http://skelcl.uni-muenster.de/) (autotuned stencil)
 * [TensorFlow](https://www.tensorflow.org/) (SYCL support)
 * [textlint](https://github.com/DamienCassou/textlint) (maintainer)
-* [torch-rnn](https://github.com/jcjohnson/torch-rnn) (new features)
+* [torch-rnn](https://github.com/jcjohnson/torch-rnn) (maintainer)
 * [torch](https://github.com/torch/distro) (new feature)
 * [triSYCL](https://github.com/amd/triSYCL) (bug fix)
 * [watch-less](https://github.com/jgreene/watch-less) (bug fixes)
