@@ -30,6 +30,9 @@ title: Curriculum Vitae
 
 # Publications
 
+1. C. Cummins, P. Petoumenos, Z. Wang, H. Leather. "End-to-end Deep Learning of
+   Optimization Heuristics", (2017). [PACT](https://parasol.tamu.edu/pact17/)
+   (23% acceptance rate), Portland, Oregon.
 1. C. Cummins, P. Petoumenos, Z. Wang, H. Leather. "Synthesizing Benchmarks
    for Predictive Modeling", (2017).
    [CGO](http://cgo.org/cgo2017/) (Best Paper award, 22% acceptance rate),
