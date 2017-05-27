@@ -10,7 +10,7 @@ title: Curriculum Vitae
 **2019** *(expected)* Ph.D, Informatics.
 
   * Thesis: *Deep Learning over Programs*.
-  * [Best Paper Award](http://chriscummins.cc/posts/cgo17), CGO 2017.
+  * [Best Paper Award](/posts/cgo17), CGO 2017.
   * 3 publications, 4 conferences, 4 invited talks.
 
 **2015** MSc by Research, Pervasive Parallelism.

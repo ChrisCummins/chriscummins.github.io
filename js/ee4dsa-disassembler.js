@@ -260,7 +260,7 @@ var words2sections = function(words, idtSize) {
 var sections2prog = function(sections) {
   var instructions = sections.instructions, idt = sections.idt;
   var prog = [new Comment('Generated assembly, see:'),
-              new Comment('    http://chriscummins.cc/disassembler'),
+              new Comment('    https://chriscummins.cc/disassembler'),
               new Comment(''),
               new BlankLine(),
               new Directive('cseg'),

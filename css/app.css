@@ -1,8 +1,8 @@
 /* Bootstrap */
-@import url("http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css");
+@import url("https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css");
 
 /* Fonts */
-@import url("http://fonts.googleapis.com/css?family=Lato:400,700,900,300");
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700,900,300");
 @font-face {
   font-family: 'Flat-UI-Icons';
   src: url('../fonts/Flat-UI-Icons.eot');

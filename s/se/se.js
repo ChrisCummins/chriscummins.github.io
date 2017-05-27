@@ -5,7 +5,7 @@
  * Copyright (c) 2014, 2015 Chris Cummins
  * License: http://opensource.org/licenses/MIT
  * Source code: https://github.com/ChrisCummins/chriscummins.github.io
- * http://chriscummins.cc
+ * https://chriscummins.cc
  *
  *
  * Space generator based on webgl terrain demo. See:

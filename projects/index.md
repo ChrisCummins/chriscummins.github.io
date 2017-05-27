@@ -30,8 +30,8 @@ title: Open Source Projects
 # Personal Projects
 
 * [cldrive](https://github.com/ChrisCummins/cldrive) Tool for arbitrary OpenCL execution
-* [clgen](http://chriscummins.cc/clgen/) Deep learning program generator
-* [emu](http://chriscummins.cc/posts/emu-by-example/) Fast, incremental backups
+* [clgen](/clgen/) Deep learning program generator
+* [emu](/posts/emu-by-example/) Fast, incremental backups
 * [euclid](https://github.com/ChrisCummins/euclid) Toy x86 kernel
 * [humanorrobot.uk](http://humanorrobot.uk/) Crowdsourced Turing Tests for machine learning research
 * [labm8](https://github.com/ChrisCummins/labm8) Python utilities for quantitative experimental data
