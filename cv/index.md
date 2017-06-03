@@ -76,7 +76,7 @@ programming. Implemented [GTK+](http://www.gtk.org/) support for
 [Wayland](https://wayland.freedesktop.org/) display server. Fixed
 usability bugs in [GNOME](https://www.gnome.org/) desktop
 applications. Developed 3D particle effects engine. Numerous
-[open source project contributions](/projects/).
+[open source project contributions](/portfolio/).
 
 ###### Freelance web developer (2010-Ongoing)
 

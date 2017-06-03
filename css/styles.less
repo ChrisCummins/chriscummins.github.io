@@ -446,12 +446,13 @@ footer {
 
     ul {
       font-size: @font-size-small;
+      letter-spacing: 0.5px;
       font-weight: @font-weight-base;
       .tight();
 
       li {
         display: inline;
-        & + li:before { content: "|"; }
+        & + li:before { content: "| "; }
       }
     }
   }
