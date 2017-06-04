@@ -1,6 +1,6 @@
 ---
-layout: default
 title: Portfolio
+banner: /img/banners/half-dome.jpg
 ---
 
 # Personal Projects

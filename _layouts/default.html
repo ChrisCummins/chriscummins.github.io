@@ -1,7 +1,6 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-  <!--
+<!--
              ____________________________________________________
             /                                                    \
            |    _____________________________________________     |
@@ -30,127 +29,135 @@
  _-'.-.-.-.-.-. .---.-. .-----------------------------. .-.---. .---.-.-.-.`-_
 :-----------------------------------------------------------------------------:
 `---._.-----------------------------------------------------------------._.---'
+-->
 
-  -->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    {% comment %}
+  <!-- No mobile pinch zoom -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-    We check to see what the page title is before appending
-    "| Chris Cummins" to it, as otherwise this would result with an
-    index title of "Chris Cummins | Chris Cummins".
+  {% comment %}
+  We check to see what the page title is before appending
+  "| Chris Cummins" to it, as otherwise this would result with an
+  index title of "Chris Cummins | Chris Cummins".
+  {% endcomment %}
+  {% if page.title == "Chris Cummins" %}
+  <title>{{ page.title }}</title>
+  {% else %}
+  <title>{{ page.title }} | Chris Cummins</title>
+  {% endif %}
+  <meta name="description" content="Full time geek and research student with a passion for developing great software, often late at night.">
+  <meta name="author" content="Chris Cummins">
 
-    {% endcomment %}
-    {% if page.title == "Chris Cummins" %}
-    <title>{{ page.title }}</title>
-    {% else %}
-    <title>{{ page.title }} | Chris Cummins</title>
-    {% endif %}
-    <meta name="description" content="The personal website of software developer and geek Chris Cummins.">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="msapplication-tooltip" content="Chris Cummins personal website">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+  <link href="/css/styles.css" rel="stylesheet" />
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
 
-    <link href="//fonts.googleapis.com/css?family=Montserrat:700,400" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="/css/styles.css">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+  {%include google-analytics.html %}
+</head>
 
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-
-    {%include google-analytics.html %}
-  </head>
-
-  <body>
-
-    <div class="wrapper">
-
-      {% comment %}
-
-      The header section. Contains title, navbar links, a picture, and
-      external links.
-
-      {% endcomment %}
-      <header>
-        <center>
-          <h1>
-            <a href="/">CHRIS<b>CUMMINS</b></a>
-            <ul>
-              <li><a href="/cv/"><b>C</b>urriculum <b>V</b>itae</a></li>
-              <li><a href="/portfolio/">Software <b>Portfolio</b></a></li>
-            </ul>
-          </h1>
-          <div class="img-frame"><img src="/images/selfie.jpg" width="180" height="180"/></div>
-          {% comment %} External Links {% endcomment %}
-          <ul>
-            <li><a href="//github.com/ChrisCummins" target="_blank">GitHub<small>Code goes here</small></a></li>
-            <li><a href="//www.linkedin.com/in/chris-cummins-25540455/" target="_blank">Linked In<small>All professional like</small></a></li>
-            <li><a href="//www.facebook.com/cecummins" target="_blank">Facebook<small>All unprofessional like</small></a></li>
-            <li><a href="//www.youtube.com/user/ChrisCummins" target="_blank">YouTube<small>Hitting drums with sticks</small></a></li>
-            <li><a href="//instagram.com/iamchriscummins/" target="_blank">Instagram<small>Taking pictures of things</small></a></li>
-          </ul>
-        </center>
-      </header>
-
-      <section>
-        {% comment %}
-
-        The page.date and page.render_post variables are used as a sentinel
-        to find out if we are rendering a post. If either are present,
-        we use the post style.
-
-        {% endcomment %}
-        {% if page.date or page.render_post %}
-          <div id="post">
-            <h1 class="title">{{ page.title }}</h1>
-            <h1 class="title" id="hidden-title"></h1>
-        {% endif %}
-
-        {{ content }}
-
-        {% if page.date or page.render_post %}
-            <div class="nav">
-              <hr>
-
-              <div class="next">
-                {% if page.next %}
-                <a href="{{ page.next.url }}" title="Read the previous post">Newer post</a>
-                {% else %}
-                <a href="/#posts" title="Return to home page">Read more</a>
-                {% endif %}
-              </div>
-
-              <div class="previous">
-                {% if page.previous %}
-                <a href="{{ page.previous.url }}" title="Read the previous post">Older post</a>
-                {% else %}
-                <a href="/#posts" title="Return to home page">Read more</a>
-                {% endif %}
-              </div>
-
-              {% if page.date %}
-              <div class="date">
-                {{ page.date | date_to_string }}
-              </div>
-              {% endif %}
-          </div>
-        {% endif %}
-      </section>
-      <footer>
-        <center>
-          <p>
-            <small>
-              <a href="/posts/about">&copy; Chris Cummins 2013-2017</a>
-            </small>
-          </p>
-        </center>
-      </footer>
+<body>
+  {% comment %}
+  The header section.
+  {% endcomment %}
+  <div class="jumbotron">
+    <img src="{{ page.banner }}"/>
+    <div>
+      <div>
+        <h1><a href="/">CHRIS<b>CUMMINS</b></a></h1>
+        <p>
+          <a href="/cv/">Resume</a> |
+          <a href="/portfolio/">Portfolio</a>
+        </p>
+      </div>
     </div>
+  </div>
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-    <script src="/js/site.min.js"></script>
-  </body>
+  <div class="container-fluid">
+
+    <div class="row">
+      <div id="col-left" class="col-sm-9">
+        {%include around-the-web.html %}
+
+        <div id="content">
+          {% comment %}
+          The page.date and page.render_post variables are used as a sentinel
+          to find out if we are rendering a post.
+          {% endcomment %}
+          {% if page.date or page.render_post %}
+          <div id="post">
+            <h1>{{ page.title }}</h1>
+          {% endif %}
+            {{ content }}
+          {% if page.date or page.render_post %}
+            {% if page.next %}
+            <h1><a href="{{ page.next.url }}" title="Read the next post">Next post</a></h1>
+            {% endif %}
+          </div> <!-- #post -->
+          {% endif %}
+        </div>
+
+        <!-- <div id="posts">
+          <h1 class="year">2017</h1>
+          <ul>
+            <li><a href="/posts/20pc-2-lmk">20% Project 2 - Let Me Know <span class="date">19 Apr</span></a></li>
+            <li><a href="/posts/20pc-1-lmk">20% Project 1 - Bazel my PhD <span class="date">13 Apr</span></a></li>
+            <li><a href="/posts/20pc-1-lmk">Synthesizing Benchmarks for Predictive Modeling <span class="date">21 Feb</span></a></li>
+          </ul>
+
+          <h1 class="year">2016</h1>
+          <ul>
+            <li><a href="/posts/20pc-2-lmk">Incremental builds for Travis CI <span class="date">28 Nov</span></a></li>
+            <li><a href="/posts/20pc-1-lmk">Fine-grained verbosity control in Makefiles <span class="date">13 Aug</span></a></li>
+          </ul>
+
+          <h1 class="year">2015</h1>
+          <ul>
+            <li><a href="/posts/20pc-2-lmk">OmniTune <span class="date">20 Oct</span></a></li>
+            <li><a href="/posts/20pc-1-lmk">Autotuning Stencil Codes <span class="date">29 May</span></a></li>
+          </ul>
+
+          <h1 class="year">2014</h1>
+          <ul>
+            <li><a href="/posts/20pc-1-lmk">The weekend that 130,241 people dropped by <span class="date">14 Dec</span></a></li>
+            <li><a href="/posts/20pc-1-lmk">5 things I wish I read 5 months ago <span class="date">23 Nov</span></a></li>
+          </ul>
+        </div> --><!-- /.posts -->
+
+        <hr/>
+        <p id="copyright">
+          &copy; Chris Cummins 2013-2017
+        </p>
+      </div> <!-- #col-left -->
+
+      <div id="col-right" class="col-sm-3">
+        <p id="about">
+          A full time geek and research student with a passion for developing great
+          software, often late at night.
+        </p>
+        <ul class="around-the-web">
+          <li><a href="https://github.com/ChrisCummins" target="_blank"><i class="fa fa-github"></i><span>GitHub</span></a></li>
+          <li><a href="https://www.linkedin.com/in/chris-cummins-25540455/" target="_blank"><i class="fa fa-linkedin-square"></i><span>LinkedIn</span></a></li>
+          <li><a href="http://www.facebook.com/cecummins" target="_blank"><i class="fa fa-facebook-square"></i><span>Facebook</span></a></li>
+          <li><a href="http://www.youtube.com/user/ChrisCummins" target="_blank"><i class="fa fa-youtube-play"></i><span>YouTube</span></a></li>
+          <li><a href="https://instagram.com/iamchriscummins/" target="_blank"><i class="fa fa-instagram"></i><span>Instagram</span></a></li>
+          <li><a href="https://twitter.com/iamchriscummins" target="_blank"><i class="fa fa-twitter"></i><span>Twitter</span></a></li>
+        </ul>
+      </div> <!-- #col-right -->
+
+    </div> <!-- /.row -->
+  </div> <!-- /.container-fluid -->
+
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- TODO: <script src="/js/site.min.js"></script> -->
+</body>
 </html>

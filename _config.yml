@@ -1,24 +1,25 @@
 # Variables set by GitHub
 safe: true
 lsi: false
-pygments: true
+highlighter: true
 source: .
 
-markdown: redcarpet
+markdown: kramdown
 
-# Use nice sensible URLs like:
-#
-#    /nice/sensible/url
-#
-# Not:
-#
-#    /15/05/12/nasty/url
-#
-permalink: /posts/:title
+# Use short post URLs:
+permalink: /p/:title
 
 # Enable HTTP redirects
 gems:
   - jekyll-redirect-from
 
 # Ignore patterns
-exclude: [README.md, scripts/, old-site/]
+exclude: [README.md, scripts/]
+
+sass:
+  style: compressed
+
+defaults:
+  -
+    values:
+      layout: "default"

@@ -8,7 +8,7 @@ into a static site whenever I push this repository to GitHub.
 The following directories and their contents are Copyright Chris Cummins. You
 may not reuse anything therein without my permission:
 `_posts/`,
-`images/`,
+`img/`,
 `pub/`, and
 `u/`.
 

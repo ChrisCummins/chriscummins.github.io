@@ -1,6 +1,6 @@
 ---
-layout: default
-title: Curriculum Vitae
+title: Resume
+banner: /img/banners/san-fran.jpg
 ---
 
 # Education

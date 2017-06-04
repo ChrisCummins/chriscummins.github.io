@@ -1,0 +1,17 @@
+---
+title: Chris Cummins
+banner: /img/banners/death-valley.jpg
+---
+
+<div class="big-list">
+  <ul>
+    {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url }}">
+        {{ post.title }}
+        <span class="date">{{ post.date | date_to_string }}</span>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</div> <!-- /.big-list -->
