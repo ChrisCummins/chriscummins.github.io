@@ -7,7 +7,7 @@ source: .
 markdown: kramdown
 
 # Use short post URLs:
-permalink: /p/:title
+permalink: /:year/:title
 
 # Enable HTTP redirects
 gems:

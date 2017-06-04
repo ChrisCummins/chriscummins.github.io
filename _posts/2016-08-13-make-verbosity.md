@@ -1,6 +1,6 @@
 ---
-layout: default
 title: Fine-grained verbosity control in Makefiles
+banner: /img/banners/leith.jpg
 ---
 
 Do you want a quiet build, but with the ability to use CMake's

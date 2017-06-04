@@ -1,6 +1,6 @@
 ---
-layout: default
 title: I’m a vim user, get me out of here!
+banner: /img/banners/birmingham-4.jpg
 ---
 
 The Emacs vs. Vim war has grown to Palestine/Israel proportions (in that it it's

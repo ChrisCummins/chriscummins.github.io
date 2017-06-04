@@ -1,6 +1,6 @@
 ---
-layout: default
 title: CS theory revisited
+banner: /img/banners/death-valley-2.jpg
 ---
 
 As I enter my final term of studies, I will shortly be joining the overcrowded

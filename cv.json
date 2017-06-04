@@ -1,5 +1,5 @@
 {
-    "schema": "adapted from https://jsonresume.org/",
+    "README": "parse strings as markdown. Schema adapted from https://jsonresume.org/",
     "basics": {
         "name": "Chris Cummins",
         "label": "Research Student",
@@ -12,6 +12,12 @@
             "city": "Edinburgh",
             "countryCode": "UK"
         },
+        "languages": [
+            {
+                "language": "English",
+                "fluency": "Native speaker"
+            }
+        ],
         "profiles": [
             {
                 "network": "GitHub",
@@ -41,7 +47,7 @@
                 "network": "Instagram",
                 "username": "@iamchriscummins",
                 "url": "https://instagram.com/iamchriscummins/",
-                 "icon": "fa-instagram"
+                "icon": "fa-instagram"
             },
             {
                 "network": "Twitter",
@@ -91,25 +97,156 @@
             "endDate": "2019 (expected)",
             "thesis": "Deep Learning over Programs",
             "advisors": "Hugh Leather and Pavlos Petoumenos",
-            "summary": "Deep learning over programs. Developing machine learning methods for random program generation, compiler optimisations, and representative benchmarking. Applications for heterogeneous parallelism, testing, and adaptive performance tuning. To date: 4 publications, 4 conferences, best paper, 4 invited talks"
+            "summary": "Deep learning over programs. Developing machine learning methods for random program generation, compiler optimisations, and representative benchmarking. Applications for heterogeneous parallelism, testing, and adaptive performance tuning. To date: 4 publications, 4 conferences, best paper, 4 invited talks",
+            "assets": [
+                {
+                    "name": "First Year Review",
+                    "url": "https://chriscummins.cc/u/ed/phd-first-year-review.pdf",
+                    "icon": "fa-file-pdf-o"
+                },
+                {
+                    "name": "Source Code",
+                    "url": "https://github.com/ChrisCummins/phd",
+                    "icon": "fa-github"
+                }
+            ]
         },
         {
             "institution": "University of Edinburgh",
             "studyType": "MSc by Research",
+            "grade": "Distinction (Thesis: 85%)",
             "startDate": "2014",
             "endDate": "2015",
-            "thesis": "[Autotuning Stencils Codes with Algorithmic Skeletons](https://chriscummins.cc/p/msc) (mark 85%)",
+            "thesis": "Autotuning Stencils Codes with Algorithmic Skeletons",
+            "advisors": "Hugh Leather and Pavlos Petoumenos",
             "summary": "Runtime adaptive tuning for heterogeneous parallel systems, targeting a high level DSL for multi-GPU stencil programs. Machine learning over distributed training sets.",
-            "advisors": "Hugh Leather and Pavlos Petoumenos"
+            "assets": [
+                {
+                    "name": "Thesis",
+                    "url": "https://chriscummins.cc/u/ed/msc-thesis.pdf",
+                    "icon": "fa-file-pdf-o"
+                },
+                {
+                    "name": "Proposal",
+                    "url": "https://chriscummins.cc/u/ed/msc-proposal.pdf",
+                    "icon": "fa-file-pdf-o"
+                },
+                {
+                    "name": "Poster",
+                    "url": "https://chriscummins.cc/u/ed/msc-poster.pdf",
+                    "icon": "fa-file-pdf-o"
+                }
+            ]
         },
         {
             "institution": "Aston Univeristy",
             "studyType": "MEng Electronic Engineering and Computer Science",
+            "grade": "First Class Honours (Thesis: 90%)",
             "startDate": "2010",
             "endDate": "2014",
             "thesis": "Protein Isoelectric Point Database",
             "advisors": "Ian Nabney",
-            "summary": "Created a novel search engine for molecular biochemistry data. Integrated BLAST search tools, a publicly accessible API, and tooling to generate synthetic payloads from confidential datasets for whitebox systems testing. Released open source."
+            "summary": "Created a novel search engine for molecular biochemistry data. Integrated BLAST search tools, a publicly accessible API, and tooling to generate synthetic payloads from confidential datasets for whitebox systems testing. Released open source.",
+            "assets": [
+                {
+                    "name": "Thesis",
+                    "url": "https://chriscummins.cc/u/aston/pip-db/report.pdf",
+                    "icon": "fa-file-pdf-o"
+                },
+                {
+                    "name": "Website",
+                    "url": "http://www.pip-db.org/",
+                    "icon": "fa-external-link"
+                },
+                {
+                    "name": "Source Code",
+                    "url": "https://github.com/ChrisCummins/pip-db",
+                    "icon": "fa-github"
+                }
+            ]
+        }
+    ],
+    "publications": [
+        {
+            "name": "End-to-end Deep Learning of Optimization Heuristics (PACT)",
+            "authors": "**C. Cummins**, P. Petoumenos, Z. Wang, and H. Leather",
+            "publication": "[PACT](https://parasol.tamu.edu/pact17/) (23% acceptance rate), Portland, Oregon",
+            "releaseDate": "2017",
+            "summary": "Learning optimization heuristics directly from raw source code, without the need for feature extraction. Exceeds performance of state-of-the art predictive models using hand crafted features, and can transfer knowledge gained from one optimization task to another, even if the learned tasks are dissimilar.",
+            "assets": [
+                {
+                    "name": "Source Code",
+                    "url": "https://github.com/ChrisCummins/paper-end2end-dl",
+                    "icon": "fa-github"
+                }
+            ]
+        },
+        {
+            "name": "Synthesizing Benchmarks for Predictive Modeling (CGO Best Paper)",
+            "authors": "**C. Cummins**, P. Petoumenos, Z. Wang, and H. Leather",
+            "publication": "[CGO](http://cgo.org/cgo2017/) (22% acceptance rate), Austin, Texas",
+            "releaseDate": "2017",
+            "summary": "Deep learning over massive codebases from GitHub to generate benchmark programs. Automatically synthesizes OpenCL kernels which are indistinguishable from hand-written code, and improves state-of-the-art predictive model performance by 4.30x.",
+            "assets": [
+                {
+                    "name": "Preprint",
+                    "url": "https://chriscummins.cc/pub/2017-cgo.pdf",
+                    "icon": "fa-file-pdf-o"
+                },
+                {
+                    "name": "IEEE Xplore",
+                    "url": "http://ieeexplore.ieee.org/abstract/document/7863731/",
+                    "icon": "fa-external-link"
+                },
+                {
+                    "name": "Source Code",
+                    "url": "https://github.com/ChrisCummins/paper-synthesizing-benchmarks",
+                    "icon": "fa-github"
+                }
+            ]
+        },
+        {
+            "name": "Towards Collaborative Performance Tuning of Algorithmic Skeletons (HLPGPU)",
+            "authors": "**C. Cummins**, P. Petoumenos, M. Steuwer, and H. Leather",
+            "publication": "[HLPGPU](https://sites.google.com/site/hlpgpu2016/), HiPEAC, Prague",
+            "releaseDate": "2016",
+            "summary": "A distributed framework for dynamic prediction of optimisation parameters using machine learning. Automatically exceeds human experts by 1.22x.",
+            "assets": [
+                {
+                    "name": "Preprint",
+                    "url": "https://chriscummins.cc/pub/2016-hlpgpu.pdf",
+                    "icon": "fa-file-pdf-o"
+                },
+                {
+                    "name": "Source Code",
+                    "url": "https://github.com/ChrisCummins/paper-towards-collaborative-performance-tuning",
+                    "icon": "fa-github"
+                }
+            ]
+        },
+        {
+            "name": "Autotuning OpenCL Workgroup Size for Stencil Patterns (ADAPT)",
+            "authors": "**C. Cummins**, P. Petoumenos, M. Steuwer, and H. Leather",
+            "publication": "[ADAPT](http://adapt-workshop.org/index2016.html), HiPEAC, Prague",
+            "releaseDate": "2016",
+            "summary": "Three methodologies to autotune stencil patterns using machine learning. Speedups of 3.79x over the best possible static size, 94% of the maximum performance.",
+            "assets": [
+                {
+                    "name": "Preprint",
+                    "url": "https://chriscummins.cc/pub/2016-adapt.pdf",
+                    "icon": "fa-file-pdf-o"
+                },
+                {
+                    "name": "arXiv",
+                    "url": "https://arxiv.org/abs/1511.02490",
+                    "icon": "fa-external-link"
+                },
+                {
+                    "name": "Source Code",
+                    "url": "https://github.com/ChrisCummins/paper-autotuning-opencl-wgsize",
+                    "icon": "fa-github"
+                }
+            ]
         }
     ],
     "awards": [
@@ -138,59 +275,66 @@
             "date": "2008"
         }
     ],
-    "publications": [
-        {
-            "name": "End-to-end Deep Learning of Optimization Heuristics (PACT)",
-            "authors": "**C. Cummins**, P. Petoumenos, Z. Wang, and H. Leather",
-            "publication": "[PACT](https://parasol.tamu.edu/pact17/) (23% acceptance rate), Portland, Oregon",
-            "releaseDate": "2017",
-            "summary": "Learning optimization heuristics directly from raw source code, without the need for feature extraction. Exceeds performance of state-of-the art predictive models using hand crafted features, and can transfer knowledge gained from one optimization task to another, even if the learned tasks are dissimilar."
-        },
-        {
-            "name": "Synthesizing Benchmarks for Predictive Modeling (CGO Best Paper)",
-            "authors": "**C. Cummins**, P. Petoumenos, Z. Wang, and H. Leather",
-            "publication": "[CGO](http://cgo.org/cgo2017/) (22% acceptance rate), Austin, Texas",
-            "releaseDate": "2017",
-            "summary": "Deep learning over massive codebases from GitHub to generate benchmark programs. Automatically synthesizes OpenCL kernels which are indistinguishable from hand-written code, and improves state-of-the-art predictive model performance by 4.30x."
-        },
-        {
-            "name": "Towards Collaborative Performance Tuning of Algorithmic Skeletons (HLPGPU)",
-            "authors": "**C. Cummins**, P. Petoumenos, M. Steuwer, and H. Leather",
-            "publication": "[HLPGPU](https://sites.google.com/site/hlpgpu2016/), HiPEAC, Prague",
-            "releaseDate": "2016",
-            "summary": "A distributed framework for dynamic prediction of optimisation parameters using machine learning. Automatically exceeds human experts by 1.22x."
-        },
-        {
-            "name": "Autotuning OpenCL Workgroup Size for Stencil Patterns (ADAPT)",
-            "authors": "**C. Cummins**, P. Petoumenos, M. Steuwer, and H. Leather",
-            "publication": "[ADAPT](http://adapt-workshop.org/index2016.html), HiPEAC, Prague",
-            "releaseDate": "2016",
-            "summary": "Three methodologies to autotune stencil patterns using machine learning. Speedups of 3.79x over the best possible static size, 94% of the maximum performance."
-        }
-    ],
     "academic_activies": {
         "invited_talks": [
             {
                 "name": "SPLS",
-                "date": "2017",
+                "date": "2017"
             },
             {
                 "name": "Codeplay Software",
-                "date": "2016",
+                "date": "2016"
             },
             {
                 "name": "Ocado Technology",
-                "date": "2016",
+                "date": "2016"
             },
             {
                 "name": "Amaon Development Center",
-                "date": "2016",
+                "date": "2016"
             }
         ],
         "posters": [
             {
                 "name": "Google",
                 "date": "2016"
+            },
+            {
+                "name": "ACACES",
+                "date": "2016"
+            },
+            {
+                "name": "PLDI",
+                "date": "2016"
+            },
+            {
+                "name": "HiPEAC",
+                "date": "2016"
+            },
+            {
+                "name": "Google",
+                "date": "2015"
+            },
+            {
+                "name": "PPar",
+                "date": "2015"
+            }
+        ],
+        "peer_reviews": [
+            {
+                "name": "ACM TACO",
+                "date": "2016",
+                "https://taco.acm.org/"
+            },
+            {
+                "name": "LCTES",
+                "date": "2016",
+                "url": "http://lctes16.citi.sinica.edu.tw/"
+            },
+            {
+                "name": "CGO",
+                "date": "2016",
+                "url": "http://cgo.org/cgo2016/"
             }
         ]
     },
@@ -215,14 +359,71 @@
                 "OpenCL",
                 "SQL",
                 "LaTeX",
-                "TensorFlow"
+                "TensorFlow",
+                "HTML/CSS"
             ]
         }
     ],
-    "languages": [
-        {
-            "language": "English",
-            "fluency": "Native speaker"
-        }
-    ]
+    "portfolio": {
+        "personal_projects": [
+            { "name": "cldrive", "url": "https://github.com/ChrisCummins/cldrive", "description": "Arbitrary OpenCL kernel execution" },
+            { "name": "clgen", "url": "/clgen/", "description": "Deep learning program generator" },
+            { "name": "deeptune", "url": "https://github.com/ChrisCummins/paper-end2end-dl", "description": "Automatic compiler heuristic construction" },
+            { "name": "emu", "url": "/2014/emu-by-example", "description": "Fast, incremental snapshot backups" },
+            { "name": "euclid", "url": "https://github.com/ChrisCummins/euclid", "description": "Toy x86 kernel" },
+            { "name": "gh-archiver", "url": "https://github.com/ChrisCummins/gh-archiver", "description": "Mirror GitHub users' repositories" },
+            { "name": "humanorrobot.uk", "url": "http://humanorrobot.uk/", "description": "Crowdsourced Turing Tests for Machine Learning research" },
+            { "name": "labm8", "url": "https://github.com/ChrisCummins/labm8", "description": "Utilities for quantitative experimental data" },
+            { "name": "libcecl", "url": "https://github.com/ChrisCummins/libcecl", "description": "Synchronous, verbose OpenCL API wrappers" },
+            { "name": "liquid-src", "url": "https://github.com/ChrisCummins/liquid-src", "description": "Fluid HTML link management" },
+            { "name": "lmk", "url": "https://github.com/ChrisCummins/lmk", "description": "Alarm clock for the command line" },
+            { "name": "omnitune", "url": "https://github.com/ChrisCummins/omnitune", "description": "Distributed machine learning autotuning" },
+            { "name": "pe", "url": "https://github.com/ChrisCummins/pe", "description": "Particle effects and swarming behaviors" },
+            { "name": "phd", "url": "https://github.com/ChrisCummins/phd", "description": "Meta-repository for my entire PhD" },
+            { "name": "pip-db", "url": "https://github.com/ChrisCummins/pip-db", "description": "Search engine for bioinformatics research" },
+            { "name": "rt", "url": "https://github.com/ChrisCummins/rt", "description": "Parallelized ray tracer" },
+            { "name": "shit.js", "url": "https://github.com/ChrisCummins/shit.js", "description": "Secure Host Intrusion Technology" },
+            { "name": "shutterbug", "url": "https://github.com/ChrisCummins/shutterbug", "description": "DVD photo backups" },
+            { "name": "srtime", "url": "https://github.com/ChrisCummins/srtime", "description": "A statistically rigorous 'time' replacement" }
+        ],
+        "open_source_contributions": [
+            { "name": "autoencoder", "url": "https://github.com/erickrf/autoencoder/", "description": "bug fix" },
+            { "name": "Clojure Koans", "url": "http://clojurekoans.com/", "description": "bug fix" },
+            { "name": "CLSmith", "url": "https://github.com/ChrisLidbury/CLSmith", "description": "new features" },
+            { "name": "clutter", "url": "https://blogs.gnome.org/clutter/", "description": "new features" },
+            { "name": "cogl", "url": "http://www.cogl3d.org/", "description": "new features" },
+            { "name": "Eigen", "url": "http://eigen.tuxfamily.org/index.php?title=Main_Page", "description": "SYCL support" },
+            { "name": "grammarVAE", "url": "https://github.com/mkusner/grammarVAE", "description": "bug fix" },
+            { "name": "Gertboard", "url": "https://projects.drogon.net/raspberry-pi/gertboard/", "description": "new tests" },
+            { "name": "GNOME Desktop", "url": "http://www.gnome.org/", "description": "multiple bug fixes" },
+            { "name": "GTK+", "url": "http://www.gtk.org/", "description": "multiple bug fixes" },
+            { "name": "Korma", "url": "http://www.sqlkorma.com/", "description": "bug fix" },
+            { "name": "Linux", "url": "https://www.kernel.org/", "description": "ioctl debugging" },
+            { "name": "rig", "url": "http://roblog.sixbynine.org/2012/10/rig-1-ui-designer-engine.html", "description": "particle effects engine" },
+            { "name": "setGPU", "url": "https://github.com/bamos/setGPU", "description": "bug report" },
+            { "name": "SkelCL", "url": "http://skelcl.uni-muenster.de/", "description": "autotuned stencil" },
+            { "name": "TensorFlow", "url": "https://www.tensorflow.org/", "description": "SYCL support" },
+            { "name": "textlint", "url": "https://github.com/DamienCassou/textlint", "description": "maintainer" },
+            { "name": "torch-rnn", "url": "https://github.com/jcjohnson/torch-rnn", "description": "maintainer" },
+            { "name": "torch", "url": "https://github.com/torch/distro", "description": "new feature" },
+            { "name": "triSYCL", "url": "https://github.com/amd/triSYCL", "description": "bug fix" },
+            { "name": "watch-less", "url": "https://github.com/jgreene/watch-less", "description": "bug fixes" },
+            { "name": "Wayland", "url": "http://wayland.freedesktop.org/", "description": "GTK+ support" },
+            { "name": "visioncpp", "url": "https://github.com/ChrisCummins/visioncpp", "description": "code owner Python bindings" }
+        ],
+        "hacks_and_demos": [
+            { "name": "Grow Your Own Picture", "url": "/s/genetics/", "thumbnail": "/img/portfolio/gyop.png" },
+            { "name": "Boids", "url": "/s/boids/", "thumbnail": "/img/portfolio/boids.png" },
+            { "name": "Game of Life", "url": "/s/gol/", "thumbnail": "/img/portfolio/gol.png" }
+        ],
+        "websites": [
+            { "name": "jusselme.com", "url": "http://barthelemyjusselme.com/", "description": "Celebrated Parisian musician" },
+            { "name": "beautyroomsmatlock.com", "url": "http://beautyroomsmatlock.com/", "description": "Luxury beauty salon" },
+            { "name": "borderscripts.com", "url": "http://borderscripts.com/", "description": "Literary and editorial consultancy" },
+            { "name": "cgo.org", "url": "http://cgo.org/cgo2018/", "description": "2018 computer science conference" },
+            { "name": "greystonespress.com", "url": "http://www.greystonespress.com/", "description": "Independent publisher" },
+            { "name": "myrmidonbooks.com", "url": "http://myrmidonbooks.com/", "description": "Independent publisher" },
+            { "name": "pip-db.org", "url": "http://www.pip-db.org/", "description": "Search engine for bioinformatics research" }
+        ]
+    }
 }

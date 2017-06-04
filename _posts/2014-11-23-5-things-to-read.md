@@ -1,6 +1,6 @@
 ---
-layout: default
 title: 5 things I wish I read 5 months ago
+banner: /img/banners/edinburgh-crags.jpg
 ---
 
 One of the few common factors among every PhD student's experience is

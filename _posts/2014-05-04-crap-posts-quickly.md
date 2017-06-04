@@ -1,6 +1,6 @@
 ---
-layout: default
 title: On writing crap posts, quickly
+banner: /img/banners/me-2.jpg
 ---
 
 By way of follow up to my [last post](/posts/crap-code-quickly), I

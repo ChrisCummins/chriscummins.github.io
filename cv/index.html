@@ -18,10 +18,20 @@ banner: /img/banners/san-fran.jpg
       <div class="collapse" id="edu-{{ forloop.index }}">
         <div class="collapse-content">
           <table>
+          {% if entry.grade %}
+          <tr><td>Grade</td><td>{{ entry.grade | markdownify | remove: '<p>' | remove: '</p>' }}</td></tr>
+          {% endif %}
           <tr><td>Thesis</td><td>{{ entry.thesis | markdownify | remove: '<p>' | remove: '</p>' }}</td></tr>
           <tr><td>Advisors</td><td>{{ entry.advisors | markdownify | remove: '<p>' | remove: '</p>' }}</td></tr>
           </table>
           {{ entry.summary | markdownify }}
+          {% if entry.assets %}
+            <div class="button-row">
+            {% for asset in entry.assets %}
+              <a title="Link opens in new window" target="_blank" href="{{ asset.url }}" class="btn btn-primary" role="button">{{ asset.name }}{% if asset.icon %}<i class="fa {{ asset.icon }}" aria-hidden="true"></i>{% endif %}</a>
+            {% endfor %}
+            </div>
+          {% endif %}
         </div>
       </div>
     </li>
@@ -41,6 +51,13 @@ banner: /img/banners/san-fran.jpg
           <tr><td>Publication</td><td>{{ entry.publication | markdownify | remove: '<p>' | remove: '</p>' }}</td></tr>
           </table>
           {{ entry.summary | markdownify }}
+          {% if entry.assets %}
+            <div class="button-row">
+            {% for asset in entry.assets %}
+              <a title="Link opens in new window" target="_blank" href="{{ asset.url }}" class="btn btn-primary" role="button">{{ asset.name }}{% if asset.icon %}<i class="fa {{ asset.icon }}" aria-hidden="true"></i>{% endif %}</a>
+            {% endfor %}
+            </div>
+          {% endif %}
         </div>
       </div>
     </li>
@@ -56,6 +73,13 @@ banner: /img/banners/san-fran.jpg
       <div class="collapse" id="work-{{ forloop.index }}">
         <div class="collapse-content">
           {{ entry.summary | markdownify }}
+          {% if entry.assets %}
+            <div class="button-row">
+            {% for asset in entry.assets %}
+              <a title="Link opens in new window" target="_blank" href="{{ asset.url }}" class="btn btn-primary" role="button">{{ asset.name }}{% if asset.icon %}<i class="fa {{ asset.icon }}" aria-hidden="true"></i>{% endif %}</a>
+            {% endfor %}
+            </div>
+          {% endif %}
         </div>
       </div>
     </li>
@@ -72,5 +96,16 @@ banner: /img/banners/san-fran.jpg
   {% endfor %}
   </ul>
 
+  <h1>Key Technical Skills</h1>
+  <table>
+  {% for entry in site.data.cv.skills %}
+    <tr>
+      <td>{{ entry.level }}</td>
+      <td>
+        {{ entry.keywords | array_to_sentence_string }}.
+      </td>
+    </tr>
+  {% endfor %}
+  </table>
 
-</div>
+</div> <!-- /.cv -->

@@ -180,15 +180,27 @@ $color-button: #0b60fe;
         p:last-child {
             margin-bottom: 0
         }
-        table {
-            margin-left: .5em;
-            margin-bottom: .5em;
-            tr {
-                td:first-child {
-                    color: $color-subtle;
-                    text-align: right;
-                    padding-right: 1em;
-                }
+
+        .button-row {
+            margin-bottom: 0;
+
+            .btn-primary {
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+.cv {
+    table {
+        margin-left: .5em;
+        margin-bottom: .5em;
+        tr {
+            td:first-child {
+                font-size: 14px;
+                color: $color-subtle;
+                text-align: right;
+                padding-right: 1em;
             }
         }
     }
@@ -208,6 +220,10 @@ $color-button: #0b60fe;
     h1 {
         margin-bottom: 1em;
         font-size: 24px;
+
+        &:first-child {
+            margin-top: 0;
+        }
     }
 }
 

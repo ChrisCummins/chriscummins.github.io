@@ -1,6 +1,6 @@
 ---
-layout: default
 title: Egosurfing with git
+banner: /img/banners/me-3.jpg
 ---
 
 The following shell function may be a useful snippet for the `~/.bashrc` of
