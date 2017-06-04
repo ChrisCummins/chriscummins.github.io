@@ -1,0 +1,45 @@
+---
+title: Portfolio
+banner: /img/banners/half-dome.jpg
+---
+
+<div class="big-list">
+  <h1>Personal Projects</h1>
+  <ul>
+  {% for project in site.data.portfolio.personal_projects %}
+    <li>
+      <a title="Link opens in new window" target="_blank" href="{{ project.url }}">{{ project.name }}</a> {{ project.description }}
+    </li>
+  {% endfor %}
+  </ul>
+
+  <h1>Open Source Contributions</h1>
+  <ul>
+  {% for project in site.data.portfolio.open_source_contributions %}
+    <li>
+      <a title="Link opens in new window" target="_blank" href="{{ project.url }}">{{ project.name }}</a> {{ project.description }}
+    </li>
+  {% endfor %}
+  </ul>
+
+  <h1>Hacks and Demos</h1>
+  <ul class="thumbnails">
+  {% for project in site.data.portfolio.hacks_and_demos %}
+    <li class="thumbnail">
+      <a title="Link opens in new window" target="_blank" href="{{ project.url }}">
+        <div class="label">{{ project.name }}</div>
+        <div class="image"><img src="{{ project.thumbnail }}" /></div>
+      </a>
+    </li>
+  {% endfor %}
+  </ul>
+
+  <h1>Websites</h1>
+  <ul>
+  {% for project in site.data.portfolio.websites %}
+    <li>
+      <a title="Link opens in new window" target="_blank" href="{{ project.url }}">{{ project.name }}</a> {{ project.description }}
+    </li>
+  {% endfor %}
+  </ul>
+</div> <!-- /.big-list -->
