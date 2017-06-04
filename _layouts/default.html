@@ -103,22 +103,22 @@
       <div id="col-left" class="col-sm-9">
         {%include around-the-web.html %}
 
-        <div id="content">
+        <div class="content">
           {% comment %}
           The page.date and page.render_post variables are used as a sentinel
           to find out if we are rendering a post.
           {% endcomment %}
           {% if page.date or page.render_post %}
-          <div id="post">
-            <span class="hang-right">{{ page.date | date: "%-d %b %Y" }}</span>
-            <h1>{{ page.title }}</h1>
+            <h1>
+              <span class="hang-right">{{ page.date | date: "%-d %b %Y" }}</span>
+              {{ page.title }}
+            </h1>
           {% endif %}
-            {{ content }}
+          {{ content }}
           {% if page.date or page.render_post %}
             {% if page.next %}
-            <h1><a href="{{ page.next.url }}" title="Read the next post">Next post</a></h1>
+              <h1><a href="{{ page.next.url }}" title="Read the next post">Next post</a></h1>
             {% endif %}
-          </div> <!-- #post -->
           {% endif %}
         </div>
       </div> <!-- #col-left -->

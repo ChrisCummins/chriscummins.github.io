@@ -6,7 +6,7 @@ banner: /img/banners/manhattan.jpg
 <div class="big-list">
   <h1>Personal Projects</h1>
   <ul>
-  {% for project in site.data.portfolio.personal_projects %}
+  {% for project in site.data.cv.portfolio.personal_projects %}
     <li>
       <a title="Link opens in new window" target="_blank" href="{{ project.url }}">{{ project.name }}</a> {{ project.description }}
     </li>
@@ -15,7 +15,7 @@ banner: /img/banners/manhattan.jpg
 
   <h1>Open Source Contributions</h1>
   <ul>
-  {% for project in site.data.portfolio.open_source_contributions %}
+  {% for project in site.data.cv.portfolio.open_source_contributions %}
     <li>
       <a title="Link opens in new window" target="_blank" href="{{ project.url }}">{{ project.name }}</a> {{ project.description }}
     </li>
@@ -23,12 +23,12 @@ banner: /img/banners/manhattan.jpg
   </ul>
 
   <h1>Hacks and Demos</h1>
-  <ul class="thumbnails">
-  {% for project in site.data.portfolio.hacks_and_demos %}
-    <li class="thumbnail">
+  <ul class="demos">
+  {% for project in site.data.cv.portfolio.hacks_and_demos %}
+    <li class="demo">
       <a title="Link opens in new window" target="_blank" href="{{ project.url }}">
-        <div class="label">{{ project.name }}</div>
         <div class="image"><img src="{{ project.thumbnail }}" /></div>
+        <div class="name"><p>{{ project.name }}</p></div>
       </a>
     </li>
   {% endfor %}
@@ -36,7 +36,7 @@ banner: /img/banners/manhattan.jpg
 
   <h1>Websites</h1>
   <ul>
-  {% for project in site.data.portfolio.websites %}
+  {% for project in site.data.cv.portfolio.websites %}
     <li>
       <a title="Link opens in new window" target="_blank" href="{{ project.url }}">{{ project.name }}</a> {{ project.description }}
     </li>

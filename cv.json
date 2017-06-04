@@ -340,8 +340,8 @@
     },
     "skills": [
         {
-            "name": "Expert",
-            "level": "Expert",
+            "name": "Advanced",
+            "level": "Advanced",
             "keywords": [
                 "C/C++",
                 "Python",
@@ -351,8 +351,8 @@
             ]
         },
         {
-            "name": "Advanced",
-            "level": "Advanced",
+            "name": "Competent",
+            "level": "Competent",
             "keywords": [
                 "C",
                 "JavaScript",

@@ -78,7 +78,7 @@ $color-button: #0b60fe;
     }
 }
 
-#content {
+.content {
     font-size: 18px;
 
     h1, h2, h3, h4, h5, h6 {
@@ -87,6 +87,7 @@ $color-button: #0b60fe;
         margin-top: 2em;
 
         &:first-child {
+            // No need for vspace on the first title in the content block.
             margin-top: 0;
         }
     }
@@ -166,9 +167,7 @@ $color-button: #0b60fe;
     }
 
     .collapsing {
-        -webkit-transition: height .25s ease;
-             -o-transition: height .25s ease;
-                transition: height .25s ease;
+        @include transition-duration(height .25s ease);
     }
     .collapse-content {
         font-size: 14px;
@@ -214,17 +213,7 @@ $color-button: #0b60fe;
     font-weight: 400;
     color: $color-subtle;
     padding-left: 15px;
-}
-
-#post {
-    h1 {
-        margin-bottom: 1em;
-        font-size: 24px;
-
-        &:first-child {
-            margin-top: 0;
-        }
-    }
+    margin-left: 15px;
 }
 
 #footer {
@@ -265,6 +254,47 @@ $color-button: #0b60fe;
 
         i {
             margin-left: 5px;
+        }
+    }
+}
+
+// Thumbnail gallery
+.demos {
+    .demo {
+        display: inline-block;
+        width: 160px;
+        vertical-align: top;
+        margin-bottom: 0;
+
+        .image {
+            overflow: hidden;
+            border: solid 1px #000;
+            padding: 0;
+
+            img {
+                width: 100%;
+                // height: 160px;
+                padding: 0;
+                @include transition-duration(.3s);
+
+                &:hover {
+                    opacity: .75;
+                }
+            }
+        }
+
+        p {
+            text-align: center;
+            margin: .3em 0;
+            width: 160px;
+            color: #000;
+            @include transition-duration(.3s);
+        }
+
+        a:hover {
+            p {
+                color: $color-highlight;
+            }
         }
     }
 }
