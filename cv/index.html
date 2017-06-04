@@ -1,0 +1,76 @@
+---
+title: Resume
+banner: /img/banners/san-fran.jpg
+---
+
+<div class="button-row">
+  <a title="Link opens in new window" target="_blank" href="/cv.pdf" class="btn btn-primary" role="button">View PDF <i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>
+  <a title="Link opens in new window" target="_blank" href="/cv.json" class="btn btn-primary" role="button">View JSON <i class="fa fa-file-text-o" aria-hidden="true"></i></a>
+</div>
+
+<div class="cv big-list">
+  <h1><!-- <i class="fa fa-university" aria-hidden="true"></i> --> Education</h1>
+  <ul>
+  {% for entry in site.data.cv.education %}
+    <li class="has-caret">
+      <span class="hang-right">{{ entry.endDate }}</span>
+      <a class="undecorated" role="button" data-toggle="collapse" href="#edu-{{ forloop.index }}" aria-expanded="false" aria-controls="edu-{{ forloop.index }}">{{ entry.studyType }}, {{ entry.institution }}</a>
+      <div class="collapse" id="edu-{{ forloop.index }}">
+        <div class="collapse-content">
+          <table>
+          <tr><td>Thesis</td><td>{{ entry.thesis | markdownify | remove: '<p>' | remove: '</p>' }}</td></tr>
+          <tr><td>Advisors</td><td>{{ entry.advisors | markdownify | remove: '<p>' | remove: '</p>' }}</td></tr>
+          </table>
+          {{ entry.summary | markdownify }}
+        </div>
+      </div>
+    </li>
+  {% endfor %}
+  </ul>
+
+  <h1>Publications</h1>
+  <ul>
+  {% for entry in site.data.cv.publications %}
+    <li class="has-caret">
+      <span class="hang-right">{{ entry.releaseDate }}</span>
+      <a class="undecorated" role="button" data-toggle="collapse" href="#pub-{{ forloop.index }}" aria-expanded="false" aria-controls="pub-{{ forloop.index }}">{{ entry.name }}</a>
+      <div class="collapse" id="pub-{{ forloop.index }}">
+        <div class="collapse-content">
+          <table>
+          <tr><td>Authors</td><td>{{ entry.authors | markdownify | remove: '<p>' | remove: '</p>' }}</td></tr>
+          <tr><td>Publication</td><td>{{ entry.publication | markdownify | remove: '<p>' | remove: '</p>' }}</td></tr>
+          </table>
+          {{ entry.summary | markdownify }}
+        </div>
+      </div>
+    </li>
+  {% endfor %}
+  </ul>
+
+  <h1>Professional Experience</h1>
+  <ul>
+  {% for entry in site.data.cv.work %}
+    <li class="has-caret">
+      <span class="hang-right">{{ entry.startDate }}{% if entry.endDate != entry.startDate %}-{% if entry.endDate == "" %}current{% else %}{{ entry.endDate }}{% endif %}{% endif %}</span>
+      <a class="undecorated" role="button" data-toggle="collapse" href="#work-{{ forloop.index }}" aria-expanded="false" aria-controls="work-{{ forloop.index }}">{{entry.position}}, {{ entry.company }}</a>
+      <div class="collapse" id="work-{{ forloop.index }}">
+        <div class="collapse-content">
+          {{ entry.summary | markdownify }}
+        </div>
+      </div>
+    </li>
+  {% endfor %}
+  </ul>
+
+  <h1>Awards</h1>
+  <ul>
+  {% for entry in site.data.cv.awards %}
+    <li>
+      <span class="hang-right">{{ entry.date }}</span>
+      {{ entry.title | markdownify | remove: '<p>' | remove: '</p>' }}
+    </li>
+  {% endfor %}
+  </ul>
+
+
+</div>

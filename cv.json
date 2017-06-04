@@ -1,0 +1,228 @@
+{
+    "schema": "adapted from https://jsonresume.org/",
+    "basics": {
+        "name": "Chris Cummins",
+        "label": "Research Student",
+        "picture": "https://chriscummins.cc/img/me.jpg",
+        "email": "chrisc.101@gmail.com",
+        "phone": "(+44) 07875502718",
+        "website": "https://chriscummins.cc",
+        "summary": "Full time geek and re­search stu­dent with a pas­sion for de­vel­op­ing great soft­ware, of­ten late at night.",
+        "location": {
+            "city": "Edinburgh",
+            "countryCode": "UK"
+        },
+        "profiles": [
+            {
+                "network": "GitHub",
+                "username": "ChrisCummins",
+                "url": "https://github.com/ChrisCummins",
+                "icon": "fa-github"
+            },
+            {
+                "network": "LinkedIn",
+                "username": "chris-cummins-25540455",
+                "url": "https://www.linkedin.com/in/chris-cummins-25540455/",
+                "icon": "fa-linkedin-square"
+            },
+            {
+                "network": "Facebook",
+                "username": "cecummins",
+                "url": "http://www.facebook.com/cecummins",
+                "icon": "fa-facebook-square"
+            },
+            {
+                "network": "YouTube",
+                "username": "ChrisCummins",
+                "url": "http://www.youtube.com/user/ChrisCummins",
+                "icon": "fa-youtube-play"
+            },
+            {
+                "network": "Instagram",
+                "username": "@iamchriscummins",
+                "url": "https://instagram.com/iamchriscummins/",
+                 "icon": "fa-instagram"
+            },
+            {
+                "network": "Twitter",
+                "username": "@iamchriscummins",
+                "url": "https://twitter.com/iamchriscummins",
+                "icon": "fa-twitter"
+            }
+        ]
+    },
+    "work": [
+        {
+            "company": "Codeplay Software",
+            "position": "Software Engineer Intern",
+            "website": "https://www.codeplay.com/",
+            "startDate": "2016",
+            "endDate": "2016",
+            "summary": "Contributed to [Tensorflow](https://www.tensorflow.org/) and [Eigen](http://eigen.tuxfamily.org/index.php?title=Main_Page). Implemented GPU memory management for expression trees. Compile time scheduling and kernel fusion for expression trees on GPUs using [future standards](https://www.khronos.org/sycl) for heterogeneous parallelism. Extensive C++ meta-programming."
+        },
+        {
+            "company": "Intel Corporation",
+            "position": "Software Engineer Intern",
+            "website": "https://01.org/",
+            "startDate": "2012",
+            "endDate": "2013",
+            "summary": "Patched [ioctl](https://en.wikipedia.org/wiki/Ioctl) subsystem in Linux kernel. Developed tools for Intel [GPU assembly](https://software.intel.com/en-us/articles/introduction-to-gen-assembly) programming. Implemented [GTK+](http://www.gtk.org/) support for [Wayland](https://wayland.freedesktop.org/) display server. Fixed usability bugs in [GNOME](https://www.gnome.org/) desktop applications. Developed 3D particle effects engine. Numerous [open source project contributions](/portfolio/)."
+        },
+        {
+            "company": "Freelance",
+            "position": "Web developer",
+            "startDate": "2010",
+            "endDate": "",
+            "summary": "Full-stack development for small businesses, including graphic design and branding. Frontend experience with JavaScript; backend development using Clojure, Node.js, PHP, MySQL, PostgreSQL, and Jekyll. Experience with Bootstrap framework and WordPress CMS."
+        },
+        {
+            "company": "Rolls Royce Holdings plc",
+            "position": "Summer Placement",
+            "startDate": "2008",
+            "endDate": "2008",
+            "summary": "Summer week placement, Design Methods Group."
+        }
+    ],
+    "education": [
+        {
+            "institution": "University of Edinburgh",
+            "studyType": "PhD Informatics",
+            "startDate": "2015",
+            "endDate": "2019 (expected)",
+            "thesis": "Deep Learning over Programs",
+            "advisors": "Hugh Leather and Pavlos Petoumenos",
+            "summary": "Deep learning over programs. Developing machine learning methods for random program generation, compiler optimisations, and representative benchmarking. Applications for heterogeneous parallelism, testing, and adaptive performance tuning. To date: 4 publications, 4 conferences, best paper, 4 invited talks"
+        },
+        {
+            "institution": "University of Edinburgh",
+            "studyType": "MSc by Research",
+            "startDate": "2014",
+            "endDate": "2015",
+            "thesis": "[Autotuning Stencils Codes with Algorithmic Skeletons](https://chriscummins.cc/p/msc) (mark 85%)",
+            "summary": "Runtime adaptive tuning for heterogeneous parallel systems, targeting a high level DSL for multi-GPU stencil programs. Machine learning over distributed training sets.",
+            "advisors": "Hugh Leather and Pavlos Petoumenos"
+        },
+        {
+            "institution": "Aston Univeristy",
+            "studyType": "MEng Electronic Engineering and Computer Science",
+            "startDate": "2010",
+            "endDate": "2014",
+            "thesis": "Protein Isoelectric Point Database",
+            "advisors": "Ian Nabney",
+            "summary": "Created a novel search engine for molecular biochemistry data. Integrated BLAST search tools, a publicly accessible API, and tooling to generate synthetic payloads from confidential datasets for whitebox systems testing. Released open source."
+        }
+    ],
+    "awards": [
+        {
+            "title": "Best Paper Award, [CGO](http://cgo.org/cgo2017/)",
+            "date": "2017"
+        },
+        {
+            "title": "PhD studentship, EPSRC   [grant EP/L01503X/1](http://gow.epsrc.ac.uk/NGBOViewGrant.aspx?GrantRef=EP/L01503X/1)",
+            "date": "2015"
+        },
+        {
+            "title": "[IET](http://www.theiet.org/membership/awards/index.cfm) Institute of Engineering & Technology Prize",
+            "date": "2014"
+        },
+        {
+            "title": "[Arkwright Scholarship](http://www.arkwright.org.uk/), Rolls Royce Plc",
+            "date": "2009"
+        },
+        {
+            "title": "[EES](http://www.etrust.org.uk/engineering-education-scheme) Engineering Education Scheme of England",
+            "date": "2009"
+        },
+        {
+            "title": "[AESSEAL](http://www.aesseal.co.uk/en)   Design Innovation Award",
+            "date": "2008"
+        }
+    ],
+    "publications": [
+        {
+            "name": "End-to-end Deep Learning of Optimization Heuristics (PACT)",
+            "authors": "**C. Cummins**, P. Petoumenos, Z. Wang, and H. Leather",
+            "publication": "[PACT](https://parasol.tamu.edu/pact17/) (23% acceptance rate), Portland, Oregon",
+            "releaseDate": "2017",
+            "summary": "Learning optimization heuristics directly from raw source code, without the need for feature extraction. Exceeds performance of state-of-the art predictive models using hand crafted features, and can transfer knowledge gained from one optimization task to another, even if the learned tasks are dissimilar."
+        },
+        {
+            "name": "Synthesizing Benchmarks for Predictive Modeling (CGO Best Paper)",
+            "authors": "**C. Cummins**, P. Petoumenos, Z. Wang, and H. Leather",
+            "publication": "[CGO](http://cgo.org/cgo2017/) (22% acceptance rate), Austin, Texas",
+            "releaseDate": "2017",
+            "summary": "Deep learning over massive codebases from GitHub to generate benchmark programs. Automatically synthesizes OpenCL kernels which are indistinguishable from hand-written code, and improves state-of-the-art predictive model performance by 4.30x."
+        },
+        {
+            "name": "Towards Collaborative Performance Tuning of Algorithmic Skeletons (HLPGPU)",
+            "authors": "**C. Cummins**, P. Petoumenos, M. Steuwer, and H. Leather",
+            "publication": "[HLPGPU](https://sites.google.com/site/hlpgpu2016/), HiPEAC, Prague",
+            "releaseDate": "2016",
+            "summary": "A distributed framework for dynamic prediction of optimisation parameters using machine learning. Automatically exceeds human experts by 1.22x."
+        },
+        {
+            "name": "Autotuning OpenCL Workgroup Size for Stencil Patterns (ADAPT)",
+            "authors": "**C. Cummins**, P. Petoumenos, M. Steuwer, and H. Leather",
+            "publication": "[ADAPT](http://adapt-workshop.org/index2016.html), HiPEAC, Prague",
+            "releaseDate": "2016",
+            "summary": "Three methodologies to autotune stencil patterns using machine learning. Speedups of 3.79x over the best possible static size, 94% of the maximum performance."
+        }
+    ],
+    "academic_activies": {
+        "invited_talks": [
+            {
+                "name": "SPLS",
+                "date": "2017",
+            },
+            {
+                "name": "Codeplay Software",
+                "date": "2016",
+            },
+            {
+                "name": "Ocado Technology",
+                "date": "2016",
+            },
+            {
+                "name": "Amaon Development Center",
+                "date": "2016",
+            }
+        ],
+        "posters": [
+            {
+                "name": "Google",
+                "date": "2016"
+            }
+        ]
+    },
+    "skills": [
+        {
+            "name": "Expert",
+            "level": "Expert",
+            "keywords": [
+                "C/C++",
+                "Python",
+                "git",
+                "GNU / Linux",
+                "bash"
+            ]
+        },
+        {
+            "name": "Advanced",
+            "level": "Advanced",
+            "keywords": [
+                "C",
+                "JavaScript",
+                "OpenCL",
+                "SQL",
+                "LaTeX",
+                "TensorFlow"
+            ]
+        }
+    ],
+    "languages": [
+        {
+            "language": "English",
+            "fluency": "Native speaker"
+        }
+    ]
+}

@@ -3,11 +3,19 @@
 @import 'bootstrap-variables';
 
 $color-highlight: #e60000;
+$color-subtle: #777;
+$color-button: #0b60fe;
 
 @mixin transition-duration($duration) {
     -webkit-transition-duration: $duration; /* iOS Safari */
        -moz-transition-duration: $duration; /* Firefox */
             transition-duration: $duration;
+}
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+            border-radius: $radius;
+          background-clip: padding-box;  /* stops bg color from leaking outside the border */
 }
 
 @mixin noselect {
@@ -99,7 +107,7 @@ $color-highlight: #e60000;
 
 /* lists of pages */
 .big-list {
-    ul {
+    > ul {
         vertical-align: middle;
         padding: 0;
         font-size: 18px;
@@ -108,6 +116,17 @@ $color-highlight: #e60000;
         li {
             list-style-type: none;
             margin-bottom: .8em;
+
+            &.has-caret {
+                list-style-position: inside;
+                text-indent: -1em;
+                padding-left: 1em;
+            }
+            &.has-caret:before {
+                font-family: 'FontAwesome';
+                content: '\f105';
+                padding: 0 5px 0 0;
+            }
 
             // underline hover effect based on post by @tobiasahlin:
             // http://tobiasahlin.com/blog/css-trick-animating-link-underlines/
@@ -118,7 +137,11 @@ $color-highlight: #e60000;
                 text-decoration: none;
                 border-bottom: 2px solid #000;
 
-                &:before {
+                &.undecorated {
+                    border-bottom: none;
+                }
+
+                &:not(.undecorated):before {
                     content: "";
                     position: absolute;
                     width: 100%;
@@ -133,10 +156,38 @@ $color-highlight: #e60000;
                     -webkit-transition: all 0.3s ease-in-out 0s;
                             transition: all 0.3s ease-in-out 0s;
                 }
-                &:hover:before {
+                &:not(.undecorated):hover:before {
                     visibility: visible;
                     -webkit-transform: scaleX(1);
                             transform: scaleX(1);
+                }
+            }
+        }
+    }
+
+    .collapsing {
+        -webkit-transition: height .25s ease;
+             -o-transition: height .25s ease;
+                transition: height .25s ease;
+    }
+    .collapse-content {
+        font-size: 14px;
+        text-indent: 0;
+        // breathing room around collapse content
+        margin: 0;
+        padding: .5em 0 1em 0;
+
+        p:last-child {
+            margin-bottom: 0
+        }
+        table {
+            margin-left: .5em;
+            margin-bottom: .5em;
+            tr {
+                td:first-child {
+                    color: $color-subtle;
+                    text-align: right;
+                    padding-right: 1em;
                 }
             }
         }
@@ -149,7 +200,7 @@ $color-highlight: #e60000;
     line-height: 24px;
     font-size: 16px;
     font-weight: 400;
-    color: #777;
+    color: $color-subtle;
     padding-left: 15px;
 }
 
@@ -167,7 +218,37 @@ $color-highlight: #e60000;
         text-align: center;
         font-size: 13px;
         font-weight: 300;
-        color: #777;
+        color: $color-subtle;
         margin-bottom: 1.5em;
+    }
+}
+
+.button-row {
+    margin-bottom: 1.5em;
+    text-align: center;
+
+    @media (min-width: $screen-sm-min) {
+        text-align: left;
+    }
+
+    .btn-primary {
+        @include border-radius(12px);
+
+        font-size: 16px;
+        color: $color-button;
+
+        background-color: #fff;
+        border-color: $color-button;
+        border: solid 2px $color-button;
+        min-width: 150px;
+        margin-right: .5em;
+
+        &:hover {
+            background-color: #eee;
+        }
+
+        i {
+            margin-left: 5px;
+        }
     }
 }
