@@ -72,10 +72,26 @@
     <img src="{{ page.banner }}"/>
     <div>
       <div>
-        <h1><a href="/">CHRIS<b>CUMMINS</b></a></h1>
+        <h1 class="noselect">
+          {% if page.url != "/" %}
+          <a href="/">
+          {% endif %}
+          CHRIS<b>CUMMINS</b>
+          {% if page.url != "/" %}
+          </a>
+          {% endif %}
+        </h1>
         <p>
-          <a href="/cv/">Resume</a> |
-          <a href="/portfolio/">Portfolio</a>
+          {% if page.url == "/cv/" %}
+            <span>Resume</span> |
+          {% else %}
+            <a href="/cv/">Resume</a> |
+          {% endif %}
+          {% if page.url == "/portfolio/" %}
+            <span>Portfolio</span>
+          {% else %}
+            <a href="/portfolio/">Portfolio</a>
+          {% endif %}
         </p>
       </div>
     </div>
