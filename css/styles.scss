@@ -447,3 +447,8 @@ a.decorated {
         }
     }
 }
+
+// text selection highlighting:
+::selection {
+  background-color: #f98484;
+}
