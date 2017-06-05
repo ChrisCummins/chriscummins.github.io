@@ -103,11 +103,11 @@
       <div id="col-left" class="col-sm-9">
         {%include around-the-web.html %}
 
-        <div class="content">
-          {% comment %}
-          The page.date and page.render_post variables are used as a sentinel
-          to find out if we are rendering a post.
-          {% endcomment %}
+        {% comment %}
+        The page.date and page.render_post variables are used as a sentinel
+        to find out if we are rendering a post.
+        {% endcomment %}
+        <div class="content {% if page.date or page.render_post %}post{% endif %}">
           {% if page.date or page.render_post %}
             <h1>
               <span class="hang-right">{{ page.date | date: "%-d %b %Y" }}</span>
@@ -145,6 +145,6 @@
 
   <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <!-- TODO: <script src="/js/site.min.js"></script> -->
+  <script src="/js/site.js"></script>
 </body>
 </html>

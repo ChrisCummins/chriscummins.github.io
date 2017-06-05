@@ -1,6 +1,6 @@
 ---
-layout: default
 title: Emu by example
+banner: /img/banners/malibu.jpg
 ---
 
 This post introduces emu, a pet project which I have been developing

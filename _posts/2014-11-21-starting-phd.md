@@ -1,6 +1,6 @@
 ---
-layout: default
 title: Starting a Ph.D.
+banner: /img/banners/edinburgh-crags.jpg
 ---
 
 Two months ago I joined the the University of Edinburgh as one of the

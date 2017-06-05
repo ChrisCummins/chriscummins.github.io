@@ -35,6 +35,10 @@ $color-button: #0b60fe;
 @import 'jumbotron';
 @import 'around-the-web';
 
+html {
+    min-width: 320px;
+}
+
 /* container which holds the left and right columns */
 .container-fluid {
     width: 95%;
@@ -138,7 +142,7 @@ $color-button: #0b60fe;
                 text-decoration: none;
                 border-bottom: 2px solid #000;
 
-                &.undecorated {
+                &:not(.btn).undecorated {
                     border-bottom: none;
                 }
 
@@ -182,9 +186,11 @@ $color-button: #0b60fe;
 
         .button-row {
             margin-bottom: 0;
+            text-align: left;
 
             .btn-primary {
-                font-size: 14px;
+                font-size: 12px;
+                @media (min-width: $screen-sm-min) { font-size: 14px; }
             }
         }
     }
@@ -209,11 +215,13 @@ $color-button: #0b60fe;
     float: right;
     vertical-align: middle;
     line-height: 24px;
-    font-size: 16px;
     font-weight: 400;
     color: $color-subtle;
     padding-left: 15px;
     margin-left: 15px;
+    font-size: 14px;
+
+    @media (min-width: $screen-xs-min) { font-size: 14px; }
 }
 
 #footer {
@@ -232,6 +240,16 @@ $color-button: #0b60fe;
     margin-bottom: 1.5em;
     text-align: center;
 
+    ul {
+        padding: 0;
+        list-style-type: none;
+
+        li {
+            display: inline;
+            line-height: 3.3em;
+        }
+    }
+
     @media (min-width: $screen-sm-min) {
         text-align: left;
     }
@@ -246,7 +264,10 @@ $color-button: #0b60fe;
         border-color: $color-button;
         border: solid 2px $color-button;
         min-width: 150px;
-        margin-right: .5em;
+
+        @media (min-width: $screen-sm-min) {
+            margin-right: .5em;
+        }
 
         &:hover {
             background-color: #eee;

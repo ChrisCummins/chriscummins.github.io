@@ -1,6 +1,6 @@
 ---
-layout: default
 title: Typesetting the LaTeX way
+banner: /img/banners/edinburgh.jpg
 ---
 
 I love text. Naturally. I mean, between programming, University work,

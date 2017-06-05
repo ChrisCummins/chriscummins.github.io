@@ -1,6 +1,6 @@
 ---
-layout: default
 title: Emu by example, part 1
+banner: /img/banners/vik.jpg
 ---
 
 #### Part 1: Sinks and sources

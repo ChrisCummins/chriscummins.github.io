@@ -2,7 +2,9 @@
     text-align: center;
     margin-top: -15px;
     padding-left: 0;
-    margin-bottom: 2em;
+
+    margin-bottom: 1.5em;
+    @media (min-width: $screen-xs-min) { margin-bottom: 2em; }
 
     @media (min-width: $screen-sm-min) {
         text-align: left;
@@ -20,7 +22,12 @@
         }
 
         a {
-            padding: 10px;
+            padding: 10px 2px;
+
+            @media (min-width: $screen-xs-min) {
+                padding: 10px;
+            }
+
             color: #000;
             text-decoration: none!important;
             @include transition-duration(0.3s);
