@@ -39,6 +39,12 @@
 
         a:hover {
             color: $color-highlight;
+
+            img {
+                opacity: .75;
+                -webkit-filter: grayscale(50%); /* Safari 6.0 - 9.0 */
+                        filter: grayscale(50%);
+            }
         }
 
         /* unused:
@@ -50,6 +56,7 @@
         */
 
         img {  // icons
+            @include transition-duration(.3s);
             vertical-align: middle;
             width: 36px;
             height: 36px;
