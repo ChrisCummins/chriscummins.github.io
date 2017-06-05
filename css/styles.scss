@@ -385,3 +385,20 @@ a.decorated {
         margin-bottom: 2em;
     }
 }
+
+// full-width embedded video wrapper
+.video-wrapper-16-9 {
+        margin: 1em 0;
+        position: relative;
+        padding-bottom: 56.25%; // 16:9 aspect ratio
+        padding-top: 25px;
+        height: 0;
+
+        iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+        }
+}

@@ -35,7 +35,13 @@
         div {
             position: relative;
             left: -50%;
-            padding: 17px 40px 15px 25px;
+
+            // tight border on tiny screens
+            padding: 17px 20px 15px 8px;
+            @media (min-width: $screen-xs-min) {
+                padding: 17px 40px 15px 25px;
+            }
+
             background-color: #fff;
             display: inline-block;
             @media (min-width: $screen-sm-min) { left: 0; }
@@ -43,8 +49,12 @@
             h1 {
                 margin: 0;
                 padding: 0;
-                font-size: 36px;
                 font-weight: 400;
+
+                font-size: 32px;
+                @media (min-width: $screen-xs-min) {
+                    font-size: 36px;
+                }
             }
 
             p {
