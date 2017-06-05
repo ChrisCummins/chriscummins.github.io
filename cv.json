@@ -229,7 +229,7 @@
                 },
                 {
                     "name": "Slides",
-                    "url": "https://github.com/ChrisCummins/phd/raw/master/talks/2016-01-hlpgpu/2016-01-hlpgpu.pdf",
+                    "url": "https://chriscummins.cc/pub/2016-hlpgpu-slides.pdf",
                     "icon": "fa-file-pdf-o"
                 },
                 {
@@ -253,7 +253,7 @@
                 },
                 {
                     "name": "Slides",
-                    "url": "https://github.com/ChrisCummins/phd/raw/master/talks/2016-01-adapt/2016-01-adapt.pdf",
+                    "url": "https://chriscummins.cc/pub/2016-adapt-slides.pdf",
                     "icon": "fa-file-pdf-o"
                 },
                 {
@@ -317,7 +317,7 @@
                 "assets": [
                     {
                         "name": "Slides",
-                        "url": "https://github.com/ChrisCummins/phd/raw/master/talks/2017-03-spls/2017-03-spls.pdf",
+                        "url": "https://chriscummins.cc/pub/2017-spls-slides.pdf",
                         "icon": "fa-file-pdf-o"
                     }
                 ]
@@ -339,7 +339,7 @@
                 "assets": [
                     {
                         "name": "Slides",
-                        "url": "https://github.com/ChrisCummins/phd/raw/master/talks/2016-07-ocado/2016-07-ocado.pdf",
+                        "url": "https://chriscummins.cc/pub/2016-ocado-slides.pdf",
                         "icon": "fa-file-pdf-o"
                     }
                 ]
@@ -350,7 +350,7 @@
                 "assets": [
                     {
                         "name": "Slides",
-                        "url": "https://github.com/ChrisCummins/phd/raw/master/talks/2017-03-spls/2017-03-spls.pdf",
+                        "url": "https://chriscummins.cc/pub/2016-amazon-slides.pdf",
                         "icon": "fa-file-pdf-o"
                     }
                 ]
@@ -432,9 +432,9 @@
     "portfolio": {
         "personal_projects": [
             { "name": "cldrive", "url": "https://github.com/ChrisCummins/cldrive", "description": "Arbitrary OpenCL kernel execution" },
-            { "name": "clgen", "url": "/clgen/", "description": "Deep learning program generator" },
+            { "name": "clgen", "url": "https://chriscummins.cc/clgen/", "description": "Deep learning program generator" },
             { "name": "deeptune", "url": "https://github.com/ChrisCummins/paper-end2end-dl", "description": "Automatic compiler heuristic construction" },
-            { "name": "emu", "url": "/2014/emu-by-example", "description": "Fast, incremental snapshot backups" },
+            { "name": "emu", "url": "https://chriscummins.cc/2014/emu-by-example", "description": "Fast, incremental snapshot backups" },
             { "name": "euclid", "url": "https://github.com/ChrisCummins/euclid", "description": "Toy x86 kernel" },
             { "name": "gh-archiver", "url": "https://github.com/ChrisCummins/gh-archiver", "description": "Mirror GitHub users' repositories" },
             { "name": "humanorrobot.uk", "url": "http://humanorrobot.uk/", "description": "Crowdsourced Turing Tests for Machine Learning research" },
@@ -477,9 +477,9 @@
             { "name": "visioncpp", "url": "https://github.com/ChrisCummins/visioncpp", "description": "code owner Python bindings" }
         ],
         "hacks_and_demos": [
-            { "name": "Grow Your Own Picture", "url": "/s/genetics/", "thumbnail": "/img/portfolio/gyop.png" },
-            { "name": "Boids", "url": "/s/boids/", "thumbnail": "/img/portfolio/boids.png" },
-            { "name": "Game of Life", "url": "/s/gol/", "thumbnail": "/img/portfolio/gol.png" }
+            { "name": "Grow Your Own Picture", "url": "https://chriscummins.cc/s/genetics/", "thumbnail": "/img/portfolio/gyop.png" },
+            { "name": "Boids", "url": "https://chriscummins.cc/s/boids/", "thumbnail": "/img/portfolio/boids.png" },
+            { "name": "Game of Life", "url": "https://chriscummins.cc/s/gol/", "thumbnail": "/img/portfolio/gol.png" }
         ],
         "websites": [
             { "name": "jusselme.com", "url": "http://barthelemyjusselme.com/", "description": "Celebrated Parisian musician" },
