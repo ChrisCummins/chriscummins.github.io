@@ -263,7 +263,10 @@ html {
         background-color: #fff;
         border-color: $color-button;
         border: solid 2px $color-button;
-        min-width: 150px;
+
+        min-width: 130px;
+        @media (min-width: $screen-xs-min) { min-width: 150px; }
+
 
         @media (min-width: $screen-sm-min) {
             margin-right: .5em;
