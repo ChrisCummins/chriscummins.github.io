@@ -41,17 +41,25 @@
             color: $color-highlight;
         }
 
+        /* unused:
         i {  // font awesome icons
             vertical-align: middle;
             font-size: 36px;
             width: 36px;
+        }
+        */
+
+        img {  // icons
+            vertical-align: middle;
+            width: 36px;
+            height: 36px;
         }
 
         span {
             display: none;
             font-size: 16px;
             vertical-align: middle;
-            padding-left: .8em;
+            padding-left: .5em;
 
             @media (min-width: $screen-sm-min) { display: unset; }
             @media (min-width: $screen-md-min) { font-size: 24px; }

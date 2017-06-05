@@ -2,7 +2,8 @@
   {% for profile in site.data.cv.basics.profiles %}
     <li>
       <a title="{{ profile.username }}" target="_blank" href="{{ profile.url }}">
-        <i class="fa {{ profile.icon }}"></i>
+        <img src="/img/social/{{ profile.network }}.png "/>
+        {% comment %} No longer used: <i class="fa {{ profile.icon }}"></i> {% endcomment %}
         <span>{{ profile.network }}</span>
       </a>
     </li>
