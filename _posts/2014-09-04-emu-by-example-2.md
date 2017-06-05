@@ -5,7 +5,7 @@ title: Emu by example, part 2
 
 #### Part 2: Push and log
 
-In the [last post](/posts/emu-by-example-1/) we covered the `init` and
+In the [last post](/2014/emu-by-example-1/) we covered the `init` and
 `sink` commands in order to initialise an emu source and a sink,
 respectively. In this post we will use this sink we have just made to
 create our first snapshot!

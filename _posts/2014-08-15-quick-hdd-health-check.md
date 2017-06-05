@@ -7,7 +7,7 @@ Recently I have had to deal with two hardware disk failures in quick
 succession, which has led to two changes:
 
 1. A much increased pace of development on
-   [emu](/posts/emu-by-example/) (more on that soon!).
+   [emu](/2014/emu-by-example/) (more on that soon!).
 2. Taking a more programmatic and astute approach to keeping on eye on
    system health.
 
@@ -16,7 +16,7 @@ from this
 [disk cloning with ddrescue](http://www.kossboss.com/linux---how-to-clone-a-disk-with-ddrescue---dnu-ddrescue-also-known-as-gddrescue---the-better-ddrescue-tool)
 tutorial in order to provide a quick and simple overview of the health of hard drives:
 
-```
+```sh
 for i in $(ls /dev/sd[a-z]); do echo "=== $i ==="; \
 sudo smartctl -a $i | egrep --color=never -i \
 "reallocated_sector|ata error|serial|model|user capacity"; \

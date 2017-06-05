@@ -5,7 +5,7 @@ title: Emu by example, part 4
 
 #### Part 4: Squash and prune
 
-In the [last post](/posts/emu-by-example-3/) we covered how to
+In the [last post](/2014/emu-by-example-3/) we covered how to
 identify snapshots uniquely using their IDs and various shorthand
 aliases, and how to verify and checkout individual snapshots. Today
 we're going to cover two further important topics: How to merge

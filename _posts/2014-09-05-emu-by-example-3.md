@@ -6,8 +6,8 @@ title: Emu by example, part 3
 #### Part 3: Verify and checkout
 
 Now that we know how to create
-[sinks and sources](/posts/emu-by-example-1/) and
-[push snapshots](/posts/emu-by-example-2/), we will demonstrate in
+[sinks and sources](/2014/emu-by-example-1/) and
+[push snapshots](/2014/emu-by-example-2/), we will demonstrate in
 this tutorial how to validate your backups and restore them.
 
 ###### verify
