@@ -62,6 +62,20 @@ $color-button: #0b60fe;
     }
 }
 
+@mixin subtle {
+    & {
+        vertical-align: middle;
+        line-height: 24px;
+        font-weight: 400;
+        color: $color-subtle;
+        font-size: 14px;
+    }
+}
+
+.subtle {
+    @include subtle;
+}
+
 .noselect {
     @include noselect;
 }
@@ -261,17 +275,29 @@ a.decorated {
     }
 }
 
+// hang left and hang right. These should be used in pairs. On large screens,
+// only hang-right is visible. On small screens, only hang left.
 .hang-right {
+    @include subtle;
+    @include noselect;
+
+    display: none;
     float: right;
-    vertical-align: middle;
-    line-height: 24px;
-    font-weight: 400;
-    color: $color-subtle;
     padding-left: 15px;
     margin-left: 15px;
-    font-size: 14px;
+}
+.hang-left {
+    @include subtle;
+    @include noselect;
 
-    @media (min-width: $screen-xs-min) { font-size: 14px; }
+    &:before {
+        content: "\A";
+        white-space: pre;
+    }
+}
+@media (min-width: $screen-sm-min) {
+    .hang-left { display: none; }
+    .hang-right { display: unset; }
 }
 
 #footer {

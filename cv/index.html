@@ -17,6 +17,7 @@ banner: /img/banners/san-fran.jpg
     <li class="has-caret">
       <span class="hang-right">{{ entry.endDate }}</span>
       <a class="undecorated" role="button" data-toggle="collapse" href="#edu-{{ forloop.index }}" aria-expanded="false" aria-controls="edu-{{ forloop.index }}">{{ entry.studyType }}, {{ entry.institution }}</a>
+      <span class="hang-left">{{ entry.endDate }}</span>
       <div class="collapse" id="edu-{{ forloop.index }}">
         <div class="collapse-content">
           <table>
@@ -50,6 +51,7 @@ banner: /img/banners/san-fran.jpg
     <li class="has-caret">
       <span class="hang-right">{{ entry.releaseDate }}</span>
       <a class="undecorated" role="button" data-toggle="collapse" href="#pub-{{ forloop.index }}" aria-expanded="false" aria-controls="pub-{{ forloop.index }}">{{ entry.name }}</a>
+      <span class="hang-left">{{ entry.releaseDate }}</span>
       <div class="collapse" id="pub-{{ forloop.index }}">
         <div class="collapse-content">
           <table>
@@ -80,6 +82,7 @@ banner: /img/banners/san-fran.jpg
     <li class="has-caret">
       <span class="hang-right">{{ entry.startDate }}{% if entry.endDate != entry.startDate %}-{% if entry.endDate == "" %}current{% else %}{{ entry.endDate }}{% endif %}{% endif %}</span>
       <a class="undecorated" role="button" data-toggle="collapse" href="#work-{{ forloop.index }}" aria-expanded="false" aria-controls="work-{{ forloop.index }}">{{entry.position}}, {{ entry.company }}</a>
+      <span class="hang-left">{{ entry.startDate }}{% if entry.endDate != entry.startDate %}-{% if entry.endDate == "" %}current{% else %}{{ entry.endDate }}{% endif %}{% endif %}</span>
       <div class="collapse" id="work-{{ forloop.index }}">
         <div class="collapse-content">
           <p class="justify">
@@ -106,6 +109,7 @@ banner: /img/banners/san-fran.jpg
     <li>
       <span class="hang-right">{{ entry.date }}</span>
       {{ entry.title | markdownify | remove: '<p>' | remove: '</p>' }}
+      <span class="hang-left">{{ entry.date }}</span>
     </li>
   {% endfor %}
   </ul>
@@ -116,6 +120,7 @@ banner: /img/banners/san-fran.jpg
     <li class="has-caret">
       <span class="hang-right">{{ entry.date }}</span>
       <a class="undecorated" role="button" data-toggle="collapse" href="#talks-{{ forloop.index }}" aria-expanded="false" aria-controls="talks-{{ forloop.index }}">{{ entry.name }}</a>
+      <span class="hang-left">{{ entry.date }}</span>
       <div class="collapse" id="talks-{{ forloop.index }}">
         <div class="collapse-content">
           <p>{{ entry.summary }}</p>
