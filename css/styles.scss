@@ -241,11 +241,15 @@ a.decorated {
         margin-left: .5em;
         margin-bottom: .5em;
         tr {
-            td:first-child {
-                font-size: 14px;
-                color: $color-subtle;
-                text-align: right;
-                padding-right: 1em;
+            td {
+                padding-bottom: .7em;
+
+                &:first-child {
+                    font-size: 14px;
+                    color: $color-subtle;
+                    text-align: right;
+                    padding-right: 1em;
+                }
             }
         }
     }
@@ -360,5 +364,24 @@ a.decorated {
                 color: $color-highlight;
             }
         }
+    }
+}
+
+// paper
+.paper {
+    max-width: 60%;
+
+    img {
+        padding: 0;
+        border: solid 1px #aaa;
+        -webkit-box-shadow: 5px 5px 5px 0px rgba(50, 50, 50, 0.75);
+           -moz-box-shadow: 5px 5px 5px 0px rgba(50, 50, 50, 0.75);
+                box-shadow: 5px 5px 5px 0px rgba(50, 50, 50, 0.75);
+    }
+
+    p {
+        padding-top: .8em;
+        font-size: 14px;
+        margin-bottom: 2em;
     }
 }

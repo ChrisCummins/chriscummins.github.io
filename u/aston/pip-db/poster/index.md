@@ -1,7 +1,7 @@
 ---
-layout: default
 title: pip-db - Project Poster
 render_post: true
+banner: /img/banners/birmingham-7.jpg
 ---
 
 <div class="paper">
@@ -14,7 +14,7 @@ render_post: true
   </p>
 </div>
 
-###### Formal feedback
+## Formal feedback
 
 Very confident and good presentation. Extremely well polished final
 product and exceptional ability to answer questions. Professional

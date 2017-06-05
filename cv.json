@@ -135,6 +135,11 @@
                     "name": "Poster",
                     "url": "https://chriscummins.cc/u/ed/msc-poster.pdf",
                     "icon": "fa-file-pdf-o"
+                },
+                {
+                    "name": "Source Code",
+                    "url": "https://github.com/ChrisCummins/msc-thesis",
+                    "icon": "fa-github"
                 }
             ]
         },
@@ -366,15 +371,18 @@
             },
             {
                 "name": "HiPEAC",
-                "date": "2016"
+                "date": "2016",
+                "url": "https://chriscummins.cc/pub/2016-hipeac-poster.pdf",
             },
             {
                 "name": "Google",
-                "date": "2015"
+                "date": "2015",
+                "url": "https://chriscummins.cc/pub/2015-google-poster.pdf",
             },
             {
                 "name": "PPar",
-                "date": "2015"
+                "date": "2015",
+                "url": "https://chriscummins.cc/u/ed/msc-poster.pdf",
             }
         ],
         "peer_reviews": [

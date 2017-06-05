@@ -1,7 +1,7 @@
 ---
-layout: default
 title: pip-db - Final Project Report
 render_post: true
+banner: /img/banners/birmingham-7.jpg
 ---
 
 <div class="paper">
@@ -14,7 +14,7 @@ render_post: true
   </p>
 </div>
 
-###### Formal feedback
+## Formal feedback
 
 This is a truly exceptional piece of work of extremely high quality,
 insight and diligence. An appropriate lifecycle model has been

@@ -1,7 +1,7 @@
 ---
-layout: default
 title: pip-db - Project Plan
 render_post: true
+banner: /img/banners/birmingham-7.jpg
 ---
 
 <div class="paper">
@@ -14,7 +14,7 @@ render_post: true
   </p>
 </div>
 
-###### Formal feedback
+## Formal feedback
 
 This is an exceptionally well thought out project plan based around
 standard methodology for a final year project and is certainly first
