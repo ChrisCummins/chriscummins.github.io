@@ -28,6 +28,40 @@ $color-button: #0b60fe;
               user-select: none; /* Chrome and Opera */
 }
 
+@mixin decorated {
+    & {
+        position: relative;
+        color: #000;
+        text-decoration: none;
+        border-bottom: 2px solid #000;
+
+        &:not(.btn).undecorated {
+            border-bottom: none;
+        }
+
+        &:not(.undecorated):before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: $color-highlight;
+            visibility: hidden;
+            -webkit-transform: scaleX(0);
+                    transform: scaleX(0);
+
+            -webkit-transition: all 0.3s ease-in-out 0s;
+                    transition: all 0.3s ease-in-out 0s;
+        }
+        &:not(.undecorated):hover:before {
+            visibility: visible;
+            -webkit-transform: scaleX(1);
+                    transform: scaleX(1);
+        }
+    }
+}
+
 .noselect {
     @include noselect;
 }
@@ -111,35 +145,7 @@ html {
 }
 
 a.decorated {
-    position: relative;
-    color: #000;
-    text-decoration: none;
-    border-bottom: 2px solid #000;
-
-    &:not(.btn).undecorated {
-        border-bottom: none;
-    }
-
-    &:not(.undecorated):before {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 2px;
-        bottom: -2px;
-        left: 0;
-        background-color: $color-highlight;
-        visibility: hidden;
-        -webkit-transform: scaleX(0);
-                transform: scaleX(0);
-
-        -webkit-transition: all 0.3s ease-in-out 0s;
-                transition: all 0.3s ease-in-out 0s;
-    }
-    &:not(.undecorated):hover:before {
-        visibility: visible;
-        -webkit-transform: scaleX(1);
-                transform: scaleX(1);
-    }
+    @include decorated;
 }
 
 /* lists of pages */
@@ -401,4 +407,17 @@ a.decorated {
                 width: 100%;
                 height: 100%;
         }
+}
+
+// blog navigation
+.nav {
+    margin-top: 1em;
+
+    a {
+        @include decorated;
+
+        &.nav-prev {
+            float: right;
+        }
+    }
 }

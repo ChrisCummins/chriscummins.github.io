@@ -116,9 +116,14 @@
           {% endif %}
           {{ content }}
           {% if page.date or page.render_post %}
-            {% if page.next %}
-              <h1><a href="{{ page.next.url }}" title="Read the next post">Next post</a></h1>
-            {% endif %}
+            <div class="nav">
+              {% if page.next %}
+                <a class="nav-next" href="{{ page.next.url }}" title="Read the next post">Newer post</a>
+              {% endif %}
+              {% if page.previous %}
+                <a class="nav-prev" href="{{ page.previous.url }}" title="Read the previous post">Older post</a>
+              {% endif %}
+            </div> <!-- /.nav -->
           {% endif %}
         </div>
       </div> <!-- #col-left -->
