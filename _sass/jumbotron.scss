@@ -1,24 +1,28 @@
 /*
  * page header
  */
-.jumbotron {
+ .jumbotron {
     position: relative;
     padding: 0;
     display: flex;
     align-items: center;
     overflow: hidden;
     max-height: 450px;
-    min-height: 210px;
+    min-height: 250px;
     @media (min-width: $screen-sm-min) { min-height: 450px; }
 
     // If there is no image:
     background-color: #bbb;
 
     img {
-        width: 100%;
-        min-height: 100%;
+        // on tiny screens we over-zoom the image to ensure it meets the min-
+        // height requirement
+        width: 120%;
+        // for all other screens, we use full image width
+        @media (min-width: $screen-xs-min) { width: 100%; }
     }
 
+    // wrapper for the title banner
     div {
         z-index: 2;
         position: absolute;
@@ -27,6 +31,7 @@
         @media (min-width: $screen-sm-min) { left: 7%; }
         @media (min-width: $screen-md-min) { left: 9%; }
 
+        // title banner
         div {
             position: relative;
             left: -50%;
@@ -34,50 +39,51 @@
             background-color: #fff;
             display: inline-block;
             @media (min-width: $screen-sm-min) { left: 0; }
-        }
-    }
 
-    h1 {
-        margin: 0;
-        padding: 0;
-        font-size: 36px;
-        font-weight: 400;
-    }
+            h1 {
+                margin: 0;
+                padding: 0;
+                font-size: 36px;
+                font-weight: 400;
+            }
 
-    p {
-        text-align: center; /* only on small screens */
-        font-size: 16px;
-        font-weight: 400;
-        margin: 0;
-        padding: 0;
+            p {
+                @include noselect;
 
-        @media (min-width: $screen-sm-min) { text-align: left; }
-    }
+                text-align: center; /* only on small screens */
+                font-size: 16px;
+                font-weight: 400;
+                margin: 0;
+                padding: 0;
 
-    a, span {
-        @include noselect;
-        padding: 10px 6px;
-        color: #000;
-    }
+                @media (min-width: $screen-sm-min) { text-align: left; }
+            }
 
-    a {
-        // noselect mixin overrides the pointer type:
-        cursor: pointer;
-        @include transition-duration(0.3s);
+            a, span {
+                padding: 10px 6px;
+                color: #000;
+            }
 
-        &:hover {
-            color: $color-highlight;
-            text-decoration: none;
-        }
-    }
+            a {
+                cursor: pointer; // reset because of noselect mixin
 
-    span {
-       color: $color-highlight;
-    }
+                @include transition-duration(0.3s);
 
-    @media (min-width: $screen-sm-min) {
-        a:first-child, span:first-child {
-            margin-left: -5px;
+                &:hover {
+                    color: $color-highlight;
+                    text-decoration: none;
+                }
+            }
+
+            span {
+                color: $color-highlight;
+            }
+
+            @media (min-width: $screen-sm-min) {
+                a:first-child, span:first-child {
+                    margin-left: -5px;
+                }
+            }
         }
     }
 }
