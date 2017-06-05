@@ -194,6 +194,11 @@
                     "icon": "fa-file-pdf-o"
                 },
                 {
+                    "name": "Slides",
+                    "url": "https://speakerdeck.com/chriscummins/synthesizing-benchmarks-for-predictive-modelling-cgo-17",
+                    "icon": "fa-external-link"
+                },
+                {
                     "name": "IEEE Xplore",
                     "url": "http://ieeexplore.ieee.org/abstract/document/7863731/",
                     "icon": "fa-external-link"
@@ -218,6 +223,11 @@
                     "icon": "fa-file-pdf-o"
                 },
                 {
+                    "name": "Slides",
+                    "url": "https://github.com/ChrisCummins/phd/raw/master/talks/2016-01-hlpgpu/2016-01-hlpgpu.pdf",
+                    "icon": "fa-file-pdf-o"
+                },
+                {
                     "name": "Source Code",
                     "url": "https://github.com/ChrisCummins/paper-towards-collaborative-performance-tuning",
                     "icon": "fa-github"
@@ -237,6 +247,11 @@
                     "icon": "fa-file-pdf-o"
                 },
                 {
+                    "name": "Slides",
+                    "url": "https://github.com/ChrisCummins/phd/raw/master/talks/2016-01-adapt/2016-01-adapt.pdf",
+                    "icon": "fa-file-pdf-o"
+                },
+                {
                     "name": "arXiv",
                     "url": "https://arxiv.org/abs/1511.02490",
                     "icon": "fa-external-link"
@@ -245,6 +260,20 @@
                     "name": "Source Code",
                     "url": "https://github.com/ChrisCummins/paper-autotuning-opencl-wgsize",
                     "icon": "fa-github"
+                }
+            ]
+        },
+        {
+            "name": "PIP-DB: The Protein Isoelectric Point Database (Bioinformatics)",
+            "authors": "E. Bunkute, **C. Cummins**, F. Crofts, G. Bunce, I. T. Nabney, and D. R. Flower",
+            "publication": "Bioinformatics, 31(2), 295-296",
+            "releaseDate": "2015",
+            "summary": "An open source search engine of protein isoelectric points. Provides public access to bioinformatics data from the literature for comparison and benchmarking purposes.",
+            "assets": [
+                {
+                    "name": "Oxford",
+                    "url": "http://bioinformatics.oxfordjournals.org/content/31/2/295.full?etoc",
+                    "icon": "fa-external-link"
                 }
             ]
         }
@@ -275,23 +304,51 @@
             "date": "2008"
         }
     ],
-    "academic_activies": {
+    "academic_activities": {
         "invited_talks": [
             {
-                "name": "SPLS",
-                "date": "2017"
+                "name": "Using Deep Learning to Generate Human-like Code (SPLS)",
+                "date": "2017",
+                "assets": [
+                    {
+                        "name": "Slides",
+                        "url": "https://github.com/ChrisCummins/phd/raw/master/talks/2017-03-spls/2017-03-spls.pdf",
+                        "icon": "fa-file-pdf-o"
+                    }
+                ]
             },
             {
-                "name": "Codeplay Software",
-                "date": "2016"
+                "name": "Machine Learning & Compilers (Codeplay Software)",
+                "date": "2016",
+                "assets": [
+                    {
+                        "name": "Slides",
+                        "url": "https://speakerdeck.com/chriscummins/machine-learning-and-compilers",
+                        "icon": "fa-external-link"
+                    }
+                ]
             },
             {
-                "name": "Ocado Technology",
-                "date": "2016"
+                "name": "Building an AI that Codes (Ocado Technology)",
+                "date": "2016",
+                "assets": [
+                    {
+                        "name": "Slides",
+                        "url": "https://github.com/ChrisCummins/phd/raw/master/talks/2016-07-ocado/2016-07-ocado.pdf",
+                        "icon": "fa-file-pdf-o"
+                    }
+                ]
             },
             {
-                "name": "Amaon Development Center",
-                "date": "2016"
+                "name": "All the OpenCL on GitHub: Teaching an AI to code (Amazon Development Center)",
+                "date": "2016",
+                "assets": [
+                    {
+                        "name": "Slides",
+                        "url": "https://github.com/ChrisCummins/phd/raw/master/talks/2017-03-spls/2017-03-spls.pdf",
+                        "icon": "fa-file-pdf-o"
+                    }
+                ]
             }
         ],
         "posters": [
@@ -324,7 +381,7 @@
             {
                 "name": "ACM TACO",
                 "date": "2016",
-                "https://taco.acm.org/"
+                "url": "https://taco.acm.org/"
             },
             {
                 "name": "LCTES",

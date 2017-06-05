@@ -110,6 +110,61 @@ banner: /img/banners/san-fran.jpg
   {% endfor %}
   </ul>
 
+  <h1>Invited Talks</h1>
+  <ul>
+  {% for entry in site.data.cv.academic_activities.invited_talks %}
+    <li class="has-caret">
+      <span class="hang-right">{{ entry.date }}</span>
+      <a class="undecorated" role="button" data-toggle="collapse" href="#talks-{{ forloop.index }}" aria-expanded="false" aria-controls="talks-{{ forloop.index }}">{{ entry.name }}</a>
+      <div class="collapse" id="talks-{{ forloop.index }}">
+        <div class="collapse-content">
+          <p>{{ entry.summary }}</p>
+          {% if entry.assets %}
+            <div class="button-row">
+              <ul>
+              {% for asset in entry.assets %}
+                <li><a title="Link opens in new window" target="_blank" href="{{ asset.url }}" class="btn btn-primary undecorated" role="button">{{ asset.name }}{% if asset.icon %}<i class="fa {{ asset.icon }}" aria-hidden="true"></i>{% endif %}</a></li>
+              {% endfor %}
+              </ul>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </li>
+  {% endfor %}
+  </ul>
+
+  <h1>Other Academic activities</h1>
+  <table>
+    <tr>
+      <td>Posters</td><td>
+        {% for entry in site.data.cv.academic_activities.posters %}
+          {% if forloop.last %}and {% endif %}
+          {% if entry.url %}<a class="decorated" title="Link opens in new window" target="_blank" href="{{ entry.url }}">{% endif
+          %}{{ entry.name }}{%
+            if entry.url %}</a>{% endif %}
+          ({{ entry.date }}){%
+            if forloop.last %}.{% else %}, {% endif %}
+        {% endfor %}
+      </td>
+    </tr>
+    <tr>
+      <td>Peer Reviews</td><td>
+        {% for entry in site.data.cv.academic_activities.peer_reviews %}
+          {% if forloop.last %}and {% endif %}
+          {% if entry.url %}<a class="decorated" title="Link opens in new window" target="_blank" href="{{ entry.url }}">{% endif
+          %}{{ entry.name }}{%
+            if entry.url %}</a>{% endif %}
+          ({{ entry.date }}){%
+            if forloop.last %}.{% else %}, {% endif %}
+        {% endfor %}
+      </td>
+    </tr>
+  </table>
+  <p>
+
+  </p>
+
   <h1>Key Technical Skills</h1>
   <table>
   {% for entry in site.data.cv.skills %}
