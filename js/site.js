@@ -25,14 +25,14 @@ $(document).ready(function() {
   });
 });
 
-  // Change the caret direction on collapsible list elements:
-  $('.has-caret .collapse')
-    .on('show.bs.collapse', function() {
-      $(this).parent().addClass('has-caret-down');
-    })
-    .on('hide.bs.collapse', function() {
-      $(this).parent().removeClass('has-caret-down');
-    });
+// Change the caret direction on collapsible list elements:
+$('.has-caret .collapse')
+  .on('show.bs.collapse', function() {
+    $(this).parent().addClass('has-caret-down');
+  })
+  .on('hide.bs.collapse', function() {
+    $(this).parent().removeClass('has-caret-down');
+  });
 
 /*
  * jquery.hypher.js -- A fast and small JavaScript hyphenation engine

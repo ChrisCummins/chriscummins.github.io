@@ -76,6 +76,73 @@ $fa-file-pdf-o: '\f1c1';
     }
 }
 
+@mixin banner() {
+    // title banner
+    div.banner {
+        position: relative;
+        left: -50%;
+
+        // tight border on tiny screens
+        padding: 17px 20px 15px 8px;
+        @media (min-width: $screen-xs-min) {
+            padding: 17px 40px 15px 25px;
+        }
+
+        background-color: #fff;
+        display: inline-block;
+        @media (min-width: $screen-sm-min) { left: 0; }
+
+        h1 {
+            margin: 0;
+            padding: 0;
+            font-weight: 400;
+
+            font-size: 32px;
+            @media (min-width: $screen-xs-min) {
+                font-size: 36px;
+            }
+        }
+
+        p {
+            @include noselect;
+
+            text-align: center; /* only on small screens */
+            font-size: 16px;
+            font-weight: 400;
+            margin: 0;
+            padding: 0;
+
+            @media (min-width: $screen-sm-min) { text-align: left; }
+        }
+
+        a, span {
+            padding: 10px 6px;
+            color: #000;
+        }
+
+        a {
+            cursor: pointer; // reset because of noselect mixin
+
+            @include transition-duration(0.3s);
+
+            &:hover {
+                color: $color-highlight;
+                text-decoration: none;
+            }
+        }
+
+        span {
+            color: $color-highlight;
+        }
+
+        @media (min-width: $screen-sm-min) {
+            a:first-child, span:first-child {
+                margin-left: -5px;
+            }
+        }
+    }
+}
+
 .subtle {
     @include subtle;
 }
@@ -107,6 +174,28 @@ html {
 
     padding-left: 20px;
     border-left: 1px solid #666;
+
+    @include banner;
+
+    &.affix-top {
+        .banner { display: none; }
+    }
+    &.affix {
+        top: 4%;
+        .banner {
+            display: unset;
+            padding: 0 0 .2em 0;
+            margin-bottom: .6em;
+
+            h1 {
+                margin-bottom: .2em;
+
+                // TODO: Broader range of font sizes. Test.
+                font-size: 19px;
+                @media (min-width: $screen-md-min) { font-size: 24px; }
+            }
+        }
+    }
 
     #about {
         color: #000;
