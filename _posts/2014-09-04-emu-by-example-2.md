@@ -203,5 +203,3 @@ around the `.emu` directory if they would like to learn more about how
 the emu internals work. Now that we know how to create backups, we'll
 be back in Part 3 to show you how to restore your files from
 snapshots!
-
-#### [Part 3: Verify and checkout](/posts/emu-by-example-3/)

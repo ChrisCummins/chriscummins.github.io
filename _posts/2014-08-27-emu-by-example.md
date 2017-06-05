@@ -29,8 +29,8 @@ updates.
 
 #### Table of Contents
 
- * [Part 1: Sinks and sources](/posts/emu-by-example-1/)
- * [Part 2: Push and log](/posts/emu-by-example-2/)
- * [Part 3: Verify and checkout](/posts/emu-by-example-3/)
- * [Part 4: Squash and prune](/posts/emu-by-example-4/)
+ * [Part 1: Sinks and sources](/2014/emu-by-example-1/)
+ * [Part 2: Push and log](/2014/emu-by-example-2/)
+ * [Part 3: Verify and checkout](/2014/emu-by-example-3/)
+ * [Part 4: Squash and prune](/2014/emu-by-example-4/)
  * Part 5: Clean and customisation (work in progress)

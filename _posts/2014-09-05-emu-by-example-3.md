@@ -97,8 +97,7 @@ transfer individual files from a snapshot at any time (the beauty of
 having a transparent backup system), but to restore an entire source
 to the state of a snapshot, the `checkout` command can be used.
 
-To checkout a snapshot, you simply need to use the command `checkout
-<snapshot-id>`. For example, to restore the state of a source to the
+To checkout a snapshot, you simply need to use the command `checkout <snapshot-id>`. For example, to restore the state of a source to the
 second most recent snapshot on origin:
 
 ```
@@ -121,5 +120,3 @@ You should be able to get by 90% of the time with just the commands
 we've already covered. In Part 4, we'll cover the more exotic `squash`
 and `prune` commands, for performing more advanced backup
 administration.
-
-#### [Part 4: Squash and prune](/posts/emu-by-example-4/)

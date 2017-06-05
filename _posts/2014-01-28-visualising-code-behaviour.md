@@ -75,4 +75,6 @@ instruction set, with a whopping six operations:
 The disassembler and code visualiser are packaged into an interactive
 web application here:
 
-### [uC Disassembler](/disassembler/)
+<div class="btn-row">
+<a href="/u/aston/uc/disassembler/" class="btn btn-primary" target="_blank">uC Disassembler</a>
+</div>

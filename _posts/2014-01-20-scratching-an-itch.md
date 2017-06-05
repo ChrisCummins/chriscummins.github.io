@@ -19,4 +19,6 @@ were built for?
 ![Before](/images/2014-01-20-before.png)
 ![After](/images/2014-01-20-after.png)
 
-### [liquid-src on GitHub](https://github.com/ChrisCummins/liquid-src)
+<div class="btn-row">
+<a href="https://github.com/ChrisCummins/liquid-src" class="btn btn-github">Source code</a>
+</div>

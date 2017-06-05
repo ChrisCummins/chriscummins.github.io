@@ -6,6 +6,10 @@ $color-highlight: #e60000;
 $color-subtle: #777;
 $color-button: #0b60fe;
 
+// font awesome icons
+$fa-github: '\f09b';
+$fa-file-pdf-o: '\f1c1';
+
 @mixin transition-duration($duration) {
     -webkit-transition-duration: $duration; /* iOS Safari */
        -moz-transition-duration: $duration; /* Firefox */
@@ -227,6 +231,11 @@ a.decorated {
                             transform: scaleX(1);
                 }
             }
+
+            // limit the bottom whitespace on collapse contents
+            &:last-child .collapse-content {
+                padding-bottom: 0em;
+            }
         }
     }
 
@@ -236,7 +245,8 @@ a.decorated {
     .collapse-content {
         font-size: 14px;
         text-indent: 0;
-        // breathing room around collapse content
+        // breathing room around collapse content. note that margin causes a
+        // janky stuttering effect on chrome, so we use padding instead.
         margin: 0;
         padding: .5em 0 1em 0;
 
@@ -244,7 +254,7 @@ a.decorated {
             margin-bottom: 0
         }
 
-        .button-row {
+        .btn-row {
             margin-bottom: 0;
             text-align: left;
 
@@ -312,7 +322,7 @@ a.decorated {
     }
 }
 
-.button-row {
+.btn-row {
     margin-bottom: 1.5em;
     text-align: center;
 
@@ -354,6 +364,22 @@ a.decorated {
 
         i {
             margin-left: 5px;
+        }
+    }
+
+    .btn-github {
+        @extend .btn-primary;
+        &:after {
+            font-family: 'FontAwesome';
+            content: ' '$fa-github;
+        }
+    }
+
+    .btn-pdf {
+        @extend .btn-primary;
+        &:after {
+            font-family: 'FontAwesome';
+            content: ' '$fa-file-pdf-o;
         }
     }
 }

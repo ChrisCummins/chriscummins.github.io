@@ -3,7 +3,7 @@ title: Resume
 banner: /img/banners/san-fran.jpg
 ---
 
-<div class="button-row">
+<div class="btn-row">
   <ul>
     <li><a title="Link opens in new window" target="_blank" href="/cv.pdf" class="btn btn-primary undecorated" role="button">View PDF <i class="fa fa-file-pdf-o" aria-hidden="true"></i></a></li>
     <li><a title="Link opens in new window" target="_blank" href="/cv.json" class="btn btn-primary undecorated" role="button">View JSON <i class="fa fa-file-text-o" aria-hidden="true"></i></a></li>
@@ -31,7 +31,7 @@ banner: /img/banners/san-fran.jpg
             {{ entry.summary | markdownify }}
           </p>
           {% if entry.assets %}
-            <div class="button-row">
+            <div class="btn-row">
               <ul>
               {% for asset in entry.assets %}
                 <li><a title="Link opens in new window" target="_blank" href="{{ asset.url }}" class="btn btn-primary undecorated" role="button">{{ asset.name }}{% if asset.icon %}<i class="fa {{ asset.icon }}" aria-hidden="true"></i>{% endif %}</a></li>
@@ -62,7 +62,7 @@ banner: /img/banners/san-fran.jpg
             {{ entry.summary | markdownify }}
           </p>
           {% if entry.assets %}
-            <div class="button-row">
+            <div class="btn-row">
             <ul>
               {% for asset in entry.assets %}
                 <li><a title="Link opens in new window" target="_blank" href="{{ asset.url }}" class="btn btn-primary undecorated" role="button">{{ asset.name }}{% if asset.icon %}<i class="fa {{ asset.icon }}" aria-hidden="true"></i>{% endif %}</a></li>
@@ -89,7 +89,7 @@ banner: /img/banners/san-fran.jpg
             {{ entry.summary | markdownify }}
           </p>
           {% if entry.assets %}
-            <div class="button-row">
+            <div class="btn-row">
             <ul>
               {% for asset in entry.assets %}
                 <li><a title="Link opens in new window" target="_blank" href="{{ asset.url }}" class="btn btn-primary undecorated" role="button">{{ asset.name }}{% if asset.icon %}<i class="fa {{ asset.icon }}" aria-hidden="true"></i>{% endif %}</a></li>
@@ -125,7 +125,7 @@ banner: /img/banners/san-fran.jpg
         <div class="collapse-content">
           <p>{{ entry.summary }}</p>
           {% if entry.assets %}
-            <div class="button-row">
+            <div class="btn-row">
               <ul>
               {% for asset in entry.assets %}
                 <li><a title="Link opens in new window" target="_blank" href="{{ asset.url }}" class="btn btn-primary undecorated" role="button">{{ asset.name }}{% if asset.icon %}<i class="fa {{ asset.icon }}" aria-hidden="true"></i>{% endif %}</a></li>

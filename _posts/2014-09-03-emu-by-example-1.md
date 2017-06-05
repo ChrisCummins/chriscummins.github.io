@@ -149,5 +149,3 @@ OK, so this was a bit of a slow start to our tutorial, but it
 introduced the fundamental concepts of **sources**, **sinks**, and
 **snapshots**, and showed you how to create two of them. Tomorrow we
 will cover snapshot creation! Stay tuned.
-
-#### [Part 2: Push and log](/posts/emu-by-example-2/)

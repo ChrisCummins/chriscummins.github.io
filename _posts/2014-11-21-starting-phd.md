@@ -92,4 +92,6 @@ that examples proposals in related fields in were hard to come by, and
 I would have appreciated having some more to refer to when writing my
 own.
 
-#### [Research Proposal](/u/ed/application.pdf)
+<div class="btn-row">
+<a href="/u/ed/application.pdf" class="btn btn-pdf">Research Proposal</a>
+</div>
