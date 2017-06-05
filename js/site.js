@@ -12,15 +12,30 @@ $(document).ready(function() {
   });
 
   // hyphenate the site text
-  $('.post p, .post p a, .justify').hyphenate('en-gb');
+  $('.post p, .post p a, .post ul li, .post ol li, .justify').hyphenate('en-gb');
 
   // For each image, add a "Click to see original" link.
-  $('section img').each(function(index) {
-    // TODO: check that image is larger than it's currently displayed width
-    if (!$(this).parent().is('a')) { // Check that parent isn't already a link
-      $(this).wrap('<a href="' + $(this).attr('src') + '" ' +
-                   'title="Click to see original" ' +
-                   'target="_blank"></a>');
+  $('.content img').each(function(index) {
+    var parent_is_link = $(this).parent().is('a');
+
+    if (!parent_is_link) {
+      var display_width = $(this).innerWidth();
+      var real_img = $(this); // keep track of the callback img
+
+      // Get real image size
+      var fake_img = new Image();
+      fake_img.onload = function() {
+        real_width = this.width;
+
+        // If real image is larger than displayed width
+        if (real_width > display_width) {
+          var link = '<a href="' + $(this).attr('src') + '" ' +
+            'title="Click to see full size (' + this.width + 'x' +
+            this.height + 'px)" target="_blank"></a>'
+          real_img.wrap(link);
+        }
+      }
+      fake_img.src = $(this).attr('src');
     }
   });
 });
@@ -249,7 +264,6 @@ $('.has-caret .collapse')
         var i = 0, len = this.childNodes.length;
         for (; i < len; i += 1) {
           if (this.childNodes[i].nodeType === 3) {
-            console.log('running hyphenate')
             this.childNodes[i].nodeValue = window['Hypher']['languages'][language].hyphenateText(this.childNodes[i].nodeValue);
           }
         }

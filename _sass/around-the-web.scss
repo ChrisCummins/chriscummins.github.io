@@ -1,4 +1,6 @@
 .around-the-web {
+    @include noselect;
+
     text-align: center;
     margin-top: -15px;
     padding-left: 0;
@@ -25,7 +27,7 @@
             padding: 10px 2px;
 
             @media (min-width: $screen-xs-min) {
-                padding: 10px;
+                padding: 10px 6px;
             }
 
             color: #000;
@@ -35,15 +37,19 @@
             @media (min-width: $screen-sm-min) {
                 padding-left: 0;
             }
-        }
 
-        a:hover {
-            color: $color-highlight;
+            &:hover {
+                color: $color-highlight;
 
-            img {
-                opacity: .75;
-                -webkit-filter: grayscale(50%); /* Safari 6.0 - 9.0 */
-                        filter: grayscale(50%);
+                img {
+                    opacity: .75;
+                    -webkit-filter: grayscale(50%); /* Safari 6.0 - 9.0 */
+                            filter: grayscale(50%);
+                }
+            }
+
+            &:active {
+                color: $color-link;
             }
         }
 
@@ -65,6 +71,7 @@
         span {
             display: none;
             font-size: 16px;
+            font-weight: 300;
             vertical-align: middle;
             padding-left: .5em;
 

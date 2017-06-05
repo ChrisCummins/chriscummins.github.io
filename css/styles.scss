@@ -2,6 +2,7 @@
 ---
 @import 'bootstrap-variables';
 
+$color-link: #c7254e;
 $color-highlight: #e60000;
 $color-subtle: #777;
 $color-button: #0b60fe;
@@ -37,7 +38,7 @@ $fa-file-pdf-o: '\f1c1';
         position: relative;
         color: #000;
         text-decoration: none;
-        border-bottom: 2px solid #000;
+        border-bottom: 1px solid #000;
 
         &:not(.btn).undecorated {
             border-bottom: none;
@@ -76,72 +77,9 @@ $fa-file-pdf-o: '\f1c1';
     }
 }
 
-@mixin banner() {
-    // title banner
-    div.banner {
-        position: relative;
-        left: -50%;
-
-        // tight border on tiny screens
-        padding: 17px 20px 15px 8px;
-        @media (min-width: $screen-xs-min) {
-            padding: 17px 40px 15px 25px;
-        }
-
-        background-color: #fff;
-        display: inline-block;
-        @media (min-width: $screen-sm-min) { left: 0; }
-
-        h1 {
-            margin: 0;
-            padding: 0;
-            font-weight: 400;
-
-            font-size: 32px;
-            @media (min-width: $screen-xs-min) {
-                font-size: 36px;
-            }
-        }
-
-        p {
-            @include noselect;
-
-            text-align: center; /* only on small screens */
-            font-size: 16px;
-            font-weight: 400;
-            margin: 0;
-            padding: 0;
-
-            @media (min-width: $screen-sm-min) { text-align: left; }
-        }
-
-        a, span {
-            padding: 10px 6px;
-            color: #000;
-        }
-
-        a {
-            cursor: pointer; // reset because of noselect mixin
-
-            @include transition-duration(0.3s);
-
-            &:hover {
-                color: $color-highlight;
-                text-decoration: none;
-            }
-        }
-
-        span {
-            color: $color-highlight;
-        }
-
-        @media (min-width: $screen-sm-min) {
-            a:first-child, span:first-child {
-                margin-left: -5px;
-            }
-        }
-    }
-}
+@import 'banner';
+@import 'jumbotron';
+@import 'around-the-web';
 
 .subtle {
     @include subtle;
@@ -150,9 +88,6 @@ $fa-file-pdf-o: '\f1c1';
 .noselect {
     @include noselect;
 }
-
-@import 'jumbotron';
-@import 'around-the-web';
 
 html {
     min-width: 320px;
@@ -168,6 +103,24 @@ html {
     }
 }
 
+a {
+    color: $color-link;
+
+    &:hover {
+        color: $color-link;
+        text-decoration: underline;
+    }
+
+    &:active {
+        color: $color-highlight;
+    }
+}
+
+code {
+    color: #000;
+    background: none;
+}
+
 #col-right {
     // hidden on small screens:
     display: none;
@@ -177,7 +130,10 @@ html {
 
     @include banner;
 
-    &.affix-top {
+    // the right column uses Bootstrap's affix plugin so that it scrolls with
+    // the page. When the column is 'fixed' (scrolling), it has class .affix;
+    // when it is not fixed, it has class .affix-top.
+    &:not(.affix) {
         .banner { display: none; }
     }
     &.affix {
@@ -200,6 +156,7 @@ html {
     #about {
         color: #000;
         font-size: 16px;
+        font-weight: 300;
         margin: 1em 0;
     }
 }
@@ -230,6 +187,7 @@ html {
         font-size: 20px;
         font-weight: 700;
         margin-top: 2em;
+        margin-bottom: .8em;
 
         &:first-child {
             // No need for vspace on the first title in the content block.
@@ -237,8 +195,11 @@ html {
         }
     }
 
-    p {
+    p, li {
+        text-align: justify;
         color: #000;
+        line-height: 1.45em;
+        margin: 0 0 1em 0;
     }
 
     ol li {
@@ -289,36 +250,7 @@ a.decorated {
             // http://tobiasahlin.com/blog/css-trick-animating-link-underlines/
             //
             > a {
-                position: relative;
-                color: #000;
-                text-decoration: none;
-                border-bottom: 2px solid #000;
-
-                &:not(.btn).undecorated {
-                    border-bottom: none;
-                    margin-left: -.3em;
-                }
-
-                &:not(.undecorated):before {
-                    content: "";
-                    position: absolute;
-                    width: 100%;
-                    height: 2px;
-                    bottom: -2px;
-                    left: 0;
-                    background-color: $color-highlight;
-                    visibility: hidden;
-                    -webkit-transform: scaleX(0);
-                            transform: scaleX(0);
-
-                    -webkit-transition: all 0.3s ease-in-out 0s;
-                            transition: all 0.3s ease-in-out 0s;
-                }
-                &:not(.undecorated):hover:before {
-                    visibility: visible;
-                    -webkit-transform: scaleX(1);
-                            transform: scaleX(1);
-                }
+                @include decorated;
             }
 
             // limit the bottom whitespace on collapse contents
@@ -449,6 +381,11 @@ a.decorated {
 
         &:hover {
             background-color: #eee;
+        }
+        &:active {
+            background-color: #eee;
+            border-color: $color-button;
+            color: $color-button;
         }
 
         i {
