@@ -4,6 +4,8 @@ lsi: false
 highlighter: rouge
 source: .
 
+baseurl: /staging
+
 markdown: kramdown
 
 # Use short post URLs:
