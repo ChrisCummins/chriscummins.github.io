@@ -194,6 +194,16 @@ code {
     }
 }
 
+.justify {
+    text-align: justify;
+}
+
+.post {
+    p, li {
+        text-align: justify;
+    }
+}
+
 .content {
     font-size: 18px;
 
@@ -210,7 +220,6 @@ code {
     }
 
     p, li {
-        text-align: justify;
         color: #000;
         line-height: 1.45em;
         margin: 0 0 1em 0;
