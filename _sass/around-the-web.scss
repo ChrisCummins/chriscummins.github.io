@@ -66,6 +66,15 @@
             vertical-align: middle;
             width: 36px;
             height: 36px;
+
+            @media (min-width: $screen-sm-min) {
+                width: 28px;
+                height: 28px;
+            }
+            @media (min-width: $screen-md-min) {
+                width: 36px;
+                height: 36px;
+            }
         }
 
         span {

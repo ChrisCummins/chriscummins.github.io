@@ -1,14 +1,11 @@
 <div class="banner">
-  <h1 class="noselect">
-    {% if page.url != "/" %}
-    <a href="/">
-    {% endif %}
-    CHRIS<b>CUMMINS</b>
-    {% if page.url != "/" %}
-    </a>
-    {% endif %}
-  </h1>
+  <h1 class="noselect">CHRIS<b>CUMMINS</b></h1>
   <p>
+    {% if page.url == "/" %}
+      <span>blog</span> |
+    {% else %}
+      <a href="/">blog</a> |
+    {% endif %}
     {% if page.url == "/cv/" %}
       <span>resume</span> |
     {% else %}

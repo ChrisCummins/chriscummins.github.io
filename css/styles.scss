@@ -90,6 +90,7 @@ $fa-file-pdf-o: '\f1c1';
 }
 
 html {
+    // bare minimum site width:
     min-width: 320px;
 }
 
@@ -145,10 +146,19 @@ code {
 
             h1 {
                 margin-bottom: .2em;
-
-                // TODO: Broader range of font sizes. Test.
                 font-size: 19px;
-                @media (min-width: $screen-md-min) { font-size: 24px; }
+            }
+            p {
+                font-size: 12px;
+            }
+
+            @media (min-width: $screen-md-min) {
+                h1 { font-size: 24px; }
+                p { font-size: 16px; }
+            }
+            @media (min-width: $screen-lg-min) {
+                h1 { font-size: 28px; }
+                p { font-size: 18px; }
             }
         }
     }
@@ -166,7 +176,7 @@ code {
 @media (min-width: $screen-sm-min) {
     #col-left {
         // breathing room between left and right columns
-        padding-right: 50px;
+        padding-right: 30px;
         // hide the left side links
         .around-the-web { display: none; }
     }
@@ -176,7 +186,7 @@ code {
 }
 @media (min-width: $screen-md-min) {
     #col-left {
-        padding-right: 80px;
+        padding-right: 50px;
     }
 }
 
@@ -227,7 +237,11 @@ a.decorated {
 
         li {
             list-style-type: none;
-            margin-bottom: .8em;
+
+            margin-bottom: .5em;
+            @media (min-width: $screen-sm-min) {
+                margin-bottom: .8em;
+            }
 
             &.has-caret {
                 list-style-position: outside;
@@ -341,6 +355,10 @@ a.decorated {
         color: $color-subtle;
         margin-bottom: 1.5em;
     }
+}
+
+.content .btn-row:first-child {
+    margin-top: -1em;
 }
 
 .btn-row {
