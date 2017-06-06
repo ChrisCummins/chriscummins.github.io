@@ -3,10 +3,15 @@ $(document).ready(function() {
   // Open all links outside the current site in a new window.
   $('a').each(function(index) {
     var link = $(this)[0];
+    var is_external_link = link.hostname && link.hostname != window.location.hostname
 
-    // link to external site which doesn't already have a title set
-    if (link.hostname && link.hostname != window.location.hostname && !link.target) {
-      link.target = '_blank';
+    if (is_external_link) {
+      if (!link.target) {
+        link.target = '_blank';
+      }
+    }
+
+    if (link.target == '_blank' && !link.title) {
       link.title = 'Link opens in new window';
     }
   });
