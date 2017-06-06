@@ -93,5 +93,5 @@ I would have appreciated having some more to refer to when writing my
 own.
 
 <div class="btn-row">
-<a href="/u/ed/application.pdf" class="btn btn-pdf">Research Proposal</a>
+<a href="/u/ed/application.pdf" target="_blank" class="btn btn-pdf">Research Proposal</a>
 </div>
