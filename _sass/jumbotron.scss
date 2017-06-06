@@ -13,6 +13,45 @@
     min-height: 250px;
     @media (min-width: $screen-sm-min) { min-height: 450px; }
 
+    .hero-img {
+        position: relative;
+        width: 100%;
+    }
+    .container-fluid {
+        margin: 0;
+
+        @media (min-width: $screen-sm-min) {
+            margin: 0 auto;
+       }
+    }
+
+    .hero-txt {
+        z-index: 2;
+        position: absolute;
+        width: 100%;
+
+        @include banner;
+
+        left: 50%;
+        text-align: center;
+
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+                transform: translateY(-50%);
+
+        @media (min-width: $screen-sm-min) {
+            left: 0;
+            text-align: left;
+
+            // offset relative to center:
+            margin: -25px 0 0 25px;
+        }
+        @media (min-width: $screen-lg-min) {
+            margin: -25px 0 0 40px;
+        }
+    }
+
     // If there is no image:
     background-color: #e5e5e5;
 
@@ -22,17 +61,5 @@
         width: 120%;
         // for all other screens, we use full image width
         @media (min-width: $screen-xs-min) { width: 100%; }
-    }
-
-    // wrapper for the title banner
-    div {
-        z-index: 2;
-        position: absolute;
-        top: 35%;
-        left: 50%;
-        @media (min-width: $screen-sm-min) { left: 7%; }
-        @media (min-width: $screen-md-min) { left: 9%; }
-
-        @include banner;
     }
 }

@@ -130,18 +130,19 @@ code {
     // hidden on small screens:
     display: none;
 
-    padding-left: 20px;
-    border-left: 1px solid #666;
-
     @include banner;
 
     // the right column uses Bootstrap's affix plugin so that it scrolls with
     // the page. When the column is 'fixed' (scrolling), it has class .affix;
     // when it is not fixed, it has class .affix-top.
-    &:not(.affix) {
+    > div {
+        padding-left: 20px;
+        border-left: 1px solid #666;
+    }
+    > div:not(.affix) {
         .banner { display: none; }
     }
-    &.affix {
+    > div.affix {
         top: 4%;
         .banner {
             display: unset;
@@ -153,12 +154,12 @@ code {
                 font-size: 19px;
             }
             p {
-                font-size: 12px;
+                font-size: 13px;
             }
 
             @media (min-width: $screen-md-min) {
                 h1 { font-size: 24px; }
-                p { font-size: 16px; }
+                p { font-size: 15px; }
             }
             @media (min-width: $screen-lg-min) {
                 h1 { font-size: 28px; }
@@ -250,11 +251,7 @@ a.decorated {
 
         li {
             list-style-type: none;
-
-            margin-bottom: .5em;
-            @media (min-width: $screen-sm-min) {
-                margin-bottom: .8em;
-            }
+            margin-bottom: .8em;
 
             &.has-caret {
                 list-style-position: outside;

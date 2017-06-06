@@ -69,9 +69,15 @@
   The header section.
   {% endcomment %}
   <div class="jumbotron">
-    <img src="{{ page.banner }}"/>
-    <div>
-      {% include banner.html %}
+    <div class="hero-img">
+      <img src="{{ page.banner }}"/>
+    </div>
+    <div class="hero-txt">
+      <div class="container-fluid">
+        <div class="row">
+          {% include banner.html %}
+        </div>
+      </div>
     </div>
   </div>
 
@@ -108,13 +114,15 @@
       </div> <!-- #col-left -->
 
       {% comment %} jumbo max height is 450px {% endcomment %}
-      <div id="col-right" class="col-sm-3" data-spy="affix" data-offset-top="450" data-offset-bottom="0">
-        {%include banner.html %}
-        <p id="about">
-          A full time geek and research student with a passion for developing great
-          software, often late at night.
-        </p>
-        {%include around-the-web.html %}
+      <div id="col-right" class="col-sm-3">
+        <div data-spy="affix" data-offset-top="450" data-offset-bottom="0" data-clampedwidth="#col-right">
+          {%include banner.html %}
+          <p id="about">
+            A full time geek and research student with a passion for developing great
+            software, often late at night.
+          </p>
+          {%include around-the-web.html %}
+        </div>
       </div> <!-- #col-right -->
 
     </div> <!-- /.row -->

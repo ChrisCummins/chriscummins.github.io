@@ -1,18 +1,22 @@
 @mixin banner() {
     // title banner
     div.banner {
-        position: relative;
-        left: -50%;
-
-        // tight border on tiny screens
-        padding: 17px 17px 15px 8px;
-        @media (min-width: $screen-xs-min) {
-            padding: 17px 40px 15px 25px;
-        }
-
         background-color: #fff;
         display: inline-block;
-        @media (min-width: $screen-sm-min) { left: 0; }
+
+        // on small screens, the banner is centered, and has a tight border
+        position: relative;
+        left: -50%;
+        padding: 17px 8px 15px 8px;
+        display: table-cell;
+        vertical-align: middle;
+
+        @media (min-width: $screen-sm-min) {
+            // on larger screens the banner is left aligned and has more
+            // breathing room
+            left: 0;
+            padding: 17px 40px 15px 25px;
+        }
 
         h1 {
             margin: 0;
@@ -30,6 +34,7 @@
             @include transition-duration(0.3s);
 
             text-align: center; /* only on small screens */
+            white-space: nowrap;
             font-size: 18px;
             font-weight: 400;
             margin: 0 0 0 5px;
@@ -51,13 +56,16 @@
         a {
             cursor: pointer; // reset because of noselect mixin
             text-decoration: none;
-
             @include transition-duration(0.3s);
+        }
 
-            &:hover {
-                color: $color-highlight;
-                text-decoration: none;
-            }
+        a:hover {
+            color: $color-highlight;
+            text-decoration: none;
+        }
+        // don't highlight name on hover
+        h1 a:hover {
+            color: #000;
         }
 
         span {
