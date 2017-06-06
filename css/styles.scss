@@ -11,6 +11,9 @@ $color-button: #0b60fe;
 $fa-github: '\f09b';
 $fa-file-pdf-o: '\f1c1';
 
+$jumbotron-min-height: 300px;
+$jumbotron-max-height: {{ site.jumbotron_height | append: 'px' }};
+
 @mixin transition-duration($duration) {
     -webkit-transition-duration: $duration; /* iOS Safari */
        -moz-transition-duration: $duration; /* Firefox */
