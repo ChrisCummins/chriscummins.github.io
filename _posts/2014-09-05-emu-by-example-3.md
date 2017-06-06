@@ -6,8 +6,8 @@ banner: /img/banners/birmingham-5.jpg
 #### Part 3: Verify and checkout
 
 Now that we know how to create
-[sinks and sources](/2014/emu-by-example-1/) and
-[push snapshots](/2014/emu-by-example-2/), we will demonstrate in
+[sinks and sources]({{ site.baseurl }}{% post_url 2014-09-03-emu-by-example-1 %}) and
+[push snapshots]({{ site.baseurl }}{% post_url 2014-09-04-emu-by-example-2 %}), we will demonstrate in
 this tutorial how to validate your backups and restore them.
 
 ###### verify

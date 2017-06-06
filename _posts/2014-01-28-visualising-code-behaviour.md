@@ -12,7 +12,7 @@ was to put together a minimal parser in JavaScript to decode the
 opcodes and arguments from a list of instructions, and output an
 address, mnemonic instruction name and human-readable description:
 
-![Code](/images/2014-01-28-code.png)
+![Code]({{ '/images/2014-01-28-code.png' | relative_url }})
 
 The next logical step after disassembling the *what* of the code was
 to investigate the *why* of the code. For this, we need a way of
@@ -22,7 +22,7 @@ incredibly aptly named
 me to very simply turn the linear list of instructions to a true
 branching graph:
 
-![Code](/images/2014-01-28-chart.png)
+![Code]({{ '/images/2014-01-28-chart.png' | relative_url }})
 
 The
 [source code](https://github.com/ChrisCummins/chriscummins.github.io/blob/064a7618caef8b08a798622b320ab019ec7b4931/js/ee4dsa-disassembler.js)

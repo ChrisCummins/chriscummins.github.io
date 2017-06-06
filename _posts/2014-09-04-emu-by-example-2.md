@@ -5,7 +5,7 @@ banner: /img/banners/sheffield-2.jpg
 
 #### Part 2: Push and log
 
-In the [last post](/2014/emu-by-example-1/) we covered the `init` and
+In the [last post]({{ site.baseurl }}{% post_url 2014-09-03-emu-by-example-1 %}) we covered the `init` and
 `sink` commands in order to initialise an emu source and a sink,
 respectively. In this post we will use this sink we have just made to
 create our first snapshot!
