@@ -38,16 +38,16 @@
                 "icon": "fa-instagram"
             },
             {
-                "network": "LinkedIn",
-                "username": "chris-cummins-25540455",
-                "url": "https://www.linkedin.com/in/chris-cummins-25540455/",
-                "icon": "fa-linkedin-square"
-            },
-            {
                 "network": "Facebook",
                 "username": "cecummins",
                 "url": "http://www.facebook.com/cecummins",
                 "icon": "fa-facebook-square"
+            },
+            {
+                "network": "LinkedIn",
+                "username": "chris-cummins-25540455",
+                "url": "https://www.linkedin.com/in/chris-cummins-25540455/",
+                "icon": "fa-linkedin-square"
             },
             {
                 "network": "Twitter",
