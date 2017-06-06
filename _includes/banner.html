@@ -1,20 +1,20 @@
 <div class="banner">
-  <h1 class="noselect"><a href="/">CHRIS<strong>CUMMINS</strong></a></h1>
+  <h1 class="noselect"><a href="{{ '/' | relative_url }}">CHRIS<strong>CUMMINS</strong></a></h1>
   <p>
     {% if page.url == "/" %}
       <span>blog</span> |
     {% else %}
-      <a href="/">blog</a> |
+      <a href="{{ '/' | relative_url }}">blog</a> |
     {% endif %}
     {% if page.url == "/cv/" %}
       <span>resume</span> |
     {% else %}
-      <a href="/cv/">resume</a> |
+      <a href="{{ '/cv/' | relative_url }}">resume</a> |
     {% endif %}
     {% if page.url == "/portfolio/" %}
       <span>portfolio</span>
     {% else %}
-      <a href="/portfolio/">portfolio</a>
+      <a href="{{ '/portfolio/' | relative_url }}">portfolio</a>
     {% endif %}
   </p>
 </div>
