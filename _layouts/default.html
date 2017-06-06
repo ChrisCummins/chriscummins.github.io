@@ -105,10 +105,10 @@
           {% if page.date or page.render_post %}
             <ul class="nav">
               {% if page.next %}
-                <li class="nav-next"><a href="{{ page.next.url }}" title="Read the next post">Newer post</a></li>
+                <li class="nav-next"><a href="{{ page.next.url | relative_url }}" title="Read the next post">Newer post</a></li>
               {% endif %}
               {% if page.previous %}
-                <li class="nav-prev"><a href="{{ page.previous.url }}" title="Read the previous post">Older post</a></li>
+                <li class="nav-prev"><a href="{{ page.previous.url | relative_url }}" title="Read the previous post">Older post</a></li>
               {% endif %}
             </ul> <!-- /.nav -->
           {% endif %}

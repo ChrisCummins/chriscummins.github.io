@@ -13,7 +13,7 @@ from tools which make parallel programming simple.
 I will start by explaining why we need these tools. Let's say you want
 to compute the Mandelbrot set.
 
-![Mandelbrot set](/images/2015-05-29-mandelbrot.png)
+![Mandelbrot set]({{ '/images/2015-05-29-mandelbrot.png' | relative_url }})
 
 The easy way to do this is to write a program which will iterate over
 the pixels in your image and calculate their value. This is easy,
@@ -42,7 +42,7 @@ resources. That's all well and good, but if you said to me "Chris,
 surely you could illustrate this point better using a cartoon skeleton
 doing a jig", I'd be inclined to agree with you.
 
-![Algorithmic Skeletons](/images/2015-05-29-skel.png)
+![Algorithmic Skeletons]({{ '/images/2015-05-29-skel.png' | relative_url }})
 
 So you take your new-found knowledge of Algorithmic Skeletons and
 apply it to your Mandelbrot problem. You realise that calculating each
@@ -54,7 +54,7 @@ Skeletons. Now you have a program which looks just like your
 sequential version, but harnesses all the power of the GPU to provide
 near-"hand tuned" levels of performance.
 
-![Runtimes and Lines of Code](/images/2015-05-29-mandelbrot-loc-runtime.png)
+![Runtimes and Lines of Code]({{ '/images/2015-05-29-mandelbrot-loc-runtime.png' | relative_url }})
 
 I say *near* hand tuned performance because clearly it's not quite as
 fast as when you did all of that OpenCL programming yourself. Why is
@@ -79,7 +79,7 @@ SkelCL orchestrates the parallel execution of these functions. Each
 cell maps to a single work item; and this collection of work items is
 then divided into **workgroups** for execution on the target hardware.
 
-![Decomposition of work items into workgroups](/images/2015-05-29-wg.png)
+![Decomposition of work items into workgroups]({{ '/images/2015-05-29-wg.png' | relative_url }})
 
 While the user is clearly in control of the type of work which is
 executed, the size of the grid, and the size of the border region, it
@@ -104,7 +104,7 @@ I would hope that the optimal workgroup size was the same for all
 workloads, i.e. that it was independent of the type of work being
 carried out. The ugly face of reality shows something very different.
 
-![Distribution of optimal workgroup sizes](/images/2015-05-29-heatmap.png)
+![Distribution of optimal workgroup sizes]({{ '/images/2015-05-29-heatmap.png' | relative_url }})
 
 There is clearly no silver bullet value which works well for all
 programs, devices, and datasets. Furthermore, the values which *are*
@@ -114,7 +114,7 @@ can see that by using a fixed workgroup size, you will be optimal for
 only *10%* of the time, at best. In fact, you need to select from 10
 different workgroup sizes just to be optimal 50% of the time.
 
-![](/images/2015-05-29-best-wg.png)
+![]({{ '/images/2015-05-29-best-wg.png' | relative_url }})
 
 In addition, the parameter space has *hard constraints*. Each OpenCL
 device imposes a
@@ -131,7 +131,7 @@ highest average case performance and is legal for all cases. We can
 now compare speedup of *all* tested workgroup sizes relative to this
 ZeroR autotuner.
 
-![Distributino of speedups across programs](/images/2015-05-29-violion-prog.png)
+![Distribution of speedups across programs]({{ '/images/2015-05-29-violion-prog.png' | relative_url }})
 
 Hmm. It seems that there is a lot of room for improvement, which
 demonstrates the problem with having to generalise for all cases - you
@@ -185,7 +185,7 @@ the size of the workgroup that gave the best performance.
 We now insert an autotuner into SkelCL which performs runtime feature
 extraction and classification before every stencil invocation.
 
-![OmniTune system diagram](/images/2015-05-29-omnitune.png)
+![OmniTune system diagram]({{ '/images/2015-05-29-omnitune.png' | relative_url }})
 
 The implementation of this autotuner uses a three-tier client-server
 model. A master server stores the labelled training data in a common
@@ -203,7 +203,7 @@ separate SkelCL processes simultaneously (although this is an
 admittedly unlikely use-case given that most GPGPU programs expect to
 be run in isolation).
 
-![OmniTune communication diagram](/images/2015-05-29-comms.png)
+![OmniTune communication diagram]({{ '/images/2015-05-29-comms.png' | relative_url }})
 
 So how well does the system perform? To evaluate this, the autotuner
 was trained on the data collected from the synthetic benchmarks, and
@@ -217,7 +217,7 @@ The runtime of the stencil using the workgroup size suggested by the
 autotuner was then compared against the the runtime using the best
 statically chosen workgroup size in order to provide some measure of speedupq.
 
-![Speedup of OmniTune for unseen programs](/images/2015-05-29-test-speedups.png)
+![Speedup of OmniTune for unseen programs]({{ '/images/2015-05-29-test-speedups.png' | relative_url }})
 
 So what this shows is that using synthetic benchmarks, runtime feature
 extraction, and machine learning, we can improve the performance of
