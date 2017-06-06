@@ -25,3 +25,5 @@ defaults:
   -
     values:
       layout: "default"
+
+jumbotron_height: 500
