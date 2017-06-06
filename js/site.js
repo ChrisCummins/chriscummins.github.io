@@ -16,7 +16,7 @@ $(document).ready(function() {
 
   // For each image, add a "Click to see original" link.
   $('.content img').each(function(index) {
-    var parent_is_link = $(this).parent().is('a');
+    var parent_is_link = $(this).parents('a').length;
 
     if (!parent_is_link) {
       var display_width = $(this).innerWidth();
