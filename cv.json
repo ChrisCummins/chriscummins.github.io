@@ -471,7 +471,7 @@
             { "name": "textlint", "url": "https://github.com/DamienCassou/textlint", "description": "maintainer" },
             { "name": "torch-rnn", "url": "https://github.com/jcjohnson/torch-rnn", "description": "maintainer" },
             { "name": "torch", "url": "https://github.com/torch/distro", "description": "new feature" },
-            { "name": "triSYCL", "url": "https://github.com/amd/triSYCL", "description": "bug fix" },
+            { "name": "triSYCL", "url": "https://github.com/triSYCL/triSYCL", "description": "bug fix" },
             { "name": "watch-less", "url": "https://github.com/jgreene/watch-less", "description": "bug fixes" },
             { "name": "Wayland", "url": "http://wayland.freedesktop.org/", "description": "GTK+ support" },
             { "name": "visioncpp", "url": "https://github.com/ChrisCummins/visioncpp", "description": "code owner Python bindings" }

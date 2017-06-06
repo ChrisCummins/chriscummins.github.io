@@ -25,7 +25,7 @@ branching graph:
 ![Code](/images/2014-01-28-chart.png)
 
 The
-[source code](https://github.com/ChrisCummins/chriscummins.github.io/blob/master/js/disassembler.js)
+[source code](https://github.com/ChrisCummins/chriscummins.github.io/blob/064a7618caef8b08a798622b320ab019ec7b4931/js/ee4dsa-disassembler.js)
 which implements it clocks in at under 200 lines of code, and one of
 the reasons for this extreme brevity is the simplicity of the
 instruction set, with a whopping six operations:
