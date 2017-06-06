@@ -5,9 +5,9 @@ banner: /img/banners/birmingham-7.jpg
 ---
 
 <div class="paper">
-  <a href="/u/aston/pip-db/plan.pdf"
+  <a href="{{ '/u/aston/pip-db/plan.pdf' | relative_url }}"
      title="Click to read full paper" target="_blank">
-    <img src="/u/aston/pip-db/plan.png"/>
+    <img src="{{ '/u/aston/pip-db/plan.png' | relative_url }}"/>
   </a>
   <p class="description">
     Mark attained: 85%.

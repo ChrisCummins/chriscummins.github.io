@@ -14,7 +14,7 @@ redirect_from: /boids/
     <meta name="viewport" content="width=1024" />
     <meta charset="utf-8" />
 
-    <link rel="stylesheet" href="/css/app.css" />
+    <link rel="stylesheet" href="{{ '/css/app.css' | relative_url }}" />
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.1.0/css/font-awesome.css" />
 
     <style type="text/css">
@@ -128,9 +128,9 @@ redirect_from: /boids/
   <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
   <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
   <script src="//cdn.jsdelivr.net/jquery.hotkeys/0.1.0/jquery.hotkeys.js"></script>
-  <script src="/js/app-components.js"></script>
-  <script src="/js/three.min.js"></script>
-  <script src="/js/stats.min.js"></script>
-  <script src="/js/boids.js"></script>
+  <script src="{{ '/js/app-components.js' | relative_url }}"></script>
+  <script src="{{ '/js/three.min.js' | relative_url }}"></script>
+  <script src="{{ '/js/stats.min.js' | relative_url }}"></script>
+  <script src="{{ '/js/boids.js' | relative_url }}"></script>
 
 </html>

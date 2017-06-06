@@ -399,9 +399,6 @@ var Genetics = Genetics || {};
   function fileSelectCb(e) {
     var file = e.target.files[0];
 
-    document.getElementById('null').innerHTML = '<embed src="/shutter.mp3" ' +
-        'hidden="true" autostart="true" loop="false" />';
-
     /* FIXME: AJAX */
     $('#image-upload-form').submit();
 

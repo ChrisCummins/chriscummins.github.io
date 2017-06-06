@@ -425,12 +425,12 @@ redirect_from: /genetics/
 
 <div class="footer">
   <div class="container wrapper">
-    By <a href="/">Chris Cummins</a>.
+    By <a href="{{ '/' | relative_url }}">Chris Cummins</a>.
   </div>
 </div>
 
 <!-- The hidden bits: -->
-<img src="/images/genetics/mona-lisa.jpg"
+<img src="{{ '/images/genetics/mona-lisa.jpg' | relative_url }}"
      id="referenceImage"
      style="display: none;" />
 
@@ -446,4 +446,4 @@ redirect_from: /genetics/
 
 <div class="underlay"></div>
 
-<script src="/js/genetics.js"></script>
+<script src="{{ '/js/genetics.js' | relative_url }}"></script>

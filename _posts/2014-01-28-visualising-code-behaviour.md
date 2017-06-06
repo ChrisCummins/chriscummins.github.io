@@ -76,5 +76,5 @@ The disassembler and code visualiser are packaged into an interactive
 web application here:
 
 <div class="btn-row">
-<a href="/u/aston/uc/disassembler/" class="btn btn-primary" target="_blank">uC Disassembler</a>
+<a href="{{ '/u/aston/uc/disassembler/' | relative_url }}" class="btn btn-primary" target="_blank">uC Disassembler</a>
 </div>
