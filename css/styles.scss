@@ -524,7 +524,7 @@ a.decorated {
 }
 
 // blog navigation
-.nav {
+.blognav {
     margin-top: 1em;
     list-style-type: none;
 
@@ -537,10 +537,10 @@ a.decorated {
             padding: 2px 0;
         }
 
-        &.nav-next {
+        &.blognav-next {
             float: left;
         }
-        &.nav-prev {
+        &.blognav-prev {
             float: right;
         }
     }
