@@ -26,6 +26,18 @@
                 "icon": "fa-github"
             },
             {
+               "network": "YouTube",
+                "username": "ChrisCummins",
+                "url": "http://www.youtube.com/user/ChrisCummins",
+                "icon": "fa-youtube-play"
+            },
+            {
+                "network": "Instagram",
+                "username": "@iamchriscummins",
+                "url": "https://instagram.com/iamchriscummins/",
+                "icon": "fa-instagram"
+            },
+            {
                 "network": "LinkedIn",
                 "username": "chris-cummins-25540455",
                 "url": "https://www.linkedin.com/in/chris-cummins-25540455/",
@@ -36,18 +48,6 @@
                 "username": "cecummins",
                 "url": "http://www.facebook.com/cecummins",
                 "icon": "fa-facebook-square"
-            },
-            {
-                "network": "YouTube",
-                "username": "ChrisCummins",
-                "url": "http://www.youtube.com/user/ChrisCummins",
-                "icon": "fa-youtube-play"
-            },
-            {
-                "network": "Instagram",
-                "username": "@iamchriscummins",
-                "url": "https://instagram.com/iamchriscummins/",
-                "icon": "fa-instagram"
             },
             {
                 "network": "Twitter",
