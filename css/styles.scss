@@ -106,15 +106,19 @@ html {
 
 a {
     color: $color-link;
+    text-decoration: underline;
 
     &:hover {
-        color: $color-link;
-        text-decoration: underline;
+        color: $color-highlight;
     }
 
     &:active {
         color: $color-highlight;
     }
+}
+
+a.btn {
+    text-decoration: none;
 }
 
 code {
@@ -298,6 +302,8 @@ a.decorated {
                 @media (min-width: $screen-sm-min) { font-size: 14px; }
             }
         }
+
+        table tr td { padding-bottom: 0; }
     }
 }
 
@@ -310,6 +316,7 @@ a.decorated {
                 padding-bottom: .7em;
 
                 &:first-child {
+                    // first column formatting
                     font-size: 14px;
                     color: $color-subtle;
                     text-align: right;

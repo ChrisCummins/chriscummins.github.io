@@ -1,6 +1,6 @@
 ---
-layout: default
 title: Quick HDD Health Check
+banner: /img/banners/17-mile-drive.jpg
 ---
 
 Recently I have had to deal with two hardware disk failures in quick

@@ -1,6 +1,6 @@
 ---
-layout: default
 title: Visualising Code Behaviour
+banner: /img/banners/derbyshire.jpg
 ---
 
 I will be designing and implementing a micro-controller as part of my

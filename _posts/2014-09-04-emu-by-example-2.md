@@ -1,6 +1,6 @@
 ---
-layout: default
 title: Emu by example, part 2
+banner: /img/banners/sheffield-2.jpg
 ---
 
 #### Part 2: Push and log

@@ -50,6 +50,7 @@
 
         a {
             cursor: pointer; // reset because of noselect mixin
+            text-decoration: none;
 
             @include transition-duration(0.3s);
 

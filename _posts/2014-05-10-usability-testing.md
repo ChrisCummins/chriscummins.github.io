@@ -1,6 +1,6 @@
 ---
-layout: default
 title: 10 tips for effective usability testing
+banner: /img/banners/birmingham-6.jpg
 ---
 
 As part of the evaluation of my project

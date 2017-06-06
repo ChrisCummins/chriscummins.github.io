@@ -1,6 +1,6 @@
 ---
-layout: default
 title: Dynamic Autotuning of Algorithmic Skeletons
+banner: /img/banners/glencoe.jpg
 ---
 
 (Based on a talk I gave for an internal conference at the University

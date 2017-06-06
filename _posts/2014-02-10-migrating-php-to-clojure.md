@@ -1,6 +1,6 @@
 ---
-layout: default
 title: Migrating PHP to Clojure
+banner: /img/banners/dantes-peak.jpg
 ---
 
 I have been developing a large database driven website for a

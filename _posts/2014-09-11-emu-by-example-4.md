@@ -1,6 +1,6 @@
 ---
-layout: default
 title: Emu by example, part 4
+banner: /img/banners/birmingham-2.jpg
 ---
 
 #### Part 4: Squash and prune

@@ -1,6 +1,6 @@
 ---
-layout: default
 title: Emu by example, part 3
+banner: /img/banners/birmingham-5.jpg
 ---
 
 #### Part 3: Verify and checkout
