@@ -17,7 +17,7 @@ $(document).ready(function() {
   });
 
   // hyphenate the site text
-  $('.post p, .post p a, .post ul li, .post ol li, .justify').hyphenate('en-gb');
+  $('.post > p, .post > p a, .post > ul li, .post > ol li, .justify').hyphenate('en-gb');
 
   // For each image, add a "Click to see original" link.
   $('.content img').each(function(index) {

@@ -96,9 +96,12 @@ html {
 
 /* container which holds the left and right columns */
 .container-fluid {
-    width: 95%;
     max-width: 1300px;
 
+    width: 98%;
+    @media (min-width: $screen-sm-min) {
+        width: 95%;
+    }
     @media (min-width: $screen-md-min) {
         width: 90%;
     }
@@ -200,7 +203,7 @@ code {
 }
 
 .post {
-    p, li {
+    > p, > li {
         text-align: justify;
     }
 }
@@ -360,13 +363,13 @@ a.decorated {
 
 #footer {
     margin-top: 1em;
+    margin-bottom: 2.5em;
 
     #copyright {
         text-align: center;
         font-size: 13px;
         font-weight: 300;
         color: $color-subtle;
-        margin-bottom: 1.5em;
     }
 }
 
