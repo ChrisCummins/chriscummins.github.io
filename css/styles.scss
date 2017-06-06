@@ -526,10 +526,20 @@ a.decorated {
 // blog navigation
 .nav {
     margin-top: 1em;
+    list-style-type: none;
 
-    a {
-        @include decorated;
+    li {
+        display: inline;
 
+        a {
+            @include decorated;
+            display: inline;
+            padding: 2px 0;
+        }
+
+        &.nav-next {
+            float: left;
+        }
         &.nav-prev {
             float: right;
         }
