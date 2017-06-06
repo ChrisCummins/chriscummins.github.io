@@ -28,7 +28,7 @@ banner: /img/banners/san-fran.jpg
           <tr><td>Advisors</td><td>{{ entry.advisors | markdownify | remove: '<p>' | remove: '</p>' }}</td></tr>
           </table>
           <p class="justify">
-            {{ entry.summary | markdownify }}
+            {{ entry.summary | markdownify | remove: '<p>' | remove: '</p>' }}
           </p>
           {% if entry.assets %}
             <div class="btn-row">
@@ -86,7 +86,7 @@ banner: /img/banners/san-fran.jpg
       <div class="collapse" id="work-{{ forloop.index }}">
         <div class="collapse-content">
           <p class="justify">
-            {{ entry.summary | markdownify }}
+            {{ entry.summary | markdownify | remove: '<p>' | remove: '</p>' }}
           </p>
           {% if entry.assets %}
             <div class="btn-row">
