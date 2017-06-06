@@ -487,7 +487,8 @@ a.decorated {
 
 // paper
 .paper {
-    max-width: 60%;
+    min-width: 200px;
+    width: 60%;
 
     img {
         padding: 0;
