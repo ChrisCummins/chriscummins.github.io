@@ -8,8 +8,6 @@
         position: relative;
         left: -50%;
         padding: 17px 8px 15px 8px;
-        display: table-cell;
-        vertical-align: middle;
 
         @media (min-width: $screen-sm-min) {
             // on larger screens the banner is left aligned and has more
@@ -33,8 +31,8 @@
             @include noselect;
             @include transition-duration(0.3s);
 
-            text-align: center; /* only on small screens */
-            white-space: nowrap;
+            text-align: center;  // only on small screens
+            white-space: nowrap;  // no line wrapping
             font-size: 18px;
             font-weight: 400;
             margin: 0 0 0 5px;

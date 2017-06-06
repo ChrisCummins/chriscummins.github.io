@@ -18,6 +18,7 @@
         list-style-type: none;
         margin-bottom: .5em;
         display: inline;
+        white-space: nowrap;  // no line wrapping
 
         @media (min-width: $screen-sm-min) {
             display: block;
