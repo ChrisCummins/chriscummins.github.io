@@ -71,7 +71,9 @@
   <div class="jumbotron">
     <div class="hero-img">
       {% if page.banner %}
-      <img src="{{ page.banner | relative_url }}" alt="chriscummins.cc"/>
+      <div class="parallax-window" data-parallax="scroll" data-image-src="{{ page.banner | relative_url }}"></div>
+      {% else %}
+      <div class="filler"></div>
       {% endif %}
     </div>
     <div class="hero-txt">
@@ -83,63 +85,65 @@
     </div>
   </div>
 
-  <div class="container-fluid">
-
-    <div class="row">
-      <div id="col-left" class="col-sm-9">
-        {%include around-the-web.html %}
-
-        {% comment %}
-        The page.date and page.render_post variables are used as a sentinel
-        to find out if we are rendering a post.
-        {% endcomment %}
-        <div class="content {% if page.date or page.render_post %}post{% endif %}">
-          {% if page.date or page.render_post %}
-            <h1>
-              <span class="hang-right" aria-hidden="true">{{ page.date | date: "%-d %b %Y" }}</span>
-              {{ page.title }}
-              <span class="hang-left comment" aria-hidden="true">{{ page.date | date: "%-d %b %Y" }}</span>
-            </h1>
-          {% endif %}
-          {{ content }}
-          {% if page.date or page.render_post %}
-            <ul class="blognav">
-              {% if page.next %}
-                <li class="blognav-next"><a href="{{ page.next.url | relative_url }}" title="Read the next post">Newer post</a></li>
-              {% endif %}
-              {% if page.previous %}
-                <li class="blognav-prev"><a href="{{ page.previous.url | relative_url }}" title="Read the previous post">Older post</a></li>
-              {% endif %}
-            </ul> <!-- /.nav -->
-          {% endif %}
-        </div>
-      </div> <!-- #col-left -->
-
-      <div id="col-right" class="col-sm-3">
-        <div data-spy="affix" data-offset-top="{{ site.jumbotron_height }}" data-offset-bottom="0" data-clampedwidth="#col-right">
-          {%include banner.html %}
-          <p id="about">
-            A full time geek and research student with a passion for developing great
-            software, often late at night.
-          </p>
+  <div class="bg">
+    <div class="container-fluid">
+      <div class="row">
+        <div id="col-left" class="col-sm-9">
           {%include around-the-web.html %}
-        </div>
-      </div> <!-- #col-right -->
 
-    </div> <!-- /.row -->
+          {% comment %}
+          The page.date and page.render_post variables are used as a sentinel
+          to find out if we are rendering a post.
+          {% endcomment %}
+          <div class="content {% if page.date or page.render_post %}post{% endif %}">
+            {% if page.date or page.render_post %}
+              <h1>
+                <span class="hang-right" aria-hidden="true">{{ page.date | date: "%-d %b %Y" }}</span>
+                {{ page.title }}
+                <span class="hang-left comment" aria-hidden="true">{{ page.date | date: "%-d %b %Y" }}</span>
+              </h1>
+            {% endif %}
+            {{ content }}
+            {% if page.date or page.render_post %}
+              <ul class="blognav">
+                {% if page.next %}
+                  <li class="blognav-next"><a href="{{ page.next.url | relative_url }}" title="Read the next post">Newer post</a></li>
+                {% endif %}
+                {% if page.previous %}
+                  <li class="blognav-prev"><a href="{{ page.previous.url | relative_url }}" title="Read the previous post">Older post</a></li>
+                {% endif %}
+              </ul> <!-- /.nav -->
+            {% endif %}
+          </div>
+        </div> <!-- #col-left -->
 
-    <div class="row">
-      <div id="footer" class="col-sm-9 noselect">
-        <hr/>
-        <p id="copyright">
-          &copy; Chris Cummins 2013-2017
-        </p>
-      </div> <!-- /#footer -->
-    </div> <!-- /.row -->
-  </div> <!-- /.container-fluid -->
+        <div id="col-right" class="col-sm-3">
+          <div data-spy="affix" data-offset-top="{{ site.jumbotron_height }}" data-offset-bottom="0" data-clampedwidth="#col-right">
+            {%include banner.html %}
+            <p id="about">
+              A full time geek and research student with a passion for developing great
+              software, often late at night.
+            </p>
+            {%include around-the-web.html %}
+          </div>
+        </div> <!-- #col-right -->
+
+      </div> <!-- /.row -->
+
+      <div class="row">
+        <div id="footer" class="col-sm-9 noselect">
+          <hr/>
+          <p id="copyright">
+            &copy; Chris Cummins 2013-2017
+          </p>
+        </div> <!-- /#footer -->
+      </div> <!-- /.row -->
+    </div> <!-- /.container-fluid -->
+  </div> <!-- /.bg -->
 
   <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="{{ '/js/parallax.min.js' | relative_url }}"></script>
   <script src="{{ '/js/site.js' | relative_url }}"></script>
 </body>
 </html>

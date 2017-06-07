@@ -6,14 +6,26 @@
 
     position: relative;
     padding: 0;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-    min-height: $jumbotron-min-height;
-    max-height: $jumbotron-max-height;
+    margin: 0;
+    background: transparent;
 
     .hero-img {
         position: relative;
+
+        .parallax-window,
+        .filler {
+            min-height: $jumbotron-min-height;
+            @media (min-width: $screen-sm-min) {
+                min-height: $jumbotron-max-height;
+            }
+        }
+
+        .parallax-window {
+            background: transparent;
+        }
+        .filler {
+            background-color: #eee;
+        }
     }
 
     @media (min-width: $screen-sm-min) {
@@ -54,18 +66,5 @@
         @media (min-width: $screen-lg-min) {
             margin: -25px 0 0 40px;
         }
-    }
-
-    // If there is no image:
-    background-color: #e5e5e5;
-
-    img {
-        @include transition-duration(.3s);
-
-        // on tiny screens we over-zoom the image to ensure it meets the min-
-        // height requirement
-        width: 150%;
-        // for all other screens, we use full image width
-        @media (min-width: $screen-xs-min) { width: 100%; }
     }
 }

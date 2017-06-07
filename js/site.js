@@ -1,5 +1,12 @@
 $(document).ready(function() {
 
+  // Parallax scroll plugin.
+  //
+  // See:
+  //   https://pixelcog.github.io/parallax.js/
+  //   https://github.com/pixelcog/parallax.js/
+  $('.parallax-window').parallax({ bleed: 10, speed: .6 });
+
   // Open all links outside the current site in a new window.
   $('a').each(function(index) {
     var link = $(this)[0];
