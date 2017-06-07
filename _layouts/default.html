@@ -1,40 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<!--
-             ____________________________________________________
-            /                                                    \
-           |    _____________________________________________     |
-           |   |                                             |    |
-           |   |                                             |    |
-           |   |                                             |    |
-           |   |                                             |    |
-           |   |  Hey you! Yes, you! Isn't this some beaut-  |    |
-           |   |  ifully crafted HTML? Drop me an email if   |    |
-           |   |  you want me to write for you:              |    |
-           |   |                                             |    |
-           |   |          chrisc.101 at gmail.com            |    |
-           |   |                                             |    |
-           |   |                                             |    |
-           |   |                                             |    |
-           |   |                                             |    |
-           |   |_____________________________________________|    |
-           |                                                      |
-            \_____________________________________________________/
-                   \_______________________________________/
-                _______________________________________________
-             _-'    .-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.  --- `-_
-          _-'.-.-. .---.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.--.  .-.-.`-_
-       _-'.-.-.-. .---.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-`__`. .-.-.-.`-_
-    _-'.-.-.-.-. .-----.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-----. .-.-.-.-.`-_
- _-'.-.-.-.-.-. .---.-. .-----------------------------. .-.---. .---.-.-.-.`-_
-:-----------------------------------------------------------------------------:
-`---._.-----------------------------------------------------------------._.---'
--->
 
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   {% comment %}
   We check to see what the page title is before appending
@@ -46,8 +16,15 @@
   {% else %}
   <title>{{ page.title }} | Chris Cummins</title>
   {% endif %}
-  <meta name="description" content="Full time geek and research student with a passion for developing great software, often late at night.">
-  <meta name="author" content="Chris Cummins">
+  <meta name="description" content="{{ site.data.cv.basics.summary }}" />
+  <meta name="author" content="Chris Cummins" />
+
+  {% comment %} Open Graph protocol. See: http://ogp.me/ {% endcomment %}
+  <meta property="org:type" content="blog" />
+  <meta property="org:site_name" content="chriscummins.cc" />
+  <meta property="org:title" content="{{ page.title }}" />
+  <meta property="og:image" content="{{ site.data.cv.basics.picture }}" />
+  <meta property="org:description" content="{{ site.data.cv.basics.summary }}" />
 
   <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
   <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
