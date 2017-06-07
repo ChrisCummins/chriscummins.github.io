@@ -1,29 +1,98 @@
-# Variables set by GitHub
-safe: true
-lsi: false
+# Where things are
+source:       .
+destination:  ./_site
+plugins_dir:  _plugins
+layouts_dir:  _layouts
+data_dir:     _data
+includes_dir: _includes
+collections:
+  posts:
+    output:   true
+
+# Handling Reading
+safe:                 true
+include:              [".htaccess"]
+exclude:              [
+  "Gemfile",
+  "Gemfile.lock",
+  "node_modules",
+  "*/README.md",
+  "vendor/bundle/",
+  "vendor/cache/",
+  "vendor/gems/",
+  "vendor/ruby/"
+]
+keep_files:           [".git", ".svn"]
+encoding:             "utf-8"
+markdown_ext:         "markdown,mkdown,mkdn,mkd,md"
+strict_front_matter: false
+
+# Filtering Content
+show_drafts: null
+limit_posts: 0
+future:      false
+unpublished: false
+
+# Conversion
+markdown:    kramdown
 highlighter: rouge
-source: .
+lsi:         false
+excerpt_separator: "\n\n"
+incremental: false
 
-baseurl: /staging
+# Serving
+detach:  false
+port:    4000
+host:    127.0.0.1
+baseurl: "/staging"
+show_dir_listing: false
 
-markdown: kramdown
+# Outputting
+permalink:     /:year/:title
+timezone:      null
 
-# Use short post URLs:
-permalink: /:year/:title
-
-# Enable HTTP redirects
-gems:
-  - jekyll-redirect-from
-
-# Ignore patterns
-exclude: [README.md, scripts/]
-
-sass:
-  style: compressed
-
+quiet:    false
+verbose:  false
 defaults:
   -
     values:
       layout: "default"
 
-jumbotron_height: 500
+liquid:
+  error_mode: warn
+
+# Markdown Processors
+rdiscount:
+  extensions: []
+
+redcarpet:
+  extensions: []
+
+kramdown:
+  auto_ids:       true
+  entity_output:  as_char
+  toc_levels:     1..6
+  smart_quotes:   lsquo,rsquo,ldquo,rdquo
+  input:          GFM
+  hard_wrap:      false
+  footnote_nr:    1
+
+# Extensions
+gems:
+  - jekyll-redirect-from  # enable "refirect_from" in front matter
+
+sass:
+  style: compressed
+
+# Custom variables
+jumbotron_min_height: 300
+jumbotron_max_height: 500
+
+# logos for social networks. Obfuscate names to prevent AdBlock.
+social_images:
+  facebook:  /img/atw/8dd8ef87f47c829d6dc1a491e06929bb.png
+  github:    /img/atw/1ed153fe358ed0d5d38553df372687d6.png
+  instagram: /img/atw/377f06eddd346708cb64ed05bf1c29f9.png
+  linkedin:  /img/atw/5c95cc032204cec372b9d9ccbd84191d.png
+  twitter:   /img/atw/adfe26fbae672bf83b5f4f86fe3d0329.png
+  youtube:   /img/atw/9cef326ed4d66a12df92fe82fe04228e.png
