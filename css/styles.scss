@@ -145,16 +145,11 @@ code {
         padding-left: 20px;
         border-left: 1px solid #666;
         padding-bottom: .1em;
-    }
-    > div:not(.affix) {
-        .banner { display: none; }
-    }
-    > div.affix {
-        top: 4%;
+
         .banner {
-            display: unset;
             padding: 0 0 .2em 0;
             margin-bottom: .6em;
+            background: transparent;
 
             h1 {
                 margin-bottom: .2em;
@@ -172,6 +167,34 @@ code {
                 h1 { font-size: 28px; }
                 p { font-size: 18px; }
             }
+        }
+
+        .banner, #about, .around-the-web {
+            transition: .3s;
+            position: relative;
+        }
+    }
+    > div:not(.affix) {
+        .banner {
+            opacity: 0;
+            top: -20px;
+        }
+
+        #about, .around-the-web {
+            top: -60px;
+        }
+    }
+    > div.affix {
+        top: 4%;
+        // banner fades in
+        .banner {
+            opacity: 1;
+            top: 0;
+        }
+
+        #about, .around-the-web {
+            opacity: 1;
+            top: 0;
         }
     }
 
