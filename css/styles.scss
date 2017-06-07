@@ -344,6 +344,12 @@ a.decorated {
 }
 
 .cv {
+    > h1 {
+        > a.expand-all {
+            @include subtle;
+        }
+    }
+
     table {
         margin-left: .5em;
         margin-bottom: .5em;
