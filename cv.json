@@ -72,7 +72,7 @@
             "website": "https://01.org/",
             "startDate": "2012",
             "endDate": "2013",
-            "summary": "Patched [ioctl](https://en.wikipedia.org/wiki/Ioctl) subsystem in Linux kernel. Developed tools for Intel [GPU assembly](https://software.intel.com/en-us/articles/introduction-to-gen-assembly) programming. Implemented [GTK+](http://www.gtk.org/) support for [Wayland](https://wayland.freedesktop.org/) display server. Fixed usability bugs in [GNOME](https://www.gnome.org/) desktop applications. Developed 3D particle effects engine. Numerous [open source project contributions](/portfolio/)."
+            "summary": "Patched [ioctl](https://en.wikipedia.org/wiki/Ioctl) subsystem in Linux kernel. Developed tools for Intel [GPU assembly](https://software.intel.com/en-us/articles/introduction-to-gen-assembly) programming. Implemented [GTK+](http://www.gtk.org/) support for [Wayland](https://wayland.freedesktop.org/) display server. Fixed usability bugs in [GNOME](https://www.gnome.org/) desktop applications. Developed 3D particle effects engine. Numerous [open source project contributions](https://chriscummins.cc/portfolio/)."
         },
         {
             "company": "Freelance",
