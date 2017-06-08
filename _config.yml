@@ -13,10 +13,12 @@ collections:
 safe:                 true
 include:              [".htaccess"]
 exclude:              [
+  "*/README.md",
   "Gemfile",
   "Gemfile.lock",
+  "Makefile",
   "node_modules",
-  "*/README.md",
+  "README.md",
   "vendor/bundle/",
   "vendor/cache/",
   "vendor/gems/",
