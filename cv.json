@@ -4,6 +4,10 @@
     "name": "Chris Cummins",
     "label": "Research Student",
     "picture": "https://chriscummins.cc/img/me.jpg",
+    "picture_dimensions": {
+      "width": 180,
+      "height": 180
+    },
     "email": "chrisc.101@gmail.com",
     "phone": "(+44) 07875502718",
     "website": "https://chriscummins.cc",
