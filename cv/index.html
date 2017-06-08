@@ -132,7 +132,12 @@ banner: /img/banners/san-fran.jpg
       <span class="hang-left">{{ entry.date }}</span>
       <div class="talks collapse" id="talks-{{ forloop.index }}">
         <div class="collapse-content">
-          <p>{{ entry.summary }}</p>
+          <table>
+          <tr><td>Duration</td><td>{{ entry.duration | markdownify | remove: '<p>' | remove: '</p>' }}</td></tr>
+          </table>
+          <p class="justify">
+            {{ entry.summary | markdownify }}
+          </p>
           {% if entry.assets %}
             <div class="btn-row">
               <ul>

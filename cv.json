@@ -286,6 +286,8 @@
       {
         "name": "Using Deep Learning to Generate Human-like Code (SPLS)",
         "date": "2017",
+        "duration": "30 minutes",
+        "summary": "An overview of my research on deep learning for synthetic program generation, and the challenges of semantic programming language modeling using neural networks.",
         "assets": [
           {
             "name": "Slides",
@@ -296,6 +298,8 @@
       {
         "name": "Machine Learning & Compilers (Codeplay Software)",
         "date": "2016",
+        "duration": "60 minutes",
+        "summary": "A preview of the paper [Synthesizing Benchmarks for Predictive Modeling](https://github.com/ChrisCummins/paper-synthesizing-benchmarks).",
         "assets": [
           {
             "name": "Slides",
@@ -306,6 +310,8 @@
       {
         "name": "Building an AI that Codes (Ocado Technology)",
         "date": "2016",
+        "duration": "5 minutes",
+        "summary": "Brief, non-technical overview of my research interests and background.",
         "assets": [
           {
             "name": "Slides",
@@ -316,6 +322,8 @@
       {
         "name": "All the OpenCL on GitHub: Teaching an AI to code (Amazon Development Center)",
         "date": "2016",
+        "duration": "15 minutes",
+        "summary": "First presentation of using deep learning to model OpenCL programming language semantics from mined open source code.",
         "assets": [
           {
             "name": "Slides",
