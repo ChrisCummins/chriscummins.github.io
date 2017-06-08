@@ -8,7 +8,7 @@ banner: /img/banners/manhattan.jpg
   <ul>
   {% for project in site.data.cv.portfolio.personal_projects %}
     <li>
-      <a title="Link opens in new window" target="_blank" href="{{ project.url }}">{{ project.name }}</a> {{ project.description }}
+      <a title="Link opens in new window" target="_blank" href="{{ project.url }}">{{ project.name }}</a> {{ project.summary }}
     </li>
   {% endfor %}
   </ul>
@@ -17,7 +17,7 @@ banner: /img/banners/manhattan.jpg
   <ul>
   {% for project in site.data.cv.portfolio.open_source_contributions %}
     <li>
-      <a title="Link opens in new window" target="_blank" href="{{ project.url }}">{{ project.name }}</a> {{ project.description }}
+      <a title="Link opens in new window" target="_blank" href="{{ project.url }}">{{ project.name }}</a> {{ project.summary }}
     </li>
   {% endfor %}
   </ul>
@@ -38,7 +38,7 @@ banner: /img/banners/manhattan.jpg
   <ul>
   {% for project in site.data.cv.portfolio.websites %}
     <li>
-      <a title="Link opens in new window" target="_blank" href="{{ project.url }}">{{ project.name }}</a> {{ project.description }}
+      <a title="Link opens in new window" target="_blank" href="{{ project.url }}">{{ project.name }}</a> {{ project.summary }}
     </li>
   {% endfor %}
   </ul>
