@@ -12,9 +12,10 @@ into a static site whenever I push this repository to GitHub.
 
 # License
 
-The website code is [MIT Licensed](http://opensource.org/licenses/MIT), but the
-website *content* is not. The following directories and their contents are
-copyright Chris Cummins:
+The website code is
+[MIT Licensed](https://github.com/ChrisCummins/chriscummins.github.io/blob/master/LICENSE),
+but the website *content* is not. The following directories and their contents
+are copyright Chris Cummins:
 * `_posts/`
 * `img/`,
 * `pub/`

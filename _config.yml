@@ -96,3 +96,8 @@ social_images:
   linkedin:  /img/atw/5c95cc032204cec372b9d9ccbd84191d.png
   twitter:   /img/atw/adfe26fbae672bf83b5f4f86fe3d0329.png
   youtube:   /img/atw/9cef326ed4d66a12df92fe82fe04228e.png
+
+copyright:
+  owner: Chris Cummins
+  year: 2013-2017
+  license: MIT (https://github.com/ChrisCummins/chriscummins.github.io/blob/master/LICENSE)
