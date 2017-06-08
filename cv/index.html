@@ -34,7 +34,10 @@ banner: /img/banners/san-fran.jpg
             <div class="btn-row">
               <ul>
               {% for asset in entry.assets %}
-                <li><a title="Link opens in new window" target="_blank" href="{{ asset.url }}" class="btn btn-primary undecorated" role="button">{{ asset.name }}{% if asset.icon %}<i class="fa {{ asset.icon }}" aria-hidden="true"></i>{% endif %}</a></li>
+                                                        {% assign icon = "fa-external-link" %}
+                {% if asset.url contains "github.com" %}{% assign icon = "fa-github" %}{% endif %}
+                {% if asset.url contains ".pdf" %}      {% assign icon = "fa-file-pdf-o" %}{% endif %}
+                <li><a title="Link opens in new window" target="_blank" href="{{ asset.url }}" class="btn btn-primary undecorated" role="button">{{ asset.name }} <i class="fa {{ icon }}" aria-hidden="true"></i></a></li>
               {% endfor %}
               </ul>
             </div>
@@ -65,7 +68,10 @@ banner: /img/banners/san-fran.jpg
             <div class="btn-row">
             <ul>
               {% for asset in entry.assets %}
-                <li><a title="Link opens in new window" target="_blank" href="{{ asset.url }}" class="btn btn-primary undecorated" role="button">{{ asset.name }}{% if asset.icon %}<i class="fa {{ asset.icon }}" aria-hidden="true"></i>{% endif %}</a></li>
+                                                        {% assign icon = "fa-external-link" %}
+                {% if asset.url contains "github.com" %}{% assign icon = "fa-github" %}{% endif %}
+                {% if asset.url contains ".pdf" %}      {% assign icon = "fa-file-pdf-o" %}{% endif %}
+                <li><a title="Link opens in new window" target="_blank" href="{{ asset.url }}" class="btn btn-primary undecorated" role="button">{{ asset.name }} <i class="fa {{ icon }}" aria-hidden="true"></i></a></li>
               {% endfor %}
             </ul>
             </div>
@@ -92,7 +98,10 @@ banner: /img/banners/san-fran.jpg
             <div class="btn-row">
             <ul>
               {% for asset in entry.assets %}
-                <li><a title="Link opens in new window" target="_blank" href="{{ asset.url }}" class="btn btn-primary undecorated" role="button">{{ asset.name }}{% if asset.icon %}<i class="fa {{ asset.icon }}" aria-hidden="true"></i>{% endif %}</a></li>
+                                                        {% assign icon = "fa-external-link" %}
+                {% if asset.url contains "github.com" %}{% assign icon = "fa-github" %}{% endif %}
+                {% if asset.url contains ".pdf" %}      {% assign icon = "fa-file-pdf-o" %}{% endif %}
+                <li><a title="Link opens in new window" target="_blank" href="{{ asset.url }}" class="btn btn-primary undecorated" role="button">{{ asset.name }} <i class="fa {{ icon }}" aria-hidden="true"></i></a></li>
               {% endfor %}
             </ul>
             </div>
@@ -128,7 +137,10 @@ banner: /img/banners/san-fran.jpg
             <div class="btn-row">
               <ul>
               {% for asset in entry.assets %}
-                <li><a title="Link opens in new window" target="_blank" href="{{ asset.url }}" class="btn btn-primary undecorated" role="button">{{ asset.name }}{% if asset.icon %}<i class="fa {{ asset.icon }}" aria-hidden="true"></i>{% endif %}</a></li>
+                                                        {% assign icon = "fa-external-link" %}
+                {% if asset.url contains "github.com" %}{% assign icon = "fa-github" %}{% endif %}
+                {% if asset.url contains ".pdf" %}      {% assign icon = "fa-file-pdf-o" %}{% endif %}
+                <li><a title="Link opens in new window" target="_blank" href="{{ asset.url }}" class="btn btn-primary undecorated" role="button">{{ asset.name }} <i class="fa {{ icon }}" aria-hidden="true"></i></a></li>
               {% endfor %}
               </ul>
             </div>

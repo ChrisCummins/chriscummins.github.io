@@ -22,38 +22,32 @@
             {
                 "network": "GitHub",
                 "username": "ChrisCummins",
-                "url": "https://github.com/ChrisCummins",
-                "icon": "fa-github"
+                "url": "https://github.com/ChrisCummins"
             },
             {
                "network": "YouTube",
                 "username": "ChrisCummins",
-                "url": "http://www.youtube.com/user/ChrisCummins",
-                "icon": "fa-youtube-play"
+                "url": "http://www.youtube.com/user/ChrisCummins"
             },
             {
                 "network": "Instagram",
                 "username": "@iamchriscummins",
-                "url": "https://instagram.com/iamchriscummins/",
-                "icon": "fa-instagram"
+                "url": "https://instagram.com/iamchriscummins/"
             },
             {
                 "network": "Facebook",
                 "username": "cecummins",
-                "url": "http://www.facebook.com/cecummins",
-                "icon": "fa-facebook-square"
+                "url": "http://www.facebook.com/cecummins"
             },
             {
                 "network": "LinkedIn",
                 "username": "chris-cummins-25540455",
-                "url": "https://www.linkedin.com/in/chris-cummins-25540455/",
-                "icon": "fa-linkedin-square"
+                "url": "https://www.linkedin.com/in/chris-cummins-25540455/"
             },
             {
                 "network": "Twitter",
                 "username": "@iamchriscummins",
-                "url": "https://twitter.com/iamchriscummins",
-                "icon": "fa-twitter"
+                "url": "https://twitter.com/iamchriscummins"
             }
         ]
     },
@@ -101,13 +95,11 @@
             "assets": [
                 {
                     "name": "First Year Review",
-                    "url": "https://chriscummins.cc/u/ed/phd-first-year-review.pdf",
-                    "icon": "fa-file-pdf-o"
+                    "url": "https://chriscummins.cc/u/ed/phd-first-year-review.pdf"
                 },
                 {
                     "name": "Source Code",
-                    "url": "https://github.com/ChrisCummins/phd",
-                    "icon": "fa-github"
+                    "url": "https://github.com/ChrisCummins/phd"
                 }
             ]
         },
@@ -123,23 +115,19 @@
             "assets": [
                 {
                     "name": "Thesis",
-                    "url": "https://chriscummins.cc/u/ed/msc-thesis.pdf",
-                    "icon": "fa-file-pdf-o"
+                    "url": "https://chriscummins.cc/u/ed/msc-thesis.pdf"
                 },
                 {
                     "name": "Proposal",
-                    "url": "https://chriscummins.cc/u/ed/msc-proposal.pdf",
-                    "icon": "fa-file-pdf-o"
+                    "url": "https://chriscummins.cc/u/ed/msc-proposal.pdf"
                 },
                 {
                     "name": "Poster",
-                    "url": "https://chriscummins.cc/u/ed/msc-poster.pdf",
-                    "icon": "fa-file-pdf-o"
+                    "url": "https://chriscummins.cc/u/ed/msc-poster.pdf"
                 },
                 {
                     "name": "Source Code",
-                    "url": "https://github.com/ChrisCummins/msc-thesis",
-                    "icon": "fa-github"
+                    "url": "https://github.com/ChrisCummins/msc-thesis"
                 }
             ]
         },
@@ -155,18 +143,15 @@
             "assets": [
                 {
                     "name": "Thesis",
-                    "url": "https://chriscummins.cc/u/aston/pip-db/report.pdf",
-                    "icon": "fa-file-pdf-o"
+                    "url": "https://chriscummins.cc/u/aston/pip-db/report.pdf"
                 },
                 {
                     "name": "Website",
-                    "url": "http://www.pip-db.org/",
-                    "icon": "fa-external-link"
+                    "url": "http://www.pip-db.org/"
                 },
                 {
                     "name": "Source Code",
-                    "url": "https://github.com/ChrisCummins/pip-db",
-                    "icon": "fa-github"
+                    "url": "https://github.com/ChrisCummins/pip-db"
                 }
             ]
         }
@@ -181,8 +166,7 @@
             "assets": [
                 {
                     "name": "Source Code",
-                    "url": "https://github.com/ChrisCummins/paper-end2end-dl",
-                    "icon": "fa-github"
+                    "url": "https://github.com/ChrisCummins/paper-end2end-dl"
                 }
             ]
         },
@@ -195,23 +179,19 @@
             "assets": [
                 {
                     "name": "Preprint",
-                    "url": "https://chriscummins.cc/pub/2017-cgo.pdf",
-                    "icon": "fa-file-pdf-o"
+                    "url": "https://chriscummins.cc/pub/2017-cgo.pdf"
                 },
                 {
                     "name": "Slides",
-                    "url": "https://speakerdeck.com/chriscummins/synthesizing-benchmarks-for-predictive-modelling-cgo-17",
-                    "icon": "fa-external-link"
+                    "url": "https://speakerdeck.com/chriscummins/synthesizing-benchmarks-for-predictive-modelling-cgo-17"
                 },
                 {
                     "name": "IEEE Xplore",
-                    "url": "http://ieeexplore.ieee.org/abstract/document/7863731/",
-                    "icon": "fa-external-link"
+                    "url": "http://ieeexplore.ieee.org/abstract/document/7863731/"
                 },
                 {
                     "name": "Source Code",
-                    "url": "https://github.com/ChrisCummins/paper-synthesizing-benchmarks",
-                    "icon": "fa-github"
+                    "url": "https://github.com/ChrisCummins/paper-synthesizing-benchmarks"
                 }
             ]
         },
@@ -224,18 +204,15 @@
             "assets": [
                 {
                     "name": "Preprint",
-                    "url": "https://chriscummins.cc/pub/2016-hlpgpu.pdf",
-                    "icon": "fa-file-pdf-o"
+                    "url": "https://chriscummins.cc/pub/2016-hlpgpu.pdf"
                 },
                 {
                     "name": "Slides",
-                    "url": "https://chriscummins.cc/pub/2016-hlpgpu-slides.pdf",
-                    "icon": "fa-file-pdf-o"
+                    "url": "https://chriscummins.cc/pub/2016-hlpgpu-slides.pdf"
                 },
                 {
                     "name": "Source Code",
-                    "url": "https://github.com/ChrisCummins/paper-towards-collaborative-performance-tuning",
-                    "icon": "fa-github"
+                    "url": "https://github.com/ChrisCummins/paper-towards-collaborative-performance-tuning"
                 }
             ]
         },
@@ -248,23 +225,19 @@
             "assets": [
                 {
                     "name": "Preprint",
-                    "url": "https://chriscummins.cc/pub/2016-adapt.pdf",
-                    "icon": "fa-file-pdf-o"
+                    "url": "https://chriscummins.cc/pub/2016-adapt.pdf"
                 },
                 {
                     "name": "Slides",
-                    "url": "https://chriscummins.cc/pub/2016-adapt-slides.pdf",
-                    "icon": "fa-file-pdf-o"
+                    "url": "https://chriscummins.cc/pub/2016-adapt-slides.pdf"
                 },
                 {
                     "name": "arXiv",
-                    "url": "https://arxiv.org/abs/1511.02490",
-                    "icon": "fa-external-link"
+                    "url": "https://arxiv.org/abs/1511.02490"
                 },
                 {
                     "name": "Source Code",
-                    "url": "https://github.com/ChrisCummins/paper-autotuning-opencl-wgsize",
-                    "icon": "fa-github"
+                    "url": "https://github.com/ChrisCummins/paper-autotuning-opencl-wgsize"
                 }
             ]
         },
@@ -277,8 +250,7 @@
             "assets": [
                 {
                     "name": "Oxford",
-                    "url": "http://bioinformatics.oxfordjournals.org/content/31/2/295.full?etoc",
-                    "icon": "fa-external-link"
+                    "url": "http://bioinformatics.oxfordjournals.org/content/31/2/295.full?etoc"
                 }
             ]
         }
@@ -317,8 +289,7 @@
                 "assets": [
                     {
                         "name": "Slides",
-                        "url": "https://chriscummins.cc/pub/2017-spls-slides.pdf",
-                        "icon": "fa-file-pdf-o"
+                        "url": "https://chriscummins.cc/pub/2017-spls-slides.pdf"
                     }
                 ]
             },
@@ -328,8 +299,7 @@
                 "assets": [
                     {
                         "name": "Slides",
-                        "url": "https://speakerdeck.com/chriscummins/machine-learning-and-compilers",
-                        "icon": "fa-external-link"
+                        "url": "https://speakerdeck.com/chriscummins/machine-learning-and-compilers"
                     }
                 ]
             },
@@ -339,8 +309,7 @@
                 "assets": [
                     {
                         "name": "Slides",
-                        "url": "https://chriscummins.cc/pub/2016-ocado-slides.pdf",
-                        "icon": "fa-file-pdf-o"
+                        "url": "https://chriscummins.cc/pub/2016-ocado-slides.pdf"
                     }
                 ]
             },
@@ -350,8 +319,7 @@
                 "assets": [
                     {
                         "name": "Slides",
-                        "url": "https://chriscummins.cc/pub/2016-amazon-slides.pdf",
-                        "icon": "fa-file-pdf-o"
+                        "url": "https://chriscummins.cc/pub/2016-amazon-slides.pdf"
                     }
                 ]
             }
@@ -372,17 +340,17 @@
             {
                 "name": "HiPEAC",
                 "date": "2016",
-                "url": "https://chriscummins.cc/pub/2016-hipeac-poster.pdf",
+                "url": "https://chriscummins.cc/pub/2016-hipeac-poster.pdf"
             },
             {
                 "name": "Google",
                 "date": "2015",
-                "url": "https://chriscummins.cc/pub/2015-google-poster.pdf",
+                "url": "https://chriscummins.cc/pub/2015-google-poster.pdf"
             },
             {
                 "name": "PPar",
                 "date": "2015",
-                "url": "https://chriscummins.cc/u/ed/msc-poster.pdf",
+                "url": "https://chriscummins.cc/u/ed/msc-poster.pdf"
             }
         ],
         "peer_reviews": [
