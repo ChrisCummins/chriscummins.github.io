@@ -102,3 +102,8 @@ copyright:
   owner: Chris Cummins
   year: 2013-2017
   license: MIT (https://github.com/ChrisCummins/chriscummins.github.io/blob/master/LICENSE)
+
+# Cache busting.
+#
+# Change the cache tag to invalid site.css, site.js, and favicons.
+cache_tag: 1
