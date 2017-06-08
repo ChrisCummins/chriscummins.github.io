@@ -6,7 +6,6 @@
 
         // on small screens, the banner is centered, and has a tight border
         position: relative;
-        left: -50%;
         padding: 17px 8px 15px 8px;
 
         @media (min-width: $screen-sm-min) {
