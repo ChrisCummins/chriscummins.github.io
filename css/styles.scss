@@ -42,6 +42,9 @@ $jumbotron-max-height: {{ site.jumbotron_max_height | append: 'px' }};
 }
 
 @mixin decorated {
+    // underline hover effect based on post by @tobiasahlin:
+    // http://tobiasahlin.com/blog/css-trick-animating-link-underlines/
+    //
     & {
         position: relative;
         color: #000;
@@ -295,6 +298,10 @@ a.decorated {
                 list-style-position: outside;
                 // text-indent: -.5em;
                 // padding-left: 1em;
+
+                > a {
+                    margin-left: -.3em;
+                }
             }
             &.has-caret:before {
                 display: inline-block;
@@ -308,12 +315,8 @@ a.decorated {
                 content: '\f107';
             }
 
-            // underline hover effect based on post by @tobiasahlin:
-            // http://tobiasahlin.com/blog/css-trick-animating-link-underlines/
-            //
             > a {
                 @include decorated;
-                margin-left: -.3em;
             }
 
             // limit the bottom whitespace on collapse contents
