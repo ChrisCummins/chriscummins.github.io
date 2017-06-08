@@ -627,22 +627,22 @@
       {
         "name": "Grow Your Own Picture",
         "url": "https://chriscummins.cc/s/genetics/",
-        "thumbnail": "https://chriscummins.cc/img/portfolio/gyop.png"
+        "picture": "https://chriscummins.cc/img/portfolio/gyop.png"
       },
       {
         "name": "Boids",
         "url": "https://chriscummins.cc/s/boids/",
-        "thumbnail": "https://chriscummins.cc/img/portfolio/boids.png"
+        "picture": "https://chriscummins.cc/img/portfolio/boids.png"
       },
       {
         "name": "DOS",
         "url": "https://chriscummins.cc/dos/",
-        "thumbnail": "https://chriscummins.cc/img/portfolio/dos.png"
+        "picture": "https://chriscummins.cc/img/portfolio/dos.png"
       },
       {
         "name": "Game of Life",
         "url": "https://chriscummins.cc/s/gol/",
-        "thumbnail": "https://chriscummins.cc/img/portfolio/gol.png"
+        "picture": "https://chriscummins.cc/img/portfolio/gol.png"
       }
     ],
     "websites": [
