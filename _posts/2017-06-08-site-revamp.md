@@ -85,7 +85,5 @@ are:
 
 I'm pretty happy with this new design, and if it holds up like the previous
 one, then it should comfortably see me through to the end of the decade. If you
-find a bug or would like to suggest a change please do [let me
-know](https://github.com/ChrisCummins/chriscummins.github.io/issues). And of
-course, as always, the source code for this design is [free software](https://g
-ithub.com/ChrisCummins/chriscummins.github.io/blob/master/LICENSE).
+find a bug or would like to suggest a change please do [let me know](https://github.com/ChrisCummins/chriscummins.github.io/issues). And of
+course, as always, the source code for this design is [free software](https://tldrlegal.com/license/mit-license).
