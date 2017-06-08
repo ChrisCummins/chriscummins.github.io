@@ -22,19 +22,7 @@ layout: compress
   <meta name="description" content="{{ site.data.cv.basics.summary }}" />
   <meta name="author" content="Chris Cummins" />
 
-  {% comment %} Open Graph protocol. See: http://ogp.me/ {% endcomment %}
-  {% if page.url == "/" %}
-  <meta property="og:type" content="blog" />
-  {% else %}
-  <meta property="og:type" content="article" />
-  {% endif %}
-  <meta property="og:site_name" content="chriscummins.cc" />
-  <meta property="og:url" content="{{ page.url | absolute_url }}" />
-  <meta property="og:title" content="{{ page.title }}" />
-  <meta property="og:image" content="{{ site.data.cv.basics.picture }}" />
-  <meta property="og:image:width" content="{{ site.data.cv.basics.picture_dimensions.width }}" />
-  <meta property="og:image:height" content="{{ site.data.cv.basics.picture_dimensions.height }}" />
-  <meta property="og:description" content="{{ site.data.cv.basics.summary }}" />
+  {% include opengraph.html %}
 
   <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
   <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
