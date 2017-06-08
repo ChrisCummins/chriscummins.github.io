@@ -310,6 +310,7 @@ a.decorated {
             //
             > a {
                 @include decorated;
+                margin-left: -.3em;
             }
 
             // limit the bottom whitespace on collapse contents
