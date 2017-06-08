@@ -55,6 +55,11 @@ layout: compress
   <div class="jumbotron">
     <div class="hero-img">
       {% if page.banner %}
+      {% if page.banner contains "http" %}
+        {% assign banner_src = page.banner %}
+      {% else %}
+        {% assign banner_src = page.banner | relative_url %}
+      {% endif %}
       <div class="parallax-window" data-parallax="scroll" data-image-src="{{ page.banner | relative_url }}"></div>
       {% else %}
       <div class="filler"></div>
