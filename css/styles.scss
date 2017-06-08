@@ -340,6 +340,7 @@ a.decorated {
             text-align: left;
 
             .btn-primary {
+                margin-left: 0;
                 font-size: 12px;
                 @media (min-width: $screen-sm-min) { font-size: 14px; }
             }
