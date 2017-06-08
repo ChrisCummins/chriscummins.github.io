@@ -1,6 +1,6 @@
 ---
-layout: default
 title: Starting a Ph.D.
+banner: /img/banners/edinburgh-crags.jpg
 ---
 
 Two months ago I joined the the University of Edinburgh as one of the
@@ -92,4 +92,6 @@ that examples proposals in related fields in were hard to come by, and
 I would have appreciated having some more to refer to when writing my
 own.
 
-#### [Research Proposal](/u/ed/application.pdf)
+<div class="btn-row">
+<a href="{{ '/u/ed/application.pdf' | relative_url }}" target="_blank" class="btn btn-pdf">Research Proposal</a>
+</div>

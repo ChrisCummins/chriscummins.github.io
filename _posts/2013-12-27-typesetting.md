@@ -1,6 +1,6 @@
 ---
-layout: default
 title: Typesetting the LaTeX way
+banner: /img/banners/edinburgh.jpg
 ---
 
 I love text. Naturally. I mean, between programming, University work,
@@ -21,7 +21,7 @@ is amazing. I *love* Knuth's aesthetic, and the possibility of
 bringing those delightfully janky fonts to a website near you made my
 day. Here's a before and after of Lato vs Computer Modern Bright:
 
-![Lato vs CMU Bright](/images/2013-12-27-font.png)
+![Lato vs CMU Bright]({{ '/images/2013-12-27-font.png' | relative_url }})
 
 It was just a simple case of importing the right font into my style
 sheet and I was on my way. Now that the choice of font has been made,
@@ -59,7 +59,7 @@ Here's a before and after screenshot of plain old CSS justified text
 (left), and the same justified text after hyphenating with Bram's
 `hypher` package. The difference, while subtle, is convincing:
 
-![Before and after of hyphenated text](/images/2013-12-27-hyphenation.png)
+![Before and after of hyphenated text]({{ '/images/2013-12-27-hyphenation.png' | relative_url }})
 
 To my eyes, those two changes made the text on this whole site come
 alive. But hey, such is the power of confirmation bias, right?

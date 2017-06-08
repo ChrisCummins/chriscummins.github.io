@@ -1,6 +1,6 @@
 ---
-layout: default
 title: Visualising Code Behaviour
+banner: /img/banners/derbyshire.jpg
 ---
 
 I will be designing and implementing a micro-controller as part of my
@@ -12,7 +12,7 @@ was to put together a minimal parser in JavaScript to decode the
 opcodes and arguments from a list of instructions, and output an
 address, mnemonic instruction name and human-readable description:
 
-![Code](/images/2014-01-28-code.png)
+![Code]({{ '/images/2014-01-28-code.png' | relative_url }})
 
 The next logical step after disassembling the *what* of the code was
 to investigate the *why* of the code. For this, we need a way of
@@ -22,10 +22,10 @@ incredibly aptly named
 me to very simply turn the linear list of instructions to a true
 branching graph:
 
-![Code](/images/2014-01-28-chart.png)
+![Code]({{ '/images/2014-01-28-chart.png' | relative_url }})
 
 The
-[source code](https://github.com/ChrisCummins/chriscummins.github.io/blob/master/js/disassembler.js)
+[source code](https://github.com/ChrisCummins/chriscummins.github.io/blob/064a7618caef8b08a798622b320ab019ec7b4931/js/ee4dsa-disassembler.js)
 which implements it clocks in at under 200 lines of code, and one of
 the reasons for this extreme brevity is the simplicity of the
 instruction set, with a whopping six operations:
@@ -75,4 +75,6 @@ instruction set, with a whopping six operations:
 The disassembler and code visualiser are packaged into an interactive
 web application here:
 
-### [uC Disassembler](/disassembler/)
+<div class="btn-row">
+<a href="{{ '/u/aston/uc/disassembler/' | relative_url }}" class="btn btn-primary" target="_blank">uC Disassembler</a>
+</div>

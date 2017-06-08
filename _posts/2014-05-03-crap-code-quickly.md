@@ -1,6 +1,6 @@
 ---
-layout: default
 title: On writing crap code, quickly
+banner: /img/banners/stafford-tower-2.jpg
 ---
 
 I was recently given a programming aptitude test as part of an

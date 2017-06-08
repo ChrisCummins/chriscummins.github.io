@@ -1,6 +1,6 @@
 ---
-layout: default
 title: Incremental builds for Travis CI
+banner: /img/banners/loch-lomond.jpg
 ---
 
 Travis CI is one of those fantastic "how is *this* free?" tools (for other

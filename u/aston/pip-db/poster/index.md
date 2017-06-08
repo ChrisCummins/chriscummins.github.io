@@ -1,20 +1,20 @@
 ---
-layout: default
 title: pip-db - Project Poster
 render_post: true
+banner: /img/banners/birmingham-7.jpg
 ---
 
 <div class="paper">
-  <a href="/u/aston/pip-db/poster.pdf"
+  <a href="{{ '/u/aston/pip-db/poster.pdf' | relative_url }}"
      title="Click to read full paper" target="_blank">
-    <img src="/u/aston/pip-db/poster.png"/>
+    <img src="{{ '/u/aston/pip-db/poster.png' | relative_url }}"/>
   </a>
   <p class="description">
     Mark attained: 87%.
   </p>
 </div>
 
-###### Formal feedback
+## Formal feedback
 
 Very confident and good presentation. Extremely well polished final
 product and exceptional ability to answer questions. Professional

@@ -1,151 +1,100 @@
-/*
- * site.js -- Full site JavaScript
- */
 $(document).ready(function() {
 
-  /*
-   * Page-wide text functions:
-   * *************************
-   */
+  // Parallax scroll plugin.
+  //
+  // See:
+  //   https://pixelcog.github.io/parallax.js/
+  //   https://github.com/pixelcog/parallax.js/
+  $('.parallax-window').parallax({ bleed: 10, speed: .6 });
 
-  /*
-   * Open all links outside the current site in a new window.
-   */
+  // Open all links outside the current site in a new window.
   $('a').each(function(index) {
     var link = $(this)[0];
+    var is_external_link = link.hostname && link.hostname != window.location.hostname
 
-    if (link.hostname && link.hostname != window.location.hostname) {
-      link.target = '_blank';
+    if (is_external_link) {
+      if (!link.target) {
+        link.target = '_blank';
+      }
+    }
+
+    if (link.target == '_blank' && !link.title) {
       link.title = 'Link opens in new window';
     }
   });
 
-  /*
-   * Sidebar horizontal position and scrolling:
-   * ******************************************
-   */
+  // hyphenate the site text
+  $('.post > p, .post > p a, .post > ul li, .post > ol li, .justify').hyphenate('en-gb');
 
-  // Scroll position and opacity update callback.
-  var updateSidebar = function() {
-    var width = $(window).width(); // Current window width
+  // For each image, add a "Click to see original" link.
+  $('.content img').each(function(index) {
+    var parent_is_link = $(this).parents('a').length;
 
-    // Minimum width of display before view "collapses" into a single
-    // column layout. NOTE THAT THIS VALUE IS DUPLICATED IN styles.less:
-    var reducedWidth = 960;
-    var collapseWidth = 890;
+    if (!parent_is_link) {
+      var display_width = $(this).innerWidth();
+      var real_img = $(this); // keep track of the callback img
 
-    // Left margin of header and footer. NOTE THAT THIS VALUE IS
-    // DUPLICATED IN styles.less:
-    var left = width < reducedWidth ? -40 : 0;
+      // Get real image size
+      var fake_img = new Image();
+      fake_img.onload = function() {
+        real_width = this.width;
 
-    var opacity = 1; // Default sidebar opacity.
-    var x = $(window).scrollLeft(); // Horizontal position of scroll.
-
-    // If we're scrolling left in sidebar view: shift header and footer
-    // and fade opacity.
-    if (width > collapseWidth) {
-      left -= x * 1.015;
-      opacity -= x * 0.005;
+        // If real image is larger than displayed width
+        if (real_width > display_width) {
+          var link = '<a href="' + $(this).attr('src') + '" ' +
+            'title="Click to see full size (' + this.width + 'x' +
+            this.height + 'px)" target="_blank"></a>'
+          real_img.wrap(link);
+        }
+      }
+      fake_img.src = $(this).attr('src');
     }
-
-    // Set new position and opacity:
-    $('header,footer').css('margin-left', left + 'px');
-    $('header,footer').css('opacity', opacity);
-
-    if (width < collapseWidth)
-      $('header,footer').removeAttr('style');
-  };
-
-  /*
-   * Update sidebar position on window load, resize, and scroll.
-   */
-  $(window).ready(updateSidebar);
-  $(window).resize(updateSidebar);
-  $(window).scroll(updateSidebar);
-
-  /*
-   * Section-wide text functions:
-   * ****************************
-   */
-
-  /*
-   * Hyphenate the site text.
-   */
-  $('section p, section p a').hyphenate('en-gb');
-
-  /*
-   * Remove the empty first line in pre-formatted code blocks.
-   */
-  $('section code').each(function(index) {
-    $(this).html($(this).html().replace(/^\s*\n/, ''));
-  });
-
-  /*
-   * For each image, add a "Click to see original" link.
-   */
-  $('section img').each(function(index) {
-    if (!$(this).parent().is('a')) // Check that parent isn't already a link
-      $(this).wrap('<a href="' + $(this).attr('src') + '" ' +
-                   'title="Click to see original" ' +
-                   'target="_blank"></a>');
   });
 });
 
+// Change the caret direction on collapsible list elements:
+//
+// TODO: update the 'show all' and 'expand all' option is all or none of the
+// sections are expanded
+$('.has-caret .collapse')
+  .on('show.bs.collapse', function() {
+    $(this).parent().addClass('has-caret-down');
+  })
+  .on('hide.bs.collapse', function() {
+    $(this).parent().removeClass('has-caret-down');
+  });
+
+// "show all" and "hide all" option on collapse
+$('.expand-all').click(function(e) {
+    var target_selector = '.' + $(this)[0].href.split("#")[1];
+
+    if ($(this).html() == 'show all') {
+      $(target_selector).collapse("show");
+      $(this).html('hide all');
+    } else {
+      $(target_selector).collapse("hide");
+      $(this).html('show all');
+    }
+  });
+
 /*
- * Scale blog post titles so that they fit on a single line.
- */
-var scaleBlogHeader = function() {
-  var $scratch = $('#hidden-title');
-  var $title = $('h1.title');
-  var titlewidth = $title.width();
-  var size = parseInt($title.css('font-size'));
-  var i = 0;
+* Clamped-width.
+* Usage:
+*  <div data-clampedwidth=".myParent">This long content will force clamped width</div>
+*
+* Author: LV
+*/
+$('[data-clampedwidth]').each(function () {
+    var elem = $(this);
+    var parentPanel = elem.data('clampedwidth');
+    var resizeFn = function () {
+        var sideBarNavWidth = $(parentPanel).width() - parseInt(elem.css('paddingLeft')) - parseInt(elem.css('paddingRight')) - parseInt(elem.css('marginLeft')) - parseInt(elem.css('marginRight')) - parseInt(elem.css('borderLeftWidth')) - parseInt(elem.css('borderRightWidth'));
+        elem.css('width', sideBarNavWidth);
+    };
 
-  // Copy text over to scratch
-  $scratch.text($title.text());
-
-  // If the text doesn't fit on one line:
-  if ($scratch.width() > titlewidth) {
-    // Scale text width down until it fits on a single line:
-    do {
-      var ratio = titlewidth / $scratch.width();
-      var size = size * ratio;
-
-      $scratch.css({fontSize: size});
-      // We use the counter "i" to break an infinite loop in case it
-      // doesn't converge.
-      i++;
-    } while ($scratch.width() > titlewidth && i < 10)
-
-    // Set new title font size.
-    $title.css({fontSize: size});
-  }
-}
-
-$(window).load(function() {
-  scaleBlogHeader();
+    resizeFn();
+    $(window).resize(resizeFn);
 });
-
-/*
- * scale.fix.js -- Scale fix for GitHub pages
- */
-var metas = document.getElementsByTagName('meta');
-var i;
-if (navigator.userAgent.match(/iPhone/i)) {
-  for (i=0; i<metas.length; i++) {
-    if (metas[i].name == "viewport") {
-      metas[i].content = "width=device-width, minimum-scale=1.0, maximum-scale=1.0";
-    }
-  }
-  document.addEventListener("gesturestart", gestureStart, false);
-}
-function gestureStart() {
-  for (i=0; i<metas.length; i++) {
-    if (metas[i].name == "viewport") {
-      metas[i].content = "width=device-width, minimum-scale=0.25, maximum-scale=1.6";
-    }
-  }
-}
 
 /*
  * jquery.hypher.js -- A fast and small JavaScript hyphenation engine

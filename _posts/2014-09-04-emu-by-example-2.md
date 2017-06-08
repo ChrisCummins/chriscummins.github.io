@@ -1,11 +1,11 @@
 ---
-layout: default
 title: Emu by example, part 2
+banner: /img/banners/sheffield-2.jpg
 ---
 
 #### Part 2: Push and log
 
-In the [last post](/posts/emu-by-example-1/) we covered the `init` and
+In the [last post]({{ site.baseurl }}{% post_url 2014-09-03-emu-by-example-1 %}) we covered the `init` and
 `sink` commands in order to initialise an emu source and a sink,
 respectively. In this post we will use this sink we have just made to
 create our first snapshot!
@@ -203,5 +203,3 @@ around the `.emu` directory if they would like to learn more about how
 the emu internals work. Now that we know how to create backups, we'll
 be back in Part 3 to show you how to restore your files from
 snapshots!
-
-#### [Part 3: Verify and checkout](/posts/emu-by-example-3/)

@@ -1,20 +1,20 @@
 ---
-layout: default
 title: pip-db - Project Plan
 render_post: true
+banner: /img/banners/birmingham-7.jpg
 ---
 
 <div class="paper">
-  <a href="/u/aston/pip-db/plan.pdf"
+  <a href="{{ '/u/aston/pip-db/plan.pdf' | relative_url }}"
      title="Click to read full paper" target="_blank">
-    <img src="/u/aston/pip-db/plan.png"/>
+    <img src="{{ '/u/aston/pip-db/plan.png' | relative_url }}"/>
   </a>
   <p class="description">
     Mark attained: 85%.
   </p>
 </div>
 
-###### Formal feedback
+## Formal feedback
 
 This is an exceptionally well thought out project plan based around
 standard methodology for a final year project and is certainly first

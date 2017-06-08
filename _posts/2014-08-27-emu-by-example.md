@@ -1,6 +1,6 @@
 ---
-layout: default
 title: Emu by example
+banner: /img/banners/malibu.jpg
 ---
 
 This post introduces emu, a pet project which I have been developing
@@ -29,8 +29,8 @@ updates.
 
 #### Table of Contents
 
- * [Part 1: Sinks and sources](/posts/emu-by-example-1/)
- * [Part 2: Push and log](/posts/emu-by-example-2/)
- * [Part 3: Verify and checkout](/posts/emu-by-example-3/)
- * [Part 4: Squash and prune](/posts/emu-by-example-4/)
+ * [Part 1: Sinks and sources]({{ site.baseurl }}{% post_url 2014-09-03-emu-by-example-1 %})
+ * [Part 2: Push and log]({{ site.baseurl }}{% post_url 2014-09-04-emu-by-example-2 %})
+ * [Part 3: Verify and checkout]({{ site.baseurl }}{% post_url 2014-09-05-emu-by-example-3 %})
+ * [Part 4: Squash and prune]({{ site.baseurl }}{% post_url 2014-09-11-emu-by-example-4 %})
  * Part 5: Clean and customisation (work in progress)

@@ -1,6 +1,6 @@
 ---
-layout: default
 title: Building a portable $PATH
+banner: /img/banners/bus.jpg
 ---
 
 I regularly swap between several different Linux instances, which all share a

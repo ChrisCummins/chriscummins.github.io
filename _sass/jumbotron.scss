@@ -1,0 +1,69 @@
+/*
+ * page header
+ */
+.jumbotron {
+    @include noselect;
+
+    position: relative;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+
+    .hero-img {
+        position: relative;
+
+        .parallax-window,
+        .filler {
+            min-height: $jumbotron-min-height;
+            @media (min-width: $screen-xs-min) {
+                min-height: $jumbotron-max-height;
+            }
+        }
+
+        .parallax-window {
+            background: transparent;
+        }
+        .filler {
+            background-color: #eee;
+        }
+    }
+
+    @media (min-width: $screen-xs-min) {
+        min-height: $jumbotron-max-height;
+    }
+
+    .container-fluid {
+        margin: 0;
+
+        @media (min-width: $screen-sm-min) {
+            margin: 0 auto;
+       }
+    }
+
+    .hero-txt {
+        z-index: 2;
+        position: absolute;
+        width: 100%;
+
+        @include banner;
+
+        text-align: center;
+
+        // vertical align the hero inside the jumbotron. hacky, but works:
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+                transform: translateY(-50%);
+
+        @media (min-width: $screen-sm-min) {
+            left: 0;
+            text-align: left;
+
+            // offset relative to center:
+            margin: -25px 0 0 25px;
+        }
+        @media (min-width: $screen-lg-min) {
+            margin: -25px 0 0 40px;
+        }
+    }
+}

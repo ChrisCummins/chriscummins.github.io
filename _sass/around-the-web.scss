@@ -1,0 +1,92 @@
+.around-the-web {
+    @include noselect;
+
+    text-align: center;
+    margin-top: -15px;
+    padding-left: 0;
+
+    margin-bottom: 1.5em;
+    @media (min-width: $screen-xs-min) { margin-bottom: 2em; }
+
+    @media (min-width: $screen-sm-min) {
+        text-align: left;
+        padding-left: 0;
+        margin: 2em 0;
+    }
+
+    li {
+        list-style-type: none;
+        margin-bottom: .5em;
+        display: inline;
+        white-space: nowrap;  // no line wrapping
+
+        @media (min-width: $screen-sm-min) {
+            display: block;
+        }
+
+        a {
+            padding: 10px 2px;
+
+            @media (min-width: $screen-xs-min) {
+                padding: 10px 6px;
+            }
+
+            color: #000;
+            text-decoration: none!important;
+            @include transition-duration(0.3s);
+
+            @media (min-width: $screen-sm-min) {
+                padding-left: 0;
+            }
+
+            &:hover {
+                color: $color-highlight;
+
+                img {
+                    opacity: .75;
+                    -webkit-filter: grayscale(50%); /* Safari 6.0 - 9.0 */
+                            filter: grayscale(50%);
+                }
+            }
+
+            &:active {
+                color: $color-link;
+            }
+        }
+
+        /* unused:
+        i {  // font awesome icons
+            vertical-align: middle;
+            font-size: 36px;
+            width: 36px;
+        }
+        */
+
+        img {  // icons
+            @include transition-duration(.3s);
+            vertical-align: middle;
+            width: 36px;
+            height: 36px;
+
+            @media (min-width: $screen-sm-min) {
+                width: 28px;
+                height: 28px;
+            }
+            @media (min-width: $screen-md-min) {
+                width: 36px;
+                height: 36px;
+            }
+        }
+
+        span {
+            display: none;
+            font-size: 16px;
+            font-weight: 300;
+            vertical-align: middle;
+            padding-left: .5em;
+
+            @media (min-width: $screen-sm-min) { display: unset; }
+            @media (min-width: $screen-md-min) { font-size: 24px; }
+        }
+    }
+}

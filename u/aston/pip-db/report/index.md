@@ -1,20 +1,20 @@
 ---
-layout: default
 title: pip-db - Final Project Report
 render_post: true
+banner: /img/banners/birmingham-7.jpg
 ---
 
 <div class="paper">
-  <a href="/u/aston/pip-db/report.pdf"
+  <a href="{{ '/u/aston/pip-db/report.pdf' | relative_url }}"
      title="Click to read full paper" target="_blank">
-    <img src="/u/aston/pip-db/report.png"/>
+    <img src="{{ '/u/aston/pip-db/report.png' | relative_url }}"/>
   </a>
   <p class="description">
     Mark attained: 90%.
   </p>
 </div>
 
-###### Formal feedback
+## Formal feedback
 
 This is a truly exceptional piece of work of extremely high quality,
 insight and diligence. An appropriate lifecycle model has been

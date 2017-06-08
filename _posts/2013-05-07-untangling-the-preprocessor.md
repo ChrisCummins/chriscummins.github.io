@@ -1,6 +1,6 @@
 ---
-layout: default
 title: Untangling the preprocessor
+banner: /img/banners/sheffield.jpg
 ---
 
 I found while working on my latest [pet

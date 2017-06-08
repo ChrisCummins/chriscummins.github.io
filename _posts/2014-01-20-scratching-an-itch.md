@@ -1,12 +1,11 @@
 ---
-layout: default
 title: Scratching an Itch
+banner: /img/banners/stafford-tower-3.jpg
 ---
 
-The title of this post may seem misleading in that it is *not* about
-scratching ones balls. Instead, it refers to a quote from the
-venerable Eric S. Raymond in his book the
-*[Cathedral and the Bazaar](http://www.catb.org/~esr/writings/homesteading/cathedral-bazaar/)*:
+The venerable Eric S. Raymond in his book the *[Cathedral and the
+Bazaar](http://www.catb.org/~esr/writings/homesteading/cathedral-bazaar/)*
+says:
 
 > Every good work of software starts by scratching a developer's
 > personal itch.
@@ -17,7 +16,9 @@ doesn't invent any new kinds of data structures, but what it does do
 is to **fix a problem** and **save time**. Is that not what computers
 were built for?
 
-![Before](/images/2014-01-20-before.png)
-![After](/images/2014-01-20-after.png)
+![Before]({{ '/images/2014-01-20-before.png' | relative_url }})
+![After]({{ '/images/2014-01-20-after.png' | relative_url }})
 
-### [liquid-src on GitHub](https://github.com/ChrisCummins/liquid-src)
+<div class="btn-row">
+<a href="https://github.com/ChrisCummins/liquid-src" class="btn btn-github">Source code</a>
+</div>
