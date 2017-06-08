@@ -567,6 +567,7 @@ a.decorated {
 .blognav {
     margin-top: 1em;
     list-style-type: none;
+    padding-left: 0;
 
     li {
         display: inline;
@@ -577,9 +578,9 @@ a.decorated {
             padding: 2px 0;
         }
 
-        &.blognav-next {
-            float: left;
-        }
+        // &.blognav-next {
+        //     float: left;
+        // }
         &.blognav-prev {
             float: right;
         }
