@@ -48,7 +48,7 @@ baseurl: "/staging"
 show_dir_listing: false
 
 # Outputting
-permalink:     /:year/:title
+permalink:     /:year/:title/
 timezone:      null
 
 quiet:    false
