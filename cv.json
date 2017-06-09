@@ -341,31 +341,52 @@
     ],
     "posters": [
       {
+        "name": "PPar",
+        "date": "2017",
+        "url": "https://chriscummins.cc/pub/2017-ppar-poster.pdf",
+        "picture": "https://chriscummins.cc/pub/2017-ppar-poster.png"
+      },
+      {
         "name": "Google",
-        "date": "2016"
+        "date": "2016",
+        "url": "https://chriscummins.cc/pub/2016-ppar-poster.pdf",
+        "picture": "https://chriscummins.cc/pub/2016-ppar-poster.png"
+      },
+      {
+        "name": "PPar",
+        "date": "2016",
+        "url": "https://chriscummins.cc/pub/2016-ppar-poster.pdf",
+        "picture": "https://chriscummins.cc/pub/2016-ppar-poster.png"
       },
       {
         "name": "ACACES",
-        "date": "2016"
+        "date": "2016",
+        "url": "https://chriscummins.cc/pub/2016-hipeac-poster.pdf",
+        "picture": "https://chriscummins.cc/pub/2016-hipeac-poster.png"
       },
       {
         "name": "PLDI",
-        "date": "2016"
+        "date": "2016",
+        "url": "https://chriscummins.cc/pub/2016-hipeac-poster.pdf",
+        "picture": "https://chriscummins.cc/pub/2016-hipeac-poster.png"
       },
       {
         "name": "HiPEAC",
         "date": "2016",
-        "url": "https://chriscummins.cc/pub/2016-hipeac-poster.pdf"
+        "url": "https://chriscummins.cc/pub/2016-hipeac-poster.pdf",
+        "picture": "https://chriscummins.cc/pub/2016-hipeac-poster.png"
       },
       {
         "name": "Google",
         "date": "2015",
-        "url": "https://chriscummins.cc/pub/2015-google-poster.pdf"
+        "url": "https://chriscummins.cc/pub/2015-google-poster.pdf",
+        "picture": "https://chriscummins.cc/pub/2015-google-poster.png"
       },
       {
         "name": "PPar",
         "date": "2015",
-        "url": "https://chriscummins.cc/u/ed/msc-poster.pdf"
+        "url": "https://chriscummins.cc/u/ed/msc-poster.pdf",
+        "picture": "https://chriscummins.cc/u/ed/msc-poster.png"
       }
     ],
     "peer_reviews": [
