@@ -534,7 +534,7 @@
       {
         "name": "Eigen",
         "url": "http://eigen.tuxfamily.org/index.php?title=Main_Page",
-        "summary": "SYCL support"
+        "summary": "new features - SYCL support"
       },
       {
         "name": "grammarVAE",
@@ -569,7 +569,7 @@
       {
         "name": "rig",
         "url": "http://roblog.sixbynine.org/2012/10/rig-1-ui-designer-engine.html",
-        "summary": "particle effects engine"
+        "summary": "new feature - particle effects engine"
       },
       {
         "name": "setGPU",
@@ -579,12 +579,12 @@
       {
         "name": "SkelCL",
         "url": "http://skelcl.uni-muenster.de/",
-        "summary": "autotuned stencil"
+        "summary": "new features - stencil autotuning"
       },
       {
         "name": "TensorFlow",
         "url": "https://www.tensorflow.org/",
-        "summary": "SYCL support"
+        "summary": "new features - SYCL support"
       },
       {
         "name": "textlint",
@@ -614,12 +614,12 @@
       {
         "name": "Wayland",
         "url": "http://wayland.freedesktop.org/",
-        "summary": "GTK+ support"
+        "summary": "new features - GTK+ support"
       },
       {
         "name": "visioncpp",
         "url": "https://github.com/ChrisCummins/visioncpp",
-        "summary": "code owner Python bindings"
+        "summary": "new features - code owner Python bindings"
       }
     ],
     "hacks_and_demos": [
@@ -668,12 +668,12 @@
       {
         "name": "greystonespress.com",
         "url": "http://www.greystonespress.com/",
-        "summary": "Independent publisher"
+        "summary": "Newcastle based publishing house"
       },
       {
         "name": "myrmidonbooks.com",
         "url": "http://myrmidonbooks.com/",
-        "summary": "Independent publisher"
+        "summary": "Oxford based independent publisher"
       },
       {
         "name": "pip-db.org",
