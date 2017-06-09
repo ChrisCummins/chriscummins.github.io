@@ -402,11 +402,9 @@
       "name": "Competent",
       "level": "Competent",
       "keywords": [
-        "JavaScript",
-        "HTML/CSS",
+        "HTML+CSS+JS",
         "OpenCL",
         "SQL",
-        "LaTeX",
         "TensorFlow"
       ]
     }
