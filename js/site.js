@@ -86,14 +86,37 @@ $('.expand-all').click(function(e) {
 */
 $('[data-clampedwidth]').each(function () {
     var elem = $(this);
-    var parentPanel = elem.data('clampedwidth');
+    var parent_panel = elem.data('clampedwidth');
+    var offset = parseInt(elem.data('clampedwidth-offset')) || 0;
     var resizeFn = function () {
-        var sideBarNavWidth = $(parentPanel).width() - parseInt(elem.css('paddingLeft')) - parseInt(elem.css('paddingRight')) - parseInt(elem.css('marginLeft')) - parseInt(elem.css('marginRight')) - parseInt(elem.css('borderLeftWidth')) - parseInt(elem.css('borderRightWidth'));
-        elem.css('width', sideBarNavWidth);
+        var width = (
+          $(parent_panel).width() -
+          parseInt(elem.css('paddingLeft')) -
+          parseInt(elem.css('paddingRight')) -
+          parseInt(elem.css('marginLeft')) -
+          parseInt(elem.css('marginRight')) -
+          parseInt(elem.css('borderLeftWidth')) -
+          parseInt(elem.css('borderRightWidth')) + offset);
+        elem.css('width', width);
     };
 
     resizeFn();
     $(window).resize(resizeFn);
+});
+
+/*
+ * Dynamic affix after.
+ */
+$('[data-affix-after]').each(function() {
+  var prev = $($(this).data('affix-after'));
+
+  $(this).affix({
+    offset: {
+      top: function() {
+        return prev.offset().top + prev.outerHeight(true);
+      }
+    }
+  });
 });
 
 /*

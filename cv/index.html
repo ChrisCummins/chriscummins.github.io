@@ -3,12 +3,20 @@ title: Resume
 banner: /img/banners/san-fran.jpg
 ---
 
-<div class="btn-row">
-  <ul>
-    <li><a title="Link opens in new window" target="_blank" href="{{ '/cv.pdf' | relative_url }}" class="btn btn-primary undecorated" role="button">View PDF <i class="fa fa-file-pdf-o" aria-hidden="true"></i></a></li>
-    <li><a title="Link opens in new window" target="_blank" href="{{ '/cv.json' | relative_url }}" class="btn btn-primary undecorated" role="button">View JSON <i class="fa fa-file-o" aria-hidden="true"></i></a></li>
-  </ul>
-</div>
+{% comment  %} anchor the CV buttons affix {% endcomment %}
+<div class="cec-navbar-anchor"></div>
+<div class="cec-navbar-container">
+  <div class="cec-navbar" data-spy="affix"
+       data-affix-after=".cec-navbar-anchor" data-clampedwidth-offset="30"
+       data-clampedwidth=".cec-navbar-container">
+    <div class="btn-row">
+      <ul>
+        <li><a title="Link opens in new window" target="_blank" href="{{ '/cv.pdf' | relative_url }}" class="btn btn-primary undecorated" role="button">View PDF <i class="fa fa-file-pdf-o" aria-hidden="true"></i></a></li>
+        <li><a title="Link opens in new window" target="_blank" href="{{ '/cv.json' | relative_url }}" class="btn btn-primary undecorated" role="button">View JSON <i class="fa fa-file-o" aria-hidden="true"></i></a></li>
+      </ul>
+    </div>{% comment  %} /.btn-row {% endcomment %}
+  </div>{% comment  %} /.cec-navbar {% endcomment %}
+</div>{% comment  %} /.cec-navbar-container {% endcomment %}
 
 <div class="cv big-list">
   <h1>Education <a class="expand-all" role="button" href="#edu">show all</a></h1>

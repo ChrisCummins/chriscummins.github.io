@@ -215,6 +215,20 @@ code {
     }
 }
 
+// Top of screen navigation
+.cec-navbar-container {
+    height: 59px;
+    margin-left: -30px;  // left offset to hide the indented carets
+    margin-bottom: 1.5em;
+}
+.cec-navbar {
+    padding-left: 30px;  // counter left offset
+    height: 59px;
+    background-color: rgba(255, 255, 255, 0.95);
+    top: 0;
+    z-index: 10;
+}
+
 // when the screen size is larger than the threshold, we show the right column,
 // and hide the 'around-the-web' links on the left side:
 @media (min-width: $screen-sm-min) {
@@ -470,10 +484,6 @@ a.decorated {
         font-weight: 300;
         color: $color-subtle;
     }
-}
-
-.content .btn-row:first-child {
-    margin-top: -1em;
 }
 
 .btn-row {
