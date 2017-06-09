@@ -398,13 +398,12 @@
       "name": "Competent",
       "level": "Competent",
       "keywords": [
-        "C",
         "JavaScript",
+        "HTML/CSS",
         "OpenCL",
         "SQL",
         "LaTeX",
-        "TensorFlow",
-        "HTML/CSS"
+        "TensorFlow"
       ]
     }
   ],

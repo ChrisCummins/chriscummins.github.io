@@ -185,15 +185,28 @@ banner: /img/banners/san-fran.jpg
   </table>
 
   <h1>Key Technical Skills</h1>
-  <table>
-  {% for entry in site.data.cv.skills %}
-    <tr>
-      <td>{{ entry.level }}</td>
-      <td>
-        {{ entry.keywords | array_to_sentence_string }}.
-      </td>
-    </tr>
-  {% endfor %}
+  <table class="table-progress">
+    {% assign outer_loop = 10 %}
+    {% for entry in site.data.cv.skills %}
+      {% assign outer_loop = outer_loop | minus:2 %}
+      {% assign inner_loop = 0 %}
+      {% for keyword in entry.keywords %}
+        {% assign inner_loop = inner_loop | plus:1 %}
+        {% assign skill_level = outer_loop | times:10 | minus:inner_loop %}
+        <tr>
+          <td>{{ keyword }}</td>
+          <td>
+            <div class="progress">
+              <div class="progress-bar"
+                   role="progressbar" aria-valuenow="{{ skill_level }}"
+                   aria-valuemin="0" aria-valuemax="100"
+                   style="width: {{ skill_level }}%;">
+              </div>
+            </div>
+          </td>
+        </tr>
+      {% endfor %}
+    {% endfor %}
   </table>
 
 </div> <!-- /.cv -->

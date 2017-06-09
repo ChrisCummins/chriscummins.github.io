@@ -380,6 +380,36 @@ a.decorated {
             }
         }
     }
+
+    table.table-progress {
+        tr {
+            td {
+                padding-bottom: .3em;
+
+                .progress {
+                    margin-bottom: 0 !important;
+                    height: 5px;
+
+                    background-color: #eaeaea;
+                    -webkit-box-shadow: none;
+                    box-shadow: none;
+
+                    .progress-bar {
+                        background-color: $color-link;
+                    }
+                }
+            }
+
+            td:first-child {
+                min-width: 95px;
+                color: #000;
+            }
+
+            td:last-child {
+                width: 100%;
+            }
+        }
+    }
 }
 
 // hang left and hang right. These should be used in pairs. On large screens,
