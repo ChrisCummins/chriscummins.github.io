@@ -87,9 +87,10 @@ gems:
 sass:
   style: compressed
 
-# Custom variables
+# Styling
 jumbotron_min_height: 300
 jumbotron_max_height: 500
+jumbotron_content_gap: 30
 
 # logos for social networks. Obfuscate names to prevent AdBlock.
 social_images:

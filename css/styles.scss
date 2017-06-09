@@ -18,6 +18,7 @@ $fa-file-pdf-o: '\f1c1';
 
 $jumbotron-min-height: {{ site.jumbotron_min_height | append: 'px' }};
 $jumbotron-max-height: {{ site.jumbotron_max_height | append: 'px' }};
+$jumbotron-content-gap: {{ site.jumbotron_content_gap | append: 'px' }};
 
 @mixin transition-duration($duration) {
     -webkit-transition-duration: $duration; /* iOS Safari */
@@ -193,7 +194,7 @@ code {
         }
     }
     > div.affix {
-        top: 4%;
+        top: $jumbotron-content-gap;
         // banner fades in
         .banner {
             opacity: 1;
@@ -656,5 +657,5 @@ a.decorated {
 
 .bg {
     background-color: #fff;
-    padding-top: 30px;
+    padding-top: $jumbotron-content-gap;
 }
