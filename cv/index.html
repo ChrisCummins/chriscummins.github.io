@@ -57,9 +57,9 @@ banner: /img/banners/san-fran.jpg
       <span class="hang-left">{{ entry.releaseDate }}</span>
       <div class="pub collapse" id="pub-{{ forloop.index }}">
         <div class="collapse-content">
-          <div class="collapse-container">
+          <div class="collapse-split-container">
             {% if entry.picture %}
-            <div class="paper">
+            <div class="paper left">
               <a href="{{ entry.assets[0].url }}" target="_blank" title="Link opens in new window">
                 <img src="{{ entry.picture }}"/>
               </a>

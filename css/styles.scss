@@ -354,8 +354,8 @@ a.decorated {
 
         table tr td { padding-bottom: 0; }
 
-        .collapse-container {
-            .paper {
+        .collapse-split-container {
+            .left {
                 margin-bottom: 1.5em;
                 max-width: 150px;
             }
@@ -363,7 +363,7 @@ a.decorated {
             @media (min-width: $screen-sm-min) {
                 display: flex;
 
-                .paper {
+                .left {
                     margin-right: 1.5em;
                     margin-bottom: 0em;
                 }
