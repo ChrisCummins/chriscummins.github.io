@@ -179,6 +179,7 @@
       "publication": "[CGO](http://cgo.org/cgo2017/) (22% acceptance rate), Austin, Texas",
       "releaseDate": "2017",
       "summary": "Deep learning over massive codebases from GitHub to generate benchmark programs. Automatically synthesizes OpenCL kernels which are indistinguishable from hand-written code, and improves state-of-the-art predictive model performance by 4.30x.",
+      "picture": "https://chriscummins.cc/pub/2017-cgo.png",
       "assets": [
         {
           "name": "Preprint",
@@ -204,6 +205,7 @@
       "publication": "[HLPGPU](https://sites.google.com/site/hlpgpu2016/), HiPEAC, Prague",
       "releaseDate": "2016",
       "summary": "A distributed framework for dynamic prediction of optimisation parameters using machine learning. Automatically exceeds human experts by 1.22x.",
+      "picture": "https://chriscummins.cc/pub/2016-hlpgpu.png",
       "assets": [
         {
           "name": "Preprint",
@@ -225,6 +227,7 @@
       "publication": "[ADAPT](http://adapt-workshop.org/index2016.html), HiPEAC, Prague",
       "releaseDate": "2016",
       "summary": "Three methodologies to autotune stencil patterns using machine learning. Speedups of 3.79x over the best possible static size, 94% of the maximum performance.",
+      "picture": "https://chriscummins.cc/pub/2016-adapt.png",
       "assets": [
         {
           "name": "Preprint",
@@ -250,6 +253,7 @@
       "publication": "Bioinformatics, 31(2), 295-296",
       "releaseDate": "2015",
       "summary": "An open source search engine of protein isoelectric points. Provides public access to bioinformatics data from the literature for comparison and benchmarking purposes.",
+      "picture": "https://chriscummins.cc/pub/2015-pip-db.png",
       "assets": [
         {
           "name": "Oxford",

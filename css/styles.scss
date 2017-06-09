@@ -353,6 +353,28 @@ a.decorated {
         }
 
         table tr td { padding-bottom: 0; }
+
+        .collapse-container {
+            .paper {
+                margin-bottom: 1.5em;
+                max-width: 150px;
+            }
+
+            @media (min-width: $screen-sm-min) {
+                display: flex;
+
+                .paper {
+                    margin-right: 1.5em;
+                    margin-bottom: 0em;
+                }
+                > div:first-child {
+                    flex: 0 0 30%;
+                }
+                > div:last-child {
+                    flex: 1;
+                }
+            }
+        }
     }
 }
 
@@ -482,11 +504,10 @@ a.decorated {
         border: solid 2px $color-button;
 
         min-width: 130px;
-        @media (min-width: $screen-xs-min) { min-width: 150px; }
 
-
-        @media (min-width: $screen-sm-min) {
-            margin-right: .5em;
+        @media (min-width: $screen-md-min) {
+            min-width: 150px;
+            margin-right: .3em;
         }
 
         &:hover {

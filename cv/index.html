@@ -57,25 +57,36 @@ banner: /img/banners/san-fran.jpg
       <span class="hang-left">{{ entry.releaseDate }}</span>
       <div class="pub collapse" id="pub-{{ forloop.index }}">
         <div class="collapse-content">
-          <table>
-          <tr><td>Authors</td><td>{{ entry.authors | markdownify | remove: '<p>' | remove: '</p>' }}</td></tr>
-          <tr><td>Publication</td><td>{{ entry.publication | markdownify | remove: '<p>' | remove: '</p>' }}</td></tr>
-          </table>
-          <p class="justify">
-            {{ entry.summary | markdownify }}
-          </p>
-          {% if entry.assets %}
-            <div class="btn-row">
-            <ul>
-              {% for asset in entry.assets %}
-                                                        {% assign icon = "fa-external-link" %}
-                {% if asset.url contains "github.com" %}{% assign icon = "fa-github" %}{% endif %}
-                {% if asset.url contains ".pdf" %}      {% assign icon = "fa-file-pdf-o" %}{% endif %}
-                <li><a title="Link opens in new window" target="_blank" href="{{ asset.url }}" class="btn btn-primary undecorated" role="button">{{ asset.name }} <i class="fa {{ icon }}" aria-hidden="true"></i></a></li>
-              {% endfor %}
-            </ul>
+          <div class="collapse-container">
+            {% if entry.picture %}
+            <div class="paper">
+              <a href="{{ entry.assets[0].url }}" target="_blank" title="Link opens in new window">
+                <img src="{{ entry.picture }}"/>
+              </a>
             </div>
-          {% endif %}
+            {% endif %}
+            <div>
+              <table>
+              <tr><td>Authors</td><td>{{ entry.authors | markdownify | remove: '<p>' | remove: '</p>' }}</td></tr>
+              <tr><td>Publication</td><td>{{ entry.publication | markdownify | remove: '<p>' | remove: '</p>' }}</td></tr>
+              </table>
+              <p class="justify">
+                {{ entry.summary | markdownify }}
+              </p>
+              {% if entry.assets %}
+                <div class="btn-row">
+                <ul>
+                  {% for asset in entry.assets %}
+                                                            {% assign icon = "fa-external-link" %}
+                    {% if asset.url contains "github.com" %}{% assign icon = "fa-github" %}{% endif %}
+                    {% if asset.url contains ".pdf" %}      {% assign icon = "fa-file-pdf-o" %}{% endif %}
+                    <li><a title="Link opens in new window" target="_blank" href="{{ asset.url }}" class="btn btn-primary undecorated" role="button">{{ asset.name }} <i class="fa {{ icon }}" aria-hidden="true"></i></a></li>
+                  {% endfor %}
+                </ul>
+                </div>
+              {% endif %}
+            </div>
+          </div>
         </div>
       </div>
     </li>
