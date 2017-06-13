@@ -109,4 +109,4 @@ copyright:
 # Cache busting.
 #
 # Change the cache tag to invalid site.css, site.js, and favicons.
-cache_tag: 3
+cache_tag: 4
