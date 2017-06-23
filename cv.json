@@ -295,6 +295,7 @@
         "date": "2017",
         "duration": "30 minutes",
         "summary": "An overview of my research on deep learning for synthetic program generation, and the challenges of semantic programming language modeling using neural networks.",
+        "picture": "https://chriscummins.cc/pub/2017-spls-slides.png",
         "assets": [
           {
             "name": "Slides",
@@ -307,6 +308,7 @@
         "date": "2016",
         "duration": "60 minutes",
         "summary": "A preview of the paper [Synthesizing Benchmarks for Predictive Modeling](https://github.com/ChrisCummins/paper-synthesizing-benchmarks).",
+        "picture": "https://chriscummins.cc/pub/2016-codeplay-slides.png",
         "assets": [
           {
             "name": "Slides",
@@ -319,6 +321,7 @@
         "date": "2016",
         "duration": "5 minutes",
         "summary": "Brief, non-technical overview of my research interests and background.",
+        "picture": "https://chriscummins.cc/pub/2016-ocado-slides.png",
         "assets": [
           {
             "name": "Slides",
@@ -331,6 +334,7 @@
         "date": "2016",
         "duration": "15 minutes",
         "summary": "First presentation of using deep learning to model OpenCL programming language semantics from mined open source code.",
+        "picture": "https://chriscummins.cc/pub/2016-amazon-slides.png",
         "assets": [
           {
             "name": "Slides",
