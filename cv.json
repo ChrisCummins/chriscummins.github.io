@@ -166,7 +166,12 @@
       "publication": "[PACT](https://parasol.tamu.edu/pact17/) (23% acceptance rate), Portland, Oregon",
       "releaseDate": "2017",
       "summary": "Learning optimization heuristics directly from raw source code, without the need for feature extraction. Exceeds performance of state-of-the art predictive models using hand crafted features, and can transfer knowledge gained from one optimization task to another, even if the learned tasks are dissimilar.",
+      "picture": "https://chriscummins.cc/pub/2017-pact.png",
       "assets": [
+        {
+          "name": "Preprint",
+          "url": "https://chriscummins.cc/pub/2017-pact.pdf"
+        },
         {
           "name": "Source Code",
           "url": "https://github.com/ChrisCummins/paper-end2end-dl"
