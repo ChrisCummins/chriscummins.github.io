@@ -161,7 +161,7 @@
   ],
   "publications": [
     {
-      "name": "End-to-end Deep Learning of Optimization Heuristics (PACT)",
+      "name": "End-to-end Deep Learning of Optimization Heuristics (PACT Best Paper)",
       "authors": "**C. Cummins**, P. Petoumenos, Z. Wang, and H. Leather",
       "publication": "[PACT](https://parasol.tamu.edu/pact17/) (23% acceptance rate), Portland, Oregon",
       "releaseDate": "2017",
@@ -268,6 +268,10 @@
     }
   ],
   "awards": [
+    {
+      "title": "Best Paper Award, [PACT](https://parasol.tamu.edu/pact17/)",
+      "date": "2017"
+    },
     {
       "title": "Best Paper Award, [CGO](http://cgo.org/cgo2017/)",
       "date": "2017"
