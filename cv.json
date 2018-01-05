@@ -461,6 +461,11 @@
         "summary": "Automatic compiler heuristic construction"
       },
       {
+        "name": "dotfiles",
+        "url": "https://github.com/ChrisCummins/dotfiles",
+        "summary": "Reproducible and uniform configurations across machines"
+      },
+      {
         "name": "emu",
         "url": "https://chriscummins.cc/2014/emu-by-example",
         "summary": "Fast, incremental snapshot backups"
