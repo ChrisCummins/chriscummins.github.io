@@ -1,5 +1,5 @@
 ---
-title: Test from iPad
+title: Updated iPad test.
 ---
 
-This post written and committed using Working Copy.
+This post was written in ByWord and committed using Working Copy.
