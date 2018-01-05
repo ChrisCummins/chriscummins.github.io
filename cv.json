@@ -57,10 +57,10 @@
   "work": [
     {
       "company": "Codeplay Software",
-      "position": "Software Engineer Intern",
+      "position": "Software Engineer, Part Time",
       "website": "https://www.codeplay.com/",
       "startDate": "2016",
-      "endDate": "2016",
+      "endDate": "2018",
       "summary": "Contributed to [Tensorflow](https://www.tensorflow.org/) and [Eigen](http://eigen.tuxfamily.org/index.php?title=Main_Page). Implemented GPU memory management for expression trees. Compile time scheduling and kernel fusion for expression trees on GPUs using [future standards](https://www.khronos.org/sycl) for heterogeneous parallelism. Extensive C++ meta-programming."
     },
     {
