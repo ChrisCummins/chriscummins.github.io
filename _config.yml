@@ -81,7 +81,7 @@ kramdown:
   footnote_nr:    1
 
 # Extensions
-gems:
+plugins:
   - jekyll-redirect-from  # enable "refirect_from" in front matter
 
 sass:
