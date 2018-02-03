@@ -83,6 +83,7 @@ kramdown:
 # Extensions
 plugins:
   - jekyll-redirect-from  # enable "refirect_from" in front matter
+  - jekyll-github-metadata  # add 'site.github' github metadata
 
 sass:
   style: compressed

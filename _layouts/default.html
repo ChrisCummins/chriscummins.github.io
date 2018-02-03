@@ -111,7 +111,8 @@ layout: compress
         <div id="footer" class="col-sm-9 noselect">
           <hr/>
           <p id="copyright">
-            &copy; {{ site.copyright.owner }} {{ site.copyright.year }}
+            &copy; {{ site.copyright.owner }} {{ site.copyright.year }}<br/>
+            build <a href="{{ site.github.repository_url }}/commit/{{ site.github.build_revision }}" title>{{ site.github.build_revision | truncate: 8, "" }}</a> on {{ site.time | date: '%Y-%m-%d' }}
           </p>
         </div> <!-- /#footer -->
       </div> <!-- /.row -->

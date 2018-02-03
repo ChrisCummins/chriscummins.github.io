@@ -483,6 +483,11 @@ a.decorated {
         font-size: 13px;
         font-weight: 300;
         color: $color-subtle;
+
+        // No color highlight for the "build <hash>" link in the footer.
+        a {
+            color: $color-subtle;
+        }
     }
 }
 
