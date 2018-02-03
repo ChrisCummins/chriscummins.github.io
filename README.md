@@ -7,16 +7,17 @@ into a static site whenever I push this repository to GitHub.
 
 1. Install [gem](https://rubygems.org/).
 2. Install bundle: `gem install bundler`.
-3. Install site dependencies: `bundle install`.
-4. Build and serve: `bundle exec jekyll serve --drafts --host=0.0.0.0`.
+3. Install site dependencies: `make all`.
+4. Serve locally on http://127.0.0.1:4000: `make run`.
 
-# License
+## License
 
 The website code is
 [MIT Licensed](https://github.com/ChrisCummins/chriscummins.github.io/blob/master/LICENSE),
 but the website *content* is not. The following directories and their contents
 are copyright Chris Cummins:
 * `_posts/`
+* `images/`,
 * `img/`,
 * `pub/`
 * `u/`.
