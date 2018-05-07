@@ -56,12 +56,20 @@
   },
   "work": [
     {
+      "company": "Google",
+      "position": "Software Engineer Intern",
+      "website": "https://developers.google.com",
+      "startDate": "2018",
+      "endDate": "2018",
+      "summary": "Created a representative benchmark of Google's [Protocol Buffer](https://developers.google.com/protocol-buffers/) usage. Working in the [Google Wide Profiling](https://research.google.com/pubs/pub36575.html) team to synthesise benchmarks for Google compute. The project involved company-wide workload characterization through to datacenter-scale low level performance analysis of profiles and hardware counters."
+    },
+    {
       "company": "Codeplay Software",
       "position": "Software Engineer (Part Time)",
       "website": "https://www.codeplay.com/",
       "startDate": "2016",
       "endDate": "2018",
-      "summary": "Contributed to [Tensorflow](https://www.tensorflow.org/) and [Eigen](http://eigen.tuxfamily.org/index.php?title=Main_Page). Implemented GPU memory management for expression trees. Compile time scheduling and kernel fusion for expression trees on GPUs using [future standards](https://www.khronos.org/sycl) for heterogeneous parallelism. Extensive C++ meta-programming."
+      "summary": "Contributed to [Tensorflow](https://www.tensorflow.org/) and [Eigen](http://eigen.tuxfamily.org/index.php?title=Main_Page). Implemented GPU memory management for expression trees. Compile time scheduling and kernel fusion for expression trees on GPUs using [future standards](https://www.khronos.org/sycl) for heterogeneous parallelism. Extensive C++ meta-programming. Integrated compiler fuzzers into continuous testing tooling."
     },
     {
       "company": "Intel Corporation",
@@ -75,7 +83,7 @@
       "company": "Freelance",
       "position": "Web developer",
       "startDate": "2010",
-      "endDate": "",
+      "endDate": "2017",
       "summary": "Full-stack development for small businesses, including graphic design and branding. Frontend experience with JavaScript; backend development using Clojure, Node.js, PHP, MySQL, PostgreSQL, and Jekyll. Experience with Bootstrap framework and WordPress CMS."
     },
     {
@@ -94,7 +102,7 @@
       "endDate": "2019 (expected)",
       "thesis": "Deep Learning over Programs",
       "advisors": "Hugh Leather and Pavlos Petoumenos",
-      "summary": "Deep learning over programs. Developing machine learning methods for random program generation, compiler optimisations, and representative benchmarking. Applications for heterogeneous parallelism, testing, and adaptive performance tuning. To date: 4 publications, 2 best paper awards, 4 invited talks, 5 posters.",
+      "summary": "Deep learning over programs. Developing novel machine learning methods for random program generation, compiler optimisations, and representative benchmarking. Applications for heterogeneous parallelism, compiler testing, and adaptive performance tuning. To date: 6 publications, 2 best papers, 7 invited talks, 5 posters, 4 conferences.",
       "assets": [
         {
           "name": "First Year Review",
@@ -142,7 +150,7 @@
       "endDate": "2014",
       "thesis": "Protein Isoelectric Point Database",
       "advisors": "Ian Nabney",
-      "summary": "Created a novel search engine for molecular biochemistry data. Integrated BLAST search tools, a publicly accessible API, and tooling to generate synthetic payloads from confidential datasets for whitebox systems testing. Released open source.",
+      "summary": "Created a search engine and API for a novel molecular biochemistry dataset. Targeting bioinformatics research and released open source, with peak 854 monthly active users.",
       "assets": [
         {
           "name": "Thesis",
@@ -160,6 +168,13 @@
     }
   ],
   "publications": [
+    {
+      "name": "Compiler Fuzzing through Deep Learning (ISSTA)",
+      "authors": "**C. Cummins**, P. Petoumenos, A. Murray, and H. Leather",
+      "publication": "[ISSTA](https://conf.researchr.org/home/issta-2018) (28% acceptance rate), Amsterdam, Netherlands",
+      "releaseDate": "2018",
+      "summary": "Unsupervised machine learning to derive program generators for compiler fuzz testing. Implemented in 100x less code than state-of-the-art program generator, and 3.03x faster. Found and reported 67 bug reports in OpenCL compilers."
+    },
     {
       "name": "End-to-end Deep Learning of Optimization Heuristics (PACT Best Paper)",
       "authors": "**C. Cummins**, P. Petoumenos, Z. Wang, and H. Leather",
@@ -203,6 +218,13 @@
           "url": "https://github.com/ChrisCummins/paper-synthesizing-benchmarks"
         }
       ]
+    },
+    {
+      "name": "Autotuning OpenCL Workgroup Sizes (ACACES)",
+      "authors": "**C. Cummins**, P. Petoumenos, M. Steuwer, and H. Leather",
+      "publication": "[ACACES](http://acaces.hipeac.net/2016/) (extended abstract), Fiuggi, Italy",
+      "releaseDate": "2016",
+      "summary": "Machine learning-enabled autotuning of multi-GPU OpenCL workgroup sizes. Static tuning achieves only 26% of the maximum performance, our approach achieves 92%."
     },
     {
       "name": "Towards Collaborative Performance Tuning of Algorithmic Skeletons (HLPGPU)",
@@ -269,11 +291,11 @@
   ],
   "awards": [
     {
-      "title": "Best Paper Award, [PACT](https://parasol.tamu.edu/pact17/)",
+      "title": "Best Paper Award, [PACT](https://parasol.tamu.edu/pact17/). 109 submissions, 23% acceptance rate",
       "date": "2017"
     },
     {
-      "title": "Best Paper Award, [CGO](http://cgo.org/cgo2017/)",
+      "title": "Best Paper Award, [CGO](http://cgo.org/cgo2017/). 116 submissions, 22% acceptance rate",
       "date": "2017"
     },
     {
@@ -299,6 +321,31 @@
   ],
   "academic_activities": {
     "invited_talks": [
+      {
+        "name": "Using Deep Learning to Generate Human-like Code (Facebook, Menlo Park)",
+        "date": "2018",
+        "duration": "60 minutes",
+        "summary": "An overview of my research on deep learning for synthetic program generation, and the challenges of semantic programming language modeling using neural networks.",
+        "picture": "https://chriscummins.cc/pub/2017-spls-slides.png",
+        "assets": [
+          {
+            "name": "Slides",
+            "url": "https://chriscummins.cc/pub/2017-spls-slides.pdf"
+          }
+        ]
+      },
+      {
+        "name": "End-to-end Deep Learning of Compiler Hueristics (Google, Mountain View)",
+        "date": "2018",
+        "duration": "30 minutes",
+        "summary": "My slide deck for PACT'17.",
+      },
+      {
+        "name": "End-to-end Deep Learning of Compiler Hueristics (Google, Sunnyvale)",
+        "date": "2018",
+        "duration": "60 minutes",
+        "summary": "My slide deck for PACT'17.",
+      },
       {
         "name": "Using Deep Learning to Generate Human-like Code (SPLS)",
         "date": "2017",
@@ -354,6 +401,18 @@
     ],
     "posters": [
       {
+        "name": "ISSTA",
+        "date": "2018"
+      },
+      {
+        "name": "DeepLearn",
+        "date": "2018"
+      },
+      {
+        "name": "ACACES",
+        "date": "2018"
+      },
+      {
         "name": "PPar",
         "date": "2017",
         "url": "https://chriscummins.cc/pub/2017-ppar-poster.pdf",
@@ -404,6 +463,11 @@
     ],
     "peer_reviews": [
       {
+        "name": "CGO",
+        "date": "2018",
+        "url": "http://cgo.org/cgo2018/"
+      },
+      {
         "name": "ACM TACO",
         "date": "2016",
         "url": "https://taco.acm.org/"
@@ -429,7 +493,8 @@
         "Python",
         "Git",
         "GNU / Linux",
-        "Bash"
+        "Bash",
+        "Jupyter"
       ]
     },
     {
@@ -439,7 +504,9 @@
         "HTML+CSS+JS",
         "OpenCL",
         "SQL",
-        "TensorFlow"
+        "TensorFlow",
+        "Java",
+        "Bazel"
       ]
     }
   ],
