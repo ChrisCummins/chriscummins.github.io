@@ -1,5 +1,5 @@
 {
-  "README": "parse strings as markdown. Schema adapted from https://jsonresume.org/",
+  "README": "Parse strings as markdown. Schema adapted from https://jsonresume.org/",
   "basics": {
     "name": "Chris Cummins",
     "label": "Research Student",
