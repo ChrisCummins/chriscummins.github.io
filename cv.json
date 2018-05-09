@@ -489,8 +489,8 @@
       "name": "Advanced",
       "level": "Advanced",
       "keywords": [
-        "C/C++",
         "Python",
+        "C/C++",
         "Git",
         "GNU / Linux",
         "Bash",
@@ -523,6 +523,11 @@
         "summary": "Deep learning program generator"
       },
       {
+        "name": "DeepSmith",
+        "url": "https://github.com/ChrisCummins/phd/tree/master/deeplearning/deepsmith",
+        "summary": "Compiler fuzz testing through neural networks"
+      }
+      {
         "name": "deeptune",
         "url": "https://github.com/ChrisCummins/paper-end2end-dl",
         "summary": "Automatic compiler heuristic construction"
@@ -554,7 +559,7 @@
       },
       {
         "name": "labm8",
-        "url": "https://github.com/ChrisCummins/labm8",
+        "url": "https://github.com/ChrisCummins/phd/tree/master/lib/labm8",
         "summary": "Utilities for quantitative experimental data"
       },
       {
@@ -574,7 +579,7 @@
       },
       {
         "name": "omnitune",
-        "url": "https://github.com/ChrisCummins/omnitune",
+        "url": "https://github.com/ChrisCummins/phd/tree/master/gpu/omnitune",
         "summary": "Distributed machine learning autotuning"
       },
       {
