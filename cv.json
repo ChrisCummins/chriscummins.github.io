@@ -523,7 +523,7 @@
         "summary": "Deep learning program generator"
       },
       {
-        "name": "DeepSmith",
+        "name": "deepsmith",
         "url": "https://github.com/ChrisCummins/phd/tree/master/deeplearning/deepsmith",
         "summary": "Compiler fuzz testing through neural networks"
       }
