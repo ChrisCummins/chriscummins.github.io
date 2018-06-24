@@ -172,8 +172,19 @@
       "name": "Compiler Fuzzing through Deep Learning (ISSTA Distinguished Paper)",
       "authors": "**C. Cummins**, P. Petoumenos, A. Murray, and H. Leather",
       "publication": "[ISSTA](https://conf.researchr.org/home/issta-2018) (28% acceptance rate), Amsterdam, Netherlands",
+      "picture": "https://chriscummins.cc/pub/2018-issta.png",
       "releaseDate": "2018",
-      "summary": "Unsupervised machine learning to derive program generators for compiler fuzz testing. Implemented in 100x less code than state-of-the-art program generator, and 3.03x faster. Found and reported 67 bug reports in OpenCL compilers."
+      "summary": "Unsupervised machine learning to derive program generators for compiler fuzz testing. Implemented in 100x less code than state-of-the-art program generator, and 3.03x faster. Found and reported 67 bug reports in OpenCL compilers.",
+      "assets": [
+        {
+          "name": "Preprint",
+          "url": "https://chriscummins.cc/pub/2018-issta.pdf",
+        },
+        {
+          "name": "Source Code",
+          "url": "https://chriscummins.cc/deeptune"
+        }
+      ]
     },
     {
       "name": "DeepSmith: Compiler Fuzzing through Deep Learning (ACACES)",
