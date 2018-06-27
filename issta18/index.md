@@ -1,3 +1,3 @@
 ---
-redirect_to: "https://github.com/ChrisCummins/phd/tree/master/docs/2018_07_issta"
+redirect_to: "https://github.com/ChrisCummins/phd/blob/master/docs/2018_07_issta/README.md"
 ---
