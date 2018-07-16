@@ -181,6 +181,10 @@
           "url": "https://chriscummins.cc/pub/2018-issta.pdf"
         },
         {
+          "name": "Slides",
+          "url": "https://speakerdeck.com/chriscummins/compiler-fuzzing-through-deep-learning-issta-18"
+        },
+        {
           "name": "Source Code",
           "url": "https://chriscummins.cc/deepsmith"
         }
@@ -197,7 +201,7 @@
         {
           "name": "Preprint",
           "url": "https://chriscummins.cc/pub/2018-acaces.pdf"
-        },
+        }
       ]
     },
     {
@@ -211,6 +215,10 @@
         {
           "name": "Preprint",
           "url": "https://chriscummins.cc/pub/2017-pact.pdf"
+        },
+        {
+          "name": "Slides",
+          "url": "https://speakerdeck.com/chriscummins/end-to-end-deep-learning-of-optimization-heuristics-pact-17"
         },
         {
           "name": "Source Code",
@@ -363,13 +371,13 @@
         "name": "End-to-end Deep Learning of Compiler Hueristics (Google, Mountain View)",
         "date": "2018",
         "duration": "30 minutes",
-        "summary": "My slide deck for PACT'17.",
+        "summary": "My slide deck for PACT'17."
       },
       {
         "name": "End-to-end Deep Learning of Compiler Hueristics (Google, Sunnyvale)",
         "date": "2018",
         "duration": "60 minutes",
-        "summary": "My slide deck for PACT'17.",
+        "summary": "My slide deck for PACT'17."
       },
       {
         "name": "Using Deep Learning to Generate Human-like Code (SPLS)",
