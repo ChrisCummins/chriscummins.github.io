@@ -355,6 +355,18 @@
   "academic_activities": {
     "invited_talks": [
       {
+        "name": "Machine Learning for Compilers (ISAGT)",
+        "date": "2018",
+        "duration": "30 minutes",
+        "summary": "A brief overview of some of ways machine learning has been used to help both compiler developers and users.",
+        "assets": [
+          {
+            "name": "Slides",
+            "url": "https://github.com/ChrisCummins/phd/raw/master/talks/2018_07_isagt/2018_07_isagt.pdf"
+          }
+        ]
+      },
+      {
         "name": "Using Deep Learning to Generate Human-like Code (Facebook, Menlo Park)",
         "date": "2018",
         "duration": "60 minutes",
@@ -435,10 +447,6 @@
     "posters": [
       {
         "name": "ISSTA",
-        "date": "2018"
-      },
-      {
-        "name": "DeepLearn",
         "date": "2018"
       },
       {
