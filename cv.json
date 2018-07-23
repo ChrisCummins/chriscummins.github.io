@@ -447,11 +447,15 @@
     "posters": [
       {
         "name": "ISSTA",
-        "date": "2018"
+        "date": "2018",
+        "url": "https://chriscummins.cc/pub/2018-acaces-poster.pdf",
+        "picture": "https://chriscummins.cc/pub/2018-acaces-poster.png"
       },
       {
         "name": "ACACES",
-        "date": "2018"
+        "date": "2018",
+        "url": "https://chriscummins.cc/pub/2018-acaces-poster.pdf",
+        "picture": "https://chriscummins.cc/pub/2018-acaces-poster.png"
       },
       {
         "name": "PPar",
