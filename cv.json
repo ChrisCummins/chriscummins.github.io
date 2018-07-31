@@ -102,7 +102,7 @@
       "endDate": "2019 (expected)",
       "thesis": "Deep Learning over Programs",
       "advisors": "Hugh Leather and Pavlos Petoumenos",
-      "summary": "Deep learning over programs. Developing novel machine learning methods for random program generation, compiler optimisations, and representative benchmarking. Applications for heterogeneous parallelism, compiler testing, and adaptive performance tuning. To date: 6 publications, 2 best papers, 7 invited talks, 5 posters, 4 conferences.",
+      "summary": "Deep learning over programs. Developing novel machine learning methods for random program generation, compiler optimisations, and representative benchmarking. Applications for heterogeneous parallelism, compiler testing, and adaptive performance tuning. To date: 8 publications, 3 best papers, 9 invited talks, 7 posters, 5 conferences.",
       "assets": [
         {
           "name": "First Year Review",
@@ -354,6 +354,18 @@
   ],
   "academic_activities": {
     "invited_talks": [
+      {
+        "name": "Compiler Fuzzing through Deep Learning (Codeplay Software)",
+        "date": "2018",
+        "duration": "30 minutes",
+        "summary": "A novel methodology for compiler fuzzing.",
+        "assets": [
+          {
+            "name": "Slides",
+            "url": "https://speakerdeck.com/chriscummins/compiler-fuzzing-through-deep-learning-issta-18"
+          }
+        ]
+      },
       {
         "name": "Machine Learning for Compilers (ISAGT)",
         "date": "2018",
