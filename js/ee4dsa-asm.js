@@ -10,7 +10,7 @@ var _routineCounter = 0; // Used for automatic interrupt label naming
 var _vectorCounter = 0;  // Used for automatic interrupt label naming
 
 // Reset the automatic labelling counters
-var resetLabelCounters = function() {
+var resetLabelCounters = function () {
   _labelCounter = 0;
   _routineCounter = 0;
   _vectorCounter = 0;
@@ -19,10 +19,10 @@ var resetLabelCounters = function() {
 /*
  * An assembly instruction label
  */
-var Label = function(name) {
+var Label = function (name) {
   this.name = name ? name : 'label' + _labelCounter++;
 
-  this.html = function() {
+  this.html = function () {
     return '<span class="asm-label">' + this.name + '</span>:';
   };
 };
@@ -30,10 +30,10 @@ var Label = function(name) {
 /*
  * An assembly routine label
  */
-var RoutineLabel = function(name) {
+var RoutineLabel = function (name) {
   this.name = name ? name : 'subroutine' + _routineCounter++;
 
-  this.html = function() {
+  this.html = function () {
     return ' \n<span class="asm-label">' + this.name + '</span>:';
   };
 };
@@ -41,10 +41,10 @@ var RoutineLabel = function(name) {
 /*
  * An interrupt handler label
  */
-var VectorLabel = function(name) {
+var VectorLabel = function (name) {
   this.name = name ? name : 'irq' + _vectorCounter++;
 
-  this.html = function() {
+  this.html = function () {
     return ' \n<span class="asm-label">' + this.name + '</span>:';
   };
 };
@@ -54,8 +54,8 @@ var VectorLabel = function(name) {
 /*
  * An empty line
  */
-var BlankLine = function() {
-  this.html = function() {
+var BlankLine = function () {
+  this.html = function () {
     return ' ';
   };
 };
@@ -63,8 +63,8 @@ var BlankLine = function() {
 /*
  * A full-line comment
  */
-var Comment = function(text) {
-  this.html = function() {
+var Comment = function (text) {
+  this.html = function () {
     return '<span class="comment">;; ' + text + '</span>';
   };
 };
@@ -72,16 +72,16 @@ var Comment = function(text) {
 /*
  * A program directive
  */
-var Directive = function(name) {
-  this.html = function() {
+var Directive = function (name) {
+  this.html = function () {
     return '<span class="directive">.' + name + '</span>';
   };
 };
 
-var Org = function(address) {
-  this.html = function() {
+var Org = function (address) {
+  this.html = function () {
     return new Directive('org <span class="value">' +
-                         int2hex32(address) + '</span>').html();
+        int2hex32(address) + '</span>').html();
   };
 };
 
@@ -96,7 +96,7 @@ var Org = function(address) {
  *   isIdtVector  (optional) Whether the instruction is an interrupt vector
  *   label:       (optional) A label object for the instruction
  */
-var Instruction = function(ops) {
+var Instruction = function (ops) {
   'use strict';
 
   this.address = ops.address;
@@ -115,16 +115,17 @@ var Instruction = function(ops) {
    * label of type 'type' (valid types: 'routine', 'interrupt'). If
    * 'type' isn't given, generate default label name.
    */
-  this.label = function(type, name) {
+  this.label = function (type, name) {
     if (this._label === undefined) { // Internal label generation
-      if (name)
+      if (name) {
         this._label = new Label(name);
-      else if (type == 'routine')
+      } else if (type == 'routine') {
         this._label = new RoutineLabel();
-      else if (type == 'interrupt')
+      } else if (type == 'interrupt') {
         this._label = new VectorLabel();
-      else
+      } else {
         this._label = new Label();
+      }
     }
 
     return this._label;
@@ -136,7 +137,7 @@ var Instruction = function(ops) {
    * instruction resides. This is used to generate cross-referenced
    * labels.
    */
-  this.html = function(ram) {
+  this.html = function (ram) {
     ram = ram || [];
 
     // Generate the HTML for the label (if there is one)
@@ -147,19 +148,24 @@ var Instruction = function(ops) {
     if (this.jumpAddress) {
       // Branch instruction
       if (this.isIdtVector)             // Interrupt
+      {
         s = ram[this.jumpAddress].label('interrupt').name;
-      else if (this.mnemonic == 'call') // Subroutine
+      } else if (this.mnemonic == 'call') // Subroutine
+      {
         s = ram[this.jumpAddress].label('routine').name;
-      else                              // Jump
+      } else                              // Jump
+      {
         s = ram[this.jumpAddress].label().name;
+      }
 
       string += '<span class="asm-label">' + s + '</span>';
     } else { // Regular instruction
-      this.args.forEach(function(arg) {
-        if (arg.match(/^((0x[0-9a-f]+)|([0-9]+))$/i))
+      this.args.forEach(function (arg) {
+        if (arg.match(/^((0x[0-9a-f]+)|([0-9]+))$/i)) {
           string += '<span class="value">' + arg + '</span>, ';
-        else
+        } else {
           string += '<span class="register">' + arg + '</string>, ';
+        }
       });
     }
 

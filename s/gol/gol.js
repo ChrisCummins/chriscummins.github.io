@@ -1,12 +1,12 @@
 var Gol = Gol || {};
 
-(function() {
+(function () {
   'use strict';
 
   /*
    * A proper modulus operator.
    */
-  Number.prototype.mod = function(n) {
+  Number.prototype.mod = function (n) {
     return ((this % n) + n) % n;
   };
 
@@ -14,10 +14,10 @@ var Gol = Gol || {};
    * A mouse object, which maintains an internal state and is responsible for
    * attaching the relevant mouse event handlers.
    */
-  var Mouse = function() {
+  var Mouse = function () {
     this.x = 0,
-    this.y = 0,
-    this.leftDown = false;
+        this.y = 0,
+        this.leftDown = false;
 
     /*
      * Create a new cell if the mouse is positioned over a cell.
@@ -35,47 +35,52 @@ var Gol = Gol || {};
         var row = Math.floor((y - tile.offY) / (tile.size + tile.margin));
 
         /* Return nothing if the coordinates are invalid */
-        if (col > grid.w || col < 0 || row > grid.h || row < 0)
+        if (col > grid.w || col < 0 || row > grid.h || row < 0) {
           return null;
+        }
 
         /* Return the cell */
         return cells[row * grid.w + col];
       }
 
       /* Spawn a cell if possible. */
-      if ((cell = getCellAtPos(mouse.x, mouse.y)) !== null)
+      if ((cell = getCellAtPos(mouse.x, mouse.y)) !== null) {
         cell.spawn();
+      }
     };
 
     /* Event listeners */
-    canvas.addEventListener('mousemove', function(event) {
+    canvas.addEventListener('mousemove', function (event) {
       this.x = event.clientX - bounds.left;
       this.y = event.clientY - bounds.top;
 
-      if (this.leftDown)
+      if (this.leftDown) {
         spawnCell(this);
+      }
     }, false);
 
-    canvas.addEventListener('mousedown', function(event) {
+    canvas.addEventListener('mousedown', function (event) {
       if (event.button == 0) {
         this.leftDown = true;
         spawnCell(this);
-      } else if (event.button == 2)
+      } else if (event.button == 2) {
         paused = true;
+      }
     }, false);
 
-    canvas.addEventListener('mouseup', function(event) {
-      if (event.button == 0)
+    canvas.addEventListener('mouseup', function (event) {
+      if (event.button == 0) {
         this.leftDown = false;
-      else if (event.button == 2)
+      } else if (event.button == 2) {
         paused = false;
+      }
     }, false);
   }
 
   /*
    * A cell object.
    */
-  var Cell = function(i, j) {
+  var Cell = function (i, j) {
     /* Grid coordinates */
     this.i = i, this.j = j;
 
@@ -106,7 +111,7 @@ var Gol = Gol || {};
    * Initialise a cell. This must be called after all of the cells in a grid
    * have been instantiated.
    */
-  Cell.prototype.init = function() {
+  Cell.prototype.init = function () {
     /* Index into cells array */
     var n = grid.w * this.j + this.i;
 
@@ -125,32 +130,33 @@ var Gol = Gol || {};
     this.neighbours.push(cells[(n + grid.w + 1).mod(grid.size)]);
   }
 
-  Cell.prototype.spawn = function() {
+  Cell.prototype.spawn = function () {
     this.create();
     this.current = this.next;
   }
 
-  Cell.prototype.create = function() {
+  Cell.prototype.create = function () {
     this.next = true;
     this.timestamp = new Date().getTime();
   }
 
-  Cell.prototype.destroy = function() {
+  Cell.prototype.destroy = function () {
     this.next = false;
     this.timestamp = new Date().getTime();
   }
 
-  Cell.prototype.isAlive = function() {
+  Cell.prototype.isAlive = function () {
     return this.current;
   }
 
-  Cell.prototype.update = function() {
+  Cell.prototype.update = function () {
 
     /* Get the number of living neighbours */
     this.aliveNeighbours = 0;
     for (var i = 0; i < 8; i++) {
-      if (this.neighbours[i].isAlive())
+      if (this.neighbours[i].isAlive()) {
         this.aliveNeighbours++;
+      }
     }
 
     if (this.current === true) {
@@ -158,15 +164,17 @@ var Gol = Gol || {};
       /* RULE: Any live cell with fewer than two live neighbours dies, as if
        * caused by under-population.
        */
-      if (this.aliveNeighbours < 2)
+      if (this.aliveNeighbours < 2) {
         this.destroy();
+      }
 
       /*
        * RULE: Any live cell with more than three live neighbours dies, as if by
        * overcrowding.
        */
-      if (this.aliveNeighbours > 3)
+      if (this.aliveNeighbours > 3) {
         this.destroy();
+      }
 
       /* RULE: Any live cell with two or three live neighbours lives on to the
        * next generation. */
@@ -175,12 +183,13 @@ var Gol = Gol || {};
       /* RULE: Any dead cell with exactly three live neighbours becomes a live
        * cell, as if by reproduction.
        */
-      if (this.aliveNeighbours === 3)
+      if (this.aliveNeighbours === 3) {
         this.create();
+      }
     }
   }
 
-  Cell.prototype.draw = function() {
+  Cell.prototype.draw = function () {
 
     /**
      * Converts an HSL color value to RGB. Conversion formula
@@ -195,20 +204,25 @@ var Gol = Gol || {};
      */
     function hslToRgb(h, s, l) {
       function hue2rgb(p, q, t) {
-        if (t < 0)
+        if (t < 0) {
           t += 1;
+        }
 
-        if (t > 1)
+        if (t > 1) {
           t -= 1;
+        }
 
-        if (t < 1/6)
+        if (t < 1 / 6) {
           return p + (q - p) * 6 * t;
+        }
 
-        if (t < 1/2)
+        if (t < 1 / 2) {
           return q;
+        }
 
-        if (t < 2/3)
-          return p + (q - p) * (2/3 - t) * 6;
+        if (t < 2 / 3) {
+          return p + (q - p) * (2 / 3 - t) * 6;
+        }
 
         return p;
       }
@@ -221,9 +235,9 @@ var Gol = Gol || {};
         var q = l < 0.5 ? l * (1 + s) : l + s - l * s;
         var p = 2 * l - q;
 
-        r = hue2rgb(p, q, h + 1/3);
+        r = hue2rgb(p, q, h + 1 / 3);
         g = hue2rgb(p, q, h);
-        b = hue2rgb(p, q, h - 1/3);
+        b = hue2rgb(p, q, h - 1 / 3);
       }
 
       return [r * 255, g * 255, b * 255];
@@ -247,8 +261,8 @@ var Gol = Gol || {};
       var rgb = hslToRgb(h, s, l);
 
       renderer.fillStyle = 'rgb(' + Math.round(rgb[0]) + ',' +
-        Math.round(rgb[1]) + ',' +
-        Math.round(rgb[2]) + ')';
+          Math.round(rgb[1]) + ',' +
+          Math.round(rgb[2]) + ')';
 
       renderer.fillRect(this.x, this.y, tile.size, tile.size);
     } else {
@@ -261,7 +275,7 @@ var Gol = Gol || {};
    * A time object, responsible for keeping track of the simulation clocks and
    * rate of simulation.
    */
-  var Time = function(fps) {
+  var Time = function (fps) {
     this.fps = fps;
     this.minFps = Math.max(0, Math.floor(this.fps / 2));
     this.dt = 1000 / this.fps;
@@ -312,20 +326,23 @@ var Gol = Gol || {};
     function update() {
 
       /* First we advance each cell to its next state. */
-      for (var i = 0; i < cells.length; i++)
+      for (var i = 0; i < cells.length; i++) {
         cells[i].current = cells[i].next;
+      }
 
       /* Update each cell in turn */
-      for (var i = 0; i < cells.length; i++)
+      for (var i = 0; i < cells.length; i++) {
         cells[i].update();
+      }
     }
 
     /*
      * Draw the simulation state.
      */
     function draw() {
-      for (var i = 0; i < cells.length; i++)
+      for (var i = 0; i < cells.length; i++) {
         cells[i].draw();
+      }
     }
 
     /* Update the clocks */
@@ -334,8 +351,9 @@ var Gol = Gol || {};
 
     /* Enforce a maximum frame time to prevent the "spiral of death" when
      * operating under heavy load */
-    if (tickTime > time.maxTickTime)
+    if (tickTime > time.maxTickTime) {
       tickTime = time.maxTickTime;
+    }
 
     time.current = newTime;
 
@@ -344,8 +362,9 @@ var Gol = Gol || {};
     if (paused !== true) {
       time.accumulator += tickTime;
 
-      for ( ; time.accumulator >= time.dt; time.accumulator -= time.dt)
+      for (; time.accumulator >= time.dt; time.accumulator -= time.dt) {
         update();
+      }
     }
 
     draw();
@@ -376,8 +395,9 @@ var Gol = Gol || {};
             cells.push(new Cell(i, j));
 
             /* Randomly populate the starting grid. */
-            if (Math.random() > 0.85)
+            if (Math.random() > 0.85) {
               cells[j * grid.w + i].create();
+            }
           }
         }
 

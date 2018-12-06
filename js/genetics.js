@@ -15,7 +15,7 @@
  */
 var Genetics = Genetics || {};
 
-(function() {
+(function () {
   'use strict';
 
   /* The analytics pane elements */
@@ -97,7 +97,6 @@ var Genetics = Genetics || {};
     return isSupported;
   }
 
-
   /*
    * Convert a seconds value to a human-redable string.
    */
@@ -108,8 +107,8 @@ var Genetics = Genetics || {};
     s = Math.floor(s % 3600 % 60);
 
     return ((h > 0 ? h + ':' : '') +
-            (m > 0 ? (h > 0 && m < 10 ? '0' : '') +
-             m + ':' : '0:') + (s < 10 ? '0' : '') + s);
+        (m > 0 ? (h > 0 && m < 10 ? '0' : '') +
+            m + ':' : '0:') + (s < 10 ? '0' : '') + s);
   }
 
   /*
@@ -160,11 +159,13 @@ var Genetics = Genetics || {};
             dna += Math.random() * mutateAmount * 2 - mutateAmount;
 
             /* Keep the value in range */
-            if (dna < 0)
+            if (dna < 0) {
               dna = 0;
+            }
 
-            if (dna > 1)
+            if (dna > 1) {
               dna = 1;
+            }
           }
 
           this.dna.push(dna);
@@ -181,9 +182,9 @@ var Genetics = Genetics || {};
 
         /* Generate RGBA color values */
         this.dna.push(Math.random(), // R
-                      Math.random(), // G
-                      Math.random(), // B
-                      Math.max(Math.random() * Math.random(), 0.2)); // A
+            Math.random(), // G
+            Math.random(), // B
+            Math.max(Math.random() * Math.random(), 0.2)); // A
 
         /* Generate XY positional values */
         var x = Math.random();
@@ -191,7 +192,7 @@ var Genetics = Genetics || {};
 
         for (var j = 0; j < vertices; j++) {
           this.dna.push(x + Math.random() - 0.5, // X
-                        y + Math.random() - 0.5); // Y
+              y + Math.random() - 0.5); // Y
         }
       }
     }
@@ -203,8 +204,8 @@ var Genetics = Genetics || {};
     this.draw(workingCtx, workingSize, workingSize);
 
     var imageData = workingCtx.getImageData(0, 0,
-                                            workingSize,
-                                            workingSize).data;
+        workingSize,
+        workingSize).data;
     var diff = 0;
 
     /*
@@ -219,10 +220,11 @@ var Genetics = Genetics || {};
         diff += dp * dp;
       }
 
-    this.fitness = 1 - diff / (workingSize * workingSize * 4 * 256 * 256);
+      this.fitness = 1 - diff / (workingSize * workingSize * 4 * 256 * 256);
     } else {  // Sum differences.
-      for (var p = 0; p < workingSize * workingSize * 4; p++)
+      for (var p = 0; p < workingSize * workingSize * 4; p++) {
         diff += Math.abs(imageData[p] - workingData[p]);
+      }
 
       this.fitness = 1 - diff / (workingSize * workingSize * 4 * 256);
     }
@@ -231,7 +233,7 @@ var Genetics = Genetics || {};
   /*
    * Draw a representation of a DNA string to a canvas.
    */
-  Individual.prototype.draw = function(ctx, width, height) {
+  Individual.prototype.draw = function (ctx, width, height) {
 
     /* Set the background */
     ctx.fillStyle = '#000';
@@ -249,7 +251,7 @@ var Genetics = Genetics || {};
       /* Create each vertices sequentially */
       for (var i = 0; i < vertices - 1; i++) {
         ctx.lineTo(this.dna[g + i * 2 + 6] * width,
-                   this.dna[g + i * 2 + 7] * height);
+            this.dna[g + i * 2 + 7] * height);
       }
 
       ctx.closePath();
@@ -289,15 +291,16 @@ var Genetics = Genetics || {};
     this.individuals = [];
 
     /* Generate our random starter culture */
-    for (var i = 0; i < size; i++)
+    for (var i = 0; i < size; i++) {
       this.individuals.push(new Individual());
+    }
 
   }
 
   /*
    * Breed a new generation.
    */
-  Population.prototype.iterate = function() {
+  Population.prototype.iterate = function () {
 
     if (this.individuals.length > 1) {
 
@@ -316,23 +319,25 @@ var Genetics = Genetics || {};
       /* The number of individuals to randomly generate */
       var randCount = Math.ceil(1 / selectionCutoff);
 
-      this.individuals = this.individuals.sort(function(a, b) {
+      this.individuals = this.individuals.sort(function (a, b) {
         return b.fitness - a.fitness;
       });
 
-      if (fittestSurvive)
+      if (fittestSurvive) {
         randCount--;
+      }
 
       for (var i = 0; i < selectCount; i++) {
 
         for (var j = 0; j < randCount; j++) {
           var randIndividual = i;
 
-          while (randIndividual == i)
+          while (randIndividual == i) {
             randIndividual = (Math.random() * selectCount) >> 0;
+          }
 
           offspring.push(new Individual(this.individuals[i].dna,
-                                        this.individuals[randIndividual].dna));
+              this.individuals[randIndividual].dna));
         }
       }
 
@@ -354,19 +359,19 @@ var Genetics = Genetics || {};
       var parent = this.individuals[0];
       var child = new Individual(parent.dna, parent.dna);
 
-      if (child.fitness > parent.fitness)
+      if (child.fitness > parent.fitness) {
         this.individuals = [child];
+      }
 
     }
   };
 
-
   /*
    * Return the fittest individual from the population.
    */
-  Population.prototype.getFittest = function() {
+  Population.prototype.getFittest = function () {
 
-    return this.individuals.sort(function(a, b) {
+    return this.individuals.sort(function (a, b) {
       return b.fitness - a.fitness;
     })[0];
 
@@ -413,7 +418,6 @@ var Genetics = Genetics || {};
     referenceImage.src = src;
   }
 
-
   /*
    * Prepare an image for use as the reference image.
    */
@@ -425,12 +429,12 @@ var Genetics = Genetics || {};
     referenceCanvas.height = workingSize;
 
     referenceCtx.drawImage(referenceImage,
-                           0, 0, 350, 350, 0, 0,
-                           workingSize, workingSize);
+        0, 0, 350, 350, 0, 0,
+        workingSize, workingSize);
 
     var imageData = referenceCtx.getImageData(0, 0,
-                                              workingSize,
-                                              workingSize).data;
+        workingSize,
+        workingSize).data;
 
     workingData = [];
     var p = workingSize * workingSize * 4;
@@ -446,7 +450,6 @@ var Genetics = Genetics || {};
     lowestFitness = 100;
   }
 
-
   /*
    * Initialise the configuration panel.
    */
@@ -457,49 +460,49 @@ var Genetics = Genetics || {};
      */
     $('#population-size-slider').slider({
       range: 'min', min: 0, max: 100, step: 1,
-      slide: function(event, ui) {
+      slide: function (event, ui) {
         $('#population-size').text(Math.max(1, ui.value));
       }
     });
 
     $('#cutoff-slider').slider({
       range: 'min', min: 1, max: 100, step: 1,
-      slide: function(event, ui) {
+      slide: function (event, ui) {
         $('#cutoff').text(ui.value + '%');
       }
     });
 
     $('#mutation-chance-slider').slider({
       range: 'min', min: 0, max: 5, step: 0.1,
-      slide: function(event, ui) {
+      slide: function (event, ui) {
         $('#mutation-chance').text(ui.value.toFixed(1) + '%');
       }
     });
 
     $('#mutation-amount-slider').slider({
       range: 'min', min: 0, max: 100, step: 1,
-      slide: function(event, ui) {
+      slide: function (event, ui) {
         $('#mutation-amount').text(ui.value + '%');
       }
     });
 
     $('#polygons-slider').slider({
       range: 'min', min: 0, max: 500, step: 5,
-      slide: function(event, ui) {
+      slide: function (event, ui) {
         $('#polygons').text(Math.max(1, ui.value));
       }
     });
 
     $('#vertices-slider').slider({
       range: 'min', min: 1, max: 30, step: 1,
-      slide: function(event, ui) {
+      slide: function (event, ui) {
         $('#vertices').text(ui.value);
       }
     });
 
     $('#resolution-slider').slider({
       range: 'min', min: 0, max: 350, step: 5,
-      slide: function(event, ui) {
+      slide: function (event, ui) {
         var resolution = Math.max(1, ui.value);
 
         $('#resolution').text(resolution + 'x' + resolution);
@@ -512,66 +515,77 @@ var Genetics = Genetics || {};
    * used.
    */
   function setConfiguration(_populationSize,
-                            _cutoffSlider,
-                            _fittestSurvive,
-                            _mutationChance,
-                            _mutationAmount,
-                            _polygons,
-                            _vertices,
-                            _resolution,
-                            _fillPolygons,
-                            _randomInheritance,
-                            _diffSquared) {
+      _cutoffSlider,
+      _fittestSurvive,
+      _mutationChance,
+      _mutationAmount,
+      _polygons,
+      _vertices,
+      _resolution,
+      _fillPolygons,
+      _randomInheritance,
+      _diffSquared) {
 
-    if (_populationSize === undefined)
+    if (_populationSize === undefined) {
       var _populationSize = 50;
+    }
     $('#population-size-slider').slider('value', _populationSize);
     $('#population-size').text(_populationSize);
 
-    if (_cutoffSlider === undefined)
+    if (_cutoffSlider === undefined) {
       var _cutoffSlider = 15;
+    }
     $('#cutoff-slider').slider('value', _cutoffSlider);
     $('#cutoff').text(_cutoffSlider + '%');
 
-    if (_fittestSurvive === undefined)
+    if (_fittestSurvive === undefined) {
       var _fittestSurvive = false;
+    }
     $('#fittest-survive').prop('checked', _fittestSurvive);
 
-    if (_mutationChance === undefined)
+    if (_mutationChance === undefined) {
       var _mutationChance = 1.0;
+    }
     $('#mutation-chance-slider').slider('value', _mutationChance);
     $('#mutation-chance').text(_mutationChance.toFixed(1) + '%');
 
-    if (_mutationAmount === undefined)
+    if (_mutationAmount === undefined) {
       var _mutationAmount = 10;
+    }
     $('#mutation-amount-slider').slider('value', _mutationAmount);
     $('#mutation-amount').text(_mutationAmount + '%');
 
-    if (_polygons === undefined)
+    if (_polygons === undefined) {
       var _polygons = 125;
+    }
     $('#polygons-slider').slider('value', _polygons);
     $('#polygons').text(_polygons);
 
-    if (_vertices === undefined)
+    if (_vertices === undefined) {
       var _vertices = 3;
+    }
     $('#vertices-slider').slider('value', _vertices);
     $('#vertices').text(_vertices);
 
-    if (_resolution === undefined)
+    if (_resolution === undefined) {
       var _resolution = 75;
+    }
     $('#resolution-slider').slider('value', _resolution);
     $('#resolution').text(_resolution + 'x' + _resolution);
 
-    if (_fillPolygons === undefined)
+    if (_fillPolygons === undefined) {
       var _fillPolygons = true;
+    }
     $('#fill-polygons').prop('checked', _fillPolygons);
 
-    if (_randomInheritance === undefined)
+    if (_randomInheritance === undefined) {
       var _randomInheritance = false;
+    }
     $('#random-inheritance').prop('checked', _randomInheritance);
 
-    if (_diffSquared === undefined)
+    if (_diffSquared === undefined) {
       var _diffSquared = true;
+    }
     $('#diff-squared').prop('checked', _diffSquared);
   }
 
@@ -603,7 +617,6 @@ var Genetics = Genetics || {};
     workingCanvas.style.height = workingSize;
   }
 
-
   /*
    * Run the simulation.
    */
@@ -611,8 +624,9 @@ var Genetics = Genetics || {};
     document.body.classList.remove('genetics-inactive');
     document.body.classList.add('genetics-active');
 
-    if (isPaused())
+    if (isPaused()) {
       startTime = new Date().getTime() - resumedTime;
+    }
 
     if (isStopped()) {
       jiffies = 0;
@@ -716,16 +730,16 @@ var Genetics = Genetics || {};
   /*
    * Stock image dropdown item selected.
    */
-  $('#stock-image-menu li a').click(function() {
+  $('#stock-image-menu li a').click(function () {
     setImage('/images/genetics/' +
-             $(this).text().toLowerCase().replace(/ /g, '-') +
-             '.jpg');
+        $(this).text().toLowerCase().replace(/ /g, '-') +
+        '.jpg');
   });
 
   /*
    * Start button callback.
    */
-  $('#start').click(function() {
+  $('#start').click(function () {
     if (isRunning()) {
       pauseSimulation();
     } else {
@@ -736,7 +750,7 @@ var Genetics = Genetics || {};
   /*
    * Stop button callback.
    */
-  $('#stop').click(function() {
+  $('#stop').click(function () {
     if (isRunning() || isPaused()) {
       stopSimulation();
     }
@@ -745,7 +759,7 @@ var Genetics = Genetics || {};
   /*
    * 'Get URL' button on results pane
    */
-  $('#get-url').click(function() {
+  $('#get-url').click(function () {
     var urlBox = $('#share-url')[0];
     // NOTE THIS MUST BE UPDATED IF THE PAGE MOVES:
     var location = 'https://chriscummins.cc/s/genetics/';
@@ -757,14 +771,14 @@ var Genetics = Genetics || {};
     urlBox.setSelectionRange(0, 250);
   });
 
-  $('#close-url').click(function() {
+  $('#close-url').click(function () {
     $('#share').hide();
   });
 
   /*
    * 'Export to PNG' button on results pane
    */
-  $('#save-png').click(function() {
+  $('#save-png').click(function () {
     window.open(outputCanvas.toDataURL());
   });
 
@@ -788,16 +802,16 @@ var Genetics = Genetics || {};
       var _diffSquared = (args[10]) ? true : false;
 
       setConfiguration(_populationSize,
-                       _cutoffSlider,
-                       _fittestSurvive,
-                       _mutationChance,
-                       _mutationAmount,
-                       _polygons,
-                       _vertices,
-                       _resolution,
-                       _fillPolygons,
-                       _randomInheritance,
-                       _diffSquared);
+          _cutoffSlider,
+          _fittestSurvive,
+          _mutationChance,
+          _mutationAmount,
+          _polygons,
+          _vertices,
+          _resolution,
+          _fillPolygons,
+          _randomInheritance,
+          _diffSquared);
     } catch (e) {
       /* Do nothing, we're not actually interested in recovering from bad
        * states. It either works, or it doesn't.
@@ -830,7 +844,7 @@ var Genetics = Genetics || {};
   /*
    * Document ready preparations.
    */
-  this.init = function() {
+  this.init = function () {
 
     /* Set our page element variables */
     outputCanvas = $('#outputCanvas')[0];
@@ -855,8 +869,10 @@ var Genetics = Genetics || {};
     };
 
     /* Check that we can run the program */
-    if (!isSupported())
-      alert('Unable to run genetics program!'); /* FIXME: better alert */
+    if (!isSupported()) {
+      alert('Unable to run genetics program!');
+    }
+    /* FIXME: better alert */
 
     initConfiguration();
 
@@ -874,11 +890,11 @@ var Genetics = Genetics || {};
     $('#stop').attr('disabled', false);
 
     /* Load configuration from hash, if any */
-    if (location.hash.split('&').length > 5)
+    if (location.hash.split('&').length > 5) {
       configurationFromString(location.hash.replace(/#/, ''));
+    }
   };
 }).call(Genetics);
-
 
 /**
  * Bootstrap the page with our initialisation code.

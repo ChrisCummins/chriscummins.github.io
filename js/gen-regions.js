@@ -29,20 +29,22 @@
  */
 var GenRegions = GenRegions || {};
 
-
-(function() {
+(function () {
   'use strict';
 
   /* Global Constants *********************************************************/
   var REG_FILE_SIZE = 128;
-  var REG_SIZE = 32; /* In bytes. */
+  var REG_SIZE = 32;
+  /* In bytes. */
 
   var MAX_SUBREGNUM = Math.pow(2, 16);
-  var MAX_REG_SPAN = 2; /* The number of register a region can span. */
+  var MAX_REG_SPAN = 2;
+  /* The number of register a region can span. */
 
   /* Default values for regions. */
   var DEFAULT_REG_FILE = 'g';
-  var DEFAULT_DATA_SIZE = 4; /* Float (4 bytes) */
+  var DEFAULT_DATA_SIZE = 4;
+  /* Float (4 bytes) */
 
   /* Vertical grid size. */
   var ROWS = 6;
@@ -68,14 +70,14 @@ var GenRegions = GenRegions || {};
    * syntax is correct, there may still be non-syntactic errors in the
    * description, e.g., an invalid combination of strides, etc. */
   var REGION_REGEXP = new RegExp(['^\s*(g|r)?0*',
-                                  '([0-9]?[0-9]|1[0-1][0-9]|12[0-7])',
-                                  '(\\.0*([0-9]?[0-9]?[0-9]|',
-                                  '[0-5][0-9]{3}|6[0-4][0-9]{3}|',
-                                  '65[0-4][0-9]{2}|',
-                                  '655[0-2][0-9]|6553[0-6]))?',
-                                  '(\s*<((0|1|2|4|8|16|32)[;,]\s*',
-                                  '(1|2|4|8|16),\*)?(0|1|2|4)>)?',
-                                  '(:?(ub|b|uw|w|ud|d|f|v))?$'].join(''), 'i');
+    '([0-9]?[0-9]|1[0-1][0-9]|12[0-7])',
+    '(\\.0*([0-9]?[0-9]?[0-9]|',
+    '[0-5][0-9]{3}|6[0-4][0-9]{3}|',
+    '65[0-4][0-9]{2}|',
+    '655[0-2][0-9]|6553[0-6]))?',
+    '(\s*<((0|1|2|4|8|16|32)[;,]\s*',
+    '(1|2|4|8|16),\*)?(0|1|2|4)>)?',
+    '(:?(ub|b|uw|w|ud|d|f|v))?$'].join(''), 'i');
 
   /* Erros in region parsing will through this. */
   function ParseError(title, msg) {
@@ -101,13 +103,13 @@ var GenRegions = GenRegions || {};
         flashRegionFormBackground(COLOR_BAD);
       } else {
         showAlertError('Application Error',
-                       'Uncaught JavaScript exception.');
+            'Uncaught JavaScript exception.');
       }
     }
   }
 
   /* Region input. */
-  $('#region-form').keyup(function(event) {
+  $('#region-form').keyup(function (event) {
     var key = event.keyCode;
 
     /* We want to update the region if we're typing something useful. */
@@ -117,9 +119,10 @@ var GenRegions = GenRegions || {};
   });
 
   /* --advanced. */
-  $('#advanced').click(function() {
-    if (isValidRegion())
+  $('#advanced').click(function () {
+    if (isValidRegion()) {
       refresh();
+    }
   });
 
   function setAdvanced(advanced) {
@@ -138,25 +141,25 @@ var GenRegions = GenRegions || {};
   }
 
   /* Submit. */
-  $('#submit').click(function() {
+  $('#submit').click(function () {
     refresh();
   });
 
   /* Share. */
-  $('#share-btn').click(function() {
+  $('#share-btn').click(function () {
     toggleShare();
   });
 
-  $('#share .close').click(function() {
+  $('#share .close').click(function () {
     $('#share').hide();
   });
 
   /* Alerts. */
-  $('#alert-error .close').click(function() {
+  $('#alert-error .close').click(function () {
     $('#alert-error').hide();
   });
 
-  $('#alert .close').click(function() {
+  $('#alert .close').click(function () {
     $('#alert').hide();
   });
 
@@ -191,8 +194,9 @@ var GenRegions = GenRegions || {};
           /* We only set the region text if it does not match the current
            * text. This prevents the caret from being moved to the end of the
            * string while typing. */
-          if (getRegionString() != pair[1])
+          if (getRegionString() != pair[1]) {
             setRegionString(pair[1]);
+          }
           argc++;
           break;
         case 'a':
@@ -209,7 +213,7 @@ var GenRegions = GenRegions || {};
       if (argc) {
         /* We got some arguments, but not all. */
         showAlertError('Malformed URL', 'URL hash contained invalid ' +
-                       'region description.');
+            'region description.');
         submitEmptyRegion();
       }
 
@@ -252,7 +256,7 @@ var GenRegions = GenRegions || {};
     var regionForm = $('#region-form')[0];
 
     regionForm.style.background = color;
-    var interval = setInterval(function() {
+    var interval = setInterval(function () {
       regionForm.style.background = '#FFF';
       clearInterval(interval);
     }, 500);
@@ -280,9 +284,10 @@ var GenRegions = GenRegions || {};
   }
 
   /* exec size */
-  $('#exec-size').change(function() {
-    if (isValidRegion())
+  $('#exec-size').change(function () {
+    if (isValidRegion()) {
       refresh();
+    }
   });
 
   function getExecSize() {
@@ -372,17 +377,17 @@ var GenRegions = GenRegions || {};
   pageBind('esc', hideAlerts);
   pageBind('c', clearRegionString);
 
-  $(document).bind('keydown', 'r', function() {
+  $(document).bind('keydown', 'r', function () {
     $('#region-form').focus();
     return false;
   });
 
-  $('#share-hash').bind('keydown', 'r', function() {
+  $('#share-hash').bind('keydown', 'r', function () {
     $('#region-form').focus();
     return false;
   });
 
-  $(document).bind('keydown', 'return', function() {
+  $(document).bind('keydown', 'return', function () {
     refresh();
   });
 
@@ -434,18 +439,19 @@ var GenRegions = GenRegions || {};
 
     if (!regionString) {
       throw new ParseError('Syntax Error',
-                           'Region must be in the form: ' +
-                           '<code>RegNum.SubRegNum&lt;VertStride;' +
-                           'Width,HorzStide&gt;:type</code>');
+          'Region must be in the form: ' +
+          '<code>RegNum.SubRegNum&lt;VertStride;' +
+          'Width,HorzStide&gt;:type</code>');
     }
 
     /* We don't want whitespace getting in our way, so lets remove it. */
-    while (regionString.match(/\s/))
+    while (regionString.match(/\s/)) {
       regionString = regionString.replace(/\s+/, '');
+    }
 
     if (regionString.match(/:$/)) {
       throw new ParseError('Syntax Error',
-                           'Illegal trailing <code>:</code> character.');
+          'Illegal trailing <code>:</code> character.');
     }
 
     /* Strip the data type from the region string and set the dataSize, or use
@@ -469,8 +475,8 @@ var GenRegions = GenRegions || {};
           break;
         default:
           throw new ParseError('Illegal Data Type \'' + dataSize + '\'',
-                               'Possible values: ' +
-                               '<code>ub|b|uw|w|ud|d|f|v</code>.');
+              'Possible values: ' +
+              '<code>ub|b|uw|w|ud|d|f|v</code>.');
       }
       /* Strip the data type from the region string. */
       regionString = regionString.replace(/[a-z]+$/i, '');
@@ -510,25 +516,26 @@ var GenRegions = GenRegions || {};
 
     if (isNaN(subRegNum)) {
       throw new ParseError('Invalid SubRegNum', 'A subregister must be an ' +
-                           'integer value in the range [0, ' +
-                           MAX_SUBREGNUM + '].');
+          'integer value in the range [0, ' +
+          MAX_SUBREGNUM + '].');
     }
 
     if (subRegNum > MAX_SUBREGNUM) {
       throw new ParseError('Invalid SubRegNum \'' + subRegNum + '\'',
-                           'A subregister must be an integer value in the ' +
-                           'range [0, ' + MAX_SUBREGNUM + '].');
+          'A subregister must be an integer value in the ' +
+          'range [0, ' + MAX_SUBREGNUM + '].');
     }
 
     /* Convert subRegNum to a byte offset if in --advanced mode. */
-    if (getAdvanced())
+    if (getAdvanced()) {
       subRegNum *= dataSize;
+    }
 
     /* Validate the the region description syntax. */
     if (!regionString.match(/^(<[\d;,]+>)?:?$/g)) {
       throw new ParseError('Syntax Error', 'Region descriptions must be in ' +
-                           'the form: <code>&lt;VertStride;Width,' +
-                           'HorzStride&gt;</code>');
+          'the form: <code>&lt;VertStride;Width,' +
+          'HorzStride&gt;</code>');
     }
 
     /* Discard the angle brackets, and the trailing ':', if present. */
@@ -567,79 +574,79 @@ var GenRegions = GenRegions || {};
       horzStride = 0;
     } else {
       throw new ParseError('Syntax Error', 'Region descriptions must be in ' +
-                           'the form: <code>&lt;VertStride;Width,' +
-                           'HorzStride&gt;</code>');
+          'the form: <code>&lt;VertStride;Width,' +
+          'HorzStride&gt;</code>');
     }
 
     /* Now that the input string is parsed, we perform some checks for general
      * restrictions on regioning parameters. */
     if (isNaN(register)) {
       throw new ParseError('Syntax Error', 'RegNum must be an integer in ' +
-                           'the range [0, ' + REF_FILE_SIZE - 1 + '].');
+          'the range [0, ' + REF_FILE_SIZE - 1 + '].');
     }
 
     if (register >= REG_FILE_SIZE) {
       throw new ParseError('Out of Bounds', 'RegNum \'' + register +
-                           '\' must be an integer in the range [0, ' +
-                           REF_FILE_SIZE - 1 + '].');
+          '\' must be an integer in the range [0, ' +
+          REF_FILE_SIZE - 1 + '].');
     }
 
     if (!String(vertStride).match(/^(0|1|2|4|8|16|32)$/)) {
       throw new ParseError('Invalid Vertical Stride \'' + vertStride + '\'',
-                           'Possible values: <code>0|1|2|4|8|16|32</code>.');
+          'Possible values: <code>0|1|2|4|8|16|32</code>.');
     }
 
     if (!String(width).match(/^(1|2|4|8|16)$/)) {
       throw new ParseError('Invalid Width \'' + width + '\'',
-                           'Possible values: <code>1|2|4|8|16</code>.');
+          'Possible values: <code>1|2|4|8|16</code>.');
     }
 
     if (!String(horzStride).match(/^(0|1|2|4)$/)) {
       throw new ParseError('Invalid Horizontal Stride \'' + horzStride + '\'',
-                           'Possible values: <code>0|1|2|4</code>.');
+          'Possible values: <code>0|1|2|4</code>.');
     }
 
     if (execSize < width) {
       throw new ParseError('Out of Bounds', 'Execution size must be ' +
-                           'greater or equal to width. (execSize: \'' +
-                           execSize + '\', width: \'' + width + '\')');
+          'greater or equal to width. (execSize: \'' +
+          execSize + '\', width: \'' + width + '\')');
     }
 
     if (execSize == width && horzStride && vertStride != width * horzStride) {
       throw new ParseError('Invalid Region', 'If execution size is equal ' +
-                           'to width and horizontal stride is greater ' +
-                           'than 0, vertical stride must be set to the ' +
-                           'product of the width and horizontal strides. ' +
-                           '(execSize: width: \'' + width + '\', ' +
-                           'horzStride: \'' + horzStride +
-                           '\', vertStride: \'' + vertStride + '\')');
+          'to width and horizontal stride is greater ' +
+          'than 0, vertical stride must be set to the ' +
+          'product of the width and horizontal strides. ' +
+          '(execSize: width: \'' + width + '\', ' +
+          'horzStride: \'' + horzStride +
+          '\', vertStride: \'' + vertStride + '\')');
     }
 
     if (width == 1 && horzStride) {
       throw new ParseError('Invalid Region', 'If width is equal to \'1\', ' +
-                           'horizontal stride must be \'0\'. ' +
-                           '(width: \'' + width + '\', ' +
-                           'horzStride: \'' + horzStride + '\')');
+          'horizontal stride must be \'0\'. ' +
+          '(width: \'' + width + '\', ' +
+          'horzStride: \'' + horzStride + '\')');
     }
 
     if (execSize == 1 && width == 1 &&
         (vertStride || horzStride)) {
       throw new ParseError('Invalid Scalar', 'If both the execution size ' +
-                           'and width are equal to \'1\', both vertical ' +
-                           'stride and horizontal stride must be \'0\'. ' +
-                           '(execSize: \'' + execSize + '\', ' +
-                           'width: \'' + width + '\', ' +
-                           'vertStride: \'' + vertStride +
-                           '\', horzStride: \'' + horzStride + '\')');
+          'and width are equal to \'1\', both vertical ' +
+          'stride and horizontal stride must be \'0\'. ' +
+          '(execSize: \'' + execSize + '\', ' +
+          'width: \'' + width + '\', ' +
+          'vertStride: \'' + vertStride +
+          '\', horzStride: \'' + horzStride + '\')');
     }
 
     if (!vertStride && !horzStride && width != 1) {
       throw new ParseError('Invalid Region', 'If both vertical and ' +
-                           'horizontal strides are equal to \'0\', ' +
-                           'width must be set to \'1\'. ' +
-                           '(vertStride: \'' + vertStride + '\', ' +
-                           'horzStride: \'' + horzStride + '\', ' +
-                           'width: \'' + width + '\')');
+          'horizontal strides are equal to \'0\', ' +
+          'width must be set to \'1\'. ' +
+          '(vertStride: \'' + vertStride + '\', ' +
+          'horzStride: \'' + horzStride + '\', ' +
+          'width: \'' + width + '\')');
     }
   }
 
@@ -656,7 +663,8 @@ var GenRegions = GenRegions || {};
   }
 
   function drawRegion() {
-    var startRegister; /* The lowermost register to draw. */
+    var startRegister;
+    /* The lowermost register to draw. */
 
     /*
      * Draw the region cells.
@@ -669,8 +677,9 @@ var GenRegions = GenRegions || {};
       function drawCell(label, x, y, width, color) {
 
         /* Don't draw anything outside of the grid */
-        if (y + ROW_H > canvas.height)
+        if (y + ROW_H > canvas.height) {
           return;
+        }
 
         ctx.fillStyle = color;
         ctx.globalAlpha = 0.7;
@@ -705,21 +714,22 @@ var GenRegions = GenRegions || {};
 
           /* We cache the first reg so that we can detect when a region spans
            * more than 2 registers. */
-          if (!r && !c)
+          if (!r && !c) {
             firstReg = reg;
+          }
 
           /* We only show a warning for out of range accesses. */
           if (reg - firstReg >= MAX_REG_SPAN) {
             flashRegionFormBackground(COLOR_BAD);
             showAlert('Out of Bounds', 'A source cannot span more ' +
-                      'than 2 adjacent GRF registers ' +
-                      '(affected region is shown in red).');
+                'than 2 adjacent GRF registers ' +
+                '(affected region is shown in red).');
           }
 
           /* We check now that everything is in bounds. If not, alert the user. */
           if (reg >= REG_FILE_SIZE) {
             showAlertError('Out of Bounds', 'Register access \'' + reg +
-                           '\' out of bounds!');
+                '\' out of bounds!');
             flashRegionFormBackground(COLOR_BAD);
           }
 
@@ -743,32 +753,35 @@ var GenRegions = GenRegions || {};
               cw -= overlap;
               color = COLOR_CELL_BAD;
               drawCell(count, START_X + REG_SIZE * COL_W - overlap,
-                       y + ROW_H, overlap, COLOR_CELL_BAD);
+                  y + ROW_H, overlap, COLOR_CELL_BAD);
               x = START_X;
               showAlert('Out of Bounds', 'An element cannot span a register ' +
-                        'boundary (affected element is shown in red).');
+                  'boundary (affected element is shown in red).');
               flashRegionFormBackground(COLOR_BAD);
             }
 
             drawCell(count++, x, y, cw, color);
-          } else
+          } else {
             return;
+          }
         }
       }
     }
 
     if (execSize) {
-      setCanvasTooltip(execSize + ' channels executing on a region starting at ' +
-                       'register ' + regFile + register + '.' + subRegNum +
-                       ', with a width of ' + width +
-                       ', a horizontal stride of ' + horzStride +
-                       ' and a vertical stride of ' + vertStride + '.');
+      setCanvasTooltip(execSize + ' channels executing on a region starting at '
+          +
+          'register ' + regFile + register + '.' + subRegNum +
+          ', with a width of ' + width +
+          ', a horizontal stride of ' + horzStride +
+          ' and a vertical stride of ' + vertStride + '.');
     } else {
       setCanvasTooltip();
     }
 
-    if (execSize)
+    if (execSize) {
       flashRegionFormBackground(COLOR_GOOD);
+    }
 
     startRegister = Math.max(register - 2, 0);
     startRegister = Math.min(startRegister, REG_FILE_SIZE - ROWS);
@@ -784,17 +797,19 @@ var GenRegions = GenRegions || {};
   /*
    * Bootstrap our page.
    */
-  this.init = function() {
+  this.init = function () {
 
     /* Dropdown */
     $("select[name='exec-size']").selectpicker({
       style: 'btn-primary',
       menuStyle: 'dropdown-inverse'
     });
-    $('.dropdown-toggle').attr('data-original-title', 'Execution size').tooltip('fixTitle');
+    $('.dropdown-toggle').attr('data-original-title', 'Execution size').tooltip(
+        'fixTitle');
 
     /* Switch */
-    $('.switch').attr('data-original-title', 'Advanced mode').tooltip('fixTitle');
+    $('.switch').attr('data-original-title', 'Advanced mode').tooltip(
+        'fixTitle');
 
     $('#share-btn').attr('disabled', 'disabled');
 
@@ -813,7 +828,6 @@ var GenRegions = GenRegions || {};
   };
 
 }).call(GenRegions);
-
 
 /**
  * Bootstrap the gen regions code

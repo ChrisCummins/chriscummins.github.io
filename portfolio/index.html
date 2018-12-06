@@ -6,40 +6,43 @@ banner: /img/banners/manhattan.jpg
 <div class="big-list">
   <h1>Software Projects</h1>
   <ul>
-  {% for project in site.data.cv.portfolio.personal_projects %}
+    {% for project in site.data.cv.portfolio.personal_projects %}
     <li>
-      <a title="Link opens in new window" target="_blank" href="{{ project.url }}">{{ project.name }}</a> {{ project.summary }}
+      <a title="Link opens in new window" target="_blank" href="{{ project.url }}">{{ project.name
+        }}</a> {{ project.summary }}
     </li>
-  {% endfor %}
+    {% endfor %}
   </ul>
 
   <h1>Open Source Contributions</h1>
   <ul>
-  {% for project in site.data.cv.portfolio.open_source_contributions %}
+    {% for project in site.data.cv.portfolio.open_source_contributions %}
     <li>
-      <a title="Link opens in new window" target="_blank" href="{{ project.url }}">{{ project.name }}</a> {{ project.summary }}
+      <a title="Link opens in new window" target="_blank" href="{{ project.url }}">{{ project.name
+        }}</a> {{ project.summary }}
     </li>
-  {% endfor %}
+    {% endfor %}
   </ul>
 
   <h1>Hacks and Demos</h1>
   <ul class="demos">
-  {% for project in site.data.cv.portfolio.hacks_and_demos %}
+    {% for project in site.data.cv.portfolio.hacks_and_demos %}
     <li class="demo">
       <a title="Link opens in new window" target="_blank" href="{{ project.url }}">
-        <div class="image"><img src="{{ project.picture }}" /></div>
+        <div class="image"><img src="{{ project.picture }}"/></div>
         <div class="name"><p>{{ project.name }}</p></div>
       </a>
     </li>
-  {% endfor %}
+    {% endfor %}
   </ul>
 
   <h1>Websites</h1>
   <ul>
-  {% for project in site.data.cv.portfolio.websites %}
+    {% for project in site.data.cv.portfolio.websites %}
     <li>
-      <a title="Link opens in new window" target="_blank" href="{{ project.url }}">{{ project.name }}</a> {{ project.summary }}
+      <a title="Link opens in new window" target="_blank" href="{{ project.url }}">{{ project.name
+        }}</a> {{ project.summary }}
     </li>
-  {% endfor %}
+    {% endfor %}
   </ul>
 </div> <!-- /.big-list -->
