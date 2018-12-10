@@ -20,8 +20,8 @@ redirect_from: /genetics/
     background: solid;
     background-color: #222;
     -webkit-box-shadow: inset 0 0 20px #000;
-    -moz-box-shadow: inset 0 0 20px #000;
-    box-shadow: inset 0 0 20px #000;
+    -moz-box-shadow:    inset 0 0 20px #000;
+    box-shadow:         inset 0 0 20px #000;
   }
 
   #pictureframe .btn-toolbar {
@@ -85,10 +85,8 @@ redirect_from: /genetics/
 
         <!-- pictures -->
         <div id="pictureframe">
-          <canvas id="referenceCanvas" class="picture" width="350" height="350"
-                  style="margin-right: 4px;"></canvas>
-          <canvas id="outputCanvas" class="picture" width="350" height="350"
-                  style="margin-left: 4px;"></canvas>
+          <canvas id="referenceCanvas" class="picture" width="350" height="350" style="margin-right: 4px;"></canvas>
+          <canvas id="outputCanvas" class="picture" width="350" height="350" style="margin-left: 4px;"></canvas>
 
           <!-- button bar -->
           <div class="btn-toolbar">
@@ -168,8 +166,7 @@ redirect_from: /genetics/
         and is released under the terms of the MIT License. If you just want
         to see how the genetics algorithm works, you can see the JavaScript
         implementation
-        <a href="https://github.com/ChrisCummins/chriscummins.github.io/tree/master/js/genetics.js"
-           target="_blank" target="_blank">here</a>.
+        <a href="https://github.com/ChrisCummins/chriscummins.github.io/tree/master/js/genetics.js" target="_blank" target="_blank">here</a>.
 
         <center><h5>Bugs and comments</h5></center>
 
@@ -177,15 +174,13 @@ redirect_from: /genetics/
         <a href="mailto:chrisc.101@gmail.com">getting in touch</a> with any
         thoughts and suggestions. If you would like to be a little more
         involved in the process, feel free to fork the
-        <a href="https://github.com/ChrisCummins/chriscummins.github.io" target="_blank">source code
-          repository</a>
+        <a href="https://github.com/ChrisCummins/chriscummins.github.io" target="_blank">source code repository</a>
         and submit a pull request.
 
         <center><h5>Credits</h5></center>
 
         The code is my own, the idea is not. Full credit goes to
-        <a href="http://rogeralsing.com/2008/12/07/genetic-programming-evolution-of-mona-lisa/"
-           target="_blank">Roger Alsing</a>
+        <a href="http://rogeralsing.com/2008/12/07/genetic-programming-evolution-of-mona-lisa/" target="_blank">Roger Alsing</a>
         for the idea of using genetic algorithms to approximate fine
         art. Further thanks to
         <a href="https://twitter.com/jseidelin" target="_blank">Jacob Seidelin</a>
@@ -222,9 +217,7 @@ redirect_from: /genetics/
                   <td style="width: 160px;">
                     Population Size
                   </td>
-                  <td>
-                    <div id="population-size-slider" class="conf-slider"></div>
-                  </td>
+                  <td><div id="population-size-slider" class="conf-slider"></div></td>
                   <td id="population-size" style="width: 80px;"></td>
                 <tr/>
 
@@ -233,9 +226,7 @@ redirect_from: /genetics/
                   <td>
                     Selection Cutoff
                   </td>
-                  <td>
-                    <div id="cutoff-slider" class="conf-slider"></div>
-                  </td>
+                  <td><div id="cutoff-slider" class="conf-slider"></div></td>
                   <td id="cutoff"></td>
                 <tr/>
 
@@ -244,9 +235,7 @@ redirect_from: /genetics/
                   <td>
                     Mutation Chance
                   </td>
-                  <td>
-                    <div id="mutation-chance-slider" class="conf-slider"></div>
-                  </td>
+                  <td><div id="mutation-chance-slider" class="conf-slider"></div></td>
                   <td id="mutation-chance"></td>
                 <tr/>
 
@@ -255,9 +244,7 @@ redirect_from: /genetics/
                   <td>
                     Mutation Amount
                   </td>
-                  <td>
-                    <div id="mutation-amount-slider" class="conf-slider"></div>
-                  </td>
+                  <td><div id="mutation-amount-slider" class="conf-slider"></div></td>
                   <td id="mutation-amount"></td>
                 <tr/>
 
@@ -268,9 +255,9 @@ redirect_from: /genetics/
                   </td>
                   <td></td>
                   <td><label>
-                    <div class="switch switch-square">
-                      <input id="random-inheritance" type="checkbox"/>
-                    </div>
+                      <div class="switch switch-square">
+                        <input id="random-inheritance" type="checkbox" />
+                      </div>
                   </label></td>
                 <tr/>
 
@@ -281,10 +268,10 @@ redirect_from: /genetics/
                   </td>
                   <td></td>
                   <td><label>
-                    <div class="switch switch-square">
-                      <input id="diff-squared" type="checkbox"
-                             checked=""/>
-                    </div>
+                      <div class="switch switch-square">
+                        <input id="diff-squared" type="checkbox"
+                               checked="" />
+                      </div>
                   </label></td>
                 <tr/>
 
@@ -295,9 +282,9 @@ redirect_from: /genetics/
                   </td>
                   <td></td>
                   <td><label>
-                    <div class="switch switch-square">
-                      <input id="fittest-survive" type="checkbox"/>
-                    </div>
+                      <div class="switch switch-square">
+                        <input id="fittest-survive" type="checkbox" />
+                      </div>
                   </label></td>
                 <tr/>
 
@@ -313,9 +300,7 @@ redirect_from: /genetics/
                   <td style="width: 160px;">
                     Internal Resolution
                   </td>
-                  <td>
-                    <div id="resolution-slider" class="conf-slider"></div>
-                  </td>
+                  <td><div id="resolution-slider" class="conf-slider"></div></td>
                   <td id="resolution" style="width: 80px;"></td>
                 <tr/>
 
@@ -324,9 +309,7 @@ redirect_from: /genetics/
                   <td>
                     Number of polygons
                   </td>
-                  <td>
-                    <div id="polygons-slider" class="conf-slider"></div>
-                  </td>
+                  <td><div id="polygons-slider" class="conf-slider"></div></td>
                   <td id="polygons"></td>
                 <tr/>
 
@@ -335,9 +318,7 @@ redirect_from: /genetics/
                   <td>
                     Number of vertices
                   </td>
-                  <td>
-                    <div id="vertices-slider" class="conf-slider"></div>
-                  </td>
+                  <td><div id="vertices-slider" class="conf-slider"></div></td>
                   <td id="vertices"></td>
                 <tr/>
 
@@ -348,10 +329,10 @@ redirect_from: /genetics/
                   </td>
                   <td></td>
                   <td><label>
-                    <div class="switch switch-square">
-                      <input id="fill-polygons" type="checkbox"
-                             checked=""/>
-                    </div>
+                      <div class="switch switch-square">
+                        <input id="fill-polygons" type="checkbox"
+                               checked="" />
+                      </div>
                   </label></td>
                 <tr/>
 
@@ -360,8 +341,7 @@ redirect_from: /genetics/
 
             <div id="pane-analytics" class="tab-pane">
 
-              <center><h5 style="margin-top: 0px; padding-top: 15px;">Real Time Analysis</h5>
-              </center>
+              <center><h5 style="margin-top: 0px; padding-top: 15px;">Real Time Analysis</h5></center>
 
               <table id="analytics-table"
                      class="table table-bordered table-striped">
@@ -406,7 +386,7 @@ redirect_from: /genetics/
               <div id="share" class="alert alert-success"
                    style="display: none; margin-top: 25px;">
                 <button id="close-url" type="button" class="close">&times;</button>
-                <strong>URL</strong><br/>
+                <strong>URL</strong><br />
                 <textarea id="share-url" class="text"
                           style="width: 460px; min-height: 40px; resize: none;"
                           readonly>
@@ -453,7 +433,7 @@ redirect_from: /genetics/
 <!-- The hidden bits: -->
 <img src="{{ '/images/genetics/mona-lisa.jpg' | relative_url }}"
      id="referenceImage"
-     style="display: none;"/>
+     style="display: none;" />
 
 <canvas id="workingCanvas"
         width="1" height="1"
@@ -462,7 +442,7 @@ redirect_from: /genetics/
 <form id="image-upload-form"
       action="image-upload.php"
       method="post" enctype="multipart/form-data">
-  <input id="file-chooser" type="file" name="file" accept="image/*"/>
+  <input id="file-chooser" type="file" name="file" accept="image/*" />
 </form>
 
 <div class="underlay"></div>

@@ -13,20 +13,20 @@ function pad(n, width, z, prefix) {
   var length = n.replace(/<\/?[a-zA-Z ="]+>/g, '').length;
 
   return length >= width ? n : prefix ?
-      n + new Array(width - length + 1).join(z) :
-      new Array(width - length + 1).join(z) + n;
+    n + new Array(width - length + 1).join(z) :
+    new Array(width - length + 1).join(z) + n;
 }
 
 /*
  * Casts a decimal integer to a hexadecimal string.
  */
-var int2hex = function (n) {
+var int2hex = function(n) {
   return n !== undefined ? n.toString(16).toUpperCase() : '';
 };
 
 /*
  * Casts a decimal integer to a 32 bit hexadecimal string (0 padded).
  */
-var int2hex32 = function (n) {
+var int2hex32 = function(n) {
   return n !== undefined ? pad(int2hex(n), 8) : '';
 };

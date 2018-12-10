@@ -1,78 +1,78 @@
 @mixin banner() {
-  // title banner
-  div.banner {
-    background-color: #fff;
-    display: inline-block;
+    // title banner
+    div.banner {
+        background-color: #fff;
+        display: inline-block;
 
-    // on small screens, the banner is centered, and has a tight border
-    position: relative;
-    padding: 17px 8px 15px 8px;
+        // on small screens, the banner is centered, and has a tight border
+        position: relative;
+        padding: 17px 8px 15px 8px;
 
-    @media (min-width: $screen-sm-min) {
-      // on larger screens the banner is left aligned and has more
-      // breathing room
-      left: 0;
-      padding: 17px 40px 15px 25px;
+        @media (min-width: $screen-sm-min) {
+            // on larger screens the banner is left aligned and has more
+            // breathing room
+            left: 0;
+            padding: 17px 40px 15px 25px;
+        }
+
+        h1 {
+            margin: 0;
+            padding: 0;
+            font-weight: 400;
+
+            font-size: 32px;
+            @media (min-width: $screen-xs-min) {
+                font-size: 36px;
+            }
+        }
+
+        p {
+            @include noselect;
+            @include transition-duration(0.3s);
+
+            text-align: center;  // only on small screens
+            white-space: nowrap;  // no line wrapping
+            font-size: 18px;
+            font-weight: 400;
+            margin: 0 0 0 5px;
+            padding: 0;
+
+            @media (min-width: $screen-sm-min) {
+                text-align: left;
+                margin: 0;
+            }
+        }
+
+        $banner-a-horizontal-padding: 4px;
+
+        a, span {
+            padding: 10px $banner-a-horizontal-padding;
+            color: #000;
+        }
+
+        a {
+            cursor: pointer; // reset because of noselect mixin
+            text-decoration: none;
+            @include transition-duration(0.3s);
+        }
+
+        a:hover {
+            color: $color-highlight;
+            text-decoration: none;
+        }
+        // don't highlight name on hover
+        h1 a:hover {
+            color: #000;
+        }
+
+        span {
+            color: $color-link;
+        }
+
+        @media (min-width: $screen-sm-min) {
+            a:first-child, span:first-child {
+                margin-left: -$banner-a-horizontal-padding;
+            }
+        }
     }
-
-    h1 {
-      margin: 0;
-      padding: 0;
-      font-weight: 400;
-
-      font-size: 32px;
-      @media (min-width: $screen-xs-min) {
-        font-size: 36px;
-      }
-    }
-
-    p {
-      @include noselect;
-      @include transition-duration(0.3s);
-
-      text-align: center; // only on small screens
-      white-space: nowrap; // no line wrapping
-      font-size: 18px;
-      font-weight: 400;
-      margin: 0 0 0 5px;
-      padding: 0;
-
-      @media (min-width: $screen-sm-min) {
-        text-align: left;
-        margin: 0;
-      }
-    }
-
-    $banner-a-horizontal-padding: 4px;
-
-    a, span {
-      padding: 10px $banner-a-horizontal-padding;
-      color: #000;
-    }
-
-    a {
-      cursor: pointer; // reset because of noselect mixin
-      text-decoration: none;
-      @include transition-duration(0.3s);
-    }
-
-    a:hover {
-      color: $color-highlight;
-      text-decoration: none;
-    }
-    // don't highlight name on hover
-    h1 a:hover {
-      color: #000;
-    }
-
-    span {
-      color: $color-link;
-    }
-
-    @media (min-width: $screen-sm-min) {
-      a:first-child, span:first-child {
-        margin-left: -$banner-a-horizontal-padding;
-      }
-    }
-  }
 }

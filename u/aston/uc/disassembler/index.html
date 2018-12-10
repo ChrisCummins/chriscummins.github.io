@@ -44,7 +44,6 @@ redirect_from: /disassembler/
     padding: 0;
     margin: 0;
   }
-
   pre:hover {
     cursor: default;
   }
@@ -56,12 +55,10 @@ redirect_from: /disassembler/
     width: 830px;
     margin-left: -120px;
   }
-
   #output td {
     padding: 0;
     border-top: none;
   }
-
   #output td.address {
     width: 100px;
     -webkit-user-select: none;
@@ -71,24 +68,19 @@ redirect_from: /disassembler/
     text-align: right;
     padding-right: 20px;
   }
-
   #output td.address pre {
     color: #586e75;
   }
-
   #output td.instruction {
     border-left: 2px solid #586e75;
     padding-left: 11px;
   }
-
   tr.highlight {
     background-color: #073642;
   }
-
   tr[data-target] pre:hover {
     cursor: pointer;
   }
-
   #output tr:hover {
     background-color: #073642;
   }
@@ -100,25 +92,20 @@ redirect_from: /disassembler/
     color: #586e75;
     font-weight: normal;
   }
-
   span.directive {
     color: #b58900;
     font-weight: bold;
   }
-
   span.mnemonic {
     color: #dc322f;
     font-weight: normal;
   }
-
   span.value {
     color: #268bd2;
     font-weight: normal;
   }
-
   span.asm-label {
   }
-
   span.register {
     color: #d33682;
     font-weight: normal;
@@ -191,86 +178,77 @@ redirect_from: /disassembler/
   var idtSize = 8;
 
   // Add a new visible error
-  var addError = function (msg) {
+  var addError = function(msg) {
     $errors.append("<div class=\"alert alert-error\">" + msg +
-        "<a class=\"close\" data-dismiss=\"alert\" " +
-        "href=\"#\">&times;</a></div>");
+                   "<a class=\"close\" data-dismiss=\"alert\" " +
+                   "href=\"#\">&times;</a></div>");
   };
 
-  var addInstruction = function (instruction, instructions) {
+  var addInstruction = function(instruction, instructions) {
 
-    var addRow = function (address, comment, instruction, id, target) {
+    var addRow = function(address, comment, instruction, id, target) {
       var html = '<tr';
-      if (id && id !== '') {
+      if (id && id !== '')
         html += ' id="' + id + '"';
-      }
-      if (target !== undefined) {
+      if (target !== undefined)
         html += ' data-target="' + target + '"';
-      }
       html += '><td class="address"><pre>';
-      if (address) {
+      if (address)
         html += address;
-      }
       html += '</pre></td><td class="instruction"><pre>' +
-          instruction + '</pre></td><td class="comment">';
-      if (comment) {
+        instruction + '</pre></td><td class="comment">';
+      if (comment)
         html += '<pre><span class="comment">; ' + comment + '</span></pre>';
-      }
       html += '</td></tr>';
 
       $output.append(html);
     };
 
-    var addInstructionRow = function (address, text, instruction, instructions) {
+    var addInstructionRow = function(address, text, instruction, instructions) {
 
       if (!instruction.mnemonic)                       // Non-instructions
-      {
         addRow(address, instruction.comment, text);
-      } else if (instruction.jumpAddress !== undefined) {// Jump & branch instructions
+      else if (instruction.jumpAddress !== undefined) {// Jump & branch instructions
         addRow(address, instruction.comment, text, '',
-            instructions[instruction.jumpAddress].addressHex32);
-      } else                                            // Standard instruction
-      {
+               instructions[instruction.jumpAddress].addressHex32);
+      }else                                            // Standard instruction
         addRow(address, instruction.comment, text);
-      }
     };
 
     var lines = instruction.html(instructions).split('\n');
 
     if (lines.length > 1) { // Instruction contains label
-      for (var i = 0; i < lines.length - 2; i++) {
+      for (var i = 0; i < lines.length - 2; i++)
         addRow('', '', lines[i]);
-      }
       addRow('', '', lines[lines.length - 2], instruction.addressHex32);
       addInstructionRow(instruction.addressHex32, lines[lines.length - 1],
-          instruction, instructions);
+                        instruction, instructions);
     } else {
       addInstructionRow(instruction.addressHex32, lines[0],
-          instruction, instructions);
+                        instruction, instructions);
     }
   };
 
   // Display an array of instructions
-  var show = function () {
+  var show = function() {
     try {
       var data = words2sections($code.val().split("\n"), idtSize);
 
-      sections2prog(data).forEach(function (e) {
+      sections2prog(data).forEach(function(e) {
         addInstruction(e, data.instructions);
       });
 
-      if (data.idt.length || data.instructions.length) {
+      if (data.idt.length || data.instructions.length)
         $('#code-output').show();
-      } else {
+      else
         $('#code-output').hide();
-      }
 
-    } catch (err) {
+    } catch (err)    {
       addError(err);
     }
   };
 
-  var refresh = function () { // Refresh display
+  var refresh = function() { // Refresh display
     $errors.html('');
     $output.html('');
     resetLabelCounters();
@@ -278,7 +256,7 @@ redirect_from: /disassembler/
     show();
 
     // Jump instruction listeners
-    $('#output tr').click(function () {
+    $('#output tr').click(function() {
       var target = $(this).attr('data-target');
 
       if (target) {
@@ -290,11 +268,11 @@ redirect_from: /disassembler/
   };
 
   // Update as the user types
-  $code.bind('input propertychange', function () {
+  $code.bind('input propertychange', function() {
     refresh();
   });
 
-  $('#idt-enable').change(function () {
+  $('#idt-enable').change(function() {
     idtSize = parseInt($('#idt-enable option:selected').val());
     refresh();
   });

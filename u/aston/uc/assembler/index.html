@@ -4,119 +4,118 @@ redirect_from: /uc/assembler/
 <!doctype html>
 <html lang="en">
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="chrome=1">
-  <title>uC Assembler</title>
-  <meta name="description" content="The personal website of software developer Chris Cummins.">
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-  <meta name="msapplication-tooltip" content="Chris Cummins personal website">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>uC Assembler</title>
+    <meta name="description" content="The personal website of software developer Chris Cummins.">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="msapplication-tooltip" content="Chris Cummins personal website">
 
-  <link rel="stylesheet" href="//chriscummins.cc/css/app.css"/>
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.1.0/css/font-awesome.css"/>
+    <link rel="stylesheet" href="//chriscummins.cc/css/app.css" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.1.0/css/font-awesome.css" />
 
-  <link rel="icon" href="//chriscummins.cc/favicon.ico" type="image/x-icon">
-  <link rel="shortcut icon" href="//chriscummins.cc/favicon.ico" type="image/x-icon">
-</head>
+    <link rel="icon" href="//chriscummins.cc/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="//chriscummins.cc/favicon.ico" type="image/x-icon">
+  </head>
 
-<body>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
-<script src="//chriscummins.cc/js/app-components.js"></script>
+  <body>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+    <script src="//chriscummins.cc/js/app-components.js"></script>
 
-<style type="text/css">
-  .nav-tabs > li > a {
-    min-width: 100px;
-    text-align: center;
-  }
+    <style type="text/css">
+      .nav-tabs > li > a {
+        min-width: 100px;
+        text-align: center;
+      }
 
-  #code {
-    resize: vertical;
-  }
+      #code {
+        resize: vertical;
+      }
 
-  pre {
-    background: none;
-    border: none;
-    font-family: monospace;
-    font-size: 14px;
-    padding: 0;
-    margin: 0;
-  }
+      pre {
+        background: none;
+        border: none;
+        font-family: monospace;
+        font-size: 14px;
+        padding: 0;
+        margin: 0;
+      }
+      pre:hover {
+        cursor: default;
+      }
+    </style>
 
-  pre:hover {
-    cursor: default;
-  }
-</style>
+    <div id="wrap">
+      <div class="container">
+        <div class="fixed-container-narrow">
 
-<div id="wrap">
-  <div class="container">
-    <div class="fixed-container-narrow">
+          <div class="headline">
+            <div class="headline-title">
+              <h1>&micro;C Assembler</h1>
+            </div>
+          </div>
 
-      <div class="headline">
-        <div class="headline-title">
-          <h1>&micro;C Assembler</h1>
-        </div>
-      </div>
-
-      <div class="row-fluid">
-        <center>
-          <select id="ram-size" title="Set the size of the assembled program RAM.">
-            <option value="1024">RAM size: 1024</option>
-            <option value="2048">RAM size: 2048</option>
-            <option value="4096">RAM size: 4096</option>
-          </select>
-          <select id="idt-size" title="Set the start address of the program instructions.">
-            <option value="8">IDT size: 8</option>
-            <option value="0">IDT size: 0</option>
-          </select>
-          <select id="annotate" title="Annotate the generated RAM.">
-            <option value="1">Annotate RAM: On</option>
-            <option value="0">Annotate RAM: Off</option>
-          </select>
+          <div class="row-fluid">
+            <center>
+              <select id="ram-size" title="Set the size of the assembled program RAM.">
+                <option value="1024">RAM size: 1024</option>
+                <option value="2048">RAM size: 2048</option>
+                <option value="4096">RAM size: 4096</option>
+              </select>
+              <select id="idt-size" title="Set the start address of the program instructions.">
+                <option value="8">IDT size: 8</option>
+                <option value="0">IDT size: 0</option>
+              </select>
+              <select id="annotate" title="Annotate the generated RAM.">
+                <option value="1">Annotate RAM: On</option>
+                <option value="0">Annotate RAM: Off</option>
+              </select>
 
 
-        </center>
-      </div>
+            </center>
+          </div>
 
-      <div class="row-fluid">
-        <div class="span12">
+          <div class="row-fluid">
+            <div class="span12">
               <textarea id="code" class="spanFull"
                         placeholder="Type or copy and paste your assembly code here"
                         rows="6"></textarea>
+            </div>
+          </div>
+
+          <div id="errors" class="row-fluid"></div>
+
+          <div class="tabbable">
+            <ul class="nav nav-tabs">
+              <li class="active"><a href="#pane-ram" data-toggle="tab">Assembled RAM</a></li>
+              <li><a href="#pane-list" data-toggle="tab">List File</a></li>
+            </ul>
+
+            <div class="tab-content">
+              <div id="pane-ram" class="tab-pane active">
+                <pre id="output-ram"></pre>
+              </div>
+              <div id="pane-list" class="tab-pane">
+                <pre id="output-list"></pre>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
-
-      <div id="errors" class="row-fluid"></div>
-
-      <div class="tabbable">
-        <ul class="nav nav-tabs">
-          <li class="active"><a href="#pane-ram" data-toggle="tab">Assembled RAM</a></li>
-          <li><a href="#pane-list" data-toggle="tab">List File</a></li>
-        </ul>
-
-        <div class="tab-content">
-          <div id="pane-ram" class="tab-pane active">
-            <pre id="output-ram"></pre>
-          </div>
-          <div id="pane-list" class="tab-pane">
-            <pre id="output-list"></pre>
-          </div>
-        </div>
-      </div>
-
+      <div id="push"></div>
     </div>
-  </div>
-  <div id="push"></div>
-</div>
 
-<div class="footer">
-  <div class="container wrapper">
-    By <a href="//chriscummins.cc" target="_blank">Chris Cummins</a>.
-  </div>
-</div>
+    <div class="footer">
+      <div class="container wrapper">
+        By <a href="//chriscummins.cc" target="_blank">Chris Cummins</a>.
+      </div>
+    </div>
 
-<script src="client-bundled.js"></script>
+    <script src="client-bundled.js"></script>
 
-</body>
+  </body>
 </html>

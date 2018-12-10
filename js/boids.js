@@ -1,6 +1,6 @@
 var Boids = Boids || {};
 
-(function () {
+(function() {
   'use strict';
 
   /* The configuration */
@@ -120,7 +120,7 @@ var Boids = Boids || {};
   function Boid() {
 
     /* Bird.js - from the three.js birds demo */
-    var Bird = function (size) {
+    var Bird = function(size) {
 
       function v(x, y, z) {
         scope.vertices.push(new THREE.Vector3(x, y, z));
@@ -168,32 +168,31 @@ var Boids = Boids || {};
     var geometry = new Bird(this.size);
 
     this.mesh = new THREE.Mesh(geometry,
-        new THREE.MeshLambertMaterial({
-          color: 0xffffff,
-          shading: THREE.FlatShading,
-          side: THREE.DoubleSide,
-          overdraw: true
-        }));
+                               new THREE.MeshLambertMaterial({
+                                 color: 0xffffff,
+                                 shading: THREE.FlatShading,
+                                 side: THREE.DoubleSide,
+                                 overdraw: true
+                               }));
     this.phase = Math.floor(Math.random() * 62.83);
     this.speed = 1;
 
     this.position = new THREE.Vector3(Math.random() * boundaries.x,
-        Math.random() * boundaries.y,
-        Math.random() * boundaries.z)
-    .multiplyScalar(2).sub(boundaries);
+                                      Math.random() * boundaries.y,
+                                      Math.random() * boundaries.z)
+      .multiplyScalar(2).sub(boundaries);
 
     this.velocity = new THREE.Vector3(Math.random() - 0.5,
-        Math.random() - 0.5,
-        Math.random() - 0.5)
-    .multiplyScalar(4);
-    /* This multiplication by a magic constant
-                              * determines the maximum starting speed. */
+                                      Math.random() - 0.5,
+                                      Math.random() - 0.5)
+      .multiplyScalar(4); /* This multiplication by a magic constant
+                           * determines the maximum starting speed. */
 
     this.updateMesh();
     context.SCENE.s.add(this.mesh);
   };
 
-  Boid.prototype.updateMesh = function () {
+  Boid.prototype.updateMesh = function() {
     /* Position */
     this.mesh.position.copy(this.position);
 
@@ -202,9 +201,8 @@ var Boids = Boids || {};
     this.mesh.rotation.z = Math.asin(this.velocity.y / this.speed);
 
     /* FIXME: what a total hack (!) */
-    if (isNaN(this.mesh.rotation.z)) {
+    if (isNaN(this.mesh.rotation.z))
       this.mesh.rotation.z = 0;
-    }
 
     /* Wing flapping */
     this.phase += Math.max(0, this.mesh.rotation.z * 0.4 / this.size) + 0.03;
@@ -274,7 +272,7 @@ var Boids = Boids || {};
 
             /* Difference between the positions of the current and other boid */
             var dp = new THREE.Vector3().subVectors(b.position,
-                otherBoid.position);
+                                                    otherBoid.position);
 
             /* Get the distance between the other Boid and this Boid */
             var distance = dp.length();
@@ -288,8 +286,8 @@ var Boids = Boids || {};
              */
             if (distance < config.BOIDS.behaviour.separation.distance) {
               dv.sub(new THREE.Vector3()
-              .subVectors(otherBoid.position, b.position)
-              .multiplyScalar(config.BOIDS.behaviour.separation.rate));
+                     .subVectors(otherBoid.position, b.position)
+                     .multiplyScalar(config.BOIDS.behaviour.separation.rate));
             }
 
             /* We total up the velocity and positions of any particles that are
@@ -312,12 +310,12 @@ var Boids = Boids || {};
           if (distance < config.MOUSE.los) {
             if (mouse.foe) {
               dv.sub(new THREE.Vector3()
-              .subVectors(mouse.position, b.position)
-              .multiplyScalar(config.MOUSE.repel));
+                     .subVectors(mouse.position, b.position)
+                     .multiplyScalar(config.MOUSE.repel));
             } else {
               dv.add(new THREE.Vector3()
-              .subVectors(mouse.position, b.position)
-              .multiplyScalar(config.MOUSE.attract));
+                     .subVectors(mouse.position, b.position)
+                     .multiplyScalar(config.MOUSE.attract));
             }
           }
         }
@@ -341,8 +339,8 @@ var Boids = Boids || {};
          * distance from that center:
          */
         dv.add(new THREE.Vector3()
-        .subVectors(centerOfMass, b.position)
-        .multiplyScalar(config.BOIDS.behaviour.cohesion / b.size));
+               .subVectors(centerOfMass, b.position)
+               .multiplyScalar(config.BOIDS.behaviour.cohesion / b.size));
 
         /*
          * FLOCK ALIGNMENT
@@ -351,8 +349,8 @@ var Boids = Boids || {};
          * pattern of cohesive behaviour, with the flock moving in unison:
          */
         dv.add(new THREE.Vector3()
-        .subVectors(velocityAvg, b.velocity)
-        .multiplyScalar(config.BOIDS.behaviour.alignment * b.size));
+               .subVectors(velocityAvg, b.velocity)
+               .multiplyScalar(config.BOIDS.behaviour.alignment * b.size));
 
         /*
          * BOUNDARY AVOIDANCE
@@ -361,29 +359,26 @@ var Boids = Boids || {};
          * them when the distance to the boundary is less than a known
          * threshold:
          */
-        if (b.position.x < -boundaries.x) {
+        if (b.position.x < -boundaries.x)
           dv.x += (-boundaries.x - b.position.x) *
               config.BOUNDARY.rate * b.speed;
-        } else if (b.position.x > boundaries.x) {
+        else if (b.position.x > boundaries.x)
           dv.x += (boundaries.x - b.position.x) *
               config.BOUNDARY.rate * b.speed;
-        }
 
-        if (b.position.y < -boundaries.y) {
+        if (b.position.y < -boundaries.y)
           dv.y += (-boundaries.y - b.position.y) *
               config.BOUNDARY.rate * b.speed;
-        } else if (b.position.y > boundaries.y) {
+        else if (b.position.y > boundaries.y)
           dv.y += (boundaries.y - b.position.y) *
               config.BOUNDARY.rate * b.speed;
-        }
 
-        if (b.position.z < -boundaries.z) {
+        if (b.position.z < -boundaries.z)
           dv.z += (-boundaries.z - b.position.z) *
               config.BOUNDARY.rate * b.speed;
-        } else if (b.position.z > boundaries.z) {
+        else if (b.position.z > boundaries.z)
           dv.z += (boundaries.z - b.position.z) *
               config.BOUNDARY.rate * b.speed;
-        }
 
         /* Apply the velocity change */
         b.velocity.add(dv.multiplyScalar(b.speed * config.BOIDS.agility));
@@ -397,9 +392,8 @@ var Boids = Boids || {};
         b.updateMesh();
       }
 
-      for (var i = 0; i < config.BOIDS.count; i++) {
+      for (var i = 0; i < config.BOIDS.count; i++)
         updateBoid(i);
-      }
     }
 
     function render() {
@@ -437,17 +431,15 @@ var Boids = Boids || {};
 
     /* Enforce a maximum frame time to prevent the "spiral of death" when
      * operating under heavy load */
-    if (tickTime > t.maxTickTime) {
+    if (tickTime > t.maxTickTime)
       tickTime = t.maxTickTime;
-    }
 
     t.current = newTime;
     t.accumulator += tickTime;
 
     /* Update the simulation state as required */
-    for (; t.accumulator >= t.dt; t.accumulator -= t.dt) {
+    for ( ; t.accumulator >= t.dt; t.accumulator -= t.dt)
       update();
-    }
 
     context.SCENE.stats.update();
 
@@ -465,9 +457,8 @@ var Boids = Boids || {};
 
     if (lights.length > 0) {
       /* Clear lights */
-      for (var i = lights.length - 1; i >= 0; i--) {
+      for (var i = lights.length - 1; i >= 0; i--)
         scene.remove(lights.pop());
-      }
     }
 
     var ambientLight = new THREE.AmbientLight(0x5481a4);
@@ -476,8 +467,8 @@ var Boids = Boids || {};
 
     var light = new THREE.DirectionalLight(0xffc67a);
     light.position.set(Math.random() - 0.5,
-        Math.random() - 0.5,
-        Math.random() - 0.5);
+                       Math.random() - 0.5,
+                       Math.random() - 0.5);
     light.position.normalize();
     scene.add(light);
 
@@ -485,8 +476,8 @@ var Boids = Boids || {};
 
     var light = new THREE.DirectionalLight(0xffa07a);
     light.position.set(Math.random() - 0.5,
-        Math.random() - 0.5,
-        Math.random() - 0.5);
+                       Math.random() - 0.5,
+                       Math.random() - 0.5);
     light.position.normalize();
     scene.add(light);
 
@@ -513,10 +504,10 @@ var Boids = Boids || {};
       var zFar = 10000;
 
       context.SCENE.camera = new THREE.PerspectiveCamera(fov, aspect,
-          zNear, zFar);
+                                                         zNear, zFar);
       context.SCENE.cameraTarget = new THREE.Vector3(context.SCENE.s.position.x,
-          context.SCENE.s.position.y,
-          context.SCENE.s.position.z);
+                                                     context.SCENE.s.position.y,
+                                                     context.SCENE.s.position.z);
       context.SCENE.cameraHeight = config.BOUNDARY.size.y * 0.4;
     } else {
       /* 3rd-person camera configuration */
@@ -526,10 +517,10 @@ var Boids = Boids || {};
       var zFar = 10000;
 
       context.SCENE.camera = new THREE.PerspectiveCamera(fov, aspect,
-          zNear, zFar);
+                                                         zNear, zFar);
       context.SCENE.cameraTarget = new THREE.Vector3(context.SCENE.s.position.x,
-          context.SCENE.s.position.y,
-          context.SCENE.s.position.z);
+                                                     context.SCENE.s.position.y,
+                                                     context.SCENE.s.position.z);
       context.SCENE.cameraHeight = config.BOUNDARY.size.y * 0.4;
     }
   }
@@ -538,10 +529,10 @@ var Boids = Boids || {};
   function init() {
 
     function onWindowResize() {
-      context.SCENE.camera.left = window.innerWidth / -2;
+      context.SCENE.camera.left = window.innerWidth / - 2;
       context.SCENE.camera.right = window.innerWidth / 2;
       context.SCENE.camera.top = window.innerHeight / 2;
-      context.SCENE.camera.bottom = window.innerHeight / -2;
+      context.SCENE.camera.bottom = window.innerHeight / - 2;
 
       setRendererSize();
       context.SCENE.camera.updateProjectionMatrix();
@@ -574,45 +565,43 @@ var Boids = Boids || {};
     }
 
     /* Update mouse position and enable */
-    $(context.container).mousemove(function () {
+    $(context.container).mousemove(function() {
       var camera = context.SCENE.camera;
       var projector = context.SCENE.projector;
 
       var vector = new THREE.Vector3(
           (event.clientX / window.innerWidth) * 2 - 1,
-          -(event.clientY / window.innerHeight) * 2 + 1,
+          - (event.clientY / window.innerHeight) * 2 + 1,
           0.5);
 
       projector.unprojectVector(vector, camera);
 
       var dir = vector.sub(camera.position).normalize();
       var ray = new THREE.Raycaster(camera.position, dir);
-      var distance = -camera.position.z / dir.z;
+      var distance = - camera.position.z / dir.z;
 
       context.MOUSE.active = true;
       context.MOUSE.position = camera.position.clone()
-      .add(dir.multiplyScalar(distance));
-      if (context.MOUSE.timeout !== null) {
+          .add(dir.multiplyScalar(distance));
+      if (context.MOUSE.timeout !== null)
         clearTimeout(context.MOUSE.timeout);
-      }
-      setTimeout(function () {
+      setTimeout(function() {
         disableMouse();
       }, 3000);
     });
 
     /* Disable mouse when not active */
-    $(context.container).mouseleave(function () {
+    $(context.container).mouseleave(function() {
       disableMouse();
     });
 
     boundaries =
         new THREE.Vector3(w - w * config.BOUNDARY.threshold,
-            h - h * config.BOUNDARY.threshold,
-            d - d * config.BOUNDARY.threshold);
+                          h - h * config.BOUNDARY.threshold,
+                          d - d * config.BOUNDARY.threshold);
 
-    for (var i = 0; i < config.BOIDS.count; i++) {
+    for (var i = 0; i < config.BOIDS.count; i++)
       createBoid();
-    }
 
     tick(1);
   }
@@ -624,14 +613,14 @@ var Boids = Boids || {};
 
   var COHESION_MULTIPLIER = 10000;
   $('#cohesion').text(Math.round(config.BOIDS.behaviour.cohesion *
-      COHESION_MULTIPLIER));
+                                 COHESION_MULTIPLIER));
   $('#cohesion-slider').slider({
     range: 'min',
     min: 0,
     max: 50,
     step: 1,
     value: config.BOIDS.behaviour.cohesion * COHESION_MULTIPLIER,
-    slide: function (event, ui) {
+    slide: function(event, ui) {
       $('#cohesion').text(ui.value);
       config.BOIDS.behaviour.cohesion = ui.value / COHESION_MULTIPLIER;
     }
@@ -645,7 +634,7 @@ var Boids = Boids || {};
     max: 50,
     step: 1,
     value: config.BOIDS.behaviour.alignment * ALIGNMENT_MULTIPLIER,
-    slide: function (event, ui) {
+    slide: function(event, ui) {
       $('#alignment').text(ui.value);
       config.BOIDS.behaviour.alignment = ui.value / ALIGNMENT_MULTIPLIER;
     }
@@ -654,16 +643,16 @@ var Boids = Boids || {};
   var SEPARATION_MULTIPLIER = 0.1;
   var SEPARATION_OFFSET = 100;
   $('#separation').text((config.BOIDS.behaviour.separation.distance -
-      SEPARATION_OFFSET) *
-      SEPARATION_MULTIPLIER);
+                         SEPARATION_OFFSET) *
+                        SEPARATION_MULTIPLIER);
   $('#separation-slider').slider({
     range: 'min',
     min: 0,
     max: 15,
     step: 1,
     value: (config.BOIDS.behaviour.separation.distance - SEPARATION_OFFSET) *
-    SEPARATION_MULTIPLIER,
-    slide: function (event, ui) {
+        SEPARATION_MULTIPLIER,
+    slide: function(event, ui) {
       $('#separation').text(ui.value);
       config.BOIDS.behaviour.separation.distance = ui.value /
           SEPARATION_MULTIPLIER + SEPARATION_OFFSET;
@@ -677,7 +666,7 @@ var Boids = Boids || {};
     max: 300,
     step: 1,
     value: config.BOIDS.count,
-    slide: function (event, ui) {
+    slide: function(event, ui) {
       var n = ui.value;
 
       $('#no-of-boids').text(n);
@@ -696,7 +685,7 @@ var Boids = Boids || {};
 
   var SPEED_MULTIPLIER = 1;
   $('#speed').text(config.BOIDS.speed.min * SPEED_MULTIPLIER + ' - ' +
-      config.BOIDS.speed.max * SPEED_MULTIPLIER);
+                   config.BOIDS.speed.max * SPEED_MULTIPLIER);
   $('#speed-slider').slider({
     range: true,
     min: 1,
@@ -706,7 +695,7 @@ var Boids = Boids || {};
       config.BOIDS.speed.min * SPEED_MULTIPLIER,
       config.BOIDS.speed.max * SPEED_MULTIPLIER
     ],
-    slide: function (event, ui) {
+    slide: function(event, ui) {
       $('#speed').text(ui.values[0] + ' - ' + ui.values[1]);
       config.BOIDS.speed.min = ui.values[0] / SPEED_MULTIPLIER;
       config.BOIDS.speed.max = ui.values[1] / SPEED_MULTIPLIER;
@@ -715,57 +704,54 @@ var Boids = Boids || {};
 
   var SIGHT_MULTIPLIER = 0.1;
   $('#sight').text((config.BOIDS.los -
-      config.BOIDS.behaviour.separation.distance) *
-      SIGHT_MULTIPLIER);
+                    config.BOIDS.behaviour.separation.distance) *
+                   SIGHT_MULTIPLIER);
   $('#sight-slider').slider({
     range: 'min',
     min: 2,
     max: 50,
     step: 1,
     value: (config.BOIDS.los - config.BOIDS.behaviour.separation.distance) *
-    SIGHT_MULTIPLIER,
-    slide: function (event, ui) {
+        SIGHT_MULTIPLIER,
+    slide: function(event, ui) {
       $('#sight').text(ui.value);
       config.BOIDS.los = ui.value / SIGHT_MULTIPLIER +
           config.BOIDS.behaviour.separation.distance;
     }
   });
 
-  $('#first-person').on('switch-change', function (e, data) {
+  $('#first-person').on('switch-change', function(e, data) {
     context.SCENE.firstPerson = data.value;
     initCamera();
   });
 
-  $('#mouse-behaviour').on('switch-change', function (e, data) {
+  $('#mouse-behaviour').on('switch-change', function(e, data) {
     context.MOUSE.foe = !data.value;
   });
 
-  $('#stats-visible').on('switch-change', function (e, data) {
+  $('#stats-visible').on('switch-change', function(e, data) {
     context.SCENE.stats.domElement.style.visibility = data.value ?
         'visible' : 'hidden';
   });
 
-  $('#reset').click(function () {
+  $('#reset').click(function() {
     initLighting();
 
-    for (var i = 0; i < config.BOIDS.count; i++) {
+    for (var i = 0; i < config.BOIDS.count; i++)
       destroyBoid();
-    }
 
-    for (var i = 0; i < config.BOIDS.count; i++) {
+    for (var i = 0; i < config.BOIDS.count; i++)
       createBoid();
-    }
   });
 
-  $('#show-settings').click(function () {
-    if ($('#settings').is(':visible')) {
+  $('#show-settings').click(function() {
+    if ($('#settings').is(':visible'))
       $('#settings').slideUp();
-    } else {
+    else
       $('#settings').slideDown();
-    }
   });
 
-  $(document).bind('keydown', 'esc', function () {
+  $(document).bind('keydown', 'esc', function() {
     $('#show-settings').click()
   });
 }).call(Boids);

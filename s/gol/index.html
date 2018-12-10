@@ -2,50 +2,50 @@
 
 <html lang="en">
 
-<head>
-  <title>Game of Life</title>
-  <meta name="description" content="">
-  <meta name="author" content="Chris Cummins">
-  <meta name="apple-mobile-web-app-capable" content="yes"/>
-  <meta name="viewport" content="width=1024"/>
-  <meta charset="utf-8"/>
+  <head>
+    <title>Game of Life</title>
+    <meta name="description" content="">
+    <meta name="author" content="Chris Cummins">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=1024" />
+    <meta charset="utf-8" />
 
-  <link rel="stylesheet" href="{{ '/css/app.css' | relative_url }}"/>
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.1.0/css/font-awesome.css"/>
+    <link rel="stylesheet" href="{{ '/css/app.css' | relative_url }}" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.1.0/css/font-awesome.css" />
 
-  <style>
-    @import url(http://fonts.googleapis.com/css?family=Stalinist+One);
+    <style>
+      @import url(http://fonts.googleapis.com/css?family=Stalinist+One);
 
-    body {
-      background-color: #000;
-      padding: 0 !important;
-    }
+      body {
+        background-color: #000;
+        padding: 0 !important;
+      }
 
-    #instructions {
-      font-family: 'Stalinist One', cursive;
-      position: absolute;
-      bottom: 0;
-      color: #fff;
-      text-align: center;
-      width: 100%;
-      cursor: default;
-      -webkit-touch-callout: none;
-      -webkit-user-select: none;
-      -khtml-user-select: none;
-      -moz-user-select: moz-none;
-      -ms-user-select: none;
-      user-select: none;
-    }
-  </style>
-</head>
+      #instructions {
+        font-family: 'Stalinist One', cursive;
+        position: absolute;
+        bottom: 0;
+        color: #fff;
+        text-align: center;
+        width: 100%;
+        cursor: default;
+        -webkit-touch-callout: none;
+        -webkit-user-select:   none;
+        -khtml-user-select:    none;
+        -moz-user-select:      moz-none;
+        -ms-user-select:       none;
+        user-select:           none;
+      }
+    </style>
+  </head>
 
-<body>
-<div id="container" oncontextmenu="return false"></div>
-<div id="instructions">
-  <p>Click and drag to create life.</p>
-</div>
-</body>
+  <body>
+    <div id="container" oncontextmenu="return false"></div>
+    <div id="instructions">
+      <p>Click and drag to create life.</p>
+    </div>
+  </body>
 
-<script src="{{ '/s/gol/gol.js' | relative_url }}"></script>
+  <script src="{{ '/s/gol/gol.js' | relative_url }}"></script>
 
 </html>

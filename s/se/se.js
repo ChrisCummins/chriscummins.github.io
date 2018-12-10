@@ -13,28 +13,31 @@
  *    http://threejs.org/examples/webgl_geometry_terrain.html
  */
 
-var SpaceExplorer = function () {
+var SpaceExplorer = function() {
   'use strict';
 
   // Enable user to interact with "btn".
-  var enableBtn = function (btn) {
+  var enableBtn = function(btn) {
     btn.removeAttr('disabled', false);
   };
 
+
   // Disable user from interacting with "btn".
-  var disableBtn = function (btn) {
+  var disableBtn = function(btn) {
     btn.attr('disabled', 'disabled');
   };
 
+
   // Generate a random point withim "dimen".
-  var randomPoint = function (dimen) {
+  var randomPoint = function(dimen) {
     return [Math.floor(Math.random() * dimen[0]),
-      Math.floor(Math.random() * dimen[1])]
+            Math.floor(Math.random() * dimen[1])]
   };
+
 
   // Permute "point" in space "dimen" by a random distance within
   // "range".
-  var permutePoint = function (point, range, dimen) {
+  var permutePoint = function(point, range, dimen) {
     var direction = Math.random() * 2 * Math.PI;
     var distance = range[0] + Math.random() * range[1];
 
@@ -50,35 +53,34 @@ var SpaceExplorer = function () {
     return [x2, y2];
   };
 
+
   // Scramble the elements of an array.
   //+ Jonas Raoni Soares Silva
   //@ http://jsfromhell.com/array/shuffle [v1.0]
-  var shuffle = function (o) { //v1.0
+  var shuffle = function(o){ //v1.0
     for (var j, x, i = o.length; i;
-        j = Math.floor(Math.random() * i),
-            x = o[--i], o[i] = o[j], o[j] = x) {
-      ;
-    }
+         j = Math.floor(Math.random() * i),
+         x = o[--i], o[i] = o[j], o[j] = x);
     return o;
   };
 
+
   // Rank the elements of "history" from best to worst.
-  var sortHistory = function (history) {
-    return history.sort(function (a, b) {
-      return b[0] - a[0];
-    });
+  var sortHistory = function(history) {
+    return history.sort(function(a, b) { return b[0]- a[0]; });
   };
+
 
   // GUI elements.
   var gui = {
     btn: {  // Buttons.
       randomise: $('button.btn-randomise'),
       reset: $('button.ctrl.btn-reset'),
-      step: $('button.ctrl.btn-step'),
-      run: $('button.ctrl.btn-run')
+      step:  $('button.ctrl.btn-step'),
+      run:   $('button.ctrl.btn-run')
     },
     btns: {  // Button collections.
-      ctrl: $('button.ctrl')
+      ctrl:  $('button.ctrl')
     },
     algorithms: {
       divs: $('.algorithms > div')
@@ -129,27 +131,24 @@ var SpaceExplorer = function () {
     // Random search algorithm.
     'random': {
       data: {},
-      init: function (history, data, dimen) {
-      }, // Stateless search.
-      predict: function (history, data, dimen) {
+      init: function(history, data, dimen) {}, // Stateless search.
+      predict: function(history, data, dimen) {
         return randomPoint(dimen);
       }
     },
     // Exhaustive search algorithm.
     'exhaustive': {
-      data: {index: 0},
-      init: function (history, data, dimen) {
-        data.index = -1
-      },
-      predict: function (history, data, dimen) {
+      data: { index: 0 },
+      init: function(history, data, dimen) { data.index = -1 },
+      predict: function(history, data, dimen) {
         data.index++; // Update location counter.
         return [Math.floor(data.index / dimen[0]) % dimen[0],
-          data.index % dimen[1]];
+                data.index % dimen[1]];
       }
     },
     // Hill climber search.
     'hill-climber': {
-      data: {minDist: 1, maxDist: 5, stochastic: 0},
+      data: { minDist: 1, maxDist: 5, stochastic: 0 },
       gui: {
         permute: {
           slider: $('#hill-climber-permute-slider'),
@@ -160,33 +159,29 @@ var SpaceExplorer = function () {
           label: $('#hill-climber-stochastic')
         }
       },
-      init: function (history, data, dimen) {
-      },
-      predict: function (history, data, dimen) {
+      init: function(history, data, dimen) {},
+      predict: function(history, data, dimen) {
 
         // Pick a random starting point.
-        if (!history.length) {
+        if (!history.length)
           return randomPoint(dimen);
-        }
 
         var last = history[history.length - 1]; // Last event
         var permuteRange = [data.minDist, data.maxDist];
 
         // If this is the second iteration, *always* randomly permute.
-        if (history.length === 1) {
+        if (history.length === 1)
           return permutePoint(last.slice(1), permuteRange, dimen);
-        }
 
         var secondToLast = history[history.length - 2]; // Second to last event
 
         // If the last move was an *worse* than the previous point,
         // then return to the previous point, with probability
         // "data.stochastic". Else, permute to a new random point.
-        if (last[0] < secondToLast[0] && Math.random() > data.stochastic) {
+        if (last[0] < secondToLast[0] && Math.random() > data.stochastic)
           return [secondToLast[1], secondToLast[2]];
-        } else {
+        else
           return permutePoint(last.slice(1), permuteRange, dimen);
-        }
       }
     },
     'genetic': {
@@ -216,43 +211,40 @@ var SpaceExplorer = function () {
           label: $('#genetic-mutation')
         }
       },
-      init: function (history, data, dimen) {
+      init: function(history, data, dimen) {
         data.pop = [];
       },
-      predict: function (history, data, dimen) {
+      predict: function(history, data, dimen) {
 
         // Crossover two individuals using uniform crossover.
-        var crossover = function (a, b) {
-          if (Math.random < 0.5) {
+        var crossover = function(a, b) {
+          if (Math.random < 0.5)
             return [a[1], b[2]];
-          } else {
+          else
             return [b[1], a[2]];
-          }
         }
 
         // Mutate an individual.
-        var mutate = function (a) {
+        var mutate = function(a) {
           return permutePoint(a.slice(1), [1, 10], dimen);
         }
 
-        var replicate = function (a) {
+        var replicate = function(a) {
           return a.slice(1);
         }
 
         //+ Jonas Raoni Soares Silva
         //@ http://jsfromhell.com/array/shuffle [v1.0]
-        var shuffle = function (o) { //v1.0
+        var shuffle = function(o){ //v1.0
           for (var j, x, i = o.length; i;
-              j = Math.floor(Math.random() * i),
-                  x = o[--i], o[i] = o[j], o[j] = x) {
-            ;
-          }
+               j = Math.floor(Math.random() * i),
+               x = o[--i], o[i] = o[j], o[j] = x);
           return o;
         };
 
         // Generate a new population from "lastPop". If not given,
         // generate a random population.
-        var genPop = function (lastPop) {
+        var genPop = function(lastPop) {
           var pop = []; // The new population
           data.popSize = data.nextPopSize; // Set the next population size
 
@@ -265,39 +257,36 @@ var SpaceExplorer = function () {
               var tournament = sortHistory(shuffle(lastPop).slice(0, poolSize));
 
               // Crossver, mutate, or replicate.
-              if (Math.random() < data.crossoverRate && poolSize > 1) {
+              if (Math.random() < data.crossoverRate && poolSize > 1)
                 pop.push(crossover(tournament[0], tournament[1]));
-              } else if (Math.random() < data.mutationRate) {
-                pop.push(mutate(tournament[0]));
-              }// Mutate
-              else {
-                pop.push(replicate(tournament[0]))
-              } // Replicate
+              else if (Math.random() < data.mutationRate)
+                pop.push(mutate(tournament[0])); // Mutate
+              else
+                pop.push(replicate(tournament[0])) // Replicate
             }
           } else {
             // Generate a random population.
-            for (var i = 0; i < data.popSize; i++) {
+            for (var i = 0; i < data.popSize; i++)
               pop.push(randomPoint(dimen));
-            }
           }
 
           return pop;
         }
 
         // Generate a starting population.
-        if (!history.length) {
+        if (!history.length)
           data.pop = genPop();
-        } else if (!data.pop.length) {
+        else if (!data.pop.length)
           data.pop = genPop(history.slice(0, data.popSize));
-        }
 
         return data.pop.pop();
       }
     }
   }
 
+
   // Class repesenting a square 2D search space.
-  var Space = function (size) {
+  var Space = function(size) {
     this.size = size; // The size of the space.
     this.area = size * size; // The area of the space.
     this.dimen = [size, size] // Dimensions as array.
@@ -308,12 +297,12 @@ var SpaceExplorer = function () {
     var quality = 1;
     var z = Math.random() * 100;
 
-    for (var j = 0; j < 4; j++) {
-      for (var i = 0; i < this.area; i++) {
+    for (var j = 0; j < 4; j ++) {
+      for (var i = 0; i < this.area; i ++) {
         var x = i % this.size;
-        var y = ~~(i / this.size);
+        var y = ~~ (i / this.size);
         this.data[i] += Math.abs(noise(x / quality, y / quality, z) *
-            quality * 1.75);
+                                 quality * 1.75);
       }
 
       quality *= 5;
@@ -322,14 +311,16 @@ var SpaceExplorer = function () {
     this.max = Math.max.apply(Math, this.data);
   };
 
+
   // Return the normalized height at location [x,y].
-  Space.prototype.height = function (x, y) {
+  Space.prototype.height = function(x, y) {
     var index = y * this.size + x; // X,Y coordinates to 1D index
     return Number(this.data[index]) / this.max; // Noramlize.
   };
 
+
   // Class which renders a 3D visualisation of "space" in "container".
-  var Renderer = function (container, space) {
+  var Renderer = function(container, space) {
     // Renderer background color.
     var bg = new THREE.Color(0x000000);
 
@@ -348,8 +339,7 @@ var SpaceExplorer = function () {
     this.points = []
 
     // Create camera. Params: FOV, aspect, z-near, z-far.
-    this.camera = new THREE.PerspectiveCamera(45, this.width / this.height, 1,
-        30000);
+    this.camera = new THREE.PerspectiveCamera(45, this.width / this.height, 1, 30000);
     this.controls = new THREE.OrbitControls(this.camera);
     this.clock = new THREE.Clock();
     this.scene = new THREE.Scene();
@@ -367,21 +357,21 @@ var SpaceExplorer = function () {
     this.container[0].appendChild(this.renderer.domElement);
 
     // Register a resize callback.
-    window.addEventListener('resize', (function (self) {
-      return function () {
-        self.resizeCallback();
-      }
+    window.addEventListener('resize', (function(self) {
+      return function() { self.resizeCallback(); }
     })(this), false);
   };
 
+
   // Render optimisation space.
-  Renderer.prototype.render = function () {
+  Renderer.prototype.render = function() {
     this.controls.update(this.clock.getDelta());
     this.renderer.render(this.scene, this.camera);
   }
 
+
   // Handle a resize.
-  Renderer.prototype.resizeCallback = function () {
+  Renderer.prototype.resizeCallback = function() {
     // Update width and height.
     this.width = this.container.width();
     this.height = this.container.height();
@@ -392,8 +382,9 @@ var SpaceExplorer = function () {
     this.renderer.setSize(this.width, this.height);
   };
 
+
   // Generate terrain texture.
-  Renderer.prototype.getTexture = function (data) {
+  Renderer.prototype.getTexture = function(data) {
     var canvas;
     var canvasScaled;
     var context;
@@ -417,7 +408,7 @@ var SpaceExplorer = function () {
     image = context.getImageData(0, 0, canvas.width, canvas.height);
     imageData = image.data;
 
-    for (var i = 0, j = 0, l = imageData.length; i < l; i += 4, j++) {
+    for (var i = 0, j = 0, l = imageData.length; i < l; i += 4, j ++) {
       vector3.x = data[j - 2] - data[j + 2];
       vector3.y = 2;
       vector3.z = data[j - this.size * 2] - data[j + this.size * 2];
@@ -426,9 +417,9 @@ var SpaceExplorer = function () {
       shade = vector3.dot(sun);
 
       // R,G,B values:
-      imageData[i] = (110 + shade * 128) * (0.5 + data[j] * 0.007);
-      imageData[i + 1] = (32 + shade * 96) * (0.5 + data[j] * 0.007);
-      imageData[i + 2] = (0 + shade * 50) * (0.5 + data[j] * 0.007);
+      imageData[i]     = (110 + shade * 128)  * (0.5 + data[j]  * 0.007);
+      imageData[i + 1] = (32  + shade * 96)   * (0.5 + data[j]  * 0.007);
+      imageData[i + 2] = (0   + shade * 50)   * (0.5 + data[j]  * 0.007);
     }
 
     context.putImageData(image, 0, 0);
@@ -447,8 +438,8 @@ var SpaceExplorer = function () {
     imageData = image.data;
 
     for (var i = 0, l = imageData.length; i < l; i += 4) {
-      var v = ~~(Math.random() * 5);
-      imageData[i] += v;
+      var v = ~~ (Math.random() * 5);
+      imageData[i    ] += v;
       imageData[i + 1] += v;
       imageData[i + 2] += v;
     }
@@ -458,44 +449,44 @@ var SpaceExplorer = function () {
     return canvasScaled;
   };
 
+
   // Generate terrain.
-  Renderer.prototype.getMesh = function (data) {
+  Renderer.prototype.getMesh = function(data) {
     var geometry, vertices, texture, material;
 
     // 1. Geometry.
     geometry = new THREE.PlaneBufferGeometry(7500, 7500,
-        this.size - 1,
-        this.size - 1);
+                                             this.size - 1,
+                                             this.size - 1);
     geometry.applyMatrix(new THREE.Matrix4().makeRotationX(-Math.PI / 2));
 
     // 2. Vertices.
     this.vertices = geometry.attributes.position.array;
-    for (var i = 0, j = 0, l = this.vertices.length; i < l; i++, j += 3) {
+    for (var i = 0, j = 0, l = this.vertices.length; i < l; i++, j += 3)
       this.vertices[j + 1] = data[i] * 10;
-    }
 
     // 3. Texture.
     texture = new THREE.Texture(this.getTexture(data),
-        new THREE.UVMapping(),
-        THREE.ClampToEdgeWrapping,
-        THREE.ClampToEdgeWrapping);
+                                new THREE.UVMapping(),
+                                THREE.ClampToEdgeWrapping,
+                                THREE.ClampToEdgeWrapping);
     texture.needsUpdate = true;
 
     // 4. Material.
-    material = new THREE.MeshBasicMaterial({map: texture});
+    material = new THREE.MeshBasicMaterial({ map: texture });
     material.side = THREE.DoubleSide; // Double sided material.
 
     // 5. Mesh.
     return new THREE.Mesh(geometry, material);
   };
 
+
   // Set the optimisation space.
-  Renderer.prototype.setSpace = function (space) {
+  Renderer.prototype.setSpace = function(space) {
 
     // Clear the point space if necessary.
-    if (space.size !== this.size) {
+    if (space.size !== this.size)
       this.removeAllPoints();
-    }
 
     this.size = space.size;
     this.area = space.area;
@@ -504,9 +495,8 @@ var SpaceExplorer = function () {
     var newMesh = this.getMesh(space.data);
 
     // Remove old mesh.
-    if (this.mesh) {
+    if (this.mesh)
       this.scene.remove(this.mesh);
-    }
 
     // Add new mesh.
     this.mesh = newMesh;
@@ -519,15 +509,16 @@ var SpaceExplorer = function () {
     this.camera.position.z = distanceFactor * this.size;
   };
 
+
   // Add an explored point.
-  Renderer.prototype.addPoint = function (x, y, z) {
+  Renderer.prototype.addPoint = function(x, y, z) {
     // Normalize the height into an "intensity" value.
     var intensity = z / simulation.space.max;
     // Use the intensity to determine the size and colour of the
     // point.
     var radius = 30 - 10 * intensity;
     var color = new THREE.Color().setHSL((.7 + .5 * intensity) % 1,
-        .7, .1 + .8 * intensity);
+                                         .7, .1 + .8 * intensity);
 
     // Create a new point at [x,y,z].
     var geometry = new THREE.SphereGeometry(radius, 4, 4);
@@ -544,24 +535,26 @@ var SpaceExplorer = function () {
     this.scene.add(point);
   };
 
+
   // Remove all points.
-  Renderer.prototype.removeAllPoints = function () {
-    for (var i = 0, l = this.points.length; i < l; i++) {
+  Renderer.prototype.removeAllPoints = function() {
+    for (var i = 0, l = this.points.length; i < l; i++)
       this.scene.remove(this.points[i]);
-    }
 
     this.points = []
   }
 
+
   // Simulation progress analytics class.
-  var Analytics = function () {
+  var Analytics = function() {
     this.best = 0; // The % best outcome (initialise low).
     this.worst = 100; // The % worst outcome (intialise high).
     this.sum = 0; // A running total of all outcomes.
   };
 
+
   // Update the analytics.
-  Analytics.prototype.set = function (simulation) {
+  Analytics.prototype.set = function(simulation) {
     var history = simulation.history;
     var currentProgress = 0;
     var average = 0;
@@ -574,7 +567,7 @@ var SpaceExplorer = function () {
       currentProgress = Math.round(last[0] * 100);
       average = Math.round((this.sum / history.length) * 100);
       explored = Math.min((history.length / simulation.space.area) * 100,
-          100).toFixed(2);
+                          100).toFixed(2);
 
       this.worst = currentProgress < this.worst ? currentProgress : this.worst;
       this.best = currentProgress > this.best ? currentProgress : this.best;
@@ -593,8 +586,9 @@ var SpaceExplorer = function () {
     gui.analytics.progress.avg.label.text(average + '%');
   };
 
+
   // Our simulation object.
-  var Simulation = function () {
+  var Simulation = function() {
     this.jiffies = 0; // Number of iterations in simulation.
     this.isRunning = false; // "true" if simulation running.
     this.frequency = 4; // Frequency (in Hz) of running.
@@ -606,25 +600,29 @@ var SpaceExplorer = function () {
     this.setAlgorithm(algorithms['random']);
   };
 
+
   // Set the current algorithm.
-  Simulation.prototype.setAlgorithm = function (algorithm) {
+  Simulation.prototype.setAlgorithm = function(algorithm) {
     this.algorithm = algorithm;
     this.algorithm.init(this.history, this.algorithm.data,
-        [this.space.size, this.space.size]);
+                        [this.space.size, this.space.size]);
   };
 
+
   // Returns whether the simulation is running.
-  Simulation.prototype.running = function () {
+  Simulation.prototype.running = function() {
     return this.isRunning;
   };
 
+
   // Returns whether the simulation is paused.
-  Simulation.prototype.paused = function () {
+  Simulation.prototype.paused = function() {
     return this.jiffies && !this.isRunning;
   };
 
+
   // Pause the simulation.
-  Simulation.prototype.pause = function () {
+  Simulation.prototype.pause = function() {
     this.isRunning = false;
 
     // Update the GUI.
@@ -633,11 +631,12 @@ var SpaceExplorer = function () {
   };
 
   // Returns whether the simulation is stopped.
-  Simulation.prototype.stopped = function () {
+  Simulation.prototype.stopped = function() {
     return !this.running() && !this.paused();
   };
 
-  Simulation.prototype.reset = function () {
+
+  Simulation.prototype.reset = function() {
     // Erase progress.
     this.jiffies = 0;
     this.history = [];
@@ -649,16 +648,16 @@ var SpaceExplorer = function () {
   };
 
   // Single step through simulation.
-  Simulation.prototype.evaluate = function (prediction) {
+  Simulation.prototype.evaluate = function(prediction) {
 
     // Add gaussian noise.
-    var add_noise = function (mean, stdev) {
+    var add_noise = function(mean, stdev) {
 
       // Gaussian distribution.
-      var rnd_snd = function () {
+      var rnd_snd = function() {
         return ((Math.random() * 2 - 1) +
-            (Math.random() * 2 - 1) +
-            (Math.random() * 2 - 1));
+                (Math.random() * 2 - 1) +
+                (Math.random() * 2 - 1));
       };
 
       return mean + rnd_snd() * stdev;
@@ -667,17 +666,17 @@ var SpaceExplorer = function () {
     // Return a noisy observation using gaussian noise of strength
     // "measurement_noise".
     return add_noise(this.space.height(prediction[0], prediction[1]), // Height
-        this.measurement_noise); // User set measurement noise
+                     this.measurement_noise); // User set measurement noise
   };
 
   // Single step through simulation.
-  Simulation.prototype.step = function () {
+  Simulation.prototype.step = function() {
     this.jiffies++;
 
     // Get the predicted best next move.
     var event = this.algorithm.predict(this.history,
-        this.algorithm.data,
-        this.space.dimen);
+                                       this.algorithm.data,
+                                       this.space.dimen);
 
     // Evaluate the move and prepend the outcome.
     event.unshift(this.evaluate(event));
@@ -693,25 +692,23 @@ var SpaceExplorer = function () {
     analytics.set(this);
   };
 
+
   // Callback for each "tick" of running simulation.
-  Simulation.prototype.callback = function () {
+  Simulation.prototype.callback = function() {
     if (!this.isRunning) // Exit if we're no longer running.
-    {
       return;
-    }
 
     this.step();
 
     // Set next callback for 1 / frequency seconds.
-    setTimeout((function (self) {
-      return function () {
-        self.callback();
-      }
+    setTimeout((function(self) {
+      return function() { self.callback(); }
     })(this), 1000 / this.frequency);
   };
 
+
   // Start the simulation running.
-  Simulation.prototype.run = function () {
+  Simulation.prototype.run = function() {
     this.isRunning = true;
 
     // Update the GUI.
@@ -721,18 +718,21 @@ var SpaceExplorer = function () {
     return this.callback();
   };
 
+
   // Animate optimisation space.
-  var animate = function () {
+  var animate = function() {
     requestAnimationFrame(animate); // Request next animation frmae
     renderer.render();
   }
 
+
   // Set a new simulation space.
-  var setSpace = function (space) {
+  var setSpace = function(space) {
     gui.ctrl.size.label.text(space.size + ' x ' + space.size);
     simulation.space = space;
     renderer.setSpace(space);
   }
+
 
   // INITIALISATION.
 
@@ -740,25 +740,20 @@ var SpaceExplorer = function () {
   $('.conf-option').tooltip('hide');
 
   // "Run" button event handler.
-  gui.btn.run.click(function () {
-    if (simulation.running()) {
+  gui.btn.run.click(function() {
+    if (simulation.running())
       simulation.pause();
-    } else {
+    else
       simulation.run();
-    }
   });
   // "Step" button event handler.
-  gui.btn.step.click(function () {
-    simulation.step();
-  });
+  gui.btn.step.click(function() { simulation.step(); });
 
   // "Reset" button event handler.
-  gui.btn.reset.click(function () {
-    simulation.reset();
-  });
+  gui.btn.reset.click(function() { simulation.reset(); });
 
   // Algorithm selector handler.
-  gui.ctrl.algorithm.li.click(function () {
+  gui.ctrl.algorithm.li.click(function() {
     var btn = gui.ctrl.algorithm.btn; // Button.
     var val = $(this).text(); // Algorithm name.
     var id = val.toLowerCase().replace(/ /g, '-'); // Algorithm ID.
@@ -781,7 +776,7 @@ var SpaceExplorer = function () {
     max: 30,
     step: 1,
     value: parseInt(gui.ctrl.frequency.label.text()),
-    slide: function (event, ui) {
+    slide: function(event, ui) {
       gui.ctrl.frequency.label.text(ui.value + ' Hz');
       simulation.frequency = ui.value;
     }
@@ -794,14 +789,14 @@ var SpaceExplorer = function () {
     max: 25,
     step: 1,
     value: parseInt(gui.ctrl.measurement_noise.label.text()),
-    slide: function (event, ui) {
+    slide: function(event, ui) {
       gui.ctrl.measurement_noise.label.text(ui.value + ' %');
       simulation.measurement_noise = ui.value / 100;
     }
   });
 
   // Randmoise button handler.
-  gui.btn.randomise.click(function () {
+  gui.btn.randomise.click(function() {
     setSpace(new Space(simulation.space.size));
   });
 
@@ -812,9 +807,7 @@ var SpaceExplorer = function () {
     max: 512,
     step: 16,
     value: parseInt(gui.ctrl.size.label.text()),
-    slide: function (event, ui) {
-      setSpace(new Space(ui.value));
-    }
+    slide: function(event, ui) { setSpace(new Space(ui.value)); }
   });
 
   // Hill climber permute distance slider.
@@ -824,7 +817,7 @@ var SpaceExplorer = function () {
     max: 20,
     step: 1,
     values: [1, 5],
-    slide: function (event, ui) {
+    slide: function(event, ui) {
       var algorithm = algorithms['hill-climber'];
       algorithm.data.minDist = ui.values[0];
       algorithm.data.maxDist = ui.values[1];
@@ -841,7 +834,7 @@ var SpaceExplorer = function () {
     max: 50,
     step: 1,
     value: 0,
-    slide: function (event, ui) {
+    slide: function(event, ui) {
       var algorithm = algorithms['hill-climber'];
       algorithm.data.stochastic = ui.value / 100;
 
@@ -857,7 +850,7 @@ var SpaceExplorer = function () {
     max: 50,
     step: 1,
     value: 25,
-    slide: function (event, ui) {
+    slide: function(event, ui) {
       var algorithm = algorithms['genetic'];
       algorithm.data.nextPopSize = ui.value;
 
@@ -873,7 +866,7 @@ var SpaceExplorer = function () {
     max: 100,
     step: 1,
     value: 25,
-    slide: function (event, ui) {
+    slide: function(event, ui) {
       var algorithm = algorithms['genetic'];
       algorithm.data.nextPopSize = ui.value;
 
@@ -889,7 +882,7 @@ var SpaceExplorer = function () {
     max: 100,
     step: 5,
     value: 50,
-    slide: function (event, ui) {
+    slide: function(event, ui) {
       var algorithm = algorithms['genetic'];
       algorithm.data.tournament = ui.value / 100;
 
@@ -905,7 +898,7 @@ var SpaceExplorer = function () {
     max: 100,
     step: 5,
     value: 90,
-    slide: function (event, ui) {
+    slide: function(event, ui) {
       var algorithm = algorithms['genetic'];
       algorithm.data.crossoverRate = ui.value / 100;
 
@@ -921,7 +914,7 @@ var SpaceExplorer = function () {
     max: 10,
     step: 1,
     value: 1,
-    slide: function (event, ui) {
+    slide: function(event, ui) {
       var algorithm = algorithms['genetic'];
       algorithm.data.mutationRate = ui.value / 100;
 
@@ -942,6 +935,7 @@ var SpaceExplorer = function () {
   // Start animation loop.
   animate();
 };
+
 
 // Delay intialisation until page is loaded.
 window.onload = SpaceExplorer;

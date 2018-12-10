@@ -21,7 +21,6 @@ title: Space Explorer
     table-layout: fixed;
     margin-top: 15px;
   }
-
   .conf-table td {
     border-top: none;
   }
@@ -37,7 +36,6 @@ title: Space Explorer
   .algorithms > div:not(.active) {
     display: none;
   }
-
   .algorithms {
     text-align: center;
   }
@@ -80,30 +78,12 @@ title: Space Explorer
 
         <div class="analytics">
           <table class="table conf-table">
-            <tr>
-              <td>Iteration count</td>
-              <td id="iterations">0</td>
-            </tr>
-            <tr>
-              <td>Maximum space explored</td>
-              <td id="progress-explored">0.00%</td>
-            </tr>
-            <tr>
-              <td>Current</td>
-              <td id="progress-current">0%</td>
-            </tr>
-            <tr>
-              <td>Best</td>
-              <td id="progress-best">0%</td>
-            </tr>
-            <tr>
-              <td>Worst</td>
-              <td id="progress-worst">0%</td>
-            </tr>
-            <tr>
-              <td>Average</td>
-              <td id="progress-avg">0%</td>
-            </tr>
+            <tr><td>Iteration count</td><td id="iterations">0</td></tr>
+            <tr><td>Maximum space explored</td><td id="progress-explored">0.00%</td></tr>
+            <tr><td>Current</td><td id="progress-current">0%</td></tr>
+            <tr><td>Best</td><td id="progress-best">0%</td></tr>
+            <tr><td>Worst</td><td id="progress-worst">0%</td></tr>
+            <tr><td>Average</td><td id="progress-avg">0%</td></tr>
           </table>
         </div>
 
@@ -150,9 +130,7 @@ title: Space Explorer
               <tr class="conf-option" data-toggle="tooltip"
                   title="The distance that can be permuted in a single step">
                 <td>Permute distance</td>
-                <td>
-                  <div id="hill-climber-permute-slider" class="conf-slider"></div>
-                </td>
+                <td><div id="hill-climber-permute-slider" class="conf-slider"></div></td>
                 <td id="hill-climber-permute">1-5</td>
               </tr>
 
@@ -160,9 +138,7 @@ title: Space Explorer
                   title="The chances that a new position will be kept
                   even if it is lower than the old position">
                 <td>Stochastic</td>
-                <td>
-                  <div id="hill-climber-stochastic-slider" class="conf-slider"></div>
-                </td>
+                <td><div id="hill-climber-stochastic-slider" class="conf-slider"></div></td>
                 <td id="hill-climber-stochastic">0%</td>
               </tr>
             </table>
@@ -178,36 +154,28 @@ title: Space Explorer
               <tr class="conf-option" data-toggle="tooltip"
                   title="The number of individuals in a population">
                 <td>Population size</td>
-                <td>
-                  <div id="genetic-size-slider" class="conf-slider"></div>
-                </td>
+                <td><div id="genetic-size-slider" class="conf-slider"></div></td>
                 <td id="genetic-size">25</td>
               </tr>
 
               <tr class="conf-option" data-toggle="tooltip"
                   title="The proportion of the population which is used for tournament selection">
                 <td>Tournament size</td>
-                <td>
-                  <div id="genetic-tournament-slider" class="conf-slider"></div>
-                </td>
+                <td><div id="genetic-tournament-slider" class="conf-slider"></div></td>
                 <td id="genetic-tournament">50%</td>
               </tr>
 
               <tr class="conf-option" data-toggle="tooltip"
                   title="The rate at which new individuals are created by crossover of parents">
                 <td>Crossover rate</td>
-                <td>
-                  <div id="genetic-crossover-slider" class="conf-slider"></div>
-                </td>
+                <td><div id="genetic-crossover-slider" class="conf-slider"></div></td>
                 <td id="genetic-crossover">90%</td>
               </tr>
 
               <tr class="conf-option" data-toggle="tooltip"
                   title="The rate at which new individuals are created by mutating a parent">
                 <td>Mutation rate</td>
-                <td>
-                  <div id="genetic-mutation-slider" class="conf-slider"></div>
-                </td>
+                <td><div id="genetic-mutation-slider" class="conf-slider"></div></td>
                 <td id="genetic-mutation">1%</td>
               </tr>
             </table>
@@ -221,27 +189,21 @@ title: Space Explorer
           <tr class="conf-option" data-toggle="tooltip"
               title="Controls the size of the generated space">
             <td>Space Size</td>
-            <td>
-              <div id="size-slider" class="conf-slider"></div>
-            </td>
+            <td><div id="size-slider" class="conf-slider"></div></td>
             <td id="size">128 x 128</td>
           </tr>
 
           <tr class="conf-option" data-toggle="tooltip"
               title="The amount that each measurement can deviate from the truth">
             <td>Measurement noise</td>
-            <td>
-              <div id="measurement-noise-slider" class="conf-slider"></div>
-            </td>
+            <td><div id="measurement-noise-slider" class="conf-slider"></div></td>
             <td id="measurement-noise">0 %</td>
           </tr>
 
           <tr class="conf-option" data-toggle="tooltip"
               title="The number of iterations per second">
             <td>Simulation speed</td>
-            <td>
-              <div id="frequency-slider" class="conf-slider"></div>
-            </td>
+            <td><div id="frequency-slider" class="conf-slider"></div></td>
             <td id="frequency">2 Hz</td>
           </tr>
 
@@ -249,7 +211,7 @@ title: Space Explorer
 
         <div class="ctrl btn-group" style="width: 100%;">
           <center>
-            <button class="btn-reset ctrl btn control-btn btn-danger" disabled>Reset</button>
+            <button class="btn-reset ctrl btn control-btn btn-danger"  disabled>Reset</button>
             <button class="btn-step  ctrl btn control-btn btn-warning" disabled>Step</button>
             <button class="btn-run   ctrl btn control-btn btn-success" disabled>Run</button>
           </center>

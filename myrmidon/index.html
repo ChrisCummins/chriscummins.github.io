@@ -22,7 +22,7 @@ title: Myrmidon Books Ltd Utils
     <div class="row">
       <div class="span12">
         <h4 style="text-align:center;">Buy Now buttons generator</h4>
-        <hr/>
+        <hr />
       </div>
     </div>
     <div class="row">
@@ -34,8 +34,7 @@ title: Myrmidon Books Ltd Utils
             <div class="control-group">
               <label class="control-label" for="amazon-url">Amazon URL:</label>
               <div class="controls">
-                <input id="amazon-url" name="amazon-url" type="text"
-                       placeholder="e.g. http://amzn.to/1ihC5EZ" class="input-xlarge">
+                <input id="amazon-url" name="amazon-url" type="text" placeholder="e.g. http://amzn.to/1ihC5EZ" class="input-xlarge">
 
               </div>
             </div>
@@ -44,8 +43,7 @@ title: Myrmidon Books Ltd Utils
             <div class="control-group">
               <label class="control-label" for="kindle-url">Kindle URL:</label>
               <div class="controls">
-                <input id="kindle-url" name="kindle-url" type="text"
-                       placeholder="e.g. http://amzn.to/1lPKFvr" class="input-xlarge">
+                <input id="kindle-url" name="kindle-url" type="text" placeholder="e.g. http://amzn.to/1lPKFvr" class="input-xlarge">
 
               </div>
             </div>
@@ -54,9 +52,7 @@ title: Myrmidon Books Ltd Utils
             <div class="control-group">
               <label class="control-label" for="waterstones-url">Waterstones URL</label>
               <div class="controls">
-                <input id="waterstones-url" name="waterstones-url" type="text"
-                       placeholder="e.g. http://www.waterstones.com/waterstonesweb/products/toby+frost/a+game+of+battleships/9816607/"
-                       class="input-xlarge">
+                <input id="waterstones-url" name="waterstones-url" type="text" placeholder="e.g. http://www.waterstones.com/waterstonesweb/products/toby+frost/a+game+of+battleships/9816607/" class="input-xlarge">
 
               </div>
             </div>
@@ -65,8 +61,7 @@ title: Myrmidon Books Ltd Utils
             <div class="control-group">
               <label class="control-label" for="isbn-13">ISBN-13</label>
               <div class="controls">
-                <input id="isbn-13" name="isbn-13" type="text" placeholder="e.g. 978-1905802777"
-                       class="input-xlarge">
+                <input id="isbn-13" name="isbn-13" type="text" placeholder="e.g. 978-1905802777" class="input-xlarge">
 
               </div>
             </div>
@@ -75,8 +70,7 @@ title: Myrmidon Books Ltd Utils
             <div class="control-group">
               <label class="control-label" for="buy-now-submit"></label>
               <div class="controls">
-                <button id="buy-now-submit" name="buy-now-submit" class="btn btn-danger">Generate
-                </button>
+                <button id="buy-now-submit" name="buy-now-submit" class="btn btn-danger">Generate</button>
               </div>
             </div>
 
@@ -99,39 +93,34 @@ title: Myrmidon Books Ltd Utils
 </div>
 
 <script>
-  $('#buy-now-submit').click(function (e) {
+  $('#buy-now-submit').click(function(e) {
     e.preventDefault();
 
-    $('#buy-now-output').text((function () {
+    $('#buy-now-output').text((function() {
       var s = '',
           amazon = $('#amazon-url').val().trim(),
           kindle = $('#kindle-url').val().trim(),
           waterstones = $('#waterstones-url').val().trim(),
           isbn13 = $('#isbn-13').val().trim(),
-          link = function (title, url, classes) {
+          link = function(title, url, classes) {
             return '<a class="myrm-btn ' + classes + '" href="' + url +
-                '" target="_blank" title="Link opens in new window">' + title +
-                '</a> ';
+              '" target="_blank" title="Link opens in new window">' + title +
+              '</a> ';
           };
 
       s = '<hr />\n<div class="shop-links"><h3>Buy now</h3>\n<p style="text-align:center;">'
 
-      if (amazon) {
+      if (amazon)
         s += link('Amazon', amazon, 'btn-amazon');
-      }
 
-      if (kindle) {
+      if (kindle)
         s += link('Kindle', kindle, 'btn-kindle');
-      }
 
-      if (waterstones) {
+      if (waterstones)
         s += link('Waterstones', waterstones, 'btn-waterstones');
-      }
 
-      if (isbn13) {
-        s += link('iBookstore', 'http://itunes.apple.com/gn/book/isbn' + isbn13.replace(/-/g, ''),
-            'btn-ibookstore');
-      }
+      if (isbn13)
+        s += link('iBookstore', 'http://itunes.apple.com/gn/book/isbn' + isbn13.replace(/-/g, ''), 'btn-ibookstore');
 
       s += '</p></div>'
 
