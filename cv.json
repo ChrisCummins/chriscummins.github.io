@@ -56,6 +56,14 @@
   },
   "work": [
     {
+      "company": "DeepMind",
+      "position": "Software Engineer Intern",
+      "website": "https://deepmind.com/",
+      "startDate": "2018",
+      "endDate": "2018",
+      "summary": "Deep reinforcement learning for optimizing instruction fusion of [TensorFlow XLA](https://www.tensorflow.org/xla/) program graphs. Black-box learning methods for TPU, GPU, and CPU performance."
+    },
+    {
       "company": "Google",
       "position": "Software Engineer Intern",
       "website": "https://developers.google.com",
