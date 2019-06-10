@@ -189,8 +189,8 @@ banner: /img/banners/san-fran.jpg
   <h1>Other Academic Activities</h1>
   <table>
     <tr>
-      <td>Posters</td><td>
-        {% for entry in site.data.cv.academic_activities.posters %}
+      <td>Committees</td><td>
+        {% for entry in site.data.cv.academic_activities.committees %}
           {% if forloop.last %}and {% endif %}
           {% if entry.url %}<a class="decorated" title="Link opens in new window" target="_blank" href="{{ entry.url }}">{% endif
           %}{{ entry.name }}{%
@@ -203,6 +203,18 @@ banner: /img/banners/san-fran.jpg
     <tr>
       <td>Peer Reviews</td><td>
         {% for entry in site.data.cv.academic_activities.peer_reviews %}
+          {% if forloop.last %}and {% endif %}
+          {% if entry.url %}<a class="decorated" title="Link opens in new window" target="_blank" href="{{ entry.url }}">{% endif
+          %}{{ entry.name }}{%
+            if entry.url %}</a>{% endif %}
+          ({{ entry.date }}){%
+            if forloop.last %}.{% else %}, {% endif %}
+        {% endfor %}
+      </td>
+    </tr>
+    <tr>
+      <td>Posters</td><td>
+        {% for entry in site.data.cv.academic_activities.posters %}
           {% if forloop.last %}and {% endif %}
           {% if entry.url %}<a class="decorated" title="Link opens in new window" target="_blank" href="{{ entry.url }}">{% endif
           %}{{ entry.name }}{%

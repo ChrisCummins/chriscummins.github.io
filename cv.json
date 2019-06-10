@@ -361,6 +361,23 @@
     }
   ],
   "academic_activities": {
+    "committees": [
+      {
+        "name": "COSMIC'19 General Co-chair",
+        "date": "2019",
+        "url": "http://workshops.inf.ed.ac.uk/cosmic/cosmic19/committee.html"
+      },
+      {
+        "name": "PACT'18 HotCRP Chair",
+        "date": "2018",
+        "url": "https://pact18.hotcrp.com/"
+      },
+      {
+        "name": "CGO'18 Web Chair",
+        "date": "2018",
+        "url": "http://cgo.org/cgo2018/organization/"
+      }
+    ],
     "invited_talks": [
       {
         "name": "Compiler Fuzzing through Deep Learning (Codeplay Software)",
