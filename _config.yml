@@ -93,7 +93,8 @@ jumbotron_min_height: 300
 jumbotron_max_height: 500
 jumbotron_content_gap: 30
 
-# logos for social networks. Obfuscate names to prevent AdBlock.
+# logos for social networks. Obfuscated names to prevent simple rule-based
+# ad blocking.
 social_images:
   facebook:  /img/atw/8dd8ef87f47c829d6dc1a491e06929bb.png
   github:    /img/atw/1ed153fe358ed0d5d38553df372687d6.png
