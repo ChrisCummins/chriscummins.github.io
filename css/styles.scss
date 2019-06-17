@@ -7,10 +7,39 @@
  */
 @import 'bootstrap-variables';
 
+/*
+ * TODO(cec): Use CSS custom properties to enable dynamically switching between
+ * light and dark mode. See:
+ *
+ * https://developer.mozilla.org/en-US/docs/Web/CSS/--*
+ * https://medium.com/@jonas_duri/enable-dark-mode-with-css-variables-and-javascript-today-66cedd3d7845
+ */
+
+/* Light mode: */
+$color-background: #fff;
+$color-background-code: #393939;
+$color-text-code: #d6d6af;
+$color-text: #000;
+$color-title-text: #333;
 $color-link: #c7254e;
 $color-highlight: #e60000;
 $color-subtle: #777;
 $color-button: #0b60fe;
+
+/* Dark mode: */
+
+/*
+$color-background: #191919;
+$color-background-code: #393939;
+$color-text-code: #d6d6af;
+$color-text: #bfbfbf;
+$color-title-text: #777;
+$color-link: #dd6e8a;
+$color-highlight: #c7254e;
+$color-subtle: #777;
+$color-button: #0b60fe;
+*/
+
 
 // font awesome icons
 $fa-github: '\f09b';
@@ -48,9 +77,9 @@ $jumbotron-content-gap: {{ site.jumbotron_content_gap | append: 'px' }};
     //
     & {
         position: relative;
-        color: #000;
+        color: $color-text;
         text-decoration: none;
-        border-bottom: 1px solid #000;
+        border-bottom: 1px solid $color-text;
 
         &:not(.btn).undecorated {
             border-bottom: none;
@@ -137,7 +166,7 @@ a.btn {
 }
 
 code {
-    color: #000;
+    color: $color-text;
     background: none;
 }
 
@@ -159,6 +188,7 @@ code {
             padding: 0 0 .2em 0;
             margin-bottom: .6em;
             background: transparent;
+            background-color: $color-background
 
             h1 {
                 margin-bottom: .2em;
@@ -208,7 +238,7 @@ code {
     }
 
     #about {
-        color: #000;
+        color: $color-text;
         font-size: 16px;
         font-weight: 300;
         margin: 1em 0;
@@ -224,7 +254,8 @@ code {
 .cec-navbar {
     padding-left: 30px;  // counter left offset
     height: 59px;
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: $color-background;
+    opacity: 0.95;
     top: 0;
     z-index: 10;
 }
@@ -274,7 +305,7 @@ code {
     }
 
     p, li {
-        color: #000;
+        color: $color-text;
         line-height: 1.45em;
     }
 
@@ -439,7 +470,7 @@ a.decorated {
 
             td:first-child {
                 min-width: 95px;
-                color: #000;
+                color: $color-text;
             }
 
             td:last-child {
@@ -515,7 +546,7 @@ a.decorated {
         font-size: 16px;
         color: $color-button;
 
-        background-color: #fff;
+        background-color: $color-background;
         border-color: $color-button;
         border: solid 2px $color-button;
 
@@ -567,7 +598,7 @@ a.decorated {
 
         .image {
             overflow: hidden;
-            border: solid 1px #000;
+            border: solid 1px $color-text;
             padding: 0;
 
             img {
@@ -587,7 +618,7 @@ a.decorated {
             text-align: center;
             margin: .3em 0;
             width: 160px;
-            color: #000;
+            color: $color-text;
             @include transition-duration(.3s);
         }
 
@@ -671,6 +702,18 @@ a.decorated {
 }
 
 .bg {
-    background-color: #fff;
+    background-color: $color-background;
     padding-top: $jumbotron-content-gap;
+}
+
+body {
+    color: $color-title-text;
+}
+
+
+pre {
+    background-color: $color-background-code;
+    color: $color-text-code;
+    border: $color-subtle;
+    font-size: 16px;
 }

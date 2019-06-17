@@ -31,7 +31,7 @@
                 padding: 10px 6px;
             }
 
-            color: #000;
+            color: $color-text;
             text-decoration: none!important;
             @include transition-duration(0.3s);
 

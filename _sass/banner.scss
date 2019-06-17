@@ -1,7 +1,7 @@
 @mixin banner() {
     // title banner
     div.banner {
-        background-color: #fff;
+        background-color: $color-background;
         display: inline-block;
 
         // on small screens, the banner is centered, and has a tight border
@@ -47,7 +47,7 @@
 
         a, span {
             padding: 10px $banner-a-horizontal-padding;
-            color: #000;
+            color: $color-text;
         }
 
         a {
@@ -62,7 +62,7 @@
         }
         // don't highlight name on hover
         h1 a:hover {
-            color: #000;
+            color: $color-text;
         }
 
         span {
