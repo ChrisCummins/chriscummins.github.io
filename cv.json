@@ -332,6 +332,10 @@
   ],
   "awards": [
     {
+      "title": "Distinguished Paper Award, [ISSTA](https://conf.researchr.org/details/issta-2018/issta-2018-Technical-Papers/4/Compiler-Fuzzing-through-Deep-Learning). 112 submissions, 28% acceptance rate",
+      "date": "2018"
+    },
+    {
       "title": "Best Paper Award, [PACT](https://parasol.tamu.edu/pact17/). 109 submissions, 23% acceptance rate",
       "date": "2017"
     },
