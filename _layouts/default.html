@@ -93,10 +93,10 @@ Licensed under {{ site.copyright.license }}.
                 {% if page.previous %}
                   <li class="blognav-prev"><a href="{{ page.previous.url | relative_url }}" title="Read the previous post">Older post</a></li>
                 {% endif %}
-              </ul> <!-- /.nav -->
+              </ul> {% comment %} /.nav {% endcomment %}
             {% endif %}
           </div>
-        </div> <!-- #col-left -->
+        </div> {% comment %} #col-left {% endcomment %}
 
         <div id="col-right" class="col-sm-3">
           <div data-spy="affix" data-offset-top="{{ site.jumbotron_max_height }}" data-clampedwidth="#col-right">
@@ -107,9 +107,9 @@ Licensed under {{ site.copyright.license }}.
             </p>
             {%include around-the-web.html %}
           </div>
-        </div> <!-- #col-right -->
+        </div> {% comment %} #col-right {% endcomment %}
 
-      </div> <!-- /.row -->
+      </div> {% comment %} /.row {% endcomment %}
 
       <div class="row">
         <div id="footer" class="col-sm-9 noselect">
@@ -118,10 +118,10 @@ Licensed under {{ site.copyright.license }}.
             &copy; {{ site.copyright.owner }} {{ site.copyright.year }}<br/>
             build <a href="{{ site.github.repository_url }}/commit/{{ site.github.build_revision }}" title>{{ site.github.build_revision | truncate: 8, "" }}</a> on {{ site.time | date: '%Y-%m-%d' }}
           </p>
-        </div> <!-- /#footer -->
-      </div> <!-- /.row -->
-    </div> <!-- /.container-fluid -->
-  </div> <!-- /.bg -->
+        </div> {% comment %} /#footer {% endcomment %}
+      </div> {% comment %} /.row {% endcomment %}
+    </div> {% comment %} /.container-fluid {% endcomment %}
+  </div> {% comment %} /.bg {% endcomment %}
 
   <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
