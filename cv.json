@@ -716,6 +716,11 @@
         "summary": "bug fix"
       },
       {
+        "name": "clreduce",
+        "url": "https://github.com/mpflanzer/clreduce",
+        "summary": "bug fixes"
+      },
+      {
         "name": "CLSmith",
         "url": "https://github.com/ChrisLidbury/CLSmith",
         "summary": "new features"
@@ -756,6 +761,11 @@
         "summary": "multiple bug fixes"
       },
       {
+        "name": "jacobi-ocl",
+        "url": "https://github.com/jrprice/jacobi-ocl",
+        "summary": "bug fix"
+      },
+      {
         "name": "Korma",
         "url": "http://www.sqlkorma.com/",
         "summary": "bug fix"
@@ -764,6 +774,11 @@
         "name": "Linux",
         "url": "https://www.kernel.org/",
         "summary": "ioctl debugging"
+      },
+      {
+        "name": "platformio_rules",
+        "url": "https://github.com/mum4k/platformio_rules",
+        "summary": "bug fix"
       },
       {
         "name": "rig",
