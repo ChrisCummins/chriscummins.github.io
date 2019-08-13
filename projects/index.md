@@ -1,3 +1,3 @@
 ---
-redirect_to: "/portfolio/"
+redirect_to: "/software/"
 ---

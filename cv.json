@@ -85,7 +85,7 @@
       "website": "https://01.org/",
       "startDate": "2012",
       "endDate": "2013",
-      "summary": "Patched [ioctl](https://en.wikipedia.org/wiki/Ioctl) subsystem in Linux kernel. Developed tools for Intel [GPU assembly](https://software.intel.com/en-us/articles/introduction-to-gen-assembly) programming. Implemented [GTK+](http://www.gtk.org/) support for [Wayland](https://wayland.freedesktop.org/) display server. Fixed usability bugs in [GNOME](https://www.gnome.org/) desktop applications. Developed 3D particle effects engine. Numerous [open source project contributions](https://chriscummins.cc/portfolio/)."
+      "summary": "Patched [ioctl](https://en.wikipedia.org/wiki/Ioctl) subsystem in Linux kernel. Developed tools for Intel [GPU assembly](https://software.intel.com/en-us/articles/introduction-to-gen-assembly) programming. Implemented [GTK+](http://www.gtk.org/) support for [Wayland](https://wayland.freedesktop.org/) display server. Fixed usability bugs in [GNOME](https://www.gnome.org/) desktop applications. Developed 3D particle effects engine. Numerous [open source project contributions](https://chriscummins.cc/software/)."
     },
     {
       "company": "Freelance",
@@ -596,7 +596,7 @@
       ]
     }
   ],
-  "portfolio": {
+  "software": {
     "personal_projects": [
       {
         "name": "cldrive",
@@ -840,22 +840,22 @@
       {
         "name": "Grow Your Own Picture",
         "url": "https://chriscummins.cc/s/genetics/",
-        "picture": "https://chriscummins.cc/img/portfolio/gyop.png"
+        "picture": "https://chriscummins.cc/img/software/gyop.png"
       },
       {
         "name": "Boids",
         "url": "https://chriscummins.cc/s/boids/",
-        "picture": "https://chriscummins.cc/img/portfolio/boids.png"
+        "picture": "https://chriscummins.cc/img/software/boids.png"
       },
       {
         "name": "DOS",
         "url": "https://chriscummins.cc/dos/",
-        "picture": "https://chriscummins.cc/img/portfolio/dos.png"
+        "picture": "https://chriscummins.cc/img/software/dos.png"
       },
       {
         "name": "Game of Life",
         "url": "https://chriscummins.cc/s/gol/",
-        "picture": "https://chriscummins.cc/img/portfolio/gol.png"
+        "picture": "https://chriscummins.cc/img/software/gol.png"
       }
     ],
     "websites": [
