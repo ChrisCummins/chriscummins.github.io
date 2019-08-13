@@ -27,10 +27,15 @@ $(document).ready(function() {
   $('.post > p, .post > p a, .post > ul li, .post > ol li, .justify').hyphenate('en-gb');
 
   // For each image, add a "Click to see original" link.
-  $('.content img').each(function(index) {
-    var parent_is_link = $(this).parents('a').length;
+  $('.content img').not('.gallery').each(function(index) {
+    // Don't wrap images in link if they are already in a link, or if they are
+    // in the gallery.
+    var should_ignore = (
+      $(this).parents('a').length ||
+      $(this).parents('.gallery').length
+    );
 
-    if (!parent_is_link) {
+    if (!should_ignore) {
       var display_width = $(this).innerWidth();
       var real_img = $(this); // keep track of the callback img
 
@@ -341,6 +346,49 @@ $('[data-affix-after]').each(function() {
     }
   };
 }(jQuery));
+
+// Art gallery filter buttons.
+$(function() {
+  var selectedClass = "";
+  $(".art-filter").click(function() {
+    selectedClass = $(this).attr("data-rel");
+    $("#gallery").fadeTo(100, 0.1);
+    $("#gallery div").not("." + selectedClass).fadeOut().removeClass('animation');
+    setTimeout(function() {
+      $("." + selectedClass).fadeIn().addClass('animation');
+      $("#gallery").fadeTo(300, 1);
+    }, 300);
+  });
+
+  var modal = document.getElementById("art-modal");
+  var modalImg = document.getElementById("modal-img");
+  var captionText = document.getElementById("modal-caption");
+  var imageClicked = false;
+
+  $(".art-container .gallery img").click(function() {
+    var smallImageUrl = this.src;
+    modal.style.display = "block";
+    modalImg.src = smallImageUrl;
+    modalImg.setAttribute('data-fullsize', this.getAttribute('data-fullsize'));
+    captionText.innerHTML = this.alt;
+  });
+
+  $(modalImg).click(function() {
+    imageClicked = true;
+    var win = window.open(modalImg.getAttribute('data-fullsize'), '_blank');
+    if (win) {
+      win.focus();
+    }
+  });
+
+  // Close the modal by clicking anywhere except the image.
+  $(modal).click(function() {
+    if (!imageClicked) {
+      modal.style.display = "none";
+    }
+    imageClicked = false;
+  });
+});
 
 /*!
  * en-gb.js -- Hyphenation patterns for use with Hypher

@@ -16,5 +16,10 @@
     {% else %}
       <a href="{{ '/software/' | relative_url }}">software</a> |
     {% endif %}
+    {% if page.url == "/art/" %}
+      <span>art</span>
+    {% else %}
+      <a href="{{ '/art/' | relative_url }}">art</a>
+    {% endif %}
   </p>
 </div>

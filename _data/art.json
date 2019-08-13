@@ -1,0 +1,156 @@
+{
+  "README": "Used by /art/index.html to generate gallery. Images appear in the order listed.",
+  "tags": ["Travel", "Street", "Portrait"],
+  "images": [
+    {
+      "name": "Oregon, 2017",
+      "url-small": "/img/art/trillium-lake-small.jpg",
+      "url-full": "/img/art/trillium-lake.jpg",
+      "tags": ["Travel"]
+    },
+    {
+      "name": "Manhattan, 2017",
+      "url-small": "/img/art/manhattan-small.jpg",
+      "url-full": "/img/art/manhattan.jpg",
+      "tags": ["Travel"]
+    },
+    {
+      "name": "Scotland, 2017",
+      "url-small": "/img/art/stirling-small.jpg",
+      "url-full": "/img/art/stirling.jpg",
+      "tags": ["Travel"]
+    },
+    {
+      "name": "Scotland, 2017",
+      "url-small": "/img/art/loch-lomond-small.jpg",
+      "url-full": "/img/art/loch-lomond.jpg",
+      "tags": ["Travel"]
+    },
+    {
+      "name": "Ashleigh, 2010",
+      "url-small": "/img/art/ashleigh-small.jpg",
+      "url-full": "/img/art/ashleigh.jpg",
+      "tags": ["Portrait"]
+    },
+    {
+      "name": "Scotland, 2017",
+      "url-small": "/img/art/loch-lomond-2-small.jpg",
+      "url-full": "/img/art/loch-lomond-2.jpg",
+      "tags": ["Travel"]
+    },
+    {
+      "name": "California, 2015",
+      "url-small": "/img/art/death-valley-small.jpg",
+      "url-full": "/img/art/death-valley.jpg",
+      "tags": ["Travel"]
+    },
+    {
+      "name": "Washington, 2017",
+      "url-small": "/img/art/mt-rainier-small.jpg",
+      "url-full": "/img/art/mt-rainier.jpg",
+      "tags": ["Travel"]
+    },
+    {
+      "name": "British Columbia, 2017",
+      "url-small": "/img/art/whistler-small.jpg",
+      "url-full": "/img/art/whistler.jpg",
+      "tags": ["Travel"]
+    },
+    {
+      "name": "Manhattan, 2017",
+      "url-small": "/img/art/empire-state-small.jpg",
+      "url-full": "/img/art/empire-state.jpg",
+      "tags": ["Travel", "Street"]
+    },
+    {
+      "name": "Ireland, 2019",
+      "url-small": "/img/art/poisoned-glen-small.jpg",
+      "url-full": "/img/art/poisoned-glen.jpg",
+      "tags": ["Travel"]
+    },
+    {
+      "name": "Manhattan, 2017",
+      "url-small": "/img/art/manhattan-2-small.jpg",
+      "url-full": "/img/art/manhattan-2.jpg",
+      "tags": ["Travel"]
+    },
+    {
+      "name": "Birmingham, 2011",
+      "url-small": "/img/art/birmingham-1-small.jpg",
+      "url-full": "/img/art/birmingham-1.jpg",
+      "tags": ["Street"]
+    },
+    {
+      "name": "Birmingham, 2012",
+      "url-small": "/img/art/birmingham-2-small.jpg",
+      "url-full": "/img/art/birmingham-2.jpg",
+      "tags": ["Street"]
+    },
+    {
+      "name": "Birmingham, 2012",
+      "url-small": "/img/art/birmingham-3-small.jpg",
+      "url-full": "/img/art/birmingham-3.jpg",
+      "tags": ["Street", "Portrait"]
+    },
+    {
+      "name": "Manhattan, 2017",
+      "url-small": "/img/art/flat-iron-small.jpg",
+      "url-full": "/img/art/flat-iron.jpg",
+      "tags": ["Travel", "Street"]
+    },
+    {
+      "name": "Birmingham, 2012",
+      "url-small": "/img/art/birmingham-4-small.jpg",
+      "url-full": "/img/art/birmingham-4.jpg",
+      "tags": ["Street", "Portrait"]
+    },
+    {
+      "name": "Manhattan, 2017",
+      "url-small": "/img/art/manhattan-3-small.jpg",
+      "url-full": "/img/art/manhattan-3.jpg",
+      "tags": ["Travel", "Street"]
+    },
+    {
+      "name": "Birmingham, 2012",
+      "url-small": "/img/art/birmingham-5-small.jpg",
+      "url-full": "/img/art/birmingham-5.jpg",
+      "tags": ["Street", "Portrait"]
+    },
+    {
+      "name": "Birmingham, 2012",
+      "url-small": "/img/art/birmingham-6-small.jpg",
+      "url-full": "/img/art/birmingham-6.jpg",
+      "tags": ["Street", "Portrait"]
+    },
+    {
+      "name": "Birmingham, 2012",
+      "url-small": "/img/art/birmingham-7-small.jpg",
+      "url-full": "/img/art/birmingham-7.jpg",
+      "tags": ["Street", "Portrait"]
+    },
+    {
+      "name": "Birmingham, 2012",
+      "url-small": "/img/art/birmingham-8-small.jpg",
+      "url-full": "/img/art/birmingham-8.jpg",
+      "tags": ["Street"]
+    },
+    {
+      "name": "Birmingham, 2012",
+      "url-small": "/img/art/birmingham-9-small.jpg",
+      "url-full": "/img/art/birmingham-9.jpg",
+      "tags": ["Street"]
+    },
+    {
+      "name": "Nature Aquarium, 2019",
+      "url-small": "/img/art/nature-aquarium-1-small.jpg",
+      "url-full": "/img/art/nature-aquarium-1.jpg",
+      "tags": []
+    },
+    {
+      "name": "Nature Aquarium, 2019",
+      "url-small": "/img/art/nature-aquarium-2-small.jpg",
+      "url-full": "/img/art/nature-aquarium-2.jpg",
+      "tags": []
+    }
+  ]
+}

@@ -717,3 +717,124 @@ pre {
     border: $color-subtle;
     font-size: 16px;
 }
+
+
+
+
+// Art
+$column-count: 3;
+
+.gallery {
+    -webkit-column-count: $column-count;
+    -moz-column-count: $column-count;
+    column-count: $column-count;
+    -webkit-column-width: 100% / $column-count;
+    -moz-column-width: 100% / $column-count;
+    column-width: 100% / $column-count;
+
+    .pics {
+        margin: .3em 0 1em 0;
+        -webkit-transition: all 350ms ease;
+        transition: all 350ms ease;
+    }
+
+    .animation {
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+    }
+
+    @media (max-width: $screen-sm-min) {
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1;
+        -webkit-column-width: 100%;
+        -moz-column-width: 100%;
+        column-width: 100%;
+    }
+
+    img {
+        cursor: pointer;
+        transition: 0.3s;
+        padding: 0;
+
+        &:hover {
+            opacity: 0.7;
+            cursor: zoom-in;
+        }
+
+        @media (max-width: $screen-sm-min) {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
+
+@media (max-width: $screen-md-min) {
+  .btn.filter {
+    padding-left: 1.1rem;
+    padding-right: 1.1rem;
+  }
+}
+
+
+// Modal
+.modal {
+    display: none; // Hidden by default
+    position: fixed; // Stay in place
+    z-index: 5; // Sit on top
+    padding-top: 100px; // Location of the box
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; // Enable scroll if needed
+    background-color: rgb(0,0,0); // Fallback color
+    background-color: rgba(0,0,0,0.9); // Black w/ opacity
+
+    &:hover {
+        cursor: zoom-out;
+    }
+
+    img {
+        padding: 0;
+        max-height: 1000px;
+        width: auto;
+        height: auto;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    #modal-caption {
+        margin: auto;
+        display: block;
+        max-width: 95%;
+        text-align: center;
+        color: #ccc;
+        padding: 10px 0;
+        height: 150px;
+    }
+
+    .modal-content, a {
+        margin: auto;
+        display: block;
+        height: auto;
+
+        @media only screen and (max-width: 700px){
+           width: 100%;
+        }
+    }
+
+    .modal-content, #modal-caption {
+        animation-name: zoom;
+        animation-duration: 0.6s;
+    }
+}
+
+@keyframes zoom {
+  from {transform:scale(0)}
+  to {transform:scale(1)}
+}
