@@ -2830,8 +2830,8 @@ var naughtyWords = [
       function locationToString(location) {
         /* according to wiki, four decimal places is enough to identify a "land
          parcel". wtf is a land parcel? en.wikipedia.org/wiki/Decimal_degrees */
-        var lat = location['lat'].toFixed(5);
-        var lng = location['lng'].toFixed(5);
+        var lat = location['lat'].toFixed(4);
+        var lng = location['lng'].toFixed(4);
 
         var latHash = lat.hashCode();
         var lngHash = lng.hashCode();
