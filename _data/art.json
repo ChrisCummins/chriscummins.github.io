@@ -63,15 +63,33 @@
       "tags": ["Travel", "Street"]
     },
     {
+      "name": "New Zealand, 2017",
+      "url-small": "/img/art/lake-wanaka-small.jpg",
+      "url-full": "/img/art/lake-wanaka.jpg",
+      "tags": ["Travel"]
+    },
+    {
       "name": "Ireland, 2019",
       "url-small": "/img/art/poisoned-glen-small.jpg",
       "url-full": "/img/art/poisoned-glen.jpg",
       "tags": ["Travel"]
     },
     {
+      "name": "Tokyo, 2017",
+      "url-small": "/img/art/tokyo-small.jpg",
+      "url-full": "/img/art/tokyo.jpg",
+      "tags": ["Travel"]
+    },
+    {
       "name": "Manhattan, 2017",
       "url-small": "/img/art/manhattan-2-small.jpg",
       "url-full": "/img/art/manhattan-2.jpg",
+      "tags": ["Travel"]
+    },
+    {
+      "name": "Australia, 2017",
+      "url-small": "/img/art/uluru-small.jpg",
+      "url-full": "/img/art/uluru.jpg",
       "tags": ["Travel"]
     },
     {
