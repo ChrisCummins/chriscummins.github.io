@@ -61,7 +61,7 @@
       "website": "https://deepmind.com/",
       "startDate": "2018",
       "endDate": "2018",
-      "summary": "Deep reinforcement learning for optimizing instruction fusion of [TensorFlow XLA](https://www.tensorflow.org/xla/) program graphs. Black-box learning methods for TPU, GPU, and CPU performance."
+      "summary": "Exploring deep reinforcement learning for optimizing instruction fusion of [TensorFlow XLA](https://www.tensorflow.org/xla/) program graphs. Designed and implemented a black-box iterative compilation approach for TPUs, GPUs, and CPUs using genetic algorithms to explore the optimization space. Demonstrated reduced memory footprint on realworld models."
     },
     {
       "company": "Google",
@@ -69,7 +69,7 @@
       "website": "https://developers.google.com",
       "startDate": "2018",
       "endDate": "2018",
-      "summary": "Created a representative benchmark of Google's [Protocol Buffer](https://developers.google.com/protocol-buffers/) usage. Working in the [Google Wide Profiling](https://research.google.com/pubs/pub36575.html) team to synthesise benchmarks for Google compute. The project involved company-wide workload characterization through to datacenter-scale low level performance analysis of profiles and hardware counters."
+      "summary": "Created a representative benchmark generator for Google's [Protocol Buffer](https://developers.google.com/protocol-buffers/) usage. Working in the [Google Wide Profiling](https://research.google.com/pubs/pub36575.html) team to synthesise benchmarks for Google compute. The project involved company-wide workload characterization through to datacenter-scale low level performance analysis of profiles and hardware counters."
     },
     {
       "company": "Codeplay Software",
@@ -92,14 +92,14 @@
       "position": "Web developer",
       "startDate": "2010",
       "endDate": "2017",
-      "summary": "Full-stack development for small businesses, including graphic design and branding. Frontend experience with JavaScript; backend development using Clojure, Node.js, PHP, MySQL, PostgreSQL, and Jekyll. Experience with Bootstrap framework and WordPress CMS."
+      "summary": "Full-stack development for small businesses, including graphic design and branding. Clients have included [musicians](http://barthelemyjusselme.com/), [beauty rooms](http://beautyroomsmatlock.com/), and [conferences](http://cgo.org/cgo2018/). Frontend experience with JavaScript; backend development using Clojure, Node.js, PHP, MySQL, PostgreSQL, and Jekyll. Experience with Bootstrap framework and WordPress CMS."
     },
     {
       "company": "Rolls Royce Holdings plc",
       "position": "Summer Placement",
       "startDate": "2008",
       "endDate": "2008",
-      "summary": "Summer week placement, Design Methods Group."
+      "summary": "Summer week placement in the Design Methods Group."
     }
   ],
   "education": [
@@ -108,9 +108,9 @@
       "studyType": "PhD Informatics",
       "startDate": "2015",
       "endDate": "2019 (expected)",
-      "thesis": "Deep Learning over Programs",
-      "advisors": "Hugh Leather and Pavlos Petoumenos",
-      "summary": "Deep learning over programs. Developing novel machine learning methods for random program generation, compiler optimisations, and representative benchmarking. Applications for heterogeneous parallelism, compiler testing, and adaptive performance tuning. To date: 8 publications, 3 best papers, 9 invited talks, 7 posters, 5 conferences.",
+      "thesis": "Deep Learning for Compilers",
+      "advisors": "[Hugh Leather](http://homepages.inf.ed.ac.uk/hleather/) and [Pavlos Petoumenos](http://homepages.inf.ed.ac.uk/ppetoume/)",
+      "summary": "Deep learning over programs. Developing novel machine learning methods for random program generation, compiler optimisations, and representative benchmarking. Applications for heterogeneous parallelism, compiler testing, and adaptive performance tuning. To date: 8 publications, 3 best paper awards, 9 invited talks, 7 posters, 6 conferences.",
       "assets": [
         {
           "name": "First Year Review",
@@ -129,8 +129,8 @@
       "startDate": "2014",
       "endDate": "2015",
       "thesis": "Autotuning Stencils Codes with Algorithmic Skeletons",
-      "advisors": "Hugh Leather and Pavlos Petoumenos",
-      "summary": "Runtime adaptive tuning for heterogeneous parallel systems, targeting a high level DSL for multi-GPU stencil programs. Machine learning over distributed training sets.",
+      "advisors": "[Hugh Leather](http://homepages.inf.ed.ac.uk/hleather/) and [Pavlos Petoumenos](http://homepages.inf.ed.ac.uk/ppetoume/)",
+      "summary": "Runtime adaptive tuning for heterogeneous parallel systems, targeting a high level DSL for multi-GPU stencil programs. Demonstrated automatic 1.33× speedup over human-expert tuned programs through machine learning over distributed training sets.",
       "assets": [
         {
           "name": "Thesis",
@@ -157,8 +157,8 @@
       "startDate": "2010",
       "endDate": "2014",
       "thesis": "Protein Isoelectric Point Database",
-      "advisors": "Ian Nabney",
-      "summary": "Created a search engine and API for a novel molecular biochemistry dataset. Targeting bioinformatics research and released open source, with peak 854 monthly active users.",
+      "advisors": "[Ian Nabney](https://www2.aston.ac.uk/eas/staff/a-z/professor-ian-nabney)",
+      "summary": "Created a search engine and API for a novel molecular biochemistry dataset with ~1k monthly active users. Targeting bioinformatics research and released open source.",
       "assets": [
         {
           "name": "Thesis",
@@ -182,10 +182,10 @@
       "publication": "[ISSTA](https://conf.researchr.org/home/issta-2018) (28% acceptance rate), Amsterdam, Netherlands",
       "picture": "https://chriscummins.cc/pub/2018-issta.png",
       "releaseDate": "2018",
-      "summary": "Unsupervised machine learning to derive program generators for compiler fuzz testing. Implemented in 100x less code than state-of-the-art program generator, and 3.03x faster. Found and reported 67 bug reports in OpenCL compilers.",
+      "summary": "Unsupervised machine learning to derive program generators for compiler fuzz testing. Implemented in 100x less code than state-of-the-art program generator, and 3.03x faster. Discovered 67 new bugs in OpenCL compilers, many of which are now fixed.",
       "assets": [
         {
-          "name": "Preprint",
+          "name": "Paper",
           "url": "https://chriscummins.cc/pub/2018-issta.pdf"
         },
         {
@@ -204,10 +204,10 @@
       "publication": "[ACACES](http://acaces.hipeac.net/2018/) (extended abstract), Fiuggi, Italy",
       "releaseDate": "2018",
       "picture": "https://chriscummins.cc/pub/2018-acaces.png",
-      "summary": "Extend abstract format early preview of my ISSTA'18 paper.",
+      "summary": "Extend abstract early preview of my ISSTA'18 paper.",
       "assets": [
         {
-          "name": "Preprint",
+          "name": "Paper",
           "url": "https://chriscummins.cc/pub/2018-acaces.pdf"
         }
       ]
@@ -221,7 +221,7 @@
       "picture": "https://chriscummins.cc/pub/2017-pact.png",
       "assets": [
         {
-          "name": "Preprint",
+          "name": "Paper",
           "url": "https://chriscummins.cc/pub/2017-pact.pdf"
         },
         {
@@ -239,11 +239,11 @@
       "authors": "**C. Cummins**, P. Petoumenos, Z. Wang, and H. Leather",
       "publication": "[CGO](http://cgo.org/cgo2017/) (22% acceptance rate), Austin, Texas",
       "releaseDate": "2017",
-      "summary": "Deep learning over massive codebases from GitHub to generate benchmark programs. Automatically synthesizes OpenCL kernels which are indistinguishable from hand-written code, and improves state-of-the-art predictive model performance by 4.30x.",
+      "summary": "Deep learning over massive codebases from GitHub to generate benchmark programs. Automatically synthesizes OpenCL kernels which are indistinguishable from hand-written code, and improves state-of-the-art predictive model performance by 4.30×.",
       "picture": "https://chriscummins.cc/pub/2017-cgo.png",
       "assets": [
         {
-          "name": "Preprint",
+          "name": "Paper",
           "url": "https://chriscummins.cc/pub/2017-cgo.pdf"
         },
         {
@@ -265,7 +265,7 @@
       "authors": "**C. Cummins**, P. Petoumenos, M. Steuwer, and H. Leather",
       "publication": "[ACACES](http://acaces.hipeac.net/2016/) (extended abstract), Fiuggi, Italy",
       "releaseDate": "2016",
-      "summary": "Machine learning-enabled autotuning of multi-GPU OpenCL workgroup sizes. Static tuning achieves only 26% of the maximum performance, our approach achieves 92%."
+      "summary": "Machine learning-enabled autotuning of multi-GPU OpenCL workgroup sizes. Static tuning achieves only 26% of the maximum performance, my approach achieves 92%."
     },
     {
       "name": "Towards Collaborative Performance Tuning of Algorithmic Skeletons (HLPGPU)",
@@ -276,7 +276,7 @@
       "picture": "https://chriscummins.cc/pub/2016-hlpgpu.png",
       "assets": [
         {
-          "name": "Preprint",
+          "name": "Paper",
           "url": "https://chriscummins.cc/pub/2016-hlpgpu.pdf"
         },
         {
@@ -294,11 +294,11 @@
       "authors": "**C. Cummins**, P. Petoumenos, M. Steuwer, and H. Leather",
       "publication": "[ADAPT](http://adapt-workshop.org/index2016.html), HiPEAC, Prague",
       "releaseDate": "2016",
-      "summary": "Three methodologies to autotune stencil patterns using machine learning. Speedups of 3.79x over the best possible static size, 94% of the maximum performance.",
+      "summary": "Three methodologies to autotune stencil patterns using machine learning. Speedups of 3.79× over the best possible static size, 94% of the maximum performance.",
       "picture": "https://chriscummins.cc/pub/2016-adapt.png",
       "assets": [
         {
-          "name": "Preprint",
+          "name": "Paper",
           "url": "https://chriscummins.cc/pub/2016-adapt.pdf"
         },
         {
@@ -324,7 +324,7 @@
       "picture": "https://chriscummins.cc/pub/2015-pip-db.png",
       "assets": [
         {
-          "name": "Oxford",
+          "name": "Paper",
           "url": "http://bioinformatics.oxfordjournals.org/content/31/2/295.full?etoc"
         }
       ]
