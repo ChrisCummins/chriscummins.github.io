@@ -3,12 +3,24 @@
 It is automatically transformed by [Jekyll](http://github.com/mojombo/jekyll)
 into a static site whenever I push this repository to GitHub.
 
+## Setup
+
+Install the dependencies. On Linux:
+
+```sh
+$ sudo apt install ruby ruby-dev ffmpeg
+$ sudo gem install bundler
+$ bundle install
+```
+
 ## Running the site locally
 
-1. Install [gem](https://rubygems.org/).
-2. Install bundle: `gem install bundler`.
-3. Install site dependencies: `make all`.
-4. Serve locally on http://127.0.0.1:4000: `make run`.
+```sh
+# Generate site files
+$ make all
+# Serve locally on http://127.0.0.1:4000
+$ make run
+```
 
 ## License
 
