@@ -2,7 +2,7 @@
  *                Space Exploerer
  *
  * Written by Chris Cummins <chrisc.101@gmail.com>
- * Copyright (c) 2014, 2015 Chris Cummins
+ * Copyright (c) 2014-2020 Chris Cummins
  * License: http://opensource.org/licenses/MIT
  * Source code: https://github.com/ChrisCummins/chriscummins.github.io
  * https://chriscummins.cc

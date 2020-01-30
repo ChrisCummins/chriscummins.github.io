@@ -2,7 +2,7 @@
  *                Genetics Algorithm to Grow Your Own Picture
  *
  * Written by Chris Cummins <chrisc.101@gmail.com>
- * Copyright (c) 2013 Chris Cummins
+ * Copyright (c) 2013-2020 Chris Cummins
  * https://chriscummins.cc
  * https://chriscummins.cc/genetics
  *
