@@ -634,6 +634,11 @@
         "summary": "Toy x86 kernel"
       },
       {
+        "name": "format",
+        "url": "https://github.com/ChrisCummins/format",
+        "summary": "An opinionated, non-configurable enforcer of code style"
+      },
+      {
         "name": "gh-archiver",
         "url": "https://github.com/ChrisCummins/gh-archiver",
         "summary": "Mirror GitHub users' repositories"
@@ -645,12 +650,12 @@
       },
       {
         "name": "labm8",
-        "url": "https://github.com/ChrisCummins/phd/tree/master/lib/labm8",
+        "url": "https://github.com/ChrisCummins/labm8",
         "summary": "Utilities for quantitative experimental data"
       },
       {
         "name": "libcecl",
-        "url": "https://github.com/ChrisCummins/libcecl",
+        "url": "https://github.com/ChrisCummins/phd/tree/master/gpu/libcecl",
         "summary": "Synchronous, verbose OpenCL API wrappers"
       },
       {
@@ -682,6 +687,11 @@
         "name": "pip-db",
         "url": "https://github.com/ChrisCummins/pip-db",
         "summary": "Search engine for bioinformatics research"
+      },
+      {
+        "name": "ProGraML",
+        "url": "https://github.com/ChrisCummins/ProGraML",
+        "summary": "Graph-based Machine Learning for Programming Languages"
       },
       {
         "name": "rt",
