@@ -107,11 +107,15 @@
       "institution": "University of Edinburgh",
       "studyType": "PhD Informatics",
       "startDate": "2015",
-      "endDate": "2019 (expected)",
+      "endDate": "2020",
       "thesis": "Deep Learning for Compilers",
       "advisors": "[Hugh Leather](http://homepages.inf.ed.ac.uk/hleather/) and [Pavlos Petoumenos](http://homepages.inf.ed.ac.uk/ppetoume/)",
-      "summary": "Deep learning over programs. Developing novel machine learning methods for random program generation, compiler optimisations, and representative benchmarking. Applications for heterogeneous parallelism, compiler testing, and adaptive performance tuning. To date: 8 publications, 3 best paper awards, 9 invited talks, 7 posters, 6 conferences.",
+      "summary": "Deep learning over programs. Developed novel machine learning methods for random program generation, compiler optimisations, and representative benchmarking. Applications for heterogeneous parallelism, compiler testing, and adaptive performance tuning. Awarded 3 grants, 3 best papers, 9 invited talks, and 7 posters.",
       "assets": [
+        {
+          "name": "Thesis",
+          "url": "https://chriscummins.cc/u/ed/phd-thesis.pdf"
+        },
         {
           "name": "First Year Review",
           "url": "https://chriscummins.cc/u/ed/phd-first-year-review.pdf"
