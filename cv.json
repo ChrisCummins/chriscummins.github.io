@@ -181,6 +181,24 @@
   ],
   "publications": [
     {
+      "name": "ProGraML: Graph-based Deep Learning for Program Optimization and Analysis (preprint)",
+      "authors": "**C. Cummins**, Z. V. Fisches, T. Ben-Nun, T. Hoefler, and H. Leather",
+      "publication": "[arXiv](https://arxiv.org/abs/2003.10536) (preprint)",
+      "picture": "https://chriscummins.cc/pub/2020-programl.png",
+      "releaseDate": "2020",
+      "summary": "Novel graph-based representation for machine learning over programs. We capture whole-program control, data, and call flow at the IR-level, equipping machine learning models to replicate the types of compiler analyses critical to optimization. We set new state-of-the-art performance in two downstream tasks - heterogenous device mapping and algorithm classification.",
+      "assets": [
+        {
+          "name": "arXiv",
+          "url": "https://arxiv.org/abs/2003.10536"
+        },
+        {
+          "name": "Source Code",
+          "url": "https://chriscummins.cc/ProGraML"
+        }
+      ]
+    },
+    {
       "name": "Compiler Fuzzing through Deep Learning (ISSTA Distinguished Paper)",
       "authors": "**C. Cummins**, P. Petoumenos, A. Murray, and H. Leather",
       "publication": "[ISSTA](https://conf.researchr.org/home/issta-2018) (28% acceptance rate), Amsterdam, Netherlands",
