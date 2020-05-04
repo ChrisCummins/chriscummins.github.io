@@ -828,13 +828,18 @@
         "summary": "new features - stencil autotuning"
       },
       {
+        "name": "SublimeLinter write-good",
+        "url": "https://github.com/ckaznocha/SublimeLinter-contrib-write-good",
+        "summary": "maintainer"
+      },
+      {
         "name": "TensorFlow",
         "url": "https://www.tensorflow.org/",
         "summary": "new features - SYCL support"
       },
       {
         "name": "textlint",
-        "url": "https://github.com/DamienCassou/textlint",
+        "url": "https://github.com/ChrisCummins/textlint",
         "summary": "maintainer"
       },
       {
@@ -888,6 +893,16 @@
         "name": "Game of Life",
         "url": "https://chriscummins.cc/s/gol/",
         "picture": "https://chriscummins.cc/img/software/gol.png"
+      },
+      {
+        "name": "Ray Tracer",
+        "url": "https://github.com/ChrisCummins/phd/tree/master/experimental/graphics/rt",
+        "picture": "https://chriscummins.cc/img/software/rt.png"
+      },
+      {
+        "name": "Four Letter Maps",
+        "url": "https://chriscummins.cc/s/four_letter_maps/",
+        "picture": "https://chriscummins.cc/img/software/four_letter_maps.png"
       }
     ],
     "websites": [
