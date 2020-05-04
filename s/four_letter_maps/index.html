@@ -18,6 +18,7 @@ layout: compress
         height: 100%;
         margin: 0;
         padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
       }
 
       .pac-controls {
@@ -50,12 +51,47 @@ layout: compress
       .gm-style div div div div div div div div {
         font-size: 32px; /* bigger info text plz */
       }
+
+      #consent {
+        background-color: #444;
+        padding: 40px;
+        font-size: 18px;
+        color: #ccc;
+        width: 100%;
+        height: 100%;
+        z-index: 1000;
+        position: fixed;
+      }
+
+      #consent-content {
+        background-color: #1c1c1c;
+        padding: 20px;
+        width: 70%;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      a {
+        color: #fff;
+      }
     </style>
     {% include opengraph.html %}
     {% include favicons.html %}
     {% include google-analytics.html %}
   </head>
   <body>
+    <div id="consent">
+      <div id="consent-content">
+        <h2>F**r Letter Maps</h2>
+        <p>
+          After reading about the life-saving utility of <a href="https://www.bbc.co.uk/news/uk-england-49319760" target="_blank">three word maps</a> I thought it would be funny to be build a similar system in which the grid references are constructed from a dictionary comprised solely of naughty words. As you would expct, the result is entirely offensive.
+        </p>
+        <p>
+          Avoid if you are easily offended.
+        </p>
+        <p><a href="#" onclick="document.getElementById('consent').style.display = 'none'; document.getElementById('map').style.display = 'block'">I am a deviant, show me the map.</a></p>
+      </div>
+    </div>
     <input id="pac-input" class="controls" type="text" placeholder="Address">
     <div id="map"></div>
     <script src="{{ '/s/four_letter_maps/four_letter_maps.js' | relative_url }}"></script>
