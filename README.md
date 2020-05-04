@@ -13,6 +13,14 @@ $ sudo gem install bundler
 $ bundle install
 ```
 
+On macOS:
+
+```sh
+$ brew install ruby ffmpeg
+$ sudo gem install -n /usr/local/bin bundler:2.1.4
+$ /usr/local/bin/bundle install
+```
+
 ## Running the site locally
 
 ```sh
