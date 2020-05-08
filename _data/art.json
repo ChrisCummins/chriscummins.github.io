@@ -1,174 +1,292 @@
 {
   "README": "Used by /art/index.html to generate gallery. Images appear in the order listed.",
-  "tags": ["Travel", "Street", "Portrait"],
   "images": [
     {
-      "name": "Oregon, 2017",
-      "url-small": "/img/art/trillium-lake-small.jpg",
-      "url-full": "/img/art/trillium-lake.jpg",
-      "tags": ["Travel"]
+      "name": "North Cascades, WA, 2019",
+      "tags": [
+        "Travel"
+      ],
+      "url-full": "/img/art/north-cascades-1.jpg",
+      "url-small": "/img/art/north-cascades-1-small.jpg"
     },
     {
       "name": "Manhattan, 2017",
-      "url-small": "/img/art/manhattan-small.jpg",
+      "tags": [
+        "Travel"
+      ],
       "url-full": "/img/art/manhattan.jpg",
-      "tags": ["Travel"]
+      "url-small": "/img/art/manhattan-small.jpg"
+    },
+    {
+      "name": "Oregon, 2017",
+      "tags": [
+        "Travel"
+      ],
+      "url-full": "/img/art/trillium-lake.jpg",
+      "url-small": "/img/art/trillium-lake-small.jpg"
+    },
+    {
+      "name": "Banff, 2019",
+      "tags": [
+        "Travel"
+      ],
+      "url-full": "/img/art/banff-1.jpg",
+      "url-small": "/img/art/banff-1-small.jpg"
     },
     {
       "name": "Scotland, 2017",
-      "url-small": "/img/art/stirling-small.jpg",
+      "tags": [
+        "Travel"
+      ],
       "url-full": "/img/art/stirling.jpg",
-      "tags": ["Travel"]
+      "url-small": "/img/art/stirling-small.jpg"
+    },
+    {
+      "name": "North Cascades, WA, 2019",
+      "tags": [
+        "Travel"
+      ],
+      "url-full": "/img/art/north-cascades-2.jpg",
+      "url-small": "/img/art/north-cascades-2-small.jpg"
     },
     {
       "name": "Scotland, 2017",
-      "url-small": "/img/art/loch-lomond-small.jpg",
+      "tags": [
+        "Travel"
+      ],
       "url-full": "/img/art/loch-lomond.jpg",
-      "tags": ["Travel"]
+      "url-small": "/img/art/loch-lomond-small.jpg"
     },
     {
       "name": "Ashleigh, 2010",
-      "url-small": "/img/art/ashleigh-small.jpg",
+      "tags": [
+        "Portrait"
+      ],
       "url-full": "/img/art/ashleigh.jpg",
-      "tags": ["Portrait"]
+      "url-small": "/img/art/ashleigh-small.jpg"
     },
     {
       "name": "Scotland, 2017",
-      "url-small": "/img/art/loch-lomond-2-small.jpg",
+      "tags": [
+        "Travel"
+      ],
       "url-full": "/img/art/loch-lomond-2.jpg",
-      "tags": ["Travel"]
+      "url-small": "/img/art/loch-lomond-2-small.jpg"
     },
     {
       "name": "California, 2015",
-      "url-small": "/img/art/death-valley-small.jpg",
+      "tags": [
+        "Travel"
+      ],
       "url-full": "/img/art/death-valley.jpg",
-      "tags": ["Travel"]
-    },
-    {
-      "name": "Washington, 2017",
-      "url-small": "/img/art/mt-rainier-small.jpg",
-      "url-full": "/img/art/mt-rainier.jpg",
-      "tags": ["Travel"]
+      "url-small": "/img/art/death-valley-small.jpg"
     },
     {
       "name": "British Columbia, 2017",
-      "url-small": "/img/art/whistler-small.jpg",
+      "tags": [
+        "Travel"
+      ],
       "url-full": "/img/art/whistler.jpg",
-      "tags": ["Travel"]
+      "url-small": "/img/art/whistler-small.jpg"
     },
     {
       "name": "Manhattan, 2017",
-      "url-small": "/img/art/empire-state-small.jpg",
+      "tags": [
+        "Travel",
+        "Street"
+      ],
       "url-full": "/img/art/empire-state.jpg",
-      "tags": ["Travel", "Street"]
+      "url-small": "/img/art/empire-state-small.jpg"
+    },
+    {
+      "name": "Colmar, 2019",
+      "tags": [
+        "Travel"
+      ],
+      "url-full": "/img/art/colmar.jpg",
+      "url-small": "/img/art/colmar-small.jpg"
+    },
+    {
+      "name": "Washington, 2017",
+      "tags": [
+        "Travel"
+      ],
+      "url-full": "/img/art/mt-rainier.jpg",
+      "url-small": "/img/art/mt-rainier-small.jpg"
     },
     {
       "name": "New Zealand, 2017",
-      "url-small": "/img/art/lake-wanaka-small.jpg",
+      "tags": [
+        "Travel"
+      ],
       "url-full": "/img/art/lake-wanaka.jpg",
-      "tags": ["Travel"]
+      "url-small": "/img/art/lake-wanaka-small.jpg"
     },
     {
       "name": "Ireland, 2019",
-      "url-small": "/img/art/poisoned-glen-small.jpg",
+      "tags": [
+        "Travel"
+      ],
       "url-full": "/img/art/poisoned-glen.jpg",
-      "tags": ["Travel"]
+      "url-small": "/img/art/poisoned-glen-small.jpg"
     },
     {
       "name": "Tokyo, 2017",
-      "url-small": "/img/art/tokyo-small.jpg",
+      "tags": [
+        "Travel"
+      ],
       "url-full": "/img/art/tokyo.jpg",
-      "tags": ["Travel"]
+      "url-small": "/img/art/tokyo-small.jpg"
     },
     {
       "name": "Manhattan, 2017",
-      "url-small": "/img/art/manhattan-2-small.jpg",
+      "tags": [
+        "Travel"
+      ],
       "url-full": "/img/art/manhattan-2.jpg",
-      "tags": ["Travel"]
+      "url-small": "/img/art/manhattan-2-small.jpg"
     },
     {
       "name": "Australia, 2017",
-      "url-small": "/img/art/uluru-small.jpg",
+      "tags": [
+        "Travel"
+      ],
       "url-full": "/img/art/uluru.jpg",
-      "tags": ["Travel"]
+      "url-small": "/img/art/uluru-small.jpg"
     },
     {
       "name": "Birmingham, 2011",
-      "url-small": "/img/art/birmingham-1-small.jpg",
+      "tags": [
+        "Street"
+      ],
       "url-full": "/img/art/birmingham-1.jpg",
-      "tags": ["Street"]
+      "url-small": "/img/art/birmingham-1-small.jpg"
     },
     {
       "name": "Birmingham, 2012",
-      "url-small": "/img/art/birmingham-2-small.jpg",
+      "tags": [
+        "Street"
+      ],
       "url-full": "/img/art/birmingham-2.jpg",
-      "tags": ["Street"]
+      "url-small": "/img/art/birmingham-2-small.jpg"
+    },
+    {
+      "name": "Yosemite, CA, 2018",
+      "tags": [
+        "Travel"
+      ],
+      "url-full": "/img/art/yosemite.jpg",
+      "url-small": "/img/art/yosemite-small.jpg"
     },
     {
       "name": "Birmingham, 2012",
-      "url-small": "/img/art/birmingham-3-small.jpg",
+      "tags": [
+        "Street",
+        "Portrait"
+      ],
       "url-full": "/img/art/birmingham-3.jpg",
-      "tags": ["Street", "Portrait"]
+      "url-small": "/img/art/birmingham-3-small.jpg"
     },
     {
       "name": "Manhattan, 2017",
-      "url-small": "/img/art/flat-iron-small.jpg",
+      "tags": [
+        "Travel",
+        "Street"
+      ],
       "url-full": "/img/art/flat-iron.jpg",
-      "tags": ["Travel", "Street"]
+      "url-small": "/img/art/flat-iron-small.jpg"
     },
     {
       "name": "Birmingham, 2012",
-      "url-small": "/img/art/birmingham-4-small.jpg",
+      "tags": [
+        "Street",
+        "Portrait"
+      ],
       "url-full": "/img/art/birmingham-4.jpg",
-      "tags": ["Street", "Portrait"]
+      "url-small": "/img/art/birmingham-4-small.jpg"
     },
     {
       "name": "Manhattan, 2017",
-      "url-small": "/img/art/manhattan-3-small.jpg",
+      "tags": [
+        "Travel",
+        "Street"
+      ],
       "url-full": "/img/art/manhattan-3.jpg",
-      "tags": ["Travel", "Street"]
+      "url-small": "/img/art/manhattan-3-small.jpg"
     },
     {
       "name": "Birmingham, 2012",
-      "url-small": "/img/art/birmingham-5-small.jpg",
+      "tags": [
+        "Street",
+        "Portrait"
+      ],
       "url-full": "/img/art/birmingham-5.jpg",
-      "tags": ["Street", "Portrait"]
+      "url-small": "/img/art/birmingham-5-small.jpg"
     },
     {
       "name": "Birmingham, 2012",
-      "url-small": "/img/art/birmingham-6-small.jpg",
+      "tags": [
+        "Street",
+        "Portrait"
+      ],
       "url-full": "/img/art/birmingham-6.jpg",
-      "tags": ["Street", "Portrait"]
+      "url-small": "/img/art/birmingham-6-small.jpg"
     },
     {
       "name": "Birmingham, 2012",
-      "url-small": "/img/art/birmingham-7-small.jpg",
+      "tags": [
+        "Street",
+        "Portrait"
+      ],
       "url-full": "/img/art/birmingham-7.jpg",
-      "tags": ["Street", "Portrait"]
+      "url-small": "/img/art/birmingham-7-small.jpg"
     },
     {
       "name": "Birmingham, 2012",
-      "url-small": "/img/art/birmingham-8-small.jpg",
+      "tags": [
+        "Street"
+      ],
       "url-full": "/img/art/birmingham-8.jpg",
-      "tags": ["Street"]
+      "url-small": "/img/art/birmingham-8-small.jpg"
     },
     {
       "name": "Birmingham, 2012",
-      "url-small": "/img/art/birmingham-9-small.jpg",
+      "tags": [
+        "Street"
+      ],
       "url-full": "/img/art/birmingham-9.jpg",
-      "tags": ["Street"]
+      "url-small": "/img/art/birmingham-9-small.jpg"
     },
     {
       "name": "Nature Aquarium, 2019",
-      "url-small": "/img/art/nature-aquarium-1-small.jpg",
+      "tags": [],
       "url-full": "/img/art/nature-aquarium-1.jpg",
-      "tags": []
+      "url-small": "/img/art/nature-aquarium-1-small.jpg"
     },
     {
       "name": "Nature Aquarium, 2019",
-      "url-small": "/img/art/nature-aquarium-2-small.jpg",
+      "tags": [],
       "url-full": "/img/art/nature-aquarium-2.jpg",
-      "tags": []
+      "url-small": "/img/art/nature-aquarium-2-small.jpg"
+    },
+    {
+      "name": "Matterhorn, 2017",
+      "tags": [
+        "Travel"
+      ],
+      "url-full": "/img/art/matterhorn.jpg",
+      "url-small": "/img/art/matterhorn-small.jpg"
+    },
+    {
+      "name": "Steam Engine, 2018",
+      "tags": [],
+      "url-full": "/img/art/steam-engine.jpg",
+      "url-small": "/img/art/steam-engine-small.jpg"
     }
+  ],
+  "tags": [
+    "Travel",
+    "Street",
+    "Portrait"
   ]
 }
