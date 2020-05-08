@@ -3,101 +3,106 @@ layout: compress
 ---
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>F**r Letter Maps</title>
-    <meta name="description" content="{{ site.data.cv.basics.summary }}" />
-    <meta name="author" property="author" content="Chris Cummins" />
-    <style>
-      #map {
-        height: 100%;
-      }
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        font-family: Arial, Helvetica, sans-serif;
-      }
 
-      .pac-controls {
-        display: inline-block;
-        padding: 5px 11px;
-      }
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>F**r Letter Maps</title>
+  <meta name="description" content="{{ site.data.cv.basics.summary }}" />
+  <meta name="author" property="author" content="Chris Cummins" />
+  <style>
+    #map {
+      height: 100%;
+    }
 
-      .pac-controls label {
-        font-family: Roboto;
-        font-size: 13px;
-        font-weight: 300;
-      }
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
 
-      #pac-input {
-        background-color: #fff;
-        font-family: Roboto;
-        font-size: 18px;
-        font-weight: 300;
-        margin-left: 12px;
-        margin-top: 12px;
-        padding: 0 11px 0 13px;
-        text-overflow: ellipsis;
-        width: 400px;
-      }
+    .pac-controls {
+      display: inline-block;
+      padding: 5px 11px;
+    }
 
-      #pac-input:focus {
-        border-color: #4d90fe;
-      }
+    .pac-controls label {
+      font-family: Roboto;
+      font-size: 13px;
+      font-weight: 300;
+    }
 
-      .gm-style div div div div div div div div {
-        font-size: 32px; /* bigger info text plz */
-      }
+    #pac-input {
+      background-color: #fff;
+      font-family: Roboto;
+      font-size: 18px;
+      font-weight: 300;
+      margin-left: 12px;
+      margin-top: 12px;
+      padding: 0 11px 0 13px;
+      text-overflow: ellipsis;
+      width: 400px;
+    }
 
-      #consent {
-        background-color: #444;
-        padding: 40px;
-        font-size: 18px;
-        color: #ccc;
-        width: 100%;
-        height: 100%;
-        z-index: 1000;
-        position: fixed;
-      }
+    #pac-input:focus {
+      border-color: #4d90fe;
+    }
 
-      #consent-content {
-        background-color: #1c1c1c;
-        padding: 20px;
-        width: 70%;
-        margin: 0 auto;
-        text-align: center;
-      }
+    .gm-style div div div div div div div div {
+      font-size: 32px;
+      /* bigger info text plz */
+    }
 
-      a {
-        color: #fff;
-      }
-    </style>
-    {% include opengraph.html %}
-    {% include favicons.html %}
-    {% include google-analytics.html %}
-  </head>
-  <body>
-    <div id="consent">
-      <div id="consent-content">
-        <h2>F**r Letter Maps</h2>
-        <p>
-          After reading about the life-saving utility of <a href="https://www.bbc.co.uk/news/uk-england-49319760" target="_blank">three word maps</a> I thought it would be funny to be build a similar system in which the grid references are constructed from a dictionary comprised solely of naughty words. As you would expct, the result is entirely offensive.
-        </p>
-        <p>
-          Avoid if you are easily offended.
-        </p>
-        <p><a href="#" onclick="document.getElementById('consent').style.display = 'none'; document.getElementById('map').style.display = 'block'">I am a deviant, show me the map.</a></p>
-      </div>
+    #consent {
+      background-color: #444;
+      padding: 40px;
+      font-size: 18px;
+      color: #ccc;
+      width: 100%;
+      height: 100%;
+      z-index: 1000;
+      position: fixed;
+    }
+
+    #consent-content {
+      background-color: #1c1c1c;
+      padding: 20px;
+      width: 70%;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    a {
+      color: #fff;
+    }
+  </style>
+  {% include opengraph.html %}
+  {% include favicons.html %}
+  {% include google-analytics.html %}
+</head>
+
+<body>
+  <div id="consent">
+    <div id="consent-content">
+      <h2>F**r Letter Maps</h2>
+      <p>
+        After reading about the life-saving utility of <a href="https://www.bbc.co.uk/news/uk-england-49319760" target="_blank">three word maps</a> I thought it would be funny to build a similar system in which the grid references are constructed from a dictionary comprised solely of naughty words. As you would expct, the result is entirely offensive.
+      </p>
+      <p>
+        Avoid if you are easily offended.
+      </p>
+      <p><a href="#" onclick="document.getElementById('consent').style.display = 'none'; document.getElementById('map').style.display = 'block'">I am a deviant, show me the map.</a></p>
     </div>
-    <input id="pac-input" class="controls" type="text" placeholder="Address">
-    <div id="map"></div>
-    <script src="{{ '/s/four_letter_maps/four_letter_maps.js' | relative_url }}"></script>
-    </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1FsJ3HxU0Oq_iN9J6TwmDFfu9mdSU-YU&libraries=places&callback=initMap">
-    </script>
-  </body>
+  </div>
+  <input id="pac-input" class="controls" type="text" placeholder="Address">
+  <div id="map"></div>
+  <script src="{{ '/s/four_letter_maps/four_letter_maps.js' | relative_url }}"></script>
+  </script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1FsJ3HxU0Oq_iN9J6TwmDFfu9mdSU-YU&libraries=places&callback=initMap">
+  </script>
+</body>
+
 </html>
