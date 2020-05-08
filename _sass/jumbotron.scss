@@ -25,6 +25,7 @@
         }
         .filler {
             background-color: #eee;
+            @media (prefers-color-scheme: dark) { background-color: #444; }
         }
     }
 

@@ -4,6 +4,12 @@
         background-color: $color-background;
         display: inline-block;
 
+
+        @media (prefers-color-scheme: dark) {
+            background-color: $dm-color-background;
+            opacity: 0.8;
+        }
+
         // on small screens, the banner is centered, and has a tight border
         position: relative;
         padding: 17px 8px 15px 8px;
@@ -48,6 +54,7 @@
         a, span {
             padding: 10px $banner-a-horizontal-padding;
             color: $color-text;
+            @media (prefers-color-scheme: dark) { color: $dm-color-text; }
         }
 
         a {
@@ -58,15 +65,18 @@
 
         a:hover {
             color: $color-highlight;
+            @media (prefers-color-scheme: dark) { color: $dm-color-highlight; }
             text-decoration: none;
         }
         // don't highlight name on hover
         h1 a:hover {
             color: $color-text;
+            @media (prefers-color-scheme: dark) { color: $dm-color-text; }
         }
 
         span {
             color: $color-link;
+            @media (prefers-color-scheme: dark) { color: $dm-color-link; }
         }
 
         @media (min-width: $screen-sm-min) {

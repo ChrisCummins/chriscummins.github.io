@@ -98,7 +98,7 @@ it is I should be writing. In software, this leads to spaghetti code
 and multiple re-writes. As the ever excellent and bastion of cynicism
 [xkcd](http://xkcd.com/844/) explains:
 
-![XKCD](http://imgs.xkcd.com/comics/good_code.png)
+<img class="invertible" src="http://imgs.xkcd.com/comics/good_code.png">
 
 It seems that all of this ultimately boils down to a rephrasing of the
 old adage:

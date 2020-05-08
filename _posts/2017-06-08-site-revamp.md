@@ -18,14 +18,14 @@ replacing the fixed-width content block with something that will scale, and
 secondly ensure that the header doesn't become too unwieldy when squished down
 to single column view on a phone:
 
-![]({{ '/img/2017/revamp-iteration-1.png' | relative_url }})
+<img class="invertible" src="{{ '/img/2017/revamp-iteration-1.png' | relative_url }}">
 
 However, I quickly realized that when you change one thing, you may as well go
 ahead and tick all of the things off the wish list. So starting from a blank
 slate I roughly sketched up a new design, doubling down on a complete overhaul
 and opting for "hero image" branding:
 
-![]({{ '/img/2017/revamp-iteration-2.png' | relative_url }})
+<img class="invertible" src="{{ '/img/2017/revamp-iteration-2.png' | relative_url }}">
 
 I preferred that. The oversize banner would allow me to add a bit of visual
 interest beyond that same repeated mugshot, and I have a stockpile of holiday
@@ -37,7 +37,7 @@ and when compressed down to single column width would awkwardly sandwich my
 name between the headline and the content. Also, right-side navigation is in-
 vogue. Let's iterate:
 
-![]({{ '/img/2017/revamp-iteration-3.png' | relative_url }})
+<img class="invertible" src="{{ '/img/2017/revamp-iteration-3.png' | relative_url }}">
 
 Better. We'll put the title in the same block as the page content, and use the
 floating text over the image as the site's navigation bar. I prefer this as it

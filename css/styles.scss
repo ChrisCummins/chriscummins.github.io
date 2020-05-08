@@ -27,18 +27,16 @@ $color-subtle: #777;
 $color-button: #0b60fe;
 
 /* Dark mode: */
-
-/*
-$color-background: #191919;
-$color-background-code: #393939;
-$color-text-code: #d6d6af;
-$color-text: #bfbfbf;
-$color-title-text: #777;
-$color-link: #dd6e8a;
-$color-highlight: #c7254e;
-$color-subtle: #777;
-$color-button: #0b60fe;
-*/
+$dm-color-background: #191919;
+$dm-color-background-code: #282828;
+$dm-color-text-code: #d6d6af;
+$dm-color-text: #bfbfbf;
+$dm-color-title-text: #777;
+$dm-color-link: #dd6e8a;
+$dm-color-highlight: #c7254e;
+$dm-color-subtle: #777;
+// $dm-color-button: #dd6e8a;
+$dm-color-button: #799bdb;
 
 
 // font awesome icons
@@ -78,8 +76,11 @@ $jumbotron-content-gap: {{ site.jumbotron_content_gap | append: 'px' }};
     & {
         position: relative;
         color: $color-text;
+        @media (prefers-color-scheme: dark) { color: $dm-color-text; }
         text-decoration: none;
         border-bottom: 1px solid $color-text;
+        @media (prefers-color-scheme: dark) { border-bottom: 1px solid $dm-color-text; }
+        @include transition-duration(.2s);
 
         &:not(.btn).undecorated {
             border-bottom: none;
@@ -93,6 +94,7 @@ $jumbotron-content-gap: {{ site.jumbotron_content_gap | append: 'px' }};
             bottom: -2px;
             left: 0;
             background-color: $color-highlight;
+            @media (prefers-color-scheme: dark) { background-color: $dm-color-highlight; }
             visibility: hidden;
             -webkit-transform: scaleX(0);
                     transform: scaleX(0);
@@ -114,6 +116,7 @@ $jumbotron-content-gap: {{ site.jumbotron_content_gap | append: 'px' }};
         line-height: 24px;
         font-weight: 400;
         color: $color-subtle;
+        @media (prefers-color-scheme: dark) { color: $dm-color-subtle; }
         font-size: 14px;
     }
 }
@@ -150,14 +153,12 @@ html {
 
 a {
     color: $color-link;
+    @media (prefers-color-scheme: dark) { color: $dm-color-link; }
     text-decoration: underline;
 
-    &:hover {
+    &:hover, &:active {
         color: $color-highlight;
-    }
-
-    &:active {
-        color: $color-highlight;
+        @media (prefers-color-scheme: dark) { color: $dm-color-highlight; }
     }
 }
 
@@ -167,8 +168,10 @@ a.btn {
 
 code {
     color: $color-text;
+    @media (prefers-color-scheme: dark) { color: $dm-color-text; }
     background: none;
 }
+
 
 #col-right {
     // hidden on small screens:
@@ -188,7 +191,9 @@ code {
             padding: 0 0 .2em 0;
             margin-bottom: .6em;
             background: transparent;
-            background-color: $color-background
+
+            background-color: $color-background;
+            @media (prefers-color-scheme: dark) { background-color: $dm-color-background; }
 
             h1 {
                 margin-bottom: .2em;
@@ -239,6 +244,7 @@ code {
 
     #about {
         color: $color-text;
+        @media (prefers-color-scheme: dark) { color: $dm-color-text; }
         font-size: 16px;
         font-weight: 300;
         margin: 1em 0;
@@ -255,6 +261,7 @@ code {
     padding-left: 30px;  // counter left offset
     height: 59px;
     background-color: $color-background;
+    @media (prefers-color-scheme: dark) { background-color: $dm-color-background; }
     opacity: 0.95;
     top: 0;
     z-index: 10;
@@ -306,6 +313,7 @@ code {
 
     p, li {
         color: $color-text;
+        @media (prefers-color-scheme: dark) { color: $dm-color-text; }
         line-height: 1.45em;
     }
 
@@ -321,6 +329,13 @@ code {
         max-width: 100%;
         padding: .3em 0 1em 0;
     }
+}
+
+// Images with "invertible" class will be inverted in dark mode.
+// Use this for diagrams and drawings with white backgrounds. For 
+// photos this will look super weight.
+img.invertible {
+    @media (prefers-color-scheme: dark) { filter: invert(0.9); }
 }
 
 a.decorated {
@@ -442,6 +457,7 @@ a.decorated {
                     // first column formatting
                     font-size: 14px;
                     color: $color-subtle;
+                    @media (prefers-color-scheme: dark) { color: $dm-color-subtle; }
                     text-align: right;
                     padding-right: 1em;
                 }
@@ -459,11 +475,13 @@ a.decorated {
                     height: 5px;
 
                     background-color: #eaeaea;
+                    // TODO:;
                     -webkit-box-shadow: none;
                     box-shadow: none;
 
                     .progress-bar {
                         background-color: $color-link;
+                        @media (prefers-color-scheme: dark) { background-color: $dm-color-link; }
                     }
                 }
             }
@@ -471,6 +489,7 @@ a.decorated {
             td:first-child {
                 min-width: 95px;
                 color: $color-text;
+                @media (prefers-color-scheme: dark) { color: $dm-color-text; }
             }
 
             td:last-child {
@@ -514,10 +533,12 @@ a.decorated {
         font-size: 13px;
         font-weight: 300;
         color: $color-subtle;
+        @media (prefers-color-scheme: dark) { color: $dm-color-subtle; }
 
         // No color highlight for the "build <hash>" link in the footer.
         a {
             color: $color-subtle;
+            @media (prefers-color-scheme: dark) { color: $dm-color-subtle; }
         }
     }
 }
@@ -544,11 +565,20 @@ a.decorated {
         @include border-radius(12px);
 
         font-size: 16px;
-        color: $color-button;
 
         background-color: $color-background;
+
+        color: $color-button;
         border-color: $color-button;
         border: solid 2px $color-button;
+
+        @include transition-duration(.15s);
+
+        @media (prefers-color-scheme: dark) { 
+            color: $dm-color-button; 
+            border-color: $dm-color-button;
+            background-color: $dm-color-background;
+        }
 
         min-width: 130px;
 
@@ -559,11 +589,17 @@ a.decorated {
 
         &:hover {
             background-color: #eee;
+            @media (prefers-color-scheme: dark) { background-color: #444; }
         }
         &:active {
             background-color: #eee;
             border-color: $color-button;
             color: $color-button;
+            @media (prefers-color-scheme: dark) { 
+                background-color: #444;
+                border-color: $dm-color-button;
+                color: $dm-color-button; 
+            }
         }
 
         i {
@@ -619,12 +655,14 @@ a.decorated {
             margin: .3em 0;
             width: 160px;
             color: $color-text;
+            @media (prefers-color-scheme: dark) { color: $dm-color-text; }
             @include transition-duration(.3s);
         }
 
         a:hover {
             p {
                 color: $color-highlight;
+                @media (prefers-color-scheme: dark) { color: $dm-color-highlight; }
             }
         }
     }
@@ -704,16 +742,22 @@ a.decorated {
 .bg {
     background-color: $color-background;
     padding-top: $jumbotron-content-gap;
+    @media (prefers-color-scheme: dark) { background-color: $dm-color-background; }
 }
 
 body {
     color: $color-title-text;
+    @media (prefers-color-scheme: dark) { color: $dm-color-title-text; }
 }
 
 
 pre {
     background-color: $color-background-code;
     color: $color-text-code;
+    @media (prefers-color-scheme: dark) { 
+        background-color: $dm-color-background-code;
+        color: $dm-color-text-code; 
+    }
     border: $color-subtle;
     font-size: 16px;
 }
@@ -834,7 +878,11 @@ $column-count: 3;
     }
 }
 
+blockquote {
+    @media (prefers-color-scheme: dark) { border-color: $dm-color-subtle; }
+}
+
 @keyframes zoom {
-  from {transform:scale(0)}
-  to {transform:scale(1)}
+  from {transform:scale(0);}
+  to {transform:scale(1);}
 }

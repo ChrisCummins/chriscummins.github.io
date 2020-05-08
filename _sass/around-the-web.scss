@@ -32,6 +32,7 @@
             }
 
             color: $color-text;
+            @media (prefers-color-scheme: dark) { color: $dm-color-text; }
             text-decoration: none!important;
             @include transition-duration(0.3s);
 
@@ -41,6 +42,7 @@
 
             &:hover {
                 color: $color-highlight;
+                @media (prefers-color-scheme: dark) { color: $dm-color-highlight; }
 
                 img {
                     opacity: .75;
@@ -51,6 +53,7 @@
 
             &:active {
                 color: $color-link;
+                @media (prefers-color-scheme: dark) { color: $dm-color-link; }
             }
         }
 
