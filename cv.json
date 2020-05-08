@@ -895,6 +895,11 @@
         "picture": "https://chriscummins.cc/img/software/gol.png"
       },
       {
+        "name": "Program Explorer",
+        "url": "https://chriscummins.cc/s/program_explorer/",
+        "picture": "https://chriscummins.cc/img/software/program_explorer.png"
+      },
+      {
         "name": "Ray Tracer",
         "url": "https://github.com/ChrisCummins/phd/tree/master/experimental/graphics/rt",
         "picture": "https://chriscummins.cc/img/software/rt.png"
