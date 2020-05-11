@@ -46,8 +46,15 @@
 
                 img {
                     opacity: .75;
-                    -webkit-filter: grayscale(50%); /* Safari 6.0 - 9.0 */
-                            filter: grayscale(50%);
+
+                    // Apply a grayscale filter to soften the colors on image hover.
+                    // BUT don't apply this to the GitHub logo, which has special
+                    // treatment (it is already a grayscale image, and is color
+                    // inverted in dark mode, see below).
+                    &:not(.github) {
+                        -webkit-filter: grayscale(50%); /* Safari 6.0 - 9.0 */
+                                filter: grayscale(50%);
+                    }
                 }
             }
 
@@ -78,6 +85,12 @@
             @media (min-width: $screen-md-min) {
                 width: 36px;
                 height: 36px;
+            }
+
+            // The GitHub logo is a black circle with white details. This is very
+            // low contrast when in dark mode, so invert the colors.
+            &.github {
+                @media (prefers-color-scheme: dark) { filter: invert(0.85); }
             }
         }
 
