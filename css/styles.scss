@@ -475,7 +475,7 @@ a.decorated {
                     height: 5px;
 
                     background-color: #eaeaea;
-                    // TODO:;
+                    @media (prefers-color-scheme: dark) { background-color: #333; }
                     -webkit-box-shadow: none;
                     box-shadow: none;
 
