@@ -8,6 +8,7 @@ chriscummins.cc.
 Copyright {{ site.copyright.year }} {{ site.copyright.owner }}.
 Licensed under {{ site.copyright.license }}.
 -->
+
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -31,8 +32,10 @@ Licensed under {{ site.copyright.license }}.
   <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
   <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
   <link href="{{ '/css/styles.css' | relative_url }}?v={{ site.github.build_revision }}" rel="stylesheet" />
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  {% comment %}
+  HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries.
+  WARNING: Respond.js doesn't work if you view the page via file://.
+  {% endcomment %}
   <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -50,9 +53,9 @@ Licensed under {{ site.copyright.license }}.
     <div class="hero-img">
       {% if page.banner %}
       {% if page.banner contains "http" %}
-        {% assign banner_src = page.banner %}
+      {% assign banner_src = page.banner %}
       {% else %}
-        {% assign banner_src = page.banner | relative_url %}
+      {% assign banner_src = page.banner | relative_url %}
       {% endif %}
       <div class="parallax-window" data-parallax="scroll" data-image-src="{{ page.banner | relative_url }}"></div>
       {% else %}
@@ -78,22 +81,22 @@ Licensed under {{ site.copyright.license }}.
           {% endcomment %}
           <div class="content {% if page.date or page.render_post %}post{% endif %}">
             {% if page.date or page.render_post %}
-              <h1>
-                <span class="hang-right" aria-hidden="true">{{ page.date | date: "%-d %b %Y" }}</span>
-                {{ page.title }}
-                <span class="hang-left comment" aria-hidden="true">{{ page.date | date: "%-d %b %Y" }}</span>
-              </h1>
+            <h1>
+              <span class="hang-right" aria-hidden="true">{{ page.date | date: "%-d %b %Y" }}</span>
+              {{ page.title }}
+              <span class="hang-left comment" aria-hidden="true">{{ page.date | date: "%-d %b %Y" }}</span>
+            </h1>
             {% endif %}
             {{ content }}
             {% if page.date or page.render_post %}
-              <ul class="blognav">
-                {% if page.next %}
-                  <li class="blognav-next"><a href="{{ page.next.url | relative_url }}" title="Read the next post">Newer post</a></li>
-                {% endif %}
-                {% if page.previous %}
-                  <li class="blognav-prev"><a href="{{ page.previous.url | relative_url }}" title="Read the previous post">Older post</a></li>
-                {% endif %}
-              </ul> {% comment %} /.nav {% endcomment %}
+            <ul class="blognav">
+              {% if page.next %}
+              <li class="blognav-next"><a href="{{ page.next.url | relative_url }}" title="Read the next post">Newer post</a></li>
+              {% endif %}
+              {% if page.previous %}
+              <li class="blognav-prev"><a href="{{ page.previous.url | relative_url }}" title="Read the previous post">Older post</a></li>
+              {% endif %}
+            </ul> {% comment %} /.nav {% endcomment %}
             {% endif %}
           </div>
         </div> {% comment %} #col-left {% endcomment %}
@@ -113,9 +116,9 @@ Licensed under {{ site.copyright.license }}.
 
       <div class="row">
         <div id="footer" class="col-sm-9 noselect">
-          <hr/>
+          <hr />
           <p id="copyright">
-            &copy; {{ site.copyright.owner }} {{ site.copyright.year }}<br/>
+            &copy; {{ site.copyright.owner }} {{ site.copyright.year }}<br />
             build <a href="{{ site.github.repository_url }}/commit/{{ site.github.build_revision }}" title>{{ site.github.build_revision | truncate: 8, "" }}</a> on {{ site.time | date: '%Y-%m-%d' }}
           </p>
         </div> {% comment %} /#footer {% endcomment %}
@@ -127,4 +130,5 @@ Licensed under {{ site.copyright.license }}.
   <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="{{ '/js/site.min.js' | relative_url }}?v={{ site.github.build_revision }}"></script>
 </body>
+
 </html>
