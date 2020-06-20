@@ -379,6 +379,10 @@
           "url": "https://arxiv.org/abs/2003.10536"
         },
         {
+          "name": "Demo",
+          "url": "https://chriscummins.cc/s/program_explorer"
+        },
+        {
           "name": "Source Code",
           "url": "https://chriscummins.cc/ProGraML"
         }
@@ -389,6 +393,36 @@
       "publication": "[arXiv](https://arxiv.org/abs/2003.10536) (preprint)",
       "releaseDate": "2020",
       "summary": "Novel graph-based representation for machine learning over programs. We capture whole-program control, data, and call flow at the IR-level, equipping machine learning models to replicate the types of compiler analyses critical to optimization. We set new state-of-the-art performance in two downstream tasks - heterogenous device mapping and algorithm classification."
+    },
+    {
+      "assets": [
+        {
+          "name": "Paper",
+          "url": "https://chriscummins.cc/u/ed/phd-thesis.pdf"
+        },
+        {
+          "name": "Source Code",
+          "url": "https://github.com/ChrisCummins/phd"
+        }
+      ],
+      "authors": "**C. Cummins**",
+      "name": "Deep Learning in Compilers (thesis)",
+      "picture": "https://chriscummins.cc/u/ed/phd-thesis.png",
+      "publication": "PhD Thesis, University of Edinburgh",
+      "releaseDate": "2020",
+      "summary": "Deep learn\u00ading over pro\u00adgrams. De\u00adveloped novel ma\u00adchine learn\u00ading meth\u00adods for ran\u00addom pro\u00adgram gen\u00ader\u00ada\u00adtion, com\u00adpiler op\u00adtim\u00adisa\u00adtions, and rep\u00adres\u00adent\u00adat\u00adive bench\u00admark\u00ading. Ap\u00adplic\u00ada\u00adtions for het\u00adero\u00adgen\u00adeous par\u00adal\u00adlel\u00adism, com\u00adpiler test\u00ading, and ad\u00adapt\u00adive per\u00adform\u00adance tun\u00ading."
+    },
+    {
+      "assets": [
+        {
+          "name": "Paper",
+          "url": "https://dl.acm.org/doi/pdf/10.1145/3315508.3329976"
+        }
+      ],
+      "authors": "A. Goens, A. Brauckmann, S. Ertel, **C. Cummins**, H. Leather, J. Castrillon",
+      "name": "A Case Study on Machine Learning for Synthesizing Benchmarks (MAPL)",
+      "publication": "[MAPL](https://pldi19.sigplan.org/home/mapl-2019), Arizona, USA",
+      "releaseDate": "2019"
     },
     {
       "assets": [
@@ -552,19 +586,20 @@
         "Git",
         "GNU / Linux",
         "Bash",
-        "Jupyter"
+        "Jupyter",
+        "Bazel"
       ],
       "level": "Advanced",
       "name": "Advanced"
     },
     {
       "keywords": [
-        "HTML+CSS+JS",
-        "OpenCL",
         "SQL",
         "TensorFlow",
+        "PyTorch",
+        "HTML+CSS+JS",
         "Java",
-        "Bazel"
+        "OpenCL"
       ],
       "level": "Competent",
       "name": "Competent"
@@ -901,6 +936,22 @@
     ]
   },
   "work": [
+    {
+      "company": "Facebook AI Research",
+      "endDate": "present",
+      "position": "Research Software Engineer",
+      "startDate": "2020",
+      "summary": "Melo Park, California.",
+      "website": "https://ai.facebook.com/"
+    },
+    {
+      "company": "University of Edinburgh",
+      "endDate": "2020",
+      "position": "Postdoctoral Researcher",
+      "startDate": "2019",
+      "summary": "Developed industry-grade differential testing for IBM, integrated into their OpenJ9 and Eclipse JVM testing services. Created a new machine learning program representation for analysis and optimization. Funded by IBM and Tetramax.",
+      "website": "https://www.ed.ac.uk/informatics"
+    },
     {
       "company": "DeepMind",
       "endDate": "2018",
