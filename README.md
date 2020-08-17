@@ -17,8 +17,8 @@ On macOS:
 
 ```sh
 $ brew install ruby ffmpeg
-$ sudo gem install -n /usr/local/bin bundler:2.1.4
-$ /usr/local/bin/bundle install
+$ sudo "$(brew --prefix)/opt/ruby/bin/gem" install -n "$(brew --prefix)/bin" bundler:2.1.4
+$ "$(brew --prefix)/bin/bundle" install
 ```
 
 ## Running the site locally
