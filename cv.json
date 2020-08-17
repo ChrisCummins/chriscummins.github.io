@@ -375,6 +375,20 @@
     {
       "assets": [
         {
+          "name": "Paper",
+          "url": "https://chriscummins.cc/pub/2020-fdl.pdf"
+        }
+      ],
+      "authors": "H.Leather, **C. Cummins**",
+      "name": "Machine Learning in Compilers: Past, Present and Future (FDL)",
+      "picture": "https://chriscummins.cc/pub/2020-fdl.png",
+      "publication": "[FDL](http://fdl-conference.org/), Kiel, Germany",
+      "releaseDate": "2020",
+      "summary": "This paper provides a retrospective of machine learning in compiler optimisation from its earliest inception, through some of the works that set themselves apart, to today's deep learning, finishing with our vision of the field's future."
+    },
+    {
+      "assets": [
+        {
           "name": "arXiv",
           "url": "https://arxiv.org/abs/2003.10536"
         },
