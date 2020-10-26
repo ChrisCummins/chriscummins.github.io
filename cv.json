@@ -123,6 +123,11 @@
     ],
     "peer_reviews": [
       {
+        "date": "2020",
+        "name": "ACM TACO",
+        "url": "https://taco.acm.org/"
+      },
+      {
         "date": "2018",
         "name": "CGO",
         "url": "http://cgo.org/cgo2018/"
@@ -207,6 +212,10 @@
     ]
   },
   "awards": [
+    {
+      "date": "2020",
+      "title": "SICSA PhD Award for [Best Dissertation in Scotland 2019-2020](https://www.sicsa.ac.uk/news-events/sicsa-conference-2020/)."
+    },
     {
       "date": "2018",
       "title": "Distinguished Paper Award, [ISSTA](https://conf.researchr.org/details/issta-2018/issta-2018-Technical-Papers/4/Compiler-Fuzzing-through-Deep-Learning). 112 submissions, 28% acceptance rate"
