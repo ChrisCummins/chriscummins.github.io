@@ -58,9 +58,6 @@ $(document).ready(function() {
 });
 
 // Change the caret direction on collapsible list elements:
-//
-// TODO: update the 'show all' and 'expand all' option is all or none of the
-// sections are expanded
 $('.has-caret .collapse')
   .on('show.bs.collapse', function() {
     $(this).parent().addClass('has-caret-down');
@@ -69,16 +66,16 @@ $('.has-caret .collapse')
     $(this).parent().removeClass('has-caret-down');
   });
 
-// "show all" and "hide all" option on collapse
+// "expand all" and "collapse all" option on collapse
 $('.expand-all').click(function(e) {
     var target_selector = '.' + $(this)[0].href.split("#")[1];
 
-    if ($(this).html() == 'show all') {
+    if ($(this).html() == 'expand all') {
       $(target_selector).collapse("show");
-      $(this).html('hide all');
+      $(this).html('collapse all');
     } else {
       $(target_selector).collapse("hide");
-      $(this).html('show all');
+      $(this).html('expand all');
     }
   });
 

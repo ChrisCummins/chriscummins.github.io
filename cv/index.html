@@ -19,7 +19,37 @@ banner: /img/banners/san-fran.jpg
 </div>{% comment  %} /.cec-navbar-container {% endcomment %}
 
 <div class="cv big-list">
-  <h1>Education <a class="expand-all" role="button" href="#edu">show all</a></h1>
+  <h1>Professional Experience <a class="expand-all" role="button" href="#work">expand all</a></h1>
+  <ul>
+  {% for entry in site.data.cv.work %}
+    <li class="has-caret">
+      <span class="hang-right">{{ entry.startDate }}{% if entry.endDate != entry.startDate %}-{% if entry.endDate == "" %}current{% else %}{{ entry.endDate }}{% endif %}{% endif %}</span>
+      <a class="undecorated" role="button" data-toggle="collapse" href="#work-{{ forloop.index }}" aria-expanded="false" aria-controls="work-{{ forloop.index }}">{{ entry.company }}, {{entry.position}}</a>
+      <span class="hang-left">{{ entry.startDate }}{% if entry.endDate != entry.startDate %}-{% if entry.endDate == "" %}current{% else %}{{ entry.endDate }}{% endif %}{% endif %}</span>
+      <div class="work collapse" id="work-{{ forloop.index }}">
+        <div class="collapse-content">
+          <p class="justify">
+            {{ entry.summary | markdownify | remove: '<p>' | remove: '</p>' }}
+          </p>
+          {% if entry.assets %}
+            <div class="btn-row">
+            <ul>
+              {% for asset in entry.assets %}
+                                                        {% assign icon = "fa-external-link" %}
+                {% if asset.url contains "github.com" %}{% assign icon = "fa-github" %}{% endif %}
+                {% if asset.url contains ".pdf" %}      {% assign icon = "fa-file-pdf-o" %}{% endif %}
+                <li><a title="Link opens in new window" target="_blank" href="{{ asset.url }}" class="btn btn-primary undecorated" role="button">{{ asset.name }} <i class="fa {{ icon }}" aria-hidden="true"></i></a></li>
+              {% endfor %}
+            </ul>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </li>
+  {% endfor %}
+  </ul>
+
+  <h1>Education <a class="expand-all" role="button" href="#edu">expand all</a></h1>
   <ul>
   {% for entry in site.data.cv.education %}
     <li class="has-caret">
@@ -56,37 +86,18 @@ banner: /img/banners/san-fran.jpg
   {% endfor %}
   </ul>
 
-  <h1>Professional Experience <a class="expand-all" role="button" href="#work">show all</a></h1>
+  <h1>Awards</h1>
   <ul>
-  {% for entry in site.data.cv.work %}
-    <li class="has-caret">
-      <span class="hang-right">{{ entry.startDate }}{% if entry.endDate != entry.startDate %}-{% if entry.endDate == "" %}current{% else %}{{ entry.endDate }}{% endif %}{% endif %}</span>
-      <a class="undecorated" role="button" data-toggle="collapse" href="#work-{{ forloop.index }}" aria-expanded="false" aria-controls="work-{{ forloop.index }}">{{entry.position}}, {{ entry.company }}</a>
-      <span class="hang-left">{{ entry.startDate }}{% if entry.endDate != entry.startDate %}-{% if entry.endDate == "" %}current{% else %}{{ entry.endDate }}{% endif %}{% endif %}</span>
-      <div class="work collapse" id="work-{{ forloop.index }}">
-        <div class="collapse-content">
-          <p class="justify">
-            {{ entry.summary | markdownify | remove: '<p>' | remove: '</p>' }}
-          </p>
-          {% if entry.assets %}
-            <div class="btn-row">
-            <ul>
-              {% for asset in entry.assets %}
-                                                        {% assign icon = "fa-external-link" %}
-                {% if asset.url contains "github.com" %}{% assign icon = "fa-github" %}{% endif %}
-                {% if asset.url contains ".pdf" %}      {% assign icon = "fa-file-pdf-o" %}{% endif %}
-                <li><a title="Link opens in new window" target="_blank" href="{{ asset.url }}" class="btn btn-primary undecorated" role="button">{{ asset.name }} <i class="fa {{ icon }}" aria-hidden="true"></i></a></li>
-              {% endfor %}
-            </ul>
-            </div>
-          {% endif %}
-        </div>
-      </div>
+  {% for entry in site.data.cv.awards %}
+    <li>
+      <span class="hang-right">{{ entry.date }}</span>
+      {{ entry.title | markdownify | remove: '<p>' | remove: '</p>' }}
+      <span class="hang-left">{{ entry.date }}</span>
     </li>
   {% endfor %}
   </ul>
 
-  <h1>Publications <a class="expand-all" role="button" href="#pub">show all</a></h1>
+  <h1>Publications <a class="expand-all" role="button" href="#pub">expand all</a></h1>
   <ul>
   {% for entry in site.data.cv.publications %}
     <li class="has-caret">
@@ -131,18 +142,7 @@ banner: /img/banners/san-fran.jpg
   {% endfor %}
   </ul>
 
-  <h1>Awards</h1>
-  <ul>
-  {% for entry in site.data.cv.awards %}
-    <li>
-      <span class="hang-right">{{ entry.date }}</span>
-      {{ entry.title | markdownify | remove: '<p>' | remove: '</p>' }}
-      <span class="hang-left">{{ entry.date }}</span>
-    </li>
-  {% endfor %}
-  </ul>
-
-  <h1>Invited Talks <a class="expand-all" role="button" href="#talks">show all</a></h1>
+  <h1>Invited Talks <a class="expand-all" role="button" href="#talks">expand all</a></h1>
   <ul>
   {% for entry in site.data.cv.academic_activities.invited_talks %}
     <li class="has-caret">
