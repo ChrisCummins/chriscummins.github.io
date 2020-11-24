@@ -385,10 +385,32 @@
       "assets": [
         {
           "name": "Paper",
+          "url": "https://chriscummins.cc/pub/2020-program-graphs-for-ml.pdf"
+        },
+        {
+          "name": "Demo",
+          "url": "https://chriscummins.cc/s/program_explorer"
+        },
+        {
+          "name": "Source Code",
+          "url": "https://chriscummins.cc/ProGraML"
+        }
+      ],
+      "authors": "**C. Cummins**, Z. Fisches, T. Ben-Nun, T. Hoefler, H. Leather, M. O'Boyle",
+      "name": "Program Graphs for Machine Learning (NeurIPS)",
+      "picture": "https://chriscummins.cc/pub/2020-program-graphs-for-ml.png",
+      "publication": "[ML for Systems Workshop](https://mlforsystems.org/), NeurIPS",
+      "releaseDate": "2020",
+      "summary": "We present ProGraML - Program Graphs for Machine Learning - a language-independent, portable representation of program semantics that enables analysis through deep learning. We show that standard analyses can be learned, significantly outperforming state-of-the-art approaches."
+    },
+    {
+      "assets": [
+        {
+          "name": "Paper",
           "url": "https://chriscummins.cc/pub/2020-fdl.pdf"
         }
       ],
-      "authors": "H.Leather, **C. Cummins**",
+      "authors": "H. Leather, **C. Cummins**",
       "name": "Machine Learning in Compilers: Past, Present and Future (FDL)",
       "picture": "https://chriscummins.cc/pub/2020-fdl.png",
       "publication": "[FDL](http://fdl-conference.org/), Kiel, Germany",
