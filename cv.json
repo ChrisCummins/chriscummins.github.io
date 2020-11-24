@@ -23,6 +23,18 @@
         "assets": [
           {
             "name": "Slides",
+            "url": "https://docs.google.com/presentation/d/1TJKmTxGvxY8HC6CQXOBNzk0oVSU-EEMdQ031AYLmMMg/edit?usp=sharing"
+          }
+        ],
+        "date": "2020",
+        "duration": "30 minutes",
+        "name": "ProGraML: Graph-based Deep Learning for Program Optimization and Analysis (PACT)",
+        "summary": "Presenting [ProGraML](https://github.com/ChrisCummins/ProGraML) at [MLSH](https://groups.csail.mit.edu/commit/mlsh/), PACT."
+      },
+      {
+        "assets": [
+          {
+            "name": "Slides",
             "url": "https://speakerdeck.com/chriscummins/compiler-fuzzing-through-deep-learning-issta-18"
           }
         ],
