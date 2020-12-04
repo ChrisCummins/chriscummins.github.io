@@ -396,6 +396,28 @@
     {
       "assets": [
         {
+          "name": "arXiv",
+          "url": "https://arxiv.org/pdf/2012.01470.pdf"
+        },
+        {
+          "name": "Dataset",
+          "url": "https://zenodo.org/record/4122437"
+        },
+        {
+          "name": "Source Code",
+          "url": "https://chriscummins.cc/ProGraML"
+        }
+      ],
+      "authors": "**C. Cummins**, Z. Fisches, T. Ben-Nun, T. Hoefler, H. Leather, M. O'Boyle",
+      "name": "Deep Data Flow Analysis",
+      "picture": "https://chriscummins.cc/pub/2020-deep-data-flow.png",
+      "publication": "[arXiv](https://arxiv.org/pdf/2012.01470.pdf)",
+      "releaseDate": "2020",
+      "summary": "Most machine learning methods cannot replicate even the simplest of the abstract interpretations of data flow analysis that are critical to making good optimization decisions. To benchmark current and future learning techniques for compiler analyses we introduce an open dataset of 461k Intermediate Representation files for LLVM, covering five source programming languages, and 15.4M corresponding data flow results. We formulate data flow analysis as an MPNN and show that standard analyses can be learned, yielding improved performance on downstream compiler optimization tasks."
+    },
+    {
+      "assets": [
+        {
           "name": "Paper",
           "url": "https://chriscummins.cc/pub/2020-program-graphs-for-ml.pdf"
         },
@@ -445,9 +467,9 @@
         }
       ],
       "authors": "**C. Cummins**, Z. V. Fisches, T. Ben-Nun, T. Hoefler, and H. Leather",
-      "name": "ProGraML: Graph-based Deep Learning for Program Optimization and Analysis (preprint)",
+      "name": "ProGraML: Graph-based Deep Learning for Program Optimization and Analysis",
       "picture": "https://chriscummins.cc/pub/2020-programl.png",
-      "publication": "[arXiv](https://arxiv.org/abs/2003.10536) (preprint)",
+      "publication": "[arXiv](https://arxiv.org/abs/2003.10536)",
       "releaseDate": "2020",
       "summary": "Novel graph-based representation for machine learning over programs. We capture whole-program control, data, and call flow at the IR-level, equipping machine learning models to replicate the types of compiler analyses critical to optimization. We set new state-of-the-art performance in two downstream tasks - heterogenous device mapping and algorithm classification."
     },
