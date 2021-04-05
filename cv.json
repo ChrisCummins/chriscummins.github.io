@@ -400,6 +400,20 @@
     {
       "assets": [
         {
+          "name": "Paper",
+          "url": "https://chriscummins.cc/pub/2021-value-learning.pdf"
+        },
+      ],
+      "authors": "B. Steiner, **C. Cummins**, H. He, H. Leather",
+      "name": "Value Learning for Throughput Optimization of Deep Neural Networks (MLSys)",
+      "picture": "https://chriscummins.cc/pub/2021-value-learning.png",
+      "publication": "[MLSys](https://mlsys.org/)",
+      "releaseDate": "2021",
+      "summary": "Scheduling deep learning workloads by predicting the expected performance of a partial schedule using an LSTM and carefully engineered features. Achieves 2.6x speedup over Halide and 1.5x speedup over TVM in orders of magnitude less search time."
+    },
+    {
+      "assets": [
+        {
           "name": "arXiv",
           "url": "https://arxiv.org/pdf/2012.01470.pdf"
         },
@@ -440,6 +454,20 @@
       "publication": "[ML for Systems Workshop](https://mlforsystems.org/), NeurIPS",
       "releaseDate": "2020",
       "summary": "We present ProGraML - Program Graphs for Machine Learning - a language-independent, portable representation of program semantics that enables analysis through deep learning. We show that standard analyses can be learned, significantly outperforming state-of-the-art approaches."
+    },
+    {
+      "assets": [
+        {
+          "name": "arXiv",
+          "url": "https://arxiv.org/pdf/2011.14486.pdf"
+        },
+      ],
+      "authors": "B. Steiner, **C. Cummins**, H. He, H. Leather",
+      "name": "Value Function Based Performance Optimization of Deep Learning Workloads (NeurIPS)",
+      "picture": "https://chriscummins.cc/pub/2020-value-function.png",
+      "publication": "[ML for Systems Workshop](https://mlforsystems.org/), NeurIPS",
+      "releaseDate": "2020",
+      "summary": "Scheduling deep learning workloads by predicting the expected performance of a partial schedule using an LSTM and carefully engineered features. Achieves 2.6x speedup over Halide and 1.5x speedup over TVM in orders of magnitude less search time."
     },
     {
       "assets": [
