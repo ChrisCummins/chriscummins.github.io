@@ -30,6 +30,15 @@ $ make all
 $ make run
 ```
 
+## Pushing to staging site
+
+```sh
+$ git remote add staging git@github.com:ChrisCummins/staging.git
+$ git push staging master:gh-pages
+```
+
+Check the staging site at http://chriscummins.cc/staging
+
 ## License
 
 The website code is
