@@ -401,8 +401,30 @@
       "assets": [
         {
           "name": "Paper",
-          "url": "https://chriscummins.cc/pub/2021-value-learning.pdf"
+          "url": "https://chriscummins.cc/pub/2021-icml.pdf"
         },
+        {
+          "name": "Dataset",
+          "url": "https://zenodo.org/record/4122437"
+        },
+        {
+          "name": "Source Code",
+          "url": "https://chriscummins.cc/ProGraML"
+        }
+      ],
+      "authors": "**C. Cummins**, Z. Fisches, T. Ben-Nun, T. Hoefler, M. O'Boyle, H. Leather",
+      "name": "ProGraML: A Graph-based Program Representation for Data Flow Analysis and Compiler Optimizations (ICML)",
+      "picture": "https://chriscummins.cc/pub/2021-icml.png",
+      "publication": "[ICML](https://mlsys.org/)",
+      "releaseDate": "2021",
+      "summary": "Most machine learning methods cannot replicate even the simplest of the abstract interpretations of data flow analysis that are critical to making good optimization decisions. To benchmark current and future learning techniques for compiler analyses we introduce an open dataset of 461k Intermediate Representation files for LLVM, covering five source programming languages, and 15.4M corresponding data flow results. We formulate data flow analysis as an MPNN and show that standard analyses can be learned, yielding improved performance on downstream compiler optimization tasks."
+    },
+    {
+      "assets": [
+        {
+          "name": "Paper",
+          "url": "https://chriscummins.cc/pub/2021-value-learning.pdf"
+        }
       ],
       "authors": "B. Steiner, **C. Cummins**, H. He, H. Leather",
       "name": "Value Learning for Throughput Optimization of Deep Neural Networks (MLSys)",
