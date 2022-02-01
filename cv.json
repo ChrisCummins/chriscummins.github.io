@@ -3,6 +3,11 @@
   "academic_activities": {
     "committees": [
       {
+        "date": "2022",
+        "name": "MLArchSys'22 Organizing Commitee",
+        "url": "https://sites.google.com/view/mlarchsys/"
+      },
+      {
         "date": "2019",
         "name": "COSMIC'19 General Co-chair",
         "url": "http://workshops.inf.ed.ac.uk/cosmic/cosmic19/committee.html"
@@ -134,6 +139,21 @@
       }
     ],
     "peer_reviews": [
+      {
+        "date": "2022",
+        "name": "PLDI",
+        "url": "https://conf.researchr.org/home/pldi-2022"
+      },
+      {
+        "date": "2022",
+        "name": "MLSys",
+        "url": "https://mlsys.org/"
+      },
+      {
+        "date": "2022",
+        "name": "CC",
+        "url": "https://conf.researchr.org/home/CC-2022"
+      },
       {
         "date": "2020",
         "name": "ACM TACO",
@@ -397,6 +417,74 @@
     }
   ],
   "publications": [
+    {
+      "assets": [
+        {
+          "name": "Paper",
+          "url": "https://arxiv.org/pdf/2109.08267.pdf"
+        },
+        {
+          "name": "Homepage",
+          "url": "https://compilergym.ai"
+        },
+        {
+          "name": "Source Code",
+          "url": "https://github.com/facebookresearch/CompilerGym"
+        },
+      ],
+      "authors": "**C. Cummins**, B. Wasti, J. Guo, B. Cui, J. Ansel, S. Gomez, S. Jain, J. Liu, O. Teytaud, B. Steiner, Y. Tian, H. Leather",
+      "name": "CompilerGym: Robust, Performant Compiler Optimization Environments for AI Research (CGO)",
+      "picture": "https://chriscummins.cc/pub/2022-compilergym.png",
+      "publication": "[CGO](https://conf.researchr.org/home/cgo-2022)",
+      "releaseDate": "2022",
+      "summary": "We aim to lower the barrier-to-entry to compiler optimization research. We present CompilerGym, a suite of tools that removes the significant engineering investment required try out new ideas on production compiler problems."
+    },
+    {
+      "assets": [
+        {
+          "name": "Paper",
+          "url": "https://arxiv.org/pdf/2112.14679.pdf"
+        },
+        {
+          "name": "Source Code",
+          "url": "https://github.com/nadavrot/pgo_ml"
+        }
+      ],
+      "authors": "N. Rotem, **C. Cummins**",
+      "name": "Profile Guided Optimization without Profiles: A Machine Learning Approach",
+      "picture": "https://chriscummins.cc/pub/2022-ml-pgo.png",
+      "publication": "[arXiv](https://arxiv.org/pdf/2112.14679.pdf)",
+      "releaseDate": "2022",
+      "summary": "Profile guided optimization is an effective technique for improving the optimization ability of compilers based on dynamic behavior, but collecting profile data is expensive, cumbersome, and requires regular updating to remain fresh. We present a novel statistical approach to inferring branch probabilities that improves the performance of programs that are compiled without profile guided optimizations."
+    },
+    {
+      "assets": [
+        {
+          "name": "Paper",
+          "url": "https://arxiv.org/pdf/2111.12116.pdf"
+        },
+      ],
+      "authors": "S. Kourta, A. Namani, F. Tayeb, K. Hazelwood, **C. Cummins**, H. Leather, R. Baghdadi",
+      "name": "Caviar: An E-graph Based TRS for Automatic Code Optimization",
+      "picture": "https://chriscummins.cc/pub/2022-caviar.png",
+      "publication": "[arXiv](https://arxiv.org/pdf/2111.12116.pdf)",
+      "releaseDate": "2021",
+      "summary": "Accelerating e-graph construction is crucial for making the use of e-graphs practical in compilers. In this paper, we present Caviar, an e-graph-based TRS for proving expressions within compilers. Caviar is a fast (20x faster than base e-graph TRS) and flexible TRS."
+    },
+    {
+      "assets": [
+        {
+          "name": "Paper",
+          "url": "https://arxiv.org/pdf/2106.10544.pdf"
+        },
+      ],
+      "authors": "K. Yang, T. Zhang, **C. Cummins**, B. Cui, B. Steiner, L. Wang, J. Gonzalez, D. Klein, Y. Tian",
+      "name": "Learning Space Paritions for Path Planning (NeurIPS)",
+      "picture": "https://chriscummins.cc/pub/2021-path-partitions.png",
+      "publication": "[NeurIPS](https://nips.cc/Conferences/2021/)",
+      "releaseDate": "2021",
+      "summary": "Path planning, the problem of efficiently discovering high-reward trajectories, often requires optimizing a high-dimensional and multimodal reward function. We develop a novel formal regret analysis for when and why an adaptive region partitioning scheme works. We also propose a new path planning method which improves the function value estimation within each sub-region, and uses a latent representation of the search space."
+    },
     {
       "assets": [
         {
