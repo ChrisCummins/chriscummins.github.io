@@ -16,7 +16,7 @@ img:
 .PHONY: run
 
 run:
-	bundle exec jekyll serve --drafts --host=0.0.0.0
+	bundle exec jekyll serve --drafts --future --host=0.0.0.0
 
 # Dependencies.
 
