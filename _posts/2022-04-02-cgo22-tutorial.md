@@ -54,6 +54,12 @@ Slides for the above video:
 
 <div style="left: 0; width: 100%; height: 0; position: relative; padding-bottom: 56.1972%;"><iframe src="https://speakerdeck.com/player/93e4daaee2974263b54348b359fc188d" style="top: 0; left: 0; width: 100%; height: 100%; position: absolute; border: 0;" allowfullscreen scrolling="no" allow="encrypted-media;"></iframe></div>
 
+Here is the second notebook:
+
+<a href="https://colab.research.google.com/drive/16REoBmg6p1SRQMhUXUZqo7NplT2MZrNe?usp=sharing">
+  <img src="/img/2022-04-02-cgo-notebook-2.png">
+</a>
+
 ----
 
 ## Part 3: Reinforcement Learning
