@@ -39,7 +39,7 @@ video provides a quick overview.
 
 Here is the first notebook:
 
-<a href="https://colab.research.google.com/github/facebookresearch/CompilerGym/blob/stable/examples/getting-started.ipynb">
+<a href="https://colab.research.google.com/drive/1KYRaN50nYh2ubZgzCnxai7mFmaoCQA1s?usp=sharing">
   <img src="/img/2022-04-02-cgo-notebook-1.png">
 </a>
 
@@ -66,7 +66,7 @@ Slide deck for the above video:
 
 Here is the third notebook:
 
-<a href="https://colab.research.google.com/github/facebookresearch/CompilerGym/blob/stable/examples/getting-started.ipynb">
+<a href="https://colab.research.google.com/drive/1pxnYy2Rm9H0hkdwZJ7WmdtT4-ZGph_W4?usp=sharing">
   <img src="/img/2022-04-02-cgo-notebook-3.png">
 </a>
 
