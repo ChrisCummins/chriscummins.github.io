@@ -88,6 +88,4 @@ Slides for the above video:
 
 ----
 
-That's it, thank you participating in the tutorial! If you have feedback please
-[contact us](https://github.com/facebookresearch/CompilerGym/issues), we'd love
-to hear from you.
+That's it, thank you participating in the tutorial! Please take 1 minute to [fill in this survey](https://forms.gle/A9D3izJEbHpuaDLo8) to let us know how you got on and what we could do better.
