@@ -245,6 +245,14 @@
   },
   "awards": [
     {
+      "date": "2022",
+      "title": "Best Paper Nominee, [MLArchSys](https://sites.google.com/view/mlarchsys)"
+    },
+    {
+      "date": "2022",
+      "title": "Distinguished Paper Award, [CGO](https://conf.researchr.org/home/cgo-2022). 29% acceptance rate"
+    },
+    {
       "date": "2020",
       "title": "SICSA PhD Award for [Best Dissertation in Scotland 2019-2020](https://www.sicsa.ac.uk/news-events/sicsa-conference-2020/)."
     },
@@ -287,7 +295,7 @@
   ],
   "basics": {
     "email": "chrisc.101@gmail.com",
-    "label": "Research Student",
+    "label": "Research Engineer",
     "languages": [
       {
         "fluency": "Native speaker",
@@ -295,8 +303,8 @@
       }
     ],
     "location": {
-      "city": "Edinburgh",
-      "countryCode": "UK"
+      "city": "Bay Area",
+      "countryCode": "USA"
     },
     "name": "Chris Cummins",
     "picture": "https://chriscummins.cc/img/me.jpg",
@@ -311,9 +319,9 @@
         "username": "ChrisCummins"
       },
       {
-        "network": "YouTube",
-        "url": "http://www.youtube.com/user/ChrisCummins",
-        "username": "ChrisCummins"
+        "network": "LinkedIn",
+        "url": "https://www.linkedin.com/in/chris-cummins-25540455/",
+        "username": "chris-cummins-25540455"
       },
       {
         "network": "Instagram",
@@ -321,14 +329,14 @@
         "username": "@iamchriscummins"
       },
       {
+        "network": "YouTube",
+        "url": "http://www.youtube.com/user/ChrisCummins",
+        "username": "ChrisCummins"
+      },
+      {
         "network": "Facebook",
         "url": "http://www.facebook.com/cecummins",
         "username": "cecummins"
-      },
-      {
-        "network": "LinkedIn",
-        "url": "https://www.linkedin.com/in/chris-cummins-25540455/",
-        "username": "chris-cummins-25540455"
       },
       {
         "network": "Twitter",
@@ -421,6 +429,52 @@
       "assets": [
         {
           "name": "Paper",
+          "url": "https://chriscummins.cc/pub/2022-benchpress.pdf"
+        },
+        {
+          "name": "Source Code",
+          "url": "https://github.com/fivosts/BenchPress"
+        }
+      ],
+      "authors": "F. Tsimpourlas, P. Petoumenos, M. Xu, **C. Cummins**, K. Hazelwood, A. Rajan, H. Leather",
+      "name": "BenchPress: A Deep Active Benchmark Generator (PACT)",
+      "picture": "https://chriscummins.cc/pub/2022-benchpress.png",
+      "publication": "[PACT](https://pact22.cs.illinois.edu/)",
+      "releaseDate": "2022",
+      "summary": "BenchPress is a directed program synthesizer for compiler benchmarks. Using active learning, it ranks compiler features based on their significance and produces executables that target them."
+    },
+    {
+      "assets": [
+        {
+          "name": "Paper",
+          "url": "https://chriscummins.cc/pub/2022-q-gym.pdf"
+        },
+      ],
+      "authors": "C. Fu, H. Huang, B. Wasti, **C. Cummins**, R. Baghdadi, K. Hazelwood, Y. Tian, J. Zhao, H. Leather",
+      "name": "BenchPress: A Deep Active Benchmark Generator (PACT)",
+      "picture": "https://chriscummins.cc/pub/2022-q-gym.png",
+      "publication": "[PACT](https://pact22.cs.illinois.edu/)",
+      "releaseDate": "2022",
+      "summary": "The high computation cost is one of the key bottlenecks for adopting deep neural networks (DNNs) in different hardware. Q-gym consists of a compiler which leverages equality saturation to generate computation expressions, and various parallelization methods to accelerate DNN inference on different hardware."
+    },
+    {
+      "assets": [
+        {
+          "name": "Paper",
+          "url": "https://chriscummins.cc/pub/2022-autophase-v2.pdf"
+        },
+      ],
+      "authors": "M. Almakki, A. Izzeldin, Q. Huang, A. Haj Ali, **C. Cummins**",
+      "name": "Autophase V2: Towards Function Level Phase Ordering Optimization (MLArchSys Best Paper Nominee)",
+      "picture": "https://chriscummins.cc/pub/2022-autophase-v2.png",
+      "publication": "[MLArchSys](https://sites.google.com/view/mlarchsys)",
+      "releaseDate": "2022",
+      "summary": "Phase ordering offers improved program performance by specializing compiler optimizations to invidual programs. In this work we propose further specializing the phase ordering for each function. Results show up to 9% improvement."
+    },
+    {
+      "assets": [
+        {
+          "name": "Paper",
           "url": "https://arxiv.org/pdf/2109.08267.pdf"
         },
         {
@@ -433,7 +487,7 @@
         },
       ],
       "authors": "**C. Cummins**, B. Wasti, J. Guo, B. Cui, J. Ansel, S. Gomez, S. Jain, J. Liu, O. Teytaud, B. Steiner, Y. Tian, H. Leather",
-      "name": "CompilerGym: Robust, Performant Compiler Optimization Environments for AI Research (CGO)",
+      "name": "CompilerGym: Robust, Performant Compiler Optimization Environments for AI Research (CGO Distinguished Paper)",
       "picture": "https://chriscummins.cc/pub/2022-compilergym.png",
       "publication": "[CGO](https://conf.researchr.org/home/cgo-2022)",
       "releaseDate": "2022",
