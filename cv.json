@@ -451,7 +451,7 @@
         },
       ],
       "authors": "C. Fu, H. Huang, B. Wasti, **C. Cummins**, R. Baghdadi, K. Hazelwood, Y. Tian, J. Zhao, H. Leather",
-      "name": "BenchPress: A Deep Active Benchmark Generator (PACT)",
+      "name": "Q-gym: An Equality Saturation Framework for DNN Inference Exploiting Weight Repetition (PACT)",
       "picture": "https://chriscummins.cc/pub/2022-q-gym.png",
       "publication": "[PACT](https://pact22.cs.illinois.edu/)",
       "releaseDate": "2022",
