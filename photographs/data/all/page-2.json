@@ -20,16 +20,16 @@
         "filters": ""
       },
       "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/533.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/533.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/533.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/533.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/533.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/533.jpg",
+        "thumbnail": "http://chriscummins.github.io/static/photographs/thumbnail/533.webp",
+        "thumbnail_fallback": "http://chriscummins.github.io/static/photographs/thumbnail/533.jpg",
+        "display": "http://chriscummins.github.io/static/photographs/gallery/533.webp",
+        "display_fallback": "http://chriscummins.github.io/static/photographs/gallery/533.jpg",
+        "full": "http://chriscummins.github.io/static/photographs/full/533.webp",
+        "full_fallback": "http://chriscummins.github.io/static/photographs/full/533.jpg",
         "display_width": 1344,
         "display_height": 1680
       },
-      "url": "https://chriscummins.cc/photographs/533/",
+      "url": "http://chriscummins.github.io/photographs/533/",
       "shop_enabled": false,
       "shop_url": null
     },
@@ -50,18 +50,18 @@
         "filters": ""
       },
       "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/527.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/527.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/527.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/527.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/527.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/527.jpg",
+        "thumbnail": "http://chriscummins.github.io/static/photographs/thumbnail/527.webp",
+        "thumbnail_fallback": "http://chriscummins.github.io/static/photographs/thumbnail/527.jpg",
+        "display": "http://chriscummins.github.io/static/photographs/gallery/527.webp",
+        "display_fallback": "http://chriscummins.github.io/static/photographs/gallery/527.jpg",
+        "full": "http://chriscummins.github.io/static/photographs/full/527.webp",
+        "full_fallback": "http://chriscummins.github.io/static/photographs/full/527.jpg",
         "display_width": 1680,
         "display_height": 1344
       },
-      "url": "https://chriscummins.cc/photographs/527/",
+      "url": "http://chriscummins.github.io/photographs/527/",
       "shop_enabled": true,
-      "shop_url": "https://chriscummins.cc/shop/527/"
+      "shop_url": "http://chriscummins.github.io/shop/527/"
     },
     {
       "title": "Dunes I",
@@ -80,18 +80,18 @@
         "filters": ""
       },
       "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/519.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/519.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/519.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/519.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/519.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/519.jpg",
+        "thumbnail": "http://chriscummins.github.io/static/photographs/thumbnail/519.webp",
+        "thumbnail_fallback": "http://chriscummins.github.io/static/photographs/thumbnail/519.jpg",
+        "display": "http://chriscummins.github.io/static/photographs/gallery/519.webp",
+        "display_fallback": "http://chriscummins.github.io/static/photographs/gallery/519.jpg",
+        "full": "http://chriscummins.github.io/static/photographs/full/519.webp",
+        "full_fallback": "http://chriscummins.github.io/static/photographs/full/519.jpg",
         "display_width": 1680,
         "display_height": 1344
       },
-      "url": "https://chriscummins.cc/photographs/519/",
+      "url": "http://chriscummins.github.io/photographs/519/",
       "shop_enabled": true,
-      "shop_url": "https://chriscummins.cc/shop/519/"
+      "shop_url": "http://chriscummins.github.io/shop/519/"
     },
     {
       "title": "Dunes II",
@@ -110,18 +110,18 @@
         "filters": ""
       },
       "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/521.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/521.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/521.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/521.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/521.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/521.jpg",
+        "thumbnail": "http://chriscummins.github.io/static/photographs/thumbnail/521.webp",
+        "thumbnail_fallback": "http://chriscummins.github.io/static/photographs/thumbnail/521.jpg",
+        "display": "http://chriscummins.github.io/static/photographs/gallery/521.webp",
+        "display_fallback": "http://chriscummins.github.io/static/photographs/gallery/521.jpg",
+        "full": "http://chriscummins.github.io/static/photographs/full/521.webp",
+        "full_fallback": "http://chriscummins.github.io/static/photographs/full/521.jpg",
         "display_width": 1680,
         "display_height": 1344
       },
-      "url": "https://chriscummins.cc/photographs/521/",
+      "url": "http://chriscummins.github.io/photographs/521/",
       "shop_enabled": true,
-      "shop_url": "https://chriscummins.cc/shop/521/"
+      "shop_url": "http://chriscummins.github.io/shop/521/"
     },
     {
       "title": "Sand Study I",
@@ -140,16 +140,16 @@
         "filters": ""
       },
       "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/509.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/509.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/509.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/509.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/509.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/509.jpg",
+        "thumbnail": "http://chriscummins.github.io/static/photographs/thumbnail/509.webp",
+        "thumbnail_fallback": "http://chriscummins.github.io/static/photographs/thumbnail/509.jpg",
+        "display": "http://chriscummins.github.io/static/photographs/gallery/509.webp",
+        "display_fallback": "http://chriscummins.github.io/static/photographs/gallery/509.jpg",
+        "full": "http://chriscummins.github.io/static/photographs/full/509.webp",
+        "full_fallback": "http://chriscummins.github.io/static/photographs/full/509.jpg",
         "display_width": 1344,
         "display_height": 1680
       },
-      "url": "https://chriscummins.cc/photographs/509/",
+      "url": "http://chriscummins.github.io/photographs/509/",
       "shop_enabled": false,
       "shop_url": null
     },
@@ -170,16 +170,16 @@
         "filters": ""
       },
       "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/479.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/479.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/479.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/479.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/479.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/479.jpg",
+        "thumbnail": "http://chriscummins.github.io/static/photographs/thumbnail/479.webp",
+        "thumbnail_fallback": "http://chriscummins.github.io/static/photographs/thumbnail/479.jpg",
+        "display": "http://chriscummins.github.io/static/photographs/gallery/479.webp",
+        "display_fallback": "http://chriscummins.github.io/static/photographs/gallery/479.jpg",
+        "full": "http://chriscummins.github.io/static/photographs/full/479.webp",
+        "full_fallback": "http://chriscummins.github.io/static/photographs/full/479.jpg",
         "display_width": 1680,
         "display_height": 1344
       },
-      "url": "https://chriscummins.cc/photographs/479/",
+      "url": "http://chriscummins.github.io/photographs/479/",
       "shop_enabled": false,
       "shop_url": null
     },
@@ -200,16 +200,16 @@
         "filters": ""
       },
       "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/466.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/466.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/466.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/466.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/466.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/466.jpg",
+        "thumbnail": "http://chriscummins.github.io/static/photographs/thumbnail/466.webp",
+        "thumbnail_fallback": "http://chriscummins.github.io/static/photographs/thumbnail/466.jpg",
+        "display": "http://chriscummins.github.io/static/photographs/gallery/466.webp",
+        "display_fallback": "http://chriscummins.github.io/static/photographs/gallery/466.jpg",
+        "full": "http://chriscummins.github.io/static/photographs/full/466.webp",
+        "full_fallback": "http://chriscummins.github.io/static/photographs/full/466.jpg",
         "display_width": 1680,
         "display_height": 1344
       },
-      "url": "https://chriscummins.cc/photographs/466/",
+      "url": "http://chriscummins.github.io/photographs/466/",
       "shop_enabled": false,
       "shop_url": null
     },
@@ -232,16 +232,16 @@
         ]
       },
       "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/432.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/432.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/432.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/432.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/432.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/432.jpg",
+        "thumbnail": "http://chriscummins.github.io/static/photographs/thumbnail/432.webp",
+        "thumbnail_fallback": "http://chriscummins.github.io/static/photographs/thumbnail/432.jpg",
+        "display": "http://chriscummins.github.io/static/photographs/gallery/432.webp",
+        "display_fallback": "http://chriscummins.github.io/static/photographs/gallery/432.jpg",
+        "full": "http://chriscummins.github.io/static/photographs/full/432.webp",
+        "full_fallback": "http://chriscummins.github.io/static/photographs/full/432.jpg",
         "display_width": 1680,
         "display_height": 1344
       },
-      "url": "https://chriscummins.cc/photographs/432/",
+      "url": "http://chriscummins.github.io/photographs/432/",
       "shop_enabled": false,
       "shop_url": null
     },
@@ -262,16 +262,16 @@
         "filters": ""
       },
       "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/427.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/427.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/427.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/427.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/427.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/427.jpg",
+        "thumbnail": "http://chriscummins.github.io/static/photographs/thumbnail/427.webp",
+        "thumbnail_fallback": "http://chriscummins.github.io/static/photographs/thumbnail/427.jpg",
+        "display": "http://chriscummins.github.io/static/photographs/gallery/427.webp",
+        "display_fallback": "http://chriscummins.github.io/static/photographs/gallery/427.jpg",
+        "full": "http://chriscummins.github.io/static/photographs/full/427.webp",
+        "full_fallback": "http://chriscummins.github.io/static/photographs/full/427.jpg",
         "display_width": 1344,
         "display_height": 1680
       },
-      "url": "https://chriscummins.cc/photographs/427/",
+      "url": "http://chriscummins.github.io/photographs/427/",
       "shop_enabled": false,
       "shop_url": null
     },
@@ -292,18 +292,18 @@
         "filters": ""
       },
       "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/423.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/423.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/423.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/423.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/423.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/423.jpg",
+        "thumbnail": "http://chriscummins.github.io/static/photographs/thumbnail/423.webp",
+        "thumbnail_fallback": "http://chriscummins.github.io/static/photographs/thumbnail/423.jpg",
+        "display": "http://chriscummins.github.io/static/photographs/gallery/423.webp",
+        "display_fallback": "http://chriscummins.github.io/static/photographs/gallery/423.jpg",
+        "full": "http://chriscummins.github.io/static/photographs/full/423.webp",
+        "full_fallback": "http://chriscummins.github.io/static/photographs/full/423.jpg",
         "display_width": 1344,
         "display_height": 1680
       },
-      "url": "https://chriscummins.cc/photographs/423/",
+      "url": "http://chriscummins.github.io/photographs/423/",
       "shop_enabled": true,
-      "shop_url": "https://chriscummins.cc/shop/423/"
+      "shop_url": "http://chriscummins.github.io/shop/423/"
     }
   ],
   "has_next": true,
