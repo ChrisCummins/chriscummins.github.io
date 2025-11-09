@@ -4,34 +4,34 @@
   "collection": "all",
   "photos": [
     {
-      "title": "Kelp Study",
-      "slug": "417",
+      "title": "Calla Lily Study I",
+      "slug": "423",
       "description": "",
-      "date": "2024-11-17T00:00:00-08:00",
-      "collection": "closeup",
-      "location": "Point Lobos, California",
+      "date": "2024-11-18T00:00:00-08:00",
+      "collection": "foliage",
+      "location": "Central Coast, California",
       "metadata": {
-        "date_photographed": "2024-11-17",
+        "date_photographed": "2024-11-18",
         "film_size": "8x10\"",
-        "development": "N+2",
+        "development": "N+1",
         "focal_length": "10\"",
-        "aperture": "f/64",
-        "shutter_speed": "1s",
+        "aperture": "f/36",
+        "shutter_speed": "3s",
         "filters": ""
       },
       "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/417.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/417.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/417.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/417.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/417.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/417.jpg",
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/423.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/423.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/423.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/423.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/423.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/423.jpg",
         "display_width": 1344,
         "display_height": 1680
       },
-      "url": "https://chriscummins.cc/photographs/417/",
+      "url": "https://chriscummins.cc/photographs/423/",
       "shop_enabled": true,
-      "shop_url": "https://chriscummins.cc/shop/417/"
+      "shop_url": "https://chriscummins.cc/shop/423/"
     },
     {
       "title": "Abandoned Study VI",

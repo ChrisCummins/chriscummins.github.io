@@ -4,6 +4,38 @@
   "collection": "all",
   "photos": [
     {
+      "title": "US-50, the Loneliest Road",
+      "slug": "546",
+      "description": "",
+      "date": "2025-03-06T00:00:00-08:00",
+      "collection": "roads",
+      "location": "Austin, Nevada",
+      "metadata": {
+        "date_photographed": "2025-03-06",
+        "film_size": "8x10\"",
+        "development": "N+2",
+        "focal_length": "24\"",
+        "aperture": "f/32",
+        "shutter_speed": "1/30",
+        "filters": [
+          "yellow"
+        ]
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/546.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/546.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/546.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/546.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/546.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/546.jpg",
+        "display_width": 1680,
+        "display_height": 1344
+      },
+      "url": "https://chriscummins.cc/photographs/546/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
       "title": "Hanging Rock",
       "slug": "533",
       "description": "",
@@ -274,36 +306,6 @@
       "url": "https://chriscummins.cc/photographs/427/",
       "shop_enabled": false,
       "shop_url": null
-    },
-    {
-      "title": "Calla Lily Study I",
-      "slug": "423",
-      "description": "",
-      "date": "2024-11-18T00:00:00-08:00",
-      "collection": "foliage",
-      "location": "Central Coast, California",
-      "metadata": {
-        "date_photographed": "2024-11-18",
-        "film_size": "8x10\"",
-        "development": "N+1",
-        "focal_length": "10\"",
-        "aperture": "f/36",
-        "shutter_speed": "3s",
-        "filters": ""
-      },
-      "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/423.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/423.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/423.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/423.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/423.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/423.jpg",
-        "display_width": 1344,
-        "display_height": 1680
-      },
-      "url": "https://chriscummins.cc/photographs/423/",
-      "shop_enabled": true,
-      "shop_url": "https://chriscummins.cc/shop/423/"
     }
   ],
   "has_next": true,
