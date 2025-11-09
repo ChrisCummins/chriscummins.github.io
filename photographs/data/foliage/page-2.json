@@ -22,16 +22,16 @@
         ]
       },
       "images": {
-        "thumbnail": "http://chriscummins.github.io/static/photographs/thumbnail/274.webp",
-        "thumbnail_fallback": "http://chriscummins.github.io/static/photographs/thumbnail/274.jpg",
-        "display": "http://chriscummins.github.io/static/photographs/gallery/274.webp",
-        "display_fallback": "http://chriscummins.github.io/static/photographs/gallery/274.jpg",
-        "full": "http://chriscummins.github.io/static/photographs/full/274.webp",
-        "full_fallback": "http://chriscummins.github.io/static/photographs/full/274.jpg",
+        "thumbnail": "https://chriscummins.github.io/static/photographs/thumbnail/274.webp",
+        "thumbnail_fallback": "https://chriscummins.github.io/static/photographs/thumbnail/274.jpg",
+        "display": "https://chriscummins.github.io/static/photographs/gallery/274.webp",
+        "display_fallback": "https://chriscummins.github.io/static/photographs/gallery/274.jpg",
+        "full": "https://chriscummins.github.io/static/photographs/full/274.webp",
+        "full_fallback": "https://chriscummins.github.io/static/photographs/full/274.jpg",
         "display_width": 1680,
         "display_height": 1344
       },
-      "url": "http://chriscummins.github.io/photographs/274/",
+      "url": "https://chriscummins.github.io/photographs/274/",
       "shop_enabled": false,
       "shop_url": null
     },
@@ -54,16 +54,16 @@
         ]
       },
       "images": {
-        "thumbnail": "http://chriscummins.github.io/static/photographs/thumbnail/267.webp",
-        "thumbnail_fallback": "http://chriscummins.github.io/static/photographs/thumbnail/267.jpg",
-        "display": "http://chriscummins.github.io/static/photographs/gallery/267.webp",
-        "display_fallback": "http://chriscummins.github.io/static/photographs/gallery/267.jpg",
-        "full": "http://chriscummins.github.io/static/photographs/full/267.webp",
-        "full_fallback": "http://chriscummins.github.io/static/photographs/full/267.jpg",
+        "thumbnail": "https://chriscummins.github.io/static/photographs/thumbnail/267.webp",
+        "thumbnail_fallback": "https://chriscummins.github.io/static/photographs/thumbnail/267.jpg",
+        "display": "https://chriscummins.github.io/static/photographs/gallery/267.webp",
+        "display_fallback": "https://chriscummins.github.io/static/photographs/gallery/267.jpg",
+        "full": "https://chriscummins.github.io/static/photographs/full/267.webp",
+        "full_fallback": "https://chriscummins.github.io/static/photographs/full/267.jpg",
         "display_width": 1680,
         "display_height": 1344
       },
-      "url": "http://chriscummins.github.io/photographs/267/",
+      "url": "https://chriscummins.github.io/photographs/267/",
       "shop_enabled": false,
       "shop_url": null
     },
@@ -84,16 +84,16 @@
         "filters": ""
       },
       "images": {
-        "thumbnail": "http://chriscummins.github.io/static/photographs/thumbnail/225.webp",
-        "thumbnail_fallback": "http://chriscummins.github.io/static/photographs/thumbnail/225.jpg",
-        "display": "http://chriscummins.github.io/static/photographs/gallery/225.webp",
-        "display_fallback": "http://chriscummins.github.io/static/photographs/gallery/225.jpg",
-        "full": "http://chriscummins.github.io/static/photographs/full/225.webp",
-        "full_fallback": "http://chriscummins.github.io/static/photographs/full/225.jpg",
+        "thumbnail": "https://chriscummins.github.io/static/photographs/thumbnail/225.webp",
+        "thumbnail_fallback": "https://chriscummins.github.io/static/photographs/thumbnail/225.jpg",
+        "display": "https://chriscummins.github.io/static/photographs/gallery/225.webp",
+        "display_fallback": "https://chriscummins.github.io/static/photographs/gallery/225.jpg",
+        "full": "https://chriscummins.github.io/static/photographs/full/225.webp",
+        "full_fallback": "https://chriscummins.github.io/static/photographs/full/225.jpg",
         "display_width": 1344,
         "display_height": 1680
       },
-      "url": "http://chriscummins.github.io/photographs/225/",
+      "url": "https://chriscummins.github.io/photographs/225/",
       "shop_enabled": false,
       "shop_url": null
     }
