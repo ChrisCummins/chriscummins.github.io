@@ -1,0 +1,320 @@
+{
+  "page": 3,
+  "total_pages": 6,
+  "collection": "all",
+  "photos": [
+    {
+      "title": "Kelp Study",
+      "slug": "417",
+      "description": "",
+      "date": "2024-11-17T00:00:00-08:00",
+      "collection": "closeup",
+      "location": "Point Lobos, California",
+      "metadata": {
+        "date_photographed": "2024-11-17",
+        "film_size": "8x10\"",
+        "development": "N+2",
+        "focal_length": "10\"",
+        "aperture": "f/64",
+        "shutter_speed": "1s",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/417.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/417.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/417.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/417.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/417.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/417.jpg",
+        "display_width": 1344,
+        "display_height": 1680
+      },
+      "url": "https://chriscummins.cc/photographs/417/",
+      "shop_enabled": true,
+      "shop_url": "https://chriscummins.cc/shop/417/"
+    },
+    {
+      "title": "Abandoned Study VI",
+      "slug": "409",
+      "description": "",
+      "date": "2024-10-19T00:00:00-07:00",
+      "collection": "abandoned",
+      "location": "Bodie, California",
+      "metadata": {
+        "date_photographed": "2024-10-18",
+        "film_size": "8x10\"",
+        "development": "N-1",
+        "focal_length": "12\"",
+        "aperture": "f/90",
+        "shutter_speed": "6s",
+        "filters": [
+          "yellow"
+        ]
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/409.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/409.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/409.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/409.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/409.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/409.jpg",
+        "display_width": 1680,
+        "display_height": 1344
+      },
+      "url": "https://chriscummins.cc/photographs/409/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Abandoned Study V",
+      "slug": "405",
+      "description": "",
+      "date": "2024-10-18T00:00:00-07:00",
+      "collection": "abandoned",
+      "location": "Bodie, California",
+      "metadata": {
+        "date_photographed": "2024-10-18",
+        "film_size": "8x10\"",
+        "development": "N-1",
+        "focal_length": "10\"",
+        "aperture": "f/64",
+        "shutter_speed": "1/2",
+        "filters": [
+          "yellow"
+        ]
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/405.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/405.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/405.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/405.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/405.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/405.jpg",
+        "display_width": 1680,
+        "display_height": 1344
+      },
+      "url": "https://chriscummins.cc/photographs/405/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Tufa Study I",
+      "slug": "397",
+      "description": "",
+      "date": "2024-10-16T00:00:00-07:00",
+      "collection": "closeup",
+      "location": "Mono Lake, California",
+      "metadata": {
+        "date_photographed": "2024-10-16",
+        "film_size": "8x10\"",
+        "development": "N+1",
+        "focal_length": "12\"",
+        "aperture": "f/64",
+        "shutter_speed": "1s",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/397.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/397.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/397.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/397.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/397.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/397.jpg",
+        "display_width": 1344,
+        "display_height": 1680
+      },
+      "url": "https://chriscummins.cc/photographs/397/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Tufa Study II",
+      "slug": "398",
+      "description": "",
+      "date": "2024-10-16T00:00:00-07:00",
+      "collection": "closeup",
+      "location": "Mono Lake, California",
+      "metadata": {
+        "date_photographed": "2024-10-16",
+        "film_size": "8x10\"",
+        "development": "N+1",
+        "focal_length": "12\"",
+        "aperture": "f/90",
+        "shutter_speed": "3s",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/398.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/398.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/398.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/398.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/398.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/398.jpg",
+        "display_width": 1344,
+        "display_height": 1680
+      },
+      "url": "https://chriscummins.cc/photographs/398/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Swirling Leaves",
+      "slug": "391",
+      "description": "",
+      "date": "2024-10-15T00:00:00-07:00",
+      "collection": "closeup",
+      "location": "Eastern Sierra, California",
+      "metadata": {
+        "date_photographed": "2024-10-15",
+        "film_size": "8x10\"",
+        "development": "N",
+        "focal_length": "12\"",
+        "aperture": "f/90",
+        "shutter_speed": "3m33s",
+        "filters": [
+          "CPL",
+          "0.9ND"
+        ]
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/391.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/391.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/391.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/391.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/391.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/391.jpg",
+        "display_width": 1344,
+        "display_height": 1680
+      },
+      "url": "https://chriscummins.cc/photographs/391/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Juniper Study",
+      "slug": "392",
+      "description": "",
+      "date": "2024-10-15T00:00:00-07:00",
+      "collection": "closeup",
+      "location": "Yosemite, California",
+      "metadata": {
+        "date_photographed": "2024-10-15",
+        "film_size": "8x10\"",
+        "development": "N",
+        "focal_length": "12\"",
+        "aperture": "f/90",
+        "shutter_speed": "6s",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/392.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/392.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/392.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/392.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/392.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/392.jpg",
+        "display_width": 1344,
+        "display_height": 1680
+      },
+      "url": "https://chriscummins.cc/photographs/392/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Clearing Traffic, Wawona Road",
+      "slug": "377",
+      "description": "",
+      "date": "2024-10-05T00:00:00-07:00",
+      "collection": "roads",
+      "location": "Yosemite, California",
+      "metadata": {
+        "date_photographed": "2024-10-05",
+        "film_size": "8x10\"",
+        "development": "N",
+        "focal_length": "8\"",
+        "aperture": "f/11",
+        "shutter_speed": "15m",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/377.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/377.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/377.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/377.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/377.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/377.jpg",
+        "display_width": 1680,
+        "display_height": 1344
+      },
+      "url": "https://chriscummins.cc/photographs/377/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "El Capitan, Sunrise",
+      "slug": "367",
+      "description": "",
+      "date": "2024-10-04T00:00:00-07:00",
+      "collection": "mountains",
+      "location": "Yosemite, California",
+      "metadata": {
+        "date_photographed": "2024-10-04",
+        "film_size": "8x10\"",
+        "development": "N",
+        "focal_length": "14\"",
+        "aperture": "f/11",
+        "shutter_speed": "1/60",
+        "filters": [
+          "yellow"
+        ]
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/367.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/367.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/367.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/367.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/367.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/367.jpg",
+        "display_width": 1344,
+        "display_height": 1680
+      },
+      "url": "https://chriscummins.cc/photographs/367/",
+      "shop_enabled": true,
+      "shop_url": "https://chriscummins.cc/shop/367/"
+    },
+    {
+      "title": "Here Comes the Sun",
+      "slug": "363",
+      "description": "",
+      "date": "2024-10-03T00:00:00-07:00",
+      "collection": "mountains",
+      "location": "Yosemite, California",
+      "metadata": {
+        "date_photographed": "2024-10-03",
+        "film_size": "8x10\"",
+        "development": "N",
+        "focal_length": "24\"",
+        "aperture": "f/32",
+        "shutter_speed": "1/15",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/363.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/363.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/363.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/363.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/363.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/363.jpg",
+        "display_width": 1680,
+        "display_height": 1344
+      },
+      "url": "https://chriscummins.cc/photographs/363/",
+      "shop_enabled": false,
+      "shop_url": null
+    }
+  ],
+  "has_next": true,
+  "has_previous": true,
+  "next_page": 4,
+  "previous_page": 2
+}

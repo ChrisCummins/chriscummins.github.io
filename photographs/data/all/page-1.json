@@ -1,0 +1,319 @@
+{
+  "page": 1,
+  "total_pages": 6,
+  "collection": "all",
+  "photos": [
+    {
+      "title": "Waterfall Nude",
+      "slug": "624",
+      "description": "<p>I've never photographed nudes, but it felt right to approach this waterfall\nscene with a boudoir sensibility. The texture contrast between rock and water\nfeels lacy and intimate. I'd normally chalk this up to going just a bit nutty\nafter extended time alone, but this was day one of my most recent photo trip.\nThe first photograph is usually the most difficult but this one arrived easily.</p>",
+      "date": "2025-11-08T00:00:00-08:00",
+      "collection": "rocks",
+      "location": "Sonora Pass, California",
+      "metadata": {
+        "date_photographed": "2025-10-02",
+        "film_size": "8x10\"",
+        "development": "N+2",
+        "focal_length": "12\"",
+        "aperture": "f/22",
+        "shutter_speed": "6 sec",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/624.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/624.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/624.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/624.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/624.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/624.jpg",
+        "display_width": 1680,
+        "display_height": 1350
+      },
+      "url": "https://chriscummins.cc/photographs/624/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Abandoned Study VII",
+      "slug": "697",
+      "description": "",
+      "date": "2025-10-31T00:00:00-07:00",
+      "collection": "abandoned",
+      "location": "Montgomery Pass, Nevada",
+      "metadata": {
+        "date_photographed": "2025-10-10",
+        "film_size": "8x10\"",
+        "development": "N+3",
+        "focal_length": "10\"",
+        "aperture": "f/22",
+        "shutter_speed": "1/2",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/697.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/697.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/697.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/697.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/697.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/697.jpg",
+        "display_width": 1680,
+        "display_height": 1352
+      },
+      "url": "https://chriscummins.cc/photographs/697/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Moonrise, Fish Lake Valley",
+      "slug": "675",
+      "description": "",
+      "date": "2025-10-30T00:00:00-07:00",
+      "collection": "desert",
+      "location": "Fish Lake Valley, Nevada",
+      "metadata": {
+        "date_photographed": "2025-10-06",
+        "film_size": "8x10\"",
+        "development": "N+1",
+        "focal_length": "48\"",
+        "aperture": "f/64",
+        "shutter_speed": "1 sec",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/675.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/675.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/675.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/675.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/675.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/675.jpg",
+        "display_width": 1680,
+        "display_height": 1352
+      },
+      "url": "https://chriscummins.cc/photographs/675/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Sunrise, Owens Valley",
+      "slug": "219",
+      "description": "",
+      "date": "2025-10-20T00:00:00-07:00",
+      "collection": "foliage",
+      "location": "Owens Valley, California",
+      "metadata": {
+        "date_photographed": "2024-04-18",
+        "film_size": "8x10\"",
+        "development": "N-1",
+        "focal_length": "10\"",
+        "aperture": "f/40",
+        "shutter_speed": "1/4",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/219.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/219.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/219.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/219.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/219.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/219.jpg",
+        "display_width": 1340,
+        "display_height": 1680
+      },
+      "url": "https://chriscummins.cc/photographs/219/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Scattered Light on Bridalveil Fall",
+      "slug": "618",
+      "description": "",
+      "date": "2025-05-12T00:00:00-07:00",
+      "collection": "mountains",
+      "location": "Yosemite, California",
+      "metadata": {
+        "date_photographed": "2025-05-12",
+        "film_size": "8x10\"",
+        "development": "N+1",
+        "focal_length": "24\"",
+        "aperture": "f/45",
+        "shutter_speed": "1/4",
+        "filters": [
+          "yellow"
+        ]
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/618.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/618.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/618.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/618.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/618.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/618.jpg",
+        "display_width": 1680,
+        "display_height": 1337
+      },
+      "url": "https://chriscummins.cc/photographs/618/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Soberanes Canyon Trail",
+      "slug": "587",
+      "description": "",
+      "date": "2025-03-27T00:00:00-07:00",
+      "collection": "foliage",
+      "location": "Big Sur, California",
+      "metadata": {
+        "date_photographed": "2025-03-27",
+        "film_size": "8x10\"",
+        "development": "N+3",
+        "focal_length": "18\"",
+        "aperture": "f/64",
+        "shutter_speed": "3s",
+        "filters": [
+          "orange"
+        ]
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/587.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/587.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/587.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/587.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/587.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/587.jpg",
+        "display_width": 1680,
+        "display_height": 1344
+      },
+      "url": "https://chriscummins.cc/photographs/587/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Great Sur Vista",
+      "slug": "595",
+      "description": "",
+      "date": "2025-03-27T00:00:00-07:00",
+      "collection": "coastal",
+      "location": "Big Sur, California",
+      "metadata": {
+        "date_photographed": "2025-03-27",
+        "film_size": "8x10\"",
+        "development": "N+3",
+        "focal_length": "24\"",
+        "aperture": "f/22",
+        "shutter_speed": "1/8",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/595.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/595.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/595.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/595.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/595.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/595.jpg",
+        "display_width": 1344,
+        "display_height": 1680
+      },
+      "url": "https://chriscummins.cc/photographs/595/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Lungs of the Planet",
+      "slug": "573",
+      "description": "",
+      "date": "2025-03-26T00:00:00-07:00",
+      "collection": "foliage",
+      "location": "Big Sur, California",
+      "metadata": {
+        "date_photographed": "2025-03-26",
+        "film_size": "8x10\"",
+        "development": "N+3",
+        "focal_length": "18\"",
+        "aperture": "f/18",
+        "shutter_speed": "1/8",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/573.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/573.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/573.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/573.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/573.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/573.jpg",
+        "display_width": 1680,
+        "display_height": 1344
+      },
+      "url": "https://chriscummins.cc/photographs/573/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Inspiration Point, Winter",
+      "slug": "565",
+      "description": "",
+      "date": "2025-03-15T00:00:00-07:00",
+      "collection": "mountains",
+      "location": "Yosemite, California",
+      "metadata": {
+        "date_photographed": "2025-03-15",
+        "film_size": "8x10\"",
+        "development": "N",
+        "focal_length": "18\"",
+        "aperture": "f/64",
+        "shutter_speed": "1/4",
+        "filters": [
+          "yellow"
+        ]
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/565.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/565.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/565.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/565.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/565.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/565.jpg",
+        "display_width": 1680,
+        "display_height": 1344
+      },
+      "url": "https://chriscummins.cc/photographs/565/",
+      "shop_enabled": true,
+      "shop_url": "https://chriscummins.cc/shop/565/"
+    },
+    {
+      "title": "US-50, the Loneliest Road",
+      "slug": "546",
+      "description": "",
+      "date": "2025-03-06T00:00:00-08:00",
+      "collection": "roads",
+      "location": "Austin, Nevada",
+      "metadata": {
+        "date_photographed": "2025-03-06",
+        "film_size": "8x10\"",
+        "development": "N+2",
+        "focal_length": "24\"",
+        "aperture": "f/32",
+        "shutter_speed": "1/30",
+        "filters": [
+          "yellow"
+        ]
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/546.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/546.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/546.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/546.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/546.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/546.jpg",
+        "display_width": 1680,
+        "display_height": 1344
+      },
+      "url": "https://chriscummins.cc/photographs/546/",
+      "shop_enabled": false,
+      "shop_url": null
+    }
+  ],
+  "has_next": true,
+  "has_previous": false,
+  "next_page": 2,
+  "previous_page": null
+}

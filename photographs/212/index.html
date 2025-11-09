@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Owens River Gorge - Chris Cummins</title>
+    <link rel="icon" type="image/png" href="https://chriscummins.cc/static/favicon.png">
+    <link rel="stylesheet" href="https://chriscummins.cc/static/css/style.css">
+        <link rel="canonical" href="https://chriscummins.cc/photographs/212/">
+        <meta name="description" content="Large-format black-and-white photograph "Owens River Gorge" photographed in Owens Valley, California by Chris Cummins.">
+        <meta name="google-site-verification" content="_htOMt1bCAv7fk4YNwQwHq5JnGKuon-b6FU61xuUPX4" />
+        <meta property="og:type" content="article">
+        <meta property="og:title" content="Owens River Gorge - Chris Cummins">
+        <meta property="og:description" content="Large-format black-and-white photograph "Owens River Gorge" photographed in Owens Valley, California by Chris Cummins.">
+        <meta property="og:url" content="https://chriscummins.cc/photographs/212/">
+        <meta property="og:image" content="https://chriscummins.cc/static/photographs/fullscreen/212.jpg">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Owens River Gorge - Chris Cummins">
+        <meta name="twitter:description" content="Large-format black-and-white photograph "Owens River Gorge" photographed in Owens Valley, California by Chris Cummins.">
+        <meta name="twitter:image" content="https://chriscummins.cc/static/photographs/fullscreen/212.jpg">
+        <meta name="twitter:url" content="https://chriscummins.cc/photographs/212/">
+        <meta name="twitter:site" content="@iamchriscummins">
+</head>
+<body class="">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <nav class="navbar">
+        <div class="container">
+            <a href="https://chriscummins.cc/" class="navbar-brand">Chris Cummins<span class="navbar-suffix"> Photography</span></a>
+            <ul class="nav-links">
+                <li><a href="https://chriscummins.cc/about/" class="">About</a></li>
+                <li><a href="https://chriscummins.cc/photographs/" class="active">Photographs</a></li>
+                <li><a href="https://chriscummins.cc/shop/" class="">Shop</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+<article class="photograph">
+    <div class="photograph-grid">
+        <div class="detail-image">
+            <picture>
+                <source srcset="https://chriscummins.cc/static/photographs/gallery/212.webp, https://chriscummins.cc/static/photographs/fullscreen/212.webp 2x" type="image/webp">
+                <img src="https://chriscummins.cc/static/photographs/gallery/212.jpg"
+                     srcset="https://chriscummins.cc/static/photographs/fullscreen/212.jpg 2x"
+                     alt="Owens River Gorge"
+                     class="clickable-image"
+                     width="1347" height="1680"
+                     onclick="openImageOverlay()">
+            </picture>
+        </div>
+        <div class="detail-info">
+            <h3><span class="image-title">Owens River Gorge</span></h3>
+
+<div class="image-metadata">
+    <ul>
+        <li>Digital scan from film negative</li>
+    </ul>
+    <ul>
+        <li>Photographed April 2024</li>
+    </ul>
+    <ul>
+        <li>Owens Valley, California</li>
+    </ul>
+    <ul>
+        <li>8x10" film</li>
+        <li>N-1 development</li>
+    </ul>
+    <ul>
+        <li>18" lens</li>
+        <li>no filter</li>
+        <li>f/45</li>
+    </ul>
+    <ul>
+        <li>Not available as a print</li>
+    </ul>
+</div>
+
+            <div class="photo-navigation">
+                <a href="#" id="nextLink" style="display: none;">next photograph →</a>
+                <a href="#" id="prevLink" style="display: none;">← previous photograph</a>
+                <a href="https://chriscummins.cc/photographs/" id="backLink">back to photographs</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="imageOverlay" class="image-overlay" onclick="closeImageOverlay(event)">
+        <button class="overlay-close" onclick="closeImageOverlay(event)">✕</button>
+        <div class="overlay-content">
+            <picture>
+                <source srcset="https://chriscummins.cc/static/photographs/fullscreen/212.webp" type="image/webp">
+                <img src="https://chriscummins.cc/static/photographs/fullscreen/212.jpg"
+                     alt="Owens River Gorge"
+                     class="overlay-image"
+                     width="3078" height="3840"
+                     onclick="closeImageOverlay(event)">
+            </picture>
+            <p class="overlay-title"><span class="image-title">Owens River Gorge</span>, digital scan from film negative, 2024</p>
+        </div>
+    </div>
+</article>
+
+<script>
+// Photo navigation data for each collection
+const photoNavigation = {
+    "rocks": {
+        next: null,
+        prev: "239"
+    },
+    "all": {
+        next: "213",
+        prev: "225"
+    }
+};
+
+// Handle back link, next link, and previous link based on referrer
+(function() {
+    const backLink = document.getElementById('backLink');
+    const nextLink = document.getElementById('nextLink');
+    const prevLink = document.getElementById('prevLink');
+    const referrer = document.referrer;
+
+    // Default to showing next photo from "all" collection if available
+    if (photoNavigation['all'] && photoNavigation['all'].next) {
+        nextLink.href = 'https://chriscummins.cc/photographs/' + photoNavigation['all'].next + '/';
+        nextLink.style.display = 'block';
+    }
+
+    // Default to showing previous photo from "all" collection if available
+    if (photoNavigation['all'] && photoNavigation['all'].prev) {
+        prevLink.href = 'https://chriscummins.cc/photographs/' + photoNavigation['all'].prev + '/';
+        prevLink.style.display = 'block';
+    }
+
+    // If user came from a collection page, update links accordingly
+    if (referrer) {
+        // Check if referrer is a collection page: /photographs/{collection}/ or /photographs/{collection}/{page}/
+        // Note: collection names are not purely numeric (photos are just numbers)
+        const collectionMatch = referrer.match(/\/photographs\/([^/]+?)(?:\/(\d+))?\/?$/);
+
+        if (collectionMatch) {
+            const collection = collectionMatch[1];
+            const page = collectionMatch[2]; // page number if present
+
+            // Skip if the "collection" is actually a photo number (purely numeric)
+            if (/^\d+$/.test(collection)) {
+                return;
+            }
+
+            // Build the full path with page number if it exists for back link
+            const fullPath = page
+                ? 'https://chriscummins.cc/photographs/' + collection + '/' + page + '/'
+                : 'https://chriscummins.cc/photographs/' + collection + '/';
+
+            backLink.href = fullPath;
+
+            // Update next link for this specific collection
+            if (photoNavigation[collection] && photoNavigation[collection].next) {
+                nextLink.href = 'https://chriscummins.cc/photographs/' + photoNavigation[collection].next + '/';
+                nextLink.style.display = 'block';
+            } else if (photoNavigation[collection] && !photoNavigation[collection].next) {
+                // Hide next link if at the end of this collection
+                nextLink.style.display = 'none';
+            }
+
+            // Update previous link for this specific collection
+            if (photoNavigation[collection] && photoNavigation[collection].prev) {
+                prevLink.href = 'https://chriscummins.cc/photographs/' + photoNavigation[collection].prev + '/';
+                prevLink.style.display = 'block';
+            } else if (photoNavigation[collection] && !photoNavigation[collection].prev) {
+                // Hide previous link if at the start of this collection
+                prevLink.style.display = 'none';
+            }
+        }
+    }
+})();
+
+function openImageOverlay() {
+    document.getElementById('imageOverlay').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    history.pushState(null, null, '#fullscreen');
+}
+
+function closeImageOverlay(event) {
+    if (event.target === event.currentTarget || event.target.classList.contains('overlay-close')) {
+        document.getElementById('imageOverlay').style.display = 'none';
+        document.body.style.overflow = '';
+
+        if (window.location.hash === '#fullscreen') {
+            history.pushState(null, null, window.location.pathname);
+        }
+    }
+}
+
+// Handle back button and direct URL access
+window.addEventListener('popstate', function() {
+    if (window.location.hash !== '#fullscreen') {
+        document.getElementById('imageOverlay').style.display = 'none';
+        document.body.style.overflow = '';
+    }
+});
+
+// Add keyboard support for Escape key
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        const overlay = document.getElementById('imageOverlay');
+        const isOverlayOpen = window.getComputedStyle(overlay).display === 'flex';
+
+        if (isOverlayOpen) {
+            // Close overlay if open
+            overlay.style.display = 'none';
+            document.body.style.overflow = '';
+            if (window.location.hash === '#fullscreen') {
+                history.pushState(null, null, window.location.pathname);
+            }
+        } else {
+            // Navigate back if overlay is not open
+            history.back();
+        }
+    }
+});
+
+// Check if page loaded with #fullscreen
+if (window.location.hash === '#fullscreen') {
+    openImageOverlay();
+}
+</script>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Chris Cummins | <a href="https://chriscummins.cc/contact/">Contact</a></p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,25 +1,54 @@
----
-title: Chris Cummins
-banner: /img/banners/death-valley.jpg
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chris Cummins Photography | Handmade Black & White Prints</title>
+    <link rel="icon" type="image/png" href="https://chriscummins.cc/static/favicon.png">
+    <link rel="stylesheet" href="https://chriscummins.cc/static/css/style.css">
+        <link rel="canonical" href="https://chriscummins.cc/">
+        <meta name="description" content="Handmade black-and-white wilderness landscapes captured on 8x10 film and printed as limited-edition gelatin silver prints.">
+        <meta name="google-site-verification" content="_htOMt1bCAv7fk4YNwQwHq5JnGKuon-b6FU61xuUPX4" />
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Chris Cummins Photography | Handmade Black & White Prints">
+        <meta property="og:description" content="Handmade black-and-white wilderness landscapes captured on 8x10 film and printed as limited-edition gelatin silver prints.">
+        <meta property="og:url" content="https://chriscummins.cc/">
+        <meta property="og:image" content="https://chriscummins.cc/static/landing.jpg">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Chris Cummins Photography | Handmade Black & White Prints">
+        <meta name="twitter:description" content="Handmade black-and-white wilderness landscapes captured on 8x10 film and printed as limited-edition gelatin silver prints.">
+        <meta name="twitter:image" content="https://chriscummins.cc/static/landing.jpg">
+        <meta name="twitter:url" content="https://chriscummins.cc/">
+        <meta name="twitter:site" content="@iamchriscummins">
+</head>
+<body class="landing">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <nav class="navbar">
+        <div class="container">
+            <a href="https://chriscummins.cc/" class="navbar-brand">Chris Cummins<span class="navbar-suffix"> Photography</span></a>
+            <ul class="nav-links">
+                <li><a href="https://chriscummins.cc/about/" class="">About</a></li>
+                <li><a href="https://chriscummins.cc/photographs/" class="">Photographs</a></li>
+                <li><a href="https://chriscummins.cc/shop/" class="">Shop</a></li>
+            </ul>
+        </div>
+    </nav>
 
-<div class="big-list">
-  {% for post in site.posts %}
-  {% assign currentdate = post.date | date: "%Y" %}
-  {% if currentdate != date %}
-  {% unless forloop.first %}</ul>{% endunless %}
-  <h1>{{ currentdate }}</h1>
-  <ul>
-    {% assign date = currentdate %}
-    {% endif %}
-    <li>
-      <span class="hang-right">{{ post.date | date: "%-d %b" }}</span>
-      <a href="{{ post.url | relative_url }}">
-        {{ post.title }}
-      </a>
-      <span class="hang-left">{{ post.date | date: "%-d %b" }}</span>
-    </li>
-    {% if forloop.last %}</ul>{% endif %}
-  {% endfor %}
-  </ul>
+    <main class="container">
+<div class="landing-page">
+    <a href="https://chriscummins.cc/about/">
+        <picture>
+            <source srcset="https://chriscummins.cc/static/landing.webp" type="image/webp">
+            <img src="https://chriscummins.cc/static/landing.jpg" alt="Black and white landscape photograph by Chris Cummins" class="landing-image">
+        </picture>
+    </a>
 </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Chris Cummins | <a href="https://chriscummins.cc/contact/">Contact</a></p>
+        </div>
+    </footer>
+</body>
+</html>

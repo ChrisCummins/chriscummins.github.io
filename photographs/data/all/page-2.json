@@ -1,0 +1,313 @@
+{
+  "page": 2,
+  "total_pages": 6,
+  "collection": "all",
+  "photos": [
+    {
+      "title": "Hanging Rock",
+      "slug": "533",
+      "description": "",
+      "date": "2025-03-04T00:00:00-08:00",
+      "collection": "rocks",
+      "location": "Willis Creek Canyon, Utah",
+      "metadata": {
+        "date_photographed": "2025-03-04",
+        "film_size": "8x10\"",
+        "development": "N+3",
+        "focal_length": "18\"",
+        "aperture": "f/57",
+        "shutter_speed": "1s",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/533.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/533.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/533.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/533.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/533.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/533.jpg",
+        "display_width": 1344,
+        "display_height": 1680
+      },
+      "url": "https://chriscummins.cc/photographs/533/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Dunes III",
+      "slug": "527",
+      "description": "",
+      "date": "2025-02-28T00:00:00-08:00",
+      "collection": "desert",
+      "location": "Death Valley, California",
+      "metadata": {
+        "date_photographed": "2025-02-28",
+        "film_size": "8x10\"",
+        "development": "N+2",
+        "focal_length": "18\"",
+        "aperture": "f/64",
+        "shutter_speed": "1/2",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/527.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/527.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/527.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/527.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/527.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/527.jpg",
+        "display_width": 1680,
+        "display_height": 1344
+      },
+      "url": "https://chriscummins.cc/photographs/527/",
+      "shop_enabled": true,
+      "shop_url": "https://chriscummins.cc/shop/527/"
+    },
+    {
+      "title": "Dunes I",
+      "slug": "519",
+      "description": "",
+      "date": "2025-02-27T00:00:00-08:00",
+      "collection": "desert",
+      "location": "Death Valley, California",
+      "metadata": {
+        "date_photographed": "2025-02-27",
+        "film_size": "8x10\"",
+        "development": "N+2",
+        "focal_length": "8\"",
+        "aperture": "f/45",
+        "shutter_speed": "1/8",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/519.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/519.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/519.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/519.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/519.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/519.jpg",
+        "display_width": 1680,
+        "display_height": 1344
+      },
+      "url": "https://chriscummins.cc/photographs/519/",
+      "shop_enabled": true,
+      "shop_url": "https://chriscummins.cc/shop/519/"
+    },
+    {
+      "title": "Dunes II",
+      "slug": "521",
+      "description": "",
+      "date": "2025-02-27T00:00:00-08:00",
+      "collection": "desert",
+      "location": "Death Valley, California",
+      "metadata": {
+        "date_photographed": "2025-02-27",
+        "film_size": "8x10\"",
+        "development": "N+1",
+        "focal_length": "18\"",
+        "aperture": "f/64",
+        "shutter_speed": "1/8",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/521.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/521.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/521.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/521.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/521.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/521.jpg",
+        "display_width": 1680,
+        "display_height": 1344
+      },
+      "url": "https://chriscummins.cc/photographs/521/",
+      "shop_enabled": true,
+      "shop_url": "https://chriscummins.cc/shop/521/"
+    },
+    {
+      "title": "Sand Study I",
+      "slug": "509",
+      "description": "",
+      "date": "2025-02-26T00:00:00-08:00",
+      "collection": "desert",
+      "location": "Death Valley, California",
+      "metadata": {
+        "date_photographed": "2025-02-26",
+        "film_size": "8x10\"",
+        "development": "N+4",
+        "focal_length": "12\"",
+        "aperture": "f/32",
+        "shutter_speed": "1/8",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/509.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/509.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/509.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/509.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/509.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/509.jpg",
+        "display_width": 1344,
+        "display_height": 1680
+      },
+      "url": "https://chriscummins.cc/photographs/509/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Seascape with Boat",
+      "slug": "479",
+      "description": "",
+      "date": "2025-02-15T00:00:00-08:00",
+      "collection": "coastal",
+      "location": "Mendocino, California",
+      "metadata": {
+        "date_photographed": "2025-02-15",
+        "film_size": "8x10\"",
+        "development": "N+2",
+        "focal_length": "24\"",
+        "aperture": "f/40",
+        "shutter_speed": "1/60",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/479.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/479.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/479.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/479.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/479.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/479.jpg",
+        "display_width": 1680,
+        "display_height": 1344
+      },
+      "url": "https://chriscummins.cc/photographs/479/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Agave Study I",
+      "slug": "466",
+      "description": "",
+      "date": "2025-01-10T00:00:00-08:00",
+      "collection": "foliage",
+      "location": "Isleton, California",
+      "metadata": {
+        "date_photographed": "2025-01-10",
+        "film_size": "8x10\"",
+        "development": "N+1",
+        "focal_length": "18\"",
+        "aperture": "f/128",
+        "shutter_speed": "1s",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/466.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/466.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/466.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/466.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/466.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/466.jpg",
+        "display_width": 1680,
+        "display_height": 1344
+      },
+      "url": "https://chriscummins.cc/photographs/466/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Big Sur II",
+      "slug": "432",
+      "description": "",
+      "date": "2024-11-20T00:00:00-08:00",
+      "collection": "coastal",
+      "location": "Big Sur, California",
+      "metadata": {
+        "date_photographed": "2024-11-20",
+        "film_size": "8x10\"",
+        "development": "N+1",
+        "focal_length": "24\"",
+        "aperture": "f/32",
+        "shutter_speed": "1/8",
+        "filters": [
+          "yellow"
+        ]
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/432.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/432.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/432.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/432.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/432.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/432.jpg",
+        "display_width": 1680,
+        "display_height": 1344
+      },
+      "url": "https://chriscummins.cc/photographs/432/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Calla Lily Study III",
+      "slug": "427",
+      "description": "",
+      "date": "2024-11-19T00:00:00-08:00",
+      "collection": "foliage",
+      "location": "Central Coast, California",
+      "metadata": {
+        "date_photographed": "2024-11-19",
+        "film_size": "8x10\"",
+        "development": "N+2",
+        "focal_length": "8\"",
+        "aperture": "f/64",
+        "shutter_speed": "6s",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/427.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/427.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/427.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/427.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/427.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/427.jpg",
+        "display_width": 1344,
+        "display_height": 1680
+      },
+      "url": "https://chriscummins.cc/photographs/427/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Calla Lily Study I",
+      "slug": "423",
+      "description": "",
+      "date": "2024-11-18T00:00:00-08:00",
+      "collection": "foliage",
+      "location": "Central Coast, California",
+      "metadata": {
+        "date_photographed": "2024-11-18",
+        "film_size": "8x10\"",
+        "development": "N+1",
+        "focal_length": "10\"",
+        "aperture": "f/36",
+        "shutter_speed": "3s",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/423.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/423.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/423.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/423.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/423.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/423.jpg",
+        "display_width": 1344,
+        "display_height": 1680
+      },
+      "url": "https://chriscummins.cc/photographs/423/",
+      "shop_enabled": true,
+      "shop_url": "https://chriscummins.cc/shop/423/"
+    }
+  ],
+  "has_next": true,
+  "has_previous": true,
+  "next_page": 3,
+  "previous_page": 1
+}

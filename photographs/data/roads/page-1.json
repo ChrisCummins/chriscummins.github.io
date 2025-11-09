@@ -1,0 +1,73 @@
+{
+  "page": 1,
+  "total_pages": 1,
+  "collection": "roads",
+  "photos": [
+    {
+      "title": "US-50, the Loneliest Road",
+      "slug": "546",
+      "description": "",
+      "date": "2025-03-06T00:00:00-08:00",
+      "collection": "roads",
+      "location": "Austin, Nevada",
+      "metadata": {
+        "date_photographed": "2025-03-06",
+        "film_size": "8x10\"",
+        "development": "N+2",
+        "focal_length": "24\"",
+        "aperture": "f/32",
+        "shutter_speed": "1/30",
+        "filters": [
+          "yellow"
+        ]
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/546.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/546.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/546.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/546.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/546.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/546.jpg",
+        "display_width": 1680,
+        "display_height": 1344
+      },
+      "url": "https://chriscummins.cc/photographs/546/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Clearing Traffic, Wawona Road",
+      "slug": "377",
+      "description": "",
+      "date": "2024-10-05T00:00:00-07:00",
+      "collection": "roads",
+      "location": "Yosemite, California",
+      "metadata": {
+        "date_photographed": "2024-10-05",
+        "film_size": "8x10\"",
+        "development": "N",
+        "focal_length": "8\"",
+        "aperture": "f/11",
+        "shutter_speed": "15m",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/377.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/377.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/377.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/377.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/377.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/377.jpg",
+        "display_width": 1680,
+        "display_height": 1344
+      },
+      "url": "https://chriscummins.cc/photographs/377/",
+      "shop_enabled": false,
+      "shop_url": null
+    }
+  ],
+  "has_next": false,
+  "has_previous": false,
+  "next_page": null,
+  "previous_page": null
+}

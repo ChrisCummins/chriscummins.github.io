@@ -1,0 +1,11 @@
+# robots.txt for chriscummins.cc
+#
+# All public sections (/, /about/, /photographs/, /shop/, /faq/, /contact/, etc.)
+# are crawlable. Only drafts and JSON data feeds are blocked.
+
+User-agent: *
+Allow: /
+Disallow: /drafts/
+Disallow: /photographs/data/
+
+Sitemap: https://chriscummins.cc/sitemap.xml

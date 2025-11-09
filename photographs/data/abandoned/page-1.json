@@ -1,0 +1,231 @@
+{
+  "page": 1,
+  "total_pages": 1,
+  "collection": "abandoned",
+  "photos": [
+    {
+      "title": "Abandoned Study VII",
+      "slug": "697",
+      "description": "",
+      "date": "2025-10-31T00:00:00-07:00",
+      "collection": "abandoned",
+      "location": "Montgomery Pass, Nevada",
+      "metadata": {
+        "date_photographed": "2025-10-10",
+        "film_size": "8x10\"",
+        "development": "N+3",
+        "focal_length": "10\"",
+        "aperture": "f/22",
+        "shutter_speed": "1/2",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/697.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/697.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/697.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/697.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/697.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/697.jpg",
+        "display_width": 1680,
+        "display_height": 1352
+      },
+      "url": "https://chriscummins.cc/photographs/697/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Abandoned Study VI",
+      "slug": "409",
+      "description": "",
+      "date": "2024-10-19T00:00:00-07:00",
+      "collection": "abandoned",
+      "location": "Bodie, California",
+      "metadata": {
+        "date_photographed": "2024-10-18",
+        "film_size": "8x10\"",
+        "development": "N-1",
+        "focal_length": "12\"",
+        "aperture": "f/90",
+        "shutter_speed": "6s",
+        "filters": [
+          "yellow"
+        ]
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/409.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/409.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/409.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/409.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/409.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/409.jpg",
+        "display_width": 1680,
+        "display_height": 1344
+      },
+      "url": "https://chriscummins.cc/photographs/409/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Abandoned Study V",
+      "slug": "405",
+      "description": "",
+      "date": "2024-10-18T00:00:00-07:00",
+      "collection": "abandoned",
+      "location": "Bodie, California",
+      "metadata": {
+        "date_photographed": "2024-10-18",
+        "film_size": "8x10\"",
+        "development": "N-1",
+        "focal_length": "10\"",
+        "aperture": "f/64",
+        "shutter_speed": "1/2",
+        "filters": [
+          "yellow"
+        ]
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/405.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/405.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/405.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/405.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/405.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/405.jpg",
+        "display_width": 1680,
+        "display_height": 1344
+      },
+      "url": "https://chriscummins.cc/photographs/405/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Abandoned Study IV",
+      "slug": "314",
+      "description": "",
+      "date": "2024-07-10T00:00:00-07:00",
+      "collection": "abandoned",
+      "location": "Bodie, California",
+      "metadata": {
+        "date_photographed": "2024-07-10",
+        "film_size": "8x10\"",
+        "development": "N-1",
+        "focal_length": "10\"",
+        "aperture": "f/45",
+        "shutter_speed": "1/4",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/314.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/314.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/314.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/314.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/314.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/314.jpg",
+        "display_width": 1680,
+        "display_height": 1349
+      },
+      "url": "https://chriscummins.cc/photographs/314/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Abandoned Study III",
+      "slug": "246",
+      "description": "",
+      "date": "2024-04-21T00:00:00-07:00",
+      "collection": "abandoned",
+      "location": "Eastern Sierra, California",
+      "metadata": {
+        "date_photographed": "2024-04-20",
+        "film_size": "8x10\"",
+        "development": "N",
+        "focal_length": "10\"",
+        "aperture": "f/25",
+        "shutter_speed": "1/15",
+        "filters": [
+          "yellow"
+        ]
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/246.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/246.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/246.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/246.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/246.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/246.jpg",
+        "display_width": 1680,
+        "display_height": 1335
+      },
+      "url": "https://chriscummins.cc/photographs/246/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Abandoned Study II",
+      "slug": "243",
+      "description": "",
+      "date": "2024-04-20T00:00:00-07:00",
+      "collection": "abandoned",
+      "location": "Eastern Sierra, California",
+      "metadata": {
+        "date_photographed": "2024-04-20",
+        "film_size": "8x10\"",
+        "development": "N-1",
+        "focal_length": "12\"",
+        "aperture": "f/90",
+        "shutter_speed": "",
+        "filters": [
+          "yellow"
+        ]
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/243.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/243.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/243.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/243.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/243.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/243.jpg",
+        "display_width": 1349,
+        "display_height": 1680
+      },
+      "url": "https://chriscummins.cc/photographs/243/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Abandoned Study I",
+      "slug": "156",
+      "description": "",
+      "date": "2024-03-13T00:00:00-07:00",
+      "collection": "abandoned",
+      "location": "Death Valley, California",
+      "metadata": {
+        "date_photographed": "2024-03-13",
+        "film_size": "8x10\"",
+        "development": "N+1",
+        "focal_length": "12\"",
+        "aperture": "f/8",
+        "shutter_speed": "1/125",
+        "filters": [
+          "red"
+        ]
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/156.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/156.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/156.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/156.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/156.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/156.jpg",
+        "display_width": 1680,
+        "display_height": 1370
+      },
+      "url": "https://chriscummins.cc/photographs/156/",
+      "shop_enabled": false,
+      "shop_url": null
+    }
+  ],
+  "has_next": false,
+  "has_previous": false,
+  "next_page": null,
+  "previous_page": null
+}

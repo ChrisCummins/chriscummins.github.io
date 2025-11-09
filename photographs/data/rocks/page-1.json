@@ -1,0 +1,223 @@
+{
+  "page": 1,
+  "total_pages": 1,
+  "collection": "rocks",
+  "photos": [
+    {
+      "title": "Waterfall Nude",
+      "slug": "624",
+      "description": "<p>I've never photographed nudes, but it felt right to approach this waterfall\nscene with a boudoir sensibility. The texture contrast between rock and water\nfeels lacy and intimate. I'd normally chalk this up to going just a bit nutty\nafter extended time alone, but this was day one of my most recent photo trip.\nThe first photograph is usually the most difficult but this one arrived easily.</p>",
+      "date": "2025-11-08T00:00:00-08:00",
+      "collection": "rocks",
+      "location": "Sonora Pass, California",
+      "metadata": {
+        "date_photographed": "2025-10-02",
+        "film_size": "8x10\"",
+        "development": "N+2",
+        "focal_length": "12\"",
+        "aperture": "f/22",
+        "shutter_speed": "6 sec",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/624.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/624.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/624.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/624.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/624.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/624.jpg",
+        "display_width": 1680,
+        "display_height": 1350
+      },
+      "url": "https://chriscummins.cc/photographs/624/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Hanging Rock",
+      "slug": "533",
+      "description": "",
+      "date": "2025-03-04T00:00:00-08:00",
+      "collection": "rocks",
+      "location": "Willis Creek Canyon, Utah",
+      "metadata": {
+        "date_photographed": "2025-03-04",
+        "film_size": "8x10\"",
+        "development": "N+3",
+        "focal_length": "18\"",
+        "aperture": "f/57",
+        "shutter_speed": "1s",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/533.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/533.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/533.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/533.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/533.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/533.jpg",
+        "display_width": 1344,
+        "display_height": 1680
+      },
+      "url": "https://chriscummins.cc/photographs/533/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Olmsted Point Boulder",
+      "slug": "355",
+      "description": "",
+      "date": "2024-10-02T00:00:00-07:00",
+      "collection": "rocks",
+      "location": "Yosemite, California",
+      "metadata": {
+        "date_photographed": "2024-10-02",
+        "film_size": "8x10\"",
+        "development": "N",
+        "focal_length": "18\"",
+        "aperture": "f/128",
+        "shutter_speed": "1/2",
+        "filters": [
+          "yellow"
+        ]
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/355.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/355.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/355.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/355.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/355.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/355.jpg",
+        "display_width": 1342,
+        "display_height": 1680
+      },
+      "url": "https://chriscummins.cc/photographs/355/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Weston Beach",
+      "slug": "351",
+      "description": "",
+      "date": "2024-09-28T00:00:00-07:00",
+      "collection": "rocks",
+      "location": "Point Lobos, California",
+      "metadata": {
+        "date_photographed": "2024-09-28",
+        "film_size": "8x10\"",
+        "development": "N+1",
+        "focal_length": "12\"",
+        "aperture": "f/45",
+        "shutter_speed": "1/4",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/351.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/351.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/351.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/351.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/351.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/351.jpg",
+        "display_width": 1345,
+        "display_height": 1680
+      },
+      "url": "https://chriscummins.cc/photographs/351/",
+      "shop_enabled": true,
+      "shop_url": "https://chriscummins.cc/shop/351/"
+    },
+    {
+      "title": "Tioga Pass Blasthole",
+      "slug": "300",
+      "description": "",
+      "date": "2024-07-08T00:00:00-07:00",
+      "collection": "rocks",
+      "location": "Yosemite, California",
+      "metadata": {
+        "date_photographed": "2024-07-08",
+        "film_size": "8x10\"",
+        "development": "N+1",
+        "focal_length": "24\"",
+        "aperture": "f/32",
+        "shutter_speed": "1/30",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/300.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/300.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/300.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/300.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/300.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/300.jpg",
+        "display_width": 1349,
+        "display_height": 1680
+      },
+      "url": "https://chriscummins.cc/photographs/300/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Virginia Creek",
+      "slug": "239",
+      "description": "",
+      "date": "2024-04-19T00:00:00-07:00",
+      "collection": "rocks",
+      "location": "Eastern Sierra, California",
+      "metadata": {
+        "date_photographed": "2024-04-19",
+        "film_size": "8x10\"",
+        "development": "N+1",
+        "focal_length": "18\"",
+        "aperture": "f/40",
+        "shutter_speed": "1/4",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/239.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/239.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/239.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/239.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/239.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/239.jpg",
+        "display_width": 1349,
+        "display_height": 1680
+      },
+      "url": "https://chriscummins.cc/photographs/239/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Owens River Gorge",
+      "slug": "212",
+      "description": "",
+      "date": "2024-04-17T00:00:00-07:00",
+      "collection": "rocks",
+      "location": "Owens Valley, California",
+      "metadata": {
+        "date_photographed": "2024-04-17",
+        "film_size": "8x10\"",
+        "development": "N-1",
+        "focal_length": "18\"",
+        "aperture": "f/45",
+        "shutter_speed": "1/2",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/212.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/212.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/212.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/212.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/212.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/212.jpg",
+        "display_width": 1347,
+        "display_height": 1680
+      },
+      "url": "https://chriscummins.cc/photographs/212/",
+      "shop_enabled": false,
+      "shop_url": null
+    }
+  ],
+  "has_next": false,
+  "has_previous": false,
+  "next_page": null,
+  "previous_page": null
+}

@@ -1,0 +1,317 @@
+{
+  "page": 1,
+  "total_pages": 2,
+  "collection": "foliage",
+  "photos": [
+    {
+      "title": "Sunrise, Owens Valley",
+      "slug": "219",
+      "description": "",
+      "date": "2025-10-20T00:00:00-07:00",
+      "collection": "foliage",
+      "location": "Owens Valley, California",
+      "metadata": {
+        "date_photographed": "2024-04-18",
+        "film_size": "8x10\"",
+        "development": "N-1",
+        "focal_length": "10\"",
+        "aperture": "f/40",
+        "shutter_speed": "1/4",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/219.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/219.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/219.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/219.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/219.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/219.jpg",
+        "display_width": 1340,
+        "display_height": 1680
+      },
+      "url": "https://chriscummins.cc/photographs/219/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Soberanes Canyon Trail",
+      "slug": "587",
+      "description": "",
+      "date": "2025-03-27T00:00:00-07:00",
+      "collection": "foliage",
+      "location": "Big Sur, California",
+      "metadata": {
+        "date_photographed": "2025-03-27",
+        "film_size": "8x10\"",
+        "development": "N+3",
+        "focal_length": "18\"",
+        "aperture": "f/64",
+        "shutter_speed": "3s",
+        "filters": [
+          "orange"
+        ]
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/587.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/587.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/587.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/587.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/587.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/587.jpg",
+        "display_width": 1680,
+        "display_height": 1344
+      },
+      "url": "https://chriscummins.cc/photographs/587/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Lungs of the Planet",
+      "slug": "573",
+      "description": "",
+      "date": "2025-03-26T00:00:00-07:00",
+      "collection": "foliage",
+      "location": "Big Sur, California",
+      "metadata": {
+        "date_photographed": "2025-03-26",
+        "film_size": "8x10\"",
+        "development": "N+3",
+        "focal_length": "18\"",
+        "aperture": "f/18",
+        "shutter_speed": "1/8",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/573.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/573.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/573.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/573.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/573.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/573.jpg",
+        "display_width": 1680,
+        "display_height": 1344
+      },
+      "url": "https://chriscummins.cc/photographs/573/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Agave Study I",
+      "slug": "466",
+      "description": "",
+      "date": "2025-01-10T00:00:00-08:00",
+      "collection": "foliage",
+      "location": "Isleton, California",
+      "metadata": {
+        "date_photographed": "2025-01-10",
+        "film_size": "8x10\"",
+        "development": "N+1",
+        "focal_length": "18\"",
+        "aperture": "f/128",
+        "shutter_speed": "1s",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/466.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/466.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/466.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/466.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/466.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/466.jpg",
+        "display_width": 1680,
+        "display_height": 1344
+      },
+      "url": "https://chriscummins.cc/photographs/466/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Calla Lily Study III",
+      "slug": "427",
+      "description": "",
+      "date": "2024-11-19T00:00:00-08:00",
+      "collection": "foliage",
+      "location": "Central Coast, California",
+      "metadata": {
+        "date_photographed": "2024-11-19",
+        "film_size": "8x10\"",
+        "development": "N+2",
+        "focal_length": "8\"",
+        "aperture": "f/64",
+        "shutter_speed": "6s",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/427.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/427.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/427.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/427.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/427.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/427.jpg",
+        "display_width": 1344,
+        "display_height": 1680
+      },
+      "url": "https://chriscummins.cc/photographs/427/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Calla Lily Study I",
+      "slug": "423",
+      "description": "",
+      "date": "2024-11-18T00:00:00-08:00",
+      "collection": "foliage",
+      "location": "Central Coast, California",
+      "metadata": {
+        "date_photographed": "2024-11-18",
+        "film_size": "8x10\"",
+        "development": "N+1",
+        "focal_length": "10\"",
+        "aperture": "f/36",
+        "shutter_speed": "3s",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/423.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/423.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/423.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/423.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/423.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/423.jpg",
+        "display_width": 1344,
+        "display_height": 1680
+      },
+      "url": "https://chriscummins.cc/photographs/423/",
+      "shop_enabled": true,
+      "shop_url": "https://chriscummins.cc/shop/423/"
+    },
+    {
+      "title": "Fallen Tree and Grasses",
+      "slug": "323",
+      "description": "",
+      "date": "2024-07-11T00:00:00-07:00",
+      "collection": "foliage",
+      "location": "Yosemite, California",
+      "metadata": {
+        "date_photographed": "2024-07-11",
+        "film_size": "8x10\"",
+        "development": "N+1",
+        "focal_length": "12\"",
+        "aperture": "f/57",
+        "shutter_speed": "6s",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/323.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/323.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/323.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/323.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/323.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/323.jpg",
+        "display_width": 1354,
+        "display_height": 1680
+      },
+      "url": "https://chriscummins.cc/photographs/323/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Gaylor Lakes Corn Lilies",
+      "slug": "298",
+      "description": "",
+      "date": "2024-07-08T00:00:00-07:00",
+      "collection": "foliage",
+      "location": "Yosemite, California",
+      "metadata": {
+        "date_photographed": "2024-07-08",
+        "film_size": "8x10\"",
+        "development": "N+1",
+        "focal_length": "8\"",
+        "aperture": "f/45",
+        "shutter_speed": "6s",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/298.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/298.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/298.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/298.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/298.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/298.jpg",
+        "display_width": 1349,
+        "display_height": 1680
+      },
+      "url": "https://chriscummins.cc/photographs/298/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Yosemite Sunrise V",
+      "slug": "286",
+      "description": "",
+      "date": "2024-05-15T00:00:00-07:00",
+      "collection": "foliage",
+      "location": "Yosemite, California",
+      "metadata": {
+        "date_photographed": "2024-05-15",
+        "film_size": "8x10\"",
+        "development": "N-2",
+        "focal_length": "14\"",
+        "aperture": "f/45",
+        "shutter_speed": "4.2s",
+        "filters": [
+          "green"
+        ]
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/286.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/286.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/286.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/286.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/286.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/286.jpg",
+        "display_width": 1680,
+        "display_height": 1344
+      },
+      "url": "https://chriscummins.cc/photographs/286/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Yosemite Sunrise VI",
+      "slug": "289",
+      "description": "",
+      "date": "2024-05-15T00:00:00-07:00",
+      "collection": "foliage",
+      "location": "Yosemite, California",
+      "metadata": {
+        "date_photographed": "2024-05-15",
+        "film_size": "8x10\"",
+        "development": "N-1",
+        "focal_length": "14\"",
+        "aperture": "f/45",
+        "shutter_speed": "4.2s",
+        "filters": [
+          "green"
+        ]
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/289.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/289.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/289.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/289.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/289.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/289.jpg",
+        "display_width": 1680,
+        "display_height": 1344
+      },
+      "url": "https://chriscummins.cc/photographs/289/",
+      "shop_enabled": false,
+      "shop_url": null
+    }
+  ],
+  "has_next": true,
+  "has_previous": false,
+  "next_page": 2,
+  "previous_page": null
+}

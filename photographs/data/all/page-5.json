@@ -1,0 +1,321 @@
+{
+  "page": 5,
+  "total_pages": 6,
+  "collection": "all",
+  "photos": [
+    {
+      "title": "Dogwood and Upper Yosemite Falls",
+      "slug": "291",
+      "description": "<p>I made this photograph on the morning of first issue for <a href=\"https://about.usps.com/newsroom/national-releases/2024/0403ma-usps-to-honor-ansel-adams-with-stamps.htm\">commemorative\nstamps</a>\nin honor of Ansel Adams.</p>",
+      "date": "2024-05-15T00:00:00-07:00",
+      "collection": "mountains",
+      "location": "Yosemite, California",
+      "metadata": {
+        "date_photographed": "2024-05-15",
+        "film_size": "8x10\"",
+        "development": "N-2",
+        "focal_length": "12\"",
+        "aperture": "f/51",
+        "shutter_speed": "1s",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/291.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/291.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/291.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/291.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/291.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/291.jpg",
+        "display_width": 1340,
+        "display_height": 1680
+      },
+      "url": "https://chriscummins.cc/photographs/291/",
+      "shop_enabled": true,
+      "shop_url": "https://chriscummins.cc/shop/291/"
+    },
+    {
+      "title": "Yosemite Sunrise III",
+      "slug": "274",
+      "description": "",
+      "date": "2024-05-14T00:00:00-07:00",
+      "collection": "foliage",
+      "location": "Yosemite, California",
+      "metadata": {
+        "date_photographed": "2024-05-14",
+        "film_size": "8x10\"",
+        "development": "N-1",
+        "focal_length": "14\"",
+        "aperture": "f/45",
+        "shutter_speed": "4.2s",
+        "filters": [
+          "green"
+        ]
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/274.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/274.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/274.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/274.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/274.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/274.jpg",
+        "display_width": 1680,
+        "display_height": 1344
+      },
+      "url": "https://chriscummins.cc/photographs/274/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Twin Waterfalls I",
+      "slug": "277",
+      "description": "",
+      "date": "2024-05-14T00:00:00-07:00",
+      "collection": "mountains",
+      "location": "Yosemite, California",
+      "metadata": {
+        "date_photographed": "2024-05-14",
+        "film_size": "8x10\"",
+        "development": "N",
+        "focal_length": "24\"",
+        "aperture": "f/45",
+        "shutter_speed": "1/4",
+        "filters": [
+          "blue"
+        ]
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/277.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/277.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/277.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/277.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/277.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/277.jpg",
+        "display_width": 1344,
+        "display_height": 1680
+      },
+      "url": "https://chriscummins.cc/photographs/277/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "El Capitan Bridge I",
+      "slug": "267",
+      "description": "",
+      "date": "2024-05-13T00:00:00-07:00",
+      "collection": "foliage",
+      "location": "Yosemite, California",
+      "metadata": {
+        "date_photographed": "2024-05-13",
+        "film_size": "8x10\"",
+        "development": "N",
+        "focal_length": "14\"",
+        "aperture": "f/36",
+        "shutter_speed": "1/2",
+        "filters": [
+          "green"
+        ]
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/267.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/267.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/267.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/267.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/267.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/267.jpg",
+        "display_width": 1680,
+        "display_height": 1344
+      },
+      "url": "https://chriscummins.cc/photographs/267/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Abandoned Study III",
+      "slug": "246",
+      "description": "",
+      "date": "2024-04-21T00:00:00-07:00",
+      "collection": "abandoned",
+      "location": "Eastern Sierra, California",
+      "metadata": {
+        "date_photographed": "2024-04-20",
+        "film_size": "8x10\"",
+        "development": "N",
+        "focal_length": "10\"",
+        "aperture": "f/25",
+        "shutter_speed": "1/15",
+        "filters": [
+          "yellow"
+        ]
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/246.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/246.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/246.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/246.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/246.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/246.jpg",
+        "display_width": 1680,
+        "display_height": 1335
+      },
+      "url": "https://chriscummins.cc/photographs/246/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Abandoned Study II",
+      "slug": "243",
+      "description": "",
+      "date": "2024-04-20T00:00:00-07:00",
+      "collection": "abandoned",
+      "location": "Eastern Sierra, California",
+      "metadata": {
+        "date_photographed": "2024-04-20",
+        "film_size": "8x10\"",
+        "development": "N-1",
+        "focal_length": "12\"",
+        "aperture": "f/90",
+        "shutter_speed": "",
+        "filters": [
+          "yellow"
+        ]
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/243.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/243.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/243.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/243.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/243.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/243.jpg",
+        "display_width": 1349,
+        "display_height": 1680
+      },
+      "url": "https://chriscummins.cc/photographs/243/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Virginia Creek",
+      "slug": "239",
+      "description": "",
+      "date": "2024-04-19T00:00:00-07:00",
+      "collection": "rocks",
+      "location": "Eastern Sierra, California",
+      "metadata": {
+        "date_photographed": "2024-04-19",
+        "film_size": "8x10\"",
+        "development": "N+1",
+        "focal_length": "18\"",
+        "aperture": "f/40",
+        "shutter_speed": "1/4",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/239.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/239.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/239.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/239.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/239.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/239.jpg",
+        "display_width": 1349,
+        "display_height": 1680
+      },
+      "url": "https://chriscummins.cc/photographs/239/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Bristlecone Pine Knot II",
+      "slug": "225",
+      "description": "",
+      "date": "2024-04-18T00:00:00-07:00",
+      "collection": "foliage",
+      "location": "White Mountains, California",
+      "metadata": {
+        "date_photographed": "2024-04-18",
+        "film_size": "8x10\"",
+        "development": "N+1",
+        "focal_length": "10\"",
+        "aperture": "f/64",
+        "shutter_speed": "1/2",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/225.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/225.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/225.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/225.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/225.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/225.jpg",
+        "display_width": 1344,
+        "display_height": 1680
+      },
+      "url": "https://chriscummins.cc/photographs/225/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Owens River Gorge",
+      "slug": "212",
+      "description": "",
+      "date": "2024-04-17T00:00:00-07:00",
+      "collection": "rocks",
+      "location": "Owens Valley, California",
+      "metadata": {
+        "date_photographed": "2024-04-17",
+        "film_size": "8x10\"",
+        "development": "N-1",
+        "focal_length": "18\"",
+        "aperture": "f/45",
+        "shutter_speed": "1/2",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/212.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/212.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/212.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/212.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/212.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/212.jpg",
+        "display_width": 1347,
+        "display_height": 1680
+      },
+      "url": "https://chriscummins.cc/photographs/212/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Water Study",
+      "slug": "213",
+      "description": "",
+      "date": "2024-04-17T00:00:00-07:00",
+      "collection": "closeup",
+      "location": "Eastern Sierra, California",
+      "metadata": {
+        "date_photographed": "2024-04-17",
+        "film_size": "8x10\"",
+        "development": "N+1",
+        "focal_length": "18\"",
+        "aperture": "f/45",
+        "shutter_speed": "1/2",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/213.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/213.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/213.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/213.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/213.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/213.jpg",
+        "display_width": 1340,
+        "display_height": 1680
+      },
+      "url": "https://chriscummins.cc/photographs/213/",
+      "shop_enabled": false,
+      "shop_url": null
+    }
+  ],
+  "has_next": true,
+  "has_previous": true,
+  "next_page": 6,
+  "previous_page": 4
+}

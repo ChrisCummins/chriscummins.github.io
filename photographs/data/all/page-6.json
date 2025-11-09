@@ -1,0 +1,261 @@
+{
+  "page": 6,
+  "total_pages": 6,
+  "collection": "all",
+  "photos": [
+    {
+      "title": "Sagebrush Study I",
+      "slug": "173",
+      "description": "",
+      "date": "2024-04-11T00:00:00-07:00",
+      "collection": "closeup",
+      "location": "California",
+      "metadata": {
+        "date_photographed": "2024-04-11",
+        "film_size": "8x10\"",
+        "development": "N+1",
+        "focal_length": "8\"",
+        "aperture": "f/64",
+        "shutter_speed": "5 sec",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/173.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/173.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/173.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/173.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/173.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/173.jpg",
+        "display_width": 1348,
+        "display_height": 1680
+      },
+      "url": "https://chriscummins.cc/photographs/173/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Skyscape III",
+      "slug": "179",
+      "description": "",
+      "date": "2024-04-11T00:00:00-07:00",
+      "collection": "mountains",
+      "location": "Owens Valley, California",
+      "metadata": {
+        "date_photographed": "2024-04-11",
+        "film_size": "8x10\"",
+        "development": "N",
+        "focal_length": "18\"",
+        "aperture": "f/25",
+        "shutter_speed": "1/60",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/179.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/179.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/179.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/179.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/179.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/179.jpg",
+        "display_width": 1680,
+        "display_height": 1344
+      },
+      "url": "https://chriscummins.cc/photographs/179/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Garden Foliage Study",
+      "slug": "164",
+      "description": "",
+      "date": "2024-03-30T00:00:00-07:00",
+      "collection": "closeup",
+      "location": "California",
+      "metadata": {
+        "date_photographed": "2024-03-30",
+        "film_size": "8x10\"",
+        "development": "N",
+        "focal_length": "8\"",
+        "aperture": "f/40",
+        "shutter_speed": "6 sec",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/164.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/164.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/164.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/164.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/164.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/164.jpg",
+        "display_width": 1342,
+        "display_height": 1680
+      },
+      "url": "https://chriscummins.cc/photographs/164/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Wall Study I",
+      "slug": "158",
+      "description": "",
+      "date": "2024-03-14T00:00:00-07:00",
+      "collection": "closeup",
+      "location": "Harrisburg, California",
+      "metadata": {
+        "date_photographed": "2024-03-14",
+        "film_size": "8x10\"",
+        "development": "N",
+        "focal_length": "10\"",
+        "aperture": "f/32",
+        "shutter_speed": "6 sec",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/158.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/158.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/158.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/158.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/158.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/158.jpg",
+        "display_width": 1370,
+        "display_height": 1680
+      },
+      "url": "https://chriscummins.cc/photographs/158/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Zabriskie Textures",
+      "slug": "152",
+      "description": "",
+      "date": "2024-03-13T00:00:00-07:00",
+      "collection": "desert",
+      "location": "Big Sur, California",
+      "metadata": {
+        "date_photographed": "2024-03-13",
+        "film_size": "8x10\"",
+        "development": "N",
+        "focal_length": "18\"",
+        "aperture": "f/25",
+        "shutter_speed": "1/8",
+        "filters": [
+          "yellow"
+        ]
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/152.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/152.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/152.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/152.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/152.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/152.jpg",
+        "display_width": 1680,
+        "display_height": 1370
+      },
+      "url": "https://chriscummins.cc/photographs/152/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Abandoned Study I",
+      "slug": "156",
+      "description": "",
+      "date": "2024-03-13T00:00:00-07:00",
+      "collection": "abandoned",
+      "location": "Death Valley, California",
+      "metadata": {
+        "date_photographed": "2024-03-13",
+        "film_size": "8x10\"",
+        "development": "N+1",
+        "focal_length": "12\"",
+        "aperture": "f/8",
+        "shutter_speed": "1/125",
+        "filters": [
+          "red"
+        ]
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/156.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/156.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/156.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/156.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/156.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/156.jpg",
+        "display_width": 1680,
+        "display_height": 1370
+      },
+      "url": "https://chriscummins.cc/photographs/156/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Cottonball Basin",
+      "slug": "142",
+      "description": "",
+      "date": "2024-03-11T00:00:00-07:00",
+      "collection": "desert",
+      "location": "Death Valley, California",
+      "metadata": {
+        "date_photographed": "2024-03-11",
+        "film_size": "8x10\"",
+        "development": "N",
+        "focal_length": "12\"",
+        "aperture": "f/36",
+        "shutter_speed": "1/15",
+        "filters": [
+          "yellow",
+          "0.6ND soft grad"
+        ]
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/142.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/142.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/142.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/142.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/142.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/142.jpg",
+        "display_width": 1680,
+        "display_height": 1342
+      },
+      "url": "https://chriscummins.cc/photographs/142/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "El Capitan, Morning Mist",
+      "slug": "123",
+      "description": "",
+      "date": "2024-02-01T00:00:00-08:00",
+      "collection": "mountains",
+      "location": "Yosemite Valley, California",
+      "metadata": {
+        "date_photographed": "2024-02-01",
+        "film_size": "8x10\"",
+        "development": "N",
+        "focal_length": "12\"",
+        "aperture": "f/40",
+        "shutter_speed": "1 sec",
+        "filters": [
+          "yellow",
+          "0.6ND soft grad"
+        ]
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/123.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/123.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/123.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/123.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/123.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/123.jpg",
+        "display_width": 1367,
+        "display_height": 1680
+      },
+      "url": "https://chriscummins.cc/photographs/123/",
+      "shop_enabled": false,
+      "shop_url": null
+    }
+  ],
+  "has_next": false,
+  "has_previous": true,
+  "next_page": null,
+  "previous_page": 5
+}

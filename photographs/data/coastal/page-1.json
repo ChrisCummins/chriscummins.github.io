@@ -1,0 +1,103 @@
+{
+  "page": 1,
+  "total_pages": 1,
+  "collection": "coastal",
+  "photos": [
+    {
+      "title": "Great Sur Vista",
+      "slug": "595",
+      "description": "",
+      "date": "2025-03-27T00:00:00-07:00",
+      "collection": "coastal",
+      "location": "Big Sur, California",
+      "metadata": {
+        "date_photographed": "2025-03-27",
+        "film_size": "8x10\"",
+        "development": "N+3",
+        "focal_length": "24\"",
+        "aperture": "f/22",
+        "shutter_speed": "1/8",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/595.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/595.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/595.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/595.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/595.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/595.jpg",
+        "display_width": 1344,
+        "display_height": 1680
+      },
+      "url": "https://chriscummins.cc/photographs/595/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Seascape with Boat",
+      "slug": "479",
+      "description": "",
+      "date": "2025-02-15T00:00:00-08:00",
+      "collection": "coastal",
+      "location": "Mendocino, California",
+      "metadata": {
+        "date_photographed": "2025-02-15",
+        "film_size": "8x10\"",
+        "development": "N+2",
+        "focal_length": "24\"",
+        "aperture": "f/40",
+        "shutter_speed": "1/60",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/479.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/479.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/479.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/479.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/479.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/479.jpg",
+        "display_width": 1680,
+        "display_height": 1344
+      },
+      "url": "https://chriscummins.cc/photographs/479/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Big Sur II",
+      "slug": "432",
+      "description": "",
+      "date": "2024-11-20T00:00:00-08:00",
+      "collection": "coastal",
+      "location": "Big Sur, California",
+      "metadata": {
+        "date_photographed": "2024-11-20",
+        "film_size": "8x10\"",
+        "development": "N+1",
+        "focal_length": "24\"",
+        "aperture": "f/32",
+        "shutter_speed": "1/8",
+        "filters": [
+          "yellow"
+        ]
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/432.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/432.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/432.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/432.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/432.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/432.jpg",
+        "display_width": 1680,
+        "display_height": 1344
+      },
+      "url": "https://chriscummins.cc/photographs/432/",
+      "shop_enabled": false,
+      "shop_url": null
+    }
+  ],
+  "has_next": false,
+  "has_previous": false,
+  "next_page": null,
+  "previous_page": null
+}

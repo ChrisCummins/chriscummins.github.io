@@ -1,0 +1,326 @@
+{
+  "page": 1,
+  "total_pages": 1,
+  "collection": "mountains",
+  "photos": [
+    {
+      "title": "Scattered Light on Bridalveil Fall",
+      "slug": "618",
+      "description": "",
+      "date": "2025-05-12T00:00:00-07:00",
+      "collection": "mountains",
+      "location": "Yosemite, California",
+      "metadata": {
+        "date_photographed": "2025-05-12",
+        "film_size": "8x10\"",
+        "development": "N+1",
+        "focal_length": "24\"",
+        "aperture": "f/45",
+        "shutter_speed": "1/4",
+        "filters": [
+          "yellow"
+        ]
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/618.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/618.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/618.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/618.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/618.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/618.jpg",
+        "display_width": 1680,
+        "display_height": 1337
+      },
+      "url": "https://chriscummins.cc/photographs/618/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Inspiration Point, Winter",
+      "slug": "565",
+      "description": "",
+      "date": "2025-03-15T00:00:00-07:00",
+      "collection": "mountains",
+      "location": "Yosemite, California",
+      "metadata": {
+        "date_photographed": "2025-03-15",
+        "film_size": "8x10\"",
+        "development": "N",
+        "focal_length": "18\"",
+        "aperture": "f/64",
+        "shutter_speed": "1/4",
+        "filters": [
+          "yellow"
+        ]
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/565.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/565.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/565.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/565.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/565.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/565.jpg",
+        "display_width": 1680,
+        "display_height": 1344
+      },
+      "url": "https://chriscummins.cc/photographs/565/",
+      "shop_enabled": true,
+      "shop_url": "https://chriscummins.cc/shop/565/"
+    },
+    {
+      "title": "El Capitan, Sunrise",
+      "slug": "367",
+      "description": "",
+      "date": "2024-10-04T00:00:00-07:00",
+      "collection": "mountains",
+      "location": "Yosemite, California",
+      "metadata": {
+        "date_photographed": "2024-10-04",
+        "film_size": "8x10\"",
+        "development": "N",
+        "focal_length": "14\"",
+        "aperture": "f/11",
+        "shutter_speed": "1/60",
+        "filters": [
+          "yellow"
+        ]
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/367.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/367.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/367.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/367.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/367.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/367.jpg",
+        "display_width": 1344,
+        "display_height": 1680
+      },
+      "url": "https://chriscummins.cc/photographs/367/",
+      "shop_enabled": true,
+      "shop_url": "https://chriscummins.cc/shop/367/"
+    },
+    {
+      "title": "Here Comes the Sun",
+      "slug": "363",
+      "description": "",
+      "date": "2024-10-03T00:00:00-07:00",
+      "collection": "mountains",
+      "location": "Yosemite, California",
+      "metadata": {
+        "date_photographed": "2024-10-03",
+        "film_size": "8x10\"",
+        "development": "N",
+        "focal_length": "24\"",
+        "aperture": "f/32",
+        "shutter_speed": "1/15",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/363.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/363.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/363.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/363.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/363.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/363.jpg",
+        "display_width": 1680,
+        "display_height": 1344
+      },
+      "url": "https://chriscummins.cc/photographs/363/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Autumn Moon Remake IV",
+      "slug": "337",
+      "description": "",
+      "date": "2024-09-15T00:00:00-07:00",
+      "collection": "mountains",
+      "location": "Yosemite, California",
+      "metadata": {
+        "date_photographed": "2024-09-15",
+        "film_size": "8x10\"",
+        "development": "N",
+        "focal_length": "24\"",
+        "aperture": "f/22",
+        "shutter_speed": "1/4",
+        "filters": [
+          "orange"
+        ]
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/337.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/337.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/337.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/337.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/337.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/337.jpg",
+        "display_width": 1680,
+        "display_height": 1349
+      },
+      "url": "https://chriscummins.cc/photographs/337/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Tenaya Lake",
+      "slug": "324",
+      "description": "",
+      "date": "2024-07-12T00:00:00-07:00",
+      "collection": "mountains",
+      "location": "Yosemite, California",
+      "metadata": {
+        "date_photographed": "2024-07-12",
+        "film_size": "8x10\"",
+        "development": "N",
+        "focal_length": "24\"",
+        "aperture": "f/51",
+        "shutter_speed": "1/8",
+        "filters": [
+          "yellow"
+        ]
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/324.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/324.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/324.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/324.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/324.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/324.jpg",
+        "display_width": 1680,
+        "display_height": 1349
+      },
+      "url": "https://chriscummins.cc/photographs/324/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Dogwood and Upper Yosemite Falls",
+      "slug": "291",
+      "description": "<p>I made this photograph on the morning of first issue for <a href=\"https://about.usps.com/newsroom/national-releases/2024/0403ma-usps-to-honor-ansel-adams-with-stamps.htm\">commemorative\nstamps</a>\nin honor of Ansel Adams.</p>",
+      "date": "2024-05-15T00:00:00-07:00",
+      "collection": "mountains",
+      "location": "Yosemite, California",
+      "metadata": {
+        "date_photographed": "2024-05-15",
+        "film_size": "8x10\"",
+        "development": "N-2",
+        "focal_length": "12\"",
+        "aperture": "f/51",
+        "shutter_speed": "1s",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/291.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/291.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/291.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/291.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/291.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/291.jpg",
+        "display_width": 1340,
+        "display_height": 1680
+      },
+      "url": "https://chriscummins.cc/photographs/291/",
+      "shop_enabled": true,
+      "shop_url": "https://chriscummins.cc/shop/291/"
+    },
+    {
+      "title": "Twin Waterfalls I",
+      "slug": "277",
+      "description": "",
+      "date": "2024-05-14T00:00:00-07:00",
+      "collection": "mountains",
+      "location": "Yosemite, California",
+      "metadata": {
+        "date_photographed": "2024-05-14",
+        "film_size": "8x10\"",
+        "development": "N",
+        "focal_length": "24\"",
+        "aperture": "f/45",
+        "shutter_speed": "1/4",
+        "filters": [
+          "blue"
+        ]
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/277.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/277.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/277.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/277.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/277.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/277.jpg",
+        "display_width": 1344,
+        "display_height": 1680
+      },
+      "url": "https://chriscummins.cc/photographs/277/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Skyscape III",
+      "slug": "179",
+      "description": "",
+      "date": "2024-04-11T00:00:00-07:00",
+      "collection": "mountains",
+      "location": "Owens Valley, California",
+      "metadata": {
+        "date_photographed": "2024-04-11",
+        "film_size": "8x10\"",
+        "development": "N",
+        "focal_length": "18\"",
+        "aperture": "f/25",
+        "shutter_speed": "1/60",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/179.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/179.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/179.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/179.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/179.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/179.jpg",
+        "display_width": 1680,
+        "display_height": 1344
+      },
+      "url": "https://chriscummins.cc/photographs/179/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "El Capitan, Morning Mist",
+      "slug": "123",
+      "description": "",
+      "date": "2024-02-01T00:00:00-08:00",
+      "collection": "mountains",
+      "location": "Yosemite Valley, California",
+      "metadata": {
+        "date_photographed": "2024-02-01",
+        "film_size": "8x10\"",
+        "development": "N",
+        "focal_length": "12\"",
+        "aperture": "f/40",
+        "shutter_speed": "1 sec",
+        "filters": [
+          "yellow",
+          "0.6ND soft grad"
+        ]
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/123.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/123.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/123.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/123.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/123.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/123.jpg",
+        "display_width": 1367,
+        "display_height": 1680
+      },
+      "url": "https://chriscummins.cc/photographs/123/",
+      "shop_enabled": false,
+      "shop_url": null
+    }
+  ],
+  "has_next": false,
+  "has_previous": false,
+  "next_page": null,
+  "previous_page": null
+}

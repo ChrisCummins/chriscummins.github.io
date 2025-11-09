@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Capitan, Sunrise - Printing Notes - Chris Cummins</title>
+    <link rel="icon" type="image/png" href="https://chriscummins.cc/static/favicon.png">
+    <link rel="stylesheet" href="https://chriscummins.cc/static/css/style.css">
+        <link rel="canonical" href="https://chriscummins.cc/shop/367/recipe/">
+        <meta name="description" content="Darkroom printing notes and dodging/burning diagrams for "El Capitan, Sunrise" by Chris Cummins.">
+        <meta name="google-site-verification" content="_htOMt1bCAv7fk4YNwQwHq5JnGKuon-b6FU61xuUPX4" />
+        <meta property="og:type" content="article">
+        <meta property="og:title" content="El Capitan, Sunrise - Printing Notes - Chris Cummins">
+        <meta property="og:description" content="Darkroom printing notes and dodging/burning diagrams for "El Capitan, Sunrise" by Chris Cummins.">
+        <meta property="og:url" content="https://chriscummins.cc/shop/367/recipe/">
+        <meta property="og:image" content="https://chriscummins.cc/static/shop/recipe_thumb/367.jpg">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="El Capitan, Sunrise - Printing Notes - Chris Cummins">
+        <meta name="twitter:description" content="Darkroom printing notes and dodging/burning diagrams for "El Capitan, Sunrise" by Chris Cummins.">
+        <meta name="twitter:image" content="https://chriscummins.cc/static/shop/recipe_thumb/367.jpg">
+        <meta name="twitter:url" content="https://chriscummins.cc/shop/367/recipe/">
+        <meta name="twitter:site" content="@iamchriscummins">
+</head>
+<body class="">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <nav class="navbar">
+        <div class="container">
+            <a href="https://chriscummins.cc/" class="navbar-brand">Chris Cummins<span class="navbar-suffix"> Photography</span></a>
+            <ul class="nav-links">
+                <li><a href="https://chriscummins.cc/about/" class="">About</a></li>
+                <li><a href="https://chriscummins.cc/photographs/" class="">Photographs</a></li>
+                <li><a href="https://chriscummins.cc/shop/" class="active">Shop</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+<article class="recipe-page">
+    <div class="recipe-spread">
+        <picture id="recipeFrontDetail" style="display:none;">
+            <source srcset="https://chriscummins.cc/static/shop/recipe/367-front.webp" type="image/webp">
+            <img src="https://chriscummins.cc/static/shop/recipe/367-front.jpg" alt="Printing notes (front)" class="recipe-detail-image clickable-image" onclick="openFrontOverlay()">
+        </picture>
+        <picture id="recipeRearDetail" style="display:none;">
+            <source srcset="https://chriscummins.cc/static/shop/recipe/367-rear.webp" type="image/webp">
+            <img src="https://chriscummins.cc/static/shop/recipe/367-rear.jpg" alt="Printing notes (rear)" class="recipe-detail-image clickable-image" onclick="openRearOverlay()">
+        </picture>
+    </div>
+
+    <div class="shop-back-link">
+        <a href="../">← back to print</a>
+    </div>
+</article>
+
+<!-- Front Image Overlay -->
+<div id="frontOverlay" class="image-overlay" onclick="closeOverlay(event, 'frontOverlay')">
+    <button class="overlay-close" onclick="closeOverlay(event, 'frontOverlay')">✕</button>
+    <div class="overlay-content">
+        <picture>
+            <source srcset="https://chriscummins.cc/static/shop/recipe/367-front.webp" type="image/webp">
+            <img src="https://chriscummins.cc/static/shop/recipe/367-front.jpg" alt="Printing notes (front)" class="overlay-image" onclick="closeOverlay(event, 'frontOverlay')">
+        </picture>
+    </div>
+</div>
+
+<!-- Rear Image Overlay -->
+<div id="rearOverlay" class="image-overlay" onclick="closeOverlay(event, 'rearOverlay')">
+    <button class="overlay-close" onclick="closeOverlay(event, 'rearOverlay')">✕</button>
+    <div class="overlay-content">
+        <picture>
+            <source srcset="https://chriscummins.cc/static/shop/recipe/367-rear.webp" type="image/webp">
+            <img src="https://chriscummins.cc/static/shop/recipe/367-rear.jpg" alt="Printing notes (rear)" class="overlay-image" onclick="closeOverlay(event, 'rearOverlay')">
+        </picture>
+    </div>
+</div>
+
+<script>
+// Check which recipe images exist and show them
+document.addEventListener('DOMContentLoaded', function() {
+    const recipeFrontDetail = document.getElementById('recipeFrontDetail');
+    const recipeRearDetail = document.getElementById('recipeRearDetail');
+
+    // Check if front image exists
+    const testFrontImg = new Image();
+    testFrontImg.onload = function() {
+        recipeFrontDetail.style.display = 'block';
+    };
+    testFrontImg.src = 'https://chriscummins.cc/static/shop/recipe/367-front.jpg';
+
+    // Check if rear image exists
+    const testRearImg = new Image();
+    testRearImg.onload = function() {
+        recipeRearDetail.style.display = 'block';
+    };
+    testRearImg.src = 'https://chriscummins.cc/static/shop/recipe/367-rear.jpg';
+
+    // Check hash on load
+    checkHash();
+});
+
+// Open front image overlay
+function openFrontOverlay() {
+    document.getElementById('frontOverlay').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    history.pushState(null, null, '#front');
+}
+
+// Open rear image overlay
+function openRearOverlay() {
+    document.getElementById('rearOverlay').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    history.pushState(null, null, '#rear');
+}
+
+// Close overlay
+function closeOverlay(event, overlayId) {
+    if (event && (event.target === document.getElementById(overlayId) ||
+        event.target.classList.contains('overlay-close') ||
+        event.target.classList.contains('overlay-image'))) {
+        document.getElementById(overlayId).style.display = 'none';
+        document.body.style.overflow = 'auto';
+        history.pushState(null, null, window.location.pathname);
+    }
+}
+
+// Handle hash changes and initial load
+function checkHash() {
+    const frontOverlay = document.getElementById('frontOverlay');
+    const rearOverlay = document.getElementById('rearOverlay');
+
+    if (window.location.hash === '#front') {
+        frontOverlay.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    } else if (window.location.hash === '#rear') {
+        rearOverlay.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    } else {
+        frontOverlay.style.display = 'none';
+        rearOverlay.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+}
+
+// Keyboard support
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        const frontOverlay = document.getElementById('frontOverlay');
+        const rearOverlay = document.getElementById('rearOverlay');
+        const isFrontOpen = window.getComputedStyle(frontOverlay).display === 'flex';
+        const isRearOpen = window.getComputedStyle(rearOverlay).display === 'flex';
+
+        if (isFrontOpen) {
+            frontOverlay.style.display = 'none';
+            document.body.style.overflow = 'auto';
+            history.pushState(null, null, window.location.pathname);
+        } else if (isRearOpen) {
+            rearOverlay.style.display = 'none';
+            document.body.style.overflow = 'auto';
+            history.pushState(null, null, window.location.pathname);
+        } else {
+            history.back();
+        }
+    }
+});
+
+// Handle back/forward navigation
+window.addEventListener('hashchange', checkHash);
+</script>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Chris Cummins | <a href="https://chriscummins.cc/contact/">Contact</a></p>
+        </div>
+    </footer>
+</body>
+</html>
