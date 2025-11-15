@@ -4,6 +4,36 @@
   "collection": "all",
   "photos": [
     {
+      "title": "Water Study",
+      "slug": "213",
+      "description": "",
+      "date": "2024-04-17T00:00:00-07:00",
+      "collection": "closeup",
+      "location": "Eastern Sierra, California",
+      "metadata": {
+        "date_photographed": "2024-04-17",
+        "film_size": "8x10\"",
+        "development": "N+1",
+        "focal_length": "18\"",
+        "aperture": "f/45",
+        "shutter_speed": "1/2",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/213.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/213.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/213.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/213.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/213.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/213.jpg",
+        "display_width": 1340,
+        "display_height": 1680
+      },
+      "url": "https://chriscummins.cc/photographs/213/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
       "title": "Sagebrush Study I",
       "slug": "173",
       "description": "",

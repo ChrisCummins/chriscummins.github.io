@@ -1,0 +1,44 @@
+{
+  "page": 2,
+  "total_pages": 2,
+  "collection": "mountains",
+  "photos": [
+    {
+      "title": "El Capitan, Morning Mist",
+      "slug": "123",
+      "description": "",
+      "date": "2024-02-01T00:00:00-08:00",
+      "collection": "mountains",
+      "location": "Yosemite Valley, California",
+      "metadata": {
+        "date_photographed": "2024-02-01",
+        "film_size": "8x10\"",
+        "development": "N",
+        "focal_length": "12\"",
+        "aperture": "f/40",
+        "shutter_speed": "1 sec",
+        "filters": [
+          "yellow",
+          "0.6ND soft grad"
+        ]
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/123.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/123.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/123.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/123.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/123.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/123.jpg",
+        "display_width": 1367,
+        "display_height": 1680
+      },
+      "url": "https://chriscummins.cc/photographs/123/",
+      "shop_enabled": false,
+      "shop_url": null
+    }
+  ],
+  "has_next": false,
+  "has_previous": true,
+  "next_page": null,
+  "previous_page": 1
+}

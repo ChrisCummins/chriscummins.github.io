@@ -4,6 +4,39 @@
   "collection": "all",
   "photos": [
     {
+      "title": "El Capitan, Winter",
+      "slug": "561",
+      "description": "",
+      "date": "2025-11-15T00:00:00-08:00",
+      "collection": "mountains",
+      "location": "Yosemite Valley, California",
+      "metadata": {
+        "date_photographed": "2025-03-15",
+        "film_size": "8x10\"",
+        "development": "N",
+        "focal_length": "12\"",
+        "aperture": "f/40",
+        "shutter_speed": "6 sec",
+        "filters": [
+          "0.9ND",
+          "yellow"
+        ]
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/561.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/561.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/561.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/561.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/561.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/561.jpg",
+        "display_width": 1351,
+        "display_height": 1680
+      },
+      "url": "https://chriscummins.cc/photographs/561/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
       "title": "Waterfall Nude",
       "slug": "624",
       "description": "<p>I've never photographed nudes, but it felt right to approach this waterfall\nscene with a boudoir sensibility. The texture contrast between rock and water\nfeels lacy and intimate. I'd normally chalk this up to going just a bit nutty\nafter extended time alone, but this was day one of my most recent photo trip.\nThe first photograph is usually the most difficult but this one arrived easily.</p>",
@@ -276,38 +309,6 @@
       "url": "https://chriscummins.cc/photographs/573/",
       "shop_enabled": false,
       "shop_url": null
-    },
-    {
-      "title": "Inspiration Point, Winter",
-      "slug": "565",
-      "description": "",
-      "date": "2025-03-15T00:00:00-07:00",
-      "collection": "mountains",
-      "location": "Yosemite, California",
-      "metadata": {
-        "date_photographed": "2025-03-15",
-        "film_size": "8x10\"",
-        "development": "N",
-        "focal_length": "18\"",
-        "aperture": "f/64",
-        "shutter_speed": "1/4",
-        "filters": [
-          "yellow"
-        ]
-      },
-      "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/565.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/565.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/565.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/565.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/565.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/565.jpg",
-        "display_width": 1680,
-        "display_height": 1344
-      },
-      "url": "https://chriscummins.cc/photographs/565/",
-      "shop_enabled": true,
-      "shop_url": "https://chriscummins.cc/shop/565/"
     }
   ],
   "has_next": true,

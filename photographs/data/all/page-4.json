@@ -4,6 +4,36 @@
   "collection": "all",
   "photos": [
     {
+      "title": "Here Comes the Sun",
+      "slug": "363",
+      "description": "",
+      "date": "2024-10-03T00:00:00-07:00",
+      "collection": "mountains",
+      "location": "Yosemite, California",
+      "metadata": {
+        "date_photographed": "2024-10-03",
+        "film_size": "8x10\"",
+        "development": "N",
+        "focal_length": "24\"",
+        "aperture": "f/32",
+        "shutter_speed": "1/15",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/363.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/363.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/363.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/363.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/363.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/363.jpg",
+        "display_width": 1680,
+        "display_height": 1344
+      },
+      "url": "https://chriscummins.cc/photographs/363/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
       "title": "Olmsted Point Boulder",
       "slug": "355",
       "description": "",
@@ -278,38 +308,6 @@
         "display_height": 1344
       },
       "url": "https://chriscummins.cc/photographs/286/",
-      "shop_enabled": false,
-      "shop_url": null
-    },
-    {
-      "title": "Yosemite Sunrise VI",
-      "slug": "289",
-      "description": "",
-      "date": "2024-05-15T00:00:00-07:00",
-      "collection": "foliage",
-      "location": "Yosemite, California",
-      "metadata": {
-        "date_photographed": "2024-05-15",
-        "film_size": "8x10\"",
-        "development": "N-1",
-        "focal_length": "14\"",
-        "aperture": "f/45",
-        "shutter_speed": "4.2s",
-        "filters": [
-          "green"
-        ]
-      },
-      "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/289.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/289.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/289.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/289.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/289.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/289.jpg",
-        "display_width": 1680,
-        "display_height": 1344
-      },
-      "url": "https://chriscummins.cc/photographs/289/",
       "shop_enabled": false,
       "shop_url": null
     }

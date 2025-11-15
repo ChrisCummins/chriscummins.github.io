@@ -1,8 +1,41 @@
 {
   "page": 1,
-  "total_pages": 1,
+  "total_pages": 2,
   "collection": "mountains",
   "photos": [
+    {
+      "title": "El Capitan, Winter",
+      "slug": "561",
+      "description": "",
+      "date": "2025-11-15T00:00:00-08:00",
+      "collection": "mountains",
+      "location": "Yosemite Valley, California",
+      "metadata": {
+        "date_photographed": "2025-03-15",
+        "film_size": "8x10\"",
+        "development": "N",
+        "focal_length": "12\"",
+        "aperture": "f/40",
+        "shutter_speed": "6 sec",
+        "filters": [
+          "0.9ND",
+          "yellow"
+        ]
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/561.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/561.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/561.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/561.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/561.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/561.jpg",
+        "display_width": 1351,
+        "display_height": 1680
+      },
+      "url": "https://chriscummins.cc/photographs/561/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
     {
       "title": "Scattered Light on Bridalveil Fall",
       "slug": "618",
@@ -284,43 +317,10 @@
       "url": "https://chriscummins.cc/photographs/179/",
       "shop_enabled": false,
       "shop_url": null
-    },
-    {
-      "title": "El Capitan, Morning Mist",
-      "slug": "123",
-      "description": "",
-      "date": "2024-02-01T00:00:00-08:00",
-      "collection": "mountains",
-      "location": "Yosemite Valley, California",
-      "metadata": {
-        "date_photographed": "2024-02-01",
-        "film_size": "8x10\"",
-        "development": "N",
-        "focal_length": "12\"",
-        "aperture": "f/40",
-        "shutter_speed": "1 sec",
-        "filters": [
-          "yellow",
-          "0.6ND soft grad"
-        ]
-      },
-      "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/123.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/123.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/123.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/123.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/123.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/123.jpg",
-        "display_width": 1367,
-        "display_height": 1680
-      },
-      "url": "https://chriscummins.cc/photographs/123/",
-      "shop_enabled": false,
-      "shop_url": null
     }
   ],
-  "has_next": false,
+  "has_next": true,
   "has_previous": false,
-  "next_page": null,
+  "next_page": 2,
   "previous_page": null
 }
