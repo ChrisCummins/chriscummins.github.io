@@ -1,0 +1,11 @@
+diff a/content/static/css/style.css b/content/static/css/style.css	(rejected hunks)
+@@ -215,6 +215,9 @@ img {
+     color: inherit;
+     text-align: left;
+     cursor: pointer;
++    appearance: none;
++    -webkit-appearance: none;
++    outline: none;
+ }
+ 
+ .photograph-overlay-trigger:focus-visible {
