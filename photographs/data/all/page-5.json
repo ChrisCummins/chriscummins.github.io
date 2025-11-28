@@ -4,6 +4,38 @@
   "collection": "all",
   "photos": [
     {
+      "title": "Yosemite Sunrise V",
+      "slug": "286",
+      "description": "",
+      "date": "2024-05-15T00:00:00-07:00",
+      "collection": "foliage",
+      "location": "Yosemite, California",
+      "metadata": {
+        "date_photographed": "2024-05-15",
+        "film_size": "8x10\"",
+        "development": "N-2",
+        "focal_length": "14\"",
+        "aperture": "f/45",
+        "shutter_speed": "4.2s",
+        "filters": [
+          "green"
+        ]
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/286.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/286.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/286.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/286.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/286.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/286.jpg",
+        "display_width": 1680,
+        "display_height": 1344
+      },
+      "url": "https://chriscummins.cc/photographs/286/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
       "title": "Yosemite Sunrise VI",
       "slug": "289",
       "description": "",
@@ -282,36 +314,6 @@
         "display_height": 1680
       },
       "url": "https://chriscummins.cc/photographs/225/",
-      "shop_enabled": false,
-      "shop_url": null
-    },
-    {
-      "title": "Owens River Gorge",
-      "slug": "212",
-      "description": "",
-      "date": "2024-04-17T00:00:00-07:00",
-      "collection": "rocks",
-      "location": "Owens Valley, California",
-      "metadata": {
-        "date_photographed": "2024-04-17",
-        "film_size": "8x10\"",
-        "development": "N-1",
-        "focal_length": "18\"",
-        "aperture": "f/45",
-        "shutter_speed": "1/2",
-        "filters": ""
-      },
-      "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/212.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/212.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/212.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/212.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/212.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/212.jpg",
-        "display_width": 1347,
-        "display_height": 1680
-      },
-      "url": "https://chriscummins.cc/photographs/212/",
       "shop_enabled": false,
       "shop_url": null
     }

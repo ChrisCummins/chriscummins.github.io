@@ -4,6 +4,38 @@
   "collection": "foliage",
   "photos": [
     {
+      "title": "Yosemite Sunrise VI",
+      "slug": "289",
+      "description": "",
+      "date": "2024-05-15T00:00:00-07:00",
+      "collection": "foliage",
+      "location": "Yosemite, California",
+      "metadata": {
+        "date_photographed": "2024-05-15",
+        "film_size": "8x10\"",
+        "development": "N-1",
+        "focal_length": "14\"",
+        "aperture": "f/45",
+        "shutter_speed": "4.2s",
+        "filters": [
+          "green"
+        ]
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/289.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/289.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/289.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/289.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/289.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/289.jpg",
+        "display_width": 1680,
+        "display_height": 1344
+      },
+      "url": "https://chriscummins.cc/photographs/289/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
       "title": "Yosemite Sunrise III",
       "slug": "274",
       "description": "",

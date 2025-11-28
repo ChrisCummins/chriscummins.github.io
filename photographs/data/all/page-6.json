@@ -4,6 +4,36 @@
   "collection": "all",
   "photos": [
     {
+      "title": "Owens River Gorge",
+      "slug": "212",
+      "description": "",
+      "date": "2024-04-17T00:00:00-07:00",
+      "collection": "rocks",
+      "location": "Owens Valley, California",
+      "metadata": {
+        "date_photographed": "2024-04-17",
+        "film_size": "8x10\"",
+        "development": "N-1",
+        "focal_length": "18\"",
+        "aperture": "f/45",
+        "shutter_speed": "1/2",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/212.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/212.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/212.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/212.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/212.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/212.jpg",
+        "display_width": 1347,
+        "display_height": 1680
+      },
+      "url": "https://chriscummins.cc/photographs/212/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
       "title": "Water Study",
       "slug": "213",
       "description": "",

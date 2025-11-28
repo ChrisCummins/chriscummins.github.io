@@ -4,6 +4,38 @@
   "collection": "all",
   "photos": [
     {
+      "title": "El Capitan, Sunrise",
+      "slug": "367",
+      "description": "",
+      "date": "2024-10-04T00:00:00-07:00",
+      "collection": "mountains",
+      "location": "Yosemite, California",
+      "metadata": {
+        "date_photographed": "2024-10-04",
+        "film_size": "8x10\"",
+        "development": "N",
+        "focal_length": "14\"",
+        "aperture": "f/11",
+        "shutter_speed": "1/60",
+        "filters": [
+          "yellow"
+        ]
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/367.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/367.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/367.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/367.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/367.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/367.jpg",
+        "display_width": 1344,
+        "display_height": 1680
+      },
+      "url": "https://chriscummins.cc/photographs/367/",
+      "shop_enabled": true,
+      "shop_url": "https://chriscummins.cc/shop/367/"
+    },
+    {
       "title": "Here Comes the Sun",
       "slug": "363",
       "description": "",
@@ -276,38 +308,6 @@
         "display_height": 1680
       },
       "url": "https://chriscummins.cc/photographs/300/",
-      "shop_enabled": false,
-      "shop_url": null
-    },
-    {
-      "title": "Yosemite Sunrise V",
-      "slug": "286",
-      "description": "",
-      "date": "2024-05-15T00:00:00-07:00",
-      "collection": "foliage",
-      "location": "Yosemite, California",
-      "metadata": {
-        "date_photographed": "2024-05-15",
-        "film_size": "8x10\"",
-        "development": "N-2",
-        "focal_length": "14\"",
-        "aperture": "f/45",
-        "shutter_speed": "4.2s",
-        "filters": [
-          "green"
-        ]
-      },
-      "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/286.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/286.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/286.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/286.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/286.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/286.jpg",
-        "display_width": 1680,
-        "display_height": 1344
-      },
-      "url": "https://chriscummins.cc/photographs/286/",
       "shop_enabled": false,
       "shop_url": null
     }

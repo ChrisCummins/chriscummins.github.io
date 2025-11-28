@@ -4,6 +4,36 @@
   "collection": "all",
   "photos": [
     {
+      "title": "Ancient Bristlecone Pine",
+      "slug": "666",
+      "description": "",
+      "date": "2025-11-28T00:00:00-08:00",
+      "collection": "foliage",
+      "location": "White Mountains, California",
+      "metadata": {
+        "date_photographed": "2025-10-06",
+        "film_size": "8x10\"",
+        "development": "N",
+        "focal_length": "18\"",
+        "aperture": "f/20",
+        "shutter_speed": "1/15",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/666.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/666.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/666.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/666.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/666.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/666.jpg",
+        "display_width": 1348,
+        "display_height": 1680
+      },
+      "url": "https://chriscummins.cc/photographs/666/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
       "title": "El Capitan, Winter Morning",
       "slug": "561",
       "description": "",
@@ -277,36 +307,6 @@
         "display_height": 1680
       },
       "url": "https://chriscummins.cc/photographs/595/",
-      "shop_enabled": false,
-      "shop_url": null
-    },
-    {
-      "title": "Lungs of the Planet",
-      "slug": "573",
-      "description": "",
-      "date": "2025-03-26T00:00:00-07:00",
-      "collection": "foliage",
-      "location": "Big Sur, California",
-      "metadata": {
-        "date_photographed": "2025-03-26",
-        "film_size": "8x10\"",
-        "development": "N+3",
-        "focal_length": "18\"",
-        "aperture": "f/18",
-        "shutter_speed": "1/8",
-        "filters": ""
-      },
-      "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/573.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/573.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/573.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/573.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/573.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/573.jpg",
-        "display_width": 1680,
-        "display_height": 1344
-      },
-      "url": "https://chriscummins.cc/photographs/573/",
       "shop_enabled": false,
       "shop_url": null
     }
