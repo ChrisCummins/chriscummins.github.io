@@ -1,8 +1,68 @@
 {
   "page": 1,
-  "total_pages": 6,
+  "total_pages": 7,
   "collection": "all",
   "photos": [
+    {
+      "title": "Rock Face",
+      "slug": "679",
+      "description": "",
+      "date": "2025-12-20T00:00:00-08:00",
+      "collection": "rocks",
+      "location": "Westgard Pass, California",
+      "metadata": {
+        "date_photographed": "2025-10-07",
+        "film_size": "8x10\"",
+        "development": "N+3",
+        "focal_length": "18\"",
+        "aperture": "f/90",
+        "shutter_speed": "15 sec",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/679.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/679.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/679.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/679.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/679.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/679.jpg",
+        "display_width": 1680,
+        "display_height": 1352
+      },
+      "url": "https://chriscummins.cc/photographs/679/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Mushroom Cloud, Nevada Test Site",
+      "slug": "687",
+      "description": "",
+      "date": "2025-12-19T00:00:00-08:00",
+      "collection": "desert",
+      "location": "Rachel, Nevada",
+      "metadata": {
+        "date_photographed": "2025-10-09",
+        "film_size": "8x10\"",
+        "development": "N+2",
+        "focal_length": "18\"",
+        "aperture": "f/29",
+        "shutter_speed": "1/15",
+        "filters": "orange"
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/687.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/687.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/687.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/687.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/687.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/687.jpg",
+        "display_width": 1680,
+        "display_height": 1352
+      },
+      "url": "https://chriscummins.cc/photographs/687/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
     {
       "title": "Ancient Bristlecone Pine",
       "slug": "666",
@@ -59,7 +119,7 @@
         "display_fallback": "https://chriscummins.cc/static/photographs/gallery/561.jpg",
         "full": "https://chriscummins.cc/static/photographs/full/561.webp",
         "full_fallback": "https://chriscummins.cc/static/photographs/full/561.jpg",
-        "display_width": 1351,
+        "display_width": 1352,
         "display_height": 1680
       },
       "url": "https://chriscummins.cc/photographs/561/",
@@ -242,71 +302,9 @@
         "full": "https://chriscummins.cc/static/photographs/full/618.webp",
         "full_fallback": "https://chriscummins.cc/static/photographs/full/618.jpg",
         "display_width": 1680,
-        "display_height": 1337
-      },
-      "url": "https://chriscummins.cc/photographs/618/",
-      "shop_enabled": false,
-      "shop_url": null
-    },
-    {
-      "title": "Soberanes Canyon Trail",
-      "slug": "587",
-      "description": "",
-      "date": "2025-03-27T00:00:00-07:00",
-      "collection": "foliage",
-      "location": "Big Sur, California",
-      "metadata": {
-        "date_photographed": "2025-03-27",
-        "film_size": "8x10\"",
-        "development": "N+3",
-        "focal_length": "18\"",
-        "aperture": "f/64",
-        "shutter_speed": "3s",
-        "filters": [
-          "orange"
-        ]
-      },
-      "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/587.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/587.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/587.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/587.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/587.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/587.jpg",
-        "display_width": 1680,
         "display_height": 1344
       },
-      "url": "https://chriscummins.cc/photographs/587/",
-      "shop_enabled": false,
-      "shop_url": null
-    },
-    {
-      "title": "Great Sur Vista",
-      "slug": "595",
-      "description": "",
-      "date": "2025-03-27T00:00:00-07:00",
-      "collection": "coastal",
-      "location": "Big Sur, California",
-      "metadata": {
-        "date_photographed": "2025-03-27",
-        "film_size": "8x10\"",
-        "development": "N+3",
-        "focal_length": "24\"",
-        "aperture": "f/22",
-        "shutter_speed": "1/8",
-        "filters": ""
-      },
-      "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/595.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/595.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/595.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/595.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/595.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/595.jpg",
-        "display_width": 1344,
-        "display_height": 1680
-      },
-      "url": "https://chriscummins.cc/photographs/595/",
+      "url": "https://chriscummins.cc/photographs/618/",
       "shop_enabled": false,
       "shop_url": null
     }

@@ -4,6 +4,36 @@
   "collection": "rocks",
   "photos": [
     {
+      "title": "Rock Face",
+      "slug": "679",
+      "description": "",
+      "date": "2025-12-20T00:00:00-08:00",
+      "collection": "rocks",
+      "location": "Westgard Pass, California",
+      "metadata": {
+        "date_photographed": "2025-10-07",
+        "film_size": "8x10\"",
+        "development": "N+3",
+        "focal_length": "18\"",
+        "aperture": "f/90",
+        "shutter_speed": "15 sec",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/679.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/679.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/679.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/679.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/679.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/679.jpg",
+        "display_width": 1680,
+        "display_height": 1352
+      },
+      "url": "https://chriscummins.cc/photographs/679/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
       "title": "Waterfall Nude",
       "slug": "624",
       "description": "<p>I've never photographed nudes, but it felt right to approach this waterfall\nscene with a boudoir sensibility. The texture contrast between rock and water\nfeels lacy and intimate. I'd normally chalk this up to going just a bit nutty\nafter extended time alone, but this was day one of my most recent photo trip.\nThe first photograph is usually the most difficult but this one arrived easily.</p>",
@@ -88,7 +118,7 @@
         "display_fallback": "https://chriscummins.cc/static/photographs/gallery/355.jpg",
         "full": "https://chriscummins.cc/static/photographs/full/355.webp",
         "full_fallback": "https://chriscummins.cc/static/photographs/full/355.jpg",
-        "display_width": 1342,
+        "display_width": 1343,
         "display_height": 1680
       },
       "url": "https://chriscummins.cc/photographs/355/",

@@ -4,6 +4,36 @@
   "collection": "desert",
   "photos": [
     {
+      "title": "Mushroom Cloud, Nevada Test Site",
+      "slug": "687",
+      "description": "",
+      "date": "2025-12-19T00:00:00-08:00",
+      "collection": "desert",
+      "location": "Rachel, Nevada",
+      "metadata": {
+        "date_photographed": "2025-10-09",
+        "film_size": "8x10\"",
+        "development": "N+2",
+        "focal_length": "18\"",
+        "aperture": "f/29",
+        "shutter_speed": "1/15",
+        "filters": "orange"
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/687.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/687.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/687.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/687.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/687.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/687.jpg",
+        "display_width": 1680,
+        "display_height": 1352
+      },
+      "url": "https://chriscummins.cc/photographs/687/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
       "title": "Moonrise, Fish Lake Valley",
       "slug": "675",
       "description": "",
@@ -57,7 +87,7 @@
         "full": "https://chriscummins.cc/static/photographs/full/527.webp",
         "full_fallback": "https://chriscummins.cc/static/photographs/full/527.jpg",
         "display_width": 1680,
-        "display_height": 1344
+        "display_height": 1191
       },
       "url": "https://chriscummins.cc/photographs/527/",
       "shop_enabled": true,

@@ -1,8 +1,68 @@
 {
   "page": 4,
-  "total_pages": 6,
+  "total_pages": 7,
   "collection": "all",
   "photos": [
+    {
+      "title": "Juniper Study",
+      "slug": "392",
+      "description": "",
+      "date": "2024-10-15T00:00:00-07:00",
+      "collection": "closeup",
+      "location": "Yosemite, California",
+      "metadata": {
+        "date_photographed": "2024-10-15",
+        "film_size": "8x10\"",
+        "development": "N",
+        "focal_length": "12\"",
+        "aperture": "f/90",
+        "shutter_speed": "6s",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/392.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/392.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/392.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/392.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/392.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/392.jpg",
+        "display_width": 1344,
+        "display_height": 1680
+      },
+      "url": "https://chriscummins.cc/photographs/392/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Clearing Traffic, Wawona Road",
+      "slug": "377",
+      "description": "",
+      "date": "2024-10-05T00:00:00-07:00",
+      "collection": "roads",
+      "location": "Yosemite, California",
+      "metadata": {
+        "date_photographed": "2024-10-05",
+        "film_size": "8x10\"",
+        "development": "N",
+        "focal_length": "8\"",
+        "aperture": "f/11",
+        "shutter_speed": "15m",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/377.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/377.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/377.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/377.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/377.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/377.jpg",
+        "display_width": 1680,
+        "display_height": 1344
+      },
+      "url": "https://chriscummins.cc/photographs/377/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
     {
       "title": "El Capitan, Sunrise",
       "slug": "367",
@@ -90,7 +150,7 @@
         "display_fallback": "https://chriscummins.cc/static/photographs/gallery/355.jpg",
         "full": "https://chriscummins.cc/static/photographs/full/355.webp",
         "full_fallback": "https://chriscummins.cc/static/photographs/full/355.jpg",
-        "display_width": 1342,
+        "display_width": 1343,
         "display_height": 1680
       },
       "url": "https://chriscummins.cc/photographs/355/",
@@ -214,7 +274,7 @@
         "display_fallback": "https://chriscummins.cc/static/photographs/gallery/323.jpg",
         "full": "https://chriscummins.cc/static/photographs/full/323.webp",
         "full_fallback": "https://chriscummins.cc/static/photographs/full/323.jpg",
-        "display_width": 1354,
+        "display_width": 1353,
         "display_height": 1680
       },
       "url": "https://chriscummins.cc/photographs/323/",
@@ -245,69 +305,9 @@
         "full": "https://chriscummins.cc/static/photographs/full/314.webp",
         "full_fallback": "https://chriscummins.cc/static/photographs/full/314.jpg",
         "display_width": 1680,
-        "display_height": 1349
+        "display_height": 1350
       },
       "url": "https://chriscummins.cc/photographs/314/",
-      "shop_enabled": false,
-      "shop_url": null
-    },
-    {
-      "title": "Gaylor Lakes Corn Lilies",
-      "slug": "298",
-      "description": "",
-      "date": "2024-07-08T00:00:00-07:00",
-      "collection": "foliage",
-      "location": "Yosemite, California",
-      "metadata": {
-        "date_photographed": "2024-07-08",
-        "film_size": "8x10\"",
-        "development": "N+1",
-        "focal_length": "8\"",
-        "aperture": "f/45",
-        "shutter_speed": "6s",
-        "filters": ""
-      },
-      "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/298.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/298.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/298.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/298.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/298.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/298.jpg",
-        "display_width": 1349,
-        "display_height": 1680
-      },
-      "url": "https://chriscummins.cc/photographs/298/",
-      "shop_enabled": false,
-      "shop_url": null
-    },
-    {
-      "title": "Tioga Pass Blasthole",
-      "slug": "300",
-      "description": "",
-      "date": "2024-07-08T00:00:00-07:00",
-      "collection": "rocks",
-      "location": "Yosemite, California",
-      "metadata": {
-        "date_photographed": "2024-07-08",
-        "film_size": "8x10\"",
-        "development": "N+1",
-        "focal_length": "24\"",
-        "aperture": "f/32",
-        "shutter_speed": "1/30",
-        "filters": ""
-      },
-      "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/300.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/300.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/300.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/300.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/300.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/300.jpg",
-        "display_width": 1349,
-        "display_height": 1680
-      },
-      "url": "https://chriscummins.cc/photographs/300/",
       "shop_enabled": false,
       "shop_url": null
     }

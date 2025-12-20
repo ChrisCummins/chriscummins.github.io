@@ -122,8 +122,8 @@
         "display_fallback": "https://chriscummins.cc/static/photographs/gallery/225.jpg",
         "full": "https://chriscummins.cc/static/photographs/full/225.webp",
         "full_fallback": "https://chriscummins.cc/static/photographs/full/225.jpg",
-        "display_width": 1344,
-        "display_height": 1680
+        "display_width": 1680,
+        "display_height": 1344
       },
       "url": "https://chriscummins.cc/photographs/225/",
       "shop_enabled": false,
