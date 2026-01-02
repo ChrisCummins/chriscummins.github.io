@@ -4,6 +4,39 @@
   "collection": "all",
   "photos": [
     {
+      "title": "Swirling Leaves",
+      "slug": "391",
+      "description": "",
+      "date": "2024-10-15T00:00:00-07:00",
+      "collection": "closeup",
+      "location": "Eastern Sierra, California",
+      "metadata": {
+        "date_photographed": "2024-10-15",
+        "film_size": "8x10\"",
+        "development": "N",
+        "focal_length": "12\"",
+        "aperture": "f/90",
+        "shutter_speed": "3m33s",
+        "filters": [
+          "CPL",
+          "0.9ND"
+        ]
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/391.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/391.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/391.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/391.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/391.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/391.jpg",
+        "display_width": 1344,
+        "display_height": 1680
+      },
+      "url": "https://chriscummins.cc/photographs/391/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
       "title": "Juniper Study",
       "slug": "392",
       "description": "",
@@ -278,36 +311,6 @@
         "display_height": 1680
       },
       "url": "https://chriscummins.cc/photographs/323/",
-      "shop_enabled": false,
-      "shop_url": null
-    },
-    {
-      "title": "Abandoned Study IV",
-      "slug": "314",
-      "description": "",
-      "date": "2024-07-10T00:00:00-07:00",
-      "collection": "abandoned",
-      "location": "Bodie, California",
-      "metadata": {
-        "date_photographed": "2024-07-10",
-        "film_size": "8x10\"",
-        "development": "N-1",
-        "focal_length": "10\"",
-        "aperture": "f/45",
-        "shutter_speed": "1/4",
-        "filters": ""
-      },
-      "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/314.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/314.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/314.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/314.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/314.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/314.jpg",
-        "display_width": 1680,
-        "display_height": 1350
-      },
-      "url": "https://chriscummins.cc/photographs/314/",
       "shop_enabled": false,
       "shop_url": null
     }

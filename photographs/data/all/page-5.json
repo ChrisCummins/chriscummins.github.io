@@ -4,6 +4,36 @@
   "collection": "all",
   "photos": [
     {
+      "title": "Abandoned Study IV",
+      "slug": "314",
+      "description": "",
+      "date": "2024-07-10T00:00:00-07:00",
+      "collection": "abandoned",
+      "location": "Bodie, California",
+      "metadata": {
+        "date_photographed": "2024-07-10",
+        "film_size": "8x10\"",
+        "development": "N-1",
+        "focal_length": "10\"",
+        "aperture": "f/45",
+        "shutter_speed": "1/4",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/314.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/314.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/314.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/314.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/314.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/314.jpg",
+        "display_width": 1680,
+        "display_height": 1350
+      },
+      "url": "https://chriscummins.cc/photographs/314/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
       "title": "Gaylor Lakes Corn Lilies",
       "slug": "298",
       "description": "",
@@ -282,38 +312,6 @@
         "display_height": 1335
       },
       "url": "https://chriscummins.cc/photographs/246/",
-      "shop_enabled": false,
-      "shop_url": null
-    },
-    {
-      "title": "Abandoned Study II",
-      "slug": "243",
-      "description": "",
-      "date": "2024-04-20T00:00:00-07:00",
-      "collection": "abandoned",
-      "location": "Eastern Sierra, California",
-      "metadata": {
-        "date_photographed": "2024-04-20",
-        "film_size": "8x10\"",
-        "development": "N-1",
-        "focal_length": "12\"",
-        "aperture": "f/90",
-        "shutter_speed": "",
-        "filters": [
-          "yellow"
-        ]
-      },
-      "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/243.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/243.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/243.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/243.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/243.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/243.jpg",
-        "display_width": 1349,
-        "display_height": 1680
-      },
-      "url": "https://chriscummins.cc/photographs/243/",
       "shop_enabled": false,
       "shop_url": null
     }

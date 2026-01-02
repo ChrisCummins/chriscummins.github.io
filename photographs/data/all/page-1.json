@@ -4,6 +4,38 @@
   "collection": "all",
   "photos": [
     {
+      "title": "Silver Peak Road",
+      "slug": "685",
+      "description": "",
+      "date": "2026-01-01T00:00:00-08:00",
+      "collection": "roads",
+      "location": "Silver Peak, Nevada",
+      "metadata": {
+        "date_photographed": "2025-10-08",
+        "film_size": "8x10\"",
+        "development": "N+3",
+        "focal_length": "12\"",
+        "aperture": "f/36",
+        "shutter_speed": "1/15",
+        "filters": [
+          "orange"
+        ]
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/685.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/685.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/685.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/685.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/685.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/685.jpg",
+        "display_width": 1352,
+        "display_height": 1680
+      },
+      "url": "https://chriscummins.cc/photographs/685/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
       "title": "Rock Face",
       "slug": "679",
       "description": "",
@@ -273,38 +305,6 @@
         "display_height": 1680
       },
       "url": "https://chriscummins.cc/photographs/219/",
-      "shop_enabled": false,
-      "shop_url": null
-    },
-    {
-      "title": "Scattered Light on Bridalveil Fall",
-      "slug": "618",
-      "description": "",
-      "date": "2025-05-12T00:00:00-07:00",
-      "collection": "mountains",
-      "location": "Yosemite, California",
-      "metadata": {
-        "date_photographed": "2025-05-12",
-        "film_size": "8x10\"",
-        "development": "N+1",
-        "focal_length": "24\"",
-        "aperture": "f/45",
-        "shutter_speed": "1/4",
-        "filters": [
-          "yellow"
-        ]
-      },
-      "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/618.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/618.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/618.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/618.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/618.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/618.jpg",
-        "display_width": 1680,
-        "display_height": 1344
-      },
-      "url": "https://chriscummins.cc/photographs/618/",
       "shop_enabled": false,
       "shop_url": null
     }

@@ -4,6 +4,38 @@
   "collection": "all",
   "photos": [
     {
+      "title": "Scattered Light on Bridalveil Fall",
+      "slug": "618",
+      "description": "",
+      "date": "2025-05-12T00:00:00-07:00",
+      "collection": "mountains",
+      "location": "Yosemite, California",
+      "metadata": {
+        "date_photographed": "2025-05-12",
+        "film_size": "8x10\"",
+        "development": "N+1",
+        "focal_length": "24\"",
+        "aperture": "f/45",
+        "shutter_speed": "1/4",
+        "filters": [
+          "yellow"
+        ]
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/618.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/618.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/618.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/618.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/618.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/618.jpg",
+        "display_width": 1680,
+        "display_height": 1344
+      },
+      "url": "https://chriscummins.cc/photographs/618/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
       "title": "Soberanes Canyon Trail",
       "slug": "587",
       "description": "",
@@ -278,36 +310,6 @@
       "url": "https://chriscummins.cc/photographs/521/",
       "shop_enabled": true,
       "shop_url": "https://chriscummins.cc/shop/521/"
-    },
-    {
-      "title": "Sand Study I",
-      "slug": "509",
-      "description": "",
-      "date": "2025-02-26T00:00:00-08:00",
-      "collection": "desert",
-      "location": "Death Valley, California",
-      "metadata": {
-        "date_photographed": "2025-02-26",
-        "film_size": "8x10\"",
-        "development": "N+4",
-        "focal_length": "12\"",
-        "aperture": "f/32",
-        "shutter_speed": "1/8",
-        "filters": ""
-      },
-      "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/509.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/509.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/509.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/509.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/509.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/509.jpg",
-        "display_width": 1344,
-        "display_height": 1680
-      },
-      "url": "https://chriscummins.cc/photographs/509/",
-      "shop_enabled": false,
-      "shop_url": null
     }
   ],
   "has_next": true,
