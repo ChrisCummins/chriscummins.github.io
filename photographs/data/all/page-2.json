@@ -129,7 +129,7 @@
     },
     {
       "title": "Inspiration Point, Winter",
-      "slug": "565",
+      "slug": "564",
       "description": "",
       "date": "2025-03-15T00:00:00-07:00",
       "collection": "mountains",
@@ -146,18 +146,16 @@
         ]
       },
       "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/565.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/565.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/565.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/565.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/565.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/565.jpg",
-        "display_width": 1680,
-        "display_height": 1344
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/564.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/564.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/564.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/564.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/564.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/564.jpg"
       },
-      "url": "https://chriscummins.cc/photographs/565/",
+      "url": "https://chriscummins.cc/photographs/564/",
       "shop_enabled": true,
-      "shop_url": "https://chriscummins.cc/shop/565/"
+      "shop_url": "https://chriscummins.cc/shop/564/"
     },
     {
       "title": "US-50, the Loneliest Road",
