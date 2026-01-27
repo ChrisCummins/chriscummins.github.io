@@ -4,7 +4,9 @@ shouldInitialize(){if(!this.hasMore){return false;}
 if(!this.container||!this.sentinel){console.warn('InfiniteScroll: Required elements not found');return false;}
 return true;}
 getCollectionName(){const pathParts=window.location.pathname.split('/').filter(p=>p);if(pathParts.length>=2&&pathParts[0]==='photographs'){if(!isNaN(pathParts[1])){return'all';}
-return pathParts[1];}
+const collectionParts=[];for(let i=1;i<pathParts.length;i++){if(!isNaN(pathParts[i])){break;}
+collectionParts.push(pathParts[i]);}
+if(collectionParts.length>0){return collectionParts.join('/');}}
 return'all';}
 getSiteUrl(){const link=document.querySelector('a[href*="/photographs/"]');if(link){const url=new URL(link.href);return url.origin;}
 return window.location.origin;}
