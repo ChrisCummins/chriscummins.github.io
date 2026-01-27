@@ -1,0 +1,71 @@
+{
+  "page": 1,
+  "total_pages": 1,
+  "collection": "California",
+  "photos": [
+    {
+      "title": "Agave Study I",
+      "slug": "466",
+      "description": "",
+      "date": "2025-01-10T00:00:00-08:00",
+      "collection": "California",
+      "location": "Isleton, California",
+      "metadata": {
+        "date_photographed": "2025-01-10",
+        "film_size": "8x10\"",
+        "development": "N+1",
+        "focal_length": "18\"",
+        "aperture": "f/128",
+        "shutter_speed": "1s",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "http://127.0.0.1:8000/static/photographs/thumbnail/466.webp",
+        "thumbnail_fallback": "http://127.0.0.1:8000/static/photographs/thumbnail/466.jpg",
+        "display": "http://127.0.0.1:8000/static/photographs/gallery/466.webp",
+        "display_fallback": "http://127.0.0.1:8000/static/photographs/gallery/466.jpg",
+        "full": "http://127.0.0.1:8000/static/photographs/full/466.webp",
+        "full_fallback": "http://127.0.0.1:8000/static/photographs/full/466.jpg",
+        "display_width": 1680,
+        "display_height": 1344
+      },
+      "url": "http://127.0.0.1:8000/photographs/466/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Garden Foliage Study",
+      "slug": "164",
+      "description": "",
+      "date": "2024-03-30T00:00:00-07:00",
+      "collection": "California",
+      "location": "California",
+      "metadata": {
+        "date_photographed": "2024-03-30",
+        "film_size": "8x10\"",
+        "development": "N",
+        "focal_length": "8\"",
+        "aperture": "f/40",
+        "shutter_speed": "6 sec",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "http://127.0.0.1:8000/static/photographs/thumbnail/164.webp",
+        "thumbnail_fallback": "http://127.0.0.1:8000/static/photographs/thumbnail/164.jpg",
+        "display": "http://127.0.0.1:8000/static/photographs/gallery/164.webp",
+        "display_fallback": "http://127.0.0.1:8000/static/photographs/gallery/164.jpg",
+        "full": "http://127.0.0.1:8000/static/photographs/full/164.webp",
+        "full_fallback": "http://127.0.0.1:8000/static/photographs/full/164.jpg",
+        "display_width": 1342,
+        "display_height": 1680
+      },
+      "url": "http://127.0.0.1:8000/photographs/164/",
+      "shop_enabled": false,
+      "shop_url": null
+    }
+  ],
+  "has_next": false,
+  "has_previous": false,
+  "next_page": null,
+  "previous_page": null
+}

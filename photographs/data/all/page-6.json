@@ -8,7 +8,7 @@
       "slug": "243",
       "description": "",
       "date": "2024-04-20T00:00:00-07:00",
-      "collection": "abandoned",
+      "collection": "California - Eastern Sierra",
       "location": "Eastern Sierra, California",
       "metadata": {
         "date_photographed": "2024-04-20",
@@ -22,16 +22,16 @@
         ]
       },
       "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/243.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/243.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/243.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/243.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/243.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/243.jpg",
+        "thumbnail": "http://127.0.0.1:8000/static/photographs/thumbnail/243.webp",
+        "thumbnail_fallback": "http://127.0.0.1:8000/static/photographs/thumbnail/243.jpg",
+        "display": "http://127.0.0.1:8000/static/photographs/gallery/243.webp",
+        "display_fallback": "http://127.0.0.1:8000/static/photographs/gallery/243.jpg",
+        "full": "http://127.0.0.1:8000/static/photographs/full/243.webp",
+        "full_fallback": "http://127.0.0.1:8000/static/photographs/full/243.jpg",
         "display_width": 1349,
         "display_height": 1680
       },
-      "url": "https://chriscummins.cc/photographs/243/",
+      "url": "http://127.0.0.1:8000/photographs/243/",
       "shop_enabled": false,
       "shop_url": null
     },
@@ -40,7 +40,7 @@
       "slug": "239",
       "description": "",
       "date": "2024-04-19T00:00:00-07:00",
-      "collection": "rocks",
+      "collection": "California - Eastern Sierra",
       "location": "Eastern Sierra, California",
       "metadata": {
         "date_photographed": "2024-04-19",
@@ -52,16 +52,16 @@
         "filters": ""
       },
       "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/239.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/239.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/239.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/239.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/239.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/239.jpg",
+        "thumbnail": "http://127.0.0.1:8000/static/photographs/thumbnail/239.webp",
+        "thumbnail_fallback": "http://127.0.0.1:8000/static/photographs/thumbnail/239.jpg",
+        "display": "http://127.0.0.1:8000/static/photographs/gallery/239.webp",
+        "display_fallback": "http://127.0.0.1:8000/static/photographs/gallery/239.jpg",
+        "full": "http://127.0.0.1:8000/static/photographs/full/239.webp",
+        "full_fallback": "http://127.0.0.1:8000/static/photographs/full/239.jpg",
         "display_width": 1349,
         "display_height": 1680
       },
-      "url": "https://chriscummins.cc/photographs/239/",
+      "url": "http://127.0.0.1:8000/photographs/239/",
       "shop_enabled": false,
       "shop_url": null
     },
@@ -70,7 +70,7 @@
       "slug": "225",
       "description": "",
       "date": "2024-04-18T00:00:00-07:00",
-      "collection": "foliage",
+      "collection": "California - Eastern Sierra",
       "location": "White Mountains, California",
       "metadata": {
         "date_photographed": "2024-04-18",
@@ -82,16 +82,16 @@
         "filters": ""
       },
       "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/225.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/225.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/225.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/225.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/225.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/225.jpg",
+        "thumbnail": "http://127.0.0.1:8000/static/photographs/thumbnail/225.webp",
+        "thumbnail_fallback": "http://127.0.0.1:8000/static/photographs/thumbnail/225.jpg",
+        "display": "http://127.0.0.1:8000/static/photographs/gallery/225.webp",
+        "display_fallback": "http://127.0.0.1:8000/static/photographs/gallery/225.jpg",
+        "full": "http://127.0.0.1:8000/static/photographs/full/225.webp",
+        "full_fallback": "http://127.0.0.1:8000/static/photographs/full/225.jpg",
         "display_width": 1680,
         "display_height": 1344
       },
-      "url": "https://chriscummins.cc/photographs/225/",
+      "url": "http://127.0.0.1:8000/photographs/225/",
       "shop_enabled": false,
       "shop_url": null
     },
@@ -100,7 +100,7 @@
       "slug": "212",
       "description": "",
       "date": "2024-04-17T00:00:00-07:00",
-      "collection": "rocks",
+      "collection": "California - Eastern Sierra",
       "location": "Owens Valley, California",
       "metadata": {
         "date_photographed": "2024-04-17",
@@ -112,16 +112,16 @@
         "filters": ""
       },
       "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/212.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/212.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/212.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/212.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/212.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/212.jpg",
+        "thumbnail": "http://127.0.0.1:8000/static/photographs/thumbnail/212.webp",
+        "thumbnail_fallback": "http://127.0.0.1:8000/static/photographs/thumbnail/212.jpg",
+        "display": "http://127.0.0.1:8000/static/photographs/gallery/212.webp",
+        "display_fallback": "http://127.0.0.1:8000/static/photographs/gallery/212.jpg",
+        "full": "http://127.0.0.1:8000/static/photographs/full/212.webp",
+        "full_fallback": "http://127.0.0.1:8000/static/photographs/full/212.jpg",
         "display_width": 1347,
         "display_height": 1680
       },
-      "url": "https://chriscummins.cc/photographs/212/",
+      "url": "http://127.0.0.1:8000/photographs/212/",
       "shop_enabled": false,
       "shop_url": null
     },
@@ -130,7 +130,7 @@
       "slug": "213",
       "description": "",
       "date": "2024-04-17T00:00:00-07:00",
-      "collection": "closeup",
+      "collection": "California - Eastern Sierra",
       "location": "Eastern Sierra, California",
       "metadata": {
         "date_photographed": "2024-04-17",
@@ -142,16 +142,16 @@
         "filters": ""
       },
       "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/213.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/213.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/213.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/213.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/213.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/213.jpg",
+        "thumbnail": "http://127.0.0.1:8000/static/photographs/thumbnail/213.webp",
+        "thumbnail_fallback": "http://127.0.0.1:8000/static/photographs/thumbnail/213.jpg",
+        "display": "http://127.0.0.1:8000/static/photographs/gallery/213.webp",
+        "display_fallback": "http://127.0.0.1:8000/static/photographs/gallery/213.jpg",
+        "full": "http://127.0.0.1:8000/static/photographs/full/213.webp",
+        "full_fallback": "http://127.0.0.1:8000/static/photographs/full/213.jpg",
         "display_width": 1340,
         "display_height": 1680
       },
-      "url": "https://chriscummins.cc/photographs/213/",
+      "url": "http://127.0.0.1:8000/photographs/213/",
       "shop_enabled": false,
       "shop_url": null
     },
@@ -160,8 +160,8 @@
       "slug": "173",
       "description": "",
       "date": "2024-04-11T00:00:00-07:00",
-      "collection": "closeup",
-      "location": "California",
+      "collection": "California - Eastern Sierra",
+      "location": "Eastern Sierra, California",
       "metadata": {
         "date_photographed": "2024-04-11",
         "film_size": "8x10\"",
@@ -172,16 +172,16 @@
         "filters": ""
       },
       "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/173.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/173.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/173.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/173.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/173.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/173.jpg",
+        "thumbnail": "http://127.0.0.1:8000/static/photographs/thumbnail/173.webp",
+        "thumbnail_fallback": "http://127.0.0.1:8000/static/photographs/thumbnail/173.jpg",
+        "display": "http://127.0.0.1:8000/static/photographs/gallery/173.webp",
+        "display_fallback": "http://127.0.0.1:8000/static/photographs/gallery/173.jpg",
+        "full": "http://127.0.0.1:8000/static/photographs/full/173.webp",
+        "full_fallback": "http://127.0.0.1:8000/static/photographs/full/173.jpg",
         "display_width": 1348,
         "display_height": 1680
       },
-      "url": "https://chriscummins.cc/photographs/173/",
+      "url": "http://127.0.0.1:8000/photographs/173/",
       "shop_enabled": false,
       "shop_url": null
     },
@@ -190,7 +190,7 @@
       "slug": "179",
       "description": "",
       "date": "2024-04-11T00:00:00-07:00",
-      "collection": "mountains",
+      "collection": "California - Eastern Sierra",
       "location": "Owens Valley, California",
       "metadata": {
         "date_photographed": "2024-04-11",
@@ -202,16 +202,16 @@
         "filters": ""
       },
       "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/179.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/179.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/179.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/179.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/179.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/179.jpg",
+        "thumbnail": "http://127.0.0.1:8000/static/photographs/thumbnail/179.webp",
+        "thumbnail_fallback": "http://127.0.0.1:8000/static/photographs/thumbnail/179.jpg",
+        "display": "http://127.0.0.1:8000/static/photographs/gallery/179.webp",
+        "display_fallback": "http://127.0.0.1:8000/static/photographs/gallery/179.jpg",
+        "full": "http://127.0.0.1:8000/static/photographs/full/179.webp",
+        "full_fallback": "http://127.0.0.1:8000/static/photographs/full/179.jpg",
         "display_width": 1680,
         "display_height": 1344
       },
-      "url": "https://chriscummins.cc/photographs/179/",
+      "url": "http://127.0.0.1:8000/photographs/179/",
       "shop_enabled": false,
       "shop_url": null
     },
@@ -220,7 +220,7 @@
       "slug": "164",
       "description": "",
       "date": "2024-03-30T00:00:00-07:00",
-      "collection": "closeup",
+      "collection": "California",
       "location": "California",
       "metadata": {
         "date_photographed": "2024-03-30",
@@ -232,16 +232,16 @@
         "filters": ""
       },
       "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/164.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/164.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/164.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/164.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/164.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/164.jpg",
+        "thumbnail": "http://127.0.0.1:8000/static/photographs/thumbnail/164.webp",
+        "thumbnail_fallback": "http://127.0.0.1:8000/static/photographs/thumbnail/164.jpg",
+        "display": "http://127.0.0.1:8000/static/photographs/gallery/164.webp",
+        "display_fallback": "http://127.0.0.1:8000/static/photographs/gallery/164.jpg",
+        "full": "http://127.0.0.1:8000/static/photographs/full/164.webp",
+        "full_fallback": "http://127.0.0.1:8000/static/photographs/full/164.jpg",
         "display_width": 1342,
         "display_height": 1680
       },
-      "url": "https://chriscummins.cc/photographs/164/",
+      "url": "http://127.0.0.1:8000/photographs/164/",
       "shop_enabled": false,
       "shop_url": null
     },
@@ -250,7 +250,7 @@
       "slug": "158",
       "description": "",
       "date": "2024-03-14T00:00:00-07:00",
-      "collection": "closeup",
+      "collection": "California - Death Valley",
       "location": "Harrisburg, California",
       "metadata": {
         "date_photographed": "2024-03-14",
@@ -262,16 +262,16 @@
         "filters": ""
       },
       "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/158.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/158.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/158.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/158.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/158.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/158.jpg",
+        "thumbnail": "http://127.0.0.1:8000/static/photographs/thumbnail/158.webp",
+        "thumbnail_fallback": "http://127.0.0.1:8000/static/photographs/thumbnail/158.jpg",
+        "display": "http://127.0.0.1:8000/static/photographs/gallery/158.webp",
+        "display_fallback": "http://127.0.0.1:8000/static/photographs/gallery/158.jpg",
+        "full": "http://127.0.0.1:8000/static/photographs/full/158.webp",
+        "full_fallback": "http://127.0.0.1:8000/static/photographs/full/158.jpg",
         "display_width": 1370,
         "display_height": 1680
       },
-      "url": "https://chriscummins.cc/photographs/158/",
+      "url": "http://127.0.0.1:8000/photographs/158/",
       "shop_enabled": false,
       "shop_url": null
     },
@@ -280,8 +280,8 @@
       "slug": "152",
       "description": "",
       "date": "2024-03-13T00:00:00-07:00",
-      "collection": "desert",
-      "location": "Big Sur, California",
+      "collection": "California - Death Valley",
+      "location": "Death Valley, California",
       "metadata": {
         "date_photographed": "2024-03-13",
         "film_size": "8x10\"",
@@ -294,16 +294,16 @@
         ]
       },
       "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/152.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/152.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/152.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/152.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/152.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/152.jpg",
+        "thumbnail": "http://127.0.0.1:8000/static/photographs/thumbnail/152.webp",
+        "thumbnail_fallback": "http://127.0.0.1:8000/static/photographs/thumbnail/152.jpg",
+        "display": "http://127.0.0.1:8000/static/photographs/gallery/152.webp",
+        "display_fallback": "http://127.0.0.1:8000/static/photographs/gallery/152.jpg",
+        "full": "http://127.0.0.1:8000/static/photographs/full/152.webp",
+        "full_fallback": "http://127.0.0.1:8000/static/photographs/full/152.jpg",
         "display_width": 1680,
         "display_height": 1370
       },
-      "url": "https://chriscummins.cc/photographs/152/",
+      "url": "http://127.0.0.1:8000/photographs/152/",
       "shop_enabled": false,
       "shop_url": null
     }

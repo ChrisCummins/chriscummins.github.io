@@ -1,0 +1,165 @@
+{
+  "page": 1,
+  "total_pages": 1,
+  "collection": "Nevada",
+  "photos": [
+    {
+      "title": "Silver Peak Road",
+      "slug": "685",
+      "description": "",
+      "date": "2026-01-01T00:00:00-08:00",
+      "collection": "Nevada",
+      "location": "Silver Peak, Nevada",
+      "metadata": {
+        "date_photographed": "2025-10-08",
+        "film_size": "8x10\"",
+        "development": "N+3",
+        "focal_length": "12\"",
+        "aperture": "f/36",
+        "shutter_speed": "1/15",
+        "filters": [
+          "orange"
+        ]
+      },
+      "images": {
+        "thumbnail": "http://127.0.0.1:8000/static/photographs/thumbnail/685.webp",
+        "thumbnail_fallback": "http://127.0.0.1:8000/static/photographs/thumbnail/685.jpg",
+        "display": "http://127.0.0.1:8000/static/photographs/gallery/685.webp",
+        "display_fallback": "http://127.0.0.1:8000/static/photographs/gallery/685.jpg",
+        "full": "http://127.0.0.1:8000/static/photographs/full/685.webp",
+        "full_fallback": "http://127.0.0.1:8000/static/photographs/full/685.jpg",
+        "display_width": 1352,
+        "display_height": 1680
+      },
+      "url": "http://127.0.0.1:8000/photographs/685/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Mushroom Cloud, Nevada Test Site",
+      "slug": "687",
+      "description": "",
+      "date": "2025-12-19T00:00:00-08:00",
+      "collection": "Nevada",
+      "location": "Rachel, Nevada",
+      "metadata": {
+        "date_photographed": "2025-10-09",
+        "film_size": "8x10\"",
+        "development": "N+2",
+        "focal_length": "18\"",
+        "aperture": "f/29",
+        "shutter_speed": "1/15",
+        "filters": "orange"
+      },
+      "images": {
+        "thumbnail": "http://127.0.0.1:8000/static/photographs/thumbnail/687.webp",
+        "thumbnail_fallback": "http://127.0.0.1:8000/static/photographs/thumbnail/687.jpg",
+        "display": "http://127.0.0.1:8000/static/photographs/gallery/687.webp",
+        "display_fallback": "http://127.0.0.1:8000/static/photographs/gallery/687.jpg",
+        "full": "http://127.0.0.1:8000/static/photographs/full/687.webp",
+        "full_fallback": "http://127.0.0.1:8000/static/photographs/full/687.jpg",
+        "display_width": 1680,
+        "display_height": 1352
+      },
+      "url": "http://127.0.0.1:8000/photographs/687/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Abandoned Study VII",
+      "slug": "697",
+      "description": "",
+      "date": "2025-10-31T00:00:00-07:00",
+      "collection": "Nevada",
+      "location": "Montgomery Pass, Nevada",
+      "metadata": {
+        "date_photographed": "2025-10-10",
+        "film_size": "8x10\"",
+        "development": "N+3",
+        "focal_length": "10\"",
+        "aperture": "f/22",
+        "shutter_speed": "1/2",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "http://127.0.0.1:8000/static/photographs/thumbnail/697.webp",
+        "thumbnail_fallback": "http://127.0.0.1:8000/static/photographs/thumbnail/697.jpg",
+        "display": "http://127.0.0.1:8000/static/photographs/gallery/697.webp",
+        "display_fallback": "http://127.0.0.1:8000/static/photographs/gallery/697.jpg",
+        "full": "http://127.0.0.1:8000/static/photographs/full/697.webp",
+        "full_fallback": "http://127.0.0.1:8000/static/photographs/full/697.jpg",
+        "display_width": 1680,
+        "display_height": 1352
+      },
+      "url": "http://127.0.0.1:8000/photographs/697/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Moonrise, Fish Lake Valley",
+      "slug": "675",
+      "description": "",
+      "date": "2025-10-30T00:00:00-07:00",
+      "collection": "Nevada",
+      "location": "Fish Lake Valley, Nevada",
+      "metadata": {
+        "date_photographed": "2025-10-06",
+        "film_size": "8x10\"",
+        "development": "N+1",
+        "focal_length": "48\"",
+        "aperture": "f/64",
+        "shutter_speed": "1 sec",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "http://127.0.0.1:8000/static/photographs/thumbnail/675.webp",
+        "thumbnail_fallback": "http://127.0.0.1:8000/static/photographs/thumbnail/675.jpg",
+        "display": "http://127.0.0.1:8000/static/photographs/gallery/675.webp",
+        "display_fallback": "http://127.0.0.1:8000/static/photographs/gallery/675.jpg",
+        "full": "http://127.0.0.1:8000/static/photographs/full/675.webp",
+        "full_fallback": "http://127.0.0.1:8000/static/photographs/full/675.jpg",
+        "display_width": 1680,
+        "display_height": 1352
+      },
+      "url": "http://127.0.0.1:8000/photographs/675/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "US-50, the Loneliest Road",
+      "slug": "546",
+      "description": "",
+      "date": "2025-03-06T00:00:00-08:00",
+      "collection": "Nevada",
+      "location": "Austin, Nevada",
+      "metadata": {
+        "date_photographed": "2025-03-06",
+        "film_size": "8x10\"",
+        "development": "N+2",
+        "focal_length": "24\"",
+        "aperture": "f/32",
+        "shutter_speed": "1/30",
+        "filters": [
+          "yellow"
+        ]
+      },
+      "images": {
+        "thumbnail": "http://127.0.0.1:8000/static/photographs/thumbnail/546.webp",
+        "thumbnail_fallback": "http://127.0.0.1:8000/static/photographs/thumbnail/546.jpg",
+        "display": "http://127.0.0.1:8000/static/photographs/gallery/546.webp",
+        "display_fallback": "http://127.0.0.1:8000/static/photographs/gallery/546.jpg",
+        "full": "http://127.0.0.1:8000/static/photographs/full/546.webp",
+        "full_fallback": "http://127.0.0.1:8000/static/photographs/full/546.jpg",
+        "display_width": 1680,
+        "display_height": 1344
+      },
+      "url": "http://127.0.0.1:8000/photographs/546/",
+      "shop_enabled": false,
+      "shop_url": null
+    }
+  ],
+  "has_next": false,
+  "has_previous": false,
+  "next_page": null,
+  "previous_page": null
+}

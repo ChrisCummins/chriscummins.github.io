@@ -1,0 +1,326 @@
+{
+  "page": 1,
+  "total_pages": 2,
+  "collection": "California - Yosemite",
+  "photos": [
+    {
+      "title": "El Capitan, Winter Morning",
+      "slug": "561",
+      "description": "",
+      "date": "2025-11-15T00:00:00-08:00",
+      "collection": "California - Yosemite",
+      "location": "Yosemite Valley, California",
+      "metadata": {
+        "date_photographed": "2025-03-15",
+        "film_size": "8x10\"",
+        "development": "N",
+        "focal_length": "12\"",
+        "aperture": "f/40",
+        "shutter_speed": "6 sec",
+        "filters": [
+          "0.9ND",
+          "yellow"
+        ]
+      },
+      "images": {
+        "thumbnail": "http://127.0.0.1:8000/static/photographs/thumbnail/561.webp",
+        "thumbnail_fallback": "http://127.0.0.1:8000/static/photographs/thumbnail/561.jpg",
+        "display": "http://127.0.0.1:8000/static/photographs/gallery/561.webp",
+        "display_fallback": "http://127.0.0.1:8000/static/photographs/gallery/561.jpg",
+        "full": "http://127.0.0.1:8000/static/photographs/full/561.webp",
+        "full_fallback": "http://127.0.0.1:8000/static/photographs/full/561.jpg",
+        "display_width": 1352,
+        "display_height": 1680
+      },
+      "url": "http://127.0.0.1:8000/photographs/561/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Scattered Light on Bridalveil Fall",
+      "slug": "618",
+      "description": "",
+      "date": "2025-05-12T00:00:00-07:00",
+      "collection": "California - Yosemite",
+      "location": "Yosemite, California",
+      "metadata": {
+        "date_photographed": "2025-05-12",
+        "film_size": "8x10\"",
+        "development": "N+1",
+        "focal_length": "24\"",
+        "aperture": "f/45",
+        "shutter_speed": "1/4",
+        "filters": [
+          "yellow"
+        ]
+      },
+      "images": {
+        "thumbnail": "http://127.0.0.1:8000/static/photographs/thumbnail/618.webp",
+        "thumbnail_fallback": "http://127.0.0.1:8000/static/photographs/thumbnail/618.jpg",
+        "display": "http://127.0.0.1:8000/static/photographs/gallery/618.webp",
+        "display_fallback": "http://127.0.0.1:8000/static/photographs/gallery/618.jpg",
+        "full": "http://127.0.0.1:8000/static/photographs/full/618.webp",
+        "full_fallback": "http://127.0.0.1:8000/static/photographs/full/618.jpg",
+        "display_width": 1680,
+        "display_height": 1344
+      },
+      "url": "http://127.0.0.1:8000/photographs/618/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Inspiration Point, Winter",
+      "slug": "564",
+      "description": "",
+      "date": "2025-03-15T00:00:00-07:00",
+      "collection": "California - Yosemite",
+      "location": "Yosemite, California",
+      "metadata": {
+        "date_photographed": "2025-03-15",
+        "film_size": "8x10\"",
+        "development": "N",
+        "focal_length": "18\"",
+        "aperture": "f/64",
+        "shutter_speed": "1/4",
+        "filters": [
+          "yellow"
+        ]
+      },
+      "images": {
+        "thumbnail": "http://127.0.0.1:8000/static/photographs/thumbnail/564.webp",
+        "thumbnail_fallback": "http://127.0.0.1:8000/static/photographs/thumbnail/564.jpg",
+        "display": "http://127.0.0.1:8000/static/photographs/gallery/564.webp",
+        "display_fallback": "http://127.0.0.1:8000/static/photographs/gallery/564.jpg",
+        "full": "http://127.0.0.1:8000/static/photographs/full/564.webp",
+        "full_fallback": "http://127.0.0.1:8000/static/photographs/full/564.jpg",
+        "display_width": 1680,
+        "display_height": 1344
+      },
+      "url": "http://127.0.0.1:8000/photographs/564/",
+      "shop_enabled": true,
+      "shop_url": "http://127.0.0.1:8000/shop/564/"
+    },
+    {
+      "title": "Juniper Study",
+      "slug": "392",
+      "description": "",
+      "date": "2024-10-15T00:00:00-07:00",
+      "collection": "California - Yosemite",
+      "location": "Yosemite, California",
+      "metadata": {
+        "date_photographed": "2024-10-15",
+        "film_size": "8x10\"",
+        "development": "N",
+        "focal_length": "12\"",
+        "aperture": "f/90",
+        "shutter_speed": "6s",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "http://127.0.0.1:8000/static/photographs/thumbnail/392.webp",
+        "thumbnail_fallback": "http://127.0.0.1:8000/static/photographs/thumbnail/392.jpg",
+        "display": "http://127.0.0.1:8000/static/photographs/gallery/392.webp",
+        "display_fallback": "http://127.0.0.1:8000/static/photographs/gallery/392.jpg",
+        "full": "http://127.0.0.1:8000/static/photographs/full/392.webp",
+        "full_fallback": "http://127.0.0.1:8000/static/photographs/full/392.jpg",
+        "display_width": 1344,
+        "display_height": 1680
+      },
+      "url": "http://127.0.0.1:8000/photographs/392/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Clearing Traffic, Wawona Road",
+      "slug": "377",
+      "description": "",
+      "date": "2024-10-05T00:00:00-07:00",
+      "collection": "California - Yosemite",
+      "location": "Yosemite, California",
+      "metadata": {
+        "date_photographed": "2024-10-05",
+        "film_size": "8x10\"",
+        "development": "N",
+        "focal_length": "8\"",
+        "aperture": "f/11",
+        "shutter_speed": "15m",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "http://127.0.0.1:8000/static/photographs/thumbnail/377.webp",
+        "thumbnail_fallback": "http://127.0.0.1:8000/static/photographs/thumbnail/377.jpg",
+        "display": "http://127.0.0.1:8000/static/photographs/gallery/377.webp",
+        "display_fallback": "http://127.0.0.1:8000/static/photographs/gallery/377.jpg",
+        "full": "http://127.0.0.1:8000/static/photographs/full/377.webp",
+        "full_fallback": "http://127.0.0.1:8000/static/photographs/full/377.jpg",
+        "display_width": 1680,
+        "display_height": 1344
+      },
+      "url": "http://127.0.0.1:8000/photographs/377/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "El Capitan, Sunrise",
+      "slug": "367",
+      "description": "",
+      "date": "2024-10-04T00:00:00-07:00",
+      "collection": "California - Yosemite",
+      "location": "Yosemite, California",
+      "metadata": {
+        "date_photographed": "2024-10-04",
+        "film_size": "8x10\"",
+        "development": "N",
+        "focal_length": "14\"",
+        "aperture": "f/11",
+        "shutter_speed": "1/60",
+        "filters": [
+          "yellow"
+        ]
+      },
+      "images": {
+        "thumbnail": "http://127.0.0.1:8000/static/photographs/thumbnail/367.webp",
+        "thumbnail_fallback": "http://127.0.0.1:8000/static/photographs/thumbnail/367.jpg",
+        "display": "http://127.0.0.1:8000/static/photographs/gallery/367.webp",
+        "display_fallback": "http://127.0.0.1:8000/static/photographs/gallery/367.jpg",
+        "full": "http://127.0.0.1:8000/static/photographs/full/367.webp",
+        "full_fallback": "http://127.0.0.1:8000/static/photographs/full/367.jpg",
+        "display_width": 1344,
+        "display_height": 1680
+      },
+      "url": "http://127.0.0.1:8000/photographs/367/",
+      "shop_enabled": true,
+      "shop_url": "http://127.0.0.1:8000/shop/367/"
+    },
+    {
+      "title": "Here Comes the Sun",
+      "slug": "363",
+      "description": "",
+      "date": "2024-10-03T00:00:00-07:00",
+      "collection": "California - Yosemite",
+      "location": "Yosemite, California",
+      "metadata": {
+        "date_photographed": "2024-10-03",
+        "film_size": "8x10\"",
+        "development": "N",
+        "focal_length": "24\"",
+        "aperture": "f/32",
+        "shutter_speed": "1/15",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "http://127.0.0.1:8000/static/photographs/thumbnail/363.webp",
+        "thumbnail_fallback": "http://127.0.0.1:8000/static/photographs/thumbnail/363.jpg",
+        "display": "http://127.0.0.1:8000/static/photographs/gallery/363.webp",
+        "display_fallback": "http://127.0.0.1:8000/static/photographs/gallery/363.jpg",
+        "full": "http://127.0.0.1:8000/static/photographs/full/363.webp",
+        "full_fallback": "http://127.0.0.1:8000/static/photographs/full/363.jpg",
+        "display_width": 1680,
+        "display_height": 1344
+      },
+      "url": "http://127.0.0.1:8000/photographs/363/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Olmsted Point Boulder",
+      "slug": "355",
+      "description": "",
+      "date": "2024-10-02T00:00:00-07:00",
+      "collection": "California - Yosemite",
+      "location": "Yosemite, California",
+      "metadata": {
+        "date_photographed": "2024-10-02",
+        "film_size": "8x10\"",
+        "development": "N",
+        "focal_length": "18\"",
+        "aperture": "f/128",
+        "shutter_speed": "1/2",
+        "filters": [
+          "yellow"
+        ]
+      },
+      "images": {
+        "thumbnail": "http://127.0.0.1:8000/static/photographs/thumbnail/355.webp",
+        "thumbnail_fallback": "http://127.0.0.1:8000/static/photographs/thumbnail/355.jpg",
+        "display": "http://127.0.0.1:8000/static/photographs/gallery/355.webp",
+        "display_fallback": "http://127.0.0.1:8000/static/photographs/gallery/355.jpg",
+        "full": "http://127.0.0.1:8000/static/photographs/full/355.webp",
+        "full_fallback": "http://127.0.0.1:8000/static/photographs/full/355.jpg",
+        "display_width": 1343,
+        "display_height": 1680
+      },
+      "url": "http://127.0.0.1:8000/photographs/355/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Autumn Moon, Revisited",
+      "slug": "337",
+      "description": "<p>A remake of an Ansel Adams photograph that, according to the calculations of\nastronomers at Texas State, was made under at this exact time, 76 years earlier\nin 1948.</p>",
+      "date": "2024-09-15T00:00:00-07:00",
+      "collection": "California - Yosemite",
+      "location": "Yosemite, California",
+      "metadata": {
+        "date_photographed": "2024-09-15",
+        "film_size": "8x10\"",
+        "development": "N",
+        "focal_length": "24\"",
+        "aperture": "f/22",
+        "shutter_speed": "1/4",
+        "filters": [
+          "orange"
+        ]
+      },
+      "images": {
+        "thumbnail": "http://127.0.0.1:8000/static/photographs/thumbnail/337.webp",
+        "thumbnail_fallback": "http://127.0.0.1:8000/static/photographs/thumbnail/337.jpg",
+        "display": "http://127.0.0.1:8000/static/photographs/gallery/337.webp",
+        "display_fallback": "http://127.0.0.1:8000/static/photographs/gallery/337.jpg",
+        "full": "http://127.0.0.1:8000/static/photographs/full/337.webp",
+        "full_fallback": "http://127.0.0.1:8000/static/photographs/full/337.jpg",
+        "display_width": 1680,
+        "display_height": 1349
+      },
+      "url": "http://127.0.0.1:8000/photographs/337/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Tenaya Lake",
+      "slug": "324",
+      "description": "",
+      "date": "2024-07-12T00:00:00-07:00",
+      "collection": "California - Yosemite",
+      "location": "Yosemite, California",
+      "metadata": {
+        "date_photographed": "2024-07-12",
+        "film_size": "8x10\"",
+        "development": "N",
+        "focal_length": "24\"",
+        "aperture": "f/51",
+        "shutter_speed": "1/8",
+        "filters": [
+          "yellow"
+        ]
+      },
+      "images": {
+        "thumbnail": "http://127.0.0.1:8000/static/photographs/thumbnail/324.webp",
+        "thumbnail_fallback": "http://127.0.0.1:8000/static/photographs/thumbnail/324.jpg",
+        "display": "http://127.0.0.1:8000/static/photographs/gallery/324.webp",
+        "display_fallback": "http://127.0.0.1:8000/static/photographs/gallery/324.jpg",
+        "full": "http://127.0.0.1:8000/static/photographs/full/324.webp",
+        "full_fallback": "http://127.0.0.1:8000/static/photographs/full/324.jpg",
+        "display_width": 1680,
+        "display_height": 1349
+      },
+      "url": "http://127.0.0.1:8000/photographs/324/",
+      "shop_enabled": false,
+      "shop_url": null
+    }
+  ],
+  "has_next": true,
+  "has_previous": false,
+  "next_page": 2,
+  "previous_page": null
+}

@@ -1,0 +1,318 @@
+{
+  "page": 1,
+  "total_pages": 2,
+  "collection": "California - Eastern Sierra",
+  "photos": [
+    {
+      "title": "Rock Face",
+      "slug": "679",
+      "description": "",
+      "date": "2025-12-20T00:00:00-08:00",
+      "collection": "California - Eastern Sierra",
+      "location": "Westgard Pass, California",
+      "metadata": {
+        "date_photographed": "2025-10-07",
+        "film_size": "8x10\"",
+        "development": "N+3",
+        "focal_length": "18\"",
+        "aperture": "f/90",
+        "shutter_speed": "15 sec",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "http://127.0.0.1:8000/static/photographs/thumbnail/679.webp",
+        "thumbnail_fallback": "http://127.0.0.1:8000/static/photographs/thumbnail/679.jpg",
+        "display": "http://127.0.0.1:8000/static/photographs/gallery/679.webp",
+        "display_fallback": "http://127.0.0.1:8000/static/photographs/gallery/679.jpg",
+        "full": "http://127.0.0.1:8000/static/photographs/full/679.webp",
+        "full_fallback": "http://127.0.0.1:8000/static/photographs/full/679.jpg",
+        "display_width": 1680,
+        "display_height": 1352
+      },
+      "url": "http://127.0.0.1:8000/photographs/679/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Ancient Bristlecone Pine",
+      "slug": "666",
+      "description": "",
+      "date": "2025-11-28T00:00:00-08:00",
+      "collection": "California - Eastern Sierra",
+      "location": "White Mountains, California",
+      "metadata": {
+        "date_photographed": "2025-10-06",
+        "film_size": "8x10\"",
+        "development": "N",
+        "focal_length": "18\"",
+        "aperture": "f/20",
+        "shutter_speed": "1/15",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "http://127.0.0.1:8000/static/photographs/thumbnail/666.webp",
+        "thumbnail_fallback": "http://127.0.0.1:8000/static/photographs/thumbnail/666.jpg",
+        "display": "http://127.0.0.1:8000/static/photographs/gallery/666.webp",
+        "display_fallback": "http://127.0.0.1:8000/static/photographs/gallery/666.jpg",
+        "full": "http://127.0.0.1:8000/static/photographs/full/666.webp",
+        "full_fallback": "http://127.0.0.1:8000/static/photographs/full/666.jpg",
+        "display_width": 1348,
+        "display_height": 1680
+      },
+      "url": "http://127.0.0.1:8000/photographs/666/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Waterfall Nude",
+      "slug": "624",
+      "description": "<p>I've never photographed nudes, but it felt right to approach this waterfall\nscene with a boudoir sensibility. The texture contrast between rock and water\nfeels lacy and intimate. I'd normally chalk this up to going just a bit nutty\nafter extended time alone, but this was day one of my most recent photo trip.\nThe first photograph is usually the most difficult but this one arrived easily.</p>",
+      "date": "2025-11-08T00:00:00-08:00",
+      "collection": "California - Eastern Sierra",
+      "location": "Sonora Pass, California",
+      "metadata": {
+        "date_photographed": "2025-10-02",
+        "film_size": "8x10\"",
+        "development": "N+2",
+        "focal_length": "12\"",
+        "aperture": "f/22",
+        "shutter_speed": "6 sec",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "http://127.0.0.1:8000/static/photographs/thumbnail/624.webp",
+        "thumbnail_fallback": "http://127.0.0.1:8000/static/photographs/thumbnail/624.jpg",
+        "display": "http://127.0.0.1:8000/static/photographs/gallery/624.webp",
+        "display_fallback": "http://127.0.0.1:8000/static/photographs/gallery/624.jpg",
+        "full": "http://127.0.0.1:8000/static/photographs/full/624.webp",
+        "full_fallback": "http://127.0.0.1:8000/static/photographs/full/624.jpg",
+        "display_width": 1680,
+        "display_height": 1350
+      },
+      "url": "http://127.0.0.1:8000/photographs/624/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Sunrise, Owens Valley",
+      "slug": "219",
+      "description": "",
+      "date": "2025-10-20T00:00:00-07:00",
+      "collection": "California - Eastern Sierra",
+      "location": "Owens Valley, California",
+      "metadata": {
+        "date_photographed": "2024-04-18",
+        "film_size": "8x10\"",
+        "development": "N-1",
+        "focal_length": "10\"",
+        "aperture": "f/40",
+        "shutter_speed": "1/4",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "http://127.0.0.1:8000/static/photographs/thumbnail/219.webp",
+        "thumbnail_fallback": "http://127.0.0.1:8000/static/photographs/thumbnail/219.jpg",
+        "display": "http://127.0.0.1:8000/static/photographs/gallery/219.webp",
+        "display_fallback": "http://127.0.0.1:8000/static/photographs/gallery/219.jpg",
+        "full": "http://127.0.0.1:8000/static/photographs/full/219.webp",
+        "full_fallback": "http://127.0.0.1:8000/static/photographs/full/219.jpg",
+        "display_width": 1340,
+        "display_height": 1680
+      },
+      "url": "http://127.0.0.1:8000/photographs/219/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Abandoned Study VI",
+      "slug": "409",
+      "description": "",
+      "date": "2024-10-19T00:00:00-07:00",
+      "collection": "California - Eastern Sierra",
+      "location": "Bodie, California",
+      "metadata": {
+        "date_photographed": "2024-10-18",
+        "film_size": "8x10\"",
+        "development": "N-1",
+        "focal_length": "12\"",
+        "aperture": "f/90",
+        "shutter_speed": "6s",
+        "filters": [
+          "yellow"
+        ]
+      },
+      "images": {
+        "thumbnail": "http://127.0.0.1:8000/static/photographs/thumbnail/409.webp",
+        "thumbnail_fallback": "http://127.0.0.1:8000/static/photographs/thumbnail/409.jpg",
+        "display": "http://127.0.0.1:8000/static/photographs/gallery/409.webp",
+        "display_fallback": "http://127.0.0.1:8000/static/photographs/gallery/409.jpg",
+        "full": "http://127.0.0.1:8000/static/photographs/full/409.webp",
+        "full_fallback": "http://127.0.0.1:8000/static/photographs/full/409.jpg",
+        "display_width": 1680,
+        "display_height": 1344
+      },
+      "url": "http://127.0.0.1:8000/photographs/409/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Abandoned Study V",
+      "slug": "405",
+      "description": "",
+      "date": "2024-10-18T00:00:00-07:00",
+      "collection": "California - Eastern Sierra",
+      "location": "Bodie, California",
+      "metadata": {
+        "date_photographed": "2024-10-18",
+        "film_size": "8x10\"",
+        "development": "N-1",
+        "focal_length": "10\"",
+        "aperture": "f/64",
+        "shutter_speed": "1/2",
+        "filters": [
+          "yellow"
+        ]
+      },
+      "images": {
+        "thumbnail": "http://127.0.0.1:8000/static/photographs/thumbnail/405.webp",
+        "thumbnail_fallback": "http://127.0.0.1:8000/static/photographs/thumbnail/405.jpg",
+        "display": "http://127.0.0.1:8000/static/photographs/gallery/405.webp",
+        "display_fallback": "http://127.0.0.1:8000/static/photographs/gallery/405.jpg",
+        "full": "http://127.0.0.1:8000/static/photographs/full/405.webp",
+        "full_fallback": "http://127.0.0.1:8000/static/photographs/full/405.jpg",
+        "display_width": 1680,
+        "display_height": 1344
+      },
+      "url": "http://127.0.0.1:8000/photographs/405/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Tufa Study I",
+      "slug": "397",
+      "description": "",
+      "date": "2024-10-16T00:00:00-07:00",
+      "collection": "California - Eastern Sierra",
+      "location": "Mono Lake, California",
+      "metadata": {
+        "date_photographed": "2024-10-16",
+        "film_size": "8x10\"",
+        "development": "N+1",
+        "focal_length": "12\"",
+        "aperture": "f/64",
+        "shutter_speed": "1s",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "http://127.0.0.1:8000/static/photographs/thumbnail/397.webp",
+        "thumbnail_fallback": "http://127.0.0.1:8000/static/photographs/thumbnail/397.jpg",
+        "display": "http://127.0.0.1:8000/static/photographs/gallery/397.webp",
+        "display_fallback": "http://127.0.0.1:8000/static/photographs/gallery/397.jpg",
+        "full": "http://127.0.0.1:8000/static/photographs/full/397.webp",
+        "full_fallback": "http://127.0.0.1:8000/static/photographs/full/397.jpg",
+        "display_width": 1344,
+        "display_height": 1680
+      },
+      "url": "http://127.0.0.1:8000/photographs/397/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Tufa Study II",
+      "slug": "398",
+      "description": "",
+      "date": "2024-10-16T00:00:00-07:00",
+      "collection": "California - Eastern Sierra",
+      "location": "Mono Lake, California",
+      "metadata": {
+        "date_photographed": "2024-10-16",
+        "film_size": "8x10\"",
+        "development": "N+1",
+        "focal_length": "12\"",
+        "aperture": "f/90",
+        "shutter_speed": "3s",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "http://127.0.0.1:8000/static/photographs/thumbnail/398.webp",
+        "thumbnail_fallback": "http://127.0.0.1:8000/static/photographs/thumbnail/398.jpg",
+        "display": "http://127.0.0.1:8000/static/photographs/gallery/398.webp",
+        "display_fallback": "http://127.0.0.1:8000/static/photographs/gallery/398.jpg",
+        "full": "http://127.0.0.1:8000/static/photographs/full/398.webp",
+        "full_fallback": "http://127.0.0.1:8000/static/photographs/full/398.jpg",
+        "display_width": 1344,
+        "display_height": 1680
+      },
+      "url": "http://127.0.0.1:8000/photographs/398/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Swirling Leaves",
+      "slug": "391",
+      "description": "",
+      "date": "2024-10-15T00:00:00-07:00",
+      "collection": "California - Eastern Sierra",
+      "location": "Eastern Sierra, California",
+      "metadata": {
+        "date_photographed": "2024-10-15",
+        "film_size": "8x10\"",
+        "development": "N",
+        "focal_length": "12\"",
+        "aperture": "f/90",
+        "shutter_speed": "3m33s",
+        "filters": [
+          "CPL",
+          "0.9ND"
+        ]
+      },
+      "images": {
+        "thumbnail": "http://127.0.0.1:8000/static/photographs/thumbnail/391.webp",
+        "thumbnail_fallback": "http://127.0.0.1:8000/static/photographs/thumbnail/391.jpg",
+        "display": "http://127.0.0.1:8000/static/photographs/gallery/391.webp",
+        "display_fallback": "http://127.0.0.1:8000/static/photographs/gallery/391.jpg",
+        "full": "http://127.0.0.1:8000/static/photographs/full/391.webp",
+        "full_fallback": "http://127.0.0.1:8000/static/photographs/full/391.jpg",
+        "display_width": 1344,
+        "display_height": 1680
+      },
+      "url": "http://127.0.0.1:8000/photographs/391/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Abandoned Study IV",
+      "slug": "314",
+      "description": "",
+      "date": "2024-07-10T00:00:00-07:00",
+      "collection": "California - Eastern Sierra",
+      "location": "Bodie, California",
+      "metadata": {
+        "date_photographed": "2024-07-10",
+        "film_size": "8x10\"",
+        "development": "N-1",
+        "focal_length": "10\"",
+        "aperture": "f/45",
+        "shutter_speed": "1/4",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "http://127.0.0.1:8000/static/photographs/thumbnail/314.webp",
+        "thumbnail_fallback": "http://127.0.0.1:8000/static/photographs/thumbnail/314.jpg",
+        "display": "http://127.0.0.1:8000/static/photographs/gallery/314.webp",
+        "display_fallback": "http://127.0.0.1:8000/static/photographs/gallery/314.jpg",
+        "full": "http://127.0.0.1:8000/static/photographs/full/314.webp",
+        "full_fallback": "http://127.0.0.1:8000/static/photographs/full/314.jpg",
+        "display_width": 1680,
+        "display_height": 1350
+      },
+      "url": "http://127.0.0.1:8000/photographs/314/",
+      "shop_enabled": false,
+      "shop_url": null
+    }
+  ],
+  "has_next": true,
+  "has_previous": false,
+  "next_page": 2,
+  "previous_page": null
+}

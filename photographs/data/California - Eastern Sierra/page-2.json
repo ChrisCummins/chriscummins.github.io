@@ -1,0 +1,255 @@
+{
+  "page": 2,
+  "total_pages": 2,
+  "collection": "California - Eastern Sierra",
+  "photos": [
+    {
+      "title": "Abandoned Study III",
+      "slug": "246",
+      "description": "",
+      "date": "2024-04-21T00:00:00-07:00",
+      "collection": "California - Eastern Sierra",
+      "location": "Eastern Sierra, California",
+      "metadata": {
+        "date_photographed": "2024-04-20",
+        "film_size": "8x10\"",
+        "development": "N",
+        "focal_length": "10\"",
+        "aperture": "f/25",
+        "shutter_speed": "1/15",
+        "filters": [
+          "yellow"
+        ]
+      },
+      "images": {
+        "thumbnail": "http://127.0.0.1:8000/static/photographs/thumbnail/246.webp",
+        "thumbnail_fallback": "http://127.0.0.1:8000/static/photographs/thumbnail/246.jpg",
+        "display": "http://127.0.0.1:8000/static/photographs/gallery/246.webp",
+        "display_fallback": "http://127.0.0.1:8000/static/photographs/gallery/246.jpg",
+        "full": "http://127.0.0.1:8000/static/photographs/full/246.webp",
+        "full_fallback": "http://127.0.0.1:8000/static/photographs/full/246.jpg",
+        "display_width": 1680,
+        "display_height": 1335
+      },
+      "url": "http://127.0.0.1:8000/photographs/246/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Abandoned Study II",
+      "slug": "243",
+      "description": "",
+      "date": "2024-04-20T00:00:00-07:00",
+      "collection": "California - Eastern Sierra",
+      "location": "Eastern Sierra, California",
+      "metadata": {
+        "date_photographed": "2024-04-20",
+        "film_size": "8x10\"",
+        "development": "N-1",
+        "focal_length": "12\"",
+        "aperture": "f/90",
+        "shutter_speed": "",
+        "filters": [
+          "yellow"
+        ]
+      },
+      "images": {
+        "thumbnail": "http://127.0.0.1:8000/static/photographs/thumbnail/243.webp",
+        "thumbnail_fallback": "http://127.0.0.1:8000/static/photographs/thumbnail/243.jpg",
+        "display": "http://127.0.0.1:8000/static/photographs/gallery/243.webp",
+        "display_fallback": "http://127.0.0.1:8000/static/photographs/gallery/243.jpg",
+        "full": "http://127.0.0.1:8000/static/photographs/full/243.webp",
+        "full_fallback": "http://127.0.0.1:8000/static/photographs/full/243.jpg",
+        "display_width": 1349,
+        "display_height": 1680
+      },
+      "url": "http://127.0.0.1:8000/photographs/243/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Virginia Creek",
+      "slug": "239",
+      "description": "",
+      "date": "2024-04-19T00:00:00-07:00",
+      "collection": "California - Eastern Sierra",
+      "location": "Eastern Sierra, California",
+      "metadata": {
+        "date_photographed": "2024-04-19",
+        "film_size": "8x10\"",
+        "development": "N+1",
+        "focal_length": "18\"",
+        "aperture": "f/40",
+        "shutter_speed": "1/4",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "http://127.0.0.1:8000/static/photographs/thumbnail/239.webp",
+        "thumbnail_fallback": "http://127.0.0.1:8000/static/photographs/thumbnail/239.jpg",
+        "display": "http://127.0.0.1:8000/static/photographs/gallery/239.webp",
+        "display_fallback": "http://127.0.0.1:8000/static/photographs/gallery/239.jpg",
+        "full": "http://127.0.0.1:8000/static/photographs/full/239.webp",
+        "full_fallback": "http://127.0.0.1:8000/static/photographs/full/239.jpg",
+        "display_width": 1349,
+        "display_height": 1680
+      },
+      "url": "http://127.0.0.1:8000/photographs/239/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Bristlecone Pine Knot II",
+      "slug": "225",
+      "description": "",
+      "date": "2024-04-18T00:00:00-07:00",
+      "collection": "California - Eastern Sierra",
+      "location": "White Mountains, California",
+      "metadata": {
+        "date_photographed": "2024-04-18",
+        "film_size": "8x10\"",
+        "development": "N+1",
+        "focal_length": "10\"",
+        "aperture": "f/64",
+        "shutter_speed": "1/2",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "http://127.0.0.1:8000/static/photographs/thumbnail/225.webp",
+        "thumbnail_fallback": "http://127.0.0.1:8000/static/photographs/thumbnail/225.jpg",
+        "display": "http://127.0.0.1:8000/static/photographs/gallery/225.webp",
+        "display_fallback": "http://127.0.0.1:8000/static/photographs/gallery/225.jpg",
+        "full": "http://127.0.0.1:8000/static/photographs/full/225.webp",
+        "full_fallback": "http://127.0.0.1:8000/static/photographs/full/225.jpg",
+        "display_width": 1680,
+        "display_height": 1344
+      },
+      "url": "http://127.0.0.1:8000/photographs/225/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Owens River Gorge",
+      "slug": "212",
+      "description": "",
+      "date": "2024-04-17T00:00:00-07:00",
+      "collection": "California - Eastern Sierra",
+      "location": "Owens Valley, California",
+      "metadata": {
+        "date_photographed": "2024-04-17",
+        "film_size": "8x10\"",
+        "development": "N-1",
+        "focal_length": "18\"",
+        "aperture": "f/45",
+        "shutter_speed": "1/2",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "http://127.0.0.1:8000/static/photographs/thumbnail/212.webp",
+        "thumbnail_fallback": "http://127.0.0.1:8000/static/photographs/thumbnail/212.jpg",
+        "display": "http://127.0.0.1:8000/static/photographs/gallery/212.webp",
+        "display_fallback": "http://127.0.0.1:8000/static/photographs/gallery/212.jpg",
+        "full": "http://127.0.0.1:8000/static/photographs/full/212.webp",
+        "full_fallback": "http://127.0.0.1:8000/static/photographs/full/212.jpg",
+        "display_width": 1347,
+        "display_height": 1680
+      },
+      "url": "http://127.0.0.1:8000/photographs/212/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Water Study",
+      "slug": "213",
+      "description": "",
+      "date": "2024-04-17T00:00:00-07:00",
+      "collection": "California - Eastern Sierra",
+      "location": "Eastern Sierra, California",
+      "metadata": {
+        "date_photographed": "2024-04-17",
+        "film_size": "8x10\"",
+        "development": "N+1",
+        "focal_length": "18\"",
+        "aperture": "f/45",
+        "shutter_speed": "1/2",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "http://127.0.0.1:8000/static/photographs/thumbnail/213.webp",
+        "thumbnail_fallback": "http://127.0.0.1:8000/static/photographs/thumbnail/213.jpg",
+        "display": "http://127.0.0.1:8000/static/photographs/gallery/213.webp",
+        "display_fallback": "http://127.0.0.1:8000/static/photographs/gallery/213.jpg",
+        "full": "http://127.0.0.1:8000/static/photographs/full/213.webp",
+        "full_fallback": "http://127.0.0.1:8000/static/photographs/full/213.jpg",
+        "display_width": 1340,
+        "display_height": 1680
+      },
+      "url": "http://127.0.0.1:8000/photographs/213/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Sagebrush Study I",
+      "slug": "173",
+      "description": "",
+      "date": "2024-04-11T00:00:00-07:00",
+      "collection": "California - Eastern Sierra",
+      "location": "Eastern Sierra, California",
+      "metadata": {
+        "date_photographed": "2024-04-11",
+        "film_size": "8x10\"",
+        "development": "N+1",
+        "focal_length": "8\"",
+        "aperture": "f/64",
+        "shutter_speed": "5 sec",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "http://127.0.0.1:8000/static/photographs/thumbnail/173.webp",
+        "thumbnail_fallback": "http://127.0.0.1:8000/static/photographs/thumbnail/173.jpg",
+        "display": "http://127.0.0.1:8000/static/photographs/gallery/173.webp",
+        "display_fallback": "http://127.0.0.1:8000/static/photographs/gallery/173.jpg",
+        "full": "http://127.0.0.1:8000/static/photographs/full/173.webp",
+        "full_fallback": "http://127.0.0.1:8000/static/photographs/full/173.jpg",
+        "display_width": 1348,
+        "display_height": 1680
+      },
+      "url": "http://127.0.0.1:8000/photographs/173/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Skyscape III",
+      "slug": "179",
+      "description": "",
+      "date": "2024-04-11T00:00:00-07:00",
+      "collection": "California - Eastern Sierra",
+      "location": "Owens Valley, California",
+      "metadata": {
+        "date_photographed": "2024-04-11",
+        "film_size": "8x10\"",
+        "development": "N",
+        "focal_length": "18\"",
+        "aperture": "f/25",
+        "shutter_speed": "1/60",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "http://127.0.0.1:8000/static/photographs/thumbnail/179.webp",
+        "thumbnail_fallback": "http://127.0.0.1:8000/static/photographs/thumbnail/179.jpg",
+        "display": "http://127.0.0.1:8000/static/photographs/gallery/179.webp",
+        "display_fallback": "http://127.0.0.1:8000/static/photographs/gallery/179.jpg",
+        "full": "http://127.0.0.1:8000/static/photographs/full/179.webp",
+        "full_fallback": "http://127.0.0.1:8000/static/photographs/full/179.jpg",
+        "display_width": 1680,
+        "display_height": 1344
+      },
+      "url": "http://127.0.0.1:8000/photographs/179/",
+      "shop_enabled": false,
+      "shop_url": null
+    }
+  ],
+  "has_next": false,
+  "has_previous": true,
+  "next_page": null,
+  "previous_page": 1
+}

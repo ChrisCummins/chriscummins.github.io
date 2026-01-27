@@ -8,7 +8,7 @@
       "slug": "685",
       "description": "",
       "date": "2026-01-01T00:00:00-08:00",
-      "collection": "roads",
+      "collection": "Nevada",
       "location": "Silver Peak, Nevada",
       "metadata": {
         "date_photographed": "2025-10-08",
@@ -22,16 +22,16 @@
         ]
       },
       "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/685.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/685.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/685.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/685.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/685.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/685.jpg",
+        "thumbnail": "http://127.0.0.1:8000/static/photographs/thumbnail/685.webp",
+        "thumbnail_fallback": "http://127.0.0.1:8000/static/photographs/thumbnail/685.jpg",
+        "display": "http://127.0.0.1:8000/static/photographs/gallery/685.webp",
+        "display_fallback": "http://127.0.0.1:8000/static/photographs/gallery/685.jpg",
+        "full": "http://127.0.0.1:8000/static/photographs/full/685.webp",
+        "full_fallback": "http://127.0.0.1:8000/static/photographs/full/685.jpg",
         "display_width": 1352,
         "display_height": 1680
       },
-      "url": "https://chriscummins.cc/photographs/685/",
+      "url": "http://127.0.0.1:8000/photographs/685/",
       "shop_enabled": false,
       "shop_url": null
     },
@@ -40,7 +40,7 @@
       "slug": "679",
       "description": "",
       "date": "2025-12-20T00:00:00-08:00",
-      "collection": "rocks",
+      "collection": "California - Eastern Sierra",
       "location": "Westgard Pass, California",
       "metadata": {
         "date_photographed": "2025-10-07",
@@ -52,16 +52,16 @@
         "filters": ""
       },
       "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/679.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/679.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/679.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/679.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/679.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/679.jpg",
+        "thumbnail": "http://127.0.0.1:8000/static/photographs/thumbnail/679.webp",
+        "thumbnail_fallback": "http://127.0.0.1:8000/static/photographs/thumbnail/679.jpg",
+        "display": "http://127.0.0.1:8000/static/photographs/gallery/679.webp",
+        "display_fallback": "http://127.0.0.1:8000/static/photographs/gallery/679.jpg",
+        "full": "http://127.0.0.1:8000/static/photographs/full/679.webp",
+        "full_fallback": "http://127.0.0.1:8000/static/photographs/full/679.jpg",
         "display_width": 1680,
         "display_height": 1352
       },
-      "url": "https://chriscummins.cc/photographs/679/",
+      "url": "http://127.0.0.1:8000/photographs/679/",
       "shop_enabled": false,
       "shop_url": null
     },
@@ -70,7 +70,7 @@
       "slug": "687",
       "description": "",
       "date": "2025-12-19T00:00:00-08:00",
-      "collection": "desert",
+      "collection": "Nevada",
       "location": "Rachel, Nevada",
       "metadata": {
         "date_photographed": "2025-10-09",
@@ -82,16 +82,16 @@
         "filters": "orange"
       },
       "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/687.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/687.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/687.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/687.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/687.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/687.jpg",
+        "thumbnail": "http://127.0.0.1:8000/static/photographs/thumbnail/687.webp",
+        "thumbnail_fallback": "http://127.0.0.1:8000/static/photographs/thumbnail/687.jpg",
+        "display": "http://127.0.0.1:8000/static/photographs/gallery/687.webp",
+        "display_fallback": "http://127.0.0.1:8000/static/photographs/gallery/687.jpg",
+        "full": "http://127.0.0.1:8000/static/photographs/full/687.webp",
+        "full_fallback": "http://127.0.0.1:8000/static/photographs/full/687.jpg",
         "display_width": 1680,
         "display_height": 1352
       },
-      "url": "https://chriscummins.cc/photographs/687/",
+      "url": "http://127.0.0.1:8000/photographs/687/",
       "shop_enabled": false,
       "shop_url": null
     },
@@ -100,7 +100,7 @@
       "slug": "666",
       "description": "",
       "date": "2025-11-28T00:00:00-08:00",
-      "collection": "foliage",
+      "collection": "California - Eastern Sierra",
       "location": "White Mountains, California",
       "metadata": {
         "date_photographed": "2025-10-06",
@@ -112,16 +112,16 @@
         "filters": ""
       },
       "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/666.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/666.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/666.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/666.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/666.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/666.jpg",
+        "thumbnail": "http://127.0.0.1:8000/static/photographs/thumbnail/666.webp",
+        "thumbnail_fallback": "http://127.0.0.1:8000/static/photographs/thumbnail/666.jpg",
+        "display": "http://127.0.0.1:8000/static/photographs/gallery/666.webp",
+        "display_fallback": "http://127.0.0.1:8000/static/photographs/gallery/666.jpg",
+        "full": "http://127.0.0.1:8000/static/photographs/full/666.webp",
+        "full_fallback": "http://127.0.0.1:8000/static/photographs/full/666.jpg",
         "display_width": 1348,
         "display_height": 1680
       },
-      "url": "https://chriscummins.cc/photographs/666/",
+      "url": "http://127.0.0.1:8000/photographs/666/",
       "shop_enabled": false,
       "shop_url": null
     },
@@ -130,7 +130,7 @@
       "slug": "561",
       "description": "",
       "date": "2025-11-15T00:00:00-08:00",
-      "collection": "mountains",
+      "collection": "California - Yosemite",
       "location": "Yosemite Valley, California",
       "metadata": {
         "date_photographed": "2025-03-15",
@@ -145,16 +145,16 @@
         ]
       },
       "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/561.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/561.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/561.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/561.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/561.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/561.jpg",
+        "thumbnail": "http://127.0.0.1:8000/static/photographs/thumbnail/561.webp",
+        "thumbnail_fallback": "http://127.0.0.1:8000/static/photographs/thumbnail/561.jpg",
+        "display": "http://127.0.0.1:8000/static/photographs/gallery/561.webp",
+        "display_fallback": "http://127.0.0.1:8000/static/photographs/gallery/561.jpg",
+        "full": "http://127.0.0.1:8000/static/photographs/full/561.webp",
+        "full_fallback": "http://127.0.0.1:8000/static/photographs/full/561.jpg",
         "display_width": 1352,
         "display_height": 1680
       },
-      "url": "https://chriscummins.cc/photographs/561/",
+      "url": "http://127.0.0.1:8000/photographs/561/",
       "shop_enabled": false,
       "shop_url": null
     },
@@ -163,7 +163,7 @@
       "slug": "624",
       "description": "<p>I've never photographed nudes, but it felt right to approach this waterfall\nscene with a boudoir sensibility. The texture contrast between rock and water\nfeels lacy and intimate. I'd normally chalk this up to going just a bit nutty\nafter extended time alone, but this was day one of my most recent photo trip.\nThe first photograph is usually the most difficult but this one arrived easily.</p>",
       "date": "2025-11-08T00:00:00-08:00",
-      "collection": "rocks",
+      "collection": "California - Eastern Sierra",
       "location": "Sonora Pass, California",
       "metadata": {
         "date_photographed": "2025-10-02",
@@ -175,16 +175,16 @@
         "filters": ""
       },
       "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/624.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/624.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/624.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/624.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/624.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/624.jpg",
+        "thumbnail": "http://127.0.0.1:8000/static/photographs/thumbnail/624.webp",
+        "thumbnail_fallback": "http://127.0.0.1:8000/static/photographs/thumbnail/624.jpg",
+        "display": "http://127.0.0.1:8000/static/photographs/gallery/624.webp",
+        "display_fallback": "http://127.0.0.1:8000/static/photographs/gallery/624.jpg",
+        "full": "http://127.0.0.1:8000/static/photographs/full/624.webp",
+        "full_fallback": "http://127.0.0.1:8000/static/photographs/full/624.jpg",
         "display_width": 1680,
         "display_height": 1350
       },
-      "url": "https://chriscummins.cc/photographs/624/",
+      "url": "http://127.0.0.1:8000/photographs/624/",
       "shop_enabled": false,
       "shop_url": null
     },
@@ -193,7 +193,7 @@
       "slug": "697",
       "description": "",
       "date": "2025-10-31T00:00:00-07:00",
-      "collection": "abandoned",
+      "collection": "Nevada",
       "location": "Montgomery Pass, Nevada",
       "metadata": {
         "date_photographed": "2025-10-10",
@@ -205,16 +205,16 @@
         "filters": ""
       },
       "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/697.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/697.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/697.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/697.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/697.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/697.jpg",
+        "thumbnail": "http://127.0.0.1:8000/static/photographs/thumbnail/697.webp",
+        "thumbnail_fallback": "http://127.0.0.1:8000/static/photographs/thumbnail/697.jpg",
+        "display": "http://127.0.0.1:8000/static/photographs/gallery/697.webp",
+        "display_fallback": "http://127.0.0.1:8000/static/photographs/gallery/697.jpg",
+        "full": "http://127.0.0.1:8000/static/photographs/full/697.webp",
+        "full_fallback": "http://127.0.0.1:8000/static/photographs/full/697.jpg",
         "display_width": 1680,
         "display_height": 1352
       },
-      "url": "https://chriscummins.cc/photographs/697/",
+      "url": "http://127.0.0.1:8000/photographs/697/",
       "shop_enabled": false,
       "shop_url": null
     },
@@ -223,7 +223,7 @@
       "slug": "417",
       "description": "",
       "date": "2025-10-30T00:00:00-07:00",
-      "collection": "closeup",
+      "collection": "California - Coast",
       "location": "Point Lobos, California",
       "metadata": {
         "date_photographed": "2024-11-17",
@@ -235,25 +235,25 @@
         "filters": ""
       },
       "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/417.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/417.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/417.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/417.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/417.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/417.jpg",
+        "thumbnail": "http://127.0.0.1:8000/static/photographs/thumbnail/417.webp",
+        "thumbnail_fallback": "http://127.0.0.1:8000/static/photographs/thumbnail/417.jpg",
+        "display": "http://127.0.0.1:8000/static/photographs/gallery/417.webp",
+        "display_fallback": "http://127.0.0.1:8000/static/photographs/gallery/417.jpg",
+        "full": "http://127.0.0.1:8000/static/photographs/full/417.webp",
+        "full_fallback": "http://127.0.0.1:8000/static/photographs/full/417.jpg",
         "display_width": 1344,
         "display_height": 1680
       },
-      "url": "https://chriscummins.cc/photographs/417/",
+      "url": "http://127.0.0.1:8000/photographs/417/",
       "shop_enabled": true,
-      "shop_url": "https://chriscummins.cc/shop/417/"
+      "shop_url": "http://127.0.0.1:8000/shop/417/"
     },
     {
       "title": "Moonrise, Fish Lake Valley",
       "slug": "675",
       "description": "",
       "date": "2025-10-30T00:00:00-07:00",
-      "collection": "desert",
+      "collection": "Nevada",
       "location": "Fish Lake Valley, Nevada",
       "metadata": {
         "date_photographed": "2025-10-06",
@@ -265,16 +265,16 @@
         "filters": ""
       },
       "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/675.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/675.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/675.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/675.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/675.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/675.jpg",
+        "thumbnail": "http://127.0.0.1:8000/static/photographs/thumbnail/675.webp",
+        "thumbnail_fallback": "http://127.0.0.1:8000/static/photographs/thumbnail/675.jpg",
+        "display": "http://127.0.0.1:8000/static/photographs/gallery/675.webp",
+        "display_fallback": "http://127.0.0.1:8000/static/photographs/gallery/675.jpg",
+        "full": "http://127.0.0.1:8000/static/photographs/full/675.webp",
+        "full_fallback": "http://127.0.0.1:8000/static/photographs/full/675.jpg",
         "display_width": 1680,
         "display_height": 1352
       },
-      "url": "https://chriscummins.cc/photographs/675/",
+      "url": "http://127.0.0.1:8000/photographs/675/",
       "shop_enabled": false,
       "shop_url": null
     },
@@ -283,7 +283,7 @@
       "slug": "219",
       "description": "",
       "date": "2025-10-20T00:00:00-07:00",
-      "collection": "foliage",
+      "collection": "California - Eastern Sierra",
       "location": "Owens Valley, California",
       "metadata": {
         "date_photographed": "2024-04-18",
@@ -295,16 +295,16 @@
         "filters": ""
       },
       "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/219.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/219.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/219.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/219.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/219.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/219.jpg",
+        "thumbnail": "http://127.0.0.1:8000/static/photographs/thumbnail/219.webp",
+        "thumbnail_fallback": "http://127.0.0.1:8000/static/photographs/thumbnail/219.jpg",
+        "display": "http://127.0.0.1:8000/static/photographs/gallery/219.webp",
+        "display_fallback": "http://127.0.0.1:8000/static/photographs/gallery/219.jpg",
+        "full": "http://127.0.0.1:8000/static/photographs/full/219.webp",
+        "full_fallback": "http://127.0.0.1:8000/static/photographs/full/219.jpg",
         "display_width": 1340,
         "display_height": 1680
       },
-      "url": "https://chriscummins.cc/photographs/219/",
+      "url": "http://127.0.0.1:8000/photographs/219/",
       "shop_enabled": false,
       "shop_url": null
     }
