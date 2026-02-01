@@ -1,0 +1,43 @@
+{
+  "page": 1,
+  "total_pages": 1,
+  "collection": "Oregon",
+  "photos": [
+    {
+      "title": "Crater Lake, Winter Morning",
+      "slug": "796",
+      "description": "<p>I made this on the final morning of my first photo trip of 2026. The challenge\nwas working in high wind, too much to use a focusing cloth, and without a stable\nbase to set up my tripod.</p>\n<p>At the time I made this image I didn't expect much from it, I just wanted a\n\"souvenir\" to remember a fun but challenging 8 mile hike. However, it's been a\nnice negative to work with and I'm enjoying the potential for making big prints\nof this.</p>",
+      "date": "2026-02-01T00:00:00-08:00",
+      "collection": "Oregon",
+      "location": "Crater Lake, Oregon",
+      "metadata": {
+        "date_photographed": "2026-01-27",
+        "film_size": "8x10\"",
+        "development": "N+2",
+        "focal_length": "9\"",
+        "aperture": "f/16",
+        "shutter_speed": "1/60",
+        "filters": [
+          "yellow"
+        ]
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/796.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/796.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/796.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/796.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/796.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/796.jpg",
+        "display_width": 1680,
+        "display_height": 1344
+      },
+      "url": "https://chriscummins.cc/photographs/796/",
+      "shop_enabled": false,
+      "shop_url": null
+    }
+  ],
+  "has_next": false,
+  "has_previous": false,
+  "next_page": null,
+  "previous_page": null
+}
