@@ -4,6 +4,38 @@
   "collection": "all",
   "photos": [
     {
+      "title": "Tenaya Lake",
+      "slug": "324",
+      "description": "",
+      "date": "2024-07-12T00:00:00-07:00",
+      "collection": "California - Yosemite",
+      "location": "Yosemite, California",
+      "metadata": {
+        "date_photographed": "2024-07-12",
+        "film_size": "8x10\"",
+        "development": "N",
+        "focal_length": "24\"",
+        "aperture": "f/51",
+        "shutter_speed": "1/8",
+        "filters": [
+          "yellow"
+        ]
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/324.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/324.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/324.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/324.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/324.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/324.jpg",
+        "display_width": 1680,
+        "display_height": 1349
+      },
+      "url": "https://chriscummins.cc/photographs/324/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
       "title": "Fallen Tree and Grasses",
       "slug": "323",
       "description": "",
@@ -278,38 +310,6 @@
         "display_height": 1680
       },
       "url": "https://chriscummins.cc/photographs/277/",
-      "shop_enabled": false,
-      "shop_url": null
-    },
-    {
-      "title": "El Capitan Bridge I",
-      "slug": "267",
-      "description": "",
-      "date": "2024-05-13T00:00:00-07:00",
-      "collection": "California - Yosemite",
-      "location": "Yosemite, California",
-      "metadata": {
-        "date_photographed": "2024-05-13",
-        "film_size": "8x10\"",
-        "development": "N",
-        "focal_length": "14\"",
-        "aperture": "f/36",
-        "shutter_speed": "1/2",
-        "filters": [
-          "green"
-        ]
-      },
-      "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/267.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/267.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/267.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/267.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/267.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/267.jpg",
-        "display_width": 1680,
-        "display_height": 1344
-      },
-      "url": "https://chriscummins.cc/photographs/267/",
       "shop_enabled": false,
       "shop_url": null
     }

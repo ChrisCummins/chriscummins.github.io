@@ -4,6 +4,36 @@
   "collection": "California - Eastern Sierra",
   "photos": [
     {
+      "title": "Sliver of Sunrise, Mono Lake",
+      "slug": "643",
+      "description": "",
+      "date": "2026-02-09T00:00:00-08:00",
+      "collection": "California - Eastern Sierra",
+      "location": "Mono Lake, California",
+      "metadata": {
+        "date_photographed": "2025-10-05",
+        "film_size": "8x10\"",
+        "development": "N+1",
+        "focal_length": "48\"",
+        "aperture": "f/32",
+        "shutter_speed": "1/15",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/643.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/643.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/643.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/643.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/643.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/643.jpg",
+        "display_width": 1680,
+        "display_height": 1344
+      },
+      "url": "https://chriscummins.cc/photographs/643/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
       "title": "Rock Face",
       "slug": "679",
       "description": "",
@@ -277,36 +307,6 @@
         "display_height": 1680
       },
       "url": "https://chriscummins.cc/photographs/391/",
-      "shop_enabled": false,
-      "shop_url": null
-    },
-    {
-      "title": "Abandoned Study IV",
-      "slug": "314",
-      "description": "",
-      "date": "2024-07-10T00:00:00-07:00",
-      "collection": "California - Eastern Sierra",
-      "location": "Bodie, California",
-      "metadata": {
-        "date_photographed": "2024-07-10",
-        "film_size": "8x10\"",
-        "development": "N-1",
-        "focal_length": "10\"",
-        "aperture": "f/45",
-        "shutter_speed": "1/4",
-        "filters": ""
-      },
-      "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/314.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/314.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/314.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/314.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/314.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/314.jpg",
-        "display_width": 1680,
-        "display_height": 1350
-      },
-      "url": "https://chriscummins.cc/photographs/314/",
       "shop_enabled": false,
       "shop_url": null
     }

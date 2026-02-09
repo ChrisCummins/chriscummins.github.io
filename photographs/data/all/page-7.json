@@ -4,6 +4,36 @@
   "collection": "all",
   "photos": [
     {
+      "title": "Wall Study I",
+      "slug": "158",
+      "description": "",
+      "date": "2024-03-14T00:00:00-07:00",
+      "collection": "California - Death Valley",
+      "location": "Harrisburg, California",
+      "metadata": {
+        "date_photographed": "2024-03-14",
+        "film_size": "8x10\"",
+        "development": "N",
+        "focal_length": "10\"",
+        "aperture": "f/32",
+        "shutter_speed": "6 sec",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/158.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/158.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/158.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/158.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/158.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/158.jpg",
+        "display_width": 1370,
+        "display_height": 1680
+      },
+      "url": "https://chriscummins.cc/photographs/158/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
       "title": "Zabriskie Textures",
       "slug": "152",
       "description": "",

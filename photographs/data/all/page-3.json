@@ -4,6 +4,36 @@
   "collection": "all",
   "photos": [
     {
+      "title": "Dunes I",
+      "slug": "519",
+      "description": "",
+      "date": "2025-02-27T00:00:00-08:00",
+      "collection": "California - Death Valley",
+      "location": "Death Valley, California",
+      "metadata": {
+        "date_photographed": "2025-02-27",
+        "film_size": "8x10\"",
+        "development": "N+2",
+        "focal_length": "8\"",
+        "aperture": "f/45",
+        "shutter_speed": "1/8",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/519.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/519.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/519.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/519.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/519.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/519.jpg",
+        "display_width": 1680,
+        "display_height": 1344
+      },
+      "url": "https://chriscummins.cc/photographs/519/",
+      "shop_enabled": true,
+      "shop_url": "https://chriscummins.cc/shop/519/"
+    },
+    {
       "title": "Dunes II",
       "slug": "521",
       "description": "",
@@ -276,36 +306,6 @@
         "display_height": 1344
       },
       "url": "https://chriscummins.cc/photographs/405/",
-      "shop_enabled": false,
-      "shop_url": null
-    },
-    {
-      "title": "Tufa Study I",
-      "slug": "397",
-      "description": "",
-      "date": "2024-10-16T00:00:00-07:00",
-      "collection": "California - Eastern Sierra",
-      "location": "Mono Lake, California",
-      "metadata": {
-        "date_photographed": "2024-10-16",
-        "film_size": "8x10\"",
-        "development": "N+1",
-        "focal_length": "12\"",
-        "aperture": "f/64",
-        "shutter_speed": "1s",
-        "filters": ""
-      },
-      "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/397.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/397.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/397.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/397.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/397.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/397.jpg",
-        "display_width": 1344,
-        "display_height": 1680
-      },
-      "url": "https://chriscummins.cc/photographs/397/",
       "shop_enabled": false,
       "shop_url": null
     }

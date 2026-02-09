@@ -4,6 +4,36 @@
   "collection": "all",
   "photos": [
     {
+      "title": "Tufa Study I",
+      "slug": "397",
+      "description": "",
+      "date": "2024-10-16T00:00:00-07:00",
+      "collection": "California - Eastern Sierra",
+      "location": "Mono Lake, California",
+      "metadata": {
+        "date_photographed": "2024-10-16",
+        "film_size": "8x10\"",
+        "development": "N+1",
+        "focal_length": "12\"",
+        "aperture": "f/64",
+        "shutter_speed": "1s",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/397.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/397.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/397.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/397.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/397.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/397.jpg",
+        "display_width": 1344,
+        "display_height": 1680
+      },
+      "url": "https://chriscummins.cc/photographs/397/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
       "title": "Tufa Study II",
       "slug": "398",
       "description": "",
@@ -279,38 +309,6 @@
         "display_height": 1349
       },
       "url": "https://chriscummins.cc/photographs/337/",
-      "shop_enabled": false,
-      "shop_url": null
-    },
-    {
-      "title": "Tenaya Lake",
-      "slug": "324",
-      "description": "",
-      "date": "2024-07-12T00:00:00-07:00",
-      "collection": "California - Yosemite",
-      "location": "Yosemite, California",
-      "metadata": {
-        "date_photographed": "2024-07-12",
-        "film_size": "8x10\"",
-        "development": "N",
-        "focal_length": "24\"",
-        "aperture": "f/51",
-        "shutter_speed": "1/8",
-        "filters": [
-          "yellow"
-        ]
-      },
-      "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/324.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/324.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/324.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/324.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/324.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/324.jpg",
-        "display_width": 1680,
-        "display_height": 1349
-      },
-      "url": "https://chriscummins.cc/photographs/324/",
       "shop_enabled": false,
       "shop_url": null
     }

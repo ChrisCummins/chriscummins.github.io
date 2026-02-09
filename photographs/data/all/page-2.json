@@ -4,6 +4,36 @@
   "collection": "all",
   "photos": [
     {
+      "title": "Moonrise, Fish Lake Valley",
+      "slug": "675",
+      "description": "",
+      "date": "2025-10-30T00:00:00-07:00",
+      "collection": "Nevada",
+      "location": "Fish Lake Valley, Nevada",
+      "metadata": {
+        "date_photographed": "2025-10-06",
+        "film_size": "8x10\"",
+        "development": "N+1",
+        "focal_length": "48\"",
+        "aperture": "f/64",
+        "shutter_speed": "1 sec",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/675.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/675.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/675.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/675.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/675.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/675.jpg",
+        "display_width": 1680,
+        "display_height": 1352
+      },
+      "url": "https://chriscummins.cc/photographs/675/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
       "title": "Sunrise, Owens Valley",
       "slug": "219",
       "description": "",
@@ -280,36 +310,6 @@
       "url": "https://chriscummins.cc/photographs/527/",
       "shop_enabled": true,
       "shop_url": "https://chriscummins.cc/shop/527/"
-    },
-    {
-      "title": "Dunes I",
-      "slug": "519",
-      "description": "",
-      "date": "2025-02-27T00:00:00-08:00",
-      "collection": "California - Death Valley",
-      "location": "Death Valley, California",
-      "metadata": {
-        "date_photographed": "2025-02-27",
-        "film_size": "8x10\"",
-        "development": "N+2",
-        "focal_length": "8\"",
-        "aperture": "f/45",
-        "shutter_speed": "1/8",
-        "filters": ""
-      },
-      "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/519.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/519.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/519.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/519.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/519.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/519.jpg",
-        "display_width": 1680,
-        "display_height": 1344
-      },
-      "url": "https://chriscummins.cc/photographs/519/",
-      "shop_enabled": true,
-      "shop_url": "https://chriscummins.cc/shop/519/"
     }
   ],
   "has_next": true,
