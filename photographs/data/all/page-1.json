@@ -4,6 +4,38 @@
   "collection": "all",
   "photos": [
     {
+      "title": "Flock of Birds over Tufa",
+      "slug": "627",
+      "description": "",
+      "date": "2026-02-18T00:00:00-08:00",
+      "collection": "California - Eastern Sierra",
+      "location": "Mono Lake, California",
+      "metadata": {
+        "date_photographed": "2025-10-03",
+        "film_size": "8x10\"",
+        "development": "N+1",
+        "focal_length": "18\"",
+        "aperture": "f/22",
+        "shutter_speed": "1/60",
+        "filters": [
+          "orange"
+        ]
+      },
+      "images": {
+        "thumbnail": "http://127.0.0.1:8000/static/photographs/thumbnail/627.webp",
+        "thumbnail_fallback": "http://127.0.0.1:8000/static/photographs/thumbnail/627.jpg",
+        "display": "http://127.0.0.1:8000/static/photographs/gallery/627.webp",
+        "display_fallback": "http://127.0.0.1:8000/static/photographs/gallery/627.jpg",
+        "full": "http://127.0.0.1:8000/static/photographs/full/627.webp",
+        "full_fallback": "http://127.0.0.1:8000/static/photographs/full/627.jpg",
+        "display_width": 1680,
+        "display_height": 1351
+      },
+      "url": "http://127.0.0.1:8000/photographs/627/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
       "title": "Sliver of Sunrise, Mono Lake",
       "slug": "643",
       "description": "",
@@ -20,16 +52,16 @@
         "filters": ""
       },
       "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/643.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/643.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/643.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/643.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/643.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/643.jpg",
+        "thumbnail": "http://127.0.0.1:8000/static/photographs/thumbnail/643.webp",
+        "thumbnail_fallback": "http://127.0.0.1:8000/static/photographs/thumbnail/643.jpg",
+        "display": "http://127.0.0.1:8000/static/photographs/gallery/643.webp",
+        "display_fallback": "http://127.0.0.1:8000/static/photographs/gallery/643.jpg",
+        "full": "http://127.0.0.1:8000/static/photographs/full/643.webp",
+        "full_fallback": "http://127.0.0.1:8000/static/photographs/full/643.jpg",
         "display_width": 1680,
         "display_height": 1344
       },
-      "url": "https://chriscummins.cc/photographs/643/",
+      "url": "http://127.0.0.1:8000/photographs/643/",
       "shop_enabled": false,
       "shop_url": null
     },
@@ -52,16 +84,16 @@
         ]
       },
       "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/796.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/796.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/796.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/796.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/796.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/796.jpg",
+        "thumbnail": "http://127.0.0.1:8000/static/photographs/thumbnail/796.webp",
+        "thumbnail_fallback": "http://127.0.0.1:8000/static/photographs/thumbnail/796.jpg",
+        "display": "http://127.0.0.1:8000/static/photographs/gallery/796.webp",
+        "display_fallback": "http://127.0.0.1:8000/static/photographs/gallery/796.jpg",
+        "full": "http://127.0.0.1:8000/static/photographs/full/796.webp",
+        "full_fallback": "http://127.0.0.1:8000/static/photographs/full/796.jpg",
         "display_width": 1680,
         "display_height": 1344
       },
-      "url": "https://chriscummins.cc/photographs/796/",
+      "url": "http://127.0.0.1:8000/photographs/796/",
       "shop_enabled": false,
       "shop_url": null
     },
@@ -84,16 +116,16 @@
         ]
       },
       "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/685.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/685.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/685.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/685.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/685.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/685.jpg",
+        "thumbnail": "http://127.0.0.1:8000/static/photographs/thumbnail/685.webp",
+        "thumbnail_fallback": "http://127.0.0.1:8000/static/photographs/thumbnail/685.jpg",
+        "display": "http://127.0.0.1:8000/static/photographs/gallery/685.webp",
+        "display_fallback": "http://127.0.0.1:8000/static/photographs/gallery/685.jpg",
+        "full": "http://127.0.0.1:8000/static/photographs/full/685.webp",
+        "full_fallback": "http://127.0.0.1:8000/static/photographs/full/685.jpg",
         "display_width": 1352,
         "display_height": 1680
       },
-      "url": "https://chriscummins.cc/photographs/685/",
+      "url": "http://127.0.0.1:8000/photographs/685/",
       "shop_enabled": false,
       "shop_url": null
     },
@@ -114,16 +146,16 @@
         "filters": ""
       },
       "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/679.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/679.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/679.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/679.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/679.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/679.jpg",
+        "thumbnail": "http://127.0.0.1:8000/static/photographs/thumbnail/679.webp",
+        "thumbnail_fallback": "http://127.0.0.1:8000/static/photographs/thumbnail/679.jpg",
+        "display": "http://127.0.0.1:8000/static/photographs/gallery/679.webp",
+        "display_fallback": "http://127.0.0.1:8000/static/photographs/gallery/679.jpg",
+        "full": "http://127.0.0.1:8000/static/photographs/full/679.webp",
+        "full_fallback": "http://127.0.0.1:8000/static/photographs/full/679.jpg",
         "display_width": 1680,
         "display_height": 1352
       },
-      "url": "https://chriscummins.cc/photographs/679/",
+      "url": "http://127.0.0.1:8000/photographs/679/",
       "shop_enabled": false,
       "shop_url": null
     },
@@ -144,16 +176,16 @@
         "filters": "orange"
       },
       "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/687.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/687.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/687.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/687.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/687.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/687.jpg",
+        "thumbnail": "http://127.0.0.1:8000/static/photographs/thumbnail/687.webp",
+        "thumbnail_fallback": "http://127.0.0.1:8000/static/photographs/thumbnail/687.jpg",
+        "display": "http://127.0.0.1:8000/static/photographs/gallery/687.webp",
+        "display_fallback": "http://127.0.0.1:8000/static/photographs/gallery/687.jpg",
+        "full": "http://127.0.0.1:8000/static/photographs/full/687.webp",
+        "full_fallback": "http://127.0.0.1:8000/static/photographs/full/687.jpg",
         "display_width": 1680,
         "display_height": 1352
       },
-      "url": "https://chriscummins.cc/photographs/687/",
+      "url": "http://127.0.0.1:8000/photographs/687/",
       "shop_enabled": false,
       "shop_url": null
     },
@@ -174,16 +206,16 @@
         "filters": ""
       },
       "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/666.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/666.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/666.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/666.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/666.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/666.jpg",
+        "thumbnail": "http://127.0.0.1:8000/static/photographs/thumbnail/666.webp",
+        "thumbnail_fallback": "http://127.0.0.1:8000/static/photographs/thumbnail/666.jpg",
+        "display": "http://127.0.0.1:8000/static/photographs/gallery/666.webp",
+        "display_fallback": "http://127.0.0.1:8000/static/photographs/gallery/666.jpg",
+        "full": "http://127.0.0.1:8000/static/photographs/full/666.webp",
+        "full_fallback": "http://127.0.0.1:8000/static/photographs/full/666.jpg",
         "display_width": 1348,
         "display_height": 1680
       },
-      "url": "https://chriscummins.cc/photographs/666/",
+      "url": "http://127.0.0.1:8000/photographs/666/",
       "shop_enabled": false,
       "shop_url": null
     },
@@ -207,18 +239,18 @@
         ]
       },
       "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/561.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/561.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/561.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/561.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/561.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/561.jpg",
+        "thumbnail": "http://127.0.0.1:8000/static/photographs/thumbnail/561.webp",
+        "thumbnail_fallback": "http://127.0.0.1:8000/static/photographs/thumbnail/561.jpg",
+        "display": "http://127.0.0.1:8000/static/photographs/gallery/561.webp",
+        "display_fallback": "http://127.0.0.1:8000/static/photographs/gallery/561.jpg",
+        "full": "http://127.0.0.1:8000/static/photographs/full/561.webp",
+        "full_fallback": "http://127.0.0.1:8000/static/photographs/full/561.jpg",
         "display_width": 1352,
         "display_height": 1680
       },
-      "url": "https://chriscummins.cc/photographs/561/",
-      "shop_enabled": false,
-      "shop_url": null
+      "url": "http://127.0.0.1:8000/photographs/561/",
+      "shop_enabled": true,
+      "shop_url": "http://127.0.0.1:8000/shop/561/"
     },
     {
       "title": "Waterfall Nude",
@@ -237,16 +269,16 @@
         "filters": ""
       },
       "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/624.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/624.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/624.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/624.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/624.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/624.jpg",
+        "thumbnail": "http://127.0.0.1:8000/static/photographs/thumbnail/624.webp",
+        "thumbnail_fallback": "http://127.0.0.1:8000/static/photographs/thumbnail/624.jpg",
+        "display": "http://127.0.0.1:8000/static/photographs/gallery/624.webp",
+        "display_fallback": "http://127.0.0.1:8000/static/photographs/gallery/624.jpg",
+        "full": "http://127.0.0.1:8000/static/photographs/full/624.webp",
+        "full_fallback": "http://127.0.0.1:8000/static/photographs/full/624.jpg",
         "display_width": 1680,
         "display_height": 1350
       },
-      "url": "https://chriscummins.cc/photographs/624/",
+      "url": "http://127.0.0.1:8000/photographs/624/",
       "shop_enabled": false,
       "shop_url": null
     },
@@ -267,48 +299,18 @@
         "filters": ""
       },
       "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/697.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/697.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/697.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/697.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/697.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/697.jpg",
+        "thumbnail": "http://127.0.0.1:8000/static/photographs/thumbnail/697.webp",
+        "thumbnail_fallback": "http://127.0.0.1:8000/static/photographs/thumbnail/697.jpg",
+        "display": "http://127.0.0.1:8000/static/photographs/gallery/697.webp",
+        "display_fallback": "http://127.0.0.1:8000/static/photographs/gallery/697.jpg",
+        "full": "http://127.0.0.1:8000/static/photographs/full/697.webp",
+        "full_fallback": "http://127.0.0.1:8000/static/photographs/full/697.jpg",
         "display_width": 1680,
         "display_height": 1352
       },
-      "url": "https://chriscummins.cc/photographs/697/",
+      "url": "http://127.0.0.1:8000/photographs/697/",
       "shop_enabled": false,
       "shop_url": null
-    },
-    {
-      "title": "Kelp Study",
-      "slug": "417",
-      "description": "",
-      "date": "2025-10-30T00:00:00-07:00",
-      "collection": "California - Coast",
-      "location": "Point Lobos, California",
-      "metadata": {
-        "date_photographed": "2024-11-17",
-        "film_size": "8x10\"",
-        "development": "N+2",
-        "focal_length": "10\"",
-        "aperture": "f/64",
-        "shutter_speed": "1s",
-        "filters": ""
-      },
-      "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/417.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/417.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/417.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/417.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/417.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/417.jpg",
-        "display_width": 1344,
-        "display_height": 1680
-      },
-      "url": "https://chriscummins.cc/photographs/417/",
-      "shop_enabled": true,
-      "shop_url": "https://chriscummins.cc/shop/417/"
     }
   ],
   "has_next": true,
