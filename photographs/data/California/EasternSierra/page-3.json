@@ -1,0 +1,41 @@
+{
+  "page": 3,
+  "total_pages": 3,
+  "collection": "California - Eastern Sierra",
+  "photos": [
+    {
+      "title": "Skyscape III",
+      "slug": "179",
+      "description": "",
+      "date": "2024-04-11T00:00:00-07:00",
+      "collection": "California - Eastern Sierra",
+      "location": "Owens Valley, California",
+      "metadata": {
+        "date_photographed": "2024-04-11",
+        "film_size": "8x10\"",
+        "development": "N",
+        "focal_length": "18\"",
+        "aperture": "f/25",
+        "shutter_speed": "1/60",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/179.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/179.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/179.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/179.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/179.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/179.jpg",
+        "display_width": 1680,
+        "display_height": 1344
+      },
+      "url": "https://chriscummins.cc/photographs/179/",
+      "shop_enabled": false,
+      "shop_url": null
+    }
+  ],
+  "has_next": false,
+  "has_previous": true,
+  "next_page": null,
+  "previous_page": 2
+}
