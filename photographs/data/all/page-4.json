@@ -4,6 +4,36 @@
   "collection": "all",
   "photos": [
     {
+      "title": "Calla Lily Study I",
+      "slug": "423",
+      "description": "",
+      "date": "2024-11-18T00:00:00-08:00",
+      "collection": "California - Coast",
+      "location": "Central Coast, California",
+      "metadata": {
+        "date_photographed": "2024-11-18",
+        "film_size": "8x10\"",
+        "development": "N+1",
+        "focal_length": "10\"",
+        "aperture": "f/36",
+        "shutter_speed": "3s",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/423.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/423.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/423.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/423.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/423.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/423.jpg",
+        "display_width": 1344,
+        "display_height": 1680
+      },
+      "url": "https://chriscummins.cc/photographs/423/",
+      "shop_enabled": true,
+      "shop_url": "https://chriscummins.cc/shop/423/"
+    },
+    {
       "title": "Abandoned Study VI",
       "slug": "409",
       "description": "",
@@ -279,38 +309,6 @@
         "display_height": 1344
       },
       "url": "https://chriscummins.cc/photographs/363/",
-      "shop_enabled": false,
-      "shop_url": null
-    },
-    {
-      "title": "Olmsted Point Boulder",
-      "slug": "355",
-      "description": "",
-      "date": "2024-10-02T00:00:00-07:00",
-      "collection": "California - Yosemite",
-      "location": "Yosemite, California",
-      "metadata": {
-        "date_photographed": "2024-10-02",
-        "film_size": "8x10\"",
-        "development": "N",
-        "focal_length": "18\"",
-        "aperture": "f/128",
-        "shutter_speed": "1/2",
-        "filters": [
-          "yellow"
-        ]
-      },
-      "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/355.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/355.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/355.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/355.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/355.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/355.jpg",
-        "display_width": 1343,
-        "display_height": 1680
-      },
-      "url": "https://chriscummins.cc/photographs/355/",
       "shop_enabled": false,
       "shop_url": null
     }

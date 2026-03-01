@@ -49,7 +49,9 @@
         "focal_length": "18\"",
         "aperture": "f/29",
         "shutter_speed": "1/15",
-        "filters": "orange"
+        "filters": [
+          "orange"
+        ]
       },
       "images": {
         "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/687.webp",

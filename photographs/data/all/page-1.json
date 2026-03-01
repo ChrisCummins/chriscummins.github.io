@@ -4,6 +4,36 @@
   "collection": "all",
   "photos": [
     {
+      "title": "Sea Stacks, Oregon Coast",
+      "slug": "728",
+      "description": "",
+      "date": "2026-03-01T00:00:00-08:00",
+      "collection": "Oregon",
+      "location": "Brookings, Oregon",
+      "metadata": {
+        "date_photographed": "2026-01-17",
+        "film_size": "8x10\"",
+        "development": "N",
+        "focal_length": "6\"",
+        "aperture": "f/32",
+        "shutter_speed": "15 sec",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/728.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/728.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/728.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/728.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/728.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/728.jpg",
+        "display_width": 1344,
+        "display_height": 1680
+      },
+      "url": "https://chriscummins.cc/photographs/728/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
       "title": "Tufa Study III",
       "slug": "635",
       "description": "",
@@ -203,7 +233,9 @@
         "focal_length": "18\"",
         "aperture": "f/29",
         "shutter_speed": "1/15",
-        "filters": "orange"
+        "filters": [
+          "orange"
+        ]
       },
       "images": {
         "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/687.webp",
@@ -281,36 +313,6 @@
       "url": "https://chriscummins.cc/photographs/561/",
       "shop_enabled": true,
       "shop_url": "https://chriscummins.cc/shop/561/"
-    },
-    {
-      "title": "Waterfall Nude",
-      "slug": "624",
-      "description": "<p>I've never photographed nudes, but it felt right to approach this waterfall\nscene with a boudoir sensibility. The texture contrast between rock and water\nfeels lacy and intimate. I'd normally chalk this up to going just a bit nutty\nafter extended time alone, but this was day one of my most recent photo trip.\nThe first photograph is usually the most difficult but this one arrived easily.</p>",
-      "date": "2025-11-08T00:00:00-08:00",
-      "collection": "California - Eastern Sierra",
-      "location": "Sonora Pass, California",
-      "metadata": {
-        "date_photographed": "2025-10-02",
-        "film_size": "8x10\"",
-        "development": "N+2",
-        "focal_length": "12\"",
-        "aperture": "f/22",
-        "shutter_speed": "6 sec",
-        "filters": ""
-      },
-      "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/624.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/624.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/624.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/624.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/624.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/624.jpg",
-        "display_width": 1680,
-        "display_height": 1350
-      },
-      "url": "https://chriscummins.cc/photographs/624/",
-      "shop_enabled": false,
-      "shop_url": null
     }
   ],
   "has_next": true,

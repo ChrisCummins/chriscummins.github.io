@@ -4,6 +4,38 @@
   "collection": "all",
   "photos": [
     {
+      "title": "Olmsted Point Boulder",
+      "slug": "355",
+      "description": "",
+      "date": "2024-10-02T00:00:00-07:00",
+      "collection": "California - Yosemite",
+      "location": "Yosemite, California",
+      "metadata": {
+        "date_photographed": "2024-10-02",
+        "film_size": "8x10\"",
+        "development": "N",
+        "focal_length": "18\"",
+        "aperture": "f/128",
+        "shutter_speed": "1/2",
+        "filters": [
+          "yellow"
+        ]
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/355.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/355.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/355.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/355.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/355.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/355.jpg",
+        "display_width": 1343,
+        "display_height": 1680
+      },
+      "url": "https://chriscummins.cc/photographs/355/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
       "title": "Weston Beach",
       "slug": "351",
       "description": "",
@@ -280,36 +312,6 @@
       "url": "https://chriscummins.cc/photographs/289/",
       "shop_enabled": false,
       "shop_url": null
-    },
-    {
-      "title": "Dogwood and Upper Yosemite Falls",
-      "slug": "291",
-      "description": "<p>I made this photograph on the morning of first issue for <a href=\"https://about.usps.com/newsroom/national-releases/2024/0403ma-usps-to-honor-ansel-adams-with-stamps.htm\">commemorative\nstamps</a>\nin honor of Ansel Adams.</p>",
-      "date": "2024-05-15T00:00:00-07:00",
-      "collection": "California - Yosemite",
-      "location": "Yosemite, California",
-      "metadata": {
-        "date_photographed": "2024-05-15",
-        "film_size": "8x10\"",
-        "development": "N-2",
-        "focal_length": "12\"",
-        "aperture": "f/51",
-        "shutter_speed": "1s",
-        "filters": ""
-      },
-      "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/291.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/291.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/291.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/291.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/291.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/291.jpg",
-        "display_width": 1340,
-        "display_height": 1680
-      },
-      "url": "https://chriscummins.cc/photographs/291/",
-      "shop_enabled": true,
-      "shop_url": "https://chriscummins.cc/shop/291/"
     }
   ],
   "has_next": true,

@@ -4,6 +4,36 @@
   "collection": "Oregon",
   "photos": [
     {
+      "title": "Sea Stacks, Oregon Coast",
+      "slug": "728",
+      "description": "",
+      "date": "2026-03-01T00:00:00-08:00",
+      "collection": "Oregon",
+      "location": "Brookings, Oregon",
+      "metadata": {
+        "date_photographed": "2026-01-17",
+        "film_size": "8x10\"",
+        "development": "N",
+        "focal_length": "6\"",
+        "aperture": "f/32",
+        "shutter_speed": "15 sec",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/728.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/728.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/728.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/728.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/728.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/728.jpg",
+        "display_width": 1344,
+        "display_height": 1680
+      },
+      "url": "https://chriscummins.cc/photographs/728/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
       "title": "Crater Lake, Winter Morning",
       "slug": "796",
       "description": "<p>I made this on the final morning of my first photo trip of 2026. The challenge\nwas working in high wind, too much to use a focusing cloth, and without a stable\nbase to set up my tripod.</p>\n<p>At the time I made this image I didn't expect much from it, I just wanted a\n\"souvenir\" to remember a fun but challenging 8 mile hike. However, it's been a\nnice negative to work with and I'm enjoying the potential for making big prints\nof this.</p>",

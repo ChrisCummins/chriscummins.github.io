@@ -4,6 +4,36 @@
   "collection": "all",
   "photos": [
     {
+      "title": "Sagebrush Study I",
+      "slug": "173",
+      "description": "",
+      "date": "2024-04-11T00:00:00-07:00",
+      "collection": "California - Eastern Sierra",
+      "location": "Eastern Sierra, California",
+      "metadata": {
+        "date_photographed": "2024-04-11",
+        "film_size": "8x10\"",
+        "development": "N+1",
+        "focal_length": "8\"",
+        "aperture": "f/64",
+        "shutter_speed": "5 sec",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/173.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/173.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/173.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/173.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/173.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/173.jpg",
+        "display_width": 1348,
+        "display_height": 1680
+      },
+      "url": "https://chriscummins.cc/photographs/173/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
       "title": "Skyscape III",
       "slug": "179",
       "description": "",
