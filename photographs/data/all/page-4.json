@@ -4,6 +4,68 @@
   "collection": "all",
   "photos": [
     {
+      "title": "Big Sur II",
+      "slug": "432",
+      "description": "",
+      "date": "2024-11-20T00:00:00-08:00",
+      "collection": "California - Coast",
+      "location": "Big Sur, California",
+      "metadata": {
+        "date_photographed": "2024-11-20",
+        "film_size": "8x10\"",
+        "development": "N+1",
+        "focal_length": "24\"",
+        "aperture": "f/32",
+        "shutter_speed": "1/8",
+        "filters": [
+          "yellow"
+        ]
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/432.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/432.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/432.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/432.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/432.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/432.jpg",
+        "display_width": 1680,
+        "display_height": 1344
+      },
+      "url": "https://chriscummins.cc/photographs/432/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Calla Lily Study III",
+      "slug": "427",
+      "description": "",
+      "date": "2024-11-19T00:00:00-08:00",
+      "collection": "California - Coast",
+      "location": "Central Coast, California",
+      "metadata": {
+        "date_photographed": "2024-11-19",
+        "film_size": "8x10\"",
+        "development": "N+2",
+        "focal_length": "8\"",
+        "aperture": "f/64",
+        "shutter_speed": "6s",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/427.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/427.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/427.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/427.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/427.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/427.jpg",
+        "display_width": 1344,
+        "display_height": 1680
+      },
+      "url": "https://chriscummins.cc/photographs/427/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
       "title": "Calla Lily Study I",
       "slug": "423",
       "description": "",
@@ -247,68 +309,6 @@
         "display_height": 1344
       },
       "url": "https://chriscummins.cc/photographs/377/",
-      "shop_enabled": false,
-      "shop_url": null
-    },
-    {
-      "title": "El Capitan, Sunrise",
-      "slug": "367",
-      "description": "",
-      "date": "2024-10-04T00:00:00-07:00",
-      "collection": "California - Yosemite",
-      "location": "Yosemite, California",
-      "metadata": {
-        "date_photographed": "2024-10-04",
-        "film_size": "8x10\"",
-        "development": "N",
-        "focal_length": "14\"",
-        "aperture": "f/11",
-        "shutter_speed": "1/60",
-        "filters": [
-          "yellow"
-        ]
-      },
-      "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/367.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/367.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/367.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/367.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/367.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/367.jpg",
-        "display_width": 1344,
-        "display_height": 1680
-      },
-      "url": "https://chriscummins.cc/photographs/367/",
-      "shop_enabled": true,
-      "shop_url": "https://chriscummins.cc/shop/367/"
-    },
-    {
-      "title": "Here Comes the Sun",
-      "slug": "363",
-      "description": "",
-      "date": "2024-10-03T00:00:00-07:00",
-      "collection": "California - Yosemite",
-      "location": "Yosemite, California",
-      "metadata": {
-        "date_photographed": "2024-10-03",
-        "film_size": "8x10\"",
-        "development": "N",
-        "focal_length": "24\"",
-        "aperture": "f/32",
-        "shutter_speed": "1/15",
-        "filters": ""
-      },
-      "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/363.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/363.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/363.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/363.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/363.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/363.jpg",
-        "display_width": 1680,
-        "display_height": 1344
-      },
-      "url": "https://chriscummins.cc/photographs/363/",
       "shop_enabled": false,
       "shop_url": null
     }

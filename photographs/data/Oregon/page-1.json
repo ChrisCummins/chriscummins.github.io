@@ -4,6 +4,66 @@
   "collection": "Oregon",
   "photos": [
     {
+      "title": "Dunes V",
+      "slug": "743",
+      "description": "",
+      "date": "2026-03-13T00:00:00-07:00",
+      "collection": "Oregon",
+      "location": "Oregon Dunes, Oregon",
+      "metadata": {
+        "date_photographed": "2026-01-18",
+        "film_size": "8x10\"",
+        "development": "N+3",
+        "focal_length": "8\"",
+        "aperture": "f/36",
+        "shutter_speed": "1/15",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/743.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/743.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/743.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/743.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/743.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/743.jpg",
+        "display_width": 1680,
+        "display_height": 1339
+      },
+      "url": "https://chriscummins.cc/photographs/743/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Dunes IV",
+      "slug": "737",
+      "description": "",
+      "date": "2026-03-11T00:00:00-07:00",
+      "collection": "Oregon",
+      "location": "Oregon Dunes, Oregon",
+      "metadata": {
+        "date_photographed": "2026-01-17",
+        "film_size": "8x10\"",
+        "development": "N+3",
+        "focal_length": "24\"",
+        "aperture": "f/45",
+        "shutter_speed": "1/8",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/737.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/737.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/737.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/737.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/737.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/737.jpg",
+        "display_width": 1339,
+        "display_height": 1680
+      },
+      "url": "https://chriscummins.cc/photographs/737/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
       "title": "Sea Stacks, Oregon Coast",
       "slug": "728",
       "description": "",

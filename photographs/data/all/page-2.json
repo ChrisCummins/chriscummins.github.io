@@ -4,6 +4,69 @@
   "collection": "all",
   "photos": [
     {
+      "title": "Ancient Bristlecone Pine",
+      "slug": "666",
+      "description": "",
+      "date": "2025-11-28T00:00:00-08:00",
+      "collection": "California - Eastern Sierra",
+      "location": "White Mountains, California",
+      "metadata": {
+        "date_photographed": "2025-10-06",
+        "film_size": "8x10\"",
+        "development": "N",
+        "focal_length": "18\"",
+        "aperture": "f/20",
+        "shutter_speed": "1/15",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/666.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/666.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/666.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/666.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/666.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/666.jpg",
+        "display_width": 1348,
+        "display_height": 1680
+      },
+      "url": "https://chriscummins.cc/photographs/666/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "El Capitan, Winter Morning",
+      "slug": "561",
+      "description": "",
+      "date": "2025-11-15T00:00:00-08:00",
+      "collection": "California - Yosemite",
+      "location": "Yosemite Valley, California",
+      "metadata": {
+        "date_photographed": "2025-03-15",
+        "film_size": "8x10\"",
+        "development": "N",
+        "focal_length": "12\"",
+        "aperture": "f/40",
+        "shutter_speed": "6 sec",
+        "filters": [
+          "0.9ND",
+          "yellow"
+        ]
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/561.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/561.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/561.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/561.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/561.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/561.jpg",
+        "display_width": 1352,
+        "display_height": 1680
+      },
+      "url": "https://chriscummins.cc/photographs/561/",
+      "shop_enabled": true,
+      "shop_url": "https://chriscummins.cc/shop/561/"
+    },
+    {
       "title": "Waterfall Nude",
       "slug": "624",
       "description": "<p>I've never photographed nudes, but it felt right to approach this waterfall\nscene with a boudoir sensibility. The texture contrast between rock and water\nfeels lacy and intimate. I'd normally chalk this up to going just a bit nutty\nafter extended time alone, but this was day one of my most recent photo trip.\nThe first photograph is usually the most difficult but this one arrived easily.</p>",
@@ -246,68 +309,6 @@
       "url": "https://chriscummins.cc/photographs/595/",
       "shop_enabled": false,
       "shop_url": null
-    },
-    {
-      "title": "Lungs of the Planet",
-      "slug": "573",
-      "description": "",
-      "date": "2025-03-26T00:00:00-07:00",
-      "collection": "California - Coast",
-      "location": "Big Sur, California",
-      "metadata": {
-        "date_photographed": "2025-03-26",
-        "film_size": "8x10\"",
-        "development": "N+3",
-        "focal_length": "18\"",
-        "aperture": "f/18",
-        "shutter_speed": "1/8",
-        "filters": ""
-      },
-      "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/573.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/573.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/573.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/573.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/573.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/573.jpg",
-        "display_width": 1680,
-        "display_height": 1344
-      },
-      "url": "https://chriscummins.cc/photographs/573/",
-      "shop_enabled": false,
-      "shop_url": null
-    },
-    {
-      "title": "Inspiration Point, Winter",
-      "slug": "564",
-      "description": "",
-      "date": "2025-03-15T00:00:00-07:00",
-      "collection": "California - Yosemite",
-      "location": "Yosemite, California",
-      "metadata": {
-        "date_photographed": "2025-03-15",
-        "film_size": "8x10\"",
-        "development": "N",
-        "focal_length": "18\"",
-        "aperture": "f/64",
-        "shutter_speed": "1/4",
-        "filters": [
-          "yellow"
-        ]
-      },
-      "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/564.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/564.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/564.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/564.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/564.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/564.jpg",
-        "display_width": 1680,
-        "display_height": 1344
-      },
-      "url": "https://chriscummins.cc/photographs/564/",
-      "shop_enabled": true,
-      "shop_url": "https://chriscummins.cc/shop/564/"
     }
   ],
   "has_next": true,

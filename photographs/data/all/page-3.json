@@ -4,6 +4,68 @@
   "collection": "all",
   "photos": [
     {
+      "title": "Lungs of the Planet",
+      "slug": "573",
+      "description": "",
+      "date": "2025-03-26T00:00:00-07:00",
+      "collection": "California - Coast",
+      "location": "Big Sur, California",
+      "metadata": {
+        "date_photographed": "2025-03-26",
+        "film_size": "8x10\"",
+        "development": "N+3",
+        "focal_length": "18\"",
+        "aperture": "f/18",
+        "shutter_speed": "1/8",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/573.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/573.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/573.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/573.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/573.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/573.jpg",
+        "display_width": 1680,
+        "display_height": 1344
+      },
+      "url": "https://chriscummins.cc/photographs/573/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Inspiration Point, Winter",
+      "slug": "564",
+      "description": "",
+      "date": "2025-03-15T00:00:00-07:00",
+      "collection": "California - Yosemite",
+      "location": "Yosemite, California",
+      "metadata": {
+        "date_photographed": "2025-03-15",
+        "film_size": "8x10\"",
+        "development": "N",
+        "focal_length": "18\"",
+        "aperture": "f/64",
+        "shutter_speed": "1/4",
+        "filters": [
+          "yellow"
+        ]
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/564.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/564.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/564.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/564.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/564.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/564.jpg",
+        "display_width": 1680,
+        "display_height": 1344
+      },
+      "url": "https://chriscummins.cc/photographs/564/",
+      "shop_enabled": true,
+      "shop_url": "https://chriscummins.cc/shop/564/"
+    },
+    {
       "title": "US-50, the Loneliest Road",
       "slug": "546",
       "description": "",
@@ -242,68 +304,6 @@
         "display_height": 1344
       },
       "url": "https://chriscummins.cc/photographs/466/",
-      "shop_enabled": false,
-      "shop_url": null
-    },
-    {
-      "title": "Big Sur II",
-      "slug": "432",
-      "description": "",
-      "date": "2024-11-20T00:00:00-08:00",
-      "collection": "California - Coast",
-      "location": "Big Sur, California",
-      "metadata": {
-        "date_photographed": "2024-11-20",
-        "film_size": "8x10\"",
-        "development": "N+1",
-        "focal_length": "24\"",
-        "aperture": "f/32",
-        "shutter_speed": "1/8",
-        "filters": [
-          "yellow"
-        ]
-      },
-      "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/432.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/432.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/432.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/432.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/432.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/432.jpg",
-        "display_width": 1680,
-        "display_height": 1344
-      },
-      "url": "https://chriscummins.cc/photographs/432/",
-      "shop_enabled": false,
-      "shop_url": null
-    },
-    {
-      "title": "Calla Lily Study III",
-      "slug": "427",
-      "description": "",
-      "date": "2024-11-19T00:00:00-08:00",
-      "collection": "California - Coast",
-      "location": "Central Coast, California",
-      "metadata": {
-        "date_photographed": "2024-11-19",
-        "film_size": "8x10\"",
-        "development": "N+2",
-        "focal_length": "8\"",
-        "aperture": "f/64",
-        "shutter_speed": "6s",
-        "filters": ""
-      },
-      "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/427.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/427.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/427.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/427.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/427.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/427.jpg",
-        "display_width": 1344,
-        "display_height": 1680
-      },
-      "url": "https://chriscummins.cc/photographs/427/",
       "shop_enabled": false,
       "shop_url": null
     }

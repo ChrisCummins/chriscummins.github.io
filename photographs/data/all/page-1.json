@@ -4,6 +4,66 @@
   "collection": "all",
   "photos": [
     {
+      "title": "Dunes V",
+      "slug": "743",
+      "description": "",
+      "date": "2026-03-13T00:00:00-07:00",
+      "collection": "Oregon",
+      "location": "Oregon Dunes, Oregon",
+      "metadata": {
+        "date_photographed": "2026-01-18",
+        "film_size": "8x10\"",
+        "development": "N+3",
+        "focal_length": "8\"",
+        "aperture": "f/36",
+        "shutter_speed": "1/15",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/743.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/743.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/743.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/743.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/743.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/743.jpg",
+        "display_width": 1680,
+        "display_height": 1339
+      },
+      "url": "https://chriscummins.cc/photographs/743/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
+      "title": "Dunes IV",
+      "slug": "737",
+      "description": "",
+      "date": "2026-03-11T00:00:00-07:00",
+      "collection": "Oregon",
+      "location": "Oregon Dunes, Oregon",
+      "metadata": {
+        "date_photographed": "2026-01-17",
+        "film_size": "8x10\"",
+        "development": "N+3",
+        "focal_length": "24\"",
+        "aperture": "f/45",
+        "shutter_speed": "1/8",
+        "filters": ""
+      },
+      "images": {
+        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/737.webp",
+        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/737.jpg",
+        "display": "https://chriscummins.cc/static/photographs/gallery/737.webp",
+        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/737.jpg",
+        "full": "https://chriscummins.cc/static/photographs/full/737.webp",
+        "full_fallback": "https://chriscummins.cc/static/photographs/full/737.jpg",
+        "display_width": 1339,
+        "display_height": 1680
+      },
+      "url": "https://chriscummins.cc/photographs/737/",
+      "shop_enabled": false,
+      "shop_url": null
+    },
+    {
       "title": "Sea Stacks, Oregon Coast",
       "slug": "728",
       "description": "",
@@ -250,69 +310,6 @@
       "url": "https://chriscummins.cc/photographs/687/",
       "shop_enabled": false,
       "shop_url": null
-    },
-    {
-      "title": "Ancient Bristlecone Pine",
-      "slug": "666",
-      "description": "",
-      "date": "2025-11-28T00:00:00-08:00",
-      "collection": "California - Eastern Sierra",
-      "location": "White Mountains, California",
-      "metadata": {
-        "date_photographed": "2025-10-06",
-        "film_size": "8x10\"",
-        "development": "N",
-        "focal_length": "18\"",
-        "aperture": "f/20",
-        "shutter_speed": "1/15",
-        "filters": ""
-      },
-      "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/666.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/666.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/666.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/666.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/666.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/666.jpg",
-        "display_width": 1348,
-        "display_height": 1680
-      },
-      "url": "https://chriscummins.cc/photographs/666/",
-      "shop_enabled": false,
-      "shop_url": null
-    },
-    {
-      "title": "El Capitan, Winter Morning",
-      "slug": "561",
-      "description": "",
-      "date": "2025-11-15T00:00:00-08:00",
-      "collection": "California - Yosemite",
-      "location": "Yosemite Valley, California",
-      "metadata": {
-        "date_photographed": "2025-03-15",
-        "film_size": "8x10\"",
-        "development": "N",
-        "focal_length": "12\"",
-        "aperture": "f/40",
-        "shutter_speed": "6 sec",
-        "filters": [
-          "0.9ND",
-          "yellow"
-        ]
-      },
-      "images": {
-        "thumbnail": "https://chriscummins.cc/static/photographs/thumbnail/561.webp",
-        "thumbnail_fallback": "https://chriscummins.cc/static/photographs/thumbnail/561.jpg",
-        "display": "https://chriscummins.cc/static/photographs/gallery/561.webp",
-        "display_fallback": "https://chriscummins.cc/static/photographs/gallery/561.jpg",
-        "full": "https://chriscummins.cc/static/photographs/full/561.webp",
-        "full_fallback": "https://chriscummins.cc/static/photographs/full/561.jpg",
-        "display_width": 1352,
-        "display_height": 1680
-      },
-      "url": "https://chriscummins.cc/photographs/561/",
-      "shop_enabled": true,
-      "shop_url": "https://chriscummins.cc/shop/561/"
     }
   ],
   "has_next": true,
