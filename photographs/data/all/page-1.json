@@ -4,7 +4,7 @@
   "collection": "all",
   "photos": [
     {
-      "title": "Dunes V",
+      "title": "Dunes IV",
       "slug": "743",
       "description": "",
       "date": "2026-03-13T00:00:00-07:00",
@@ -30,11 +30,11 @@
         "display_height": 1339
       },
       "url": "https://chriscummins.cc/photographs/743/",
-      "shop_enabled": false,
-      "shop_url": null
+      "shop_enabled": true,
+      "shop_url": "https://chriscummins.cc/shop/743/"
     },
     {
-      "title": "Dunes IV",
+      "title": "Dunes V",
       "slug": "737",
       "description": "",
       "date": "2026-03-11T00:00:00-07:00",
